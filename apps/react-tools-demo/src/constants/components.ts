@@ -1,0 +1,21 @@
+export const COMPONENTS = [
+	[
+		"usePrevious",
+		"useStateGetter",
+		"useStateHistory",
+		"useMemoCompare",
+		"useMemoDeepCompare",
+		"useCallbackCompare",
+		"useCallbackDeepCompare",
+		"useEffectCompare",
+		"useEffectDeepCompare",
+		"useLayoutEffectCompare",
+		"useLayoutEffectDeepCompare"
+	],
+	[
+		"isShallowEqual",
+		"isDeepEqual",
+		"isTouchEvent",
+		"isMouseEvent"
+	]
+]

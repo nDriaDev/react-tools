@@ -1,0 +1,4 @@
+export { isShallowEqual } from "./isShallowEqual";
+export { isDeepEqual } from "./isDeepEqual";
+export { isMouseEvent } from "./isMouseEvent";
+export { isTouchEvent } from "./isTouchEvent";
