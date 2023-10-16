@@ -3,7 +3,7 @@ Custom useEffect that reexecutes EffectCallback only when deps are different in 
 
 ## Usage
 
-The implementation is like that useEffectDeepCompare.
+The implementation is like that _useEffectDeepCompare_.
 
 Please visit [useEffectDeepCompare](/useEffectDeepCompare) example to see how it works.
 

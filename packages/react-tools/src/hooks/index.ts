@@ -1,5 +1,9 @@
 export { usePrevious } from "./usePrevious";
+export { useStateGetReset } from './useStateGetReset';
 export { useStateHistory } from './useStateHistory';
+export { useStateHistoryGetter } from './useStateHistoryGetter';
+export { useReducerGetReset } from "./useReducerGetReset";
+export { useReducerHistory } from './useReducerHistory';
 export { useMemoCompare } from "./useMemoCompare";
 export { useMemoDeepCompare } from './useMemoDeepCompare';
 export { useCallbackCompare } from './useCallbackCompare';

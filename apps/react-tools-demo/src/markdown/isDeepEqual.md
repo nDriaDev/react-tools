@@ -11,7 +11,7 @@ isDeepEqual (objA: unknown, objB: unknown, map = new WeakMap())
 >
 > - __objA__: _unknown_
 > - __objB__: _unknown_
-> - __map=new WeakMap()__: _WeakMap_
+> - __map=new WeakMap()?__: _WeakMap_
 >
 
 > ### Returns

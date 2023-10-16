@@ -65,7 +65,7 @@ useEffectCompare <T = unknown>(cb: EffectCallback, deps: DependencyListTyped<T>,
 Imperative function that can return a cleanup function.
 > - __deps__: _DependencyListTyped_  
 typed dependency list.
-> - __compareFn__: _CompareFn_  
+> - __compareFn?__: _CompareFn_  
 optional function that executes comparing between old and new `deps`: it returns true if they are different, otherwise false. If there isn't, hook works like normal useEffect.
 >
 

@@ -1,7 +1,7 @@
 import { Dispatch, SetStateAction, useCallback, useEffect, useRef, useState } from "react"
 
 /**
- * **`useStateGetReset`**: custom useState with get and reset state functions.
+ * **`useStateGetReset`**: Custom useState with get and reset state functions.
  * @param {T | () => T} initialState - value or a function.
  * @returns {[T, Dispatch<SetStateAction<T>>, () => T, ()=>void]} array
  */

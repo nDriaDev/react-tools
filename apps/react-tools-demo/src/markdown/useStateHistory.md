@@ -6,7 +6,7 @@ Custom useState that tracks and allows to use previous values.
 ```tsx
 function UseStateHistory() {
 
-	const [count, setCount, {go, presentPointer, history, trackUpdate, canRedo, canUndo, redo, undo, clear}] = useStateHistory(0, 10);
+	const [count, setCount, { go, presentPointer, history, trackUpdate, canRedo, canUndo, redo, undo, clear }] = useReducerHistory((prev:number, curr:number):number => curr, 0, undefined, 10);
 
 	return (<>
 		<p>
@@ -19,13 +19,10 @@ function UseStateHistory() {
 			History is {JSON.stringify(history)}
 		</p>
 		<div style={{ gridTemplateColumns: 'auto auto auto', justifyContent: 'center', display: 'grid', gap: '5px' }}>
-			<button onClick={() => setCount((count) => (count + 1))}>
+			<button onClick={() => setCount((count + 1))}>
 				increment
 			</button>
-			<button onClick={() => setCount((count) => {
-				trackUpdate(false);
-				return count + 1;
-			})}>
+			<button onClick={() => setCount(count + 1)}>
 				disableHistory and increment
 			</button>
 			<button onClick={() => trackUpdate(false)}>
@@ -73,7 +70,7 @@ useStateHistory <T>(initialState: T | (() => T), capacity: number | "no-limit" =
 >
 > - __initialState__: _T | () => T_  
 value or a function.
-> - __capacity="no-limit"__: _number | "no-limit"_  
+> - __capacity="no-limit"?__: _number | "no-limit"_  
 history capacity (default 'no-limit').
 >
 

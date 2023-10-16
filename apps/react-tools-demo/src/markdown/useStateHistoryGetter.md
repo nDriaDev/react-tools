@@ -3,9 +3,9 @@ Custom useState with getter state function and that tracks and allows to use pre
 
 ## Usage
 
-The implementation is like that useStateHistory, adding useStateGetter getter function.
+The implementation is like that _useStateHistory_, adding getter function of _useStateGetReset_.
 
-Please visit [useStateHistory](/useStateHistory) and [useStateGetter](/useStateGetter) examples to see how it works.
+Please visit [useStateHistory](/useStateHistory) and [useStateGetReset](/useStateGetReset) examples to see how it works.
 
 ## API
 
@@ -17,7 +17,7 @@ useStateHistoryGetter <T>(initialState: T | (() => T), capacity: number | "no-li
 >
 > - __initialState__: _T | () => T_  
 value or a function.
-> - __capacity="no-limit"__: _number | "no-limit"_  
+> - __capacity="no-limit"?__: _number | "no-limit"_  
 history capacity (default 'no-limit').
 >
 

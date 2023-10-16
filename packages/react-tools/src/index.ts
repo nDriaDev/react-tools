@@ -5,7 +5,11 @@ export type {
 
 export {
 	usePrevious,
+	useStateGetReset,
 	useStateHistory,
+	useStateHistoryGetter,
+	useReducerGetReset,
+	useReducerHistory,
 	useMemoCompare,
 	useMemoDeepCompare,
 	useCallbackCompare,

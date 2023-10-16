@@ -4,8 +4,9 @@
 	- [x] useStateGetReset
 	- [x] useStateHistory
 	- [x] useStateHistoryGetter
-	- [ ] useReducerGetReset
-	- [ ] useReducerHistory
+	- [x] useReducerGetReset
+	- [x] useReducerHistory
+	- [x] useReducerHistoryGetter
 	- [ ] useLocalStorage
 	- [ ] useSessionStorage
 	- [ ] useMap

@@ -15,16 +15,17 @@ module.exports = {
 	},
 	rules: {
 		'react-refresh/only-export-components': [
-		'warn',
-		{
-			allowConstantExport: true
-		},
-	],
+			'warn',
+			{
+				allowConstantExport: true
+			},
+		],
 		"react-hooks/exhaustive-deps": [
 			"warn",
 			{
 				"additionalHooks": "(useMemoCompare|useMemoDeepCompare|useCallbackCompare|useCallbackDeepCompare|useLayoutEffectCompare|useLayoutEffectDeepCompare|useInsertionEffectCompare|useInsertionEffectDeepCompare|useEffectCompare|useEffectDeepCompare)"
 			}
-		]
+		],
+		"@typescript-eslint/no-explicit-any": "warn"
 	},
 }

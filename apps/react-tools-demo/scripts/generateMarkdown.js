@@ -50,7 +50,7 @@ function getNameDescriptionParam(line) {
 		obj.name = nameDescription;
 	}
 	if(obj.name.startsWith("[")) {
-		obj.name = obj.name.substring(1, obj.name.length-1);
+		obj.name = obj.name.substring(1, obj.name.length-1)+"?";
 	}
 	return obj;
 }
@@ -138,6 +138,9 @@ function buildHooksUtilsMarkdownObject(file) {
 			type: ""
 		},
 		type: ""
+	}
+	if(fileSplitted.length === 1) {
+		return obj;
 	}
 	const lines = getJsDoc(fileSplitted);
 	lines.forEach(line => {
@@ -241,7 +244,7 @@ async function generateUtilsMarkDown() {
 			let readedFile = await fs.readFile(path.join(pathUtilsDir, file), {encoding: "utf8"});
 			readedFile = removeImportLine(readedFile);
 			const jsDoc = buildHooksUtilsMarkdownObject(readedFile);
-			const title = jsDoc.title.charAt(0).toUpperCase()+jsDoc.title.substring(1)+".md";
+			const title = jsDoc.title.charAt(0).toLowerCase()+jsDoc.title.substring(1)+".md";
 			await fs.writeFile(path.join(pathMarkdownDir, title), jsDoc2Markdown(jsDoc), {encoding: "utf8"});
 		}
 	}
@@ -262,7 +265,8 @@ async function generateComponentsMarkDown() {
 				hookFile = removeImportLine(hookFile);
 				const jsDoc = buildHooksUtilsMarkdownObject(hookFile);
 				jsDoc.usage = buildComponentMarkdown(componentFile, extension);
-				const title = componentFileName.replace(extension, ".md");
+				let title = componentFileName.replace(extension, ".md");
+				title = title.charAt(0).toLowerCase() + title.substring(1);
 				await fs.writeFile(path.join(pathMarkdownDir, title), jsDoc2Markdown(jsDoc), {encoding: "utf8"});
 			}
 		}

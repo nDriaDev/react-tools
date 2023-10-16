@@ -3,22 +3,25 @@ import MainLayout from '../layout/MainLayout';
 import ComponentLayout from '../layout/ComponentLayout';
 import MarkdownLayout from '../layout/MarkdownLayout';
 import HomeWrapper from '../components/home/HomeWrapper';
-import usePreviousMD from '../markdown/UsePrevious.md?url';
-import useStateGetResetMD from '../markdown/UseStateGetReset.md?url';
-import useStateHistoryMD from '../markdown/UseStateHistory.md?url';
+import usePreviousMD from '../markdown/usePrevious.md?url';
+import useStateGetResetMD from '../markdown/useStateGetReset.md?url';
+import useStateHistoryMD from '../markdown/useStateHistory.md?url';
 import useStateHistoryGetterMD from '../markdown/useStateHistoryGetter.md?url';
-import useCallbackCompareMD from '../markdown/UseCallbackCompare.md?url';
-import useCallbackDeepCompareMD from '../markdown/UseCallbackDeepCompare.md?url';
-import useMemoCompareMD from '../markdown/UseMemoCompare.md?url';
-import useMemoDeepCompareMD from '../markdown/UseMemoDeepCompare.md?url';
-import useEffectCompareMD from '../markdown/UseEffectCompare.md?url';
-import useEffectDeepCompareMD from '../markdown/UseEffectDeepCompare.md?url';
+import useReducerGetResetMD from '../markdown/useReducerGetReset.md?url';
+import useReducerHistoryMD from '../markdown/useReducerHistory.md?url';
+import useReducerHistoryGetterMD from '../markdown/useReducerHistoryGetter.md?url';
+import useCallbackCompareMD from '../markdown/useCallbackCompare.md?url';
+import useCallbackDeepCompareMD from '../markdown/useCallbackDeepCompare.md?url';
+import useMemoCompareMD from '../markdown/useMemoCompare.md?url';
+import useMemoDeepCompareMD from '../markdown/useMemoDeepCompare.md?url';
+import useEffectCompareMD from '../markdown/useEffectCompare.md?url';
+import useEffectDeepCompareMD from '../markdown/useEffectDeepCompare.md?url';
 import useLayoutEffectCompareMD from '../markdown/useLayoutEffectCompare.md?url';
 import useLayoutEffectDeepCompareMD from '../markdown/useLayoutEffectDeepCompare.md?url';
-import isShallowEqualMD from '../markdown/IsShallowEqual.md?url';
-import isDeepEqualMD from '../markdown/IsDeepEqual.md?url';
-import isMouseEventMD from '../markdown/IsMouseEvent.md?url';
-import isTouchEventMD from '../markdown/IsTouchEvent.md?url';
+import isShallowEqualMD from '../markdown/isShallowEqual.md?url';
+import isDeepEqualMD from '../markdown/isDeepEqual.md?url';
+import isMouseEventMD from '../markdown/isMouseEvent.md?url';
+import isTouchEventMD from '../markdown/isTouchEvent.md?url';
 import { UsePrevious } from '../components/hooks/usePrevious/UsePrevious';
 import { UseStateHistory } from '../components/hooks/useStateHistory/UseStateHistory';
 import { UseCallbackCompare } from '../components/hooks/useCallbackCompare/UseCallbackCompare';
@@ -64,6 +67,24 @@ function Router() {
 					path: "/useStateHistoryGetter",
 					element: <MarkdownLayout
 						source={useStateHistoryGetterMD}
+					/>
+				},
+				{
+					path: "/useReducerGetReset",
+					element: <MarkdownLayout
+						source={useReducerGetResetMD}
+					/>
+				},
+				{
+					path: "/useReducerHistory",
+					element: <MarkdownLayout
+						source={useReducerHistoryMD}
+					/>
+				},
+				{
+					path: "/useReducerHistoryGetter",
+					element: <MarkdownLayout
+						source={useReducerHistoryGetterMD}
 					/>
 				},
 				{
