@@ -42,6 +42,14 @@ code {
 	transition: opacity 300ms, transform 300ms;
 }
 
+.open-nav {
+	position: absolute;
+	top: 10;
+	left: 10;
+	z-index: 999;
+	display: none;
+}
+
 .nav {
 	background-color: #1a1a1a;
 	text-align: left;
@@ -50,6 +58,12 @@ code {
 	height: inherit;
 	overflow-y: auto;
 	position: relative;
+
+	.btn-close {
+		display: none;
+		width: fit-content;
+		align-self: end;
+	}
 
 	.title-container {
 		background-color: #1a1a1a;
@@ -233,8 +247,8 @@ blockquote>ul>li>strong {
 
 	.logo {
 		padding: 2rem;
-		width: 280px;
-		height: 250px;
+		width: 18rem;
+		height: 15rem;
 	}
 
 	.title {
@@ -286,8 +300,7 @@ blockquote>ul>li>strong {
 
 	.features-container {
 		display: grid;
-		grid-auto-columns: minmax(0, 1fr);
-		grid-auto-flow: column;
+		grid-template-columns: repeat(3, 1fr);
 		gap: 20px;
 		margin-bottom: 1rem;
 
@@ -308,5 +321,41 @@ blockquote>ul>li>strong {
 				font-size: 1em;
 			}
 		}
+	}
+}
+
+@media (max-width: 540px) {
+	.features-container {
+		grid-template-columns: repeat(1, 1fr);
+	}
+
+@media screen and (max-width: 1190px) {
+	.open-nav {
+		display: initial;
+	}
+	.nav {
+		position: fixed;
+		width:0;
+		transition: .5s;
+		z-index: 9999;
+		top: 0;
+		left: 0;
+		overflow-x: hidden;
+
+		.btn-close {
+			display: initial;
+		}
+	}
+
+	.container {
+		transition: margin-left 0.5s;
+	}
+
+	.demo {
+		margin: 1rem 2rem 1rem;
+	}
+
+	.docs-md {
+		width: 100%;
 	}
 }
