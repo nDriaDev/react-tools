@@ -3,6 +3,7 @@ export const COMPONENTS = [
 		"usePrevious",
 		"useStateGetter",
 		"useStateHistory",
+		"useStateHistoryGetter",
 		"useMemoCompare",
 		"useMemoDeepCompare",
 		"useCallbackCompare",

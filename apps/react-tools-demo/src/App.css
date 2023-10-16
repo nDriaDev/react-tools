@@ -328,6 +328,7 @@ blockquote>ul>li>strong {
 	.features-container {
 		grid-template-columns: repeat(1, 1fr);
 	}
+}
 
 @media screen and (max-width: 1190px) {
 	.open-nav {

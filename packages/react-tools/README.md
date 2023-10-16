@@ -1,10 +1,10 @@
 # TODO
 - __STATE__
 	- [x] usePrevious
-	- [-] useStateGetter
+	- [x] useStateGetter
 	- [ ] useStateRestore
 	- [x] useStateHistory
-	- [-] useStateHistoryGetter
+	- [x] useStateHistoryGetter
 	- [ ] useReducerHistory
 	- [ ] useReducerGetter
 	- [ ] useReducerRestore

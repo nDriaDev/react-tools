@@ -6,6 +6,7 @@ import HomeWrapper from '../components/home/HomeWrapper';
 import usePreviousMD from '../markdown/UsePrevious.md?url';
 import useStateGetterMD from '../markdown/UseStateGetter.md?url';
 import useStateHistoryMD from '../markdown/UseStateHistory.md?url';
+import useStateHistoryGetterMD from '../markdown/useStateHistoryGetter.md?url';
 import useCallbackCompareMD from '../markdown/UseCallbackCompare.md?url';
 import useCallbackDeepCompareMD from '../markdown/UseCallbackDeepCompare.md?url';
 import useMemoCompareMD from '../markdown/UseMemoCompare.md?url';
@@ -57,6 +58,12 @@ function Router() {
 					element: <ComponentLayout
 						component={<UseStateHistory />}
 						markdown={useStateHistoryMD}
+					/>
+				},
+				{
+					path: "/useStateHistoryGetter",
+					element: <MarkdownLayout
+						source={useStateHistoryGetterMD}
 					/>
 				},
 				{
