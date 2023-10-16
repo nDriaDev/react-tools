@@ -1,7 +1,7 @@
 export const COMPONENTS = [
 	[
 		"usePrevious",
-		"useStateGetter",
+		"useStateGetReset",
 		"useStateHistory",
 		"useStateHistoryGetter",
 		"useMemoCompare",

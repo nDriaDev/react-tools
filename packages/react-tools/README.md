@@ -1,13 +1,11 @@
 # TODO
 - __STATE__
 	- [x] usePrevious
-	- [x] useStateGetter
-	- [ ] useStateRestore
+	- [x] useStateGetReset
 	- [x] useStateHistory
 	- [x] useStateHistoryGetter
+	- [ ] useReducerGetReset
 	- [ ] useReducerHistory
-	- [ ] useReducerGetter
-	- [ ] useReducerRestore
 	- [ ] useLocalStorage
 	- [ ] useSessionStorage
 	- [ ] useMap

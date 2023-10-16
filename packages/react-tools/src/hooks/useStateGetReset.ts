@@ -1,14 +1,18 @@
 import { Dispatch, SetStateAction, useCallback, useEffect, useRef, useState } from "react"
 
 /**
- * **`useStateGetter`**: custom useState with getter state function.
+ * **`useStateGetReset`**: custom useState with get and reset state functions.
  * @param {T | () => T} initialState - value or a function.
- * @returns {[T, Dispatch<SetStateAction<T>>, () => T]} array
+ * @returns {[T, Dispatch<SetStateAction<T>>, () => T, ()=>void]} array
  */
-export const useStateGetter = <T>(initialState: T | (() => T)): [T, Dispatch<SetStateAction<T>>, () => T] => {
+export const useStateGetReset = <T>(initialState: T | (() => T)): [T, Dispatch<SetStateAction<T>>, () => T, () => void] => {
 	const [state, setState] = useState<T>(initialState);
 	const getterRef = useRef<() => T>(() => state);
+
 	const getter = useCallback(() => getterRef.current(), []);
+
+	const resetter = useCallback(() => setState(initialState), [initialState]);
+
 	useEffect(() => {
 		getterRef.current = () => state
 	});
@@ -16,6 +20,7 @@ export const useStateGetter = <T>(initialState: T | (() => T)): [T, Dispatch<Set
 	return [
 		state,
 		setState,
-		getter
+		getter,
+		resetter
 	];
 }

@@ -4,7 +4,7 @@ import ComponentLayout from '../layout/ComponentLayout';
 import MarkdownLayout from '../layout/MarkdownLayout';
 import HomeWrapper from '../components/home/HomeWrapper';
 import usePreviousMD from '../markdown/UsePrevious.md?url';
-import useStateGetterMD from '../markdown/UseStateGetter.md?url';
+import useStateGetResetMD from '../markdown/UseStateGetReset.md?url';
 import useStateHistoryMD from '../markdown/UseStateHistory.md?url';
 import useStateHistoryGetterMD from '../markdown/useStateHistoryGetter.md?url';
 import useCallbackCompareMD from '../markdown/UseCallbackCompare.md?url';
@@ -27,7 +27,7 @@ import { UseMemoCompare } from '../components/hooks/useMemoCompare/UseMemoCompar
 import { UseMemoDeepCompare } from '../components/hooks/useMemoDeepCompare/UseMemoDeepCompare';
 import { UseEffectCompare } from '../components/hooks/useEffectCompare/UseEffectCompare';
 import { UseEffectDeepCompare } from '../components/hooks/useEffectDeepCompare/UseEffectDeepCompare';
-import { UseStateGetter } from '../components/hooks/useStateGetter/UseStateGetter';
+import { UseStateGetReset } from '../components/hooks/useStateGetReset/UseStateGetReset';
 
 function Router() {
     const router = createBrowserRouter([
@@ -47,10 +47,10 @@ function Router() {
                     />
 				},
 				{
-					path: "/useStateGetter",
+					path: "/useStateGetReset",
 					element: <ComponentLayout
-						component={<UseStateGetter />}
-						markdown={useStateGetterMD}
+						component={<UseStateGetReset />}
+						markdown={useStateGetResetMD}
 					/>
 				},
 				{
