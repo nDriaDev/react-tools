@@ -67,5 +67,8 @@ variable whose value is to be tracked.
 
 > ### Returns
 >
-> - __array__: _[T|undefined, (enable:boolean)=>void]_
+> __array__
+> - __Array__:  
+>     - _T|undefined_  
+>     - _(enable:boolean)=>void_  
 >

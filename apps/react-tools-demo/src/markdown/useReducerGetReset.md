@@ -25,5 +25,10 @@ Function that should return the _initial state_. If it’s not specified, the in
 
 > ### Returns
 >
-> - __array__: _[ReducerState<R>, Dispatch<ReducerAction<R>>, ()=>ReducerState<R>, ()=>void]_
+> __array__
+> - __Array__:  
+>     - _ReducerState<R>_  
+>     - _Dispatch<ReducerAction<R>>_  
+>     - _()=>ReducerState<R>_  
+>     - _()=>void_  
 >

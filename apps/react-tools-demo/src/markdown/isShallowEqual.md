@@ -15,5 +15,6 @@ isShallowEqual (objA: unknown, objB: unknown)
 
 > ### Returns
 >
-> - __result__: _boolean_
+> __result__
+> - _boolean_  
 >

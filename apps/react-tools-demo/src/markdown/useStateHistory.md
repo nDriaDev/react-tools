@@ -6,7 +6,7 @@ Custom useState that tracks and allows to use previous values.
 ```tsx
 function UseStateHistory() {
 
-	const [count, setCount, { go, presentPointer, history, trackUpdate, canRedo, canUndo, redo, undo, clear }] = useReducerHistory((prev:number, curr:number):number => curr, 0, undefined, 10);
+	const [count, setCount, {go, presentPointer, history, trackUpdate, canRedo, canUndo, redo, undo, clear}] = useStateHistory(0, 10);
 
 	return (<>
 		<p>
@@ -19,10 +19,13 @@ function UseStateHistory() {
 			History is {JSON.stringify(history)}
 		</p>
 		<div style={{ gridTemplateColumns: 'auto auto auto', justifyContent: 'center', display: 'grid', gap: '5px' }}>
-			<button onClick={() => setCount((count + 1))}>
+			<button onClick={() => setCount((count) => (count + 1))}>
 				increment
 			</button>
-			<button onClick={() => setCount(count + 1)}>
+			<button onClick={() => setCount((count) => {
+				trackUpdate(false);
+				return count + 1;
+			})}>
 				disableHistory and increment
 			</button>
 			<button onClick={() => trackUpdate(false)}>
@@ -76,5 +79,18 @@ history capacity (default 'no-limit').
 
 > ### Returns
 >
-> - __array__: _[T, Dispatch<SetStateAction<T>>, history: {history: readonly T[], presentPointer: number, trackUpdate: (enable:boolean) => void, canUndo: boolean, canRedo: boolean, undo: () => void, redo: () => void, go: (index: number) => void, clear: (value?: T) => void}]_
+> __array__
+> - __Array__:  
+>     - _T_  
+>     - _Dispatch<SetStateAction<T>>_  
+>     - __Object__:  
+>         - ___history__ : _readonly T[]_  
+>         - ___presentPointer__ : _number_  
+>         - ___trackUpdate__ : _(enable:boolean) => void_  
+>         - ___canUndo__ : _boolean_  
+>         - ___canRedo__ : _boolean_  
+>         - ___undo__ : _() => void_  
+>         - ___redo__ : _() => void_  
+>         - ___go__ : _(index: number) => void_  
+>         - ___clear__ : _(value?: T) => void_  
 >

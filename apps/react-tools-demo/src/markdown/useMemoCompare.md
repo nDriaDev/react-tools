@@ -63,6 +63,6 @@ optional function that executes comparing between old and new `deps`: it returns
 
 > ### Returns
 >
-> - __result__: _T_  
-memoized value
+> __result__: memoized value
+> - _T_  
 >

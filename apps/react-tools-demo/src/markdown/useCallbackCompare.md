@@ -60,6 +60,6 @@ optional function that executes comparing between old and new `deps`: it returns
 
 > ### Returns
 >
-> - __cb__: _T_  
-memoized callback
+> __cb__: memoized callback
+> - _T_  
 >

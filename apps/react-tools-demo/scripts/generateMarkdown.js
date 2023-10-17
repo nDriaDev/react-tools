@@ -30,9 +30,80 @@ function getIndexClosedBracketTypeParam(line) {
 	return end;
 }
 
-function getTypeParam(line) {
+/**
+*
+* @param {string} string
+* @returns {string[]}
+*/
+function splitType(string){
+	string = string.split(',');
+	let newCode = [];
+	let last = "";
+	for (let part of string){
+		if (last.split("(").length == last.split(")").length && last.split("[").length == last.split("]").length && last.split("{").length == last.split("}").length){
+			last = part;
+			newCode.push(part);
+		}
+		else{
+			last += "," + part;
+			newCode[newCode.length - 1] = last;
+		}
+	}
+	return newCode;
+}
+
+/**
+ * @param {string} string
+ */
+function parseType(string, tab=0) {
+	const typeArray= [];
+	let currTab = tab;
+	if(string.startsWith("[")) {
+		typeArray.push(Array(currTab*4).fill(true).map(() => " ").join("")+ "- __Array__:  ");
+		currTab++;
+		string = string.substring(1, string.length-1);
+		const stringSplitted = splitType(string).map(el => el.trim());
+		for(let val of stringSplitted) {
+			if(val.startsWith("[") || val.startsWith("{")) {
+				typeArray.push(...parseType(val, currTab));
+			}
+			else {
+				typeArray.push(Array(currTab*4).fill(true).map(() => " ").join("")+ `- _${val}_  `)
+			}
+		}
+	} else if(string.startsWith("{")) {
+		typeArray.push(Array(currTab*4).fill(true).map(() => " ").join("")+ "- __Object__:  ");
+		currTab++;
+		string = string.substring(1, string.length-1);
+		const stringSplitted = splitType(string).map(el => el.trim());
+		for(let val of stringSplitted) {
+			const semicolonIndex = val.indexOf(":");
+			const [key, value] = [val.substring(0, semicolonIndex).trim(), val.substring(semicolonIndex+1, val.length).trim()];
+			if(value.startsWith("[") || value.startsWith("{")) {
+				typeArray.push(...parseType(val, currTab));
+			} else {
+				typeArray.push(Array(currTab*4).fill(true).map(() => " ").join("")+`- ___${key}__ : _${value}_  `);
+			}
+		}
+	} else {
+		const stringSplitted = splitType(string).map(el => el.trim());
+		for(let val of stringSplitted) {
+			if(val.startsWith("[") || val.startsWith("{")) {
+				typeArray.push(...parseType(val, currTab));
+			} else {
+				typeArray.push(Array(currTab*4).fill(true).map(() => " ").join("")+`- _${val}_  `);
+			}
+		}
+	}
+	return typeArray;
+}
+
+function getTypeString(line, isReturn) {
 	const end = getIndexClosedBracketTypeParam(line);
-	return line.substring(1,end);
+	let type = line.substring(1,end);
+	return isReturn
+	? parseType(type)
+	: type;
 }
 
 function getNameDescriptionParam(line) {
@@ -95,7 +166,7 @@ function getJsDoc(fileSplitted) {
 
 /**
  *
- * @param {{title: string, description: string, usage?: string, params: [{name: string, description: string, type: string}], returns: string, type: string}} jsDoc
+ * @param {{title: string, description: string, usage?: string, params: [{name: string, description: string, type: string}], returns: {name: string, description: string, type: string[]}, type: string}} jsDoc
  */
 function jsDoc2Markdown(jsDoc) {
 	const markdown =
@@ -115,7 +186,8 @@ ${jsDoc.params.map(el => `> - __${el.name}__: _${el.type}_${el.description ? '  
 
 > ### Returns
 >
-> - ${jsDoc.returns.name ? `__${jsDoc.returns.name}__: ` : ""}_${jsDoc.returns.type}_${jsDoc.returns.description ? '  \n'+jsDoc.returns.description : ""}
+> ${jsDoc.returns.name ? `__${jsDoc.returns.name}__` : ""}${jsDoc.returns.description ? ': '+jsDoc.returns.description : ""}
+${jsDoc.returns.type.map(el => `> `+el).join("\n")}
 >`;
 
 	return markdown;
@@ -124,7 +196,7 @@ ${jsDoc.params.map(el => `> - __${el.name}__: _${el.type}_${el.description ? '  
 /**
  *
  * @param {string} file
- * @returns {{title: string, description: string, params: [{name: string, description: string, type: string}], returns: string, type: string}}
+ * @returns {{title: string, description: string, params: [{name: string, description: string, type: string}], returns: {name: string, description: string, type: string}, type: string}}
  */
 function buildHooksUtilsMarkdownObject(file) {
 	const fileSplitted = file.split("\n");
@@ -148,7 +220,7 @@ function buildHooksUtilsMarkdownObject(file) {
 		if(depuratedLine.startsWith("@param")) {
 			const typeNameDescriptionParam = depuratedLine.split("@param ")[1];
 			const param = {
-				type: getTypeParam(typeNameDescriptionParam),
+				type: getTypeString(typeNameDescriptionParam, false),
 				...getNameDescriptionParam(typeNameDescriptionParam)
 			};
 			obj.params.push(param);
@@ -156,7 +228,7 @@ function buildHooksUtilsMarkdownObject(file) {
 		if(depuratedLine.startsWith("@returns")) {
 			const returnSplitted = depuratedLine.split("@returns ")[1];
 			const returns = {
-				type: getTypeParam(returnSplitted),
+				type: getTypeString(returnSplitted, true),
 				...getNameDescriptionParam(returnSplitted)
 			};
 			obj.returns = returns;

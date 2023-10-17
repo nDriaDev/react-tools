@@ -58,6 +58,6 @@ DependencyList.
 
 > ### Returns
 >
-> - __result__: _T_  
-memoized value
+> __result__: memoized value
+> - _T_  
 >

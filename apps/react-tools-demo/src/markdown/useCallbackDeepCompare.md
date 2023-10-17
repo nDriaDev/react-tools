@@ -60,6 +60,6 @@ DependencyList.
 
 > ### Returns
 >
-> - __cb__: _T_  
-memoized callback
+> __cb__: memoized callback
+> - _T_  
 >

@@ -1,6 +1,6 @@
 # TODO
 - __STATE__
-	- [x] usePrevious (check if it's implementable with useDefferedValue)
+	- [x] usePrevious
 	- [x] useStateGetReset
 	- [x] useStateHistory
 	- [x] useStateHistoryGetter
@@ -26,7 +26,7 @@
 	- [ ] useUpdate (force a rerender)
 	- [ ] usePerformAction (thinking about name. This hook force to perform an action (like focusing an element) immediatly after a rerender)
 - __EVENTS__
-	- [ ] useDebounce (check if it's implementable wirh useDefferedValue)
+	- [ ] useDebounce
 	- [ ] useThrottle
 	- [ ] useEventListener
 	- [ ] useActiveElement

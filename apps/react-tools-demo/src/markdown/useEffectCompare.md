@@ -71,5 +71,6 @@ optional function that executes comparing between old and new `deps`: it returns
 
 > ### Returns
 >
-> - _void_
+> 
+> - _void_  
 >
