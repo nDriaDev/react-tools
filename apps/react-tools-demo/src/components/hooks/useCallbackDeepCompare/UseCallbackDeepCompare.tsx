@@ -7,9 +7,10 @@ The component has:
 - a _message useState variable_ that's a string rendered in a tag p.
 - a _useCallback_ function that update _message variable_ with _state variable_ values.
 - a _useCallbackDeepCompare_ function that update _message variable_ with _state variable_ values.
-- a button with a function attached to onClick event that increment _state id property_
+- a button with a function attached to onClick event that increment _state id property_.
 - a button with a _useCallback_ function attached to onClick event.
 - a button with a _useCallbackDeepCompare_ function attached to onClick event.
+
 _useCallbackDeepCompare_ updates its state value and sets correct message since it compares changes in depth.
  */
 const UseCallbackDeepCompare = () => {

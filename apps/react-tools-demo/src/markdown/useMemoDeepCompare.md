@@ -39,6 +39,7 @@ export { UseMemoDeepCompare };
 > - a useMemo that returns that value of _state object_ and updates _renders memo property_.
 > - a useMemoDeepCompare that returns that value of _state object_ and updates _renders deepMemo property_.
 > - a button with a function attached to onClick event that assigns to _state variable_ the same value.
+> 
 > Since _useMemoDeepCompare_ checks for differences in depth, it is executed only once and it don't update renders deepMemo property. You can see this in dev tool console also.
 
 

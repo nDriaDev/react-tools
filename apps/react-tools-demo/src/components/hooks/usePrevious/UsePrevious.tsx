@@ -8,6 +8,7 @@ The component has:
 - button _increment_ that executes function to update _counter value_. It executes _toggleTracking_ respectivelly to _disable/renable_ tracking when value to update is _6/12_. When value to update is _15_ it executes _toggleTracking_ to disable tracking with _15_ as last value.
 - button _no track_ that executes _toggleTracking_ to stop tracking.
 - button _track_ that executes _toggleTracking_ to restart tracking.
+
 When increment button set _6_ as value, previous value stop tracking with _5_ as last value because no value was passed to _toggleTracking_. Same thing happens when increment set _12_ as value, the tracking restart from _12_. When increment set _15_ as value, last value tracked is _15_because it was passed to _toggleTracking_ as value to disable tracking.
  */
 function UsePrevious() {

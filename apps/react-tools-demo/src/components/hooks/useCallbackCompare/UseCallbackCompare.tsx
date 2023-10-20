@@ -4,9 +4,10 @@ import { useCallbackCompare } from '../../../../../../packages/react-tools/src/h
 /**
 The component has:
 - a _state useState variable_ with _id_ and _name_ properties.
-- a useMemo that return that value of _state variable_
-- a useMemoCompare that return that value of _state variable_ and a function compare that compares _state name property_
-- a button with a function attached to onClick event that increment _state id property_
+- a useMemo that return that value of _state variable_.
+- a useMemoCompare that return that value of _state variable_ and a function compare that compares _state name property_.
+- a button with a function attached to onClick event that increment _state id property_.
+
 Since compare function compares only _name property_, useMemoCompare is executed only once and its state value isn't updated. You can see this in dev tool console also.
 */
 const UseCallbackCompare = () => {

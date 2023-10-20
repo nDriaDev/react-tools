@@ -32,13 +32,13 @@ history capacity (default 'no-limit').
 >     - _ReducerState<R>_  
 >     - _Dispatch<ReducerAction<R>>_  
 >     - __Object__:  
->         - ___history__ : _readonly ReducerState<R>[]_  
->         - ___presentPointer__ : _number_  
->         - ___trackUpdate__ : _(enable:boolean) => void_  
->         - ___canUndo__ : _boolean_  
->         - ___canRedo__ : _boolean_  
->         - ___undo__ : _() => void_  
->         - ___redo__ : _() => void_  
->         - ___go__ : _(index: number) => void_  
->         - ___clear__ : _(value?: ReducerAction<R>) => void_  
+>         - __history__ : _readonly ReducerState<R>[]_  
+>         - __presentPointer__ : _number_  
+>         - __trackUpdate__ : _(enable:boolean) => void_  
+>         - __canUndo__ : _boolean_  
+>         - __canRedo__ : _boolean_  
+>         - __undo__ : _() => void_  
+>         - __redo__ : _() => void_  
+>         - __go__ : _(index: number) => void_  
+>         - __clear__ : _(value?: ReducerAction<R>) => void_  
 >

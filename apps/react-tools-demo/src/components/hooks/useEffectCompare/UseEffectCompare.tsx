@@ -8,6 +8,7 @@ The component has:
 - a _useEffect_ that update _messages effect property_ when _state_ change.
 - a _useEffectCompare_ that update _messages effect property_. CompareFn returns true when _state name property_ change.
 - a button with a function attached to onClick event that increment _state id property_.
+
 Since compareFn compares only _name property_, useEffectCompare is reexecuted only once and its state value isn't updated. You can see this in dev tool console also.
  */
 const UseEffectCompare = () => {

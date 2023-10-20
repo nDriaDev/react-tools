@@ -5,6 +5,6 @@ import { SyntheticEvent } from "react";
  * @param {SyntheticEvent} event
  * @returns {boolean} result
  */
-export const isMouseEvent = (event: SyntheticEvent) => {
+export const isMouseEvent = (event: SyntheticEvent): boolean => {
 	return event.nativeEvent instanceof MouseEvent;
 }

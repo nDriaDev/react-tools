@@ -1,4 +1,4 @@
-# useReducerHistory
+# useReducerHistoryGetter
 Custom useReducer with getter state function and that tracks and allows to use previous values.
 
 ## Usage
@@ -10,7 +10,7 @@ Please visit [useReducerHistory](/useReducerHistory) and [useReducerGetReset](/u
 ## API
 
 ```tsx
-useReducerHistoryuseReducerHistoryGetter = <R extends Reducer<any, any>>(reducer: R, initialState: ReducerState<R>, initializer?: (init: ReducerState<R>) => ReducerState<R>, capacity: number | "no-limit" = "no-limit"): [ReducerState<R>, Dispatch<ReducerAction<R>>,()=>ReducerState<R>, { history: readonly ReducerState<R>[], presentPointer: number, trackUpdate: (enable: boolean) => void, canUndo: boolean, canRedo: boolean, undo: () => void, redo: () => void, go: (index: number) => void, clear: (value?: ReducerAction<R>) => void }] 
+useReducerHistoryGetter <R extends Reducer<any, any>>(reducer: R, initialState: ReducerState<R>, initializer?: (init: ReducerState<R>) => ReducerState<R>, capacity: number | "no-limit" = "no-limit"): [ReducerState<R>, Dispatch<ReducerAction<R>>,()=>ReducerState<R>, { history: readonly ReducerState<R>[], presentPointer: number, trackUpdate: (enable: boolean) => void, canUndo: boolean, canRedo: boolean, undo: () => void, redo: () => void, go: (index: number) => void, clear: (value?: ReducerAction<R>) => void }] 
 ```
 
 > ### Params
@@ -33,13 +33,13 @@ history capacity (default 'no-limit').
 >     - _Dispatch<ReducerAction<R>>_  
 >     - _()=>ReducerState<R>_  
 >     - __Object__:  
->         - ___history__ : _readonly ReducerState<R>[]_  
->         - ___presentPointer__ : _number_  
->         - ___trackUpdate__ : _(enable:boolean) => void_  
->         - ___canUndo__ : _boolean_  
->         - ___canRedo__ : _boolean_  
->         - ___undo__ : _() => void_  
->         - ___redo__ : _() => void_  
->         - ___go__ : _(index: number) => void_  
->         - ___clear__ : _(value?: ReducerAction<R>) => void_  
+>         - __history__ : _readonly ReducerState<R>[]_  
+>         - __presentPointer__ : _number_  
+>         - __trackUpdate__ : _(enable:boolean) => void_  
+>         - __canUndo__ : _boolean_  
+>         - __canRedo__ : _boolean_  
+>         - __undo__ : _() => void_  
+>         - __redo__ : _() => void_  
+>         - __go__ : _(index: number) => void_  
+>         - __clear__ : _(value?: ReducerAction<R>) => void_  
 >

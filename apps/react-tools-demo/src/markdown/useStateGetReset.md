@@ -58,6 +58,7 @@ export { UseStateGetReset };
 > - A _onChangeGetter_ function made with useCallback to handle stateGetter input onChange, reading other values with getter function.
 > - A _onChange_ function made with useCallback to handle stater input onChange, reading other values by state variable.
 > - A button that executes the _resetter_ function on _stateG_.
+> 
 > The two functions onChange and onChange Getter update their respective _state_ every time they are executed. Since the _onChange_ function depends on the state, every time this changes it will be reevaluated and this will also trigger the rerender of the input components that have not undergone a change to their _value_ variable. The _onChangeGetter_ doesn't have this behavior: since the _getter_ function isn't reevaluated even if the _stateG_ changes, so the _onChangeGetter_ is never reevaluated and only the input component that has a change in the _value_ variable is rerendered.
 
 

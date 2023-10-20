@@ -4,7 +4,7 @@
  * @param {unknown} objB
  * @returns {boolean} result
  */
-export const isShallowEqual = (objA: unknown, objB: unknown) => {
+export const isShallowEqual = (objA: unknown, objB: unknown): boolean => {
 	if (Object.is(objA, objB)) {
 		return true;
 	}

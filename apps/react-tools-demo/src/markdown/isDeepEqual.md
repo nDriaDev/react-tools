@@ -4,7 +4,7 @@ It returns true if the params are equal in depth.
 ## API
 
 ```tsx
-isDeepEqual (objA: unknown, objB: unknown, map = new WeakMap()) 
+isDeepEqual (objA: unknown, objB: unknown, map = new WeakMap()):boolean 
 ```
 
 > ### Params

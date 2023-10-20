@@ -17,12 +17,14 @@ export {
 	useEffectCompare,
 	useEffectDeepCompare,
 	useLayoutEffectCompare,
-	useLayoutEffectDeepCompare
+	useLayoutEffectDeepCompare,
+	usePubSubModel
 } from './hooks'
 
 export {
 	isShallowEqual,
 	isDeepEqual,
 	isMouseEvent,
-	isTouchEvent
+	isTouchEvent,
+	isClient
 } from './utils'

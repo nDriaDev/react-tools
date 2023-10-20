@@ -5,7 +5,7 @@
  * @param {WeakMap} [map=new WeakMap()]
  * @returns {boolean} result
  */
-export const isDeepEqual = (objA: unknown, objB: unknown, map = new WeakMap()) => {
+export const isDeepEqual = (objA: unknown, objB: unknown, map = new WeakMap()):boolean => {
 	if (Object.is(objA, objB)) {
 		return true;
 	}

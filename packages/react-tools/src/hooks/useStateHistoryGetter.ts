@@ -1,5 +1,5 @@
-import { Dispatch, SetStateAction, useCallback, useEffect, useRef } from "react";
-import { useStateHistory } from "."
+import { Dispatch, SetStateAction } from "react";
+import { useMemoizedFunction, useStateHistory } from "."
 
 /**
  * **`useStateHistoryGetter`**: custom useState with getter state function and that tracks and allows to use previous values.
@@ -9,11 +9,7 @@ import { useStateHistory } from "."
  */
 export const useStateHistoryGetter = <T>(initialState: T | (() => T), capacity: number | "no-limit" = "no-limit"): [T, Dispatch<SetStateAction<T>>, () => T, ReturnType<typeof useStateHistory<T>>[2]] => {
 	const [state, setter, history] = useStateHistory(initialState, capacity);
-	const getterRef = useRef<() => T>(() => state);
-	const getter = useCallback(() => getterRef.current(), []);
-	useEffect(() => {
-		getterRef.current = () => state
-	})
+	const getter = useMemoizedFunction<() => T>(() => state);
 
 	return [
 		state,

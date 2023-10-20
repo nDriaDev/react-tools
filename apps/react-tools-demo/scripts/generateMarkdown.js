@@ -82,7 +82,7 @@ function parseType(string, tab=0) {
 			if(value.startsWith("[") || value.startsWith("{")) {
 				typeArray.push(...parseType(val, currTab));
 			} else {
-				typeArray.push(Array(currTab*4).fill(true).map(() => " ").join("")+`- ___${key}__ : _${value}_  `);
+				typeArray.push(Array(currTab*4).fill(true).map(() => " ").join("")+`- __${key}__ : _${value}_  `);
 			}
 		}
 	} else {
@@ -181,13 +181,16 @@ ${jsDoc.type}
 
 > ### Params
 >
-${jsDoc.params.map(el => `> - __${el.name}__: _${el.type}_${el.description ? '  \n'+el.description : ""}`).join("\n")}
+${jsDoc.params && jsDoc.params.length > 0
+	? jsDoc.params.map(el => `> - __${el.name}__: _${el.type}_${el.description ? '  \n'+el.description : ""}`).join("\n")
+	: ">"
+}
 >
 
 > ### Returns
 >
 > ${jsDoc.returns.name ? `__${jsDoc.returns.name}__` : ""}${jsDoc.returns.description ? ': '+jsDoc.returns.description : ""}
-${jsDoc.returns.type.map(el => `> `+el).join("\n")}
+${Array.isArray(jsDoc.returns.type) ? jsDoc.returns.type.map(el => `> `+el).join("\n") : "> "+jsDoc.returns.type}
 >`;
 
 	return markdown;
@@ -311,8 +314,9 @@ ${lines.length > 0 ? lines.map(line => "> "+line).join("\n") : ""}
 
 async function generateUtilsMarkDown() {
 	const utilsFiles = await fs.readdir(path.join(pathUtilsDir));
+	const indexFile = await fs.readFile(path.join(pathUtilsDir, "index.ts"), {encoding: "utf8"});
 	for(let file of utilsFiles) {
-		if(file !== "index.ts") {
+		if(file !== "index.ts" && indexFile.includes(file.split(".ts")[0])) {
 			let readedFile = await fs.readFile(path.join(pathUtilsDir, file), {encoding: "utf8"});
 			readedFile = removeImportLine(readedFile);
 			const jsDoc = buildHooksUtilsMarkdownObject(readedFile);

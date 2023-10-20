@@ -15,6 +15,7 @@
 - __EFFECTS__
 	- [x] useCallbackCompare
 	- [x] useCallbackDeepCompare
+	- [-] useMemoizedFunction (missing example)
 	- [x] useMemoCompare
 	- [x] useMemoDeepCompare
 	- [x] useEffectCompare
@@ -50,7 +51,8 @@
 	- [ ] useFullscreen (check browser compatibility)
 	- [ ] useInViewport (with area ratio of element: check if is equal to useIntersectionObserver)
 	- [ ] useLongPress
-	- [ ] useEventEmitter
+	- [ ] useEventDispatcher
+	- [x] usePubSubModel
 
 - __DOM API__
 	- [ ] useCoptyToClipboard

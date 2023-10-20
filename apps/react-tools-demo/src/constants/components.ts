@@ -7,6 +7,7 @@ export const COMPONENTS = [
 		"useReducerGetReset",
 		"useReducerHistory",
 		"useReducerHistoryGetter",
+		"useMemoizedFunction",
 		"useMemoCompare",
 		"useMemoDeepCompare",
 		"useCallbackCompare",
@@ -14,12 +15,14 @@ export const COMPONENTS = [
 		"useEffectCompare",
 		"useEffectDeepCompare",
 		"useLayoutEffectCompare",
-		"useLayoutEffectDeepCompare"
+		"useLayoutEffectDeepCompare",
+		"usePubSubModel"
 	],
 	[
 		"isShallowEqual",
 		"isDeepEqual",
 		"isTouchEvent",
-		"isMouseEvent"
+		"isMouseEvent",
+		"isClient"
 	]
 ]

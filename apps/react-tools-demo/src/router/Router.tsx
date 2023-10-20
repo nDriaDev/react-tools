@@ -12,6 +12,7 @@ import useReducerHistoryMD from '../markdown/useReducerHistory.md?url';
 import useReducerHistoryGetterMD from '../markdown/useReducerHistoryGetter.md?url';
 import useCallbackCompareMD from '../markdown/useCallbackCompare.md?url';
 import useCallbackDeepCompareMD from '../markdown/useCallbackDeepCompare.md?url';
+import useMemoizedFunctionMD from '../markdown/useMemoizedFunction.md?url';
 import useMemoCompareMD from '../markdown/useMemoCompare.md?url';
 import useMemoDeepCompareMD from '../markdown/useMemoDeepCompare.md?url';
 import useEffectCompareMD from '../markdown/useEffectCompare.md?url';
@@ -22,6 +23,8 @@ import isShallowEqualMD from '../markdown/isShallowEqual.md?url';
 import isDeepEqualMD from '../markdown/isDeepEqual.md?url';
 import isMouseEventMD from '../markdown/isMouseEvent.md?url';
 import isTouchEventMD from '../markdown/isTouchEvent.md?url';
+import isClientMD from '../markdown/isClient.md?url';
+import usePubSubModelMD from '../markdown/usePubSubModel.md?url';
 import { UsePrevious } from '../components/hooks/usePrevious/UsePrevious';
 import { UseStateHistory } from '../components/hooks/useStateHistory/UseStateHistory';
 import { UseCallbackCompare } from '../components/hooks/useCallbackCompare/UseCallbackCompare';
@@ -31,6 +34,8 @@ import { UseMemoDeepCompare } from '../components/hooks/useMemoDeepCompare/UseMe
 import { UseEffectCompare } from '../components/hooks/useEffectCompare/UseEffectCompare';
 import { UseEffectDeepCompare } from '../components/hooks/useEffectDeepCompare/UseEffectDeepCompare';
 import { UseStateGetReset } from '../components/hooks/useStateGetReset/UseStateGetReset';
+import { UsePubSubModel } from '../components/hooks/usePubSubModel/UsePubSubModel';
+import { UseMemoizedFunction } from '../components/hooks/useMemoizedFunction/UseMemoizedFunction';
 
 function Router() {
     const router = createBrowserRouter([
@@ -88,6 +93,13 @@ function Router() {
 					/>
 				},
 				{
+					path: "/useMemoizedFunction",
+					element: <ComponentLayout
+						component={<UseMemoizedFunction />}
+						markdown={useMemoizedFunctionMD}
+					/>
+				},
+				{
 					path: "/useCallbackCompare",
 					element: <ComponentLayout
 						component={<UseCallbackCompare />}
@@ -142,6 +154,13 @@ function Router() {
 					/>
 				},
 				{
+					path: "/usePubSubModel",
+					element: <ComponentLayout
+						component={<UsePubSubModel />}
+						markdown={usePubSubModelMD}
+					/>
+				},
+				{
 					path: "/isShallowEqual",
 					element: <MarkdownLayout
 						source={isShallowEqualMD}
@@ -163,6 +182,12 @@ function Router() {
 					path: "/isTouchEvent",
 					element: <MarkdownLayout
 						source={isTouchEventMD}
+					/>
+				},
+				{
+					path: "/isClient",
+					element: <MarkdownLayout
+						source={isClientMD}
 					/>
 				},
             ]

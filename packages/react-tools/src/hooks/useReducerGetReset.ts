@@ -1,4 +1,5 @@
-import { Dispatch, Reducer, ReducerAction, ReducerState, useCallback, useEffect, useReducer, useRef } from "react";
+import { Dispatch, Reducer, ReducerAction, ReducerState, useCallback, useReducer, useRef } from "react";
+import { useMemoizedFunction } from "./useMemoizedFunction";
 
 /**
  * **`useReducerGetReset`**: Custom useReducer with get and reset state functions.
@@ -9,21 +10,14 @@ import { Dispatch, Reducer, ReducerAction, ReducerState, useCallback, useEffect,
  */
 export const useReducerGetReset = <R extends Reducer<any, any>>(reducer: R, initialState: ReducerState<R>, initializer?: (init: ReducerState<R>) => ReducerState<R>): [ReducerState<R>, Dispatch<ReducerAction<R>>, ()=>ReducerState<R>, ()=>void] => {
 	const [state, setState] = useReducer(reducer, initialState, initializer!);
+	const getter = useMemoizedFunction<() => ReducerState<R>>(() => state);
 	const initialStateRef = useRef<ReducerState<R>|undefined>(undefined);
-
-	const getterRef = useRef<() => ReducerState<R>>(() => state);
-
-	const getter = useCallback(() => getterRef.current(), []);
 
 	const resetter = useCallback(() => setState(initialStateRef.current!), []);
 
 	if (initialStateRef.current === undefined) {
 		initialStateRef.current = state;
 	}
-
-	useEffect(() => {
-		getterRef.current = () => state;
-	});
 
 	return [
 		state,

@@ -8,6 +8,7 @@ The component has:
 - a useEffect that updates _renders memo property_ when _state variable_ change.
 - a useMemoDeepCompare that updates _renders deepMemo property_ when _state variable_ change.
 - a button with a function attached to onClick event that assigns to _state variable_ the same value.
+
 Since useEffectDeepCompare checks for differences in depth, it is executed only once and it don't update renders deepMemo property. You can see this in dev tool console also.
  */
 const UseEffectDeepCompare = () => {

@@ -1,4 +1,5 @@
-import { Dispatch, SetStateAction, useCallback, useEffect, useRef, useState } from "react"
+import { Dispatch, SetStateAction, useCallback, useState } from "react"
+import { useMemoizedFunction } from ".";
 
 /**
  * **`useStateGetReset`**: Custom useState with get and reset state functions.
@@ -7,15 +8,9 @@ import { Dispatch, SetStateAction, useCallback, useEffect, useRef, useState } fr
  */
 export const useStateGetReset = <T>(initialState: T | (() => T)): [T, Dispatch<SetStateAction<T>>, () => T, () => void] => {
 	const [state, setState] = useState<T>(initialState);
-	const getterRef = useRef<() => T>(() => state);
-
-	const getter = useCallback(() => getterRef.current(), []);
+	const getter = useMemoizedFunction<()=>T>(() => state);
 
 	const resetter = useCallback(() => setState(initialState), [initialState]);
-
-	useEffect(() => {
-		getterRef.current = () => state
-	});
 
 	return [
 		state,
