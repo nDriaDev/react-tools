@@ -19,6 +19,7 @@ import useEffectCompareMD from '../markdown/useEffectCompare.md?url';
 import useEffectDeepCompareMD from '../markdown/useEffectDeepCompare.md?url';
 import useLayoutEffectCompareMD from '../markdown/useLayoutEffectCompare.md?url';
 import useLayoutEffectDeepCompareMD from '../markdown/useLayoutEffectDeepCompare.md?url';
+import useEventListenerMD from '../markdown/useEventListener.md?url';
 import isShallowEqualMD from '../markdown/isShallowEqual.md?url';
 import isDeepEqualMD from '../markdown/isDeepEqual.md?url';
 import isMouseEventMD from '../markdown/isMouseEvent.md?url';
@@ -36,6 +37,8 @@ import { UseEffectDeepCompare } from '../components/hooks/useEffectDeepCompare/U
 import { UseStateGetReset } from '../components/hooks/useStateGetReset/UseStateGetReset';
 import { UsePubSubModel } from '../components/hooks/usePubSubModel/UsePubSubModel';
 import { UseMemoizedFunction } from '../components/hooks/useMemoizedFunction/UseMemoizedFunction';
+import { UseLocalStorage } from '../components/hooks/useLocalStorage/UseLocalStorage';
+import { UseEventListener } from '../components/hooks/useEventListener/UseEventListener';
 
 function Router() {
     const router = createBrowserRouter([
@@ -91,6 +94,10 @@ function Router() {
 					element: <MarkdownLayout
 						source={useReducerHistoryGetterMD}
 					/>
+				},
+				{
+					path: "/useLocalStorage",
+					element: <UseLocalStorage/>
 				},
 				{
 					path: "/useMemoizedFunction",
@@ -158,6 +165,13 @@ function Router() {
 					element: <ComponentLayout
 						component={<UsePubSubModel />}
 						markdown={usePubSubModelMD}
+					/>
+				},
+				{
+					path: "/useEventListener",
+					element: <ComponentLayout
+						component={<UseEventListener />}
+						markdown={useEventListenerMD}
 					/>
 				},
 				{

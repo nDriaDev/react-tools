@@ -7,7 +7,7 @@
 	- [x] useReducerGetReset
 	- [x] useReducerHistory
 	- [x] useReducerHistoryGetter
-	- [ ] useLocalStorage
+	- [-] useLocalStorage
 	- [ ] useSessionStorage
 	- [ ] useMap
 	- [ ] useSet
@@ -15,7 +15,7 @@
 - __EFFECTS__
 	- [x] useCallbackCompare
 	- [x] useCallbackDeepCompare
-	- [-] useMemoizedFunction (missing example)
+	- [x] useMemoizedFunction
 	- [x] useMemoCompare
 	- [x] useMemoDeepCompare
 	- [x] useEffectCompare
@@ -29,7 +29,7 @@
 - __EVENTS__
 	- [ ] useDebounce
 	- [ ] useThrottle
-	- [ ] useEventListener
+	- [x] useEventListener
 	- [ ] useActiveElement
 	- [ ] useSize
 	- [ ] useHover

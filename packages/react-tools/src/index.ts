@@ -18,7 +18,8 @@ export {
 	useEffectDeepCompare,
 	useLayoutEffectCompare,
 	useLayoutEffectDeepCompare,
-	usePubSubModel
+	usePubSubModel,
+	useEventListener
 } from './hooks'
 
 export {

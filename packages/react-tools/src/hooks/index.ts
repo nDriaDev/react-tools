@@ -14,3 +14,4 @@ export { useEffectDeepCompare } from "./useEffectDeepCompare";
 export { useLayoutEffectCompare } from "./useLayoutEffectCompare";
 export { useLayoutEffectDeepCompare } from "./useLayoutEffectDeepCompare";
 export { usePubSubModel } from './usePubSubModel';
+export { useEventListener } from './useEventListener';

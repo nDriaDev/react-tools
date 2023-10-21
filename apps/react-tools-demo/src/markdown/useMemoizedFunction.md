@@ -1,5 +1,5 @@
 # useMemoizedFunction
-Hook to store a function that will never change while keeping its dependencies always up to date. Can be used instead of _useCallback_.
+Hook to store a function that will never change while keeping its dependencies always up to date. Can be used instead of _useCallback_, without esplicity dependencies array.
 
 ## Usage
 
@@ -45,7 +45,7 @@ export {UseMemoizedFunction}
 ## API
 
 ```tsx
-useMemoizedFunction <T extends Function>(fn: T) 
+useMemoizedFunction <T extends (...args: any[]) => any>(fn: T) 
 ```
 
 > ### Params
