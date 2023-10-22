@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef } from "react";
+import { useCallback, useLayoutEffect, useRef } from "react";
 
 /**
  * **`useMemoizedFunction`**: Hook to store a function that will never change while keeping its dependencies always up to date. Can be used instead of _useCallback_, without esplicity dependencies array.
@@ -10,7 +10,7 @@ export const useMemoizedFunction = <T extends (...args: any[]) => any>(fn: T) =>
 
 	const memoizedFn = useCallback((...args: Parameters<T>):ReturnType<T> => fnRef.current(...args), []);
 
-	useEffect(() => {
+	useLayoutEffect(() => {
 		fnRef.current = fn
 	});
 

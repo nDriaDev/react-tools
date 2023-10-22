@@ -51,7 +51,7 @@
 	- [ ] useFullscreen (check browser compatibility)
 	- [ ] useInViewport (with area ratio of element: check if is equal to useIntersectionObserver)
 	- [ ] useLongPress
-	- [ ] useEventDispatcher
+	- [x] useEventDispatcher
 	- [x] usePubSubModel
 
 - __DOM API__

@@ -26,6 +26,7 @@ import isMouseEventMD from '../markdown/isMouseEvent.md?url';
 import isTouchEventMD from '../markdown/isTouchEvent.md?url';
 import isClientMD from '../markdown/isClient.md?url';
 import usePubSubModelMD from '../markdown/usePubSubModel.md?url';
+import useEventDispatcherMD from '../markdown/useEventDispatcher.md?url';
 import { UsePrevious } from '../components/hooks/usePrevious/UsePrevious';
 import { UseStateHistory } from '../components/hooks/useStateHistory/UseStateHistory';
 import { UseCallbackCompare } from '../components/hooks/useCallbackCompare/UseCallbackCompare';
@@ -39,6 +40,7 @@ import { UsePubSubModel } from '../components/hooks/usePubSubModel/UsePubSubMode
 import { UseMemoizedFunction } from '../components/hooks/useMemoizedFunction/UseMemoizedFunction';
 import { UseLocalStorage } from '../components/hooks/useLocalStorage/UseLocalStorage';
 import { UseEventListener } from '../components/hooks/useEventListener/UseEventListener';
+import { UseEventDispatcher } from '../components/hooks/useEventDispatcher/UseEventDispatcher';
 
 function Router() {
     const router = createBrowserRouter([
@@ -165,6 +167,13 @@ function Router() {
 					element: <ComponentLayout
 						component={<UsePubSubModel />}
 						markdown={usePubSubModelMD}
+					/>
+				},
+				{
+					path: "/useEventDispatcher",
+					element: <ComponentLayout
+						component={<UseEventDispatcher />}
+						markdown={useEventDispatcherMD}
 					/>
 				},
 				{

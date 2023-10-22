@@ -18,6 +18,7 @@ export const COMPONENTS = [
 		"useLayoutEffectCompare",
 		"useLayoutEffectDeepCompare",
 		"usePubSubModel",
+		"useEventDispatcher",
 		"useEventListener"
 	],
 	[
