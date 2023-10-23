@@ -10,6 +10,7 @@ export {
 	useStateHistoryGetter,
 	useReducerGetReset,
 	useReducerHistory,
+	useLocalStorage,
 	useMemoCompare,
 	useMemoDeepCompare,
 	useCallbackCompare,

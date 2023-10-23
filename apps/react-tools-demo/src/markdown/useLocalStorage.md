@@ -5,20 +5,16 @@
 
 ```tsx
 const UseLocalStorage = () => {
+	const [state, setState, , remove] = useLocalStorage({ key: "key" });
 	const func = useCallback(() => {
-		window.localStorage.setItem(Math.random() > 0.5 ? "demo" : "prv", "2");
-		window.dispatchEvent(new Event("storage"));
-	}, []);
+		setState(Math.random() > 0.5);
+	}, [setState]);
 
-	const clear = useCallback(() => window.localStorage.clear(), []);
+	const clear = useCallback(() => remove(), [remove]);
 
-	useEffect(() => {
-		const listener = (evt: Event) => console.log(evt);
-		window.addEventListener("storage", listener);
 
-		return () => window.removeEventListener("storage", listener);
-	},[])
 	return (<>
+		{state}
 		<button onClick={func}>Prova</button>
 		<button onClick={clear}>clear</button>
 	</>);
@@ -35,7 +31,7 @@ export { UseLocalStorage };
 ## API
 
 ```tsx
-useLocalStorage = <T>(key: string, initialState?: T | (()=>T)) 
+useLocalStorage = <T>({ key, initialState, opts = { serializer: JSON.stringify, deserializer: JSON.parse } }: { key: string, initialState?: T | (() => T), opts?: { serializer: (item: T) => string, deserializer: (item: string) => T } }): [T, Dispatch<SetStateAction<T>>, ()=>T, ()=>void] 
 ```
 
 > ### Params

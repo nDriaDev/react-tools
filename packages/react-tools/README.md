@@ -7,7 +7,7 @@
 	- [x] useReducerGetReset
 	- [x] useReducerHistory
 	- [x] useReducerHistoryGetter
-	- [-] useLocalStorage
+	- [-] useLocalStorage (Manca documentazione)
 	- [ ] useSessionStorage
 	- [ ] useMap
 	- [ ] useSet

@@ -1,23 +1,20 @@
-import { useCallback, useEffect } from "react";
+import { useCallback } from "react";
+import { useLocalStorage } from "../../../../../../packages/react-tools/src/hooks";
 
 /**
 DEMO
  */
 const UseLocalStorage = () => {
+	const [state, setState, , remove] = useLocalStorage({ key: "key" });
 	const func = useCallback(() => {
-		window.localStorage.setItem(Math.random() > 0.5 ? "demo" : "prv", "2");
-		window.dispatchEvent(new Event("storage"));
-	}, []);
+		setState(Math.random() > .5 ? "MAGGIORE" : "MINORE");
+	}, [setState]);
 
-	const clear = useCallback(() => window.localStorage.clear(), []);
+	const clear = useCallback(() => remove(), [remove]);
 
-	useEffect(() => {
-		const listener = (evt: Event) => console.log(evt);
-		window.addEventListener("storage", listener);
 
-		return () => window.removeEventListener("storage", listener);
-	},[])
 	return (<>
+		{state}
 		<button onClick={func}>Prova</button>
 		<button onClick={clear}>clear</button>
 	</>);

@@ -23,7 +23,7 @@ export const UseEventDispatcher = () => {
 	});
 
 	return (<>
-		state is {state}
+		<em>State is: </em> {state}
 		<br />
 		<form noValidate onSubmit={onSubmit}>
 			<input type="text" ref={inputRef}/>
@@ -38,7 +38,7 @@ export const UseEventDispatcher = () => {
 > - An _inputRef_ ref variable attacched to an input element contained in a form.
 > - An dispatch function returned from _useEventDispatcher_ with _inputRef_ as element.
 > - An onSubmit function to handle form onSubmit that invokes _dispatch_ function with a CustomEvent("demo") which detail is valued with input value taken from onSubmit event.
-> - A useEventListener of type _demo_, on element _inputRef_ and a listener that takes CustomEvent and invokes setState with event detail.
+> - A useEventListener of type _demo_, on element _inputRef_ and with a listener that takes CustomEvent and invokes setState with event detail.
 
 
 ## API
