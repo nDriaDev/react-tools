@@ -1,6 +1,14 @@
 import { Dispatch, SetStateAction, useRef, useState } from "react"
 import { useEventDispatcher, useEventListener, useMemoizedFunction } from ".";
 
+/**
+ * ___useLocalStorageState___: Custom _useState_ hook implementation using _LocalStorage_, with immutable _getter state_ function and to _remove_ key from localStorage..
+ * @param {Object} params
+ * @param {string} params.key - item key in local storage.
+ * @param {T | () => T} [params.initialState] - value or a function , optional.
+ * @param {{serializer: (item: T)=> string, deserializer: (item: string)=> T}} [params.opts={serializer: JSON.stringify, deserializer: jSON.parse}] - object with serializer and deserializer function to handle values in localStorage.
+ * @returns {[T, Dispatch<SetStateAction<T>>, () => T, () => void]}
+ */
 export const useLocalStorage = <T>({ key, initialState, opts = { serializer: JSON.stringify, deserializer: JSON.parse } }: { key: string, initialState?: T | (() => T), opts?: { serializer: (item: T) => string, deserializer: (item: string) => T } }): [T, Dispatch<SetStateAction<T>>, ()=>T, ()=>void] => {
 	const dispatch = useEventDispatcher();
 	const [internalState, setState] = useState<T>(() => {

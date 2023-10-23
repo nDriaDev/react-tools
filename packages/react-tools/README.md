@@ -7,7 +7,7 @@
 	- [x] useReducerGetReset
 	- [x] useReducerHistory
 	- [x] useReducerHistoryGetter
-	- [-] useLocalStorage (Manca documentazione)
+	- [x] useLocalStorage (verificare che il listener sull'evento storage funzioni)
 	- [ ] useSessionStorage
 	- [ ] useMap
 	- [ ] useSet

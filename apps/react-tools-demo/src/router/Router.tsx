@@ -27,6 +27,7 @@ import isTouchEventMD from '../markdown/isTouchEvent.md?url';
 import isClientMD from '../markdown/isClient.md?url';
 import usePubSubModelMD from '../markdown/usePubSubModel.md?url';
 import useEventDispatcherMD from '../markdown/useEventDispatcher.md?url';
+import useLocalStorageMD from '../markdown/useLocalStorage.md?url';
 import { UsePrevious } from '../components/hooks/usePrevious/UsePrevious';
 import { UseStateHistory } from '../components/hooks/useStateHistory/UseStateHistory';
 import { UseCallbackCompare } from '../components/hooks/useCallbackCompare/UseCallbackCompare';
@@ -99,7 +100,10 @@ function Router() {
 				},
 				{
 					path: "/useLocalStorage",
-					element: <UseLocalStorage/>
+					element: <ComponentLayout
+						component={<UseLocalStorage />}
+						markdown={useLocalStorageMD}
+					/>
 				},
 				{
 					path: "/useMemoizedFunction",
