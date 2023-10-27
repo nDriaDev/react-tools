@@ -58,7 +58,14 @@ function splitType(string){
 function parseType(string, tab=0) {
 	const typeArray= [];
 	let currTab = tab;
-	if(string.startsWith("[")) {
+	if(string.includes(" | ")) {
+		typeArray.push(Array(currTab*4).fill(true).map(() => " ").join("")+ "- __Union of__:  ");
+		currTab++;
+		string.split(" | ").forEach(split => {
+			typeArray.push(...parseType(split, currTab, true))
+		});
+	}
+	else if(string.startsWith("[")) {
 		typeArray.push(Array(currTab*4).fill(true).map(() => " ").join("")+ "- __Array__:  ");
 		currTab++;
 		string = string.substring(1, string.length-1);
@@ -244,7 +251,8 @@ function buildHooksUtilsMarkdownObject(file) {
 		}
 	});
 	let codeLines = fileSplitted.slice(fileSplitted.findIndex(line => line === lines.at(-1))+2);
-	let typeLine = codeLines[codeLines.findIndex(line => !line.startsWith("//") && !line.startsWith(" */") && !line.startsWith("*/") && !line.startsWith(("/*")))];
+	let typeLineIndex = codeLines.findIndex(line => !line.startsWith("//") && !line.startsWith(" */") && !line.startsWith("*/") && !line.startsWith(("/*")));
+	let typeLine = codeLines[typeLineIndex];
 	if(typeLine.startsWith("export")) {
 		typeLine = typeLine.substring("export ".length);
 	}
@@ -252,6 +260,18 @@ function buildHooksUtilsMarkdownObject(file) {
 		typeLine = typeLine.substring("default ".length);
 	}
 	if(typeLine.startsWith("function")) {
+		if(codeLines[typeLineIndex+1].startsWith("function")) {
+			//is a overloaded function
+			let index = typeLineIndex+1,
+			line = codeLines[index].substring("function ".length).split("").reverse().join("");
+			while(!line.startsWith("{")) {
+				line = codeLines[index+1].split("").reverse().join("");
+				index++;
+			}
+			line = codeLines[index].substring("function ".length, codeLines[index].length-1);
+			obj.type = line;
+			return obj;
+		}
 		typeLine = typeLine.substring("function ".length);
 	}
 	if(typeLine.startsWith("const")) {

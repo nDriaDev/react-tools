@@ -7,8 +7,8 @@
 	- [x] useReducerGetReset
 	- [x] useReducerHistory
 	- [x] useReducerHistoryGetter
-	- [x] useLocalStorage (verificare che il listener sull'evento storage funzioni)
-	- [ ] useSessionStorage
+	- [x] useLocalStorage
+ 	- [x] useSessionStorage
 	- [ ] useMap
 	- [ ] useSet
 	- [ ] useArray

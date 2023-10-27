@@ -58,7 +58,9 @@ usePubSubModel <T>(topic: string): { publish: (value?: T) => Promise<void>, subs
 > ### Returns
 >
 > __result__: contains the _publish_ and _subscribe_ functions. The result of invoking the _subscribe_ function in turn returns a function that can be used to _unsubscribe_ the topic
-> - __Object__:  
->     - __publish__ : _(value?: T) => Promise<void>_  
->     - __subscribe__ : _(listener: (value?: T) => Promise<void> | void) => () => void_  
+> - __Union of__:  
+>     - __Object__:  
+>         - __publish__ : _(value?: T) => Promise<void>_  
+>         - __subscribe__ : _(listener: (value?: T) => Promise<void_  
+>     - _void) => () => void }_  
 >

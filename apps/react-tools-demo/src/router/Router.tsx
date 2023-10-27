@@ -27,7 +27,8 @@ import isTouchEventMD from '../markdown/isTouchEvent.md?url';
 import isClientMD from '../markdown/isClient.md?url';
 import usePubSubModelMD from '../markdown/usePubSubModel.md?url';
 import useEventDispatcherMD from '../markdown/useEventDispatcher.md?url';
-import useLocalStorageMD from '../markdown/useLocalStorage.md?url';
+import useLocalStorageStateMD from '../markdown/useLocalStorageState.md?url';
+import useSessionStorageStateMD from '../markdown/useSessionStorageState.md?url';
 import { UsePrevious } from '../components/hooks/usePrevious/UsePrevious';
 import { UseStateHistory } from '../components/hooks/useStateHistory/UseStateHistory';
 import { UseCallbackCompare } from '../components/hooks/useCallbackCompare/UseCallbackCompare';
@@ -39,7 +40,8 @@ import { UseEffectDeepCompare } from '../components/hooks/useEffectDeepCompare/U
 import { UseStateGetReset } from '../components/hooks/useStateGetReset/UseStateGetReset';
 import { UsePubSubModel } from '../components/hooks/usePubSubModel/UsePubSubModel';
 import { UseMemoizedFunction } from '../components/hooks/useMemoizedFunction/UseMemoizedFunction';
-import { UseLocalStorage } from '../components/hooks/useLocalStorage/UseLocalStorage';
+import { UseLocalStorageState } from '../components/hooks/useLocalStorageState/UseLocalStorageState';
+import { UseSessionStorageState } from '../components/hooks/useSessionStorageState/UseSessionStorageState';
 import { UseEventListener } from '../components/hooks/useEventListener/UseEventListener';
 import { UseEventDispatcher } from '../components/hooks/useEventDispatcher/UseEventDispatcher';
 
@@ -99,10 +101,17 @@ function Router() {
 					/>
 				},
 				{
-					path: "/useLocalStorage",
+					path: "/useLocalStorageState",
 					element: <ComponentLayout
-						component={<UseLocalStorage />}
-						markdown={useLocalStorageMD}
+						component={<UseLocalStorageState />}
+						markdown={useLocalStorageStateMD}
+					/>
+				},
+				{
+					path: "/useSessionStorageState",
+					element: <ComponentLayout
+						component={<UseSessionStorageState />}
+						markdown={useSessionStorageStateMD}
 					/>
 				},
 				{

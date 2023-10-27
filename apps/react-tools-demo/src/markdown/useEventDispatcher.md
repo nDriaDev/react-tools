@@ -56,5 +56,7 @@ target on which dispatch event
 > ### Returns
 >
 > __dispatch__: function that dispatch the event on target
-> - _(evt: Event | CustomEvent) => void_  
+> - __Union of__:  
+>     - _(evt: Event_  
+>     - _CustomEvent) => void_  
 >
