@@ -9,6 +9,7 @@ export const COMPONENTS = [
 		"useReducerHistoryGetter",
 		"useLocalStorageState",
 		"useSessionStorageState",
+		"useMap",
 		"useMemoizedFunction",
 		"useMemoCompare",
 		"useMemoDeepCompare",

@@ -27,12 +27,13 @@ const Child2 = () => {
 
 const UseLocalStorageState = () => {
 	const [, , , remove] = useLocalStorageState({ key: "demo", initialState: "prova" });
-
+	const render = useRef(0);
 	const clear = useCallback(() => remove(), [remove]);
 
 	useEffect(() => {
+		render.current++;
 		return () => {
-			clear();
+			render.current === 2 && clear();
 		}
 	}, [clear]);
 

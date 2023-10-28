@@ -9,7 +9,7 @@
 	- [x] useReducerHistoryGetter
 	- [x] useLocalStorage
  	- [x] useSessionStorage
-	- [ ] useMap
+	- [-] useMap (da sistemare interfaccia jsdoc e ci sono problemi col generatore di markdown)
 	- [ ] useSet
 	- [ ] useArray
 - __EFFECTS__

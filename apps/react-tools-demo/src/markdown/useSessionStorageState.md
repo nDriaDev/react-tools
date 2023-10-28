@@ -54,7 +54,7 @@ export { UseSessionStorageState };
 > - A Child component 2 that uses _useSessionStorage_ with _write_ __mode__ and __key__  _demo_ to write to sessionStorage with an onSubmit form event with a input text value.
 > - An useEffect that invokes __remove__ function and delete item with key _demo_ from sessionStorage when the component unmounts.
 > 
-> When component is mounted, the Child1 state is _prova_. It can be changed by Child2. If you change state and open the page into another tab, after mounting, the Child1 display the new value of state and every changes made is reflected in both tabs.
+> When component is mounted, the Child1 state is _prova_. It can be changed by Child2. If you open the page into another tab, changes aren't reflected in both tabs.
 
 
 ## API

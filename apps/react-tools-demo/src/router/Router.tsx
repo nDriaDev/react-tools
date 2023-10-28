@@ -29,6 +29,7 @@ import usePubSubModelMD from '../markdown/usePubSubModel.md?url';
 import useEventDispatcherMD from '../markdown/useEventDispatcher.md?url';
 import useLocalStorageStateMD from '../markdown/useLocalStorageState.md?url';
 import useSessionStorageStateMD from '../markdown/useSessionStorageState.md?url';
+import useMapMD from '../markdown/useMap.md?url';
 import { UsePrevious } from '../components/hooks/usePrevious/UsePrevious';
 import { UseStateHistory } from '../components/hooks/useStateHistory/UseStateHistory';
 import { UseCallbackCompare } from '../components/hooks/useCallbackCompare/UseCallbackCompare';
@@ -44,6 +45,7 @@ import { UseLocalStorageState } from '../components/hooks/useLocalStorageState/U
 import { UseSessionStorageState } from '../components/hooks/useSessionStorageState/UseSessionStorageState';
 import { UseEventListener } from '../components/hooks/useEventListener/UseEventListener';
 import { UseEventDispatcher } from '../components/hooks/useEventDispatcher/UseEventDispatcher';
+import { UseMap } from '../components/hooks/useMap/UseMap';
 
 function Router() {
     const router = createBrowserRouter([
@@ -112,6 +114,13 @@ function Router() {
 					element: <ComponentLayout
 						component={<UseSessionStorageState />}
 						markdown={useSessionStorageStateMD}
+					/>
+				},
+				{
+					path: "/useMap",
+					element: <ComponentLayout
+						component={<UseMap />}
+						markdown={useMapMD}
 					/>
 				},
 				{

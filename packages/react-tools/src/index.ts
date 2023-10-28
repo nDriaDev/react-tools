@@ -12,6 +12,8 @@ export {
 	useReducerHistory,
 	useLocalStorageState,
 	useSessionStorageState,
+	useMap,
+	useMemoizedFunction,
 	useMemoCompare,
 	useMemoDeepCompare,
 	useCallbackCompare,

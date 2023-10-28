@@ -6,6 +6,7 @@ export { useReducerGetReset } from "./useReducerGetReset";
 export { useReducerHistory } from './useReducerHistory';
 export { useLocalStorageState } from './useLocalStorageState';
 export { useSessionStorageState } from './useSessionStorageState';
+export { useMap } from './useMap';
 export { useMemoizedFunction } from './useMemoizedFunction';
 export { useMemoCompare } from "./useMemoCompare";
 export { useMemoDeepCompare } from './useMemoDeepCompare';
