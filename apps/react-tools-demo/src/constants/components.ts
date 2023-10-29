@@ -10,6 +10,7 @@ export const COMPONENTS = [
 		"useLocalStorageState",
 		"useSessionStorageState",
 		"useMap",
+		"useSet",
 		"useMemoizedFunction",
 		"useMemoCompare",
 		"useMemoDeepCompare",

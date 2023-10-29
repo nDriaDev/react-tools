@@ -30,6 +30,7 @@ import useEventDispatcherMD from '../markdown/useEventDispatcher.md?url';
 import useLocalStorageStateMD from '../markdown/useLocalStorageState.md?url';
 import useSessionStorageStateMD from '../markdown/useSessionStorageState.md?url';
 import useMapMD from '../markdown/useMap.md?url';
+import useSetMD from '../markdown/useSet.md?url';
 import { UsePrevious } from '../components/hooks/usePrevious/UsePrevious';
 import { UseStateHistory } from '../components/hooks/useStateHistory/UseStateHistory';
 import { UseCallbackCompare } from '../components/hooks/useCallbackCompare/UseCallbackCompare';
@@ -46,6 +47,7 @@ import { UseSessionStorageState } from '../components/hooks/useSessionStorageSta
 import { UseEventListener } from '../components/hooks/useEventListener/UseEventListener';
 import { UseEventDispatcher } from '../components/hooks/useEventDispatcher/UseEventDispatcher';
 import { UseMap } from '../components/hooks/useMap/UseMap';
+import { UseSet } from '../components/hooks/useSet/UseSet';
 
 function Router() {
     const router = createBrowserRouter([
@@ -121,6 +123,13 @@ function Router() {
 					element: <ComponentLayout
 						component={<UseMap />}
 						markdown={useMapMD}
+					/>
+				},
+				{
+					path: "/useSet",
+					element: <ComponentLayout
+						component={<UseSet />}
+						markdown={useSetMD}
 					/>
 				},
 				{

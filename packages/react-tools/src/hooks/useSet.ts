@@ -1,0 +1,39 @@
+import { useState } from "react"
+
+/**
+ * __`useSet`__: Hooks to use _Set data structure_ to handle component state with all Set methods.
+ * @param {Iterable<T> | (() => Iterable<T>)} [initialState] - An iterable object whose elements are added to Set, or function that returns it.
+ * @returns {Set<T>}
+ */
+export const useSet = <T>(initialState?: Iterable<T> | (() => Iterable<T>)) => {
+	const [set, setSet] = useState<Set<T>>(()=>new Set<T>(initialState instanceof Function ? initialState() : initialState));
+
+	set.add = (value: T) => {
+		setSet(prev => {
+			const temp = new Set(prev);
+			temp.add(value);
+			return temp;
+		});
+		return set;
+	}
+
+	set.clear = () => {
+		setSet(prev => {
+			const temp = new Set(prev);
+			temp.clear();
+			return temp;
+		});
+	}
+
+	set.delete = (value: T) => {
+		const result = set.has(value);
+		setSet(prev => {
+			const temp = new Set(prev);
+			temp.delete(value);
+			return temp;
+		})
+		return result;
+	}
+
+	return set;
+}

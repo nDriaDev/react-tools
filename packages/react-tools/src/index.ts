@@ -13,6 +13,7 @@ export {
 	useLocalStorageState,
 	useSessionStorageState,
 	useMap,
+	useSet,
 	useMemoizedFunction,
 	useMemoCompare,
 	useMemoDeepCompare,

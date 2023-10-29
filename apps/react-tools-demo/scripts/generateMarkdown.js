@@ -1,6 +1,7 @@
 import path from "node:path";
 import fs from 'node:fs/promises';
 import {URL} from 'url';
+import process from "node:process";
 
 const __dirname = new URL('.', import.meta.url).pathname;
 
@@ -40,7 +41,7 @@ function splitType(string){
 	let newCode = [];
 	let last = "";
 	for (let part of string){
-		if (last.split("(").length == last.split(")").length && last.split("[").length == last.split("]").length && last.split("{").length == last.split("}").length){
+		if (last.split("<").length === last.split(">").length && last.split("(").length === last.split(")").length && last.split("[").length === last.split("]").length && last.split("{").length === last.split("}").length){
 			last = part;
 			newCode.push(part);
 		}
@@ -374,6 +375,7 @@ async function generateMarkDown() {
 		await deleteAllFiles(pathMarkdownDir);
 		await generateUtilsMarkDown();
 		await generateComponentsMarkDown();
+		process.exit(0);
 	} catch (error) {
 		console.error(error);
 	}
