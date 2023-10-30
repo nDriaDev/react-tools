@@ -59,6 +59,7 @@ export {UseMap}
 > - A button _Delete_ that remove item into state by _key_, written in input by _delete_ method of Map interface.
 > - A button _Clear_ that clear state by _clear_ method of Map interface.
 > - A button _IncrementAll_ that adds 1 to every value into map by _forEach_ method of Map interface.
+> - A variable parsed create with useMemo that memoized a concatenated string of state key-value pairs, separated by comma.
 
 
 ## API

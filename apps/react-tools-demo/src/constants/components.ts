@@ -11,6 +11,7 @@ export const COMPONENTS = [
 		"useSessionStorageState",
 		"useMap",
 		"useSet",
+		"useArray",
 		"useMemoizedFunction",
 		"useMemoCompare",
 		"useMemoDeepCompare",
@@ -29,6 +30,7 @@ export const COMPONENTS = [
 		"isDeepEqual",
 		"isTouchEvent",
 		"isMouseEvent",
-		"isClient"
+		"isClient",
+		"isPlainObject"
 	]
 ]

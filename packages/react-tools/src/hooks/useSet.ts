@@ -9,12 +9,10 @@ export const useSet = <T>(initialState?: Iterable<T> | (() => Iterable<T>)) => {
 	const [set, setSet] = useState<Set<T>>(()=>new Set<T>(initialState instanceof Function ? initialState() : initialState));
 
 	set.add = (value: T) => {
-		setSet(prev => {
-			const temp = new Set(prev);
-			temp.add(value);
-			return temp;
-		});
-		return set;
+		const temp = new Set(set);
+		temp.add(value);
+		setSet(temp);
+		return temp;
 	}
 
 	set.clear = () => {

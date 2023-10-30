@@ -64,7 +64,7 @@ useSet <T>(initialState?: Iterable<T> | (() => Iterable<T>))
 > ### Params
 >
 > - __initialState?__: _Iterable<T> | (() => Iterable<T>)_  
-An Array or other iterable object whose elements are key-value pairs, or function that returns it.
+An iterable object whose elements are added to Set, or function that returns it.
 >
 
 > ### Returns

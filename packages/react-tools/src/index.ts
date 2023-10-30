@@ -14,6 +14,7 @@ export {
 	useSessionStorageState,
 	useMap,
 	useSet,
+	useArray,
 	useMemoizedFunction,
 	useMemoCompare,
 	useMemoDeepCompare,
@@ -33,5 +34,6 @@ export {
 	isDeepEqual,
 	isMouseEvent,
 	isTouchEvent,
-	isClient
+	isClient,
+	isPlainObject
 } from './utils'

@@ -9,9 +9,10 @@
 	- [x] useReducerHistoryGetter
 	- [x] useLocalStorage
  	- [x] useSessionStorage
-	- [-] useMap (da sistemare interfaccia jsdoc e ci sono problemi col generatore di markdown)
-	- [ ] useSet
-	- [ ] useArray
+	- [x] useMap
+	- [x] useSet
+	- [x] useArray
+	- [ ] useProxyState
 - __EFFECTS__
 	- [x] useCallbackCompare
 	- [x] useCallbackDeepCompare
@@ -72,7 +73,8 @@
 	- [x] isDeepEqual
 	- [x] isMouseEvent
 	- [x] isTouchEvent
-	- [ ] isClient (thinking if it is necessary)
+	- [x] isClient
+	- [x] isPlainObject
 
 ## ESlint configuration
 To validate dependencies of custom hooks like `useMemoCompare`, configure `exhaustive-deps` with the `additionalHooks` option

@@ -9,12 +9,10 @@ export const useMap = <K, V>(initialState?: Iterable<readonly [K, V]> | (() => I
 	const [map, setMap] = useState<Map<K, V>>(()=>new Map<K, V>(initialState instanceof Function ? initialState() : initialState));
 
 	map.set = (key: K, value: V) => {
-		setMap(prev => {
-			const temp = new Map(prev);
-			temp.set(key, value);
-			return temp
-		});
-		return map;
+		const temp = new Map(map);
+		temp.set(key, value);
+		setMap(temp);
+		return temp;
 	}
 
 	map.clear = () => {
