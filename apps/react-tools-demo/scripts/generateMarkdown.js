@@ -335,7 +335,7 @@ ${lines.length > 0 ? lines.map(line => "> "+line).join("\n") : ""}
 
 async function generateUtilsMarkDown() {
 	const utilsFiles = await fs.readdir(path.join(pathUtilsDir));
-	const indexFile = await fs.readFile(path.join(pathUtilsDir, "index.ts"), {encoding: "utf8"});
+	const indexFile = await fs.readFile(path.join(pathUtilsDir, "..", "index.ts"), {encoding: "utf8"});
 	for(let file of utilsFiles) {
 		if(file !== "index.ts" && indexFile.includes(file.split(".ts")[0])) {
 			let readedFile = await fs.readFile(path.join(pathUtilsDir, file), {encoding: "utf8"});

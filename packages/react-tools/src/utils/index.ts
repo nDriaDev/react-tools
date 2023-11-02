@@ -4,3 +4,5 @@ export { isMouseEvent } from "./isMouseEvent";
 export { isTouchEvent } from "./isTouchEvent";
 export { isClient } from './isClient';
 export { isPlainObject } from './isPlainObject';
+export { PublishSubscribePattern } from './PublishSubscribePattern';
+export { EventsPattern } from './EventsPattern';
