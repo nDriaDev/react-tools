@@ -25,7 +25,8 @@ export {
 	useEffectDeepCompare,
 	useLayoutEffectCompare,
 	useLayoutEffectDeepCompare,
-	usePubSubModel,
+	usePublishSubscribe,
+	useEvents,
 	useEventDispatcher,
 	useEventListener
 } from './hooks'

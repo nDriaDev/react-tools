@@ -54,6 +54,7 @@
 	- [ ] useLongPress
 	- [x] useEventDispatcher
 	- [x] usePubSubModel
+	- [x] useEvents
 
 - __DOM API__
 	- [ ] useCoptyToClipboard

@@ -25,7 +25,8 @@ import isDeepEqualMD from '../markdown/isDeepEqual.md?url';
 import isMouseEventMD from '../markdown/isMouseEvent.md?url';
 import isTouchEventMD from '../markdown/isTouchEvent.md?url';
 import isClientMD from '../markdown/isClient.md?url';
-import usePubSubModelMD from '../markdown/usePubSubModel.md?url';
+import usePublishSubscribeMD from '../markdown/usePublishSubscribe.md?url';
+import useEventsMD from '../markdown/useEvents.md?url';
 import useEventDispatcherMD from '../markdown/useEventDispatcher.md?url';
 import useLocalStorageStateMD from '../markdown/useLocalStorageState.md?url';
 import useSessionStorageStateMD from '../markdown/useSessionStorageState.md?url';
@@ -42,7 +43,7 @@ import { UseMemoDeepCompare } from '../components/hooks/useMemoDeepCompare/UseMe
 import { UseEffectCompare } from '../components/hooks/useEffectCompare/UseEffectCompare';
 import { UseEffectDeepCompare } from '../components/hooks/useEffectDeepCompare/UseEffectDeepCompare';
 import { UseStateGetReset } from '../components/hooks/useStateGetReset/UseStateGetReset';
-import { UsePubSubModel } from '../components/hooks/usePubSubModel/UsePubSubModel';
+import { UsePublishSubscribe } from '../components/hooks/usePublishSubscribe/UsePublishSubscribe';
 import { UseMemoizedFunction } from '../components/hooks/useMemoizedFunction/UseMemoizedFunction';
 import { UseLocalStorageState } from '../components/hooks/useLocalStorageState/UseLocalStorageState';
 import { UseSessionStorageState } from '../components/hooks/useSessionStorageState/UseSessionStorageState';
@@ -52,6 +53,7 @@ import { UseMap } from '../components/hooks/useMap/UseMap';
 import { UseSet } from '../components/hooks/useSet/UseSet';
 import { UseArray } from '../components/hooks/useArray/UseArray';
 import { UseProxyState } from '../components/hooks/useProxyState/UseProxyState';
+import { UseEvents } from '../components/hooks/useEvents/UseEvents';
 
 function Router() {
     const router = createBrowserRouter([
@@ -212,10 +214,17 @@ function Router() {
 					/>
 				},
 				{
-					path: "/usePubSubModel",
+					path: "/usePublishSubscribe",
 					element: <ComponentLayout
-						component={<UsePubSubModel />}
-						markdown={usePubSubModelMD}
+						component={<UsePublishSubscribe />}
+						markdown={usePublishSubscribeMD}
+					/>
+				},
+				{
+					path: "/useEvents",
+					element: <ComponentLayout
+						component={<UseEvents/>}
+						markdown={useEventsMD}
 					/>
 				},
 				{
