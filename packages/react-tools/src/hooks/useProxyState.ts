@@ -1,62 +1,36 @@
-import { useMemo, useRef, useState } from "react"
-import { isPlainObject } from "../utils";
-
-const proxyMap = new WeakMap();
-const mapProxy = new WeakMap();
-
-const track = <T extends Record<string, any>>(initialState: T, cb: () => void): T => {
-	const hasProxy = proxyMap.get(initialState);
-
-	if (hasProxy) {
-		return hasProxy;
-	}
-
-	if (mapProxy.has(initialState)) {
-		return initialState;
-	}
-
-	const proxy = new Proxy<T>(initialState, {
-		get(target, key, receiver) {
-			const res = Reflect.get(target, key, receiver);
-			const descriptor = Reflect.getOwnPropertyDescriptor(target, key);
-			if (!descriptor?.configurable && !descriptor?.writable) {
-				return res;
-			}
-
-			return isPlainObject(res) || Array.isArray(res) ? track(res, cb) : res;
-		},
-		set(target, key, val) {
-			const ret = Reflect.set(target, key, val);
-			cb();
-			return ret;
-		},
-		deleteProperty(target, key) {
-			const ret = Reflect.deleteProperty(target, key);
-			cb();
-			return ret;
-		},
-	});
-
-	proxyMap.set(initialState, proxy);
-	mapProxy.set(proxy, initialState);
-
-	return proxy;
-
-
-};
+import { useReducer, useRef } from "react"
 
 /**
- * __`useProxyState`__:
+ * __`useProxyState`__: Hook to handle component state that allows you to use an object for your state and mutating it in a way more idiomatic for JS.
  * @param {T | () => T} initialState - value or function
+ * @param {boolean} [proxyInDepth=false] - if true, it creates proxy for nested object also.
  * @returns {T} state
  */
-export const useProxyState = <T extends Record<string, any>>(initialState: T | (() => T)): T => {
-	const [, update] = useState({});
-	const stateRef = useRef<T>(initialState instanceof Function ? initialState() : initialState);
 
-	const state = useMemo(() => {
-		return track(stateRef.current, () => { update({}) });
-	}, []);
+export const useProxyState = <T extends Record<string, any>>(initialState: T | (() => T), proxyInDepth:boolean=false): T => {
+	const initialStateComputed = useRef(initialState instanceof Function ? initialState() : initialState);
+	const [, update] = useReducer(t => t + 1, 0);
+	const buildProxy = useRef((obj: T) => {
+		let proxyObj: Record<string, unknown> = {};
+		if (!proxyInDepth) {
+			proxyObj = obj;
+		} else {
+			const keys: string[] = Reflect.ownKeys(obj) as string[];
+			for (const key of keys) {
+				proxyObj[key] = initialStateComputed.current[key] instanceof Date || initialStateComputed.current[key] instanceof RegExp || Array.isArray(initialStateComputed.current[key]) || typeof initialStateComputed.current[key] !== "object"
+					? initialStateComputed.current[key]
+					: buildProxy.current(initialStateComputed.current[key]);
+			}
+		}
+		return new Proxy(proxyObj, {
+			set(target, p, newValue, receiver) {
+				Reflect.set(target, p, newValue, receiver);
+				update();
+				return true;
+			},
+		});
+	});
+	const proxy = useRef(buildProxy.current(initialStateComputed.current) as T);
 
-	return state;
+	return proxy.current;
 }

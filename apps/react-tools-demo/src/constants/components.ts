@@ -12,6 +12,7 @@ export const COMPONENTS = [
 		"useMap",
 		"useSet",
 		"useArray",
+		"useProxyState",
 		"useMemoizedFunction",
 		"useMemoCompare",
 		"useMemoDeepCompare",
@@ -31,6 +32,5 @@ export const COMPONENTS = [
 		"isTouchEvent",
 		"isMouseEvent",
 		"isClient",
-		"isPlainObject"
 	]
 ]

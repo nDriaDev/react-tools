@@ -25,7 +25,6 @@ import isDeepEqualMD from '../markdown/isDeepEqual.md?url';
 import isMouseEventMD from '../markdown/isMouseEvent.md?url';
 import isTouchEventMD from '../markdown/isTouchEvent.md?url';
 import isClientMD from '../markdown/isClient.md?url';
-import isPlainObjectMD from '../markdown/isPlainObject.md?url';
 import usePubSubModelMD from '../markdown/usePubSubModel.md?url';
 import useEventDispatcherMD from '../markdown/useEventDispatcher.md?url';
 import useLocalStorageStateMD from '../markdown/useLocalStorageState.md?url';
@@ -33,6 +32,7 @@ import useSessionStorageStateMD from '../markdown/useSessionStorageState.md?url'
 import useMapMD from '../markdown/useMap.md?url';
 import useSetMD from '../markdown/useSet.md?url';
 import useArrayMD from '../markdown/useArray.md?url';
+import useProxyStateMD from '../markdown/useProxyState.md?url';
 import { UsePrevious } from '../components/hooks/usePrevious/UsePrevious';
 import { UseStateHistory } from '../components/hooks/useStateHistory/UseStateHistory';
 import { UseCallbackCompare } from '../components/hooks/useCallbackCompare/UseCallbackCompare';
@@ -51,6 +51,7 @@ import { UseEventDispatcher } from '../components/hooks/useEventDispatcher/UseEv
 import { UseMap } from '../components/hooks/useMap/UseMap';
 import { UseSet } from '../components/hooks/useSet/UseSet';
 import { UseArray } from '../components/hooks/useArray/UseArray';
+import { UseProxyState } from '../components/hooks/useProxyState/UseProxyState';
 
 function Router() {
     const router = createBrowserRouter([
@@ -140,6 +141,13 @@ function Router() {
 					element: <ComponentLayout
 						component={<UseArray />}
 						markdown={useArrayMD}
+					/>
+				},
+				{
+					path: "/useProxyState",
+					element: <ComponentLayout
+						component={<UseProxyState />}
+						markdown={useProxyStateMD}
 					/>
 				},
 				{
@@ -252,11 +260,6 @@ function Router() {
 					path: "/isClient",
 					element: <MarkdownLayout
 						source={isClientMD}
-					/>
-				},
-				{
-					path: "/isPlainObject",
-					element: <MarkdownLayout source={isPlainObjectMD}
 					/>
 				}
             ]

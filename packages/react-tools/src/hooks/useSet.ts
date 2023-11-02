@@ -1,7 +1,7 @@
 import { useState } from "react"
 
 /**
- * __`useSet`__: Hooks to use _Set data structure_ to handle component state with all Set methods.
+ * __`useSet`__: Hook to use _Set data structure_ to handle component state with all Set methods.
  * @param {Iterable<T> | (() => Iterable<T>)} [initialState] - An iterable object whose elements are added to Set, or function that returns it.
  * @returns {Set<T>}
  */

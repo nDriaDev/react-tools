@@ -9,6 +9,7 @@ export { useSessionStorageState } from './useSessionStorageState';
 export { useMap } from './useMap';
 export { useSet } from './useSet';
 export { useArray } from './useArray';
+export { useProxyState } from './useProxyState';
 export { useMemoizedFunction } from './useMemoizedFunction';
 export { useMemoCompare } from "./useMemoCompare";
 export { useMemoDeepCompare } from './useMemoDeepCompare';

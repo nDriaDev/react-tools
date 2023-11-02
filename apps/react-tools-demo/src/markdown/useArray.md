@@ -1,5 +1,5 @@
 # useArray
-Hooks to use _Array data structure_ to handle component state with all Array methods.
+Hook to use _Array data structure_ to handle component state with all Array methods.
 
 ## Usage
 
@@ -17,10 +17,6 @@ const UseArray = () => {
 		array.push(inputRef.current!.value);
 	}, [array]);
 
-	const concat = useCallback(() => {
-		array.concat(inputRef.current!.value);
-	}, [array]);
-
 	return (<>
 		{array.join(",")}
 		<br />
@@ -29,7 +25,6 @@ const UseArray = () => {
 		<div style={{ marginTop: 15, gridTemplateColumns: 'auto auto', justifyContent: 'center', display: 'grid', gap: '5px' }}>
 			<button onClick={push}>Push</button>
 			<button onClick={pop}>Pop</button>
-			<button onClick={concat}>Concat</button>
 		</div>
 	</>);
 }
@@ -44,7 +39,6 @@ export { UseArray }
 > - An uncontrolled input with _inputRef_ ref used to execute buttons actions.
 > - A button _Push_ that push the input value into state by _push_ method of Array interface.
 > - A button _Pop_ that remove last item into state by _pop_ method of Array interface.
-> - A button _Concat_ that concats the input value with state by _concat_ method of Array interface.
 
 
 ## API

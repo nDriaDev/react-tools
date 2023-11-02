@@ -1,5 +1,5 @@
 # useMap
-Hooks to use _Map data structure_ to handle component state with all Map methods.
+Hook to use _Map data structure_ to handle component state with all Map methods.
 
 ## Usage
 

@@ -1,5 +1,5 @@
 # useSet
-Hooks to use _Set data structure_ to handle component state with all Set methods.
+Hook to use _Set data structure_ to handle component state with all Set methods.
 
 ## Usage
 

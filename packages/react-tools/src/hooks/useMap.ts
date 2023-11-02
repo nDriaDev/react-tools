@@ -1,7 +1,7 @@
 import { useState } from "react"
 
 /**
- * __`useMap`__: Hooks to use _Map data structure_ to handle component state with all Map methods.
+ * __`useMap`__: Hook to use _Map data structure_ to handle component state with all Map methods.
  * @param {Iterable<readonly [K, V]> | (() => Iterable<readonly [K, V]>)} [initialState] - An Array or other iterable object whose elements are key-value pairs, or function that returns it.
  * @returns {Map<K,V>}
  */

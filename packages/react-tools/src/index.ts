@@ -15,6 +15,7 @@ export {
 	useMap,
 	useSet,
 	useArray,
+	useProxyState,
 	useMemoizedFunction,
 	useMemoCompare,
 	useMemoDeepCompare,
@@ -34,6 +35,5 @@ export {
 	isDeepEqual,
 	isMouseEvent,
 	isTouchEvent,
-	isClient,
-	isPlainObject
+	isClient
 } from './utils'
