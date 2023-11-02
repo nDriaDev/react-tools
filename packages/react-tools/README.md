@@ -12,7 +12,7 @@
 	- [x] useMap
 	- [x] useSet
 	- [x] useArray
-	- [ ] useProxyState
+	- [-] useProxyState (manca docs)
 - __EFFECTS__
 	- [x] useCallbackCompare
 	- [x] useCallbackDeepCompare
@@ -75,7 +75,6 @@
 	- [x] isMouseEvent
 	- [x] isTouchEvent
 	- [x] isClient
-	- [x] isPlainObject
 
 ## ESlint configuration
 To validate dependencies of custom hooks like `useMemoCompare`, configure `exhaustive-deps` with the `additionalHooks` option
