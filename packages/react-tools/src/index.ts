@@ -16,6 +16,8 @@ export {
 	useSet,
 	useArray,
 	useProxyState,
+	createProxyStore,
+	useProxyStore,
 	useMemoizedFunction,
 	useMemoCompare,
 	useMemoDeepCompare,
@@ -36,5 +38,6 @@ export {
 	isDeepEqual,
 	isMouseEvent,
 	isTouchEvent,
-	isClient
+	isClient,
+	useSyncExternalStore
 } from './utils'

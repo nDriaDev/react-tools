@@ -10,7 +10,7 @@ The component has:
 The main component subscribe a listener, that updates component state, to the topic __demo__ inside an useEffect, in this way the listener _subscription_ is done only once and when the component is unmounted, it executes the _unsubscription_. The _subscription_ can be done outside useEffect also, what's important is that listener doesn't change when component rerenders (so it can be declared outside the component or with useCallback for example). In this case the _unsubscription_ is executed from hook.
  */
 const ChildComponent = memo(() => {
-	const { publish } = usePublishSubscribe("demo");
+	const [, publish] = usePublishSubscribe("demo");
 	const onChange = useCallback((e: BaseSyntheticEvent) => {
 		publish({ value: e.target.value })
 	}, [publish]);
@@ -20,7 +20,7 @@ const ChildComponent = memo(() => {
 })
 const UsePublishSubscribe = () => {
 	const [state, setState] = useState({ value: "" });
-	const { subscribe } = usePublishSubscribe<typeof state>("demo");
+	const [subscribe] = usePublishSubscribe<typeof state>("demo");
 
 	useEffect(() => {
 		const unsub = subscribe((obj?: { value: string }) => {

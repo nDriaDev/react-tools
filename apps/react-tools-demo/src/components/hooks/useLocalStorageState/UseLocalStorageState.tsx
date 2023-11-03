@@ -1,4 +1,4 @@
-import { BaseSyntheticEvent, useCallback, useEffect, useRef } from "react";
+import { BaseSyntheticEvent, memo, useCallback, useEffect, useRef } from "react";
 import { useLocalStorageState } from "../../../../../../packages/react-tools/src/hooks";
 
 /**
@@ -10,15 +10,15 @@ The component has:
 
 When component is mounted, the Child1 state is _prova_. It can be changed by Child2. If you change state and open the page into another tab, after mounting, the Child1 display the new value of state and every changes made is reflected in both tabs.
  */
-const Child = () => {
+const Child = memo(() => {
 	const [state] = useLocalStorageState<string>({key:"demo", opts: {mode: "read"}});
 	return (<>
 		<h3>Child component 1</h3>
 		<p>State is {state}</p>
 	</>)
-}
+})
 
-const Child2 = () => {
+const Child2 = memo(() => {
 	const [setState] = useLocalStorageState<string>({key:"demo", opts: {mode: "write"}});
 	return (<>
 		<h3>Child component 2</h3>
@@ -29,7 +29,7 @@ const Child2 = () => {
 			<input type="text" />
 		</form>
 	</>)
-}
+})
 
 const UseLocalStorageState = () => {
 	const [, , , remove] = useLocalStorageState({ key: "demo", initialState: "prova" });

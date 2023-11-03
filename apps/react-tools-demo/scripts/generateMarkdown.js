@@ -272,12 +272,23 @@ function buildHooksUtilsMarkdownObject(file) {
 			line = codeLines[index].substring("function ".length, codeLines[index].length-1);
 			obj.type = line;
 			return obj;
+		} else {
+			typeLine = typeLine.substring("function ".length);
+			//INFO remove function name because we add title after.
+			let start=0;
+			for(let i = 0, size= typeLine.length; i<size; i++) {
+				if(["<", "("].includes(typeLine[i])) {
+					start = i;
+					break;
+				}
+			}
+			typeLine = typeLine.substring(start);
 		}
-		typeLine = typeLine.substring("function ".length);
 	}
 	if(typeLine.startsWith("const")) {
 		typeLine = typeLine.substring("const ".length);
 	}
+
 	if(typeLine.startsWith(obj.title+"= ")) {
 		typeLine = typeLine.substring((obj.title+"= ").length);
 	}

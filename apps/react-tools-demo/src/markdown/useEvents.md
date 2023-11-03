@@ -7,7 +7,7 @@ Communication system based on Events pattern implemented on a EventTarget subcla
 const ChildComponent = memo(() => {
 	const [, dispatch] = useEvents();
 	const onChange = useCallback((e: BaseSyntheticEvent) => {
-		dispatch(new CustomEvent("demo", { detail: e.target.value }));
+		dispatch(new CustomEvent("demo", { detail: {value: e.target.value} }));
 	}, [dispatch]);
 	return (
 		<input type="text" onChange={onChange} />

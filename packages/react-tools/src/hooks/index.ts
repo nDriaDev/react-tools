@@ -23,3 +23,4 @@ export { usePublishSubscribe } from './usePublishSubscribe';
 export { useEvents } from './useEvents';
 export { useEventDispatcher } from './useEventDispatcher';
 export { useEventListener } from './useEventListener';
+export { createProxyStore, useProxyStore } from './createProxyStore';

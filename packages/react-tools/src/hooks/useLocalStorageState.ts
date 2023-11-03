@@ -1,5 +1,6 @@
-import { Dispatch, SetStateAction, useRef, useState } from "react"
-import { useEventDispatcher, useEventListener, useMemoizedFunction } from ".";
+import { Dispatch, SetStateAction, useRef } from "react"
+import { useEvents, useMemoizedFunction } from ".";
+import { useSyncExternalStore } from "../utils";
 
 /**
  * ___useLocalStorageState___: Custom _useState_ hook implementation using _LocalStorage_, with immutable _getter state_ function and to _remove_ key from localStorage.
@@ -14,11 +15,11 @@ function useLocalStorageState<T>({ key, initialState, opts }: { key: string, ini
 function useLocalStorageState<T>({ key, initialState, opts }: { key: string, initialState?: T | (() => T), opts?: { serializer?: (item: T) => string, deserializer?: (item: string) => T, mode?: "write" } }): [Dispatch<SetStateAction<T>>, () => T, () => void]
 function useLocalStorageState<T>({ key, initialState, opts }: { key: string, initialState?: T | (() => T), opts?: { serializer?: (item: T) => string, deserializer?: (item: string) => T, mode?: "read/write" } }): [T, Dispatch<SetStateAction<T>>, () => T, () => void]
 function useLocalStorageState<T>({ key, initialState, opts }: { key: string, initialState?: T | (() => T), opts?: { serializer?: (item: T) => string, deserializer?: (item: string) => T, mode?: "read" | "write" | "read/write" } }): [T, () => T, () => void] | [Dispatch<SetStateAction<T>>, () => T, () => void] | [T, Dispatch<SetStateAction<T>>, () => T, () => void] {
-	const dispatch = useEventDispatcher();
+	const [subscribe, dispatch] = useEvents();
 	const serializer = useRef(opts?.serializer || JSON.stringify);
 	const deserializer = useRef(opts?.deserializer || JSON.parse);
 	const mode = useRef(opts?.mode || "read/write");
-	const [internalState, setState] = useState<T>(() => {
+	const cachedState = useRef((() => {
 		if (mode.current === "write") {
 			return null as T;
 		}
@@ -34,69 +35,93 @@ function useLocalStorageState<T>({ key, initialState, opts }: { key: string, ini
 		} else {
 			return null as T;
 		}
-	})
+	})());
 
-	const listener = useRef((evt: Event) => {
-		if ((evt.type === "storage" && (evt as StorageEvent).storageArea !== localStorage) || mode.current === "write") {
-			return;
-		}
-		let newValue;
-		if (evt instanceof CustomEvent) {
-			newValue = deserializer.current(evt.detail.newValue);
-			setState(newValue);
-		} else {
-			const typedEvent = evt as StorageEvent;
-			if (typedEvent.key === key) {
-				newValue = typedEvent.newValue ? deserializer.current(typedEvent.newValue) : deserializer.current("null");
-				setState(newValue);
+	const subscribeRef = useRef((cb: ()=> void) => {
+		const listener = (evt: Event) => {
+			if ((evt.type === "storage" && (evt as StorageEvent).storageArea !== localStorage) || mode.current === "write") {
+				return;
 			}
-		}
+			if (evt instanceof CustomEvent) {
+				if (evt.detail.key === key) {
+					cb();
+				}
+			} else {
+				const typedEvent = evt as StorageEvent;
+				if (typedEvent.key === key) {
+					cb();
+				}
+			}
+		};
+		window.addEventListener("storage", listener);
+		const unsub = subscribe("local-strg", listener);
+		return () => {
+			window.removeEventListener("storage", listener);
+			unsub();
+		};
 	});
 
-	useEventListener({ type: "storage", listener: listener.current, listenerOpts: { capture: true } });
+	const getSnapshotRef = useRef(() => {
+		const currValue = localStorage.getItem(key) ?? "null";
+		const prevValue = JSON.stringify(cachedState.current);
+		if (currValue !== prevValue) {
+			cachedState.current = currValue !== null ? JSON.parse(currValue) : null;
+		}
+		return cachedState.current;
+	});
 
-	useEventListener({ type: "local-strg", listener: listener.current, listenerOpts: { capture: true } });
+	const state = useSyncExternalStore(
+		subscribeRef.current,
+		getSnapshotRef.current
+	);
 
-	const updateState: Dispatch<SetStateAction<T>> = useMemoizedFunction((value: T | ((state: T) => T)) => {
+	const updateState = useRef<Dispatch<SetStateAction<T>>>((value: T | ((state: T) => T)) => {
 		const computedValue = serializer.current(value instanceof Function
-			? value(internalState)
+			? value(cachedState.current)
 			: value);
 		localStorage.setItem(key, computedValue);
 		dispatch(new CustomEvent(
 			"local-strg",
 			{
 				detail: {
-					key,
-					newValue: computedValue,
+					key
 				}
 			}
 		));
 	});
 
+
+	const getter = useMemoizedFunction(() => cachedState.current);
+
 	const remove = useRef(() => {
 		localStorage.removeItem(key);
-		setState(null as T);
+		dispatch(new CustomEvent(
+			"local-strg",
+			{
+				detail: {
+					key
+				}
+			}
+		));
 	});
-
-	const getter = useMemoizedFunction(() => internalState);
 
 	if (mode.current === "read") {
 		return [
-			internalState,
+			state,
 			getter,
 			remove.current
 		];
 	}
 	if (mode.current === "write") {
 		return [
-			updateState,
+			updateState.current,
 			getter,
 			remove.current
 		];
 	}
 	return [
-		internalState,
-		updateState,
+		state,
+		updateState.current,
 		getter,
 		remove.current
 	];

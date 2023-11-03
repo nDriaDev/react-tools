@@ -13,6 +13,8 @@
 	- [x] useSet
 	- [x] useArray
 	- [-] useProxyState (manca docs)
+	- [ ] useProxyStore
+	- [ ] createProxyStore
 - __EFFECTS__
 	- [x] useCallbackCompare
 	- [x] useCallbackDeepCompare

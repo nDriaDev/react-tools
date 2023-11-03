@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import ReactMarkdown from "react-markdown";
 import { PrismLight as SyntaxHighlighter } from "react-syntax-highlighter";
 import { oneDark } from "react-syntax-highlighter/dist/cjs/styles/prism";
@@ -21,12 +20,6 @@ SyntaxHighlighter.registerLanguage("json", json);
 SyntaxHighlighter.registerLanguage("lua", lua);
 
 export default function MarkdownLayout({ source }: {source: string}) {
-
-    const [md, setMd] = useState<string>();
-
-    useEffect(() => {
-        fetch(source).then(resp => resp.text()).then(md => setMd(md));
-    })
     return (
         <div className="docs">
             <div className="docs-md">
@@ -73,7 +66,7 @@ export default function MarkdownLayout({ source }: {source: string}) {
                         },
                     }}
                 >
-                    {md}
+                    {source}
                 </ReactMarkdown>
             </div>
         </div>

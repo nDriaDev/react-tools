@@ -1,11 +1,17 @@
 import DemoCodeLayout from "./DemoCodeLayout";
 import MarkdownLayout from "./MarkdownLayout";
 
-export default function ComponentLayout({ component, markdown }: {component: React.JSX.Element, markdown: string}) {
+export default function ComponentLayout({ component, markdown }: {component?: React.JSX.Element, markdown?: string}) {
     return (<>
-        <DemoCodeLayout>
-            {component}
-        </DemoCodeLayout>
-        <MarkdownLayout source={markdown}/>
+		{
+			component &&
+			<DemoCodeLayout>
+				{component}
+			</DemoCodeLayout>
+		}
+		{
+			markdown &&
+			<MarkdownLayout source={markdown} />
+		}
     </>);
 }

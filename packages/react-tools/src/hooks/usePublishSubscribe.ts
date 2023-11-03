@@ -5,9 +5,9 @@ const pubsub = new PublishSubscribePattern();
 /**
  * **`usePublishSubscribe`**: Communication system based on PubSub pattern. Instantiate a topic and use the publish and subscribe functions to communicate.
  * @param {string} topic
- * @returns {{ publish: (value?: T) => Promise<void>, subscribe: (listener: (value?: T) => Promise<void> | void) => () => void }} result - contains the _publish_ and _subscribe_ functions. The result of invoking the _subscribe_ function in turn returns a function that can be used to _unsubscribe_ the topic
+ * @returns {[(listener: (value?: T) => Promise<void> | void) => () => void, (value?: T) => Promise<void> ]} result - contains the _publish_ and _subscribe_ functions. The result of invoking the _subscribe_ function in turn returns a function that can be used to _unsubscribe_ the topic
  */
-export const usePublishSubscribe = <T>(topic: string): { publish: (value?: T) => Promise<void>, subscribe: (listener: (value?: T) => Promise<void> | void) => () => void } => {
+export const usePublishSubscribe = <T>(topic: string): [(listener: (value?: T) => Promise<void> | void) => () => void, (value?: T) => Promise<void> ] => {
 	const publish = useRef<(value?: T) => Promise<void>>(async (value?: T) => await pubsub.publish(topic, value));
 
 	const subscribe = useRef<(listener: (value?: T) => void | Promise<void>) => () => void>((listener: ((value?: T) => void | Promise<void>)) => {
@@ -24,8 +24,8 @@ export const usePublishSubscribe = <T>(topic: string): { publish: (value?: T) =>
 		}
 	}, [topic]);
 
-	return {
-		publish: publish.current,
-		subscribe: subscribe.current
-	}
+	return [
+		subscribe.current,
+		publish.current
+	]
 }

@@ -13,6 +13,7 @@ export const COMPONENTS = [
 		"useSet",
 		"useArray",
 		"useProxyState",
+		"useProxyStore",
 		"useMemoizedFunction",
 		"useMemoCompare",
 		"useMemoDeepCompare",
@@ -28,10 +29,11 @@ export const COMPONENTS = [
 		"useEventListener"
 	],
 	[
+		"useSyncExternalStore",
 		"isShallowEqual",
 		"isDeepEqual",
 		"isTouchEvent",
 		"isMouseEvent",
-		"isClient",
+		"isClient"
 	]
 ]
