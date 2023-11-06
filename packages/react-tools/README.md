@@ -12,7 +12,7 @@
 	- [x] useMap
 	- [x] useSet
 	- [x] useArray
-	- [-] useProxyState (manca docs)
+	- [x] useProxyState
 	- [ ] useProxyStore
 	- [ ] createProxyStore
 - __EFFECTS__

@@ -1,5 +1,5 @@
 # useProxyState
-Hook to handle component state that allows you to use an object for your state and mutating it in a way more idiomatic for JS.
+Hook to handle component state that allows you to use an object for your state and mutating it in a way more idiomatic for JS. __N.B.__
 
 ## Usage
 
@@ -40,7 +40,12 @@ UseProxyState.displayName = "UseProxyState";
 export { UseProxyState };
 ```
 
-> DEMO
+> The component has:
+> - a state created with _useProxyStore_, that is a object with _num_ property, a number, and _nested_ property that is a object with _random_ property that is a string.
+> - a useCallback function _increment_ that increment _num_ property.
+> - a useCallback function _random_ that generate random number, assigned to _nested.random_ property.
+> - a _Child1_ component that receives _num_ and _increment_ as props.
+> - a _Child2_ component that receives _nested.random_ and _random_ as props.
 
 
 ## API

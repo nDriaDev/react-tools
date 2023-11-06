@@ -4,15 +4,15 @@ Custom _useState_ hook implementation using _LocalStorage_, with immutable _gett
 ## Usage
 
 ```tsx
-const Child = () => {
+const Child = memo(() => {
 	const [state] = useLocalStorageState<string>({key:"demo", opts: {mode: "read"}});
 	return (<>
 		<h3>Child component 1</h3>
 		<p>State is {state}</p>
 	</>)
-}
+})
 
-const Child2 = () => {
+const Child2 = memo(() => {
 	const [setState] = useLocalStorageState<string>({key:"demo", opts: {mode: "write"}});
 	return (<>
 		<h3>Child component 2</h3>
@@ -23,7 +23,7 @@ const Child2 = () => {
 			<input type="text" />
 		</form>
 	</>)
-}
+})
 
 const UseLocalStorageState = () => {
 	const [, , , remove] = useLocalStorageState({ key: "demo", initialState: "prova" });
