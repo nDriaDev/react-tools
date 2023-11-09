@@ -1,5 +1,5 @@
 import { BaseSyntheticEvent, useCallback, useEffect } from "react";
-import { useSessionStorageState } from "../../../../../../packages/react-tools/src/hooks";
+import { useSessionStorageState } from "../../../../../../packages/react-tools/src";
 
 /**
 The component has:

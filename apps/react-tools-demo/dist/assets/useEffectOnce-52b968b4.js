@@ -1,0 +1,1 @@
+import{r as e}from"./index-7b09dd01.js";import{u as s}from"./useUpdate-dddcae22.js";const p=u=>{const n=s(),f=e.useRef(u),r=e.useRef(),t=e.useRef(!1),c=e.useRef(!1);t.current&&(c.current=!0),e.useEffect(()=>(t.current||(r.current=f.current(),t.current=!0),n(),()=>{c.current&&r.current&&r.current()}),[])};export{p as u};

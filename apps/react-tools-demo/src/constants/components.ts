@@ -1,39 +1,61 @@
+export const GROUPS = ["Hooks", "Utils", "State", "Lifecycle", "Performance", "Events", "API DOM"] as const;
 export const COMPONENTS = [
+	//HOOKS
 	[
-		"usePrevious",
-		"useStateGetReset",
-		"useStateHistory",
-		"useStateHistoryGetter",
-		"useReducerGetReset",
-		"useReducerHistory",
-		"useReducerHistoryGetter",
-		"useLocalStorageState",
-		"useSessionStorageState",
-		"useMap",
-		"useSet",
-		"useArray",
-		"useProxyState",
-		"useProxyStore",
-		"useMemoizedFunction",
-		"useMemoCompare",
-		"useMemoDeepCompare",
-		"useCallbackCompare",
-		"useCallbackDeepCompare",
-		"useEffectCompare",
-		"useEffectDeepCompare",
-		"useLayoutEffectCompare",
-		"useLayoutEffectDeepCompare",
-		"usePublishSubscribe",
-		"useEvents",
-		"useEventDispatcher",
-		"useEventListener"
+		//STATE
+		[
+			"usePrevious",
+			"useStateGetReset",
+			"useStateHistory",
+			"useStateHistoryGetter",
+			"useReducerGetReset",
+			"useReducerHistory",
+			"useReducerHistoryGetter",
+			"useLocalStorageState",
+			"useSessionStorageState",
+			"useMap",
+			"useSet",
+			"useArray",
+			"useProxyState",
+			"useSyncExternalStore",
+		],
+		//LIFECYCLE
+		[
+			"useEffectCompare",
+			"useEffectDeepCompare",
+			"useEffectOnce",
+			"useLayoutEffectCompare",
+			"useLayoutEffectDeepCompare",
+			"useLayoutEffectOnce",
+			"useUpdate",
+		],
+		//PERFORMANCE
+		[
+			"useMemoizedFunction",
+			"useMemoCompare",
+			"useMemoDeepCompare",
+			"useCallbackCompare",
+			"useCallbackDeepCompare",
+		],
+		//EVENTS
+		[
+			"usePerformAction",
+			"useEventListener",
+			"useEvents",
+			"useEventDispatcher",
+		],
+		//API DOM
+		[
+			"usePublishSubscribe",
+			"useScript"
+		]
 	],
+	//UTILS
 	[
-		"useSyncExternalStore",
 		"isShallowEqual",
 		"isDeepEqual",
 		"isTouchEvent",
 		"isMouseEvent",
 		"isClient"
 	]
-]
+] as const;

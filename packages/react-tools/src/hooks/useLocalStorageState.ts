@@ -1,6 +1,6 @@
-import { Dispatch, SetStateAction, useRef } from "react"
+import { Dispatch, SetStateAction, useRef, useSyncExternalStore } from "react"
 import { useEvents, useMemoizedFunction } from ".";
-import { useSyncExternalStore } from "../utils";
+
 
 /**
  * ___useLocalStorageState___: Custom _useState_ hook implementation using _LocalStorage_, with immutable _getter state_ function and to _remove_ key from localStorage.
@@ -63,9 +63,9 @@ function useLocalStorageState<T>({ key, initialState, opts }: { key: string, ini
 
 	const getSnapshotRef = useRef(() => {
 		const currValue = localStorage.getItem(key) ?? "null";
-		const prevValue = JSON.stringify(cachedState.current);
+		const prevValue = serializer.current(cachedState.current);
 		if (currValue !== prevValue) {
-			cachedState.current = currValue !== null ? JSON.parse(currValue) : null;
+			cachedState.current = currValue !== null ? deserializer.current(currValue) : null;
 		}
 		return cachedState.current;
 	});

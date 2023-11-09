@@ -1,5 +1,5 @@
 import { Dispatch, Reducer, ReducerAction, ReducerState, useCallback, useReducer, useRef } from "react";
-import { useMemoizedFunction } from "./useMemoizedFunction";
+import { useMemoizedFunction } from ".";
 
 /**
  * **`useReducerGetReset`**: Custom useReducer with get and reset state functions.

@@ -1,7 +1,7 @@
 import { Link, useLocation, useOutlet } from 'react-router-dom';
 import Logo from '../assets/github.svg';
 import React from '../assets/react-red.webp';
-import { COMPONENTS } from '../constants/components';
+import { COMPONENTS, GROUPS } from '../constants/components';
 import { Fragment, useCallback, useRef } from 'react';
 import { CSSTransition, SwitchTransition } from 'react-transition-group'
 
@@ -11,6 +11,7 @@ export default function MainLayout() {
 	const currentOutlet = useOutlet()
 	const nodeRef = useRef<HTMLDivElement>(null);
 	const navRef = useRef<HTMLUnknownElement>(null);
+	const containerRef = useRef<HTMLDivElement>(null);
 
 	const openNav = useCallback(() => {
 		navRef.current && (navRef.current.style.width = "100%");
@@ -38,29 +39,53 @@ export default function MainLayout() {
 							</Link>
 						</div>
 						{
-							COMPONENTS.map((el, index) => (<Fragment key={index === 0 ? 'Hooks' : 'Utils'}>
-								<p
-									className='type'
-								>
-									{index === 0 ? 'Hooks' : 'Utils'}
-								</p>
-								{
-									el.map(name => (
-										<Link
-											key={name}
-											to={"/" + name}
-											className={pathname === ("/" + name) ? 'active' : ''}
+							COMPONENTS.map((el, index) => (
+								<Fragment key={GROUPS[index]}>
+									{
+										["Hooks", "Utils"].includes(GROUPS[index]) &&
+										<p
+											className='type'
 										>
-											{name}
-										</Link>
-									))
-								}
-							</Fragment>))
+											{GROUPS[index]}
+										</p>
+									}
+									{
+										el.map((group, index2) => (
+											Array.isArray(group)
+												? <Fragment key={"list-" + GROUPS[2 + index2]}>
+													<p className='sub-type'>
+														{GROUPS[index2+2]}
+													</p>
+													{
+														group.map(name => (
+															<Link
+																key={name}
+																className={pathname === ("/" + name) ? 'active' : ''}
+																to={"/" + name}
+																onClick={()=>containerRef.current?.scrollTo(0,0)}
+															>
+																{name}
+															</Link>
+														))
+													}
+												</Fragment>
+												: <Link
+													key={group as string}
+													className={pathname === ("/" + group) ? 'active' : ''}
+													to={"/" + group}
+													onClick={()=>containerRef.current?.scrollTo(0,0)}
+												>
+													{group}
+												</Link>
+										))
+									}
+								</Fragment>)
+							)
 						}
 					</nav>
 				</>
 			}
-			<div className='container'>
+			<div className='container' ref={containerRef}>
 				<SwitchTransition>
 					<CSSTransition
 						key={location.pathname}

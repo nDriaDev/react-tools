@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { usePrevious } from '../../../../../../packages/react-tools/src/hooks/usePrevious';
+import { usePrevious } from '../../../../../../packages/react-tools/src';
 
 /**
 The component has:

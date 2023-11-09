@@ -1,5 +1,5 @@
 import { BaseSyntheticEvent, useCallback, useRef, useState } from "react"
-import { useEventDispatcher, useEventListener } from "../../../../../../packages/react-tools/src/hooks"
+import { useEventDispatcher, useEventListener } from "../../../../../../packages/react-tools/src"
 
 /**
 The component has:

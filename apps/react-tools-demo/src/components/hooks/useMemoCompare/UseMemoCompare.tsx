@@ -1,5 +1,5 @@
 import { useMemo, useState } from "react";
-import { useMemoCompare } from '../../../../../../packages/react-tools/src/hooks/useMemoCompare';
+import { useMemoCompare } from '../../../../../../packages/react-tools/src';
 
 /**
 The component has:

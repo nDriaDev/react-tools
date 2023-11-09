@@ -1,4 +1,4 @@
-import { useStateHistory } from '../../../../../../packages/react-tools/src/hooks/useStateHistory';
+import { useStateHistory } from '../../../../../../packages/react-tools/src';
 
 /**
 The component has:

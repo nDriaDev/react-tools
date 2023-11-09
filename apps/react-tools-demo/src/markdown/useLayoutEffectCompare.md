@@ -5,7 +5,7 @@ Custom useLayoutEffect that reexecutes EffectCallback only when comparator funct
 
 The implementation is like that _useEffectCompare_.
 
-Please visit [useEffectCompare](/useEffectCompare) example to see how it works.
+Please visit [useEffectCompare](#/useEffectCompare) example to see how it works.
 
 ## API
 

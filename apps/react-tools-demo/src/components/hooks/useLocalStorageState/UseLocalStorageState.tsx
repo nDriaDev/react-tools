@@ -1,5 +1,5 @@
-import { BaseSyntheticEvent, memo, useCallback, useEffect, useRef } from "react";
-import { useLocalStorageState } from "../../../../../../packages/react-tools/src/hooks";
+import { BaseSyntheticEvent, memo, useCallback } from "react";
+import { useEffectOnce, useLocalStorageState } from "../../../../../../packages/react-tools/src";
 
 /**
 The component has:
@@ -33,15 +33,11 @@ const Child2 = memo(() => {
 
 const UseLocalStorageState = () => {
 	const [, , , remove] = useLocalStorageState({ key: "demo", initialState: "prova" });
-	const render = useRef(0);
 	const clear = useCallback(() => remove(), [remove]);
 
-	useEffect(() => {
-		render.current++;
-		return () => {
-			render.current === 2 && clear();
-		}
-	}, [clear]);
+	useEffectOnce(() => {
+		return () => clear();
+	})
 
 	return (<>
 		<Child />

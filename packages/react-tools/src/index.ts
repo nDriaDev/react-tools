@@ -1,6 +1,9 @@
 export type {
 	DependencyListTyped,
-	CompareFn
+	CompareFn,
+	UseScriptProps,
+	UseScriptStatus,
+	UseScript
 } from './models'
 
 export {
@@ -16,8 +19,6 @@ export {
 	useSet,
 	useArray,
 	useProxyState,
-	createProxyStore,
-	useProxyStore,
 	useMemoizedFunction,
 	useMemoCompare,
 	useMemoDeepCompare,
@@ -25,12 +26,18 @@ export {
 	useCallbackDeepCompare,
 	useEffectCompare,
 	useEffectDeepCompare,
+	useEffectOnce,
 	useLayoutEffectCompare,
 	useLayoutEffectDeepCompare,
+	useLayoutEffectOnce,
 	usePublishSubscribe,
 	useEvents,
 	useEventDispatcher,
-	useEventListener
+	useEventListener,
+	useUpdate,
+	usePerformAction,
+	useScript,
+	useSyncExternalStore
 } from './hooks'
 
 export {
@@ -39,5 +46,4 @@ export {
 	isMouseEvent,
 	isTouchEvent,
 	isClient,
-	useSyncExternalStore
 } from './utils'

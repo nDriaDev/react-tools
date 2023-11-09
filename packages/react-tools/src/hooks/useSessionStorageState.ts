@@ -1,6 +1,5 @@
-import { Dispatch, SetStateAction, useRef } from "react"
+import { Dispatch, SetStateAction, useRef, useSyncExternalStore } from "react";
 import { useEvents, useMemoizedFunction } from ".";
-import { useSyncExternalStore } from "../utils";
 
 /**
  * ___useSessionStorageState___: Custom _useState_ hook implementation using _sessionStorage_, with immutable _getter state_ function and to _remove_ key from sessionStorage.
@@ -63,9 +62,9 @@ function useSessionStorageState<T>({ key, initialState, opts }: { key: string, i
 
 	const getSnapshotRef = useRef(() => {
 		const currValue = sessionStorage.getItem(key) ?? "null";
-		const prevValue = JSON.stringify(cachedState.current);
+		const prevValue = serializer.current(cachedState.current);
 		if (currValue !== prevValue) {
-			cachedState.current = currValue !== null ? JSON.parse(currValue) : null;
+			cachedState.current = currValue !== null ? deserializer.current(currValue) : null;
 		}
 		return cachedState.current;
 	});

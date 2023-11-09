@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import { useEventListener } from "../../../../../../packages/react-tools/src/hooks";
+import { useEventListener } from "../../../../../../packages/react-tools/src";
 
 /**
 The component has:
@@ -15,7 +15,6 @@ const UseEventListener = () => {
 	const remove = useEventListener({ type: "click", listener: (e: Event) => console.log(e) });
 	useEventListener({
 		type: "click", listener: (e: Event) => {
-			console.log(e);
 			e.stopPropagation();
 	}, element: buttonRef, listenerOpts: {capture: true} });
 

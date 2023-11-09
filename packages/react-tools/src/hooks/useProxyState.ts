@@ -1,7 +1,7 @@
 import { useReducer, useRef } from "react"
 
 /**
- * __`useProxyState`__: Hook to handle component state that allows you to use an object for your state and mutating it in a way more idiomatic for JS. __N.B.__: not destructure state, otherwise break changes updated.
+ * __`useProxyState`__: Hook to handle component state that allows you to use an object for your state and mutating it in a way more idiomatic for JS. __*N.B.*__ not destructure state, otherwise break changes updated.
  * @param {T | () => T} initialState - value or function
  * @param {boolean} [proxyInDepth=false] - if true, it creates proxy for nested object also.
  * @returns {T} state

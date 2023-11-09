@@ -8,68 +8,73 @@
 	- [x] useReducerHistory
 	- [x] useReducerHistoryGetter
 	- [x] useLocalStorage
- 	- [x] useSessionStorage
+	- [x] useSessionStorage
 	- [x] useMap
 	- [x] useSet
 	- [x] useArray
 	- [x] useProxyState
-	- [ ] useProxyStore
-	- [ ] createProxyStore
-- __EFFECTS__
+	- [x] useSyncExternalStore
+	- [ ] useStore
+	- [ ] createStore
+
+- __LIFECYCLE__
+	- [x] useEffectCompare
+	- [x] useEffectDeepCompare
+	- [x] useEffectOnce
+	- [x] useLayoutEffectCompare
+	- [x] useLayoutEffectDeepCompare
+	- [x] useLayoutEffectOnce
+	- [x] useUpdate
+	- [ ] useIsMounted
+
+- __PERFORMANCE__
 	- [x] useCallbackCompare
 	- [x] useCallbackDeepCompare
 	- [x] useMemoizedFunction
 	- [x] useMemoCompare
 	- [x] useMemoDeepCompare
-	- [x] useEffectCompare
-	- [x] useEffectDeepCompare
-	- [x] useLayoutEffectCompare
-	- [x] useLayoutEffectDeepCompare
-	- [ ] useEffectAfterMount (only if it is possible to detect react strict mode)
-	- [ ] useIsMounted
-	- [ ] useUpdate (force a rerender)
-	- [ ] usePerformAction (thinking about name. This hook force to perform an action (like focusing an element) immediatly after a rerender)
-- __EVENTS__
-	- [ ] useDebounce
-	- [ ] useThrottle
+
+- __EVETNS__
+	- [x] useEvents
 	- [x] useEventListener
-	- [ ] useActiveElement
-	- [ ] useSize
-	- [ ] useHover
+	- [x] useEventDispatcher
+	- [x] usePerformAction
 	- [ ] useIntersectionObserver
 	- [ ] useMutationObserver
-	- [ ] useTimeout
-	- [ ] useInterval
+	- [ ] useKeysEvents
+	- [ ] useSize
+	- [ ] useHover
 	- [ ] useMediaQuery
 	- [ ] useResponsive
 	- [ ] useClickOutside
 	- [ ] useScrollIntoView
-	- [ ] useKeysEvents
 	- [ ] useMouse
-	- [ ] useOnline
 	- [ ] useInfiniteScroll
-	- [ ] useTextSelection
-	- [ ] useDocumentVisibility
 	- [ ] useDragAndDrop (check for mobile usage)
-	- [ ] useFullscreen (check browser compatibility)
 	- [ ] useInViewport (with area ratio of element: check if is equal to useIntersectionObserver)
 	- [ ] useLongPress
-	- [x] useEventDispatcher
-	- [x] usePubSubModel
-	- [x] useEvents
 
-- __DOM API__
+- __API DOM__
+	- [x] usePublishSubscribe
+	- [x] useScript
+	- [ ] useDebounce
+	- [ ] useThrottle
+	- [ ] useActiveElement
+	- [ ] useTimeout
+	- [ ] useInterval
+	- [ ] useTextSelection
+	- [ ] useDocumentVisibility
 	- [ ] useCoptyToClipboard
 	- [ ] useColorScheme
 	- [ ] useTitle (change document.title but also document.head.title nodeElement)
 	- [ ] useFetch
 	- [ ] useAsync
 	- [ ] useImageOnLoad
-	- [ ] useScript
 	- [ ] useMediaStream
 	- [ ] useScreenShare
 	- [ ] useNetwork
-	-
+	- [ ] useOnline
+	- [ ] useFullscreen (check browser compatibility)
 
 - __UTILS__
 	- [x] isShallowEqual
@@ -77,6 +82,7 @@
 	- [x] isMouseEvent
 	- [x] isTouchEvent
 	- [x] isClient
+
 
 ## ESlint configuration
 To validate dependencies of custom hooks like `useMemoCompare`, configure `exhaustive-deps` with the `additionalHooks` option
