@@ -28,6 +28,7 @@ export const COMPONENTS = [
 			"useLayoutEffectDeepCompare",
 			"useLayoutEffectOnce",
 			"useUpdate",
+			"useIsMounted"
 		],
 		//PERFORMANCE
 		[

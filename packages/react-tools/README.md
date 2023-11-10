@@ -25,7 +25,7 @@
 	- [x] useLayoutEffectDeepCompare
 	- [x] useLayoutEffectOnce
 	- [x] useUpdate
-	- [ ] useIsMounted
+	- [x] useIsMounted
 
 - __PERFORMANCE__
 	- [x] useCallbackCompare

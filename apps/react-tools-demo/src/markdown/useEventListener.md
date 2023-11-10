@@ -9,7 +9,6 @@ const UseEventListener = () => {
 	const remove = useEventListener({ type: "click", listener: (e: Event) => console.log(e) });
 	useEventListener({
 		type: "click", listener: (e: Event) => {
-			console.log(e);
 			e.stopPropagation();
 	}, element: buttonRef, listenerOpts: {capture: true} });
 

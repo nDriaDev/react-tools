@@ -37,7 +37,8 @@ export {
 	useUpdate,
 	usePerformAction,
 	useScript,
-	useSyncExternalStore
+	useSyncExternalStore,
+	useIsMounted
 } from './hooks'
 
 export {
