@@ -25,9 +25,10 @@ export const useThrottle = <T extends unknown[]>(fn: (...args: T) => void | Prom
 		} else if (optsRef.current.waitFn) {
 			if (isAsync(fn)) {
 				(fn(...args) as Promise<ReturnType<typeof fn>>).finally(() => pending.current = false);
+			} else {
+				fn(...args);
+				pending.current = false;
 			}
-			fn(...args);
-			pending.current = false;
 		} else {
 			throw Error("useThrottled: options aren't setted correctly.");
 		}

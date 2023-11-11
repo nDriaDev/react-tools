@@ -59,7 +59,7 @@
 	- [x] usePublishSubscribe
 	- [x] useScript
 	- [x] useDebounce
-	- [ ] useThrottle
+	- [x] useThrottle
 	- [ ] useActiveElement
 	- [ ] useTimeout
 	- [ ] useInterval

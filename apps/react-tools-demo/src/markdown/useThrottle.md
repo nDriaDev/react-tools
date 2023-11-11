@@ -7,9 +7,9 @@ Hook to limit function execution frequency.
 export const UseThrottle = () => {
 	const [state, setState] = useState(0);
 	const [fn, cancel, immediate] = useThrottle(
-		useCallback(() => setState(t => t+1), []),
+		useCallback(() => new Promise(res => setTimeout(() => res(setState(t => t + 1)), 3000)), []),
 		{
-			delay: 3000
+			waitFn: true
 		}
 	);
 
@@ -26,10 +26,8 @@ export const UseThrottle = () => {
 ```
 
 > The component has:
-> - A _state_ internal state.
-> - A _toggle_ internal state used to choice which function execute on the OnChange event of the input element.
-> - A _useDebounce_ hook that receives a function that updates _state_ variable with input element value and a delay of 1000ms. It returns the debounced function _fn_, the function to cancel debounced function execution _cancel_ and the function to immediately execute function _immediate_.
-> - A _useCallback_ setted as Onchange function of the input element that executes _fn_ or _immediate_ to handle onChange, by _toggle_ value.
+> - A _state_ internal with _0_ value.
+> - A _useThrottle_ hook that receives an async function that increments _state_ variable after 3 seconds and _waitFn_ true as option. It returns the debounced function _fn_, the function to cancel throttle limitation _cancel_ and the function _immediate_ to immediately execute function. Each function is executed by onClick event of three button elements.
 
 
 ## API
