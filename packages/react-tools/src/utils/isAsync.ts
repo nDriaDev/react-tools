@@ -1,5 +1,6 @@
 /**
  * **`isAsync`**: It detects if a function is asynchronous.
+ * @param {(...args: unknown[])=> Eìunknown | Promise<unknown>}
  * @returns {boolean} result
  */
 export const isAsync = <T extends unknown[], E = unknown>(fn: (...args: T)=> E | Promise<E>): boolean => {
