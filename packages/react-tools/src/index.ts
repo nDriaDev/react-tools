@@ -38,7 +38,9 @@ export {
 	usePerformAction,
 	useScript,
 	useSyncExternalStore,
-	useIsMounted
+	useIsMounted,
+	useDebounce,
+	useThrottle
 } from './hooks'
 
 export {
@@ -47,4 +49,5 @@ export {
 	isMouseEvent,
 	isTouchEvent,
 	isClient,
+	isAsync
 } from './utils'

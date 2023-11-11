@@ -44,6 +44,8 @@ export const COMPONENTS = [
 			"useEventListener",
 			"useEvents",
 			"useEventDispatcher",
+			"useDebounce",
+			"useThrottle"
 		],
 		//API DOM
 		[
@@ -57,6 +59,7 @@ export const COMPONENTS = [
 		"isDeepEqual",
 		"isTouchEvent",
 		"isMouseEvent",
-		"isClient"
+		"isClient",
+		"isAsync"
 	]
 ] as const;

@@ -53,8 +53,8 @@ export { UseIsMounted };
 > The component has:
 > - A message _state_ object variable with two properties: _child1_ and _child2_.
 > - A show _state_ variable that shows and hides two child components by clicking on a button.
-> - A _Child1_ component that inside a _useEffectOnce_, after 5 second, update _child1_ property of _message state_ with `OK`
-> - A _Child2_ component that inside a _useEffectOnce_, after 5 second and if _isMounted_ function returns true update _child1_ property of _message state_ with `OK`
+> - A _Child1_ component that inside a _useEffectOnce_, `after 5 second`, update _child1_ property of _message state_ with `OK`
+> - A _Child2_ component that inside a _useEffectOnce_, `after 5 second` and if _isMounted_ function returns true update _child1_ property of _message state_ with `OK`
 > 
 > If child components are showed and hides before 5 seconds, only _Child1_ component update its message because hiding components, isMounted() returns false so _Child2_ don't update its message.
 

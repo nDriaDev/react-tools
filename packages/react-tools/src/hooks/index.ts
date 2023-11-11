@@ -30,3 +30,5 @@ export { usePerformAction } from './usePerformAction';
 export { useScript } from './useScript';
 export { useSyncExternalStore } from './useSyncExternalStore';
 export { useIsMounted } from './useIsMounted';
+export { useDebounce } from './useDebounce';
+export { useThrottle } from './useThrottle';

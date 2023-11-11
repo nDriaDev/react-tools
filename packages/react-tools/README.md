@@ -34,7 +34,7 @@
 	- [x] useMemoCompare
 	- [x] useMemoDeepCompare
 
-- __EVETNS__
+- __EVENTS__
 	- [x] useEvents
 	- [x] useEventListener
 	- [x] useEventDispatcher
@@ -53,11 +53,12 @@
 	- [ ] useDragAndDrop (check for mobile usage)
 	- [ ] useInViewport (with area ratio of element: check if is equal to useIntersectionObserver)
 	- [ ] useLongPress
+	- [ ] useDeferredValue (polyfill - an idea can be use setTimeout inside useEffect)
 
 - __API DOM__
 	- [x] usePublishSubscribe
 	- [x] useScript
-	- [ ] useDebounce
+	- [x] useDebounce
 	- [ ] useThrottle
 	- [ ] useActiveElement
 	- [ ] useTimeout
@@ -82,6 +83,7 @@
 	- [x] isMouseEvent
 	- [x] isTouchEvent
 	- [x] isClient
+	- [x] isAsync
 
 
 ## ESlint configuration
