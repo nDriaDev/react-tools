@@ -23,10 +23,10 @@ export const useThrottle = <T extends unknown[]>(fn: (...args: T) => void | Prom
 			fn(...args);
 			idRef.current = setTimeout(() => pending.current = false, optsRef.current.delay);
 		} else if (optsRef.current.waitFn) {
-			if (isAsync(fn)) {
-				(fn(...args) as Promise<ReturnType<typeof fn>>).finally(() => pending.current = false);
+			const current = fn(...args);
+			if (isAsync(current)) {
+				(current as Promise<void>).finally(() => pending.current = false);
 			} else {
-				fn(...args);
 				pending.current = false;
 			}
 		} else {
