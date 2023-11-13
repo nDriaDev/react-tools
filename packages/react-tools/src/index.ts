@@ -40,7 +40,8 @@ export {
 	useSyncExternalStore,
 	useIsMounted,
 	useDebounce,
-	useThrottle
+	useThrottle,
+	useActiveElement
 } from './hooks'
 
 export {

@@ -32,3 +32,4 @@ export { useSyncExternalStore } from './useSyncExternalStore';
 export { useIsMounted } from './useIsMounted';
 export { useDebounce } from './useDebounce';
 export { useThrottle } from './useThrottle';
+export { useActiveElement } from './useActiveElement';

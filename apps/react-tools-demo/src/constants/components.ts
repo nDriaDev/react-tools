@@ -44,13 +44,14 @@ export const COMPONENTS = [
 			"useEventListener",
 			"useEvents",
 			"useEventDispatcher",
-			"useDebounce",
-			"useThrottle"
 		],
 		//API DOM
 		[
 			"usePublishSubscribe",
-			"useScript"
+			"useScript",
+			"useDebounce",
+			"useThrottle",
+			"useActiveElement"
 		]
 	],
 	//UTILS
