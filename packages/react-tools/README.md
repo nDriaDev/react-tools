@@ -60,7 +60,7 @@
 	- [x] useScript
 	- [x] useDebounce
 	- [x] useThrottle
-	- [-] useActiveElement
+	- [x] useActiveElement
 	- [ ] useTimeout
 	- [ ] useInterval
 	- [ ] useTextSelection
