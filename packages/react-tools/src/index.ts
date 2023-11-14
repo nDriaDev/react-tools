@@ -41,7 +41,9 @@ export {
 	useIsMounted,
 	useDebounce,
 	useThrottle,
-	useActiveElement
+	useActiveElement,
+	useTimeout,
+	useInterval
 } from './hooks'
 
 export {

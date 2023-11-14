@@ -26,6 +26,7 @@
 	- [x] useLayoutEffectOnce
 	- [x] useUpdate
 	- [x] useIsMounted
+	- [ ] useDeferredValue (polyfill - an idea can be use setTimeout inside useEffect)
 
 - __PERFORMANCE__
 	- [x] useCallbackCompare
@@ -53,7 +54,7 @@
 	- [ ] useDragAndDrop (check for mobile usage)
 	- [ ] useInViewport (with area ratio of element: check if is equal to useIntersectionObserver)
 	- [ ] useLongPress
-	- [ ] useDeferredValue (polyfill - an idea can be use setTimeout inside useEffect)
+
 
 - __API DOM__
 	- [x] usePublishSubscribe
@@ -61,8 +62,8 @@
 	- [x] useDebounce
 	- [x] useThrottle
 	- [x] useActiveElement
-	- [ ] useTimeout
-	- [ ] useInterval
+	- [x] useTimeout
+	- [x] useInterval
 	- [ ] useTextSelection
 	- [ ] useDocumentVisibility
 	- [ ] useCoptyToClipboard

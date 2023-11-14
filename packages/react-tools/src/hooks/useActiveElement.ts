@@ -11,7 +11,7 @@ export const useActiveElement = ():Element|null => {
 	return useSyncExternalStore(
 		useCallback(notif => {
 			previousElem.current = document.activeElement;
-			const idTimeout:{id: number | NodeJS.Timeout} = { id: 0 };
+			const idTimeout: { id: number | NodeJS.Timeout } = { id: 0 };
 			const listener = (e: Event) => {
 				/**
 				 * INFO
@@ -32,6 +32,9 @@ export const useActiveElement = ():Element|null => {
 					clearTimeout(idTimeout.id);
 					notif();
 				}
+			}
+			if (typeof addEventListener === "undefined") {
+				throw Error("useActiveElement: hook works only in browser context.");
 			}
 			addEventListener("focusin", listener, true);
 			addEventListener("focusout", listener, true);

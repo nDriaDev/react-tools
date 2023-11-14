@@ -51,7 +51,9 @@ export const COMPONENTS = [
 			"useScript",
 			"useDebounce",
 			"useThrottle",
-			"useActiveElement"
+			"useActiveElement",
+			"useTimeout",
+			"useInterval"
 		]
 	],
 	//UTILS
