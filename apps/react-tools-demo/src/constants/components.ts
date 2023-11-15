@@ -53,7 +53,8 @@ export const COMPONENTS = [
 			"useThrottle",
 			"useActiveElement",
 			"useTimeout",
-			"useInterval"
+			"useInterval",
+			"useTextSelection"
 		]
 	],
 	//UTILS

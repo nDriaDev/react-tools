@@ -43,7 +43,8 @@ export {
 	useThrottle,
 	useActiveElement,
 	useTimeout,
-	useInterval
+	useInterval,
+	useTextSelection
 } from './hooks'
 
 export {

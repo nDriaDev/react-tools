@@ -6,7 +6,18 @@ Custom useState with get and reset state functions.
 ```tsx
 const UseStateGetReset = () => {
 	const [stateG, setStateG, getState, resetState] = useStateGetReset({ id: "", name: "", eta: "" });
-	const [state, setState] = useState({ id: "", name: "", eta:"" });
+	const ref = useRef(getState);
+	const [state, setState] = useState({ id: "", name: "", eta: "" });
+	const update = useUpdate();
+	if (!isShallowEqual(ref.current, getState)) {
+		console.log("different");
+
+	}
+
+	useEffect(() => {
+		const id = setInterval(() => update(), 1000);
+		return () => clearInterval(id)
+	}, [update])
 
 	const onChangeGetter = useCallback((e: BaseSyntheticEvent) => {
 		const state = getState();

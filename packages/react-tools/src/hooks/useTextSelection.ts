@@ -1,17 +1,102 @@
+import { RefObject, useCallback, useMemo, useRef } from "react";
+import { TextSelection } from "../models";
+import { isDeepEqual, useSyncExternalStore } from "..";
+
+/**
+ * TODO
+ * non funziona bene, vanno gestiti gli eventi per come qui https://excalidraw.com/#json=7nYktheXKBE2A3aBYxPVx,s3gx5SWbNG-GHk2_VsODRw
+ * il getTextSelectionDataSet non ritorna i rettangoli se il testo selezionato è di uno stesso elemento ma va a capo.
+ */
+export const useTextSelection = ({ target, onStart, onChange, onEnd }: { target?: RefObject<HTMLElement> | HTMLElement, onStart?: (evt: Event) => void, onChange?: (evt: Event) => void, onEnd?: (evt: Event) => void } = {}): TextSelection | null => {
+	const selectionEnd = useCallback((evt: Event) => {
+		const element = target
+				? (target as RefObject<HTMLElement>).current
+			? (target as RefObject<HTMLElement>).current
+			: target as HTMLElement
+		: document;
+		onEnd && onEnd(evt);
+		onChange && document.removeEventListener("selectionchange", onChange);
+		element?.removeEventListener("pointerleave", selectionEndWrap.current!);
+		document.removeEventListener("pointerup", selectionEndWrap.current!);
+	}, [onEnd, onChange, target]);
+
+	const selectionEndWrap = useRef<EventListenerOrEventListenerObject>();
+
+	const selectionStart = useCallback((evt: Event, notif: () => void) => {
+		const element = target
+			? (target as RefObject<HTMLElement>).current
+				? (target as RefObject<HTMLElement>).current
+				: target as HTMLElement
+			: document;
+		if (!element?.contains(evt.target as HTMLElement)) {
+			return;
+		}
+		onStart && onStart(evt);
+		onChange && document.addEventListener("selectionchange", onChange);
+		selectionEndWrap.current = (evt: Event) => {
+			selectionEnd(evt);
+			notif();
+		}
+		document.addEventListener("pointerup", selectionEndWrap.current);
+		element?.addEventListener("pointerleave", selectionEndWrap.current);
+	}, [onStart, onChange, selectionEnd, target]);
+
+	return useSyncExternalStore(
+		useCallback(notif => {
+			const listener = (evt: Event) => {
+				selectionStart(evt, notif);
+			}
+			document.addEventListener("selectstart", listener);
+
+			return () => {
+				document.removeEventListener("selectstart", listener)
+			}
+		}, [selectionStart]),
+		useMemo(() => {
+			let element = target
+				? (target as RefObject<HTMLElement>).current
+					? (target as RefObject<HTMLElement>).current
+					: target as HTMLElement
+				: document;
+			let selection = getTextSelectionDataSet(element !== document ? element as HTMLElement : undefined);
+			return () => {
+				const currElement = target
+					? (target as RefObject<HTMLElement>).current
+						? (target as RefObject<HTMLElement>).current
+						: target as HTMLElement
+					: document;
+				const currSelection = getTextSelectionDataSet(currElement !== document ? currElement as HTMLElement : undefined);
+				if (element !== currElement || !isDeepEqual(currSelection, selection)) {
+					element = currElement;
+					selection = currSelection;
+				}
+				return selection;
+			}
+		}, [target])
+	);
+}
+
 function getSelectedTextDirection(selection: Selection) {
 	const range = document.createRange();
 	range.setStart(selection.anchorNode!, selection.anchorOffset);
 	range.setEnd(selection.focusNode!, selection.focusOffset);
 	return range.collapsed ? 'backward' : 'forward';
 }
-function getTextSelectionDataSet() {
+function getTextSelectionDataSet(parentElement?: HTMLElement): TextSelection | null {
 	const ws = window.getSelection();
 	if (ws === null || ws.toString().trim() === "") {
-		return { text: "", outsideRectangle: null, innerRectangles: [] };
+		return null;
 	}
-	const data: { text: string, outsideRectangle: DOMRect | null, innerRectangles: Omit<DOMRect, "toJSON">[] } = {
+	const parentElementDim = (parentElement ?? document.body).getBoundingClientRect();
+	const selectionDim = ws.getRangeAt(0).getBoundingClientRect();
+	const data: TextSelection = {
 		text: ws.toString(),
-		outsideRectangle: ws.getRangeAt(0).getBoundingClientRect(),
+		outsideRectangle: new DOMRect(
+			selectionDim.x - parentElementDim.x,
+			selectionDim.y - parentElementDim.y,
+			selectionDim.width,
+			selectionDim.height,
+		),
 		innerRectangles: []
 	}
 	const direction = getSelectedTextDirection(ws),
@@ -32,7 +117,7 @@ function getTextSelectionDataSet() {
 
 	const range = document.createRange();
 	range.setStart(text, offset);
-	selectedText = (text as Node & {data: string}).data.toString().substring(offset);
+	selectedText = (text as Node & { data: string }).data.toString().substring(offset);
 	if (allText.length <= selectedText.length) {
 		range.setEnd(text, offset + allText.length);
 		ranges.push(range);
@@ -72,15 +157,6 @@ function getTextSelectionDataSet() {
 				text = text!.nextSibling;
 			}
 		}
-		// if (spanText === null) {
-		// 	container = container!.nextSibling;
-		// 	for (let i = 0, size = (container! as HTMLElement).children.length; i < size; i++) {
-		// 		if ((container! as HTMLElement).children[i].nodeName === "SPAN") {
-		// 			spanText = (container! as HTMLElement).children[i];
-		// 			break;
-		// 		}
-		// 	}
-		// }
 		const range = document.createRange();
 		selectedText = (text as Node & { data: string }).data.toString();
 		range.setStart(text, 0);
@@ -97,18 +173,13 @@ function getTextSelectionDataSet() {
 
 	data.innerRectangles = ranges.map(el => {
 		const dim = el.getBoundingClientRect();
-		return {
-			x: dim.x - (data.outsideRectangle ? data.outsideRectangle.x : 0),
-			y: dim.y - (data.outsideRectangle ? data.outsideRectangle.y : 0),
-			top: dim.top - (data.outsideRectangle ? data.outsideRectangle.top : 0),
-			left: dim.left - (data.outsideRectangle ? data.outsideRectangle.left : 0),
-			right: dim.right - (data.outsideRectangle ? data.outsideRectangle.right : 0),
-			bottom: dim.bottom - (data.outsideRectangle ? data.outsideRectangle.bottom : 0),
-			width: dim.width,
-			height: dim.height
-		}
+		return new DOMRect(
+			dim.x - parentElementDim.x,
+			dim.y - parentElementDim.y,
+			dim.width,
+			dim.height
+		);
 	});
 
-	window.getSelection()?.removeAllRanges();
-	console.log("TEXT_SELECTION_RANGES", data);
+	return data;
 }
