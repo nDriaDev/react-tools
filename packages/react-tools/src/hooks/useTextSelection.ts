@@ -6,36 +6,39 @@ function getSelectedTextDirection(selection: Selection) {
 }
 function getTextSelectionDataSet() {
 	const ws = window.getSelection();
-	if (ws === null || ws.toString() === "") {
-		return { text: "", rect: null, rects: [] };
+	if (ws === null || ws.toString().trim() === "") {
+		return { text: "", outsideRectangle: null, innerRectangles: [] };
 	}
-	const data: { text: string, rect: DOMRect | null, rects: Omit<DOMRect, "toJSON">[] } = {
+	const data: { text: string, outsideRectangle: DOMRect | null, innerRectangles: Omit<DOMRect, "toJSON">[] } = {
 		text: ws.toString(),
-		rect: ws.getRangeAt(0).getBoundingClientRect(),
-		rects: []
+		outsideRectangle: ws.getRangeAt(0).getBoundingClientRect(),
+		innerRectangles: []
 	}
 	const direction = getSelectedTextDirection(ws),
 		ranges = [];
 	let allText = data.text;
-	let spanText: Node | null, selectedText, offset;
+	let container, element, text: Node | null, selectedText, offset;
 
 	if (direction === "backward") {
-		spanText = ws.focusNode!.parentNode;
+		text = ws.focusNode!;
 		offset = ws.focusOffset;
 	} else {
-		spanText = ws.anchorNode!.parentNode;
+		text = ws.anchorNode!;
 		offset = ws.anchorOffset;
 	}
 
+	element = text!.parentNode!;
+	container = element!.parentNode!;
+
 	const range = document.createRange();
-	range.setStart(spanText!.firstChild!, offset);
-	selectedText = (spanText!.firstChild! as ChildNode & {data: string}).data.toString().substring(offset);
+	range.setStart(text, offset);
+	selectedText = (text as Node & {data: string}).data.toString().substring(offset);
 	if (allText.length <= selectedText.length) {
-		range.setEnd(spanText!.firstChild!, offset + allText.length);
+		range.setEnd(text, offset + allText.length);
 		ranges.push(range);
 		allText = "";
 	} else {
-		range.setEnd(spanText!.firstChild!, offset + selectedText.length);
+		range.setEnd(text, offset + selectedText.length);
 		ranges.push(range);
 		allText = allText.substring(selectedText.length);
 	}
@@ -44,33 +47,63 @@ function getTextSelectionDataSet() {
 		while (allText.charAt(0) === "\n") {
 			allText = allText.substring(1);
 		}
-		spanText = spanText!.nextSibling;
-		if (spanText === null || allText === "") {
+		if (allText === "") {
 			break;
 		}
+		text = text!.nextSibling;
+		while (text === null || text!.nodeName !== "#text") {
+			if (text === null) {
+				if (element === null || element!.nextSibling === null) {
+					if (container === null || container!.nextSibling === null) {
+						container = container!.parentNode;
+						container = container?.nextSibling ?? null;
+						element = container?.firstChild ?? null;
+						text = element?.firstChild ?? null;
+					} else {
+						container = container!.nextSibling;
+						element = container!.firstChild;
+						text = element?.firstChild ?? null;
+					}
+				} else {
+					element = element!.nextSibling;
+					text = element!.firstChild;
+				}
+			} else {
+				text = text!.nextSibling;
+			}
+		}
+		// if (spanText === null) {
+		// 	container = container!.nextSibling;
+		// 	for (let i = 0, size = (container! as HTMLElement).children.length; i < size; i++) {
+		// 		if ((container! as HTMLElement).children[i].nodeName === "SPAN") {
+		// 			spanText = (container! as HTMLElement).children[i];
+		// 			break;
+		// 		}
+		// 	}
+		// }
 		const range = document.createRange();
-		selectedText = (spanText!.firstChild! as ChildNode & { data: string }).data.toString();
-		range.setStart(spanText!.firstChild!, 0);
+		selectedText = (text as Node & { data: string }).data.toString();
+		range.setStart(text, 0);
 		if (allText.length <= selectedText.length) {
-			range.setEnd(spanText!.firstChild!, allText.length);
+			range.setEnd(text, allText.length);
 			ranges.push(range);
 			allText = "";
 		} else {
-			range.setEnd(spanText!.firstChild!, selectedText.length);
+			range.setEnd(text, selectedText.length);
 			ranges.push(range);
 			allText = allText.substring(selectedText.length);
 		}
 	}
 
-	data.rects = ranges.map(el => {
+	data.innerRectangles = ranges.map(el => {
 		const dim = el.getBoundingClientRect();
 		return {
-			x: dim.x - (data.rect ? data.rect.x : 0),
-			y: dim.y - (data.rect ? data.rect.y : 0),
-			top: dim.top - (data.rect ? data.rect.top : 0),
-			left: dim.left - (data.rect ? data.rect.left : 0),
-			right: dim.right - (data.rect ? data.rect.right : 0),
-			bottom: dim.bottom - (data.rect ? data.rect.bottom : 0),
+			x: dim.x - (data.outsideRectangle ? data.outsideRectangle.x : 0),
+			y: dim.y - (data.outsideRectangle ? data.outsideRectangle.y : 0),
+			top: dim.top - (data.outsideRectangle ? data.outsideRectangle.top : 0),
+			left: dim.left - (data.outsideRectangle ? data.outsideRectangle.left : 0),
+			right: dim.right - (data.outsideRectangle ? data.outsideRectangle.right : 0),
+			bottom: dim.bottom - (data.outsideRectangle ? data.outsideRectangle.bottom : 0),
 			width: dim.width,
 			height: dim.height
 		}
