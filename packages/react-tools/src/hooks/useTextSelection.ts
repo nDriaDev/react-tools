@@ -5,8 +5,14 @@ import { isDeepEqual, useSyncExternalStore } from "..";
 /**
  * TODO
  * non funziona bene, vanno gestiti gli eventi per come qui https://excalidraw.com/#json=7nYktheXKBE2A3aBYxPVx,s3gx5SWbNG-GHk2_VsODRw
- * il getTextSelectionDataSet non ritorna i rettangoli se il testo selezionato è di uno stesso elemento ma va a capo.
- */
+ * il getTextSelectionDataSet non ritorna i rettangoli se il testo selezionato è di uno stesso elemento ma va a capo. va fatta cosi per avere tutti i rettangoli senza far nessun calcolo:
+
+const ws = getSelection()
+  if(ws.toString()==="") return
+  const range = ws.getRangeAt(0);
+  const rects = range.getClientRects();
+
+*/
 export const useTextSelection = ({ target, onStart, onChange, onEnd }: { target?: RefObject<HTMLElement> | HTMLElement, onStart?: (evt: Event) => void, onChange?: (evt: Event) => void, onEnd?: (evt: Event) => void } = {}): TextSelection | null => {
 	const selectionEnd = useCallback((evt: Event) => {
 		const element = target
