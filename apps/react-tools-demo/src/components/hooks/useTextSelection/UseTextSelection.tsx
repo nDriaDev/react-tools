@@ -2,7 +2,7 @@ import { useMemo, useRef } from "react";
 import { useTextSelection } from "../../../../../../packages/react-tools/src"
 export const UseTextSelection = () => {
 	const ref = useRef<HTMLDivElement>(null);
-	const selection = useTextSelection({ target: ref });
+	const selection = useTextSelection({ target: ref, onEnd: () => {getSelection()?.removeAllRanges()} });
 	const rectangles = useMemo(() => {
 		if (!selection) {
 			return null;
@@ -13,7 +13,7 @@ export const UseTextSelection = () => {
 					key="outside-rectangle"
 					style={{
 						position: "absolute",
-						border: "1px solid red",
+						border: ".5px solid red",
 						top: selection.outsideRectangle.top + "px",
 						left: selection.outsideRectangle.left + "px",
 						width: selection.outsideRectangle.width + "px",
@@ -26,7 +26,7 @@ export const UseTextSelection = () => {
 					key={"inner-rectangle-"+index}
 					style={{
 						position: "absolute",
-						border: "1px solid darkcyan",
+						border: ".5px solid darkcyan",
 						top: el.top + "px",
 						left: el.left + "px",
 						width: el.width + "px",
