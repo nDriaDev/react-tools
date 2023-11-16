@@ -66,7 +66,7 @@
 	- [x] useInterval
 	- [x] useTextSelection
 	- [x] useDocumentVisibility
-	- [ ] useCoptyToClipboard
+	- [-] useClipboard
 	- [ ] useColorScheme
 	- [ ] useTitle (change document.title but also document.head.title nodeElement)
 	- [ ] useFetch
