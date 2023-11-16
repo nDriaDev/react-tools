@@ -1,5 +1,5 @@
 # useTextSelection
-Hook to track text selection and its size.
+Hook to track text selection. Refers to [Selection API](https://developer.mozilla.org/en-US/docs/Web/API/Selection).
 
 ## Usage
 

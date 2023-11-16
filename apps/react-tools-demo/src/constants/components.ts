@@ -54,7 +54,8 @@ export const COMPONENTS = [
 			"useActiveElement",
 			"useTimeout",
 			"useInterval",
-			"useTextSelection"
+			"useTextSelection",
+			"useDocumentVisibility"
 		]
 	],
 	//UTILS

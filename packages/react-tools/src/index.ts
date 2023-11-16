@@ -44,7 +44,8 @@ export {
 	useActiveElement,
 	useTimeout,
 	useInterval,
-	useTextSelection
+	useTextSelection,
+	useDocumentVisibility
 } from './hooks'
 
 export {

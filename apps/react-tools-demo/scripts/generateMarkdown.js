@@ -247,7 +247,8 @@ function buildHooksUtilsMarkdownObject(file) {
 		if(depuratedLine.startsWith("__") || depuratedLine.startsWith("**")) {
 			const titleDescription = depuratedLine.split(":");
 			obj.title = titleDescription[0].substring(3, titleDescription[0].length-3);
-			obj.description = titleDescription[1].trim();
+			titleDescription.shift();
+			obj.description = titleDescription.join(":").trim();
 			obj.description = obj.description.charAt(0).toUpperCase() + obj.description.substring(1);
 		}
 	});

@@ -3,7 +3,7 @@ import { TextSelection } from "../models";
 import { isDeepEqual, useSyncExternalStore } from "..";
 
 /**
- * **`useTextSelection`**: Hook to track text selection and its size.
+ * **`useTextSelection`**: Hook to track text selection. Refers to [Selection API](https://developer.mozilla.org/en-US/docs/Web/API/Selection).
  * @param {Object} param - object with selection properties
  * @param {RefObject<HTMLElement> | HTMLElement} [param.target] - element in which allow selection. Default is _document.body_.
  * @param {(evt: Event) => void} [param.onStart] - function to execute when selection starts.
