@@ -64,7 +64,7 @@
 	- [x] useActiveElement
 	- [x] useTimeout
 	- [x] useInterval
-	- [ ] useTextSelection
+	- [x] useTextSelection
 	- [ ] useDocumentVisibility
 	- [ ] useCoptyToClipboard
 	- [ ] useColorScheme

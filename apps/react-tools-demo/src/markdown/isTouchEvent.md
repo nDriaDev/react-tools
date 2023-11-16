@@ -4,7 +4,7 @@ It returns true if the event param is of TouchEvent type.
 ## API
 
 ```tsx
-isTouchEvent (event: SyntheticEvent): boolean 
+isTouchEvent (event: SyntheticEvent | Event): boolean 
 ```
 
 > ### Params

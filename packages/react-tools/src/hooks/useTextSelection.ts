@@ -2,6 +2,15 @@ import { RefObject, useCallback, useMemo, useRef } from "react";
 import { TextSelection } from "../models";
 import { isDeepEqual, useSyncExternalStore } from "..";
 
+/**
+ * **`useTextSelection`**: Hook to track text selection and its size.
+ * @param {Object} param - object with selection properties
+ * @param {RefObject<HTMLElement> | HTMLElement} [param.target] - element in which allow selection. Default is _document.body_.
+ * @param {(evt: Event) => void} [param.onStart] - function to execute when selection starts.
+ * @param {(evt: Event) => void} [param.onChange] - function to execute while selection changes.
+ * @param {(evt: Event) => void} [param.onEnd] - function to execute while selection ends.
+ * @returns {{text: string, direction: "forward"|"backward", outsideRectangle: DOMRect, innerRectangles: DOMRect[]}} TextSelection - object with: _text_: selected text; _direction_: selection direction; _outsideRectangle_: a __DOMRect__ of selection rectangle; _innerRectangles_: list of __DOMRect__ representing the selection slices.
+ */
 export const useTextSelection = ({ target, onStart, onChange, onEnd }: { target?: RefObject<HTMLElement> | HTMLElement, onStart?: (evt: Event) => void, onChange?: (evt: Event) => void, onEnd?: (evt: Event) => void } = {}): TextSelection | null => {
 	const selecting = useRef(false);
 	const selectedText = useRef<string | null>(null);
@@ -40,7 +49,7 @@ export const useTextSelection = ({ target, onStart, onChange, onEnd }: { target?
 
 	const pointerUpLeaveTargetHandler = useCallback(() => {
 		selecting.current = false;
-		selectedText.current = (getSelection() ?? "").toString() || null;
+		selectedText.current = (getSelection() ?? "").toString();
 		onChange && document.removeEventListener("selectionchange", onChange);
 	}, [onChange]);
 
@@ -58,7 +67,7 @@ export const useTextSelection = ({ target, onStart, onChange, onEnd }: { target?
 				? (target as RefObject<HTMLElement>).current
 					? (target as RefObject<HTMLElement>).current
 					: target as HTMLElement
-				: document;
+				: document.body;
 			document.addEventListener("pointerdown", pointerDownDocHandler);
 			document.addEventListener("pointerup", pointerUpLeaveDocHandler);
 			document.addEventListener("pointerleave", pointerUpLeaveDocHandler);
@@ -84,14 +93,14 @@ export const useTextSelection = ({ target, onStart, onChange, onEnd }: { target?
 				? (target as RefObject<HTMLElement>).current
 					? (target as RefObject<HTMLElement>).current
 					: target as HTMLElement
-				: document;
+				: document.body;
 			let currSelection = selection.current;
 			return () => {
 				const currElement = target
 					? (target as RefObject<HTMLElement>).current
 						? (target as RefObject<HTMLElement>).current
 						: target as HTMLElement
-					: document;
+					: document.body;
 				if (element !== currElement || !isDeepEqual(currSelection, selection.current)) {
 					element = currElement;
 					currSelection = selection.current;

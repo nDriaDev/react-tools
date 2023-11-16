@@ -1,5 +1,11 @@
 import { useMemo, useRef } from "react";
 import { useTextSelection } from "../../../../../../packages/react-tools/src"
+
+/**
+The component renders a grid with two columns. First column contains _two tag p elements_ with text and secondo column the result of _useTextSelection hook_.
+
+_useTextSelection_ is initialized with a _target_ property that has a ref attached to first column div and _onEnd_ property that has a function that clean selection. When text is selected appears colored rectangles with the coordinates returned from hook.
+ */
 export const UseTextSelection = () => {
 	const ref = useRef<HTMLDivElement>(null);
 	const selection = useTextSelection({ target: ref, onEnd: () => {getSelection()?.removeAllRanges()} });
@@ -48,7 +54,7 @@ export const UseTextSelection = () => {
 			</div>
 			{rectangles}
 		</div>
-		<div style={{textAlign: "left", padding: "0 1em", overflow: "auto", border: "1px solid lightgray"}}>
+		<div style={{textAlign: "left", padding: "0 1em", maxHeight: 300, overflow: "auto", border: "1px solid lightgray"}}>
 			<p><strong>Selection:</strong></p>
 			<pre>{JSON.stringify(selection, null, 2)}</pre>
 		</div>
