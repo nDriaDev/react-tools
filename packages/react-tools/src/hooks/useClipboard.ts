@@ -14,7 +14,11 @@ const askPermission = (type: "clipboard-read" | "clipboard-write") => {
 			throw err
 		});
 }
-export const useClipboard = ({ useValue, target }: { useValue: boolean, target?: RefObject<HTMLElement>|HTMLElement }) => {
+
+const isFirefox = () => navigator.clipboard.read === undefined;
+
+export const useClipboard = ({ useValue, target }: { useValue: boolean, target?: RefObject<HTMLElement> | HTMLElement }) => {
+	const valueRef = useRef<string | Blob>("");
 	const copy = useRef((blob: Blob | Blob[]) => (
 		askPermission("clipboard-write")
 			.then(() => navigator.clipboard.write(
@@ -29,6 +33,7 @@ export const useClipboard = ({ useValue, target }: { useValue: boolean, target?:
 						: target as HTMLElement
 					: document;
 				element!.dispatchEvent(new ClipboardEvent("copy", {
+					//TODO
 					clipboardData: new DataTransfer()
 				}))
 			})
@@ -40,13 +45,27 @@ export const useClipboard = ({ useValue, target }: { useValue: boolean, target?:
 	const copyText = useRef((text: string) => (
 		askPermission("clipboard-write")
 			.then(() => navigator.clipboard.writeText(text))
+			.then(() => {
+				const element = target
+					? (target as RefObject<HTMLElement>).current
+						? (target as RefObject<HTMLElement>).current
+						: target as HTMLElement
+					: document;
+				element!.dispatchEvent(new ClipboardEvent("copy", {
+					//TODO
+					clipboardData: new DataTransfer()
+				}))
+			})
 			.catch(err => {
 				throw err;
 			})
 	));
 
-	const paste = useRef(() => (
-		askPermission("clipboard-read")
+	const paste = useRef(() => {
+		if (isFirefox()) {
+			throw Error("Paste from Clipboard isn't allowed in Firefox.");
+		}
+		return askPermission("clipboard-read")
 			.then(() => navigator.clipboard.read())
 			.then(items => {
 				const promises = [];
@@ -57,27 +76,58 @@ export const useClipboard = ({ useValue, target }: { useValue: boolean, target?:
 				}
 				return Promise.all(promises);
 			})
+			.then(() => {
+				const element = target
+					? (target as RefObject<HTMLElement>).current
+						? (target as RefObject<HTMLElement>).current
+						: target as HTMLElement
+					: document;
+				element!.dispatchEvent(new ClipboardEvent("paste", {
+					//TODO
+					clipboardData: new DataTransfer()
+				}))
+			})
 			.catch(err => {
 				throw err;
 			})
-	));
+	});
 
-	const pasteText = useRef(() => (
-		askPermission("clipboard-read")
+	const pasteText = useRef(() => {
+		if (isFirefox()) {
+			throw Error("Paste from Clipboard isn't allowed in Firefox.");
+		}
+		return askPermission("clipboard-read")
 			.then(() => navigator.clipboard.readText())
+			.then(() => {
+				const element = target
+					? (target as RefObject<HTMLElement>).current
+						? (target as RefObject<HTMLElement>).current
+						: target as HTMLElement
+					: document;
+				element!.dispatchEvent(new ClipboardEvent("paste", {
+					//TODO
+					clipboardData: new DataTransfer()
+				}))
+			})
 			.catch(err => {
 				throw err;
 			})
-	));
+	});
 
 	const value = useSyncExternalStore(
 		useCallback(notif => {
-
+			const element = target
+				? (target as RefObject<HTMLElement>).current
+					? (target as RefObject<HTMLElement>).current
+					: target as HTMLElement
+				: document;
 		}, []),
-		useCallback(async () => (
-			askPermission("clipboard-read")
-			.then(()=>pasteText.current)
-		), [])
+		useCallback(async () => {
+			if (isFirefox()) {
+				return valueRef.current;
+			}
+			return paste.current();
+		}, [])
 	);
 
 	if (useValue) {
