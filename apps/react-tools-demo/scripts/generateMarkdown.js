@@ -41,7 +41,7 @@ function splitType(string){
 	let newCode = [];
 	let last = "";
 	for (let part of string){
-		if (last.split("<").length === last.split(">").length && last.split("(").length === last.split(")").length && last.split("[").length === last.split("]").length && last.split("{").length === last.split("}").length){
+		if (last.split("<").length === last.split(/[^=]>/).length && last.split("(").length === last.split(")").length && last.split("[").length === last.split("]").length && last.split("{").length === last.split("}").length){
 			last = part;
 			newCode.push(part);
 		}

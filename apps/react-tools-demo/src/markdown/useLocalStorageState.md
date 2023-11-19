@@ -77,12 +77,11 @@ object with serializer and deserializer function to handle values in localStorag
 > - __Union of__:  
 >     - __Array__:  
 >         - _T_  
->         - _() => T, () => void_  
+>         - _() => T_  
+>         - _() => void_  
 >     - __Array__:  
->         - _Dispatch<SetStateAction<T>>_  
->         - _() => T, () => void_  
+>         - _Dispatch<SetStateAction<T>>, () => T, () => void_  
 >     - __Array__:  
 >         - _T_  
->         - _Dispatch<SetStateAction<T>>_  
->         - _() => T, () => void_  
+>         - _Dispatch<SetStateAction<T>>, () => T, () => void_  
 >

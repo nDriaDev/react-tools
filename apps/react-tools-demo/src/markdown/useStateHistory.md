@@ -82,9 +82,5 @@ history capacity (default 'no-limit').
 > __array__
 > - __Array__:  
 >     - _T_  
->     - _Dispatch<SetStateAction<T>>_  
->     - __Object__:  
->         - __history__ : _readonly T[]_  
->         - __presentPointer__ : _number_  
->         - __trackUpdate__ : _(enable:boolean) => void, canUndo: boolean, canRedo: boolean, undo: () => void, redo: () => void, go: (index: number) => void, clear: (value?: T) => void_  
+>     - _Dispatch<SetStateAction<T>>, {history: readonly T[], presentPointer: number, trackUpdate: (enable:boolean) => void, canUndo: boolean, canRedo: boolean, undo: () => void, redo: () => void, go: (index: number) => void, clear: (value?: T) => void}_  
 >

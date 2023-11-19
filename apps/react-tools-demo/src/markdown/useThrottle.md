@@ -52,5 +52,7 @@ if true, next function execution taking place when current has finished.
 >
 > __- array with throttled function, cancel function to allow other execution and immediate function to execute function immediately.__
 > - __Array__:  
->     - _(...args: unknown[]) => void, ()=>void, (...args: unknown[]) => void_  
+>     - _(...args: unknown[]) => void_  
+>     - _()=>void_  
+>     - _(...args: unknown[]) => void_  
 >

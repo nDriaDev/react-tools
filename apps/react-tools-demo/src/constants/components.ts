@@ -55,7 +55,8 @@ export const COMPONENTS = [
 			"useTimeout",
 			"useInterval",
 			"useTextSelection",
-			"useDocumentVisibility"
+			"useDocumentVisibility",
+			"useClipboard"
 		]
 	],
 	//UTILS

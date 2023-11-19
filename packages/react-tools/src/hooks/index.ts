@@ -37,3 +37,4 @@ export { useTimeout } from './useTimeout';
 export { useInterval } from './useInterval';
 export { useTextSelection } from './useTextSelection';
 export { useDocumentVisibility } from './useDocumentVisibility';
+export { useClipboard } from './useClipboard';

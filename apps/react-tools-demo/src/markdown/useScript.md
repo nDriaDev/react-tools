@@ -54,5 +54,6 @@ to handle appending and removing script, to automatically remove script when com
 > __array__: first element returns script status and second and thirds elements allow to manually handle script.
 > - __Array__:  
 >     - _status: UseScriptStatus_  
->     - _(attributes: UseScriptProps["attributes"], iframe?: HTMLIFrameElement) => void, () => void_  
+>     - _(attributes: UseScriptProps["attributes"], iframe?: HTMLIFrameElement) => void_  
+>     - _() => void_  
 >

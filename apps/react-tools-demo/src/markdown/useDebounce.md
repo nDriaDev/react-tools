@@ -60,5 +60,7 @@ if true, the function is executed after delay but only if the window is focused.
 >
 > __- array with debounced function, cancel function to abor debounced function and and immediate function to execute function immediately.__
 > - __Array__:  
->     - _(...args: unknown[]) => void, ()=>void, (...args: unknown[]) => void_  
+>     - _(...args: unknown[]) => void_  
+>     - _()=>void_  
+>     - _(...args: unknown[]) => void_  
 >

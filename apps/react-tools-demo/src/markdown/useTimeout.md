@@ -58,5 +58,7 @@ The number of milliseconds to wait before calling the `callback`.
 >
 > __- array: first element is the function to call setTimeout; second element is the function to clearTimeout; thrid element promisify setTimeout.__
 > - __Array__:  
->     - _(...args: TArgs) => void, () => void, (...args: TArgs) => Promise<void>_  
+>     - _(...args: TArgs) => void_  
+>     - _() => void_  
+>     - _(...args: TArgs) => Promise<void>_  
 >

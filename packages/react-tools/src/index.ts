@@ -45,7 +45,8 @@ export {
 	useTimeout,
 	useInterval,
 	useTextSelection,
-	useDocumentVisibility
+	useDocumentVisibility,
+	useClipboard
 } from './hooks'
 
 export {
