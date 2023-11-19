@@ -27,7 +27,7 @@ export const COMPONENTS = [
 			"useLayoutEffectCompare",
 			"useLayoutEffectDeepCompare",
 			"useLayoutEffectOnce",
-			"useUpdate",
+			"useRerender",
 			"useIsMounted"
 		],
 		//PERFORMANCE
@@ -56,7 +56,8 @@ export const COMPONENTS = [
 			"useInterval",
 			"useTextSelection",
 			"useDocumentVisibility",
-			"useClipboard"
+			"useClipboard",
+			"useMediaQuery"
 		]
 	],
 	//UTILS

@@ -1,4 +1,4 @@
-import { useUpdate } from "../../../../../../packages/react-tools/src"
+import { useRerender } from "../../../../../../packages/react-tools/src"
 
 /**
 The component has:
@@ -6,8 +6,8 @@ The component has:
 
 The component displays the current time. When button is clicked, it rerenders and current time is updated.
  */
-const UseUpdate = () => {
-	const update = useUpdate();
+const UseRerender = () => {
+	const update = useRerender();
 
 	return (<>
 		<button type="button" onClick={update}>Update</button>
@@ -17,6 +17,6 @@ const UseUpdate = () => {
 	</>);
 }
 
-UseUpdate.displayName = "UseUpdate";
+UseRerender.displayName = "UseRerender";
 
-export { UseUpdate };
+export { UseRerender };

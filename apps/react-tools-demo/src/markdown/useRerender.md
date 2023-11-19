@@ -1,11 +1,11 @@
-# useUpdate
+# useRerender
 Hook that force a render.
 
 ## Usage
 
 ```tsx
-const UseUpdate = () => {
-	const update = useUpdate();
+const UseRerender = () => {
+	const update = useRerender();
 
 	return (<>
 		<button type="button" onClick={update}>Update</button>
@@ -15,9 +15,9 @@ const UseUpdate = () => {
 	</>);
 }
 
-UseUpdate.displayName = "UseUpdate";
+UseRerender.displayName = "UseRerender";
 
-export { UseUpdate };
+export { UseRerender };
 ```
 
 > The component has:
@@ -29,7 +29,7 @@ export { UseUpdate };
 ## API
 
 ```tsx
-useUpdate (): React.DispatchWithoutAction 
+useRerender (): React.DispatchWithoutAction 
 ```
 
 > ### Params

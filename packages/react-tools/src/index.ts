@@ -34,7 +34,7 @@ export {
 	useEvents,
 	useEventDispatcher,
 	useEventListener,
-	useUpdate,
+	useRerender,
 	usePerformAction,
 	useScript,
 	useSyncExternalStore,
@@ -46,7 +46,8 @@ export {
 	useInterval,
 	useTextSelection,
 	useDocumentVisibility,
-	useClipboard
+	useClipboard,
+	useMediaQuery
 } from './hooks'
 
 export {

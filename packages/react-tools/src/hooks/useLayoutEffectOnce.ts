@@ -1,12 +1,12 @@
 import { EffectCallback, useLayoutEffect, useRef } from "react";
-import { useUpdate } from "."
+import { useRerender } from "."
 
 /**
  * **`useLayoutEffectOnce`**: Hook to executes _effect_ and _clean up_ after component mount __only once__. It prevents _React 18 StrictMode_ behavior if present, otherwise it works like a normal _useLayoutEffect_ with empty dependencies array. __*N.B.*__ Not use in a component with normal _useLayoutEffect_, if it executes a _React.DispatchAction_, because this action is executes twice if there is _React.StrictMode_.
  * @param {EffectCallback} effect
  */
 export const useLayoutEffectOnce = (effect: EffectCallback) => {
-	const update = useUpdate();
+	const update = useRerender();
 	const effectFn = useRef(effect);
 	const cleanUpFn = useRef<ReturnType<EffectCallback>>();
 	const effectCalled = useRef(false);

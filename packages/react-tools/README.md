@@ -24,7 +24,7 @@
 	- [x] useLayoutEffectCompare
 	- [x] useLayoutEffectDeepCompare
 	- [x] useLayoutEffectOnce
-	- [x] useUpdate
+	- [x] useRerender
 	- [x] useIsMounted
 	- [ ] useDeferredValue (polyfill - an idea can be use setTimeout inside useEffect)
 
@@ -45,7 +45,6 @@
 	- [ ] useKeysEvents
 	- [ ] useSize
 	- [ ] useHover
-	- [ ] useMediaQuery
 	- [ ] useResponsive
 	- [ ] useClickOutside
 	- [ ] useScrollIntoView
@@ -67,6 +66,7 @@
 	- [x] useTextSelection
 	- [x] useDocumentVisibility
 	- [x] useClipboard
+	- [x] useMediaQuery
 	- [ ] useColorScheme
 	- [ ] useTitle (change document.title but also document.head.title nodeElement)
 	- [ ] useFetch
