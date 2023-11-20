@@ -39,3 +39,4 @@ export { useTextSelection } from './useTextSelection';
 export { useDocumentVisibility } from './useDocumentVisibility';
 export { useClipboard } from './useClipboard';
 export { useMediaQuery } from './useMediaQuery';
+export { useColorScheme } from './useColorScheme';

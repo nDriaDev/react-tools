@@ -24,7 +24,7 @@ export const UseMediaQuery = () => {
 ## API
 
 ```tsx
-useMediaQuery (mediaQuery: string, onChange?: (evt: MediaQueryListEvent) => void ) 
+useMediaQuery (mediaQuery: string, onChange?: (evt: MediaQueryListEvent) => void ): {matches: boolean, media: string} 
 ```
 
 > ### Params

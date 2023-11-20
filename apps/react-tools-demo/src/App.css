@@ -576,3 +576,20 @@ button:not(:disabled) {
 		width: 100%;
 	}
 }
+
+.container-themed {
+	border: 1px solid;
+	padding: 1em;
+	width: fit-content;
+	margin: 0 auto;
+}
+
+.container-themed[data-color="dark"] {
+	border-color: lightskyblue;
+	color: plum
+}
+
+.container-themed[data-color="light"] {
+	border-color: purple;
+	color: lightskyblue;
+}

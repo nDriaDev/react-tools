@@ -1,4 +1,4 @@
-import { Dispatch, SetStateAction, useRef, useSyncExternalStore } from "react"
+import { Dispatch, SetStateAction, useMemo, useRef, useSyncExternalStore } from "react"
 import { useEvents, useMemoizedFunction } from ".";
 
 
@@ -19,7 +19,7 @@ function useLocalStorageState<T>({ key, initialState, opts }: { key: string, ini
 	const serializer = useRef(opts?.serializer || JSON.stringify);
 	const deserializer = useRef(opts?.deserializer || JSON.parse);
 	const mode = useRef(opts?.mode || "read/write");
-	const cachedState = useRef((() => {
+	const cachedState = useRef(useMemo(() => {
 		if (mode.current === "write") {
 			return null as T;
 		}
@@ -35,7 +35,7 @@ function useLocalStorageState<T>({ key, initialState, opts }: { key: string, ini
 		} else {
 			return null as T;
 		}
-	})());
+	}, []));
 
 	const subscribeRef = useRef((cb: ()=> void) => {
 		const listener = (evt: Event) => {

@@ -67,7 +67,7 @@
 	- [x] useDocumentVisibility
 	- [x] useClipboard
 	- [x] useMediaQuery
-	- [ ] useColorScheme
+	- [x] useColorScheme
 	- [ ] useTitle (change document.title but also document.head.title nodeElement)
 	- [ ] useFetch
 	- [ ] useAsync
