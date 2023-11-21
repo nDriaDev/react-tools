@@ -43,7 +43,7 @@
 	- [ ] useIntersectionObserver
 	- [ ] useMutationObserver
 	- [ ] useKeysEvents
-	- [ ] useSize
+	- [ ] useSize (=useMeasuree?)
 	- [ ] useHover
 	- [ ] useResponsive
 	- [ ] useClickOutside
@@ -77,6 +77,7 @@
 	- [ ] useNetwork
 	- [ ] useOnline
 	- [ ] useFullscreen (check browser compatibility)
+	- [ ] useLanguage (?)
 
 - __UTILS__
 	- [x] isShallowEqual
@@ -86,6 +87,10 @@
 	- [x] isClient
 	- [x] isAsync
 
+- __COMPONENT__
+	- [ ] Show (component to render or not a component by a condition)
+	- [ ] RestrictedRoute (maybe)
+	- [ ] ErrorBoundary (??)
 
 ## ESlint configuration
 To validate dependencies of custom hooks like `useMemoCompare`, configure `exhaustive-deps` with the `additionalHooks` option
