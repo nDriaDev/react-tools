@@ -58,7 +58,8 @@ export const COMPONENTS = [
 			"useDocumentVisibility",
 			"useClipboard",
 			"useMediaQuery",
-			"useColorScheme"
+			"useColorScheme",
+			"useTitle"
 		]
 	],
 	//UTILS

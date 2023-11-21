@@ -26,6 +26,7 @@
 	- [x] useLayoutEffectOnce
 	- [x] useRerender
 	- [x] useIsMounted
+	- [ ] useInsertionEffect (polyfill???)
 	- [ ] useDeferredValue (polyfill - an idea can be use setTimeout inside useEffect)
 
 - __PERFORMANCE__
@@ -40,19 +41,19 @@
 	- [x] useEventListener
 	- [x] useEventDispatcher
 	- [x] usePerformAction
-	- [ ] useIntersectionObserver
-	- [ ] useMutationObserver
-	- [ ] useKeysEvents
-	- [ ] useSize (=useMeasuree?)
 	- [ ] useHover
 	- [ ] useResponsive
 	- [ ] useClickOutside
+	- [ ] useSize (=useMeasuree?)
 	- [ ] useScrollIntoView
+	- [ ] useKeysEvents
 	- [ ] useMouse
+	- [ ] useLongPress
+	- [ ] useIntersectionObserver
+	- [ ] useInViewport (with area ratio of element: check if is equal to useIntersectionObserver)
+	- [ ] useMutationObserver
 	- [ ] useInfiniteScroll
 	- [ ] useDragAndDrop (check for mobile usage)
-	- [ ] useInViewport (with area ratio of element: check if is equal to useIntersectionObserver)
-	- [ ] useLongPress
 
 
 - __API DOM__
@@ -68,16 +69,20 @@
 	- [x] useClipboard
 	- [x] useMediaQuery
 	- [x] useColorScheme
-	- [ ] useTitle (change document.title but also document.head.title nodeElement)
-	- [ ] useFetch
-	- [ ] useAsync
-	- [ ] useImageOnLoad
-	- [ ] useMediaStream
-	- [ ] useScreenShare
+	- [x] useTitle (change document.title but also document.head.title nodeElement)
+	- [ ] useId (polyfill???)
 	- [ ] useNetwork
 	- [ ] useOnline
 	- [ ] useFullscreen (check browser compatibility)
 	- [ ] useLanguage (?)
+	- [ ] useOrientation
+	- [ ] useScreenShare
+	- [ ] useFetch (with suspense ???)
+	- [ ] useAsync
+	- [ ] useImageOnLoad
+	- [ ] useMediaStream
+	- [ ] usePinchZoom
+	- [ ] useObservable — tracks latest value of an Observable
 
 - __UTILS__
 	- [x] isShallowEqual
@@ -86,11 +91,18 @@
 	- [x] isTouchEvent
 	- [x] isClient
 	- [x] isAsync
+	- [ ] lazy: lazy react-like customized
+	- [ ] fetch-client (???ARTS-like)
 
 - __COMPONENT__
-	- [ ] Show (component to render or not a component by a condition)
+	- [ ] Show component to render or not a component by a condition. Props: when, fallback, keyed. Keyed is a boolean and needs to avoid rerenders children when it is a function.
+	- [ ] Switch and Match components with fallback and when props
+	- [ ] For: A referentially keyed loop with efficient updating of only changed items. The callback takes the current item as the first argument
+	- [ ] Index: Non-keyed list iteration (rendered nodes are keyed to an array index). This is useful when there is no conceptual key, like if the data consists of primitives and it is the index that is fixed rather than the value.
 	- [ ] RestrictedRoute (maybe)
 	- [ ] ErrorBoundary (??)
+	- [ ] Suspense: Suspence compontent react-like for async component
+	- [ ] Dynamic: This component lets you insert an arbitrary Component or tag and passes the props through to it.
 
 ## ESlint configuration
 To validate dependencies of custom hooks like `useMemoCompare`, configure `exhaustive-deps` with the `additionalHooks` option

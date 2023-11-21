@@ -48,7 +48,8 @@ export {
 	useDocumentVisibility,
 	useClipboard,
 	useMediaQuery,
-	useColorScheme
+	useColorScheme,
+	useTitle
 } from './hooks'
 
 export {

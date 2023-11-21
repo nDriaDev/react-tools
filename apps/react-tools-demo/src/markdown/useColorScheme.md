@@ -14,7 +14,8 @@ export const UseColorScheme = () => {
 
 	return (
 		<div className="container-themed" data-color={value}>
-			<button onClick={()=>update(value === "dark" ? "light" : "dark")}>Change color</button>
+			<p>Current color-scheme is: {value}</p>
+			<button onClick={() => update(value === "dark" ? "light" : "dark")}>Change color</button>
 		</div>
 	);
 }
