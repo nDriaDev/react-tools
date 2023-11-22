@@ -41,3 +41,4 @@ export { useClipboard } from './useClipboard';
 export { useMediaQuery } from './useMediaQuery';
 export { useColorScheme } from './useColorScheme';
 export { useTitle } from './useTitle'
+export { useLazyRef } from './useLazyRef';

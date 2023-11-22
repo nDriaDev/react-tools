@@ -35,6 +35,7 @@
 	- [x] useMemoizedFunction
 	- [x] useMemoCompare
 	- [x] useMemoDeepCompare
+	- [x] useLazyRef
 
 - __EVENTS__
 	- [x] useEvents

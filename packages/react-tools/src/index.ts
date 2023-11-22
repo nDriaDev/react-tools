@@ -49,7 +49,8 @@ export {
 	useClipboard,
 	useMediaQuery,
 	useColorScheme,
-	useTitle
+	useTitle,
+	useLazyRef
 } from './hooks'
 
 export {
