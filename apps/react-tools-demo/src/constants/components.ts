@@ -37,7 +37,8 @@ export const COMPONENTS = [
 			"useMemoDeepCompare",
 			"useCallbackCompare",
 			"useCallbackDeepCompare",
-			"useLazyRef"
+			"useLazyRef",
+			"useId"
 		],
 		//EVENTS
 		[

@@ -36,6 +36,7 @@
 	- [x] useMemoCompare
 	- [x] useMemoDeepCompare
 	- [x] useLazyRef
+	- [x] useId
 
 - __EVENTS__
 	- [x] useEvents
@@ -71,7 +72,6 @@
 	- [x] useMediaQuery
 	- [x] useColorScheme
 	- [x] useTitle (change document.title but also document.head.title nodeElement)
-	- [ ] useId (polyfill???)
 	- [ ] useNetwork
 	- [ ] useOnline
 	- [ ] useFullscreen (check browser compatibility)
