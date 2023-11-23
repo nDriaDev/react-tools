@@ -42,10 +42,11 @@ export const COMPONENTS = [
 		],
 		//EVENTS
 		[
-			"usePerformAction",
-			"useEventListener",
 			"useEvents",
+			"useEventListener",
 			"useEventDispatcher",
+			"usePerformAction",
+			"useHover"
 		],
 		//API DOM
 		[

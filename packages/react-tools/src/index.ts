@@ -50,7 +50,9 @@ export {
 	useMediaQuery,
 	useColorScheme,
 	useTitle,
-	useLazyRef
+	useLazyRef,
+	useId,
+	useHover
 } from './hooks'
 
 export {

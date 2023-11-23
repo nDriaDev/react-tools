@@ -43,7 +43,7 @@
 	- [x] useEventListener
 	- [x] useEventDispatcher
 	- [x] usePerformAction
-	- [ ] useHover
+	- [x] useHover
 	- [ ] useResponsive
 	- [ ] useClickOutside
 	- [ ] useSize (=useMeasuree?)

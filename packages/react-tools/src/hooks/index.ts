@@ -42,3 +42,5 @@ export { useMediaQuery } from './useMediaQuery';
 export { useColorScheme } from './useColorScheme';
 export { useTitle } from './useTitle'
 export { useLazyRef } from './useLazyRef';
+export { useId } from './useId';
+export { useHover } from './useHover';
