@@ -47,7 +47,7 @@
 	- [x] useHover
 	- [x] useResponsive
 	- [x] useClickOutside
-	- [ ] useNetwork
+	- [-] useNetwork
 	- [ ] useOnline
 	- [ ] useSize (=useMeasuree?)
 	- [ ] useScrollIntoView

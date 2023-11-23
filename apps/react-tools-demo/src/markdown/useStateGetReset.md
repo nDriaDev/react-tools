@@ -23,6 +23,12 @@ const UseStateGetReset = () => {
 		});
 	}, [state, setState])
 
+	const fullState = useMemo(() => {
+		console.log("fullState")
+		const state = getState();
+		return <p>{state.id} - {state.name} - {state.eta}</p>
+	}, [getState])
+
 	return (
 		<div style={{ display: "grid", gridTemplateColumns: "auto auto", justifyContent: "center", gap: 50 }}>
 			<div>
@@ -42,6 +48,7 @@ const UseStateGetReset = () => {
 					<Input id="eta" name="eta" value={state.eta} onChange={onChange} />
 				</div>
 			</div>
+			{fullState}
 		</div>
 	);
 };

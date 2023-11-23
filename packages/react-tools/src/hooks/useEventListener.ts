@@ -12,7 +12,6 @@ import { useMemoizedFunction } from ".";
  */
 export const useEventListener = ({ type, listener, element = window, listenerOpts }: { type: string, listener: (evt: Event | CustomEvent) => void, element?: RefObject<HTMLElement> | Window, listenerOpts?: boolean | AddEventListenerOptions}) => {
 	const optsMemoized = useRef<typeof listenerOpts>(listenerOpts);
-	const listenerMemoized = useMemoizedFunction(listener);
 	const elementReference = useRef<HTMLElement | Window | null>();
 
 	useEffect(() => {
@@ -23,14 +22,14 @@ export const useEventListener = ({ type, listener, element = window, listenerOpt
 				: null
 			: element as Window
 
-		elementReference.current && (elementReference.current as HTMLElement | Window).addEventListener(type, listenerMemoized, opts);
+		elementReference.current && (elementReference.current as HTMLElement | Window).addEventListener(type, listener, opts);
 		return () => {
-			elementReference.current && (elementReference.current as HTMLElement | Window).removeEventListener(type, listenerMemoized, opts);
+			elementReference.current && (elementReference.current as HTMLElement | Window).removeEventListener(type, listener, opts);
 		}
-	}, [element, type, listenerMemoized]);
+	}, [element, type, listener]);
 
 	const remove = useMemoizedFunction(() => {
-		elementReference.current && (elementReference.current as HTMLElement | Window).removeEventListener(type, listenerMemoized, optsMemoized.current);
+		elementReference.current && (elementReference.current as HTMLElement | Window).removeEventListener(type, listener, optsMemoized.current);
 	});
 
 	return remove;
