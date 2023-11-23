@@ -15,12 +15,12 @@ If you open devtools will see that __initializerLazy__ message is logged once wh
  */
 const initializer = () => {
 	console.log("initializer run...")
-	return Array(100).fill(true).reduce((prev, curr, index) => prev + index, 0);
+	return Array(100).fill(true).reduce((prev, _, index) => prev + index, 0);
 }
 
 const initializerLazy = () => {
 	console.log("initializerLazy run...")
-	return Array(100).fill(true).reduce((prev, curr, index) => prev + index, 0);
+	return Array(100).fill(true).reduce((prev, _, index) => prev + index, 0);
 }
 
 export const UseLazyRef = () => {

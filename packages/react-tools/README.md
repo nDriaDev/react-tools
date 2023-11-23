@@ -46,7 +46,7 @@
 	- [x] useDocumentVisibility
 	- [x] useHover
 	- [x] useResponsive
-	- [ ] useClickOutside
+	- [x] useClickOutside
 	- [ ] useNetwork
 	- [ ] useOnline
 	- [ ] useSize (=useMeasuree?)

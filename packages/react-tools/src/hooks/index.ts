@@ -45,3 +45,4 @@ export { useLazyRef } from './useLazyRef';
 export { useId } from './useId';
 export { useHover } from './useHover';
 export { useResponsive } from './useResponsive';
+export { useClickOutside } from './useClickOutside';

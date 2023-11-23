@@ -56,7 +56,8 @@ export {
 	useLazyRef,
 	useId,
 	useHover,
-	useResponsive
+	useResponsive,
+	useClickOutside
 } from './hooks'
 
 export {

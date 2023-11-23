@@ -48,7 +48,8 @@ export const COMPONENTS = [
 			"usePerformAction",
 			"useDocumentVisibility",
 			"useHover",
-			"useResponsive"
+			"useResponsive",
+			"useClickOutside"
 		],
 		//API DOM
 		[
