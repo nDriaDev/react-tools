@@ -46,6 +46,7 @@ export const COMPONENTS = [
 			"useEventListener",
 			"useEventDispatcher",
 			"usePerformAction",
+			"useDocumentVisibility",
 			"useHover"
 		],
 		//API DOM
@@ -58,7 +59,6 @@ export const COMPONENTS = [
 			"useTimeout",
 			"useInterval",
 			"useTextSelection",
-			"useDocumentVisibility",
 			"useClipboard",
 			"useMediaQuery",
 			"useColorScheme",

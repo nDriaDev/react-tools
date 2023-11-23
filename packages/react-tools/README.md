@@ -43,14 +43,20 @@
 	- [x] useEventListener
 	- [x] useEventDispatcher
 	- [x] usePerformAction
+	- [x] useDocumentVisibility
 	- [x] useHover
 	- [ ] useResponsive
 	- [ ] useClickOutside
+	- [ ] useNetwork
+	- [ ] useOnline
 	- [ ] useSize (=useMeasuree?)
 	- [ ] useScrollIntoView
-	- [ ] useKeysEvents
 	- [ ] useMouse
 	- [ ] useLongPress
+	- [ ] useKeysEvents
+	- [ ] useOrientation
+	- [ ] useImageOnLoad
+	- [ ] usePinchZoom
 	- [ ] useIntersectionObserver
 	- [ ] useInViewport (with area ratio of element: check if is equal to useIntersectionObserver)
 	- [ ] useMutationObserver
@@ -67,22 +73,16 @@
 	- [x] useTimeout
 	- [x] useInterval
 	- [x] useTextSelection
-	- [x] useDocumentVisibility
 	- [x] useClipboard
 	- [x] useMediaQuery
 	- [x] useColorScheme
 	- [x] useTitle (change document.title but also document.head.title nodeElement)
-	- [ ] useNetwork
-	- [ ] useOnline
 	- [ ] useFullscreen (check browser compatibility)
 	- [ ] useLanguage (?)
-	- [ ] useOrientation
 	- [ ] useScreenShare
 	- [ ] useFetch (with suspense ???)
 	- [ ] useAsync
-	- [ ] useImageOnLoad
 	- [ ] useMediaStream
-	- [ ] usePinchZoom
 	- [ ] useObservable — tracks latest value of an Observable
 
 - __UTILS__
