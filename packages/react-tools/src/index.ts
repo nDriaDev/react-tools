@@ -3,7 +3,10 @@ export type {
 	CompareFn,
 	UseScriptProps,
 	UseScriptStatus,
-	UseScript
+	UseScript,
+	TextSelection,
+	useResponsiveKeys,
+	useResponsiveBreakpoints
 } from './models'
 
 export {
@@ -52,7 +55,8 @@ export {
 	useTitle,
 	useLazyRef,
 	useId,
-	useHover
+	useHover,
+	useResponsive
 } from './hooks'
 
 export {

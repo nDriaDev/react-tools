@@ -45,7 +45,7 @@
 	- [x] usePerformAction
 	- [x] useDocumentVisibility
 	- [x] useHover
-	- [ ] useResponsive
+	- [x] useResponsive
 	- [ ] useClickOutside
 	- [ ] useNetwork
 	- [ ] useOnline

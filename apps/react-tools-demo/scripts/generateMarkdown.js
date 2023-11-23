@@ -226,7 +226,7 @@ function buildHooksUtilsMarkdownObject(file) {
 		return obj;
 	}
 	const lines = getJsDoc(fileSplitted);
-	lines.forEach(line => {
+	lines.forEach((line, index) => {
 		const depuratedLine = (line.split(" * ")[1]);
 		if(depuratedLine.startsWith("@param")) {
 			const typeNameDescriptionParam = depuratedLine.split("@param ")[1];
@@ -250,6 +250,13 @@ function buildHooksUtilsMarkdownObject(file) {
 			titleDescription.shift();
 			obj.description = titleDescription.join(":").trim();
 			obj.description = obj.description.charAt(0).toUpperCase() + obj.description.substring(1);
+			let lastDescriptionIndex = index+1;
+			while([" * @param", " * @returns", "//", " */", "*/"].filter(key => lines[lastDescriptionIndex].startsWith(key)).length === 0) {
+				lastDescriptionIndex++;
+			}
+			if(lastDescriptionIndex !== (index+1)) {
+				obj.description += lines.splice(index+1, lastDescriptionIndex-1).map(el => el.split(" * ")[1]).join("\n");
+			}
 		}
 	});
 	let codeLines = fileSplitted.slice(fileSplitted.findIndex(line => line === lines.at(-1))+2);

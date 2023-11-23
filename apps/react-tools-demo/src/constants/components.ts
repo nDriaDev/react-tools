@@ -47,7 +47,8 @@ export const COMPONENTS = [
 			"useEventDispatcher",
 			"usePerformAction",
 			"useDocumentVisibility",
-			"useHover"
+			"useHover",
+			"useResponsive"
 		],
 		//API DOM
 		[

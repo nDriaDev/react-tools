@@ -7,3 +7,6 @@ export type DependencyListTyped<T = unknown> = ReadonlyArray<T>;
 export interface CompareFn<T = unknown> {
 	(oldDeps: DependencyListTyped<T>, newDeps: DependencyListTyped<T>): boolean
 }
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export type PartialRecord<K extends keyof any, T> = Partial<Record<K, T>>
