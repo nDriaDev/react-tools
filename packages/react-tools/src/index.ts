@@ -61,7 +61,8 @@ export {
 	useResponsive,
 	useClickOutside,
 	useNetwork,
-	useIsOnline
+	useIsOnline,
+	useResizeObserver
 } from './hooks'
 
 export {

@@ -49,6 +49,9 @@
 	- [x] useClickOutside
 	- [x] useNetwork
 	- [x] useOnline
+	- [x] useResizeObserver
+	- [ ] useIntersectionObserver
+	- [ ] useMutationObserver
 	- [ ] useSize (=useMeasuree?)
 	- [ ] useScrollIntoView
 	- [ ] useMouse
@@ -57,9 +60,8 @@
 	- [ ] useOrientation
 	- [ ] useImageOnLoad
 	- [ ] usePinchZoom
-	- [ ] useIntersectionObserver
 	- [ ] useInViewport (with area ratio of element: check if is equal to useIntersectionObserver)
-	- [ ] useMutationObserver
+	- [ ] useIsVisibile (??? check if differ from useInViewport)
 	- [ ] useInfiniteScroll
 	- [ ] useDragAndDrop (check for mobile usage)
 

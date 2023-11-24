@@ -48,3 +48,4 @@ export { useResponsive } from './useResponsive';
 export { useClickOutside } from './useClickOutside';
 export { useNetwork } from './useNetwork';
 export { useIsOnline } from './useIsOnline';
+export { useResizeObserver } from './useResizeObserver';

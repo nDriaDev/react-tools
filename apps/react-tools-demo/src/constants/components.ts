@@ -51,7 +51,8 @@ export const COMPONENTS = [
 			"useResponsive",
 			"useClickOutside",
 			"useNetwork",
-			"useIsOnline"
+			"useIsOnline",
+			"useResizeObserver"
 		],
 		//API DOM
 		[
