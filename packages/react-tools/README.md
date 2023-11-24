@@ -16,6 +16,8 @@
 	- [x] useSyncExternalStore
 	- [ ] useStore
 	- [ ] createStore
+ 	- [ ] usePubSubStore (with pusSub model)
+	- [ ] useBroadcast (refer to https://developer.mozilla.org/en-US/docs/Web/API/Broadcast_Channel_API)
 
 - __LIFECYCLE__
 	- [x] useEffectCompare
