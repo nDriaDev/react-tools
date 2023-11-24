@@ -6,7 +6,8 @@ export type {
 	UseScript,
 	TextSelection,
 	useResponsiveKeys,
-	useResponsiveBreakpoints
+	useResponsiveBreakpoints,
+	ConnectionState
 } from './models'
 
 export {
