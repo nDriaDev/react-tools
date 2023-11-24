@@ -7,11 +7,11 @@ import { useCallback, useEffect, useRef } from "react"
  * @returns {[(...args: TArgs) => void, () => void, (...args: TArgs) => Promise<void>]} - array: first element is the function to call setTimeout; second element is the function to clearTimeout; thrid element promisify setTimeout.
  */
 export const useTimeout = <TArgs extends unknown[]>(callback: (...args: TArgs) => void, delay: number): [(...args: TArgs) => void, () => void, (...args: TArgs) => Promise<void>] => {
-	const idTimeout = useRef<number | NodeJS.Timeout>();
+	const idTimeout = useRef<number>();
 
 	const apply = useCallback((...args: TArgs): void => {
 		clearTimeout(idTimeout.current);
-		idTimeout.current = setTimeout(() => callback(...args), delay);
+		idTimeout.current = setTimeout(() => callback(...args), delay) as unknown as number;
 	}, [callback, delay]);
 
 	const applyPromisify = useCallback((...args: TArgs): Promise<void> => {
@@ -19,7 +19,7 @@ export const useTimeout = <TArgs extends unknown[]>(callback: (...args: TArgs) =
 		return new Promise<void>(res => {
 			idTimeout.current = setTimeout(() => {
 				res(callback(...args));
-			}, delay);
+			}, delay) as unknown as number;
 		})
 	}, [callback, delay]);
 

@@ -10,3 +10,5 @@ export interface CompareFn<T = unknown> {
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export type PartialRecord<K extends keyof any, T> = Partial<Record<K, T>>
+
+export type ArrayMinLength1<T> = { 0: T } & Array<T>;

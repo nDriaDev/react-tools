@@ -12,7 +12,7 @@ import { isAsync } from "../utils";
 export const useThrottle = <T extends unknown[]>(fn: (...args: T) => void | Promise<void> , opts: { delay?: number, waitFn?: boolean }): [(...args: T) => void, () => void, (...args: T) => void] => {
 	const optsRef = useRef(opts);
 	const pending = useRef(false);
-	const idRef = useRef<number | NodeJS.Timeout>();
+	const idRef = useRef<number>();
 
 	const fnThrottled = useCallback<typeof fn>((...args: T) => {
 		if (pending.current) {
@@ -21,7 +21,7 @@ export const useThrottle = <T extends unknown[]>(fn: (...args: T) => void | Prom
 		pending.current = true;
 		if (optsRef.current.delay) {
 			fn(...args);
-			idRef.current = setTimeout(() => pending.current = false, optsRef.current.delay);
+			idRef.current = setTimeout(() => pending.current = false, optsRef.current.delay) as unknown as number;
 		} else if (optsRef.current.waitFn) {
 			const current = fn(...args);
 			if (isAsync(current)) {

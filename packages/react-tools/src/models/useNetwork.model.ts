@@ -1,6 +1,7 @@
 export interface ConnectionState {
 	isSupported: boolean;
 	isOnline: boolean;
+	since?: number;
 	downlink?: number;
 	downlinkMax?: number;
 	effectiveType?: "slow-2g" | "2g" | "3g" | "4g";

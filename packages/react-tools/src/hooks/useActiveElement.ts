@@ -11,7 +11,7 @@ export const useActiveElement = ():Element|null => {
 	return useSyncExternalStore(
 		useCallback(notif => {
 			previousElem.current = document.activeElement;
-			const idTimeout: { id: number | NodeJS.Timeout } = { id: 0 };
+			const idTimeout: { id: number } = { id: 0 };
 			const listener = (e: Event) => {
 				/**
 				 * INFO
@@ -27,7 +27,7 @@ export const useActiveElement = ():Element|null => {
 				if (e.type === "focusout") {
 					idTimeout.id = setTimeout(() => {
 						notif()
-					}, 0);
+					}, 0) as unknown as number;
 				} else {
 					clearTimeout(idTimeout.id);
 					notif();

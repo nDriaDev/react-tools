@@ -49,7 +49,9 @@ export const COMPONENTS = [
 			"useDocumentVisibility",
 			"useHover",
 			"useResponsive",
-			"useClickOutside"
+			"useClickOutside",
+			"useNetwork",
+			"useIsOnline"
 		],
 		//API DOM
 		[

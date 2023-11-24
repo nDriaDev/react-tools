@@ -1,6 +1,7 @@
 export type {
 	DependencyListTyped,
 	CompareFn,
+	ArrayMinLength1,
 	UseScriptProps,
 	UseScriptStatus,
 	UseScript,
@@ -58,7 +59,9 @@ export {
 	useId,
 	useHover,
 	useResponsive,
-	useClickOutside
+	useClickOutside,
+	useNetwork,
+	useIsOnline
 } from './hooks'
 
 export {

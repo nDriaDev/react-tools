@@ -1,6 +1,6 @@
-import { useCallback, useMemo } from "react";
+import { useCallback, useMemo, useRef } from "react";
 import { useSyncExternalStore } from "."
-import { ConnectionState } from "../models";
+import { ArrayMinLength1, ConnectionState } from "../models";
 
 const listeners = new Set<() => void>();
 const handler = () => listeners.forEach(l => l());
@@ -23,7 +23,17 @@ const getConnetionState = () => {
 	return obj;
 }
 
-export const useNetwork = () => {
+/**
+ * **`useNetwork`**: Hook to detect network connection infos, refer to [Network Information API](https://developer.mozilla.org/en-US/docs/Web/API/NetworkInformation). It takes optinally a parameter __selectedInfo__ to specify a subset of connection status property.
+ * @template T
+ * @extends {}
+ * @param {ArrayMinLength1<T>} [selectedInfo] - array of connection property.
+ * @returns {ConnectionState|{[k in T] : ConnectionState[k]}} object - Network connection property or a subset if __selectedInfo__ is specified.
+ */
+function useNetwork(selectedInfo?: undefined): ConnectionState;
+function useNetwork<T extends keyof ConnectionState>(selectedInfo?: ArrayMinLength1<T>): { [k in T]: ConnectionState[k] };
+function useNetwork<T extends keyof ConnectionState>(selectedInfo?: ArrayMinLength1<T>): ConnectionState | {[k in T] : ConnectionState[k]} {
+	const selectedInfoCached = useRef(selectedInfo ?? ["isSupported", "isOnline", "since", "downlink", "downlinkMax", "effectiveType", "rtt", "saveData", "type"] as ArrayMinLength1<keyof ConnectionState>);
 	return useSyncExternalStore(
 		useCallback(notif => {
 			const connection = Reflect.get(navigator, "connection");
@@ -44,7 +54,21 @@ export const useNetwork = () => {
 		}, []),
 		useMemo(() => {
 			let prevState = getConnetionState();
-			return () => {}
+			return () => {
+				const state = getConnetionState();
+				for (const key of selectedInfoCached.current) {
+					if (state[key] !== prevState[key]) {
+						prevState = {
+							...state,
+							...(prevState.isOnline !== state.isOnline && {since: new Date().getTime()})
+						};
+						break;
+					}
+				}
+				return prevState;
+			}
 		}, [])
 	);
 }
+
+export {useNetwork}

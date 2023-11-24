@@ -3,10 +3,10 @@ import { useCallback, useRef } from "react"
 const debounce = (fn: () => void, delay: number, focusedWindow=false) => {
 	if (!focusedWindow || typeof requestAnimationFrame === "undefined") {
 		return {
-			id: setTimeout(fn, delay)
+			id: setTimeout(fn, delay) as unknown as number
 		};
 	}
-	const handle: {id: number | NodeJS.Timeout} = {id:0};
+	const handle: {id: number} = {id:0};
 	const startTime = new Date().getTime();
 	const loop = () => {
 		const current = new Date().getTime();
@@ -18,7 +18,7 @@ const debounce = (fn: () => void, delay: number, focusedWindow=false) => {
 	handle.id = requestAnimationFrame(loop);
 	return handle;
 }
-const cancelDebounce = (handle: {id: number | NodeJS.Timeout}, focusedWindow=false) => {
+const cancelDebounce = (handle: {id: number}, focusedWindow=false) => {
 	if (!focusedWindow || typeof cancelAnimationFrame === "undefined") {
 		return clearTimeout(handle.id);
 	}
@@ -34,7 +34,7 @@ const cancelDebounce = (handle: {id: number | NodeJS.Timeout}, focusedWindow=fal
  * @returns {[(...args: unknown[]) => void, ()=>void, (...args: unknown[]) => void]} - array with debounced function, cancel function to abor debounced function and and immediate function to execute function immediately.
  */
 export const useDebounce = <T extends unknown[]>(fn: (...args: T)=>void, opts: { delay: number, focusedWindow?: boolean }): [(...args: T) => void, () => void, (...args: T) => void] => {
-	const idRef = useRef<{ id: number | NodeJS.Timeout }>({id:0});
+	const idRef = useRef<{ id: number }>({id:0});
 	const optsRef = useRef(opts);
 
 	const fnDebounced = useCallback((...args: T) => {

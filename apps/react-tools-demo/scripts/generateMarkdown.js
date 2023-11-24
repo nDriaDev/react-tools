@@ -251,7 +251,7 @@ function buildHooksUtilsMarkdownObject(file) {
 			obj.description = titleDescription.join(":").trim();
 			obj.description = obj.description.charAt(0).toUpperCase() + obj.description.substring(1);
 			let lastDescriptionIndex = index+1;
-			while([" * @param", " * @returns", "//", " */", "*/"].filter(key => lines[lastDescriptionIndex].startsWith(key)).length === 0) {
+			while([" * @", "//", " */", "*/"].filter(key => lines[lastDescriptionIndex].startsWith(key)).length === 0) {
 				lastDescriptionIndex++;
 			}
 			if(lastDescriptionIndex !== (index+1)) {

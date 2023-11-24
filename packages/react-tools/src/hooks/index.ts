@@ -46,3 +46,5 @@ export { useId } from './useId';
 export { useHover } from './useHover';
 export { useResponsive } from './useResponsive';
 export { useClickOutside } from './useClickOutside';
+export { useNetwork } from './useNetwork';
+export { useIsOnline } from './useIsOnline';
