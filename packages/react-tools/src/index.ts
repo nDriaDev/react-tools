@@ -62,7 +62,10 @@ export {
 	useClickOutside,
 	useNetwork,
 	useIsOnline,
-	useResizeObserver
+	useResizeObserver,
+	useIntersectionObserver,
+	useMutationObserver,
+	useRequestIdleCallback
 } from './hooks'
 
 export {

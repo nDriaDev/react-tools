@@ -37,6 +37,7 @@
 	- [x] useMemoizedFunction
 	- [x] useMemoCompare
 	- [x] useMemoDeepCompare
+	- [ ] useMergedRef
 	- [x] useLazyRef
 	- [x] useId
 
@@ -52,8 +53,8 @@
 	- [x] useNetwork
 	- [x] useOnline
 	- [x] useResizeObserver
-	- [ ] useIntersectionObserver
-	- [ ] useMutationObserver
+	- [x] useIntersectionObserver
+	- [x] useMutationObserver
 	- [ ] useSize (=useMeasuree?)
 	- [ ] useScrollIntoView
 	- [ ] useMouse
@@ -81,6 +82,7 @@
 	- [x] useMediaQuery
 	- [x] useColorScheme
 	- [x] useTitle (change document.title but also document.head.title nodeElement)
+	- [x] useRequestIdleCallback
 	- [ ] useFullscreen (check browser compatibility)
 	- [ ] useLanguage (?)
 	- [ ] useScreenShare

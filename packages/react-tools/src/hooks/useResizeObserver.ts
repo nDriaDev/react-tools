@@ -1,8 +1,8 @@
 import { RefCallback, useCallback, useRef } from "react"
 
 /**
- * **`useResizeObserver`**: Hook to use ResizeObserver. Refer to [ResizeObserver API](https://developer.mozilla.org/en-US/docs/Web/API/Resize_Observer_API)
- * @param {ResizeObserverCallback} cb - The function called whenever an observed resize occurs. The function is called with two parameters: __entries__ and __observer__.
+ * **`useResizeObserver`**: Hook to use Resize Observer. Refer to [Resize Observer API](https://developer.mozilla.org/en-US/docs/Web/API/Resize_Observer_API)
+ * @param {ResizeObserverCallback} cb - The function called whenever an observed resize occurs. The callback is called with two parameters: __entries__ and __observer__.
  * @param {ResizeObserverOptions} [opts] - An options object allowing you to set options for the observation.
  * @returns {[RefCallback<T>, ()=>void, ()=>void]} result - array with: cb for ref component attribute to observe, function to _disconnect_ observer, function to _reconnect_ observer.
  */

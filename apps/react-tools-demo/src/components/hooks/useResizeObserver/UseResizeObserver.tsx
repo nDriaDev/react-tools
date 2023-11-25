@@ -12,7 +12,8 @@ export const UseResizeObserver = () => {
 		(entries: ResizeObserverEntry[]) => {
 			const result = entries[0].contentRect.width < 100;
 			result !== state && setState(result);
-		});
+		}
+	);
 
 	return <div>
 		<p>{"Has width < 100 px: " + state}</p>

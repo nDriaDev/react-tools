@@ -49,3 +49,6 @@ export { useClickOutside } from './useClickOutside';
 export { useNetwork } from './useNetwork';
 export { useIsOnline } from './useIsOnline';
 export { useResizeObserver } from './useResizeObserver';
+export { useIntersectionObserver } from './useIntersectionObserver';
+export { useMutationObserver } from './useMutationObserver';
+export { useRequestIdleCallback } from './useRequestIdleCallback';

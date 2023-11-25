@@ -52,7 +52,9 @@ export const COMPONENTS = [
 			"useClickOutside",
 			"useNetwork",
 			"useIsOnline",
-			"useResizeObserver"
+			"useResizeObserver",
+			"useIntersectionObserver",
+			"useMutationObserver"
 		],
 		//API DOM
 		[
@@ -67,7 +69,8 @@ export const COMPONENTS = [
 			"useClipboard",
 			"useMediaQuery",
 			"useColorScheme",
-			"useTitle"
+			"useTitle",
+			"useRequestIdleCallback"
 		]
 	],
 	//UTILS
