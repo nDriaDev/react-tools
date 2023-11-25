@@ -12,13 +12,13 @@ export const useRequestIdleCallback = (cb: (deadline?: IdleDeadline | DOMHighRes
 
 	const invoke = useRef(
 		requestIdleCallback !== undefined
-			? requestIdleCallback
+			? (fn: typeof cb, opt: {timeout?: number})=> requestIdleCallback(cb, opt)
 			: unsupportedBehavior
 				? unsupportedBehavior === "immediatly"
 					? undefined
 					: unsupportedBehavior === "animationFrame"
-						? requestAnimationFrame
-						: setTimeout
+						? (fn: typeof cb) =>requestAnimationFrame(fn)
+						: (fn: typeof cb, opt: { timeout?: number }) =>setTimeout(()=>cb, opt.timeout)
 				: () => { }
 	);
 	const cancel = useRef(
@@ -36,24 +36,11 @@ export const useRequestIdleCallback = (cb: (deadline?: IdleDeadline | DOMHighRes
 	return [
 		useCallback(() => {
 			let id;
-			if (requestIdleCallback !== undefined) {
-				id = requestIdleCallback(cb, { timeout: timeout });
-			} else {
-				if (unsupportedBehavior) {
-					switch (unsupportedBehavior) {
-						case "animationFrame":
-							id = requestAnimationFrame(cb);
-							break;
-						case "immediatly":
-							cb();
-							break;
-						case "timeout":
-							id = setTimeout(cb, timeout);
-					}
-				}
+			if (invoke.current) {
+				id = invoke.current(cb, { timeout: timeout });
 			}
 			idRequest.current = id ? id as unknown as number : undefined;
-		}, [cb, timeout, unsupportedBehavior]),
+		}, [cb, timeout]),
 		useCallback(() => idRequest.current && cancel.current && cancel.current(idRequest.current), [])
 	];
 }

@@ -8,17 +8,22 @@ export const UseRequestIdleCallback = () => {
 	const [iterations, setIterations] = useState(0);
 	const [log, setLog] = useState("");
 	const [invoke] = useRequestIdleCallback(() => setLog("RequestIdleCallback executed"));
+
+	const start = async() => {
 		invoke();
-	const start = () => {
-		invoke();
-		for (let i = 0; i < 1_000_000; i++) {
-			setIterations(i);
+		for (let i = 0; i < 5_000; i++) {
+			setTimeout(() => setIterations(i + 1), 5);
 		}
+	}
+	const reset = () => {
+		setLog("");
+		setIterations(0);
 	}
 	return (<div>
 		<p>Iterations are: {iterations}</p>
 		<p>Log is: {log}</p>
 		<button onClick={start}>START</button>
+		<button onClick={reset}>RESET</button>
 	</div>);
 }
 ```
@@ -27,13 +32,13 @@ export const UseRequestIdleCallback = () => {
 > - a __iterations__ variable of type string.
 > - a __log__ variable of type string.
 > - a function __invoke__ returned from _useRequestIdleCallback_ hook, initialized with a cb that update __log__ variable with message _"RequestIdleCallback executed"_.
-> - a button start that when clicked executes __start__ function that executes __invoke__ function and updates __iterations__ variable inside a loop of 1 million iterations with iteration index.
+> - a button start that when clicked executes __start__ function that executes __invoke__ function and updates __iterations__ variable inside a loop with iteration index.
 
 
 ## API
 
 ```tsx
-useRequestIdleCallback (cb: (deadline?: IdleDeadline | DOMHighResTimeStamp | void)=> void, opts?: IdleRequestOptions & { unsupportedBehavior: "animationFrame" | "timeout" | "immediatly" }): [() => void, () => void] 
+useRequestIdleCallback (cb: (deadline?: IdleDeadline | DOMHighResTimeStamp | void) => void, opts?: {timeout: number , unsupportedBehavior?: "animationFrame" | "timeout" | "immediatly" }): [() => void, () => void] 
 ```
 
 > ### Params
