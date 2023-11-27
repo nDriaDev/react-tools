@@ -37,6 +37,7 @@ export const COMPONENTS = [
 			"useMemoDeepCompare",
 			"useCallbackCompare",
 			"useCallbackDeepCompare",
+			"useRaf",
 			"useLazyRef",
 			"useId"
 		],
