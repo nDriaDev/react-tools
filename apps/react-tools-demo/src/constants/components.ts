@@ -55,7 +55,8 @@ export const COMPONENTS = [
 			"useIsOnline",
 			"useResizeObserver",
 			"useIntersectionObserver",
-			"useMutationObserver"
+			"useMutationObserver",
+			"useMeasure"
 		],
 		//API DOM
 		[

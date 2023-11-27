@@ -37,7 +37,7 @@
 	- [x] useMemoizedFunction
 	- [x] useMemoCompare
 	- [x] useMemoDeepCompare
-	- [ ] useRaf
+	- [x] useRaf
 	- [ ] useMergedRef
 	- [ ] useObjectRef
 	- [ ] useArrayRef
@@ -58,7 +58,7 @@
 	- [x] useResizeObserver
 	- [x] useIntersectionObserver
 	- [x] useMutationObserver
-	- [ ] useSize (=useMeasuree?)
+	- [x] useMeasure
 	- [ ] useScrollIntoView
 	- [ ] useMouse
 	- [ ] useLongPress

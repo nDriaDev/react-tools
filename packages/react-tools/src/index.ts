@@ -66,7 +66,8 @@ export {
 	useIntersectionObserver,
 	useMutationObserver,
 	useIdle,
-	useRaf
+	useRaf,
+	useMeasure
 } from './hooks'
 
 export {

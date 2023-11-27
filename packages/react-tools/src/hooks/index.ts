@@ -53,3 +53,4 @@ export { useIntersectionObserver } from './useIntersectionObserver';
 export { useMutationObserver } from './useMutationObserver';
 export { useIdle } from './useIdle';
 export { useRaf } from './useRaf';
+export { useMeasure } from './useMeasure';
