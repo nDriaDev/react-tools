@@ -12,13 +12,13 @@ export const useIdle = (cb: (deadline?: IdleDeadline | DOMHighResTimeStamp | voi
 
 	const invoke = useRef(
 		requestIdleCallback !== undefined
-			? (fn: typeof cb, opt: {timeout?: number})=> requestIdleCallback(cb, opt)
+			? (fn: typeof cb, opt: {timeout?: number})=> requestIdleCallback(fn, opt)
 			: unsupportedBehavior
 				? unsupportedBehavior === "immediatly"
 					? undefined
 					: unsupportedBehavior === "animationFrame"
 						? (fn: typeof cb) =>requestAnimationFrame(fn)
-						: (fn: typeof cb, opt: { timeout?: number }) =>setTimeout(()=>cb, opt.timeout)
+						: (fn: typeof cb, opt: { timeout?: number }) =>setTimeout(fn, opt.timeout)
 				: () => { }
 	);
 	const cancel = useRef(

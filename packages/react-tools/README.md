@@ -37,7 +37,10 @@
 	- [x] useMemoizedFunction
 	- [x] useMemoCompare
 	- [x] useMemoDeepCompare
+	- [ ] useRaf
 	- [ ] useMergedRef
+	- [ ] useObjectRef
+	- [ ] useArrayRef
 	- [x] useLazyRef
 	- [x] useId
 
