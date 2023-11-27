@@ -70,7 +70,7 @@ export const COMPONENTS = [
 			"useMediaQuery",
 			"useColorScheme",
 			"useTitle",
-			"useRequestIdleCallback"
+			"useIdle"
 		]
 	],
 	//UTILS

@@ -65,7 +65,7 @@ export {
 	useResizeObserver,
 	useIntersectionObserver,
 	useMutationObserver,
-	useRequestIdleCallback
+	useIdle
 } from './hooks'
 
 export {

@@ -82,7 +82,7 @@
 	- [x] useMediaQuery
 	- [x] useColorScheme
 	- [x] useTitle (change document.title but also document.head.title nodeElement)
-	- [x] useRequestIdleCallback
+	- [x] useIdle
 	- [ ] useFullscreen (check browser compatibility)
 	- [ ] useLanguage (?)
 	- [ ] useScreenShare

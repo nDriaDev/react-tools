@@ -51,4 +51,4 @@ export { useIsOnline } from './useIsOnline';
 export { useResizeObserver } from './useResizeObserver';
 export { useIntersectionObserver } from './useIntersectionObserver';
 export { useMutationObserver } from './useMutationObserver';
-export { useRequestIdleCallback } from './useRequestIdleCallback';
+export { useIdle } from './useIdle';
