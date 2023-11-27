@@ -67,7 +67,8 @@ export {
 	useMutationObserver,
 	useIdle,
 	useRaf,
-	useMeasure
+	useMeasure,
+	useFullscreen
 } from './hooks'
 
 export {

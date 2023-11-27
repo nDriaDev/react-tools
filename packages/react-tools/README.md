@@ -86,7 +86,7 @@
 	- [x] useColorScheme
 	- [x] useTitle (change document.title but also document.head.title nodeElement)
 	- [x] useIdle
-	- [ ] useFullscreen (check browser compatibility)
+	- [x] useFullscreen (check browser compatibility)
 	- [ ] useLanguage (?)
 	- [ ] useScreenShare
 	- [ ] useFetch (with suspense ???)

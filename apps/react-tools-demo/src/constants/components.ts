@@ -72,7 +72,8 @@ export const COMPONENTS = [
 			"useMediaQuery",
 			"useColorScheme",
 			"useTitle",
-			"useIdle"
+			"useIdle",
+			"useFullscreen"
 		]
 	],
 	//UTILS
