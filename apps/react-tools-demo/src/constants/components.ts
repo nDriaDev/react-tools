@@ -56,7 +56,8 @@ export const COMPONENTS = [
 			"useResizeObserver",
 			"useIntersectionObserver",
 			"useMutationObserver",
-			"useMeasure"
+			"useMeasure",
+			"useVisible"
 		],
 		//API DOM
 		[

@@ -68,7 +68,8 @@ export {
 	useIdle,
 	useRaf,
 	useMeasure,
-	useFullscreen
+	useFullscreen,
+	useVisible
 } from './hooks'
 
 export {

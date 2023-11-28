@@ -11,10 +11,10 @@ export const UseFullscreen = () => {
 			<div style={{ marginBottom: 16 }}>{isFullscreen ? 'Fullscreen' : 'Not fullscreen'}</div>
 			<div>
 				<button type="button" onClick={()=>enterFullscreen()}>
-					enterFullscreen
+					enter Fullscreen
 				</button>
 				<button type="button" onClick={exitFullscreen} style={{ margin: '0 8px' }}>
-					exitFullscreen
+					exit Fullscreen
 				</button>
 			</div>
 		</div>

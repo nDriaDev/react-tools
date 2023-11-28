@@ -59,6 +59,7 @@
 	- [x] useIntersectionObserver
 	- [x] useMutationObserver
 	- [x] useMeasure
+	- [x] useVisibile
 	- [ ] useScrollIntoView
 	- [ ] useMouse
 	- [ ] useLongPress
@@ -66,8 +67,7 @@
 	- [ ] useOrientation
 	- [ ] useImageOnLoad
 	- [ ] usePinchZoom
-	- [ ] useInViewport (with area ratio of element: check if is equal to useIntersectionObserver)
-	- [ ] useIsVisibile (??? check if differ from useInViewport)
+
 	- [ ] useInfiniteScroll
 	- [ ] useDragAndDrop (check for mobile usage)
 
@@ -87,7 +87,7 @@
 	- [x] useTitle (change document.title but also document.head.title nodeElement)
 	- [x] useIdle
 	- [x] useFullscreen (check browser compatibility)
-	- [ ] useLanguage (?)
+	- [ ] useShare
 	- [ ] useScreenShare
 	- [ ] useFetch (with suspense ???)
 	- [ ] useAsync
