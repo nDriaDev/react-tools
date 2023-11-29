@@ -128,7 +128,7 @@ function useClipboard({ useValue, dataType, target }: { useValue: boolean, dataT
 		useCallback(notif => {
 			notifRef.current = notif;
 			const element = target
-				? (target as RefObject<HTMLElement>).current
+				? (target as RefObject<HTMLElement>)?.current
 					? (target as RefObject<HTMLElement>).current
 					: target as HTMLElement
 				: document;

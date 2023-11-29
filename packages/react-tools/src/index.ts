@@ -69,7 +69,9 @@ export {
 	useRaf,
 	useMeasure,
 	useFullscreen,
-	useVisible
+	useVisible,
+	useReducedMotion,
+	useScrollIntoView
 } from './hooks'
 
 export {

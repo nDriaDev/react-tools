@@ -17,7 +17,7 @@ export const useEventListener = ({ type, listener, element = window, listenerOpt
 	useEffect(() => {
 		const opts = optsMemoized.current;
 		elementReference.current = Reflect.has(element, "current")
-			? (element as RefObject<HTMLElement>).current !== null
+			? (element as RefObject<HTMLElement>)?.current !== null
 				? (element as RefObject<HTMLElement>).current
 				: null
 			: element as Window

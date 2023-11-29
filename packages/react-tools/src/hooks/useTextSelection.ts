@@ -19,7 +19,7 @@ export const useTextSelection = ({ target, onStart, onChange, onEnd }: { target?
 
 	const selectionEnd = useCallback((evt: Event) => {
 		const element = target
-			? (target as RefObject<HTMLElement>).current
+			? (target as RefObject<HTMLElement>)?.current
 				? (target as RefObject<HTMLElement>).current
 				: target as HTMLElement
 			: document.body;
@@ -64,7 +64,7 @@ export const useTextSelection = ({ target, onStart, onChange, onEnd }: { target?
 		useCallback(notif => {
 			notifRef.current = notif;
 			const element = target
-				? (target as RefObject<HTMLElement>).current
+				? (target as RefObject<HTMLElement>)?.current
 					? (target as RefObject<HTMLElement>).current
 					: target as HTMLElement
 				: document.body;
@@ -90,14 +90,14 @@ export const useTextSelection = ({ target, onStart, onChange, onEnd }: { target?
 		}, [pointerDownDocHandler, pointerUpLeaveDocHandler, pointerDownTargetHandler, pointerUpLeaveTargetHandler, pointerEnterTargetHandler, target]),
 		useMemo(() => {
 			let element = target
-				? (target as RefObject<HTMLElement>).current
+				? (target as RefObject<HTMLElement>)?.current
 					? (target as RefObject<HTMLElement>).current
 					: target as HTMLElement
 				: document.body;
 			let currSelection = selection.current;
 			return () => {
 				const currElement = target
-					? (target as RefObject<HTMLElement>).current
+					? (target as RefObject<HTMLElement>)?.current
 						? (target as RefObject<HTMLElement>).current
 						: target as HTMLElement
 					: document.body;

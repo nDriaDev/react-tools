@@ -56,3 +56,5 @@ export { useRaf } from './useRaf';
 export { useMeasure } from './useMeasure';
 export { useFullscreen } from './useFullscreen';
 export { useVisible } from './useVisible';
+export { useReducedMotion } from './useReducedMotion';
+export { useScrollIntoView } from './useScrollIntoView';

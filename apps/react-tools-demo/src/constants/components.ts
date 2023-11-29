@@ -57,7 +57,8 @@ export const COMPONENTS = [
 			"useIntersectionObserver",
 			"useMutationObserver",
 			"useMeasure",
-			"useVisible"
+			"useVisible",
+			"useScrollIntoView"
 		],
 		//API DOM
 		[
@@ -72,6 +73,7 @@ export const COMPONENTS = [
 			"useClipboard",
 			"useMediaQuery",
 			"useColorScheme",
+			"useReducedMotion",
 			"useTitle",
 			"useIdle",
 			"useFullscreen"

@@ -24,7 +24,7 @@ const isClickInside = (node: HTMLElement | null, target: Node | null) => {
  */
 export const useClickOutside = (target: RefObject<HTMLElement> | HTMLElement, handler: (evt: Event) => void):void => {
 	const listener = useCallback((e: Event) => {
-		const element = (target as RefObject<HTMLElement>).current
+		const element = (target as RefObject<HTMLElement>)?.current
 			? (target as RefObject<HTMLElement>).current
 			: target as HTMLElement;
 		if (!isClickInside(element, e.target as Node)) {

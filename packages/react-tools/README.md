@@ -60,7 +60,7 @@
 	- [x] useMutationObserver
 	- [x] useMeasure
 	- [x] useVisibile
-	- [ ] useScrollIntoView
+	- [x] useScrollIntoView
 	- [ ] useMouse
 	- [ ] useLongPress
 	- [ ] useKeysEvents
@@ -84,6 +84,7 @@
 	- [x] useClipboard
 	- [x] useMediaQuery
 	- [x] useColorScheme
+	- [x] useReducedMotion
 	- [x] useTitle (change document.title but also document.head.title nodeElement)
 	- [x] useIdle
 	- [x] useFullscreen (check browser compatibility)

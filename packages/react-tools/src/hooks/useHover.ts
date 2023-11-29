@@ -16,7 +16,7 @@ function useHover(target: RefObject<HTMLElement> | HTMLElement, opts?: { onEnter
 	const onCng = useMemo(()=> opts?.onChange, [opts?.onChange])
 	const isHover = useSyncExternalStore(
 		useCallback(notif => {
-			const element = (target as RefObject<HTMLElement>).current
+			const element = (target as RefObject<HTMLElement>)?.current
 					? (target as RefObject<HTMLElement>).current
 				: target as HTMLElement;
 			const pointerEnter = (evt: Event) => {
