@@ -71,7 +71,8 @@ export {
 	useFullscreen,
 	useVisible,
 	useReducedMotion,
-	useScrollIntoView
+	useScrollIntoView,
+	useMouse
 } from './hooks'
 
 export {

@@ -23,7 +23,7 @@ export const useMediaQuery = (mediaQuery: string, onChange?: (evt: MediaQueryLis
 				!!onChange && onChange(evt);
 				notif();
 			}
-			mq.addEventListener("change", listener);
+			mq.addEventListener("change", listener, { passive: true });
 			return () => {
 				mq.removeEventListener("change", listener);
 			}

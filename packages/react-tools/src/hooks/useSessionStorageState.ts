@@ -52,7 +52,7 @@ function useSessionStorageState<T>({ key, initialState, opts }: { key: string, i
 				}
 			}
 		};
-		window.addEventListener("storage", listener);
+		window.addEventListener("storage", listener, { passive: true });
 		const unsub = subscribe("ssn-strg", listener);
 		return () => {
 			window.removeEventListener("storage", listener);

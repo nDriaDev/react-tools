@@ -8,7 +8,7 @@ import { useSyncExternalStore } from "."
 export const useDocumentVisibility = (): DocumentVisibilityState => {
 	return useSyncExternalStore(
 		useCallback(notif => {
-			document.addEventListener("visibilitychange", notif);
+			document.addEventListener("visibilitychange", notif, {passive: true});
 			return () => {
 				document.removeEventListener("visibilitychange", notif);
 			}

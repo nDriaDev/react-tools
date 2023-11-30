@@ -184,9 +184,9 @@ function useClipboard({ useValue, dataType, target }: { useValue: boolean, dataT
 					notif();
 				}
 			}
-			element?.addEventListener('cut', listener);
-			element?.addEventListener('copy', listener);
-			element?.addEventListener('cut', listener);
+			element?.addEventListener('cut', listener, {passive: true});
+			element?.addEventListener('copy', listener, {passive: true});
+			element?.addEventListener('cut', listener, {passive: true});
 			return () => {
 				notifRef.current = undefined;
 				element?.removeEventListener('cut', listener);

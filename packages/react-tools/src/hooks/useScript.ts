@@ -73,8 +73,8 @@ export const useScript: UseScript = function (attributes, options) {
 					node?.setAttribute("data-status", evt.type === "load" ? "ready" : "error");
 					notif();
 				}
-				node!.addEventListener("load", listener);
-				node!.addEventListener("error", listener);
+				node!.addEventListener("load", listener, { passive: true });
+				node!.addEventListener("error", listener, { passive: true });
 				!alreadyExist && (opts.current.iframe?.contentWindow?.document || document).body.appendChild(node);
 
 				return () => {

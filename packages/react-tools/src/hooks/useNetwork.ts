@@ -38,8 +38,8 @@ function useNetwork<T extends keyof ConnectionState>(selectedInfo?: ArrayMinLeng
 		useCallback(notif => {
 			const connection = Reflect.get(navigator, "connection");
 			if (listeners.size === 0) {
-				window.addEventListener("online", handler);
-				window.addEventListener("offline", handler);
+				window.addEventListener("online", handler, { passive: true });
+				window.addEventListener("offline", handler, { passive: true });
 				!!connection && connection.addEventListener("change", handler);
 			}
 			listeners.add(notif);

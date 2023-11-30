@@ -67,7 +67,7 @@ function useResponsive<T extends useResponsiveKeys>(config?: useResponsiveBreakp
 	});
 	return useSyncExternalStore(
 		useCallback(notif => {
-			listeners.size === 0 && window.addEventListener('resize', handler);
+			listeners.size === 0 && window.addEventListener('resize', handler, {passive: true});
 			listeners.add(notif);
 			return () => {
 				listeners.delete(notif);

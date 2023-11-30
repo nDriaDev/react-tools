@@ -38,7 +38,7 @@ function useColorScheme({ defaultValue, getter, setter, returnValue }: { default
 				updateValue(evt.matches ? "dark" : "light");
 			};
 
-			defaultValue === "mediaQuery" && mq.addEventListener("change", listener)
+			defaultValue === "mediaQuery" && mq.addEventListener("change", listener, {passive: true})
 			return () => {
 				defaultValue === "mediaQuery" && mq.removeEventListener("change", listener)
 				notifRef.current = null;

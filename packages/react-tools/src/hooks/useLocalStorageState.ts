@@ -53,7 +53,7 @@ function useLocalStorageState<T>({ key, initialState, opts }: { key: string, ini
 				}
 			}
 		};
-		window.addEventListener("storage", listener);
+		window.addEventListener("storage", listener, { passive: true });
 		const unsub = subscribe("local-strg", listener);
 		return () => {
 			window.removeEventListener("storage", listener);

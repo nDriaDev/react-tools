@@ -21,7 +21,6 @@ export const UseScrollIntoView = () => {
 				style={{
 					width: '100%',
 					height: '50vh',
-					backgroundColor: 'lightblue',
 				}}
 			/>
 			<p ref={targetRef}>Hello there</p>

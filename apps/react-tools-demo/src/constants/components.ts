@@ -58,7 +58,8 @@ export const COMPONENTS = [
 			"useMutationObserver",
 			"useMeasure",
 			"useVisible",
-			"useScrollIntoView"
+			"useScrollIntoView",
+			"useMouse"
 		],
 		//API DOM
 		[

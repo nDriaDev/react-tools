@@ -44,7 +44,7 @@ export const useTextSelection = ({ target, onStart, onChange, onEnd }: { target?
 	const pointerDownTargetHandler = useCallback((evt: Event) => {
 		selecting.current = true;
 		onStart && onStart(evt);
-		onChange && document.addEventListener("selectionchange", onChange);
+		onChange && document.addEventListener("selectionchange", onChange, { passive: true });
 	}, [onChange, onStart]);
 
 	const pointerUpLeaveTargetHandler = useCallback(() => {
@@ -56,7 +56,7 @@ export const useTextSelection = ({ target, onStart, onChange, onEnd }: { target?
 	const pointerEnterTargetHandler = useCallback((evt: Event) => {
 		if (selecting.current && (getSelection() ?? "").toString() === "") {
 			onStart && onStart(evt);
-			onChange && document.addEventListener("selectionchange", onChange);
+			onChange && document.addEventListener("selectionchange", onChange, { passive: true });
 		}
 	}, [onStart, onChange]);
 
@@ -68,14 +68,14 @@ export const useTextSelection = ({ target, onStart, onChange, onEnd }: { target?
 					? (target as RefObject<HTMLElement>).current
 					: target as HTMLElement
 				: document.body;
-			document.addEventListener("pointerdown", pointerDownDocHandler);
-			document.addEventListener("pointerup", pointerUpLeaveDocHandler);
-			document.addEventListener("pointerleave", pointerUpLeaveDocHandler);
+			document.addEventListener("pointerdown", pointerDownDocHandler, { passive: true });
+			document.addEventListener("pointerup", pointerUpLeaveDocHandler, { passive: true });
+			document.addEventListener("pointerleave", pointerUpLeaveDocHandler, { passive: true });
 
-			element && element.addEventListener("pointerdown", pointerDownTargetHandler);
-			element && element.addEventListener("pointerup", pointerUpLeaveTargetHandler);
-			element && element.addEventListener("pointerleave", pointerUpLeaveTargetHandler);
-			element && element.addEventListener("pointerenter", pointerEnterTargetHandler);
+			element && element.addEventListener("pointerdown", pointerDownTargetHandler, { passive: true });
+			element && element.addEventListener("pointerup", pointerUpLeaveTargetHandler, { passive: true });
+			element && element.addEventListener("pointerleave", pointerUpLeaveTargetHandler, { passive: true });
+			element && element.addEventListener("pointerenter", pointerEnterTargetHandler, { passive: true });
 
 			return () => {
 				document.removeEventListener("pointerdown", pointerDownDocHandler);

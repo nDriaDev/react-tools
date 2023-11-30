@@ -36,8 +36,8 @@ export const useActiveElement = ():Element|null => {
 			if (typeof addEventListener === "undefined") {
 				throw Error("useActiveElement: hook works only in browser context.");
 			}
-			addEventListener("focusin", listener, true);
-			addEventListener("focusout", listener, true);
+			addEventListener("focusin", listener, {capture: true, passive: true});
+			addEventListener("focusout", listener, { capture: true, passive: true });
 
 			return () => {
 				removeEventListener("focusin", listener, true);

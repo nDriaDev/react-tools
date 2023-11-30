@@ -19,8 +19,8 @@ export const useFullscreen = <T extends Element>(onEnter?: () => void|Promise<vo
 	const cbRef = useCallback((node: T) => {
 		if (node) {
 			nodeRef.current = node;
-			node.addEventListener("fullscreenchange", listener)
-			node.addEventListener("webkitfullscreenchange", listener)
+			node.addEventListener("fullscreenchange", listener, {passive: true})
+			node.addEventListener("webkitfullscreenchange", listener, {passive: true})
 		} else {
 			nodeRef.current?.removeEventListener("fullscreenchange", listener)
 			nodeRef.current?.removeEventListener("webkitfullscreenchange", listener)

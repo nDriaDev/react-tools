@@ -61,7 +61,7 @@
 	- [x] useMeasure
 	- [x] useVisibile
 	- [x] useScrollIntoView
-	- [ ] useMouse
+	- [x] useMouse
 	- [ ] useLongPress
 	- [ ] useKeysEvents
 	- [ ] useOrientation

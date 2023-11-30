@@ -31,8 +31,8 @@ function useHover(target: RefObject<HTMLElement> | HTMLElement, opts?: { onEnter
 				onCng && onCng(false);
 				notif();
 			}
-			element?.addEventListener("pointerenter", pointerEnter);
-			element?.addEventListener("pointerleave", pointerLeave);
+			element?.addEventListener("pointerenter", pointerEnter, { passive: true });
+			element?.addEventListener("pointerleave", pointerLeave, { passive: true });
 
 			return () => {
 				element?.removeEventListener("pointerenter", pointerEnter);
