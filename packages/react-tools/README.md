@@ -14,8 +14,10 @@
 	- [x] useArray
 	- [x] useProxyState
 	- [x] useSyncExternalStore
+	- [ ] useDerivedState (https://hackernoon.com/whats-the-right-way-to-fetch-data-in-react-hooks-a-deep-dive-2jc13230)
+	- [ ] useStateValidator (???)
 	- [ ] useStore
-	- [ ] createStore
+	- [ ] createStore (example: https://github.com/streamich/react-use/blob/master/src/factory/createGlobalState.ts)
  	- [ ] usePubSubStore (with pusSub model)
 	- [ ] useBroadcast (refer to https://developer.mozilla.org/en-US/docs/Web/API/Broadcast_Channel_API)
 
@@ -29,7 +31,8 @@
 	- [x] useRerender
 	- [x] useIsMounted
 	- [ ] useInsertionEffect (polyfill???)
-	- [ ] useDeferredValue (polyfill - an idea can be use setTimeout inside useEffect)
+	- [ ] useDeferredValue (polyfill - an idea can be use setTimeout inside useEffect or this https://lilibraries.github.io/hooks/useDelayedValue/)
+	- [ ] useLogger
 
 - __PERFORMANCE__
 	- [x] useCallbackCompare
@@ -48,7 +51,7 @@
 	- [x] useEvents
 	- [x] useEventListener
 	- [x] useEventDispatcher
-	- [x] usePerformAction
+	- [x] usePerformAction (se non si riesce a fare il polyfill di useDeferredValue, valutare di farlo utilizzando requestIdleCallback)
 	- [x] useDocumentVisibility
 	- [x] useHover
 	- [x] useResponsive
@@ -63,7 +66,9 @@
 	- [x] useScrollIntoView
 	- [x] useMouse
 	- [x] useLongPress
+	- [ ] useBeforeUnload — shows browser alert when user try to reload or close the page.
 	- [ ] useKeysEvents
+	- [ ] useHotKeys (https://mantine.dev/hooks/use-hotkeys/)
 	- [ ] useOrientation
 	- [ ] useImageOnLoad
 	- [ ] usePinchZoom
@@ -77,6 +82,7 @@
 	- [x] useDebounce
 	- [x] useThrottle
 	- [x] useActiveElement
+	- [ ] useRaf (with a reference to call itself again)
 	- [x] useTimeout
 	- [x] useInterval
 	- [x] useTextSelection
@@ -87,11 +93,22 @@
 	- [x] useTitle (change document.title but also document.head.title nodeElement)
 	- [x] useIdle
 	- [x] useFullscreen (check browser compatibility)
+	- [ ] useBattery
+	- [ ] useGeolocation
 	- [ ] useShare
 	- [ ] useScreenShare
 	- [ ] useFetch (with suspense ???)
 	- [ ] useAsync
+	- [ ] useAudio (???)
+	- [ ] useVideo (???)
+	- [ ] useOs
+	- [ ] useEyeDropper (refer to https://developer.mozilla.org/en-US/docs/Web/API/EyeDropper_API)
+	- [ ] useMedia
+	- [ ] useMediaDevices
 	- [ ] useMediaStream
+	- [ ] useSpeech (https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesisUtterance#examples)
+	- [ ] useDeviceMotion (??? mobile)
+	- [ ] useVibrate (??? mobile)
 	- [ ] useObservable — tracks latest value of an Observable
 
 - __UTILS__
