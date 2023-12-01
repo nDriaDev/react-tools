@@ -59,7 +59,8 @@ export const COMPONENTS = [
 			"useMeasure",
 			"useVisible",
 			"useScrollIntoView",
-			"useMouse"
+			"useMouse",
+			"useLongPress"
 		],
 		//API DOM
 		[

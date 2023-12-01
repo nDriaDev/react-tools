@@ -59,3 +59,4 @@ export { useVisible } from './useVisible';
 export { useReducedMotion } from './useReducedMotion';
 export { useScrollIntoView } from './useScrollIntoView';
 export { useMouse } from './useMouse';
+export { useLongPress } from './useLongPress';

@@ -593,3 +593,8 @@ button:not(:disabled) {
 	border-color: purple;
 	color: lightskyblue;
 }
+
+.btn-animated {
+	background-color: #1a1a1a;
+	animation: spin 1s linear forwards;
+}

@@ -56,7 +56,7 @@ if it is presents, position is relative to element.
 
 > ### Returns
 >
-> __ object- postion by axis and if relativeElement is present, relativeElement dimensions also.__
+> __ object__: postion by axis and if relativeElement is present, relativeElement dimensions also.
 > - __Union of__:  
 >     - __Object__:  
 >         - __x__ : _number|null_  

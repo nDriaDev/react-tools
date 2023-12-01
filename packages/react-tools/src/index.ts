@@ -72,7 +72,8 @@ export {
 	useVisible,
 	useReducedMotion,
 	useScrollIntoView,
-	useMouse
+	useMouse,
+	useLongPress
 } from './hooks'
 
 export {

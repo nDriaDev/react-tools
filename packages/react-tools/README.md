@@ -62,12 +62,11 @@
 	- [x] useVisibile
 	- [x] useScrollIntoView
 	- [x] useMouse
-	- [ ] useLongPress
+	- [x] useLongPress
 	- [ ] useKeysEvents
 	- [ ] useOrientation
 	- [ ] useImageOnLoad
 	- [ ] usePinchZoom
-
 	- [ ] useInfiniteScroll
 	- [ ] useDragAndDrop (check for mobile usage)
 
