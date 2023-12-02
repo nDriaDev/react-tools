@@ -6,8 +6,8 @@ Hook to execute a callback function with _requestAnimationFrame_ to optimize per
 ```tsx
 export const UseRaf = () => {
 	const [state, setState] = useState({ width: 0, height: 0 });
-	const [start] = useRaf((timer: number, dim: DOMRectReadOnly) => {
-		setState({width:dim.width, height: dim.height})
+	const [start] = useRaf((timer: number, repeat:()=>void, dim: DOMRectReadOnly) => {
+		setState({ width: dim.width, height: dim.height });
 	});
 	const [refCb] = useResizeObserver<HTMLTextAreaElement>(
 		(entries: ResizeObserverEntry[]) => {
@@ -28,13 +28,13 @@ export const UseRaf = () => {
 ## API
 
 ```tsx
-useRaf <T extends unknown[]>(cb: (timer:number, ...args: T) => void): [(...args: T)=>void, ()=>void] 
+useRaf <T extends unknown[]>(cb: (timer: number, repeat: ()=>void, ...args: T) => void): [(...args: T)=>void, ()=>void] 
 ```
 
 > ### Params
 >
-> - __cb__: _(timer:number, ...args: T) => void_  
- callback to execute prior to the next repaint.
+> - __cb__: _(timer:number, ()=>void, ...args: T) => void_  
+ callback to execute prior to the next repaint. In addition to the classic timeStamp parameter, which indicates the end time of rendering of the previous frame, the second parameter is a function which, if invoked, re-executes the requestAnimationFrame with the callback itself, and finally various parameters can be added, passed with the invocation function returned by the hook.
 >
 
 > ### Returns

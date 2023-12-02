@@ -1,4 +1,5 @@
 import { RefCallback, useCallback, useRef } from "react"
+import { useEffectOnce } from ".";
 
 /**
  * **`useIntersectionObserver`**: Hook to use Intersection Observer. Refer to [Intersection Observer API](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API)
@@ -11,20 +12,19 @@ export const useIntersectionObserver = <T extends Element>(cb: IntersectionObser
 	const working = useRef(true);
 	const nodeRef = useRef<T>();
 
+	useEffectOnce(() => () => {
+		nodeRef.current = undefined;
+		observer.current?.disconnect();
+		observer.current = undefined;
+	});
+
 	return [
 		useCallback((node: T) => {
-			nodeRef.current = node;
-			if (!working.current) {
+			if (!working.current || !node) {
 				return;
 			}
-			if (!node) {
-				if (observer.current) {
-					observer.current.disconnect();
-					observer.current = undefined;
-					nodeRef.current = undefined;
-					working.current = true;
-				}
-			} else {
+			if (node && (!nodeRef.current || nodeRef.current !== node)) {
+				nodeRef.current = node;
 				observer.current = new IntersectionObserver(cb, opts);
 				observer.current.observe(node);
 			}

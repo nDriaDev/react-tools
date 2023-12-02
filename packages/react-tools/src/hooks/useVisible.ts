@@ -1,5 +1,5 @@
 import { RefCallback, useCallback, useRef } from "react";
-import { useSyncExternalStore } from ".";
+import { useEffectOnce, useSyncExternalStore } from ".";
 
 /**
  * **`useVisible`**: Hook to know if an element is visible and optionally the visible area ration of the element.
@@ -16,15 +16,18 @@ function useVisible<T extends Element>(opts?: IntersectionObserverInit & { withR
 	const prevState = useRef({ isVisible: false, ratio: 0 });
 	const currentState = useRef({ isVisible: false, ratio: 0 });
 
+	useEffectOnce(() => () => {
+		nodeRef.current = undefined;
+		observer.current?.disconnect();
+		observer.current = undefined;
+	});
+
 	const refCb = useCallback((node: T) => {
-		nodeRef.current = node;
 		if (!node) {
-			if (observer.current) {
-				observer.current.disconnect();
-				observer.current = undefined;
-				nodeRef.current = undefined;
-			}
-		} else {
+			return;
+		}
+		if (node && (!nodeRef.current || nodeRef.current !== node)) {
+			nodeRef.current = node;
 			observer.current = new IntersectionObserver((entries: IntersectionObserverEntry[]) => {
 				const { isIntersecting, intersectionRatio } = entries[0];
 				currentState.current = {

@@ -37,7 +37,6 @@ export const COMPONENTS = [
 			"useMemoDeepCompare",
 			"useCallbackCompare",
 			"useCallbackDeepCompare",
-			"useRaf",
 			"useLazyRef",
 			"useId"
 		],
@@ -71,6 +70,7 @@ export const COMPONENTS = [
 			"useActiveElement",
 			"useTimeout",
 			"useInterval",
+			"useRaf",
 			"useTextSelection",
 			"useClipboard",
 			"useMediaQuery",
@@ -78,7 +78,8 @@ export const COMPONENTS = [
 			"useReducedMotion",
 			"useTitle",
 			"useIdle",
-			"useFullscreen"
+			"useFullscreen",
+			"useBattery"
 		]
 	],
 	//UTILS

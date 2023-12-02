@@ -40,7 +40,6 @@
 	- [x] useMemoizedFunction
 	- [x] useMemoCompare
 	- [x] useMemoDeepCompare
-	- [x] useRaf
 	- [ ] useMergedRef
 	- [ ] useObjectRef
 	- [ ] useArrayRef
@@ -82,7 +81,7 @@
 	- [x] useDebounce
 	- [x] useThrottle
 	- [x] useActiveElement
-	- [ ] useRaf (with a reference to call itself again)
+	- [x] useRaf (with a reference to call itself again)
 	- [x] useTimeout
 	- [x] useInterval
 	- [x] useTextSelection
@@ -93,7 +92,7 @@
 	- [x] useTitle (change document.title but also document.head.title nodeElement)
 	- [x] useIdle
 	- [x] useFullscreen (check browser compatibility)
-	- [ ] useBattery
+	- [x] useBattery
 	- [ ] useGeolocation
 	- [ ] useShare
 	- [ ] useScreenShare
@@ -110,6 +109,7 @@
 	- [ ] useDeviceMotion (??? mobile)
 	- [ ] useVibrate (??? mobile)
 	- [ ] useObservable — tracks latest value of an Observable
+	- [ ] useLock - (https://developer.mozilla.org/en-US/docs/Web/API/LockManager/request)
 
 - __UTILS__
 	- [x] isShallowEqual
