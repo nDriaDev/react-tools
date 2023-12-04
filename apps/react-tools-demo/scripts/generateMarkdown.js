@@ -242,6 +242,15 @@ function buildHooksUtilsMarkdownObject(file) {
 				type: getTypeString(returnSplitted, true),
 				...getNameDescriptionParam(returnSplitted)
 			};
+			let lastDescriptionIndex = index+1;
+			while(lastDescriptionIndex < lines.length && ![" */", "*/"].includes(lines[lastDescriptionIndex])) {
+				lastDescriptionIndex++;
+			}
+			if(lastDescriptionIndex !== index+1) {
+				const temp = returns.type.join("\n").substring(1);
+				returns.description = temp;
+				returns.type = lines.splice(index+1, lastDescriptionIndex-1).map(el => el.split(" * ")[1]);
+			}
 			obj.returns = returns;
 		}
 		if(depuratedLine.startsWith("__") || depuratedLine.startsWith("**")) {

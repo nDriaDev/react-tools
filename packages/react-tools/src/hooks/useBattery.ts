@@ -18,7 +18,8 @@ let batteryCached: undefined | BatteryStatus & { onchargingchange: null | ((evt:
  * @param {(evt: Event) => void} [opts.onChargingTimeChange] - callback that will be executed when chargingtimechange event is fired.
  * @param {(evt: Event) => void} [opts.onDischargingTimeChange] - callback that will be executed when dischargingtimechange event is fired.
  * @param {(evt: Event) => void} [opts.onLevelChange] - callback that will be executed when levelchange event is fired.
- * @returns {BatteryStatus} result - object:
+ * @returns {BatteryStatus} result
+ * Object with:
  * - __isSupported__: boolean that indicates if Battery Status API is available.
  * - __level__: number that indicates battery level: is a number between 0 and 1.
  * - __charging__: boolean that indicates if battery is charging.

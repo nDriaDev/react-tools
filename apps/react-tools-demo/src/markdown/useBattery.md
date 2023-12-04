@@ -10,7 +10,7 @@ export const UseBattery = () => {
 	return (<div style={{ textAlign: "center" }}>
 		{
 			Object.keys(status).map(el => (
-				<p key={el}>{el}: {JSON.stringify(status[el as keyof typeof status])}</p>
+				<p key={el}>{el}: {status[el as keyof typeof status]}</p>
 			))
 		}
 	</div>)
@@ -23,7 +23,7 @@ export const UseBattery = () => {
 ## API
 
 ```tsx
-useBattery (opts?: { onChargingChange?: (evt: Event) => void, onChargingTimeChange?: (evt: Event) => void, onDischargingTimeChange?: (evt: Event) => void, onLevelChange?: (evt: Event) => void }): BatteryStatus 
+useBattery * - __isSupported__: boolean that indicates if Battery Status API is available.
 ```
 
 > ### Params
@@ -42,6 +42,11 @@ callback that will be executed when levelchange event is fired.
 
 > ### Returns
 >
-> __result__: object:
-> - _BatteryStatus_  
+> __result__:  _BatteryStatus_  
+> Object with:
+> - __isSupported__: boolean that indicates if Battery Status API is available.
+> - __level__: number that indicates battery level: is a number between 0 and 1.
+> - __charging__: boolean that indicates if battery is charging.
+> - __chargingTime__: number that indicates time in seconds remaining to full charge, or infinity.
+> - __dischargingTime__: number that indicates time in seconds remaining to empty charge, rounded in 15 minutes by API.
 >
