@@ -1,4 +1,4 @@
-import { RefObject, useEffect, useRef } from "react"
+import { RefObject, useEffect, useLayoutEffect, useRef } from "react"
 import { useMemoizedFunction } from ".";
 
 /**
@@ -8,13 +8,15 @@ import { useMemoizedFunction } from ".";
  * @param {(evt: Event | CustomEvent) => void} options.listener - listener to be executed on specified event
  * @param {RefObject<HTMLElement> | Window} [options.element=window] - element on which attaching eventListener
  * @param {boolean | AddEventListenerOptions} [options.listenerOpts] - options for listener
+ * @param {"normal"|"layout"} [options.effectType="normal"] - option to set which hook is used to attach event listener.
  * @returns {()=>void} remove - used to manually remove the eventListener
  */
-export const useEventListener = ({ type, listener, element = window, listenerOpts }: { type: string, listener: (evt: Event | CustomEvent) => void, element?: RefObject<HTMLElement> | Window, listenerOpts?: boolean | AddEventListenerOptions}) => {
+export const useEventListener = ({ type, listener, element = window, listenerOpts, effectType="normal" }: { type: string, listener: (evt: Event | CustomEvent) => void, element?: RefObject<HTMLElement> | Window, listenerOpts?: boolean | AddEventListenerOptions, effectType?: "normal" | "layout" }) => {
 	const optsMemoized = useRef<typeof listenerOpts>(listenerOpts);
 	const elementReference = useRef<HTMLElement | Window | null>();
+	const effect = effectType === "layout" ? useLayoutEffect : useEffect;
 
-	useEffect(() => {
+	effect(() => {
 		const opts = optsMemoized.current;
 		elementReference.current = Reflect.has(element, "current")
 			? (element as RefObject<HTMLElement>)?.current !== null

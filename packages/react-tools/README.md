@@ -89,7 +89,7 @@
 	- [x] useMediaQuery
 	- [x] useColorScheme
 	- [x] useReducedMotion
-	- [x] useTitle (change document.title but also document.head.title nodeElement)
+	- [x] useTitle
 	- [x] useIdle
 	- [x] useFullscreen (check browser compatibility)
 	- [x] useBattery
