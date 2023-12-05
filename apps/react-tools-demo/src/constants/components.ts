@@ -80,7 +80,8 @@ export const COMPONENTS = [
 			"useIdle",
 			"useFullscreen",
 			"useBattery",
-			"useGeolocation"
+			"useGeolocation",
+			"useShare"
 		]
 	],
 	//UTILS

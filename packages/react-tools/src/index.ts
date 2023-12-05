@@ -77,7 +77,8 @@ export {
 	useMouse,
 	useLongPress,
 	useBattery,
-	useGeolocation
+	useGeolocation,
+	useShare
 } from './hooks'
 
 export {

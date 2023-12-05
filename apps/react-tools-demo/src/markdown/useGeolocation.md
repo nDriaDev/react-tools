@@ -6,26 +6,32 @@ Hook to use user's geographic location. Refer to [GeoLocation API](https://devel
 ```tsx
 export const UseGeolocation = () => {
 	const [error, setError] = useState("")
-	const [location] = useGeolocation({onError(error) {
-		setError(error.message);
-	}});
+	const [location, currentPosition] = useGeolocation({
+		mode: "manual",
+		onError(error) {
+			setError(error.message);
+		}
+	});
 
-	return (<div style={{ textAlign: "center" }}>
+	return (<div style={{ textAlign: "left", width: 'fit-content', margin:'0 auto' }}>
 		{
 			error && <p style={{ color: 'red' }}>{error}</p>
 		}
-		<p >isSupported: {location?.isSupported}</p>
+		<br/>
+		<button onClick={currentPosition}>Get Location</button>
+		<br />
+		<p >isSupported: {location.isSupported ? "true" : "false"}</p>
 		<p >Timestamp: {location?.position?.timestamp}</p>
 		<p >Coords:</p>
-		<ul>
-			{
-				Object.entries(location?.position?.coords ?? []).map(([key, value]) => {
-					return <li>
-						{key}: {value}
-					</li>
-				})
-			}
-		</ul>
+		<div style={{paddingLeft: 10, textAlign: 'left', width: 'fit-content', margin: '0 auto'}}>
+			<p>accuracy: {location.position?.coords.accuracy}</p>
+			<p>altitude: {location.position?.coords.altitude}</p>
+			<p>altitudeAccuracy: {location.position?.coords.altitudeAccuracy}</p>
+			<p>heading: {location.position?.coords.heading}</p>
+			<p>latitude: {location.position?.coords.latitude}</p>
+			<p>longitude: {location.position?.coords.longitude}</p>
+			<p>speed: {location.position?.coords.speed}</p>
+		</div>
 	</div>)
 }
 ```
@@ -45,8 +51,8 @@ useGeolocation * - _first element_: is the location object with two properties: 
 options to use geolocation.
 > - __opts.locationOptions?__: _PositionOptions_  
 An optional object which provides options for retrieval of the position data.
-> - __opts.observe?__: _boolean_  
-if true returns current position and observes position change, otherwise returns only position in that time.
+> - __opts.mode?__: _boolean_  
+it establishes how to obtain the geographic location:
 > - __opts.onError?__: _GeolocationPositionError_  
 callback that will be executed if there will be errors.
 >
@@ -59,6 +65,6 @@ callback that will be executed if there will be errors.
     - _()=>void_  
 > Array with:
 > - _first element_: is the location object with two properties: __isSupported__ and __position__.
-> - _second element_: function to observe location changes and it receives one param __successCallback__ and two optional params __errorCallback__ and __options__.
-> - _third element_: function to cancel previous observing location changes.
+> - _second element_: function to obtain manually current location.
+> - _third element_: function to obtain location on every changes.
 >

@@ -94,13 +94,12 @@
 	- [x] useFullscreen (check browser compatibility)
 	- [x] useBattery
 	- [x] useGeolocation
-	- [ ] useShare
+	- [x] useShare
 	- [ ] useScreenShare
 	- [ ] useFetch (with suspense ???)
 	- [ ] useAsync
 	- [ ] useAudio (???)
 	- [ ] useVideo (???)
-	- [ ] useOs
 	- [ ] useEyeDropper (refer to https://developer.mozilla.org/en-US/docs/Web/API/EyeDropper_API)
 	- [ ] useMedia
 	- [ ] useMediaDevices
