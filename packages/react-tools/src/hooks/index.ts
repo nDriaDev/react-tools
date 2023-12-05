@@ -61,3 +61,4 @@ export { useScrollIntoView } from './useScrollIntoView';
 export { useMouse } from './useMouse';
 export { useLongPress } from './useLongPress';
 export { useBattery } from './useBattery';
+export { useGeolocation } from './useGeolocation';

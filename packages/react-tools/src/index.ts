@@ -8,7 +8,9 @@ export type {
 	TextSelection,
 	useResponsiveKeys,
 	useResponsiveBreakpoints,
-	ConnectionState
+	ConnectionState,
+	BatteryStatus,
+	GeoLocationObject
 } from './models'
 
 export {
@@ -74,7 +76,8 @@ export {
 	useScrollIntoView,
 	useMouse,
 	useLongPress,
-	useBattery
+	useBattery,
+	useGeolocation
 } from './hooks'
 
 export {

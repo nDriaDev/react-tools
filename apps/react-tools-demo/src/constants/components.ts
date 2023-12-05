@@ -79,7 +79,8 @@ export const COMPONENTS = [
 			"useTitle",
 			"useIdle",
 			"useFullscreen",
-			"useBattery"
+			"useBattery",
+			"useGeolocation"
 		]
 	],
 	//UTILS

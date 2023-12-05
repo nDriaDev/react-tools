@@ -93,7 +93,7 @@
 	- [x] useIdle
 	- [x] useFullscreen (check browser compatibility)
 	- [x] useBattery
-	- [ ] useGeolocation
+	- [x] useGeolocation
 	- [ ] useShare
 	- [ ] useScreenShare
 	- [ ] useFetch (with suspense ???)
