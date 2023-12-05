@@ -11,7 +11,7 @@ export const useShare = (): {isSupported: boolean, share: (data?: ShareData)=>Pr
 		if ("share" in navigator) {
 			return navigator.share(data);
 		} else {
-			return Promise.resolve(void 0);
+			return Promise.resolve();
 		}
 	}, []);
 

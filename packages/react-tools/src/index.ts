@@ -78,7 +78,8 @@ export {
 	useLongPress,
 	useBattery,
 	useGeolocation,
-	useShare
+	useShare,
+	useEyeDropper
 } from './hooks'
 
 export {

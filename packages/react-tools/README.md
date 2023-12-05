@@ -95,16 +95,16 @@
 	- [x] useBattery
 	- [x] useGeolocation
 	- [x] useShare
-	- [ ] useScreenShare
+	- [x] useEyeDropper
+	- [ ] useSpeech (https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesisUtterance#examples)
 	- [ ] useFetch (with suspense ???)
 	- [ ] useAsync
 	- [ ] useAudio (???)
 	- [ ] useVideo (???)
-	- [ ] useEyeDropper (refer to https://developer.mozilla.org/en-US/docs/Web/API/EyeDropper_API)
 	- [ ] useMedia
+	- [ ] useScreenShare
 	- [ ] useMediaDevices
 	- [ ] useMediaStream
-	- [ ] useSpeech (https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesisUtterance#examples)
 	- [ ] useDeviceMotion (??? mobile)
 	- [ ] useVibrate (??? mobile)
 	- [ ] useObservable — tracks latest value of an Observable
