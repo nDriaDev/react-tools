@@ -60,7 +60,8 @@ export const COMPONENTS = [
 			"useScrollIntoView",
 			"useMouse",
 			"useLongPress",
-			"useBeforeUnload"
+			"useBeforeUnload",
+			"useDoubleClick"
 		],
 		//API DOM
 		[

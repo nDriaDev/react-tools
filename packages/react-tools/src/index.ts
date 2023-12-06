@@ -81,7 +81,8 @@ export {
 	useShare,
 	useEyeDropper,
 	useDialogBox,
-	useBeforeUnload
+	useBeforeUnload,
+	useDoubleClick
 } from './hooks'
 
 export {
