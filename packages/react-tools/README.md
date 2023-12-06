@@ -65,10 +65,10 @@
 	- [x] useScrollIntoView
 	- [x] useMouse
 	- [x] useLongPress
-	- [ ] useBeforeUnload — shows browser alert when user try to reload or close the page.
+	- [x] useBeforeUnload
+	- [ ] useOrientation
 	- [ ] useKeysEvents
 	- [ ] useHotKeys (https://mantine.dev/hooks/use-hotkeys/)
-	- [ ] useOrientation
 	- [ ] useImageOnLoad
 	- [ ] usePinchZoom
 	- [ ] useInfiniteScroll
@@ -98,10 +98,10 @@
 	- [x] useEyeDropper
 	- [x] useDialogBox
 	- [ ] useSpeech (https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesisUtterance#examples)
-	- [ ] useFetch (with suspense ???)
-	- [ ] useAsync
 	- [ ] useAudio (???)
 	- [ ] useVideo (???)
+	- [ ] useFetch (with suspense ???)
+	- [ ] useAsync
 	- [ ] useMedia
 	- [ ] useScreenShare
 	- [ ] useMediaDevices

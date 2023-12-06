@@ -80,7 +80,8 @@ export {
 	useGeolocation,
 	useShare,
 	useEyeDropper,
-	useDialogBox
+	useDialogBox,
+	useBeforeUnload
 } from './hooks'
 
 export {

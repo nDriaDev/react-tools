@@ -65,3 +65,4 @@ export { useGeolocation } from './useGeolocation';
 export { useShare } from './useShare';
 export { useEyeDropper } from './useEyeDropper';
 export { useDialogBox } from './useDialogBox';
+export { useBeforeUnload } from './useBeforeUnload';

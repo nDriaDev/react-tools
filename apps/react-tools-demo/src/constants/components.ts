@@ -59,7 +59,8 @@ export const COMPONENTS = [
 			"useVisible",
 			"useScrollIntoView",
 			"useMouse",
-			"useLongPress"
+			"useLongPress",
+			"useBeforeUnload"
 		],
 		//API DOM
 		[
