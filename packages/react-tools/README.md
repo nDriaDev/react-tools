@@ -65,7 +65,7 @@
 	- [x] useScrollIntoView
 	- [x] useMouse
 	- [x] useLongPress
-	- [ ] useDoubleClick
+	- [x] useDoubleClick
 	- [x] useBeforeUnload
 	- [ ] useOrientation
 	- [ ] useKeysEvents
