@@ -15,8 +15,10 @@ export const UseEyeDropper = () => {
 
 	return <div style={{ textAlign: "center" }}>
 		<p>Is supported: {isSupported.toString()}</p>
-		<p>Color: {color}</p>
 		<button onClick={onClick}>Get Color</button>
+		<br />
+		<br />
+		<label>Color </label><input type="color" defaultValue={color}/>
 	</div>
 }
 ```

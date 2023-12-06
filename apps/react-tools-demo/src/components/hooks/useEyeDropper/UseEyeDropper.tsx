@@ -18,6 +18,6 @@ export const UseEyeDropper = () => {
 		<button onClick={onClick}>Get Color</button>
 		<br />
 		<br />
-		<label>Color </label><input type="color" value={color}/>
+		<label>Color </label><input type="color" defaultValue={color}/>
 	</div>
 }

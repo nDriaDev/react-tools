@@ -96,6 +96,7 @@
 	- [x] useGeolocation
 	- [x] useShare
 	- [x] useEyeDropper
+	- [x] useDialogBox
 	- [ ] useSpeech (https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesisUtterance#examples)
 	- [ ] useFetch (with suspense ???)
 	- [ ] useAsync

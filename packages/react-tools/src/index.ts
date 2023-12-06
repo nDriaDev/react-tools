@@ -79,7 +79,8 @@ export {
 	useBattery,
 	useGeolocation,
 	useShare,
-	useEyeDropper
+	useEyeDropper,
+	useDialogBox
 } from './hooks'
 
 export {

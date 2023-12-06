@@ -82,7 +82,8 @@ export const COMPONENTS = [
 			"useBattery",
 			"useGeolocation",
 			"useShare",
-			"useEyeDropper"
+			"useEyeDropper",
+			"useDialogBox"
 		]
 	],
 	//UTILS

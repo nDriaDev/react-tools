@@ -35,7 +35,7 @@ export { UseEventListener };
 ## API
 
 ```tsx
-useEventListener ({ type, listener, element = window, listenerOpts }: { type: string, listener: (evt: Event | CustomEvent) => void, element?: RefObject<HTMLElement> | Window, listenerOpts?: boolean | AddEventListenerOptions}) 
+useEventListener ({ type, listener, element = window, listenerOpts, effectType="normal" }: { type: string, listener: (evt: Event | CustomEvent) => void, element?: RefObject<HTMLElement> | Window, listenerOpts?: boolean | AddEventListenerOptions, effectType?: "normal" | "layout" }) 
 ```
 
 > ### Params
@@ -49,6 +49,8 @@ listener to be executed on specified event
 element on which attaching eventListener
 > - __options.listenerOpts?__: _boolean | AddEventListenerOptions_  
 options for listener
+> - __options.effectType="normal"?__: _"normal"|"layout"_  
+option to set which hook is used to attach event listener.
 >
 
 > ### Returns

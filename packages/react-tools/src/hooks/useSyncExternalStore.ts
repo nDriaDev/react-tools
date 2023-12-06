@@ -8,14 +8,13 @@ import { useSyncExternalStore as legacy, useCallback, useEffect, useRef, useStat
  */
 function useSyncExternalStorePolyfill<Snapshot>(subscribe: (onStoreChange: () => void) => () => void, getSnapshot: () => Snapshot): Snapshot {
 	const [state, setState] = useState<Snapshot>(getSnapshot());
-	const subscribeRef = useRef(subscribe);
 	const getSnapshotRef = useRef(getSnapshot);
 	const update = useCallback(() => { setState(getSnapshotRef.current()) }, []);
 
 	useEffect(() => {
 		update();
-		return subscribeRef.current(update);
-	}, [update]);
+		return subscribe(update);
+	}, [update, subscribe]);
 
 	return state;
 }
