@@ -8,7 +8,7 @@ import { SyntheticEvent, useCallback, useRef } from "react";
  * @param {number} [handler.tolerance=300] - delay to execute __singleClick__ callback.
  * @returns {((evt: SyntheticEvent<T, E>) => Promise<void>|void)} callback
  */
-export const useDoubleClick = <T extends Element = Element, E extends Event = Event>(handler: ((evt: SyntheticEvent<T, E>) => Promise<void> | void) | { doubleClick: (evt: SyntheticEvent<T, E>) => Promise<void> | void, singleClick?: (evt: SyntheticEvent<T, E>) => Promise<void> | void, tolerance?: number }) => {
+export const useDoubleClick = <T extends Element = Element, E extends Event = Event>(handler: ((evt: SyntheticEvent<T, E>) => Promise<void> | void) | { doubleClick: (evt: SyntheticEvent<T, E>) => Promise<void> | void, singleClick?: (evt: SyntheticEvent<T, E>) => Promise<void> | void, tolerance?: number }): ((evt: SyntheticEvent<T, E>) => Promise<void> | void)  => {
 	const count = useRef(0);
 	const tolerance = useRef("tolerance" in handler ? handler.tolerance : 300);
 	const idTimeout = useRef<number>();
