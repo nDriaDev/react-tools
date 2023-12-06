@@ -6,7 +6,7 @@ import { SyntheticEvent, useCallback, useRef } from "react";
  * @param {((evt: SyntheticEvent<T, E>) => Promise<void> | void)} handler.doubleClick - callback executed on double click.
  * @param {((evt: SyntheticEvent<T, E>) => Promise<void> | void)} [handler.singleClick] - callback executed on single click.
  * @param {number} [handler.tolerance=300] - delay to execute __singleClick__ callback.
- * @returns {((evt: SyntheticEvent<T, E>) => Promise<void> | void)} callback
+ * @returns {((evt: SyntheticEvent<T, E>) => Promise<void>|void)} callback
  */
 export const useDoubleClick = <T extends Element = Element, E extends Event = Event>(handler: ((evt: SyntheticEvent<T, E>) => Promise<void> | void) | { doubleClick: (evt: SyntheticEvent<T, E>) => Promise<void> | void, singleClick?: (evt: SyntheticEvent<T, E>) => Promise<void> | void, tolerance?: number }) => {
 	const count = useRef(0);

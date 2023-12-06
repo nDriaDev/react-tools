@@ -38,14 +38,12 @@ useDoubleClick <T extends Element = Element, E extends Event = Event>(handler: (
 callback executed on double click.
 > - __handler.singleClick?__: _((evt: SyntheticEvent<T, E>) => Promise<void> | void)_  
 callback executed on single click.
-> - __handler.tolerance=150?__: _number_  
+> - __handler.tolerance=300?__: _number_  
 delay to execute __singleClick__ callback.
 >
 
 > ### Returns
 >
 > __callback__
-> - __Union of__:  
->     - _((evt: SyntheticEvent<T, E>) => Promise<void>_  
->     - _void)_  
+> - _((evt: SyntheticEvent<T, E>) => Promise<void>|void)_  
 >
