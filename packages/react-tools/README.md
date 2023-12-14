@@ -67,7 +67,7 @@
 	- [x] useLongPress
 	- [x] useDoubleClick
 	- [x] useBeforeUnload
-	- [ ] useOrientation
+	- [x] useScreen (orientation and ecc)
 	- [ ] useKeysEvents
 	- [ ] useHotKeys (https://mantine.dev/hooks/use-hotkeys/)
 	- [ ] useImageOnLoad

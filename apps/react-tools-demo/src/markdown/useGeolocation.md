@@ -42,7 +42,7 @@ export const UseGeolocation = () => {
 ## API
 
 ```tsx
-useGeolocation * - _first element_: is the location object with two properties: __isSupported__ and __position__.
+useGeolocation ({mode, locationOptions, onError}: { locationOptions?: PositionOptions, mode: "observe" | "current" | "manual", onError?: (error: GeolocationPositionError) => void }): [GeoLocationObject, ()=>Promise<void>, ()=>Promise<()=>void>] 
 ```
 
 > ### Params

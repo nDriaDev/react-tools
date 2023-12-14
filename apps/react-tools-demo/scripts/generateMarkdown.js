@@ -226,6 +226,7 @@ function buildHooksUtilsMarkdownObject(file) {
 		return obj;
 	}
 	const lines = getJsDoc(fileSplitted);
+	let codeLines = fileSplitted.slice(fileSplitted.findIndex(line => line === lines.at(-1))+2);
 	lines.forEach((line, index) => {
 		const depuratedLine = (line.split(" * ")[1]);
 		if(depuratedLine.startsWith("@param")) {
@@ -268,7 +269,6 @@ function buildHooksUtilsMarkdownObject(file) {
 			}
 		}
 	});
-	let codeLines = fileSplitted.slice(fileSplitted.findIndex(line => line === lines.at(-1))+2);
 	let typeLineIndex = codeLines.findIndex(line => !line.startsWith("//") && !line.startsWith(" */") && !line.startsWith("*/") && !line.startsWith(("/*")));
 	let typeLine = codeLines[typeLineIndex];
 	if(typeLine.startsWith("export")) {

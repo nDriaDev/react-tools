@@ -10,7 +10,10 @@ export type {
 	useResponsiveBreakpoints,
 	ConnectionState,
 	BatteryStatus,
-	GeoLocationObject
+	GeoLocationObject,
+	ScreenDetail,
+	ScreenDetails,
+	OrientationLockType
 } from './models'
 
 export {
@@ -82,7 +85,8 @@ export {
 	useEyeDropper,
 	useDialogBox,
 	useBeforeUnload,
-	useDoubleClick
+	useDoubleClick,
+	useScreen
 } from './hooks'
 
 export {

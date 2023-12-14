@@ -23,7 +23,7 @@ export const UseBattery = () => {
 ## API
 
 ```tsx
-useBattery * - __isSupported__: boolean that indicates if Battery Status API is available.
+useBattery (opts?: { onChargingChange?: (evt: Event) => void, onChargingTimeChange?: (evt: Event) => void, onDischargingTimeChange?: (evt: Event) => void, onLevelChange?: (evt: Event) => void }): BatteryStatus 
 ```
 
 > ### Params
