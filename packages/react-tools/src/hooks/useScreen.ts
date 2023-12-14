@@ -1,6 +1,6 @@
 import { useCallback, useMemo, useRef } from "react";
 import { useSyncExternalStore } from "."
-import { OrientationLockType, ScreenDetail, ScreenDetails, ScreenDetailsEvt } from "../models";
+import { OrientationLockType, ScreenDetails, ScreenDetailsEvt } from "../models";
 
 const listeners = new Set<() => void>();
 
