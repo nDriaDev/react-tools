@@ -80,8 +80,12 @@ object with serializer and deserializer function to handle values in localStorag
 >         - _() => T_  
 >         - _() => void_  
 >     - __Array__:  
->         - _Dispatch<SetStateAction<T>>, () => T, () => void_  
+>         - _Dispatch<SetStateAction<T>>_  
+>         - _() => T_  
+>         - _() => void_  
 >     - __Array__:  
 >         - _T_  
->         - _Dispatch<SetStateAction<T>>, () => T, () => void_  
+>         - _Dispatch<SetStateAction<T>>_  
+>         - _() => T_  
+>         - _() => void_  
 >

@@ -32,6 +32,20 @@ function getIndexClosedBracketTypeParam(line) {
 }
 
 /**
+ *
+ * @param {string} string
+ * @returns {number}
+ */
+function sanitizeType(string) {
+	let stringVal = string;
+	let arrowIndex = stringVal.indexOf("=>");
+	while(arrowIndex !== -1) {
+		stringVal = stringVal.substring(0, arrowIndex+1) + stringVal.substring(arrowIndex+2);
+		arrowIndex = stringVal.indexOf("=>");
+	}
+	return stringVal.split(">").length;
+}
+/**
 *
 * @param {string} string
 * @returns {string[]}
@@ -41,7 +55,7 @@ function splitType(string){
 	let newCode = [];
 	let last = "";
 	for (let part of string){
-		if (last.split("<").length === last.split(/[^=]>/).length && last.split("(").length === last.split(")").length && last.split("[").length === last.split("]").length && last.split("{").length === last.split("}").length){
+		if (last.split("<").length === sanitizeType(last) && last.split("(").length === last.split(")").length && last.split("[").length === last.split("]").length && last.split("{").length === last.split("}").length){
 			last = part;
 			newCode.push(part);
 		}

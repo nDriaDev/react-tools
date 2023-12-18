@@ -86,7 +86,8 @@ export {
 	useDialogBox,
 	useBeforeUnload,
 	useDoubleClick,
-	useScreen
+	useScreen,
+	useMergedRef
 } from './hooks'
 
 export {

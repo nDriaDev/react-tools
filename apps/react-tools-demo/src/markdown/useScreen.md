@@ -5,7 +5,7 @@ Hook to work with [Screen Orientation API](https://developer.mozilla.org/en-US/d
 
 ```tsx
 export const UseScreen = () => {
-	const [details] = useScreen();
+	const [details] = useScreen(true);
 
 	return <div style={{ textAlign: "left", padding: "0 1em", maxHeight: 300, overflow: "auto", border: "1px solid lightgray" }}>
 		<p><strong>Current screen:</strong></p>
@@ -13,7 +13,7 @@ export const UseScreen = () => {
 		<p><strong>Screens:</strong></p>
 		{
 			details.screens?.map((el, index) => (
-				<pre key={index}>{JSON.stringify(el, null, 2)}</pre>
+				<pre key={index}>{el.label}</pre>
 			))
 		}
 	</div>

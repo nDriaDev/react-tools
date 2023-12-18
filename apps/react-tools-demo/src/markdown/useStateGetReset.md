@@ -79,5 +79,7 @@ value or a function.
 > __array__
 > - __Array__:  
 >     - _T_  
->     - _Dispatch<SetStateAction<T>>, () => T, ()=>void_  
+>     - _Dispatch<SetStateAction<T>>_  
+>     - _() => T_  
+>     - _()=>void_  
 >

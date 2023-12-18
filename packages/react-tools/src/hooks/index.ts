@@ -68,3 +68,4 @@ export { useDialogBox } from './useDialogBox';
 export { useBeforeUnload } from './useBeforeUnload';
 export { useDoubleClick } from './useDoubleClick';
 export { useScreen } from './useScreen';
+export { useMergedRef } from './useMergedRef';
