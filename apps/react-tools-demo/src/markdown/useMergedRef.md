@@ -37,12 +37,12 @@ export const UseMergedRef = () => {
 ## API
 
 ```tsx
-useMergedRef <T>(...refs: (React.Ref<T>)[]) 
+useMergedRef <T>(...refs: React.Ref<T>[]) 
 ```
 
 > ### Params
 >
-> - __refs__: _React.MutableRefObject<T>[]_
+> - __refs__: _React.Ref<T>[]_
 >
 
 > ### Returns
