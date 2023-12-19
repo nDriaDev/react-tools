@@ -11,6 +11,7 @@ export const useResizeObserver = <T extends Element>(cb: ResizeObserverCallback,
 	const observer = useRef<ResizeObserver>();
 	const working = useRef(true);
 	const nodeRef = useRef<T>();
+	const cbRef = useRef(cb);
 
 	useEffectOnce(() => () => {
 		nodeRef.current = undefined;
@@ -25,6 +26,13 @@ export const useResizeObserver = <T extends Element>(cb: ResizeObserverCallback,
 			}
 			if (node && (!nodeRef.current || nodeRef.current !== node)) {
 				nodeRef.current = node;
+				observer.current = new ResizeObserver(cb);
+				observer.current.observe(node, opts);
+			}
+			if (cbRef.current !== cb && observer.current && node) {
+				cbRef.current = cb;
+				observer.current?.disconnect();
+				observer.current = undefined;
 				observer.current = new ResizeObserver(cb);
 				observer.current.observe(node, opts);
 			}

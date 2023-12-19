@@ -16,6 +16,7 @@ export const UseMergedRef = () => {
 	const mergedRef = useMergedRef<HTMLDivElement>(ref, refCb);
 
 	const changeBorderColor = () => {
+		mergedRef.current;
 		ref.current && (ref.current.style.border = ref.current.style.border.indexOf("lightgray") !== -1
 			? '1px solid darkcyan'
 			: '1px solid lightgray'

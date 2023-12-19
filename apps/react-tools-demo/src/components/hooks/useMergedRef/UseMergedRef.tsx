@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useCallback, useRef, useState } from "react";
 import { useMergedRef, useResizeObserver } from "../../../../../../packages/react-tools/src";
 
 /**
@@ -7,16 +7,15 @@ The component has a ref to change border color of a div element when a button is
 export const UseMergedRef = () => {
 	const [state, setState] = useState(false);
 	const [refCb] = useResizeObserver<HTMLDivElement>(
-		(entries: ResizeObserverEntry[]) => {
+		useCallback((entries: ResizeObserverEntry[]) => {
 			const result = entries[0].contentRect.width < 100;
 			result !== state && setState(result);
-		}
+		}, [state])
 	);
 	const ref = useRef<HTMLDivElement>(null);
 	const mergedRef = useMergedRef<HTMLDivElement>(ref, refCb);
 
 	const changeBorderColor = () => {
-		mergedRef.current;
 		ref.current && (ref.current.style.border = ref.current.style.border.indexOf("lightgray") !== -1
 			? '1px solid darkcyan'
 			: '1px solid lightgray'

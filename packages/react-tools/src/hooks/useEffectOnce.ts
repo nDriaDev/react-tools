@@ -24,35 +24,32 @@ export const useEffectOnce = (effect: EffectCallback) => {
 	}, [])
 }
 
-/**
- *
- * INFO this implementation works but gives a rerender.
+// INFO this implementation works but gives a rerender.
+//
+//
+// export const useEffectOnce = (effect: EffectCallback) => {
+// 	const update = useRerender();
+// 	const effectFn = useRef(effect);
+// 	const cleanUpFn = useRef<ReturnType<EffectCallback>>();
+// 	const effectCalled = useRef(false);
+// 	const rendered = useRef(false);
 
-export const useEffectOnce = (effect: EffectCallback) => {
-	const update = useRerender();
-	const effectFn = useRef(effect);
-	const cleanUpFn = useRef<ReturnType<EffectCallback>>();
-	const effectCalled = useRef(false);
-	const rendered = useRef(false);
+// 	if (effectCalled.current) {
+// 		rendered.current = true;
+// 	}
 
-	if (effectCalled.current) {
-		rendered.current = true;
-	}
-
-	useEffect(() => {
-		if (!effectCalled.current) {
-			cleanUpFn.current = effectFn.current();
-			effectCalled.current = true
-			update();
-		}
-		return () => {
-			if (rendered.current) {
-				cleanUpFn.current && cleanUpFn.current();
-				effectCalled.current = false
-			}
-		}
-	// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, []);
-}
-
- */
+// 	useEffect(() => {
+// 		if (!effectCalled.current) {
+// 			cleanUpFn.current = effectFn.current();
+// 			effectCalled.current = true
+// 			update();
+// 		}
+// 		return () => {
+// 			if (rendered.current) {
+// 				cleanUpFn.current && cleanUpFn.current();
+// 				effectCalled.current = false
+// 			}
+// 		}
+// 	// eslint-disable-next-line react-hooks/exhaustive-deps
+// 	}, []);
+// }

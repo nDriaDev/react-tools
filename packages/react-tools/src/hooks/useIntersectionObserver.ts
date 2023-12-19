@@ -11,6 +11,7 @@ export const useIntersectionObserver = <T extends Element>(cb: IntersectionObser
 	const observer = useRef<IntersectionObserver>();
 	const working = useRef(true);
 	const nodeRef = useRef<T>();
+	const cbRef = useRef(cb);
 
 	useEffectOnce(() => () => {
 		nodeRef.current = undefined;
@@ -25,6 +26,13 @@ export const useIntersectionObserver = <T extends Element>(cb: IntersectionObser
 			}
 			if (node && (!nodeRef.current || nodeRef.current !== node)) {
 				nodeRef.current = node;
+				observer.current = new IntersectionObserver(cb, opts);
+				observer.current.observe(node);
+			}
+			if (cbRef.current !== cb && observer.current && node) {
+				cbRef.current = cb;
+				observer.current?.disconnect();
+				observer.current = undefined;
 				observer.current = new IntersectionObserver(cb, opts);
 				observer.current.observe(node);
 			}

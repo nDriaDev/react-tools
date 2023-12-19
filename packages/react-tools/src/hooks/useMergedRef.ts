@@ -9,6 +9,6 @@ export const useMergedRef = <T>(...refs: React.Ref<T>[]) => {
 	const mergedRef = useRef<T>(null);
 	useEffect(() => {
 		refs.forEach(ref => typeof ref === "function" ? ref(mergedRef.current) : (ref as MutableRefObject<T | null>).current = mergedRef.current);
-	}, [mergedRef.current]);
+	}, [refs]);
 	return mergedRef;
 }
