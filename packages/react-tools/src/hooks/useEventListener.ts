@@ -11,7 +11,7 @@ import { useMemoizedFunction } from ".";
  * @param {"normal"|"layout"} [options.effectType="normal"] - option to set which hook is used to attach event listener.
  * @returns {()=>void} remove - used to manually remove the eventListener
  */
-export const useEventListener = ({ type, listener, element = window, listenerOpts, effectType="normal" }: { type: string, listener: (evt: Event | CustomEvent) => void, element?: RefObject<HTMLElement> | Window, listenerOpts?: boolean | AddEventListenerOptions, effectType?: "normal" | "layout" }) => {
+export const useEventListener = <T extends Event | CustomEvent>({ type, listener, element = window, listenerOpts, effectType="normal" }: { type: string, listener: ((evt: T) => unknown | Promise<unknown>), element?: RefObject<HTMLElement> | Window, listenerOpts?: boolean | AddEventListenerOptions, effectType?: "normal" | "layout" }) => {
 	const optsMemoized = useRef<typeof listenerOpts>(listenerOpts);
 	const elementReference = useRef<HTMLElement | Window | null>();
 	const effect = effectType === "layout" ? useLayoutEffect : useEffect;
@@ -24,14 +24,14 @@ export const useEventListener = ({ type, listener, element = window, listenerOpt
 				: null
 			: element as Window
 
-		elementReference.current && (elementReference.current as HTMLElement | Window).addEventListener(type, listener, opts);
+		elementReference.current && (elementReference.current as HTMLElement | Window).addEventListener(type, listener as EventListenerOrEventListenerObject, opts);
 		return () => {
-			elementReference.current && (elementReference.current as HTMLElement | Window).removeEventListener(type, listener, opts);
+			elementReference.current && (elementReference.current as HTMLElement | Window).removeEventListener(type, listener as EventListenerOrEventListenerObject, opts);
 		}
 	}, [element, type, listener]);
 
 	const remove = useMemoizedFunction(() => {
-		elementReference.current && (elementReference.current as HTMLElement | Window).removeEventListener(type, listener, optsMemoized.current);
+		elementReference.current && (elementReference.current as HTMLElement | Window).removeEventListener(type, listener as EventListenerOrEventListenerObject, optsMemoized.current);
 	});
 
 	return remove;

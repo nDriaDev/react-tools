@@ -1,14 +1,21 @@
-import React, { MutableRefObject, useEffect, useRef } from "react";
+import { Ref, MutableRefObject, useMemo, useRef } from "react";
 
 /**
  * **`useMergedRef`**: Hook to merge multiple refs into one.
- * @param {React.Ref<T>[]} refs
- * @returns {React.RefObject<T>} mergedRef
+ * @param {Ref<T>[]} refs
+ * @returns {RefObject<T>} mergedRef
  */
-export const useMergedRef = <T>(...refs: React.Ref<T>[]) => {
+export const useMergedRef = <T>(...refs: Ref<T>[]) => {
 	const mergedRef = useRef<T>(null);
-	useEffect(() => {
-		refs.forEach(ref => typeof ref === "function" ? ref(mergedRef.current) : (ref as MutableRefObject<T | null>).current = mergedRef.current);
-	}, [refs]);
-	return mergedRef;
+	return useMemo(() => (Object.defineProperty({}, "current", {
+		get() {
+			return (mergedRef as MutableRefObject<T>).current;
+		},
+		set(value: T) {
+			(mergedRef as MutableRefObject<T | null>).current = value;
+			refs.forEach(ref => typeof ref === "function" ? ref(mergedRef.current) : (ref as MutableRefObject<T | null>).current = mergedRef.current);
+		},
+		enumerable: false,
+		configurable: false,
+	})), [refs]) as Ref<T>;
 }

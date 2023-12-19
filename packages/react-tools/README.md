@@ -41,8 +41,6 @@
 	- [x] useMemoCompare
 	- [x] useMemoDeepCompare
 	- [x] useMergedRef
-	- [ ] useObjectRef
-	- [ ] useArrayRef
 	- [x] useLazyRef
 	- [x] useId
 
@@ -68,7 +66,6 @@
 	- [x] useDoubleClick
 	- [x] useBeforeUnload
 	- [x] useScreen (orientation and ecc)
-	- [ ] useKeysEvents
 	- [ ] useHotKeys (https://mantine.dev/hooks/use-hotkeys/)
 	- [ ] useImageOnLoad
 	- [ ] usePinchZoom

@@ -7,16 +7,15 @@ Hook to merge multiple refs into one.
 export const UseMergedRef = () => {
 	const [state, setState] = useState(false);
 	const [refCb] = useResizeObserver<HTMLDivElement>(
-		(entries: ResizeObserverEntry[]) => {
+		useCallback((entries: ResizeObserverEntry[]) => {
 			const result = entries[0].contentRect.width < 100;
 			result !== state && setState(result);
-		}
+		}, [state])
 	);
 	const ref = useRef<HTMLDivElement>(null);
 	const mergedRef = useMergedRef<HTMLDivElement>(ref, refCb);
 
 	const changeBorderColor = () => {
-		mergedRef.current;
 		ref.current && (ref.current.style.border = ref.current.style.border.indexOf("lightgray") !== -1
 			? '1px solid darkcyan'
 			: '1px solid lightgray'
@@ -38,16 +37,16 @@ export const UseMergedRef = () => {
 ## API
 
 ```tsx
-useMergedRef <T>(...refs: React.Ref<T>[]) 
+useMergedRef <T>(...refs: Ref<T>[]) 
 ```
 
 > ### Params
 >
-> - __refs__: _React.Ref<T>[]_
+> - __refs__: _Ref<T>[]_
 >
 
 > ### Returns
 >
 > __mergedRef__
-> - _React.RefObject<T>_  
+> - _RefObject<T>_  
 >
