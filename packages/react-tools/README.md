@@ -67,8 +67,7 @@
 	- [x] useBeforeUnload
 	- [x] useScreen (orientation and ecc)
 	- [x] useHotKeys
-	- [ ] useImageOnLoad
-	- [ ] usePinchZoom
+	- [x] usePinchZoom
 	- [ ] useInfiniteScroll
 	- [ ] useDragAndDrop (check for mobile usage)
 
@@ -129,6 +128,7 @@
 	- [ ] ErrorBoundary (??)
 	- [ ] Suspense: Suspence compontent react-like for async component
 	- [ ] Dynamic: This component lets you insert an arbitrary Component or tag and passes the props through to it.
+	- [ ] ImageOpt (???)
 
 ## ESlint configuration
 To validate dependencies of custom hooks like `useMemoCompare`, configure `exhaustive-deps` with the `additionalHooks` option

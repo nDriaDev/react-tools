@@ -4,10 +4,10 @@ import { useMemoizedFunction } from ".";
 /**
  * __`useEventListener`__: Hook to simplify add and remove EventListener use. It's persist during rerendering and automatically remove eventlistener on unMount component lifecycle.
  * @param {Object} options
- * @param {string} options.type - event type
- * @param {(evt: Event | CustomEvent) => void} options.listener - listener to be executed on specified event
- * @param {RefObject<HTMLElement> | Window} [options.element=window] - element on which attaching eventListener
- * @param {boolean | AddEventListenerOptions} [options.listenerOpts] - options for listener
+ * @param {string} options.type - event type.
+ * @param {(evt: Event | CustomEvent) => void} options.listener - listener to be executed on specified event.
+ * @param {RefObject<HTMLElement> | Window} [options.element=window] - element on which attaching eventListener.
+ * @param {boolean | AddEventListenerOptions} [options.listenerOpts] - options for listener.
  * @param {"normal"|"layout"} [options.effectType="normal"] - option to set which hook is used to attach event listener.
  * @returns {()=>void} remove - used to manually remove the eventListener, otherwise is removed when component is unmounted.
  */

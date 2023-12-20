@@ -64,7 +64,8 @@ export const COMPONENTS = [
 			"useBeforeUnload",
 			"useDoubleClick",
 			"useScreen",
-			"useHotKeys"
+			"useHotKeys",
+			"usePinchZoom"
 		],
 		//API DOM
 		[

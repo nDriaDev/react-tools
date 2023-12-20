@@ -56,13 +56,13 @@ useHotKeys ({ hotKey, type = "keydown", target = window, listener, listenerOpts 
 > - __options.hotKey__: _`${string}` | `${'alt' | 'ctrl' | 'meta' | 'shift' | 'ctrlCommand'}+${string}` | `${'alt' | 'ctrl' | 'meta' | 'shift' | 'ctrlCommand'}+${'alt' | 'ctrl' | 'meta' | 'shift' | 'ctrlCommand'}+${string}`_  
 hotKey string: _ctrlCommand_ indicates to listen __Ctrl__ (on Windows) or __Command__ (on Mac) keys.
 > - __options.type="keydown"?__: _"keydown"|"keyup"_  
-event type
+event type.
 > - __options.listener__: _(evt: KeyboardEvent|React.KeyboardEvent<HTMLElement>) => void | Promise<void>_  
-listener to be executed on specified event
+listener to be executed on specified event.
 > - __options.target=window?__: _RefObject<HTMLElement> | Window_  
-element on which attaching eventListener
+element on which attaching eventListener.
 > - __options.listenerOpts?__: _boolean | AddEventListenerOptions_  
-options for listener
+options for listener.
 >
 
 > ### Returns

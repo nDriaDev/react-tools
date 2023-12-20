@@ -88,7 +88,8 @@ export {
 	useDoubleClick,
 	useScreen,
 	useMergedRef,
-	useHotKeys
+	useHotKeys,
+	usePinchZoom
 } from './hooks'
 
 export {

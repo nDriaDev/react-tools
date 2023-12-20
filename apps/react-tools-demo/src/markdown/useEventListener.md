@@ -42,13 +42,13 @@ useEventListener <T extends Event | CustomEvent>({ type, listener, element = win
 >
 > - __options__: _Object_
 > - __options.type__: _string_  
-event type
+event type.
 > - __options.listener__: _(evt: Event | CustomEvent) => void_  
-listener to be executed on specified event
+listener to be executed on specified event.
 > - __options.element=window?__: _RefObject<HTMLElement> | Window_  
-element on which attaching eventListener
+element on which attaching eventListener.
 > - __options.listenerOpts?__: _boolean | AddEventListenerOptions_  
-options for listener
+options for listener.
 > - __options.effectType="normal"?__: _"normal"|"layout"_  
 option to set which hook is used to attach event listener.
 >

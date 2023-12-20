@@ -70,3 +70,4 @@ export { useDoubleClick } from './useDoubleClick';
 export { useScreen } from './useScreen';
 export { useMergedRef } from './useMergedRef';
 export { useHotKeys } from './useHotKeys';
+export { usePinchZoom } from './usePinchZoom';
