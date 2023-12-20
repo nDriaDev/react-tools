@@ -1,4 +1,4 @@
-import { useSyncExternalStore as legacy, useCallback, useEffect, useRef, useState } from 'react';
+import { useSyncExternalStore as legacy, useCallback, useEffect, useState } from 'react';
 
 /**
  * __`useSyncExternalStore`__: _useSyncExternalStore_ hook polyfilled for React versions below 18 ___only client side___.
@@ -8,8 +8,7 @@ import { useSyncExternalStore as legacy, useCallback, useEffect, useRef, useStat
  */
 function useSyncExternalStorePolyfill<Snapshot>(subscribe: (onStoreChange: () => void) => () => void, getSnapshot: () => Snapshot): Snapshot {
 	const [state, setState] = useState<Snapshot>(getSnapshot());
-	const getSnapshotRef = useRef(getSnapshot);
-	const update = useCallback(() => { setState(getSnapshotRef.current()) }, []);
+	const update = useCallback(() => { setState(getSnapshot()) }, [getSnapshot]);
 
 	useEffect(() => {
 		update();
