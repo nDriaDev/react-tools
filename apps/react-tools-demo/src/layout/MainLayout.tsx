@@ -62,7 +62,10 @@ export default function MainLayout() {
 																key={name}
 																className={pathname === ("/" + name) ? 'active' : ''}
 																to={"/" + name}
-																onClick={()=>containerRef.current?.scrollTo(0,0)}
+																onClick={() => {
+																	containerRef.current?.scrollTo(0, 0);
+																	closeNav();
+																}}
 															>
 																{name}
 															</Link>
