@@ -116,6 +116,7 @@
 	- [x] isTouchEvent
 	- [x] isClient
 	- [x] isAsync
+	- [x] hotKeyHandler
 	- [ ] lazy: lazy react-like customized
 	- [ ] fetch-client (???ARTS-like)
 
