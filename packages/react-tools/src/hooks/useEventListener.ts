@@ -9,9 +9,9 @@ import { useMemoizedFunction } from ".";
  * @param {RefObject<HTMLElement> | Window} [options.element=window] - element on which attaching eventListener
  * @param {boolean | AddEventListenerOptions} [options.listenerOpts] - options for listener
  * @param {"normal"|"layout"} [options.effectType="normal"] - option to set which hook is used to attach event listener.
- * @returns {()=>void} remove - used to manually remove the eventListener
+ * @returns {()=>void} remove - used to manually remove the eventListener, otherwise is removed when component is unmounted.
  */
-export const useEventListener = <T extends Event | CustomEvent>({ type, listener, element = window, listenerOpts, effectType="normal" }: { type: string, listener: ((evt: T) => unknown | Promise<unknown>), element?: RefObject<HTMLElement> | Window, listenerOpts?: boolean | AddEventListenerOptions, effectType?: "normal" | "layout" }) => {
+export const useEventListener = <T extends Event | CustomEvent>({ type, listener, element = window, listenerOpts, effectType = "normal" }: { type: string, listener: ((evt: T) => unknown | Promise<unknown>), element?: RefObject<HTMLElement> | Window, listenerOpts?: boolean | AddEventListenerOptions, effectType?: "normal" | "layout" }): (() => void) => {
 	const optsMemoized = useRef<typeof listenerOpts>(listenerOpts);
 	const elementReference = useRef<HTMLElement | Window | null>();
 	const effect = effectType === "layout" ? useLayoutEffect : useEffect;

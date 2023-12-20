@@ -87,7 +87,8 @@ export {
 	useBeforeUnload,
 	useDoubleClick,
 	useScreen,
-	useMergedRef
+	useMergedRef,
+	useHotKeys
 } from './hooks'
 
 export {

@@ -37,7 +37,7 @@ export const UseMergedRef = () => {
 ## API
 
 ```tsx
-useMergedRef <T>(...refs: Ref<T>[]) 
+useMergedRef <T>(...refs: Ref<T>[]): Ref<T> 
 ```
 
 > ### Params

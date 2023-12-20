@@ -63,7 +63,8 @@ export const COMPONENTS = [
 			"useLongPress",
 			"useBeforeUnload",
 			"useDoubleClick",
-			"useScreen"
+			"useScreen",
+			"useHotKeys"
 		],
 		//API DOM
 		[

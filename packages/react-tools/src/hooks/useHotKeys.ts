@@ -1,8 +1,17 @@
 import { KeyboardEvent as KeyEvt, RefObject, useCallback } from "react";
 import { useEventListener } from ".";
 
-
-export const useHotKeys = ({ hotKey, type = "keydown", target = window, listener, listenerOpts }: { hotKey: string | `${'alt' | 'ctrl' | 'meta' | 'shift' | 'ctrlCommand'}+${string}` | `${'alt' | 'ctrl' | 'meta' | 'shift' | 'ctrlCommand'}+${'alt' | 'ctrl' | 'meta' | 'shift' | 'ctrlCommand'}+${string}`, type?: "keydown" | "keyup", target?: RefObject<HTMLElement> | Window, listener: (evt: KeyboardEvent | KeyEvt<HTMLElement>) => void | Promise<void>, listenerOpts?: boolean | AddEventListenerOptions }) => {
+/**
+ * __`useHotKeys`__: Hook to listen for the keyboard press, support key combinations.
+ * @param {Object} options
+ * @param {`${string}` | `${'alt' | 'ctrl' | 'meta' | 'shift' | 'ctrlCommand'}+${string}` | `${'alt' | 'ctrl' | 'meta' | 'shift' | 'ctrlCommand'}+${'alt' | 'ctrl' | 'meta' | 'shift' | 'ctrlCommand'}+${string}`} options.hotKey - hotKey string: _ctrlCommand_ indicates to listen __Ctrl__ (on Windows) or __Command__ (on Mac) keys.
+ * @param {"keydown"|"keyup"} [options.type="keydown"] - event type
+ * @param {(evt: KeyboardEvent|React.KeyboardEvent<HTMLElement>) => void | Promise<void>} options.listener - listener to be executed on specified event
+ * @param {RefObject<HTMLElement> | Window} [options.target=window] - element on which attaching eventListener
+ * @param {boolean | AddEventListenerOptions} [options.listenerOpts] - options for listener
+ * @returns {()=>void} remove - used to manually remove the eventListener, otherwise is removed when component is unmounted.
+ */
+export const useHotKeys = ({ hotKey, type = "keydown", target = window, listener, listenerOpts }: { hotKey: `${string}` | `${'alt' | 'ctrl' | 'meta' | 'shift' | 'ctrlCommand'}+${string}` | `${'alt' | 'ctrl' | 'meta' | 'shift' | 'ctrlCommand'}+${'alt' | 'ctrl' | 'meta' | 'shift' | 'ctrlCommand'}+${string}`, type?: "keydown" | "keyup", target?: RefObject<HTMLElement> | Window, listener: (evt: KeyboardEvent | KeyEvt<HTMLElement>) => void | Promise<void>, listenerOpts?: boolean | AddEventListenerOptions }): (() => void) => {
 	const handler = useCallback((evt: KeyboardEvent | KeyEvt<HTMLElement>) => {
 		let keys = hotKey.toLowerCase().split("+").map(el => el.trim());
 		const modifiers = {
@@ -20,6 +29,7 @@ export const useHotKeys = ({ hotKey, type = "keydown", target = window, listener
 		}
 		keys = keys.filter(el => el !== "")
 		const { altKey, ctrlKey, metaKey, shiftKey, key: pressedKey } = evt;
+
 		if (modifiers.ctrlCommand) {
 			if (!ctrlKey && !metaKey) {
 				return false;
@@ -38,7 +48,11 @@ export const useHotKeys = ({ hotKey, type = "keydown", target = window, listener
 				return false;
 			}
 		}
-	}, []);
+		if (!(keys.includes(pressedKey.toLowerCase()) || keys.includes(evt.code.replace("Key", "")))) {
+			return false
+		}
+		listener && listener(evt);
+	}, [hotKey, listener]);
 
 	const remove = useEventListener<KeyboardEvent>({
 		type,

@@ -10,9 +10,17 @@ const pathComponentDir = path.join(__dirname, '..', 'src', 'components');
 const pathUtilsDir = path.join(__dirname, "..", "..", "..", "packages", "react-tools", "src", "utils");
 const pathHooksDir = path.join(__dirname, "..", "..", "..", "packages", "react-tools", "src", "hooks");
 
+/**
+ *
+ * @param {string} line
+ * @returns {number}
+ */
 function getIndexClosedBracketTypeParam(line) {
 	let end;
 	const lineSplitted = line.split("");
+	if(lineSplitted[1] === "`") {
+		return lineSplitted.length - 1 - lineSplitted.reverse().findIndex(el => el === "}");
+	}
 	let numberOpenedBrackets = 0;
 	for(let char of lineSplitted) {
 		char === "{" && (numberOpenedBrackets++);

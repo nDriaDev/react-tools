@@ -35,7 +35,7 @@ export { UseEventListener };
 ## API
 
 ```tsx
-useEventListener ({ type, listener, element = window, listenerOpts, effectType="normal" }: { type: string, listener: (evt: Event | CustomEvent) => void, element?: RefObject<HTMLElement> | Window, listenerOpts?: boolean | AddEventListenerOptions, effectType?: "normal" | "layout" }) 
+useEventListener <T extends Event | CustomEvent>({ type, listener, element = window, listenerOpts, effectType = "normal" }: { type: string, listener: ((evt: T) => unknown | Promise<unknown>), element?: RefObject<HTMLElement> | Window, listenerOpts?: boolean | AddEventListenerOptions, effectType?: "normal" | "layout" }): (() => void) 
 ```
 
 > ### Params
@@ -55,6 +55,6 @@ option to set which hook is used to attach event listener.
 
 > ### Returns
 >
-> __remove__: used to manually remove the eventListener
+> __remove__: used to manually remove the eventListener, otherwise is removed when component is unmounted.
 > - _()=>void_  
 >

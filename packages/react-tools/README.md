@@ -66,7 +66,7 @@
 	- [x] useDoubleClick
 	- [x] useBeforeUnload
 	- [x] useScreen (orientation and ecc)
-	- [ ] useHotKeys (https://mantine.dev/hooks/use-hotkeys/)
+	- [x] useHotKeys
 	- [ ] useImageOnLoad
 	- [ ] usePinchZoom
 	- [ ] useInfiniteScroll

@@ -5,7 +5,7 @@ import { Ref, MutableRefObject, useMemo, useRef } from "react";
  * @param {Ref<T>[]} refs
  * @returns {RefObject<T>} mergedRef
  */
-export const useMergedRef = <T>(...refs: Ref<T>[]) => {
+export const useMergedRef = <T>(...refs: Ref<T>[]): Ref<T> => {
 	const mergedRef = useRef<T>(null);
 	return useMemo(() => (Object.defineProperty({}, "current", {
 		get() {
