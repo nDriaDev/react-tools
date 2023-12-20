@@ -1,5 +1,5 @@
 # useHotKeys
-Hook to listen for the keyboard press, support key combinations.
+Hook to listen for the keyboard press, support key combinations, built on [hotKeyHandler](#/hotKeyHandler) utility function.
 
 ## Usage
 

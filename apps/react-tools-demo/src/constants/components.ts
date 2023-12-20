@@ -98,6 +98,7 @@ export const COMPONENTS = [
 		"isTouchEvent",
 		"isMouseEvent",
 		"isClient",
-		"isAsync"
+		"isAsync",
+		"hotKeyHandler"
 	]
 ] as const;

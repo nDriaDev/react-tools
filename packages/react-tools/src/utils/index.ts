@@ -6,3 +6,4 @@ export { isClient } from './isClient';
 export { PublishSubscribePattern } from './PublishSubscribePattern';
 export { EventsPattern } from './EventsPattern';
 export { isAsync } from './isAsync';
+export { hotKeyHandler } from './hotKeyHandler';

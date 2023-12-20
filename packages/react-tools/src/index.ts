@@ -97,5 +97,6 @@ export {
 	isMouseEvent,
 	isTouchEvent,
 	isClient,
-	isAsync
+	isAsync,
+	hotKeyHandler
 } from './utils'
