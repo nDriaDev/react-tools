@@ -33,7 +33,7 @@ export const UseThrottle = () => {
 ## API
 
 ```tsx
-useThrottle <T extends unknown[]>(fn: (...args: T) => void | Promise<void> , opts: { delay?: number, waitFn?: boolean }): [(...args: T) => void, () => void, (...args: T) => void] 
+useThrottle<T extends unknown[]>(fn: (...args: T) => void | Promise<void> , opts: { delay?: number, waitFn?: boolean }): [(...args: T) => void, () => void, (...args: T) => void]
 ```
 
 > ### Params

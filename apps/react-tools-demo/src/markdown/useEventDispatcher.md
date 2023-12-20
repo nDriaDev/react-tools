@@ -44,7 +44,7 @@ export const UseEventDispatcher = () => {
 ## API
 
 ```tsx
-useEventDispatcher (element: RefObject<HTMLElement> | Window = window): (evt: Event | CustomEvent) => void 
+useEventDispatcher(element: RefObject<HTMLElement> | Window = window): (evt: Event | CustomEvent) => void
 ```
 
 > ### Params

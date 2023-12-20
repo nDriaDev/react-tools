@@ -19,7 +19,7 @@ export const UseIsOnline = () => {
 ## API
 
 ```tsx
-useIsOnline (): boolean 
+useIsOnline(): boolean
 ```
 
 > ### Params

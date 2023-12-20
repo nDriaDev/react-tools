@@ -4,7 +4,7 @@ It detects if code is running on client.
 ## API
 
 ```tsx
-isClient (): boolean 
+isClient(): boolean
 ```
 
 > ### Params

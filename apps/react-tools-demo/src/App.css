@@ -120,8 +120,8 @@ code {
 
 .open-nav {
 	position: absolute;
-	top: 10;
-	left: 10;
+	top: 10px;
+	left: 10px;
 	z-index: 999;
 	display: none;
 }

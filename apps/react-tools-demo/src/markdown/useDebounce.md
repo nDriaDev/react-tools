@@ -41,7 +41,7 @@ export const UseDebounce = () => {
 ## API
 
 ```tsx
-useDebounce <T extends unknown[]>(fn: (...args: T)=>void, opts: { delay: number, focusedWindow?: boolean }): [(...args: T) => void, () => void, (...args: T) => void] 
+useDebounce<T extends unknown[]>(fn: (...args: T)=>void, opts: { delay: number, focusedWindow?: boolean }): [(...args: T) => void, () => void, (...args: T) => void]
 ```
 
 > ### Params

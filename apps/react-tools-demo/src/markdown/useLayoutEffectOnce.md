@@ -10,7 +10,7 @@ Please visit [useEffectOnce](#/useEffectOnce) example to see how it works.
 ## API
 
 ```tsx
-useLayoutEffectOnce (effect: EffectCallback) 
+useLayoutEffectOnce(effect: EffectCallback)
 ```
 
 > ### Params

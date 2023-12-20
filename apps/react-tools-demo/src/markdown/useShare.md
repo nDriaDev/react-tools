@@ -27,7 +27,7 @@ export const UseShare = () => {
 ## API
 
 ```tsx
-useShare (): {isSupported: boolean, share: (data?: ShareData)=>Promise<void>} 
+useShare(): {isSupported: boolean, share: (data?: ShareData)=>Promise<void>}
 ```
 
 > ### Params

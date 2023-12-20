@@ -24,7 +24,7 @@ export const UseActiveElement = () => {
 ## API
 
 ```tsx
-useActiveElement ():Element|null 
+useActiveElement():Element|null
 ```
 
 > ### Params

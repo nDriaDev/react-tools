@@ -48,7 +48,7 @@ export { UseCallbackDeepCompare };
 ## API
 
 ```tsx
-useCallbackDeepCompare <T extends Function>(cb: T, deps: DependencyList):T 
+useCallbackDeepCompare<T extends Function>(cb: T, deps: DependencyList):T
 ```
 
 > ### Params

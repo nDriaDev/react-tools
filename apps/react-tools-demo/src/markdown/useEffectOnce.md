@@ -59,7 +59,7 @@ export { UseEffectOnce };
 ## API
 
 ```tsx
-useEffectOnce (effect: EffectCallback) 
+useEffectOnce(effect: EffectCallback)
 ```
 
 > ### Params

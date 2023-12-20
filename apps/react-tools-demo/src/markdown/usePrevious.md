@@ -57,7 +57,7 @@ export { UsePrevious };
 ## API
 
 ```tsx
-usePrevious <T = unknown>(variable: T): [T|undefined, (enable: boolean) => void] 
+usePrevious<T = unknown>(variable: T): [T|undefined, (enable: boolean) => void]
 ```
 
 > ### Params

@@ -45,7 +45,7 @@ export {UseMemoizedFunction}
 ## API
 
 ```tsx
-useMemoizedFunction <T extends (...args: any[]) => any>(fn: T) 
+useMemoizedFunction<T extends (...args: any[]) => any>(fn: T)
 ```
 
 > ### Params

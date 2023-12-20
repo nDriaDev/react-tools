@@ -38,7 +38,7 @@ export const UseScript = () => {
 ## API
 
 ```tsx
-useScriptuseScript: UseScript = function (attributes, options) 
+useScriptuseScript: UseScript = function (attributes, options)
 ```
 
 > ### Params

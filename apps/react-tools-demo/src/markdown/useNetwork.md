@@ -23,7 +23,7 @@ export const UseNetwork = () => {
 ## API
 
 ```tsx
-useNetwork<T extends keyof ConnectionState>(selectedInfo?: ArrayMinLength1<T>): ConnectionState | {[k in T] : ConnectionState[k]} 
+useNetwork<T extends keyof ConnectionState>(selectedInfo?: ArrayMinLength1<T>): ConnectionState | {[k in T] : ConnectionState[k]}
 ```
 
 > ### Params

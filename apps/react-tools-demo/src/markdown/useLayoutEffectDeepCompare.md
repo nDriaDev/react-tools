@@ -10,7 +10,7 @@ Please visit [useEffectDeepCompare](#/useEffectDeepCompare) example to see how i
 ## API
 
 ```tsx
-useLayoutEffectDeepCompare (cb: EffectCallback, deps: DependencyList):void 
+useLayoutEffectDeepCompare(cb: EffectCallback, deps: DependencyList):void
 ```
 
 > ### Params

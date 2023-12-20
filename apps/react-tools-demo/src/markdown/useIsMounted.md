@@ -62,7 +62,7 @@ export { UseIsMounted };
 ## API
 
 ```tsx
-useIsMounted (): ()=>boolean 
+useIsMounted(): ()=>boolean
 ```
 
 > ### Params

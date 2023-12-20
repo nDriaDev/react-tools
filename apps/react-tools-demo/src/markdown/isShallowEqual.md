@@ -4,7 +4,7 @@ It returns true if the params are equal until first level depth.
 ## API
 
 ```tsx
-isShallowEqual (objA: unknown, objB: unknown): boolean 
+isShallowEqual(objA: unknown, objB: unknown): boolean
 ```
 
 > ### Params

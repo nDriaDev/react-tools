@@ -29,7 +29,7 @@ export const UseTitle = () => {
 ## API
 
 ```tsx
-useTitle (title?: string): [() => string, (title: string) => void] 
+useTitle(title?: string): [() => string, (title: string) => void]
 ```
 
 > ### Params

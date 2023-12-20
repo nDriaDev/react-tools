@@ -23,7 +23,7 @@ export const UseReducedMotion = () => {
 ## API
 
 ```tsx
-useReducedMotion (): boolean 
+useReducedMotion(): boolean
 ```
 
 > ### Params

@@ -24,7 +24,7 @@ export const UseResponsive = () => {
 ## API
 
 ```tsx
-useResponsive<T extends useResponsiveKeys>(config?: useResponsiveBreakpoints<T>): { [s in (keyof typeof defaultConfig)]: boolean } | { [s in useResponsiveKeys<T>]: boolean } 
+useResponsive<T extends useResponsiveKeys>(config?: useResponsiveBreakpoints<T>): { [s in (keyof typeof defaultConfig)]: boolean } | { [s in useResponsiveKeys<T>]: boolean }
 ```
 
 > ### Params

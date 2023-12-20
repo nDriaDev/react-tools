@@ -30,7 +30,7 @@ export const UseLogger = () => {
 ## API
 
 ```tsx
-useLogger (name: string, props: object) 
+useLogger(name: string, props: object)
 ```
 
 > ### Params

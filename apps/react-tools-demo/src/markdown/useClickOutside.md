@@ -26,7 +26,7 @@ export const UseClickOutside = () => {
 ## API
 
 ```tsx
-useClickOutside (target: RefObject<HTMLElement> | HTMLElement, handler: (evt: Event) => void):void 
+useClickOutside(target: RefObject<HTMLElement> | HTMLElement, handler: (evt: Event) => void):void
 ```
 
 > ### Params

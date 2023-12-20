@@ -4,7 +4,7 @@ _useSyncExternalStore_ hook polyfilled for React versions below 18 ___only clien
 ## API
 
 ```tsx
-useSyncExternalStore<Snapshot>(subscribe: (onStoreChange: () => void) => () => void, getSnapshot: () => Snapshot): Snapshot 
+useSyncExternalStore<Snapshot>(subscribe: (onStoreChange: () => void) => () => void, getSnapshot: () => Snapshot): Snapshot
 ```
 
 > ### Params

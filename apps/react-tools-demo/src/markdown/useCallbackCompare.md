@@ -46,7 +46,7 @@ export { UseCallbackCompare };
 ## API
 
 ```tsx
-useCallbackCompare <T extends Function, E = unknown>(cb: T, deps: DependencyListTyped<E>, compareFn?: CompareFn<E>):T 
+useCallbackCompare<T extends Function, E = unknown>(cb: T, deps: DependencyListTyped<E>, compareFn?: CompareFn<E>):T
 ```
 
 > ### Params

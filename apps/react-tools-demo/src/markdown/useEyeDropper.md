@@ -29,7 +29,7 @@ export const UseEyeDropper = () => {
 ## API
 
 ```tsx
-useEyeDropper = ({ onStart, onFinish }: { onStart?: () => void, onFinish?: (result: `#${string}`) => void } = {}) 
+useEyeDropper = ({ onStart, onFinish }: { onStart?: () => void, onFinish?: (result: `#${string}`) => void } = {})
 ```
 
 > ### Params

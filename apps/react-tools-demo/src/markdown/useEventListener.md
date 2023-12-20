@@ -35,7 +35,7 @@ export { UseEventListener };
 ## API
 
 ```tsx
-useEventListener <T extends Event | CustomEvent>({ type, listener, element = window, listenerOpts, effectType = "normal" }: { type: string, listener: ((evt: T) => unknown | Promise<unknown>), element?: RefObject<HTMLElement> | Window, listenerOpts?: boolean | AddEventListenerOptions, effectType?: "normal" | "layout" }): (() => void) 
+useEventListener<T extends Event | CustomEvent>({ type, listener, element = window, listenerOpts, effectType = "normal" }: { type: string, listener: ((evt: T) => unknown | Promise<unknown>), element?: RefObject<HTMLElement> | Window, listenerOpts?: boolean | AddEventListenerOptions, effectType?: "normal" | "layout" }): (() => void)
 ```
 
 > ### Params

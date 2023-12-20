@@ -46,7 +46,7 @@ export const UseLazyRef = () => {
 ## API
 
 ```tsx
-useLazyRef <T>(initializer: () => T): React.MutableRefObject<T> 
+useLazyRef<T>(initializer: () => T): React.MutableRefObject<T>
 ```
 
 > ### Params

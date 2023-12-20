@@ -29,7 +29,7 @@ export const UseDocumentVisibility = () => {
 ## API
 
 ```tsx
-useDocumentVisibility (): DocumentVisibilityState 
+useDocumentVisibility(): DocumentVisibilityState
 ```
 
 > ### Params

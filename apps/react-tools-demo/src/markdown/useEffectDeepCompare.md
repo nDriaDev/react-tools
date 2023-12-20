@@ -44,7 +44,7 @@ export { UseEffectDeepCompare };
 ## API
 
 ```tsx
-useEffectDeepCompare (cb: EffectCallback, deps: DependencyList):void 
+useEffectDeepCompare(cb: EffectCallback, deps: DependencyList):void
 ```
 
 > ### Params

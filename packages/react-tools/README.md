@@ -30,7 +30,6 @@
 	- [x] useLayoutEffectOnce
 	- [x] useRerender
 	- [x] useIsMounted
-	- [ ] useInsertionEffect (polyfill???)
 	- [ ] useDeferredValue (polyfill - an idea can be use setTimeout inside useEffect or this https://lilibraries.github.io/hooks/useDelayedValue/)
 	- [x] useLogger
 

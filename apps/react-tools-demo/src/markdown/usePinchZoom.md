@@ -29,7 +29,7 @@ export const UsePinchZoom = () => {
 ## API
 
 ```tsx
-usePinchZoom ({ target = window, listener }: { target?: RefObject<HTMLElement> | Window, listener: (evt: PointerEvent, type: "zoomIn" | "zoomOut") => void | Promise<void> }): (()=>void) 
+usePinchZoom({ target = window, listener }: { target?: RefObject<HTMLElement> | Window, listener: (evt: PointerEvent, type: "zoomIn" | "zoomOut") => void | Promise<void> }): (()=>void)
 ```
 
 > ### Params

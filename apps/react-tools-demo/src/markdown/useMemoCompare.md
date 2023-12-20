@@ -49,7 +49,7 @@ export { UseMemoCompare };
 ## API
 
 ```tsx
-useMemoCompare <T = unknown, E = unknown>(cb: () => T, deps: DependencyListTyped<E>, compareFn?: CompareFn<E>):T 
+useMemoCompare<T = unknown, E = unknown>(cb: () => T, deps: DependencyListTyped<E>, compareFn?: CompareFn<E>):T
 ```
 
 > ### Params

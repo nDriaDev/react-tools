@@ -29,7 +29,7 @@ export { UseRerender };
 ## API
 
 ```tsx
-useRerender (): React.DispatchWithoutAction 
+useRerender(): React.DispatchWithoutAction
 ```
 
 > ### Params

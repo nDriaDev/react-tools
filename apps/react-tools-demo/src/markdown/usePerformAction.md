@@ -69,7 +69,7 @@ export { UsePerformAction };
 ## API
 
 ```tsx
-usePerformAction <T extends (...args: unknown[]) => void>(cb: T): (...args: Parameters<T>) => void 
+usePerformAction<T extends (...args: unknown[]) => void>(cb: T): (...args: Parameters<T>) => void
 ```
 
 > ### Params

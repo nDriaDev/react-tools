@@ -10,7 +10,7 @@ Please visit [useEffectCompare](#/useEffectCompare) example to see how it works.
 ## API
 
 ```tsx
-useLayoutEffectCompare <T = unknown>(cb: EffectCallback, deps: DependencyListTyped<T>, compareFn?: CompareFn<T>) 
+useLayoutEffectCompare<T = unknown>(cb: EffectCallback, deps: DependencyListTyped<T>, compareFn?: CompareFn<T>)
 ```
 
 > ### Params

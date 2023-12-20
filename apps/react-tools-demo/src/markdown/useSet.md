@@ -58,7 +58,7 @@ export {UseSet}
 ## API
 
 ```tsx
-useSet <T>(initialState?: Iterable<T> | (() => Iterable<T>)) 
+useSet<T>(initialState?: Iterable<T> | (() => Iterable<T>))
 ```
 
 > ### Params

@@ -48,7 +48,7 @@ export { UsePublishSubscribe };
 ## API
 
 ```tsx
-usePublishSubscribe <T>(topic: string): [(listener: (value?: T) => Promise<void> | void) => () => void, (value?: T) => Promise<void> ] 
+usePublishSubscribe<T>(topic: string): [(listener: (value?: T) => Promise<void> | void) => () => void, (value?: T) => Promise<void> ]
 ```
 
 > ### Params

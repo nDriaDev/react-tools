@@ -64,7 +64,7 @@ export default function MainLayout() {
 																to={"/" + name}
 																onClick={() => {
 																	containerRef.current?.scrollTo(0, 0);
-																	closeNav();
+																	window.innerWidth < 1190 && closeNav();
 																}}
 															>
 																{name}
@@ -76,7 +76,10 @@ export default function MainLayout() {
 													key={group as string}
 													className={pathname === ("/" + group) ? 'active' : ''}
 													to={"/" + group}
-													onClick={()=>containerRef.current?.scrollTo(0,0)}
+													onClick={() => {
+														containerRef.current?.scrollTo(0, 0);
+														window.innerWidth < 1190 && closeNav();
+													}}
 												>
 													{group}
 												</Link>

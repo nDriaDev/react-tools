@@ -21,7 +21,7 @@ export const UseMeasure = () => {
 ## API
 
 ```tsx
-useMeasure <T extends Element>(): [React.RefCallback<T>, DOMRectReadOnly] 
+useMeasure<T extends Element>(): [React.RefCallback<T>, DOMRectReadOnly]
 ```
 
 > ### Params

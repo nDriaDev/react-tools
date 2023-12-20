@@ -26,7 +26,7 @@ export const UseScreen = () => {
 ## API
 
 ```tsx
-useScreen (allScreen?:boolean): [ScreenDetails, (orientation: OrientationLockType) => Promise<void>, ()=>void] 
+useScreen(allScreen?:boolean): [ScreenDetails, (orientation: OrientationLockType) => Promise<void>, ()=>void]
 ```
 
 > ### Params

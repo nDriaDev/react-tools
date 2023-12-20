@@ -309,7 +309,7 @@ function buildHooksUtilsMarkdownObject(file) {
 				index++;
 			}
 			line = codeLines[index].substring("function ".length, codeLines[index].length-1);
-			obj.type = line;
+			obj.type = line.trim();
 			return obj;
 		} else {
 			typeLine = typeLine.substring("function ".length);
@@ -357,7 +357,7 @@ function buildHooksUtilsMarkdownObject(file) {
 		typeLine = typeLine.substring("{".length);
 	}
 	typeLine = typeLine.split("").reverse().join("");
-	obj.type = obj.title+typeLine;
+	obj.type = obj.title.trim()+typeLine.trim();
 	return obj;
 }
 

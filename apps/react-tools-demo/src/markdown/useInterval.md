@@ -43,7 +43,7 @@ export const UseInterval = () => {
 ## API
 
 ```tsx
-useInterval <TArgs extends unknown[]>(callback: (...args: TArgs) => void, delay: number): [(...args: TArgs) => void, () => void, (...args: TArgs) => Promise<void>] 
+useInterval<TArgs extends unknown[]>(callback: (...args: TArgs) => void, delay: number): [(...args: TArgs) => void, () => void, (...args: TArgs) => Promise<void>]
 ```
 
 > ### Params

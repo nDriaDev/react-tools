@@ -46,7 +46,7 @@ export { UseMemoDeepCompare };
 ## API
 
 ```tsx
-useMemoDeepCompare <T=unknown>(cb: () => T, deps: DependencyList):T 
+useMemoDeepCompare<T=unknown>(cb: () => T, deps: DependencyList):T
 ```
 
 > ### Params

@@ -33,7 +33,7 @@ export const UseIntersectionObserver = () => {
 ## API
 
 ```tsx
-useIntersectionObserver <T extends Element>(cb: IntersectionObserverCallback, opts?: IntersectionObserverInit):[RefCallback<T>, () => void, () => void] 
+useIntersectionObserver<T extends Element>(cb: IntersectionObserverCallback, opts?: IntersectionObserverInit):[RefCallback<T>, () => void, () => void]
 ```
 
 > ### Params

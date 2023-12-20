@@ -43,7 +43,7 @@ export const UseVisible = () => {
 ## API
 
 ```tsx
-useVisible<T extends Element>(opts?: IntersectionObserverInit & { withRatio?: boolean }): [RefCallback<T>, boolean] | [RefCallback<T>, boolean, number] 
+useVisible<T extends Element>(opts?: IntersectionObserverInit & { withRatio?: boolean }): [RefCallback<T>, boolean] | [RefCallback<T>, boolean, number]
 ```
 
 > ### Params

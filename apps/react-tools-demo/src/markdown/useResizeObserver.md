@@ -31,7 +31,7 @@ export const UseResizeObserver = () => {
 ## API
 
 ```tsx
-useResizeObserver <T extends Element>(cb: ResizeObserverCallback, opts?: ResizeObserverOptions):[RefCallback<T>, () => void, () => void] 
+useResizeObserver<T extends Element>(cb: ResizeObserverCallback, opts?: ResizeObserverOptions):[RefCallback<T>, () => void, () => void]
 ```
 
 > ### Params

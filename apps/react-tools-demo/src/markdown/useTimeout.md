@@ -43,7 +43,7 @@ export const UseTimeout = () => {
 ## API
 
 ```tsx
-useTimeout <TArgs extends unknown[]>(callback: (...args: TArgs) => void, delay: number): [(...args: TArgs) => void, () => void, (...args: TArgs) => Promise<void>] 
+useTimeout<TArgs extends unknown[]>(callback: (...args: TArgs) => void, delay: number): [(...args: TArgs) => void, () => void, (...args: TArgs) => Promise<void>]
 ```
 
 > ### Params

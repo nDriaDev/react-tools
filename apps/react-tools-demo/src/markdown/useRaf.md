@@ -28,7 +28,7 @@ export const UseRaf = () => {
 ## API
 
 ```tsx
-useRaf <T extends unknown[]>(cb: (timer: number, repeat: ()=>void, ...args: T) => void): [(...args: T)=>void, ()=>void] 
+useRaf<T extends unknown[]>(cb: (timer: number, repeat: ()=>void, ...args: T) => void): [(...args: T)=>void, ()=>void]
 ```
 
 > ### Params

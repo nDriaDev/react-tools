@@ -10,7 +10,7 @@ Please visit [useStateHistory](#/useStateHistory) and [useStateGetReset](#/useSt
 ## API
 
 ```tsx
-useStateHistoryGetter <T>(initialState: T | (() => T), capacity: number | "no-limit" = "no-limit"): [T, Dispatch<SetStateAction<T>>, () => T, ReturnType<typeof useStateHistory<T>>[2]] 
+useStateHistoryGetter<T>(initialState: T | (() => T), capacity: number | "no-limit" = "no-limit"): [T, Dispatch<SetStateAction<T>>, () => T, ReturnType<typeof useStateHistory<T>>[2]]
 ```
 
 > ### Params

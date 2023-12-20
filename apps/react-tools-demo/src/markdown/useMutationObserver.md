@@ -51,7 +51,7 @@ export const UseMutationObserver = () => {
 ## API
 
 ```tsx
-useMutationObserver <T extends Element>(cb: MutationCallback, opts?: MutationObserverInit): [RefCallback<T>, () => void, () => void, () => MutationRecord[] | undefined] 
+useMutationObserver<T extends Element>(cb: MutationCallback, opts?: MutationObserverInit): [RefCallback<T>, () => void, () => void, () => MutationRecord[] | undefined]
 ```
 
 > ### Params

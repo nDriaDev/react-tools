@@ -44,7 +44,7 @@ export { UseArray }
 ## API
 
 ```tsx
-useArray <T>(initialState?: Array<T> | (() => Array<T>)) 
+useArray<T>(initialState?: Array<T> | (() => Array<T>))
 ```
 
 > ### Params

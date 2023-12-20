@@ -65,7 +65,7 @@ export {UseMap}
 ## API
 
 ```tsx
-useMap <K, V>(initialState?: Iterable<readonly [K, V]> | (() => Iterable<readonly [K, V]>)) 
+useMap<K, V>(initialState?: Iterable<readonly [K, V]> | (() => Iterable<readonly [K, V]>))
 ```
 
 > ### Params

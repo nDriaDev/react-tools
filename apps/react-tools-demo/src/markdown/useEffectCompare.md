@@ -57,7 +57,7 @@ export { UseEffectCompare };
 ## API
 
 ```tsx
-useEffectCompare <T = unknown>(cb: EffectCallback, deps: DependencyListTyped<T>, compareFn?: CompareFn<T>) 
+useEffectCompare<T = unknown>(cb: EffectCallback, deps: DependencyListTyped<T>, compareFn?: CompareFn<T>)
 ```
 
 > ### Params

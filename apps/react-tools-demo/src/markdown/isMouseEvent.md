@@ -4,7 +4,7 @@ It returns true if the event param is of MouseEvent type.
 ## API
 
 ```tsx
-isMouseEvent (event: SyntheticEvent): boolean 
+isMouseEvent(event: SyntheticEvent): boolean
 ```
 
 > ### Params

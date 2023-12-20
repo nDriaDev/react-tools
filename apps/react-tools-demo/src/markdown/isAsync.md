@@ -4,7 +4,7 @@ It detects if a function is asynchronous.
 ## API
 
 ```tsx
-isAsync <T extends unknown[], E = unknown>(fn: E | Promise<E> | ((...args: T)=> E | Promise<E>)): boolean 
+isAsync<T extends unknown[], E = unknown>(fn: E | Promise<E> | ((...args: T)=> E | Promise<E>)): boolean
 ```
 
 > ### Params

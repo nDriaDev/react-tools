@@ -47,7 +47,7 @@ export const UseDialogBox = () => {
 ## API
 
 ```tsx
-useDialogBox(type: "prompt" | "confirm" | "alert"): ((message?: string, _default?: string) => string | null) | ((message?: any) => void) | ((message?: string) => boolean) 
+useDialogBox(type: "prompt" | "confirm" | "alert"): ((message?: string, _default?: string) => string | null) | ((message?: any) => void) | ((message?: string) => boolean)
 ```
 
 > ### Params

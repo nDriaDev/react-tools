@@ -65,7 +65,7 @@ export { UseStateGetReset };
 ## API
 
 ```tsx
-useStateGetReset <T>(initialState: T | (() => T)): [T, Dispatch<SetStateAction<T>>, () => T, () => void] 
+useStateGetReset<T>(initialState: T | (() => T)): [T, Dispatch<SetStateAction<T>>, () => T, () => void]
 ```
 
 > ### Params
