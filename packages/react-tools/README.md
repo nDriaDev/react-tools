@@ -32,7 +32,7 @@
 	- [x] useIsMounted
 	- [ ] useInsertionEffect (polyfill???)
 	- [ ] useDeferredValue (polyfill - an idea can be use setTimeout inside useEffect or this https://lilibraries.github.io/hooks/useDelayedValue/)
-	- [ ] useLogger
+	- [x] useLogger
 
 - __PERFORMANCE__
 	- [x] useCallbackCompare

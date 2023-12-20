@@ -89,7 +89,8 @@ export {
 	useScreen,
 	useMergedRef,
 	useHotKeys,
-	usePinchZoom
+	usePinchZoom,
+	useLogger
 } from './hooks'
 
 export {
