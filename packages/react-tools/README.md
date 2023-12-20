@@ -93,6 +93,8 @@
 	- [x] useShare
 	- [x] useEyeDropper
 	- [x] useDialogBox
+	- [ ] useDeviceMotion (??? mobile)
+	- [ ] useVibrate (??? mobile)
 	- [ ] useSpeech (https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesisUtterance#examples)
 	- [ ] useAudio (???)
 	- [ ] useVideo (???)
@@ -102,10 +104,9 @@
 	- [ ] useScreenShare
 	- [ ] useMediaDevices
 	- [ ] useMediaStream
-	- [ ] useDeviceMotion (??? mobile)
-	- [ ] useVibrate (??? mobile)
 	- [ ] useObservable — tracks latest value of an Observable
 	- [ ] useLock - (https://developer.mozilla.org/en-US/docs/Web/API/LockManager/request)
+	- [ ] useIndexedDB
 
 - __UTILS__
 	- [x] isShallowEqual
