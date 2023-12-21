@@ -30,7 +30,7 @@
 	- [x] useLayoutEffectOnce
 	- [x] useRerender
 	- [x] useIsMounted
-	- [ ] useDeferredValue (polyfill - an idea can be use setTimeout inside useEffect or this https://lilibraries.github.io/hooks/useDelayedValue/)
+	- [x] useDeferredValue
 	- [x] useLogger
 
 - __PERFORMANCE__

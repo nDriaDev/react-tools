@@ -29,6 +29,7 @@ export const COMPONENTS = [
 			"useLayoutEffectOnce",
 			"useRerender",
 			"useIsMounted",
+			"useDeferredValue",
 			"useLogger"
 		],
 		//PERFORMANCE
