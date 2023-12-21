@@ -94,7 +94,7 @@
 	- [x] useEyeDropper
 	- [x] useDialogBox
 	- [x] useDeviceMotion
-	- [x] useDeviceOrientatio
+	- [x] useDeviceOrientation
 	- [x] useVibrate (??? mobile)
 	- [ ] useSpeech (https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesisUtterance#examples)
 	- [ ] useAudio (???)
