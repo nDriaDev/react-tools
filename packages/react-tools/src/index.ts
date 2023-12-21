@@ -13,7 +13,9 @@ export type {
 	GeoLocationObject,
 	ScreenDetail,
 	ScreenDetails,
-	OrientationLockType
+	OrientationLockType,
+	DeviceMotionProps,
+	DeviceOrientationProps
 } from './models'
 
 export {
@@ -90,7 +92,10 @@ export {
 	useMergedRef,
 	useHotKeys,
 	usePinchZoom,
-	useLogger
+	useLogger,
+	useDeviceMotion,
+	useDeviceOrientation,
+	useVibrate
 } from './hooks'
 
 export {

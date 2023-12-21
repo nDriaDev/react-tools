@@ -93,8 +93,9 @@
 	- [x] useShare
 	- [x] useEyeDropper
 	- [x] useDialogBox
-	- [ ] useDeviceMotion (??? mobile)
-	- [ ] useVibrate (??? mobile)
+	- [x] useDeviceMotion
+	- [x] useDeviceOrientatio
+	- [x] useVibrate (??? mobile)
 	- [ ] useSpeech (https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesisUtterance#examples)
 	- [ ] useAudio (???)
 	- [ ] useVideo (???)

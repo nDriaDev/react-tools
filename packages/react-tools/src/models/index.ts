@@ -5,4 +5,6 @@ export type { useResponsiveKeys, useResponsiveBreakpoints } from './useResponsiv
 export type { ConnectionState } from './useNetwork.model';
 export type { BatteryStatus } from './useBattery.model';
 export type { GeoLocationObject } from './useGeolocation.model';
-export type { OrientationLockType, ScreenDetails, ScreenDetail, ScreenDetailsEvt} from './useScreen.model';
+export type { OrientationLockType, ScreenDetails, ScreenDetail, ScreenDetailsEvt } from './useScreen.model';
+export type { DeviceMotionProps } from './useDeviceMotion.model';
+export type { DeviceOrientationProps } from './useDeviceOrientation.model';

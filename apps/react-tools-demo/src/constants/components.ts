@@ -90,7 +90,10 @@ export const COMPONENTS = [
 			"useGeolocation",
 			"useShare",
 			"useEyeDropper",
-			"useDialogBox"
+			"useDialogBox",
+			"useDeviceMotion",
+			"useDeviceOrientation",
+			"useVibrate"
 		]
 	],
 	//UTILS
