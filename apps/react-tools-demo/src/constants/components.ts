@@ -18,6 +18,7 @@ export const COMPONENTS = [
 			"useArray",
 			"useProxyState",
 			"useSyncExternalStore",
+			"useDerivedState"
 		],
 		//LIFECYCLE
 		[

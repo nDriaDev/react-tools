@@ -37,12 +37,12 @@ const createScriptNode = (attributes: UseScriptProps["attributes"]): HTMLScriptE
 export const useScript: UseScript = function (attributes, options) {
 	const opts = useRef(options);
 	const attrs = useRef(attributes);
-	const [handleAppending, setHandleAppending] = useState(opts.current.handleAppending ? false : true)
+	const [handleAppending, setHandleAppending] = useState(opts.current.handleAppending ? 1 : 0)
 
 	const appendScript = useCallback((attributes?: UseScriptProps["attributes"], iframe?: HTMLIFrameElement) => {
 		attributes && (attrs.current = attributes);
 		iframe && (opts.current.iframe = iframe);
-		setHandleAppending(t => !t);
+		setHandleAppending(t => t+1);
 	}, []);
 
 	const removeScript = useCallback(() => {
@@ -61,7 +61,7 @@ export const useScript: UseScript = function (attributes, options) {
 
 	const status = useSyncExternalStore(
 		useCallback(notif => {
-			if (handleAppending) {
+			if (handleAppending%2 === 0) {
 				let node: HTMLScriptElement | null, alreadyExist=true;
 				node = getScriptNode(attrs.current);
 				if (!node) {

@@ -95,7 +95,8 @@ export {
 	useLogger,
 	useDeviceMotion,
 	useDeviceOrientation,
-	useVibrate
+	useVibrate,
+	useDerivedState
 } from './hooks'
 
 export {

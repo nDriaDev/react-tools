@@ -1,4 +1,4 @@
-import { useDeferredValue as legacy, useEffect, useState } from "react"
+import { useDeferredValue as legacy, useRef, useState } from "react"
 
 /**
  * __`useDeferredValue`__: _useDeferredValue_ hook polyfilled for React versions below 18.
@@ -7,15 +7,12 @@ import { useDeferredValue as legacy, useEffect, useState } from "react"
  */
 function useDeferredValuePolyfill<T>(value: T): T {
 	const [state, setState] = useState<T>(value);
+	const idTimeout = useRef<number>();
 
-	useEffect(() => {
-		const id = setTimeout(() => {
-			setState(value);
-		}, 50);
-		return () => {
-			clearTimeout(id);
-		}
-	}, [value])
+	if (value !== state) {
+		idTimeout.current !== null && clearTimeout(idTimeout.current);
+		idTimeout.current = setTimeout(() => setState(value)) as unknown as number;
+	}
 
 	return state;
 }

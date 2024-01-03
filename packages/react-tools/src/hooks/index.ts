@@ -75,3 +75,4 @@ export { useLogger } from './useLogger';
 export { useDeviceMotion } from './useDeviceMotion';
 export { useDeviceOrientation } from './useDeviceOrientation';
 export { useVibrate } from './useVibrate';
+export { useDerivedState } from './useDerivedState';

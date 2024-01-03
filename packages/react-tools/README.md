@@ -14,7 +14,7 @@
 	- [x] useArray
 	- [x] useProxyState
 	- [x] useSyncExternalStore
-	- [ ] useDerivedState (https://hackernoon.com/whats-the-right-way-to-fetch-data-in-react-hooks-a-deep-dive-2jc13230)
+	- [x] useDerivedState
 	- [ ] useStateValidator (???)
 	- [ ] useStore
 	- [ ] createStore (example: https://github.com/streamich/react-use/blob/master/src/factory/createGlobalState.ts)
@@ -126,7 +126,7 @@
 	- [ ] For: A referentially keyed loop with efficient updating of only changed items. The callback takes the current item as the first argument
 	- [ ] Index: Non-keyed list iteration (rendered nodes are keyed to an array index). This is useful when there is no conceptual key, like if the data consists of primitives and it is the index that is fixed rather than the value.
 	- [ ] RestrictedRoute (maybe)
-	- [ ] ErrorBoundary (??)
+	- [ ] ErrorBoundary (?? error event listener)
 	- [ ] Suspense: Suspence compontent react-like for async component
 	- [ ] Dynamic: This component lets you insert an arbitrary Component or tag and passes the props through to it.
 	- [ ] ImageOpt (???)
