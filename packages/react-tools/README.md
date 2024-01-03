@@ -19,7 +19,7 @@
 	- [ ] useStore
 	- [ ] createStore (example: https://github.com/streamich/react-use/blob/master/src/factory/createGlobalState.ts)
  	- [ ] usePubSubStore (with pusSub model)
-	- [ ] useBroadcast (refer to https://developer.mozilla.org/en-US/docs/Web/API/Broadcast_Channel_API)
+	- [ ] useBroadcast (refer to https://developer.mozilla.org/en-US/docs/Web/API/Broadcast_Channel_API - https://vueuse.org/core/useBroadcastChannel/)
 
 - __LIFECYCLE__
 	- [x] useEffectCompare
@@ -96,9 +96,20 @@
 	- [x] useDeviceMotion
 	- [x] useDeviceOrientation
 	- [x] useVibrate (??? mobile)
+	- [ ] useBluetooth (https://vueuse.org/core/useBluetooth/)
+	- [ ] useFileSystem (https://vueuse.org/core/useFileSystemAccess/).
+	- [ ] useGamePad (https://vueuse.org/core/useGamepad/)
+	- [ ] useWakeLock (https://vueuse.org/core/useWakeLock/)
 	- [ ] useSpeech (https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesisUtterance#examples)
+	- [ ] useDevicesList (https://vueuse.org/core/useDevicesList/)
+	- [ ] useFPS (https://vueuse.org/core/useFps/)
+	- [ ] useParallax (https://vueuse.org/core/useParallax/)
+	- [ ] useScrollLock (https://vueuse.org/core/useScrollLock/)
+	- [ ] useAnimate (https://vueuse.org/core/useAnimate/)
 	- [ ] useAudio (???)
 	- [ ] useVideo (???)
+	- [ ] useEventSource (https://vueuse.org/core/useEventSource/)
+	- [ ] useWebSocket (https://vueuse.org/core/useWebSocket/)
 	- [ ] useFetch (with suspense ???)
 	- [ ] useAsync
 	- [ ] useMedia
@@ -106,8 +117,12 @@
 	- [ ] useMediaDevices
 	- [ ] useMediaStream
 	- [ ] useObservable — tracks latest value of an Observable
+	- [ ] usePointerLock (https://vueuse.org/core/usePointerLock/)
+	- [ ] usePointerTouchSwipe (https://vueuse.org/core/usePointerSwipe/ https://vueuse.org/core/useSwipe/)
 	- [ ] useLock - (https://developer.mozilla.org/en-US/docs/Web/API/LockManager/request)
 	- [ ] useIndexedDB
+	- [ ] useWebWorker (https://vueuse.org/core/useWebWorker/)
+	- [ ] useWebWorkerFn (https://vueuse.org/core/useWebWorkerFn/)
 
 - __UTILS__
 	- [x] isShallowEqual
@@ -119,6 +134,7 @@
 	- [x] hotKeyHandler
 	- [ ] lazy: lazy react-like customized
 	- [ ] fetch-client (???ARTS-like)
+	- [ ] useBase64 (https://vueuse.org/core/useBase64/)
 
 - __COMPONENT__
 	- [ ] Show component to render or not a component by a condition. Props: when, fallback, keyed. Keyed is a boolean and needs to avoid rerenders children when it is a function.
