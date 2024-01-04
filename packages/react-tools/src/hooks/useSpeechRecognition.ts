@@ -9,6 +9,7 @@ const isSupported = !!window && ("SpeechRecognition" in window || "webkitSpeechR
 /**
  * **`useSpeechRecognition`**: Hook to use _SpeechRecognition API_. Refer to [Web Speech API](https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognition).
  * @param {Object} opts - options.
+ * @param {boolean} [opts.alreadyStarted=false] - istant start SpeechRecognition if it is available.
  * @param {Object} [opts.defaultConfig] - config parameters for current SpeechRecognition.
  * @param {SpeechGrammarList} [opts.defaultConfig.grammars] - a _SpeechGrammarList_ containing the SpeechGrammar objects that represent your grammar for your app.
  * @param {LanguageBCP47Tags} [opts.defaultConfig.lang] - a string representing the BCP 47 language tag for the current SpeechRecognition.
@@ -35,10 +36,11 @@ const isSupported = !!window && ("SpeechRecognition" in window || "webkitSpeechR
  * - 3. __stop__: function to stop SpeechRecognition.
  * - 4. __reset__: function to reset SpeechRecognition with optional parameter to reset results also.
  */
-export const useSpeechRecognition = ({ defaultConfig, onAudioStart, onAudioEnd, onEnd, onError, onNoMatch, onResult, onSoundStart, onSoundEnd, onSpeechStart, onSpeechEnd, onStart }: { defaultConfig?: SpeechRecognitionConfig, onAudioStart?: SpeechRecognition["onaudiostart"], onAudioEnd?: SpeechRecognition["onaudioend"], onEnd?: SpeechRecognition["onend"], onError?: SpeechRecognition["onerror"], onNoMatch?: SpeechRecognition["onnomatch"], onResult?: SpeechRecognition["onresult"], onSoundStart?: SpeechRecognition["onsoundstart"], onSoundEnd?: SpeechRecognition["onsoundend"], onSpeechStart?: SpeechRecognition["onspeechstart"], onSpeechEnd?: SpeechRecognition["onspeechend"], onStart?: SpeechRecognition["onstart"] }): [SpeechRecognitionState, (config?: SpeechRecognitionConfig) => void, () => void, (resultAlso?: boolean) => void] => {
+export const useSpeechRecognition = ({ alreadyStarted, defaultConfig, onAudioStart, onAudioEnd, onEnd, onError, onNoMatch, onResult, onSoundStart, onSoundEnd, onSpeechStart, onSpeechEnd, onStart }: { alreadyStarted?: boolean, defaultConfig?: SpeechRecognitionConfig, onAudioStart?: SpeechRecognition["onaudiostart"], onAudioEnd?: SpeechRecognition["onaudioend"], onEnd?: SpeechRecognition["onend"], onError?: SpeechRecognition["onerror"], onNoMatch?: SpeechRecognition["onnomatch"], onResult?: SpeechRecognition["onresult"], onSoundStart?: SpeechRecognition["onsoundstart"], onSoundEnd?: SpeechRecognition["onsoundend"], onSpeechStart?: SpeechRecognition["onspeechstart"], onSpeechEnd?: SpeechRecognition["onspeechend"], onStart?: SpeechRecognition["onstart"] }): [SpeechRecognitionState, (config?: SpeechRecognitionConfig) => void, () => void, (resultAlso?: boolean) => void] => {
 	const recognition = useRef<SpeechRecognition>();
 	const notifRef = useRef<() => void>();
 	const isListening = useRef(false);
+	const firstExecution = useRef(true);
 	const result = useRef<{ results: SpeechRecognitionEvent["results"]|null, resultIndex: SpeechRecognitionEvent["resultIndex"]|null }>({resultIndex: null, results: null});
 
 	const start = useCallback((config?: typeof defaultConfig) => {
@@ -142,6 +144,12 @@ export const useSpeechRecognition = ({ defaultConfig, onAudioStart, onAudioEnd, 
 			}
 		}, [])
 	);
+
+	if (firstExecution.current && isSupported && alreadyStarted) {
+		isListening.current = true;
+		firstExecution.current = false;
+		start();
+	}
 
 	return [state, start, stop.current, reset.current];
 }
