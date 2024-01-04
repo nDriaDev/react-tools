@@ -96,7 +96,8 @@ export const COMPONENTS = [
 			"useDeviceMotion",
 			"useDeviceOrientation",
 			"useVibrate",
-			"useBluetooth"
+			"useBluetooth",
+			"useScreenWakeLock"
 		]
 	],
 	//UTILS

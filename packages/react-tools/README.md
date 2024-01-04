@@ -16,6 +16,7 @@
 	- [x] useSyncExternalStore
 	- [x] useDerivedState
 	- [ ] useStateValidator (???)
+	- [ ] useSignal (https://medium.com/@personal.david.kohen/the-quest-for-signals-in-react-usestate-on-steroids-71eb9fc87c14)
 	- [ ] useStore
 	- [ ] createStore (example: https://github.com/streamich/react-use/blob/master/src/factory/createGlobalState.ts)
  	- [ ] usePubSubStore (with pusSub model)
@@ -97,9 +98,7 @@
 	- [x] useDeviceOrientation
 	- [x] useVibrate (??? mobile)
 	- [x] useBluetooth
-	- [ ] useFileSystem (https://vueuse.org/core/useFileSystemAccess/).
-	- [ ] useGamePad (https://vueuse.org/core/useGamepad/)
-	- [ ] useWakeLock (https://vueuse.org/core/useWakeLock/)
+	- [x] useScreenWakeLock
 	- [ ] useSpeech (https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesisUtterance#examples)
 	- [ ] useDevicesList (https://vueuse.org/core/useDevicesList/)
 	- [ ] useFPS (https://vueuse.org/core/useFps/)

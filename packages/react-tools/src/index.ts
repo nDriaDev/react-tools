@@ -109,7 +109,8 @@ export {
 	useDeviceOrientation,
 	useVibrate,
 	useDerivedState,
-	useBluetooth
+	useBluetooth,
+	useScreenWakeLock
 } from './hooks'
 
 export {

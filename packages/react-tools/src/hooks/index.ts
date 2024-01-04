@@ -77,3 +77,4 @@ export { useDeviceOrientation } from './useDeviceOrientation';
 export { useVibrate } from './useVibrate';
 export { useDerivedState } from './useDerivedState';
 export { useBluetooth } from './useBluetooth';
+export { useScreenWakeLock } from './useScreenWakeLock';
