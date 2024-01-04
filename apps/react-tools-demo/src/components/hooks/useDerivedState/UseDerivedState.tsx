@@ -38,7 +38,7 @@ const renders = {
 
 /**
 The component has _three internal string states_ and renders three input fields and three components that receive one state each. These three components have an object as internal state with two properties _loading_, initially set to __true__, and _friends_ which is an initially empty array.
-Based on the _user_ prop they receive, they set the _loading_ property of the internal state to __true__ and invoke a _serverAPI_ function that simulates a backend call and returns a list of names filtered by the passed _prop_. This list values ​​the _friends_ property of the internal state and this list together with the passed _user_ prop are rendered:
+Based on the _user_ prop they receive, they set the _loading_ property of the internal state to __true__ and invoke a _serverAPI_ function that simulates a backend call and returns a list of names filtered by the passed _prop_. This list values the _friends_ property of the internal state and this list together with the passed _user_ prop are rendered:
 - The _Without useDerivedState_ component uses the _useState_ and _useEffect_ hooks to implement this logic.
 - The _With useDerivedState_ component uses the _useDerivedState_ hook and the _useEffect_.
 - The _With useDerivedStateAndCompute_ component uses the _useDerivedState_ hook and the optional third parameter to implement all logic.
@@ -47,7 +47,7 @@ Each component also renders a counter of the times it is rendered.
 
 The component without _useDerivedState_ hook is rendered one more time every time its _prop_ changes while the other two have the same number of renders.
 
-Furthermore, if you debug the code you can see how in the first component there is no synchronization in the updating of the values ​​since in a first render the rendered _prop_ user is updated and in a second render the writing `loading` is rendered instead of the list of names.
+Furthermore, if you debug the code you can see how in the first component there is no synchronization in the updating of the values since in a first render the rendered _prop_ user is updated and in a second render the writing `loading` is rendered instead of the list of names.
  */
 export const UseDerivedState = () => {
 	const [state, setState] = useState("");
