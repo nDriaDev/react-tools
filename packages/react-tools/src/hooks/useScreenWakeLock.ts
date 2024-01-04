@@ -7,7 +7,7 @@ import { useSyncExternalStore } from ".";
  * @returns {[{isSupported: boolean, type: "screen"|null, isActive: boolean|null}, ()=>Promise<void>, ()=>Promise<void>]} result - An array with three element:
  * - 1. __info__: object with these properties:
  * 		- _isSupported_: returns a boolean to know if API is available.
- * 		- _type_: return a string representation of the currently acquired WakeLock type.
+ * 		- _type_: returns a string representation of the currently acquired WakeLock type.
  * 		- _isActive_: returns a boolean indicating whether the WakeLockSentinel has been activated.
  * - 2. __acquire__: function to request a WakeLock.
  * - 3. __release__: function to release a WakeLock.

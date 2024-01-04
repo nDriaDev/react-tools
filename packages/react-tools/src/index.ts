@@ -28,6 +28,15 @@ export type {
 	BluetoothRemoteGATTService,
 	BluetoothScanFilters,
 	BluetoothServiceUUID,
+	LanguageBCP47Tags,
+	SpeechRecognition,
+	SpeechRecognitionConfig,
+	SpeechRecognitionEvent,
+	SpeechRecognitionErrorEvent,
+	SpeechRecognitionErrorCode,
+	SpeechRecognitionState,
+	SpeechGrammar,
+	SpeechGrammarList,
 } from './models'
 
 export {
@@ -110,7 +119,8 @@ export {
 	useVibrate,
 	useDerivedState,
 	useBluetooth,
-	useScreenWakeLock
+	useScreenWakeLock,
+	useSpeechRecognition
 } from './hooks'
 
 export {

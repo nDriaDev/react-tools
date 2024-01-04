@@ -48,7 +48,7 @@ export const useScreen = (allScreen?:boolean): [ScreenDetails, (orientation: Ori
 			let pending = false;
 			if (listeners.size === 1) {
 				screen.orientation.onchange = listener;
-				if ("getScreenDetails" in window) {
+				if (!!window && "getScreenDetails" in window) {
 					pending = true;
 					(window.getScreenDetails as () => Promise<ScreenDetailsEvt>)()
 						.then(screensDetails => {

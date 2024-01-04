@@ -11,7 +11,7 @@ const handler = (evt: DeviceMotionEvent) => listeners.forEach(l => l(evt));
  */
 export const useDeviceMotion = (): DeviceMotionProps => {
 	const prev = useRef<DeviceMotionProps>({
-		isSupported: "DeviceMotionEvent" in window,
+		isSupported: !!window && "DeviceMotionEvent" in window,
 		acceleration: null,
 		accelerationIncludingGravity: null,
 		interval: null,
@@ -33,12 +33,12 @@ export const useDeviceMotion = (): DeviceMotionProps => {
 				};
 				notif();
 			};
-			if ("DeviceMotionEvent" in window) {
+			if (!!window && "DeviceMotionEvent" in window) {
 				listeners.add(listener);
 				listeners.size === 1 && addEventListener("devicemotion", handler);
 			}
 			return () => {
-				if ("DeviceMotionEvent" in window) {
+				if (!!window && "DeviceMotionEvent" in window) {
 					listeners.delete(listener);
 					listeners.size === 0 && window.removeEventListener("devicemotion", handler)
 				}

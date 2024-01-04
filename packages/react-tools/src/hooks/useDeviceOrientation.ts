@@ -11,7 +11,7 @@ const handler = (evt: DeviceOrientationEvent) => listeners.forEach(l => l(evt));
  */
 export const useDeviceOrientation = (): DeviceOrientationProps => {
 	const prev = useRef<DeviceOrientationProps>({
-		isSupported: "DeviceOrientationEvent" in window,
+		isSupported: !!window && "DeviceOrientationEvent" in window,
 		absolute: null,
 		alpha: null,
 		beta: null,
@@ -33,12 +33,12 @@ export const useDeviceOrientation = (): DeviceOrientationProps => {
 				};
 				notif();
 			};
-			if ("DeviceOrientationEvent" in window) {
+			if (!!window && "DeviceOrientationEvent" in window) {
 				listeners.add(listener);
 				listeners.size === 1 && addEventListener("deviceorientation", handler);
 			}
 			return () => {
-				if ("DeviceOrientationEvent" in window) {
+				if (!!window && "DeviceOrientationEvent" in window) {
 					listeners.delete(listener);
 					listeners.size === 0 && window.removeEventListener("deviceorientation", handler)
 				}

@@ -99,7 +99,8 @@
 	- [x] useVibrate (??? mobile)
 	- [x] useBluetooth
 	- [x] useScreenWakeLock
-	- [ ] useSpeech (https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesisUtterance#examples)
+	- [x] useSpeechRecognition
+	- [ ] useSpeechSynthesis (https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesisUtterance#examples)
 	- [ ] useDevicesList (https://vueuse.org/core/useDevicesList/)
 	- [ ] useFPS (https://vueuse.org/core/useFps/)
 	- [ ] useParallax (https://vueuse.org/core/useParallax/)

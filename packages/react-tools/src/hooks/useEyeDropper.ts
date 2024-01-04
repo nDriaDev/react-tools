@@ -8,10 +8,10 @@ import { useCallback } from "react";
  * @returns {{isSupported: boolean, open: (signal?: AbortSignal) => Promise<`#${string}`>|Promise<void>}} result - __isSupported__ to known if EyeDropper API is supported and __share__ function to use EyeDropper API.
  */
 export const useEyeDropper = ({ onStart, onFinish }: { onStart?: () => void, onFinish?: (result: `#${string}`) => void } = {}) => {
-	const isSupported = window !== undefined && "EyeDropper" in window;
+	const isSupported = !!window && "EyeDropper" in window;
 
 	const open = useCallback((signal?: AbortSignal) => {
-		if ("EyeDropper" in window) {
+		if (!!window && "EyeDropper" in window) {
 			// eslint-disable-next-line @typescript-eslint/no-explicit-any
 			const eyeDropper = new (window as any).EyeDropper();
 			return Promise.resolve(onStart && onStart())
