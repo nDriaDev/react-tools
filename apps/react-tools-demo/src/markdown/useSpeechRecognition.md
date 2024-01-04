@@ -8,47 +8,26 @@ export const UseSpeechRecognition = () => {
 	const colors = ['aqua', 'azure', 'beige', 'bisque', 'black', 'blue', 'brown', 'chocolate', 'coral', 'crimson', 'cyan', 'fuchsia', 'ghostwhite', 'gold', 'goldenrod', 'gray', 'green', 'indigo', 'ivory', 'khaki', 'lavender', 'lime', 'linen', 'magenta', 'maroon', 'moccasin', 'navy', 'olive', 'orange', 'orchid', 'peru', 'pink', 'plum', 'purple', 'red', 'salmon', 'sienna', 'silver', 'snow', 'tan', 'teal', 'thistle', 'tomato', 'turquoise', 'violet', 'white', 'yellow', 'transparent']
 	const grammar = `#JSGF V1.0; grammar colors; public <color> = ${colors.join(' | ')} ;`
 
-	const btnRef = useRef<HTMLButtonElement>();
+	const btnRef = useRef<HTMLButtonElement>(null);
 	const perform = usePerformAction(() => btnRef.current?.focus());
 
 	const [message, setMessage] = useState("Ready");
+	const [count, setCount] = useState(0);
 
 	const [state, start, stop] = useSpeechRecognition({
 		onStart: useCallback(() => {
 			console.log("onStart");
-			setMessage("Listening...")
-		}, []),
-		onEnd: useCallback(() => {
-			console.log("onEnd");
-			setMessage("Finish");
-		}, []),
-		onAudioEnd: () => {
-			console.log("onAudioEnd");
-		},
-		onAudioStart: () => {
-			console.log("onAudioStart");
-		},
-		onSoundStart: () => {
-			console.log("onSoundStart");
-		},
-		onSoundEnd: () => {
-			console.log("onSoundEnd");
-		},
-		onSpeechStart: () => {
-			console.log("onSpeechStart");
-		},
+			setMessage("Listening... " + count)
+		}, [count]),
 		onSpeechEnd: () => {
 			console.log("onSpeechEnd");
+			stop();
+			setMessage("Finish");
+			perform();
 		},
 		onNoMatch: useCallback(() => {
 			console.log("onNoMatch");
 			setMessage("Color not recognized.")
-		}, []),
-		onResult: useCallback(() => {
-			console.log("onResult");
-			stop();
-			setMessage("Ready");
-			perform();
 		}, []),
 		onError: useCallback((ev: SpeechRecognitionErrorEvent) => {
 			console.log("onError");
@@ -61,7 +40,7 @@ export const UseSpeechRecognition = () => {
 		grammars.addFromString(grammar, 1);
 		start({
 			lang: "en-US",
-			continuous: true,
+			continuous: false,
 			interimResults: false,
 			maxAlternatives: 1,
 			grammars
@@ -77,7 +56,7 @@ export const UseSpeechRecognition = () => {
 			}
 		}
 		return colr;
-	}, [state.result, colors]);
+	}, [state.result.results, colors]);
 
 	return <div style={{ display: "flex", flexDirection: "column", justifyContent: "center", gap: 10 }}>
 		{
@@ -99,6 +78,7 @@ export const UseSpeechRecognition = () => {
 					</div>
 					<div style={{ display: 'flex', justifyContent: "center", gap: 10 }}>
 						<button ref={btnRef} onClick={onStart} disabled={state.isListening}>Start</button>
+						<button onClick={()=>setCount(c=>c+1)}>Increment</button>
 					</div>
 				</>
 				: <p>Speech Recognition not supported</p>
@@ -113,7 +93,7 @@ export const UseSpeechRecognition = () => {
 ## API
 
 ```tsx
-useSpeechRecognition({ defaultConfig, onAudioStart, onAudioEnd, onEnd, onError, onNoMatch, onResult, onSoundStart, onSoundEnd, onSpeechStart, onSpeechEnd, onStart }: { defaultConfig?: SpeechRecognitionConfig, onAudioStart?: SpeechRecognition["onaudiostart"], onAudioEnd?: SpeechRecognition["onaudioend"], onEnd?: SpeechRecognition["onend"], onError?: SpeechRecognition["onerror"], onNoMatch?: SpeechRecognition["onnomatch"], onResult?: SpeechRecognition["onresult"], onSoundStart?: SpeechRecognition["onsoundstart"], onSoundEnd?: SpeechRecognition["onsoundend"], onSpeechStart?: SpeechRecognition["onspeechstart"], onSpeechEnd?: SpeechRecognition["onspeechend"], onStart?: SpeechRecognition["onstart"] }): [{isSupported: boolean, isListening: boolean, result: {results: SpeechRecognitionEvent["results"]|null, resultIndex: SpeechRecognitionEvent["resultIndex"]|null}}, (config?: SpeechRecognitionConfig)=>void, ()=>void]
+useSpeechRecognition({ defaultConfig, onAudioStart, onAudioEnd, onEnd, onError, onNoMatch, onResult, onSoundStart, onSoundEnd, onSpeechStart, onSpeechEnd, onStart }: { defaultConfig?: SpeechRecognitionConfig, onAudioStart?: SpeechRecognition["onaudiostart"], onAudioEnd?: SpeechRecognition["onaudioend"], onEnd?: SpeechRecognition["onend"], onError?: SpeechRecognition["onerror"], onNoMatch?: SpeechRecognition["onnomatch"], onResult?: SpeechRecognition["onresult"], onSoundStart?: SpeechRecognition["onsoundstart"], onSoundEnd?: SpeechRecognition["onsoundend"], onSpeechStart?: SpeechRecognition["onspeechstart"], onSpeechEnd?: SpeechRecognition["onspeechend"], onStart?: SpeechRecognition["onstart"] }): [SpeechRecognitionState, (config?: SpeechRecognitionConfig) => void, () => void, (resultAlso?: boolean) => void]
 ```
 
 > ### Params
@@ -159,16 +139,15 @@ function that will be executed when _start_ event is dispatched.
 > ### Returns
 >
 > __result__:  __Array__:  
-    - __Object__:  
-        - __isSupported__ : _boolean_  
-        - __isListening__ : _boolean_  
-        - _result:{results: SpeechRecognitionEvent["results"]|null, resultIndex:SpeechRecognitionEvent["resultIndex"]|null}_  
+    - _SpeechRecognitionState_  
     - _(config?: SpeechRecognitionConfig)=>void_  
     - _()=>void_  
+    - _(resultAlso?:boolean)=>void_  
 > - 1. __state__: object with these properties:
 > 		- _isSupported_: returns a boolean to know if API is available.
 > 		- _isListening_: returns a boolean indicating current SpeechRecognition execution or not.
 > 		- _result_: returns result of SpeechRecognition execution.
 > - 2. __start__: function to start SpeechRecognition.
 > - 3. __stop__: function to stop SpeechRecognition.
+> - 4. __reset__: function to reset SpeechRecognition with optional parameter to reset results also.
 >

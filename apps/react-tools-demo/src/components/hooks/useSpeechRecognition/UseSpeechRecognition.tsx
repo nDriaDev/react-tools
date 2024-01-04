@@ -18,21 +18,17 @@ export const UseSpeechRecognition = () => {
 
 	const [state, start, stop] = useSpeechRecognition({
 		onStart: useCallback(() => {
-			console.log("onStart");
 			setMessage("Listening...")
 		}, []),
-		onSpeechEnd: () => {
-			console.log("onSpeechEnd");
+		onEnd: useCallback(() => {
 			stop();
 			setMessage("Finish");
 			perform();
-		},
+		}, [perform]),
 		onNoMatch: useCallback(() => {
-			console.log("onNoMatch");
 			setMessage("Color not recognized.")
 		}, []),
 		onError: useCallback((ev: SpeechRecognitionErrorEvent) => {
-			console.log("onError");
 			setMessage(`Error occurred in recognition: ${ev.message ? ev.message : ev.error}`);
 		}, []),
 	});

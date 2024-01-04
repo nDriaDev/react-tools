@@ -2,8 +2,11 @@ import { LanguageBCP47Tags } from ".";
 
 /**The interface of state value returned from _useSpeechRecognition_ hook.*/
 export interface SpeechRecognitionState {
+	/**Returns a boolean value indicating SpeechRecognition availability.*/
 	isSupported: boolean;
+	/**Returns a boolean value indicating if SpeechRecognition is listening or not.*/
 	isListening: boolean;
+	/**Returns an object with _results_ and _resultIndex_ properties of SpeechRecognition execution.*/
 	result: {
 		results: SpeechRecognitionEvent["results"]|null,
 		resultIndex: SpeechRecognitionEvent["resultIndex"]|null
@@ -57,25 +60,30 @@ export interface SpeechRecognition extends EventTarget {
 }
 
 export interface SpeechRecognitionConfig {
+	/**Returns and sets a collection of _SpeechGrammar_ objects that represent the grammars that will be understood by the current SpeechRecognition.*/
 	grammars?: SpeechGrammarList;
-	continuous?: boolean;
+	/**Returns and sets the language of the current SpeechRecognition. If not specified, this defaults to the HTML lang attribute value, or the user agent's language setting if that isn't set either.*/
 	lang?: LanguageBCP47Tags;
+	/**Controls whether continuous results are returned for each recognition, or only a single result. Defaults to single (false.)*/
+	continuous?: boolean;
+	/**Controls whether interim results should be returned (true) or not (false.) Interim results are results that are not yet final (e.g. the SpeechRecognitionResult.isFinal property is false.)*/
 	interimResults?: boolean;
+	/**Sets the maximum number of SpeechRecognitionAlternatives provided per result. The default value is 1.*/
 	maxAlternatives?: number;
 }
 
 interface SpeechRecognitionEventMap {
-	'audioend': Event
-	'audiostart': Event
-	'end': Event
-	'error': SpeechRecognitionErrorEvent
-	'nomatch': SpeechRecognitionEvent
-	'result': SpeechRecognitionEvent
-	'soundend': Event
-	'soundstart': Event
-	'speechend': Event
-	'speechstart': Event
-	'start': Event
+	'audioend': Event;
+	'audiostart': Event;
+	'end': Event;
+	'error': SpeechRecognitionErrorEvent;
+	'nomatch': SpeechRecognitionEvent;
+	'result': SpeechRecognitionEvent;
+	'soundend': Event;
+	'soundstart': Event;
+	'speechend': Event;
+	'speechstart': Event;
+	'start': Event;
 }
 
 export type SpeechRecognitionErrorCode = 'aborted' | 'audio-capture' | 'bad-grammar' | 'language-not-supported' | 'network' | 'no-speech' | 'not-allowed' | 'service-not-allowed'
