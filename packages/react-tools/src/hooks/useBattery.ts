@@ -28,7 +28,7 @@ let batteryCached: undefined | BatteryStatus & { onchargingchange: null | ((evt:
  */
 export const useBattery = (opts?: { onChargingChange?: (evt: Event) => void, onChargingTimeChange?: (evt: Event) => void, onDischargingTimeChange?: (evt: Event) => void, onLevelChange?: (evt: Event) => void }): BatteryStatus => {
 	const status = useRef<BatteryStatus>({
-		isSupported: "getBattery" in navigator,
+		isSupported: !!navigator && "getBattery" in navigator,
 		charging: false,
 		chargingTime: 0,
 		dischargingTime: 0,
@@ -38,7 +38,7 @@ export const useBattery = (opts?: { onChargingChange?: (evt: Event) => void, onC
 	return useSyncExternalStore(
 		useCallback(notif => {
 			listeners.add(notif);
-			listeners.size === 1 && "getBattery" in navigator && ((navigator.getBattery as () => Promise<BatteryStatus & { [k in "onchargingchange" | "onlevelchange" | "onchargingtimechange" | "ondischargingtimechange" ]: (evt:Event)=>void}>)())
+			listeners.size === 1 && !!navigator && "getBattery" in navigator && ((navigator.getBattery as () => Promise<BatteryStatus & { [k in "onchargingchange" | "onlevelchange" | "onchargingtimechange" | "ondischargingtimechange" ]: (evt:Event)=>void}>)())
 				.then((battery: Exclude<typeof batteryCached, undefined>) => {
 					batteryCached = battery;
 					status.current = {

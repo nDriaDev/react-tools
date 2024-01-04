@@ -95,7 +95,8 @@ export const COMPONENTS = [
 			"useDialogBox",
 			"useDeviceMotion",
 			"useDeviceOrientation",
-			"useVibrate"
+			"useVibrate",
+			"useBluetooth"
 		]
 	],
 	//UTILS

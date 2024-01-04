@@ -15,7 +15,19 @@ export type {
 	ScreenDetails,
 	OrientationLockType,
 	DeviceMotionProps,
-	DeviceOrientationProps
+	DeviceOrientationProps,
+	Bluetooth,
+	BluetoothCharacteristicProperties,
+	BluetoothCharacteristicUUID,
+	BluetoothDescriptorUUID,
+	BluetoothDevice,
+	BluetoothDevicesOptions,
+	BluetoothRemoteGATTCharacteristic,
+	BluetoothRemoteGATTDescriptor,
+	BluetoothRemoteGATTServer,
+	BluetoothRemoteGATTService,
+	BluetoothScanFilters,
+	BluetoothServiceUUID,
 } from './models'
 
 export {
@@ -96,7 +108,8 @@ export {
 	useDeviceMotion,
 	useDeviceOrientation,
 	useVibrate,
-	useDerivedState
+	useDerivedState,
+	useBluetooth
 } from './hooks'
 
 export {

@@ -8,24 +8,24 @@ import { useCallback } from "react";
  * - _cancel_: function to stop vibration running.
  */
 export const useVibrate = ():{isSupported: boolean, vibrate: ((pattern: number | number[]) => void), cancel: ()=>void} => {
-	const isSupported = "vibrate" in navigator || "mozVibrate" in navigator;
+	const isSupported = !!navigator && ("vibrate" in navigator || "mozVibrate" in navigator);
 
 	const vibrate = useCallback((pattern: number | number[]) => {
-		isSupported
+		!!navigator && ("vibrate" in navigator || "mozVibrate" in navigator)
 			? "vibrate" in navigator
 				? navigator.vibrate(pattern)
 				: (navigator as { mozVibrate: (patrn: typeof pattern) => void }).mozVibrate(pattern)
 			: void 0;
-	}, [isSupported]);
+	}, []);
 
 	const cancel = useCallback(() => {
-		isSupported
+		!!navigator && ("vibrate" in navigator || "mozVibrate" in navigator)
 			? "vibrate" in navigator
 				? navigator.vibrate(0)
 				: (navigator as { mozVibrate: (patrn: number) => void }).mozVibrate(0)
 			: void 0;
 
-	}, [isSupported]);
+	}, []);
 
 	return {
 		isSupported,

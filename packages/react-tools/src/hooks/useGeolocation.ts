@@ -19,8 +19,8 @@ import { GeoLocationObject } from "../models";
  */
 export const useGeolocation = ({mode, locationOptions, onError}: { locationOptions?: PositionOptions, mode: "observe" | "current" | "manual", onError?: (error: GeolocationPositionError) => void }): [GeoLocationObject, ()=>Promise<void>, ()=>Promise<()=>void>] => {
 	const idWatch = useRef<number>();
-	const cachedLocation = useRef<GeoLocationObject>({ isSupported: "geolocation" in navigator });
-	const currentLocation = useRef<GeoLocationObject>({ isSupported: "geolocation" in navigator });
+	const cachedLocation = useRef<GeoLocationObject>({ isSupported: !!navigator && "geolocation" in navigator });
+	const currentLocation = useRef<GeoLocationObject>({ isSupported: !!navigator && "geolocation" in navigator });
 	const notifRef = useRef<() => void>();
 	const successCallback = useCallback<PositionCallback>((position: GeolocationPosition) => {
 		currentLocation.current = {position, isSupported: true};
@@ -37,7 +37,7 @@ export const useGeolocation = ({mode, locationOptions, onError}: { locationOptio
 
 	const location = useSyncExternalStore(
 		useCallback(notif => {
-			if ("geolocation" in navigator) {
+			if (!!navigator && "geolocation" in navigator) {
 				notifRef.current = notif;
 				mode === "observe"
 					? (idWatch.current = navigator.geolocation.watchPosition(successCallback, errorCallback, locationOptions))
@@ -66,7 +66,7 @@ export const useGeolocation = ({mode, locationOptions, onError}: { locationOptio
 			resolve = res as ()=>void;
 			reject = rej;
 		})
-		if ("geolocation" in navigator) {
+		if (!!navigator && "geolocation" in navigator) {
 			navigator.geolocation.getCurrentPosition(
 				position => {
 					successCallback(position);
@@ -91,7 +91,7 @@ export const useGeolocation = ({mode, locationOptions, onError}: { locationOptio
 			resolve = res as () => void;
 			reject = rej;
 		})
-		if ("geolocation" in navigator) {
+		if (!!navigator && "geolocation" in navigator) {
 			watchId = navigator.geolocation.watchPosition(
 				position => {
 					successCallback(position);

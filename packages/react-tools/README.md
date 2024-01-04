@@ -96,7 +96,7 @@
 	- [x] useDeviceMotion
 	- [x] useDeviceOrientation
 	- [x] useVibrate (??? mobile)
-	- [ ] useBluetooth (https://vueuse.org/core/useBluetooth/)
+	- [x] useBluetooth
 	- [ ] useFileSystem (https://vueuse.org/core/useFileSystemAccess/).
 	- [ ] useGamePad (https://vueuse.org/core/useGamepad/)
 	- [ ] useWakeLock (https://vueuse.org/core/useWakeLock/)

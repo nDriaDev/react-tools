@@ -4,6 +4,30 @@ Hook useful when the internal state of a component depends on one or more props.
 ## Usage
 
 ```tsx
+export const UseDerivedState = () => {
+	const [state, setState] = useState("");
+	const [state1, setState1] = useState("");
+	const [state2, setState2] = useState("");
+
+	return <div style={{ display: "grid", gridTemplateColumns: "auto auto auto", justifyContent: "center", gap: 50, maxHeight: 350, overflow: "auto" }}>
+		<div>
+			<p>Without useDerivedState</p>
+			<input type="text" placeholder="User.." value={state1} onChange={(e) => setState1(e.target.value)} />
+			<WithoutUseDerivedState user={state1} />
+		</div>
+		<div>
+			<p>With useDerivedState</p>
+			<input type="text" placeholder="User.." value={state} onChange={(e) => setState(e.target.value)} />
+			<WithUseDerivedState user={state} />
+		</div>
+		<div>
+			<p>With useDerivedState and compute</p>
+			<input type="text" placeholder="User.." value={state2} onChange={(e) => setState2(e.target.value)} />
+			<WithUseDerivedStateAndCompute user={state2} />
+		</div>
+	</div>
+}
+
 const WithoutUseDerivedState = memo(({user}:{user:string}) => {
 	renders[1]++;
 	const [state, setState] = useState<{ loading: boolean, friends: string[] }>({ loading: true, friends: [] });
@@ -82,30 +106,6 @@ const WithUseDerivedState = memo(({ user }: { user: string }) => {
 		}
 	</>
 })
-
-export const UseDerivedState = () => {
-	const [state, setState] = useState("");
-	const [state1, setState1] = useState("");
-	const [state2, setState2] = useState("");
-
-	return <div style={{ display: "grid", gridTemplateColumns: "auto auto auto", justifyContent: "center", gap: 50 }}>
-		<div>
-			<p>Without useDerivedState</p>
-			<input type="text" placeholder="User.." value={state1} onChange={(e) => setState1(e.target.value)} />
-			<WithoutUseDerivedState user={state1} />
-		</div>
-		<div>
-			<p>With useDerivedState</p>
-			<input type="text" placeholder="User.." value={state} onChange={(e) => setState(e.target.value)} />
-			<WithUseDerivedState user={state}/>
-		</div>
-		<div>
-			<p>With useDerivedState and compute</p>
-			<input type="text" placeholder="User.." value={state2} onChange={(e) => setState2(e.target.value)} />
-			<WithUseDerivedStateAndCompute user={state2} />
-		</div>
-	</div>
-}
 ```
 
 > The component has _three internal string states_ and renders three input fields and three components that receive one state each. These three components have an object as internal state with two properties _loading_, initially set to __true__, and _friends_ which is an initially empty array.

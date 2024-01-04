@@ -8,3 +8,4 @@ export type { GeoLocationObject } from './useGeolocation.model';
 export type { OrientationLockType, ScreenDetails, ScreenDetail, ScreenDetailsEvt } from './useScreen.model';
 export type { DeviceMotionProps } from './useDeviceMotion.model';
 export type { DeviceOrientationProps } from './useDeviceOrientation.model';
+export type { Bluetooth, BluetoothCharacteristicProperties, BluetoothCharacteristicUUID, BluetoothDescriptorUUID, BluetoothDevice, BluetoothDevicesOptions, BluetoothRemoteGATTCharacteristic, BluetoothRemoteGATTDescriptor, BluetoothRemoteGATTServer, BluetoothRemoteGATTService, BluetoothScanFilters, BluetoothServiceUUID} from './useBluetooth.model';
