@@ -102,7 +102,13 @@
 	- [x] useSpeechRecognition
 	- [x] useSpeechSynthesis
 	- [x] useFPS
-	- [ ] useParallax (https://vueuse.org/core/useParallax/)
+	- [ ] usePointerLock (https://developer.mozilla.org/en-US/docs/Web/API/Pointer_Lock_API)
+	- [ ] usePIP (https://developer.mozilla.org/en-US/docs/Web/API/Document_Picture-in-Picture_API  https://developer.mozilla.org/en-US/docs/Web/API/Picture-in-Picture_API)
+	- [ ] useIdleDetection (https://developer.mozilla.org/en-US/docs/Web/API/Idle_Detection_API)
+	- [ ] usePopover (https://developer.mozilla.org/en-US/docs/Web/API/Popover_API)
+	- [ ] useRemotePlayback (https://developer.mozilla.org/en-US/docs/Web/API/Remote_Playback_API)
+	- [ ] useSensor (https://developer.mozilla.org/en-US/docs/Web/API/Sensor_APIs)
+	- [ ] useSerial (https://developer.mozilla.org/en-US/docs/Web/API/Web_Serial_API)
 	- [ ] useScrollLock (https://vueuse.org/core/useScrollLock/)
 	- [ ] useAnimate (https://vueuse.org/core/useAnimate/)
 	- [ ] useAudio (???)
