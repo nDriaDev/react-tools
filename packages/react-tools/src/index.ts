@@ -37,6 +37,10 @@ export type {
 	SpeechRecognitionState,
 	SpeechGrammar,
 	SpeechGrammarList,
+	UseSpeechRecognitionProps,
+	UseSpeechSynthesis,
+	UseSpeechSynthesisProps,
+	SpeechSynthesisSpeakParam,
 } from './models'
 
 export {
@@ -120,7 +124,8 @@ export {
 	useDerivedState,
 	useBluetooth,
 	useScreenWakeLock,
-	useSpeechRecognition
+	useSpeechRecognition,
+	useSpeechSynthesis
 } from './hooks'
 
 export {

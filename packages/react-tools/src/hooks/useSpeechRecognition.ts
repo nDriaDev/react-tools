@@ -1,14 +1,10 @@
 import { useCallback, useMemo, useRef } from "react";
-import { SpeechRecognition, SpeechRecognitionConfig, SpeechRecognitionEvent, SpeechRecognitionState } from "../models";
+import { SpeechRecognition, SpeechRecognitionConfig, SpeechRecognitionEvent, SpeechRecognitionState, UseSpeechRecognitionProps } from "../models";
 import { useSyncExternalStore } from ".";
-
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const SpeechRecognition = window && ((window as any).SpeechRecognition || (window as any).webkitSpeechRecognition)
-const isSupported = !!window && ("SpeechRecognition" in window || "webkitSpeechRecognition" in window) && ("SpeechGrammarList" in window || "webkitSpeechGrammarList" in window) && ("SpeechRecognitionEvent" in window || "webkitSpeechRecognitionEvent" in window);
 
 /**
  * **`useSpeechRecognition`**: Hook to use _SpeechRecognition API_. Refer to [Web Speech API](https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognition).
- * @param {Object} opts - options.
+ * @param {UseSpeechRecognitionProps} opts - options.
  * @param {boolean} [opts.alreadyStarted=false] - istant start SpeechRecognition if it is available.
  * @param {Object} [opts.defaultConfig] - config parameters for current SpeechRecognition.
  * @param {SpeechGrammarList} [opts.defaultConfig.grammars] - a _SpeechGrammarList_ containing the SpeechGrammar objects that represent your grammar for your app.
@@ -36,7 +32,11 @@ const isSupported = !!window && ("SpeechRecognition" in window || "webkitSpeechR
  * - 3. __stop__: function to stop SpeechRecognition.
  * - 4. __reset__: function to reset SpeechRecognition with optional parameter to reset results also.
  */
-export const useSpeechRecognition = ({ alreadyStarted, defaultConfig, onAudioStart, onAudioEnd, onEnd, onError, onNoMatch, onResult, onSoundStart, onSoundEnd, onSpeechStart, onSpeechEnd, onStart }: { alreadyStarted?: boolean, defaultConfig?: SpeechRecognitionConfig, onAudioStart?: SpeechRecognition["onaudiostart"], onAudioEnd?: SpeechRecognition["onaudioend"], onEnd?: SpeechRecognition["onend"], onError?: SpeechRecognition["onerror"], onNoMatch?: SpeechRecognition["onnomatch"], onResult?: SpeechRecognition["onresult"], onSoundStart?: SpeechRecognition["onsoundstart"], onSoundEnd?: SpeechRecognition["onsoundend"], onSpeechStart?: SpeechRecognition["onspeechstart"], onSpeechEnd?: SpeechRecognition["onspeechend"], onStart?: SpeechRecognition["onstart"] }): [SpeechRecognitionState, (config?: SpeechRecognitionConfig) => void, () => void, (resultAlso?: boolean) => void] => {
+export const useSpeechRecognition = ({ alreadyStarted, defaultConfig, onAudioStart, onAudioEnd, onEnd, onError, onNoMatch, onResult, onSoundStart, onSoundEnd, onSpeechStart, onSpeechEnd, onStart }: UseSpeechRecognitionProps): [SpeechRecognitionState, (config?: SpeechRecognitionConfig) => void, () => void, (resultAlso?: boolean) => void] => {
+	const isSupported = useRef(!!window && ("SpeechRecognition" in window || "webkitSpeechRecognition" in window) && ("SpeechGrammarList" in window || "webkitSpeechGrammarList" in window) && ("SpeechRecognitionEvent" in window || "webkitSpeechRecognitionEvent" in window));
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
+	const SpeechRecognition = useRef(window && ((window as any).SpeechRecognition || (window as any).webkitSpeechRecognition));
+
 	const recognition = useRef<SpeechRecognition>();
 	const notifRef = useRef<() => void>();
 	const isListening = useRef(false);
@@ -44,7 +44,7 @@ export const useSpeechRecognition = ({ alreadyStarted, defaultConfig, onAudioSta
 	const result = useRef<{ results: SpeechRecognitionEvent["results"]|null, resultIndex: SpeechRecognitionEvent["resultIndex"]|null }>({resultIndex: null, results: null});
 
 	const start = useCallback((config?: typeof defaultConfig) => {
-		if (isSupported && !isListening.current) {
+		if (isSupported.current && !isListening.current) {
 			const conf: SpeechRecognitionConfig = {
 				grammars: config?.grammars ?? defaultConfig?.grammars,
 				lang: config?.lang ?? defaultConfig?.lang,
@@ -53,7 +53,7 @@ export const useSpeechRecognition = ({ alreadyStarted, defaultConfig, onAudioSta
 				maxAlternatives: config?.maxAlternatives ?? defaultConfig?.maxAlternatives,
 			};
 			!!recognition.current && (recognition.current = undefined);
-			recognition.current = new SpeechRecognition();
+			recognition.current = new SpeechRecognition.current();
 			!!conf.grammars && (recognition.current!.grammars = conf.grammars);
 			!!conf.lang && (recognition.current!.lang = conf.lang);
 			!!conf.continuous && (recognition.current!.continuous = conf.continuous);
@@ -85,7 +85,7 @@ export const useSpeechRecognition = ({ alreadyStarted, defaultConfig, onAudioSta
 	}, [defaultConfig?.grammars, defaultConfig?.lang, defaultConfig?.continuous, defaultConfig?.interimResults, defaultConfig?.maxAlternatives, onAudioStart, onAudioEnd, onError, onEnd, onNoMatch, onResult, onSoundEnd, onSoundStart, onSpeechEnd, onSpeechStart, onStart]);
 
 	const stop = useRef(() => {
-		if (isSupported && isListening.current) {
+		if (isSupported.current && isListening.current) {
 			recognition.current!.stop();
 			isListening.current = false;
 			notifRef.current && notifRef.current();
@@ -125,7 +125,7 @@ export const useSpeechRecognition = ({ alreadyStarted, defaultConfig, onAudioSta
 		}, []),
 		useMemo(() => {
 			let cached: SpeechRecognitionState = {
-				isSupported,
+				isSupported: isSupported.current,
 				isListening: false,
 				result: {
 					results: null,
@@ -135,7 +135,7 @@ export const useSpeechRecognition = ({ alreadyStarted, defaultConfig, onAudioSta
 			return () => {
 				if (isListening.current !== cached.isListening || result.current?.resultIndex !== cached.result.resultIndex || result.current?.results !== cached.result.results) {
 					cached = {
-						isSupported,
+						isSupported: isSupported.current,
 						isListening: isListening.current,
 						result: result.current
 					}
@@ -145,7 +145,7 @@ export const useSpeechRecognition = ({ alreadyStarted, defaultConfig, onAudioSta
 		}, [])
 	);
 
-	if (firstExecution.current && isSupported && alreadyStarted) {
+	if (firstExecution.current && isSupported.current && alreadyStarted) {
 		isListening.current = true;
 		firstExecution.current = false;
 		start();

@@ -1,5 +1,21 @@
 import { LanguageBCP47Tags } from ".";
 
+export interface UseSpeechRecognitionProps {
+	alreadyStarted?: boolean;
+	defaultConfig?: SpeechRecognitionConfig;
+	onAudioStart?: SpeechRecognition["onaudiostart"];
+	onAudioEnd?: SpeechRecognition["onaudioend"];
+	onEnd?: SpeechRecognition["onend"];
+	onError?: SpeechRecognition["onerror"];
+	onNoMatch?: SpeechRecognition["onnomatch"];
+	onResult?: SpeechRecognition["onresult"];
+	onSoundStart?: SpeechRecognition["onsoundstart"];
+	onSoundEnd?: SpeechRecognition["onsoundend"];
+	onSpeechStart?: SpeechRecognition["onspeechstart"];
+	onSpeechEnd?: SpeechRecognition["onspeechend"];
+	onStart?: SpeechRecognition["onstart"];
+}
+
 /**The interface of state value returned from _useSpeechRecognition_ hook.*/
 export interface SpeechRecognitionState {
 	/**Returns a boolean value indicating SpeechRecognition availability.*/

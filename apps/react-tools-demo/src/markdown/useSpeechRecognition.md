@@ -12,25 +12,20 @@ export const UseSpeechRecognition = () => {
 	const perform = usePerformAction(() => btnRef.current?.focus());
 
 	const [message, setMessage] = useState("Ready");
-	const [count, setCount] = useState(0);
 
 	const [state, start, stop] = useSpeechRecognition({
 		onStart: useCallback(() => {
-			console.log("onStart");
-			setMessage("Listening... " + count)
-		}, [count]),
-		onSpeechEnd: () => {
-			console.log("onSpeechEnd");
+			setMessage("Listening...")
+		}, []),
+		onEnd: useCallback(() => {
 			stop();
 			setMessage("Finish");
 			perform();
-		},
+		}, [perform]),
 		onNoMatch: useCallback(() => {
-			console.log("onNoMatch");
 			setMessage("Color not recognized.")
 		}, []),
 		onError: useCallback((ev: SpeechRecognitionErrorEvent) => {
-			console.log("onError");
 			setMessage(`Error occurred in recognition: ${ev.message ? ev.message : ev.error}`);
 		}, []),
 	});
@@ -78,7 +73,6 @@ export const UseSpeechRecognition = () => {
 					</div>
 					<div style={{ display: 'flex', justifyContent: "center", gap: 10 }}>
 						<button ref={btnRef} onClick={onStart} disabled={state.isListening}>Start</button>
-						<button onClick={()=>setCount(c=>c+1)}>Increment</button>
 					</div>
 				</>
 				: <p>Speech Recognition not supported</p>
@@ -93,13 +87,15 @@ export const UseSpeechRecognition = () => {
 ## API
 
 ```tsx
-useSpeechRecognition({ defaultConfig, onAudioStart, onAudioEnd, onEnd, onError, onNoMatch, onResult, onSoundStart, onSoundEnd, onSpeechStart, onSpeechEnd, onStart }: { defaultConfig?: SpeechRecognitionConfig, onAudioStart?: SpeechRecognition["onaudiostart"], onAudioEnd?: SpeechRecognition["onaudioend"], onEnd?: SpeechRecognition["onend"], onError?: SpeechRecognition["onerror"], onNoMatch?: SpeechRecognition["onnomatch"], onResult?: SpeechRecognition["onresult"], onSoundStart?: SpeechRecognition["onsoundstart"], onSoundEnd?: SpeechRecognition["onsoundend"], onSpeechStart?: SpeechRecognition["onspeechstart"], onSpeechEnd?: SpeechRecognition["onspeechend"], onStart?: SpeechRecognition["onstart"] }): [SpeechRecognitionState, (config?: SpeechRecognitionConfig) => void, () => void, (resultAlso?: boolean) => void]
+useSpeechRecognition({ alreadyStarted, defaultConfig, onAudioStart, onAudioEnd, onEnd, onError, onNoMatch, onResult, onSoundStart, onSoundEnd, onSpeechStart, onSpeechEnd, onStart }: UseSpeechRecognitionProps): [SpeechRecognitionState, (config?: SpeechRecognitionConfig) => void, () => void, (resultAlso?: boolean) => void]
 ```
 
 > ### Params
 >
-> - __opts__: _Object_  
+> - __opts__: _UseSpeechRecognitionProps_  
 options.
+> - __opts.alreadyStarted=false?__: _boolean_  
+istant start SpeechRecognition if it is available.
 > - __opts.defaultConfig?__: _Object_  
 config parameters for current SpeechRecognition.
 > - __opts.defaultConfig.grammars?__: _SpeechGrammarList_  

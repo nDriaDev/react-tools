@@ -100,7 +100,7 @@
 	- [x] useBluetooth
 	- [x] useScreenWakeLock
 	- [x] useSpeechRecognition
-	- [ ] useSpeechSynthesis (https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesisUtterance#examples)
+	- [x] useSpeechSynthesis
 	- [ ] useDevicesList (https://vueuse.org/core/useDevicesList/)
 	- [ ] useFPS (https://vueuse.org/core/useFps/)
 	- [ ] useParallax (https://vueuse.org/core/useParallax/)

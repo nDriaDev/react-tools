@@ -98,7 +98,8 @@ export const COMPONENTS = [
 			"useVibrate",
 			"useBluetooth",
 			"useScreenWakeLock",
-			"useSpeechRecognition"
+			"useSpeechRecognition",
+			"useSpeechSynthesis"
 		]
 	],
 	//UTILS
