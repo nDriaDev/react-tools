@@ -80,3 +80,4 @@ export { useBluetooth } from './useBluetooth';
 export { useScreenWakeLock } from './useScreenWakeLock';
 export { useSpeechRecognition } from './useSpeechRecognition';
 export { useSpeechSynthesis } from './useSpeechSynthesis';
+export { useFPS } from './useFPS';

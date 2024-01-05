@@ -78,7 +78,7 @@
 	- [x] useDebounce
 	- [x] useThrottle
 	- [x] useActiveElement
-	- [x] useRaf (with a reference to call itself again)
+	- [x] useRaf
 	- [x] useTimeout
 	- [x] useInterval
 	- [x] useTextSelection
@@ -88,7 +88,7 @@
 	- [x] useReducedMotion
 	- [x] useTitle
 	- [x] useIdle
-	- [x] useFullscreen (check browser compatibility)
+	- [x] useFullscreen
 	- [x] useBattery
 	- [x] useGeolocation
 	- [x] useShare
@@ -101,8 +101,7 @@
 	- [x] useScreenWakeLock
 	- [x] useSpeechRecognition
 	- [x] useSpeechSynthesis
-	- [ ] useDevicesList (https://vueuse.org/core/useDevicesList/)
-	- [ ] useFPS (https://vueuse.org/core/useFps/)
+	- [x] useFPS
 	- [ ] useParallax (https://vueuse.org/core/useParallax/)
 	- [ ] useScrollLock (https://vueuse.org/core/useScrollLock/)
 	- [ ] useAnimate (https://vueuse.org/core/useAnimate/)
@@ -113,6 +112,8 @@
 	- [ ] useFetch (with suspense ???)
 	- [ ] useAsync
 	- [ ] useMedia
+	- [ ] useDevicesList (https://vueuse.org/core/useDevicesList/)
+	- [ ] useDisplayMedia
 	- [ ] useScreenShare
 	- [ ] useMediaDevices
 	- [ ] useMediaStream

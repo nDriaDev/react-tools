@@ -41,6 +41,8 @@ export type {
 	UseSpeechSynthesis,
 	UseSpeechSynthesisProps,
 	SpeechSynthesisSpeakParam,
+	UseFPSProps,
+	UseFPSResult
 } from './models'
 
 export {
@@ -125,7 +127,8 @@ export {
 	useBluetooth,
 	useScreenWakeLock,
 	useSpeechRecognition,
-	useSpeechSynthesis
+	useSpeechSynthesis,
+	useFPS
 } from './hooks'
 
 export {

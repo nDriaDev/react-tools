@@ -42,7 +42,7 @@ export const COMPONENTS = [
 			"useCallbackDeepCompare",
 			"useLazyRef",
 			"useMergedRef",
-			"useId"
+			"useId",
 		],
 		//EVENTS
 		[
@@ -99,7 +99,8 @@ export const COMPONENTS = [
 			"useBluetooth",
 			"useScreenWakeLock",
 			"useSpeechRecognition",
-			"useSpeechSynthesis"
+			"useSpeechSynthesis",
+			"useFPS"
 		]
 	],
 	//UTILS
