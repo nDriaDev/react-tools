@@ -81,7 +81,9 @@ export interface UseSpeechSynthesis {
 			/**Returns a boolean value indicating SpeechSynthesis availability.*/
 			isSupported: boolean;
 			/**Returns the current status of SpeechSynthesis.*/
-			status: "speaking" | "paused" | "pending" | "error" | "end" | "unavailable";
+			status: "ready" | "speaking" | "paused" | "error" | "end" | "unavailable";
+			/**Returns a boolean indicating the presence of texts to speech.*/
+			hasPending: boolean;
 			/**Returns the list of available voices.*/
 			voices: SpeechSynthesisVoice[] | null;
 		},

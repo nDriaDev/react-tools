@@ -1,12 +1,12 @@
 import { useCallback, useMemo, useRef } from "react";
 import { useSyncExternalStore } from ".";
-import { useResponsiveBreakpoints, useResponsiveKeys } from "../models/useResponsive.model";
+import { UseResponsiveBreakpoints, UseResponsiveKeys } from "../models";
 
 const listeners = new Set<() => void>();
 
 const handler = () => listeners.forEach(l => l());
 
-const defaultConfig: useResponsiveBreakpoints<"xs" | "sm" | "md" | "lg" | "xl"> = {
+const defaultConfig: UseResponsiveBreakpoints<"xs" | "sm" | "md" | "lg" | "xl"> = {
 	xs: {
 		value: 576,
 		condition: "<"
@@ -29,7 +29,7 @@ const defaultConfig: useResponsiveBreakpoints<"xs" | "sm" | "md" | "lg" | "xl"> 
 	}
 };
 
-function calcResponsive<T extends useResponsiveKeys>(config?: useResponsiveBreakpoints<T>): { [s in keyof typeof defaultConfig]: boolean } | { [s in useResponsiveKeys<T>]: boolean } {
+function calcResponsive<T extends UseResponsiveKeys>(config?: UseResponsiveBreakpoints<T>): { [s in keyof typeof defaultConfig]: boolean } | { [s in UseResponsiveKeys<T>]: boolean } {
 	const width = window.innerWidth;
 	const conf = {};
 	const target = config ?? defaultConfig;
@@ -41,7 +41,7 @@ function calcResponsive<T extends useResponsiveKeys>(config?: useResponsiveBreak
 			Reflect.set(conf, key, eval(`${width}${condition}${value}`) as boolean);
 		}
 	}
-	return conf as typeof config extends undefined ? { [k in keyof typeof defaultConfig]: boolean } : { [k in useResponsiveKeys<T>]: boolean };
+	return conf as typeof config extends undefined ? { [k in keyof typeof defaultConfig]: boolean } : { [k in UseResponsiveKeys<T>]: boolean };
 }
 
 /**
@@ -52,12 +52,12 @@ function calcResponsive<T extends useResponsiveKeys>(config?: useResponsiveBreak
  * - md: { value: 768, condition: ">=" }
  * - lg: { value: 992, condition: ">=" }
  * - xl: { value: 1200, condition: ">=" }
- * @param {useResponsiveBreakpoints} [config] - custom breakpoint object.
- * @returns {keyof useResponsiveBreakpoints} breakpoint key - returns the __size key__ of the __config__, parameter if passed otherwise  __default config__, corresponding to the size of the window.
+ * @param {UseResponsiveBreakpoints} [config] - custom breakpoint object.
+ * @returns {keyof UseResponsiveBreakpoints} breakpoint key - returns the __size key__ of the __config__, parameter if passed otherwise  __default config__, corresponding to the size of the window.
  */
 function useResponsive(config?: undefined): { [s in (keyof typeof defaultConfig)]: boolean };
-function useResponsive<T extends useResponsiveKeys>(config?: useResponsiveBreakpoints<T>): { [s in useResponsiveKeys<T>]: boolean };
-function useResponsive<T extends useResponsiveKeys>(config?: useResponsiveBreakpoints<T>): { [s in (keyof typeof defaultConfig)]: boolean } | { [s in useResponsiveKeys<T>]: boolean } {
+function useResponsive<T extends UseResponsiveKeys>(config?: UseResponsiveBreakpoints<T>): { [s in UseResponsiveKeys<T>]: boolean };
+function useResponsive<T extends UseResponsiveKeys>(config?: UseResponsiveBreakpoints<T>): { [s in (keyof typeof defaultConfig)]: boolean } | { [s in UseResponsiveKeys<T>]: boolean } {
 	const configCache = useRef(() => {
 		if (config === undefined) {
 			return calcResponsive(defaultConfig);

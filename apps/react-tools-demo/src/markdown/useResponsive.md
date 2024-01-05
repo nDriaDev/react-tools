@@ -24,17 +24,17 @@ export const UseResponsive = () => {
 ## API
 
 ```tsx
-useResponsive<T extends useResponsiveKeys>(config?: useResponsiveBreakpoints<T>): { [s in (keyof typeof defaultConfig)]: boolean } | { [s in useResponsiveKeys<T>]: boolean }
+useResponsive<T extends UseResponsiveKeys>(config?: UseResponsiveBreakpoints<T>): { [s in (keyof typeof defaultConfig)]: boolean } | { [s in UseResponsiveKeys<T>]: boolean }
 ```
 
 > ### Params
 >
-> - __config?__: _useResponsiveBreakpoints_  
+> - __config?__: _UseResponsiveBreakpoints_  
 custom breakpoint object.
 >
 
 > ### Returns
 >
 > __breakpoint key__: returns the __size key__ of the __config__, parameter if passed otherwise  __default config__, corresponding to the size of the window.
-> - _keyof useResponsiveBreakpoints_  
+> - _keyof UseResponsiveBreakpoints_  
 >

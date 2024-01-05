@@ -14,7 +14,7 @@ import { UseSpeechSynthesis, SpeechSynthesisSpeakParam, UseSpeechSynthesisProps 
  * @param {SpeechSynthesisUtterance["onerror"]} [opts.onError] - function that will be executed when _error_ event is fired.
  * @param {SpeechSynthesisUtterance["onend"]} [opts.onEnd] - function that will be executed when _end_ event is fired.
  * @param {SpeechSynthesisonCancel} [opts.onCancel] - function that will be executed when _cancel_ event is fired.
- * @param {LanguageBCP47Tags} [opts.lang] - [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechSynthesisUtterance/lang.
+ * @param {LanguageBCP47Tags} [opts.lang] - [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechSynthesisUtterance/lang).
  * @param {SpeechSynthesisUtterance["pitch"]} [opts.pitch] - [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechSynthesisUtterance/pitch).
  * @param {SpeechSynthesisUtterance["rate"]} [opts.rate] - [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechSynthesisUtterance/rate).
  * @param {SpeechSynthesisUtterance["voice"]} [opts.voice] - [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechSynthesisUtterance/voice).
@@ -22,7 +22,8 @@ import { UseSpeechSynthesis, SpeechSynthesisSpeakParam, UseSpeechSynthesisProps 
  * @returns {ReturnType<UseSpeechSynthesis>} return - Object with these properties:
  * -  __state__: object with these properties:
  * 		- _isSupported_: Returns a boolean value indicating SpeechSynthesis availability.
- * 		- _status_: Returns the current status of SpeechSynthesis.
+ * 		- _status_: Returns the current status of SpeechSynthesis between: _ready_ _speaking_ _paused_ _error_ _end_ and _unavailable_.
+ * 		- _hasPending_: Returns a boolean indicating the presence of texts to speech.
  * 		- _voices_: Returns the list of available voices.
  * -  __speak__: Function to start speaking.
  * -  __pause__: Function to keep in pause speaking.
@@ -35,11 +36,11 @@ export const useSpeechSynthesis = (opts?: UseSpeechSynthesisProps): ReturnType<U
 	const synth = useRef(window && (window as any).speechSynthesis as SpeechSynthesis);
 
 	const notifRef = useRef<() => void>();
-	const error = useRef(false);
+	const status = useRef<ReturnType<UseSpeechSynthesis>["state"]["status"]>(isSupported ? "ready" : "unavailable");
 
 	const onStart = useRef<(handler?: UseSpeechSynthesisProps["onStart"]) => SpeechSynthesisUtterance["onstart"]>((handler) => {
 		return (evt: SpeechSynthesisEvent) => {
-			error.current = false;
+			status.current = "speaking";
 			notifRef.current && notifRef.current();
 			handler && handler.call(evt.utterance, evt);
 		}
@@ -47,6 +48,7 @@ export const useSpeechSynthesis = (opts?: UseSpeechSynthesisProps): ReturnType<U
 
 	const onPause = useRef<(handler?: UseSpeechSynthesisProps["onPause"]) => SpeechSynthesisUtterance["onpause"]>((handler) => {
 		return (evt: SpeechSynthesisEvent) => {
+			status.current = "paused";
 			notifRef.current && notifRef.current();
 			handler && handler.call(evt.utterance, evt);
 		}
@@ -54,6 +56,7 @@ export const useSpeechSynthesis = (opts?: UseSpeechSynthesisProps): ReturnType<U
 
 	const onResume = useRef<(handler?: UseSpeechSynthesisProps["onResume"]) => SpeechSynthesisUtterance["onresume"]>((handler) => {
 		return (evt: SpeechSynthesisEvent) => {
+			status.current = "speaking";
 			notifRef.current && notifRef.current();
 			handler && handler.call(evt.utterance, evt);
 		}
@@ -61,6 +64,8 @@ export const useSpeechSynthesis = (opts?: UseSpeechSynthesisProps): ReturnType<U
 
 	const onEnd = useRef<(handler?: UseSpeechSynthesisProps["onEnd"]) => SpeechSynthesisUtterance["onend"]>((handler) => {
 		return (evt: SpeechSynthesisEvent) => {
+			status.current === "paused" && synth.current.cancel();
+			status.current = "end";
 			notifRef.current && notifRef.current();
 			handler && handler.call(evt.utterance, evt);
 		}
@@ -69,10 +74,11 @@ export const useSpeechSynthesis = (opts?: UseSpeechSynthesisProps): ReturnType<U
 	const onError = useRef<(handler?: UseSpeechSynthesisProps["onError"]) => SpeechSynthesisUtterance["onerror"]>((handler) => {
 		return (evt: SpeechSynthesisErrorEvent) => {
 			if (opts?.onCancel && ["canceled", "interrupted"].includes(evt.error)) {
+				status.current = "ready";
 				const { charIndex, charLength, elapsedTime, utterance} = evt;
 				opts.onCancel.call(evt.utterance, { charIndex, charLength, elapsedTime, utterance, name: "oncancel" })
 			} else {
-				error.current = true;
+				status.current = "error";
 				handler && handler.call(evt.utterance, evt);
 			}
 			notifRef.current && notifRef.current();
@@ -105,18 +111,18 @@ export const useSpeechSynthesis = (opts?: UseSpeechSynthesisProps): ReturnType<U
 		!!onBoundaryHandler && (utterance.onboundary = onBoundaryHandler);
 		!!onMarkHandler && (utterance.onmark = onMarkHandler);
 
-		if (synth.current.paused || rest.startImmediatly) {
+		if (status.current === "paused" || rest.startImmediatly) {
 			synth.current.cancel();
 		}
 
-		!synth.current.speaking && opts?.onSpeak && opts?.onSpeak();
+		["ready", "end", "error"].includes(status.current) && opts?.onSpeak && opts?.onSpeak();
 
 		synth.current.speak(utterance);
 	});
 
-	const pause = useRef(() => isSupported.current && synth.current.speaking && synth.current.pause());
+	const pause = useRef(() => isSupported.current && status.current === "speaking" && synth.current.pause());
 
-	const resume = useRef(() => isSupported.current && synth.current.paused && synth.current.resume());
+	const resume = useRef(() => isSupported.current && status.current === "paused" && synth.current.resume());
 
 	const cancel = useRef(() => isSupported.current && synth.current.cancel());
 
@@ -133,19 +139,22 @@ export const useSpeechSynthesis = (opts?: UseSpeechSynthesisProps): ReturnType<U
 		useMemo(() => {
 			let cached:ReturnType<UseSpeechSynthesis>["state"] = {
 				isSupported: isSupported.current,
-				status: isSupported.current ? synth.current.speaking ? "speaking" : synth.current.paused ? "paused" : error.current ? "error" : synth.current.pending ? "pending" : "end" : "unavailable",
+				status: status.current,
+				hasPending: isSupported.current ? synth.current.pending : false,
 				voices: isSupported.current ? synth.current.getVoices() : null,
 			}
 
 			return () => {
 				const current = {
-					status: isSupported.current ? synth.current.speaking ? "speaking" : synth.current.paused ? "paused" : error.current ? "error" : synth.current.pending ? "pending" : "end" : "unavailable",
+					status: status.current,
+					hasPending: isSupported.current ? synth.current.pending : false,
 					voices: isSupported.current ? synth.current.getVoices() : null,
 				}
-				if (current.status !== cached.status || current.voices?.length !== cached.voices?.length) {
+				if (current.status !== cached.status || current.hasPending !== cached.hasPending || current.voices?.length !== cached.voices?.length) {
 					cached = {
 						isSupported: isSupported.current,
 						status: current.status as typeof cached["status"],
+						hasPending: current.hasPending,
 						voices: current.voices
 					}
 				}

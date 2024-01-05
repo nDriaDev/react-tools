@@ -10,7 +10,7 @@ export const UseSpeechSynthesis = () => {
 			console.log(ev)
 		},
 	});
-	const [form, setForm] = useState<{ text: string, voice: string, lang: string, rate: string, pitch: string }>({ text: "", voice: "", lang: "", rate: "1", pitch: "1" });
+	const [form, setForm] = useState<{ text: string, volume: string, voice: string, lang: string, rate: string, pitch: string }>({ text: "", volume: "0.1", voice: "", lang: "", rate: "1", pitch: "1" });
 
 	if (!state.isSupported) {
 		return <div style={{ display: "flex", justifyContent: "center" }}>
@@ -40,12 +40,16 @@ export const UseSpeechSynthesis = () => {
 			<select value={form.lang} onChange={e => setForm(f => ({ ...f, lang: e.target.value }))} disabled={state.status === "speaking"}>
 				<>
 					{
-						["it-IT", "en-US", "en-GB", "de-DE", "es-ES", "fr-FR"].map(el => (
+						["en-US", "it-IT", "en-GB", "de-DE", "es-ES", "fr-FR"].map(el => (
 							<option key={el} value={el}>{`${el}`}</option>
 						))
 					}
 				</>
 			</select>
+		</div>
+		<div>
+			<label htmlFor="volume">Volume</label>
+			<input type="range" id="volume" name="volume" min="0" max="1" step="0.1" value={form.volume} onChange={e => setForm(f => ({...f, volume: e.target.value}))} disabled={state.status === "speaking"}/>
 		</div>
 		<div>
 			<label htmlFor="range">Rate</label>
@@ -63,12 +67,30 @@ export const UseSpeechSynthesis = () => {
 						text: form.text,
 						lang: form.lang as LanguageBCP47Tags,
 						voice: (state.voices || []).filter(v => v.name === form.voice)[0],
+						volume: Number(form.volume),
 						rate: Number(form.rate),
 						pitch: Number(form.pitch),
 					})
 				}}
+				disabled={state.status === "paused"}
 			>
 				Speak
+			</button>
+			<button
+				type="button"
+				onClick={() => {
+					speak({
+						text: form.text,
+						lang: form.lang as LanguageBCP47Tags,
+						voice: (state.voices || []).filter(v => v.name === form.voice)[0],
+						volume: Number(form.volume),
+						rate: Number(form.rate),
+						pitch: Number(form.pitch),
+						startImmediatly: true
+					})
+				}}
+			>
+				Speak immediatly
 			</button>
 			<button
 				type="button"
@@ -123,7 +145,7 @@ function that will be executed when _end_ event is fired.
 > - __opts.onCancel?__: _SpeechSynthesisonCancel_  
 function that will be executed when _cancel_ event is fired.
 > - __opts.lang?__: _LanguageBCP47Tags_  
-[MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechSynthesisUtterance/lang.
+[MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechSynthesisUtterance/lang).
 > - __opts.pitch?__: _SpeechSynthesisUtterance["pitch"]_  
 [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechSynthesisUtterance/pitch).
 > - __opts.rate?__: _SpeechSynthesisUtterance["rate"]_  
@@ -139,7 +161,8 @@ function that will be executed when _cancel_ event is fired.
 > __return__:  _ReturnType<UseSpeechSynthesis>_  
 > -  __state__: object with these properties:
 > 		- _isSupported_: Returns a boolean value indicating SpeechSynthesis availability.
-> 		- _status_: Returns the current status of SpeechSynthesis.
+> 		- _status_: Returns the current status of SpeechSynthesis between: _ready_ _speaking_ _paused_ _error_ _end_ and _unavailable_.
+> 		- _hasPending_: Returns a boolean indicating the presence of texts to speech.
 > 		- _voices_: Returns the list of available voices.
 > -  __speak__: Function to start speaking.
 > -  __pause__: Function to keep in pause speaking.

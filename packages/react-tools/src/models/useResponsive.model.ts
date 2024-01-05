@@ -1,7 +1,7 @@
-type useResponsiveKeysType = "xxxs" | "xxs" | "xs" | "sm" | "md" | "lg" | "xl" | "xxl" | "xxxl";
+type UseResponsiveKeysType = "xxxs" | "xxs" | "xs" | "sm" | "md" | "lg" | "xl" | "xxl" | "xxxl";
 
-export type useResponsiveKeys<T extends useResponsiveKeysType = useResponsiveKeysType> = T extends useResponsiveKeysType ? Extract<useResponsiveKeysType, T> : never;
+export type UseResponsiveKeys<T extends UseResponsiveKeysType = UseResponsiveKeysType> = T extends UseResponsiveKeysType ? Extract<UseResponsiveKeysType, T> : never;
 
-export type useResponsiveBreakpoints<T extends useResponsiveKeys = useResponsiveKeys> = {
+export type UseResponsiveBreakpoints<T extends UseResponsiveKeys = UseResponsiveKeys> = {
 	[k in T]: number | { value: number, condition: "<" | "<=" | ">" | ">=" }
 }
