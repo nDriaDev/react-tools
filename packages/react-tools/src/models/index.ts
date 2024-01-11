@@ -11,4 +11,5 @@ export type { DeviceOrientationProps } from './useDeviceOrientation.model';
 export type { Bluetooth, BluetoothCharacteristicProperties, BluetoothCharacteristicUUID, BluetoothDescriptorUUID, BluetoothDevice, BluetoothDevicesOptions, BluetoothRemoteGATTCharacteristic, BluetoothRemoteGATTDescriptor, BluetoothRemoteGATTServer, BluetoothRemoteGATTService, BluetoothScanFilters, BluetoothServiceUUID } from './useBluetooth.model';
 export type { UseSpeechRecognitionProps, SpeechRecognition, SpeechRecognitionConfig, SpeechRecognitionState, SpeechGrammar, SpeechGrammarList, SpeechRecognitionErrorCode, SpeechRecognitionErrorEvent, SpeechRecognitionEvent } from './useSpeechRecognition.model';
 export type { SpeechSynthesisSpeakParam, UseSpeechSynthesis, UseSpeechSynthesisProps } from './useSpeechSynthesis.model';
-export type { UseFPSProps, UseFPSResult} from './useFPS.model';
+export type { UseFPSProps, UseFPSResult } from './useFPS.model';
+export type { UsePointerLockProps, UsePointerLockResult } from './usePointerLock.model';

@@ -42,7 +42,9 @@ export type {
 	UseSpeechSynthesisProps,
 	SpeechSynthesisSpeakParam,
 	UseFPSProps,
-	UseFPSResult
+	UseFPSResult,
+	UsePointerLockProps,
+	UsePointerLockResult
 } from './models'
 
 export {
@@ -128,7 +130,8 @@ export {
 	useScreenWakeLock,
 	useSpeechRecognition,
 	useSpeechSynthesis,
-	useFPS
+	useFPS,
+	usePointerLock
 } from './hooks'
 
 export {

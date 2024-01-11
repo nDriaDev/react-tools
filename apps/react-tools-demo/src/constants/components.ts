@@ -68,7 +68,8 @@ export const COMPONENTS = [
 			"useDoubleClick",
 			"useScreen",
 			"useHotKeys",
-			"usePinchZoom"
+			"usePinchZoom",
+			"usePointerLock"
 		],
 		//API DOM
 		[

@@ -36,7 +36,7 @@ export const useFPS = ({ everySeconds, windowSize }:UseFPSProps={windowSize:10, 
 				fps = fps.slice(Math.max(state.current.fps.length - windowSize, 0));
 				const avg = +(fps.reduce((a, b) => a + b, 0) / fps.length).toFixed(2);
 				const maxFps = Math.max(currentFps, state.current.maxFps);
-				currentFps = fps.at(-1) as number;
+				currentFps = fps[fps.length-1] as number;
 				if (fps.some((el, index) => state.current.fps[index] !== el) || avg !== state.current.avg || maxFps !== state.current.maxFps || currentFps !== state.current.currentFps) {
 					state.current.fps = fps;
 					state.current.currentFps = currentFps;

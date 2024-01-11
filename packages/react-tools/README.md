@@ -68,6 +68,8 @@
 	- [x] useScreen (orientation and ecc)
 	- [x] useHotKeys
 	- [x] usePinchZoom
+	- [ ] usePointerLock
+	- [ ] useContextMenu
 	- [ ] useInfiniteScroll
 	- [ ] useDragAndDrop (check for mobile usage)
 
@@ -102,7 +104,6 @@
 	- [x] useSpeechRecognition
 	- [x] useSpeechSynthesis
 	- [x] useFPS
-	- [ ] usePointerLock (https://developer.mozilla.org/en-US/docs/Web/API/Pointer_Lock_API)
 	- [ ] usePIP (https://developer.mozilla.org/en-US/docs/Web/API/Document_Picture-in-Picture_API  https://developer.mozilla.org/en-US/docs/Web/API/Picture-in-Picture_API)
 	- [ ] useIdleDetection (https://developer.mozilla.org/en-US/docs/Web/API/Idle_Detection_API)
 	- [ ] usePopover (https://developer.mozilla.org/en-US/docs/Web/API/Popover_API)
