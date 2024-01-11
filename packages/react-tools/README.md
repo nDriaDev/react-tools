@@ -68,7 +68,7 @@
 	- [x] useScreen (orientation and ecc)
 	- [x] useHotKeys
 	- [x] usePinchZoom
-	- [ ] usePointerLock
+	- [x] usePointerLock
 	- [ ] useContextMenu
 	- [ ] useInfiniteScroll
 	- [ ] useDragAndDrop (check for mobile usage)
