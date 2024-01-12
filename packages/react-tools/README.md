@@ -104,7 +104,8 @@
 	- [x] useSpeechRecognition
 	- [x] useSpeechSynthesis
 	- [x] useFPS
-	- [ ] usePIP (https://developer.mozilla.org/en-US/docs/Web/API/Document_Picture-in-Picture_API  https://developer.mozilla.org/en-US/docs/Web/API/Picture-in-Picture_API)
+	- [ ] useDocumentPIP (https://developer.mozilla.org/en-US/docs/Web/API/Document_Picture-in-Picture_API)
+	- [x] usePIP
 	- [ ] useIdleDetection (https://developer.mozilla.org/en-US/docs/Web/API/Idle_Detection_API)
 	- [ ] usePopover (https://developer.mozilla.org/en-US/docs/Web/API/Popover_API)
 	- [ ] useRemotePlayback (https://developer.mozilla.org/en-US/docs/Web/API/Remote_Playback_API)

@@ -82,3 +82,4 @@ export { useSpeechRecognition } from './useSpeechRecognition';
 export { useSpeechSynthesis } from './useSpeechSynthesis';
 export { useFPS } from './useFPS';
 export { usePointerLock } from './usePointerLock';
+export { usePIP } from './usePIP';

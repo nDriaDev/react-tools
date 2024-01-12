@@ -44,7 +44,9 @@ export type {
 	UseFPSProps,
 	UseFPSResult,
 	UsePointerLockProps,
-	UsePointerLockResult
+	UsePointerLockResult,
+	UsePIPProps,
+	UsePIPResult
 } from './models'
 
 export {
@@ -131,7 +133,8 @@ export {
 	useSpeechRecognition,
 	useSpeechSynthesis,
 	useFPS,
-	usePointerLock
+	usePointerLock,
+	usePIP
 } from './hooks'
 
 export {

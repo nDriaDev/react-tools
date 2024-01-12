@@ -13,3 +13,4 @@ export type { UseSpeechRecognitionProps, SpeechRecognition, SpeechRecognitionCon
 export type { SpeechSynthesisSpeakParam, UseSpeechSynthesis, UseSpeechSynthesisProps } from './useSpeechSynthesis.model';
 export type { UseFPSProps, UseFPSResult } from './useFPS.model';
 export type { UsePointerLockProps, UsePointerLockResult } from './usePointerLock.model';
+export type { UsePIPProps, UsePIPResult } from './usePIP.model';

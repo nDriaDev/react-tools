@@ -101,7 +101,8 @@ export const COMPONENTS = [
 			"useScreenWakeLock",
 			"useSpeechRecognition",
 			"useSpeechSynthesis",
-			"useFPS"
+			"useFPS",
+			"usePIP"
 		]
 	],
 	//UTILS
