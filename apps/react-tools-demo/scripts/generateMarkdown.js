@@ -1,4 +1,5 @@
 import path from "node:path";
+import { existsSync } from 'node:fs';
 import fs from 'node:fs/promises';
 import {URL} from 'url';
 import process from "node:process";
@@ -406,7 +407,8 @@ async function generateComponentsMarkDown() {
 			if(file.split(".")[0].toLowerCase() === dir.toLowerCase()) {
 				const extension = componentFileName.endsWith(".tsx") ? ".tsx" : ".md";
 				let componentFile = await fs.readFile(path.join(pathComponentDir, "hooks", dir, componentFileName), {encoding: "utf8"});
-				const hookFileName = (componentFileName.charAt(0).toLowerCase()+componentFileName.substring(1)).replace(extension, ".ts");
+				let hookFileName = (componentFileName.charAt(0).toLowerCase() + componentFileName.substring(1)).replace(extension, ".ts");
+				!existsSync(path.join(pathHooksDir, hookFileName)) && (hookFileName = (componentFileName.charAt(0).toLowerCase() + componentFileName.substring(1)).replace(extension, ".tsx"));
 				let hookFile = await fs.readFile(path.join(pathHooksDir, hookFileName), {encoding: "utf8"});
 				componentFile = removeImportLine(componentFile);
 				hookFile = removeImportLine(hookFile);

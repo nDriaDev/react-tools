@@ -1,13 +1,13 @@
-# useIdle
+# useIdleCallback
 Hook to invoke a callback when the browser is idle. Refer to [requestIdleCallback](https://developer.mozilla.org/en-US/docs/Web/API/Window/requestIdleCallback) in React. The __options__ parameter differs from _IdleRequestOptions_ type: it adds the possibility to pass another property __unsupportedBehavior__ to specify what do if requestIdleCallback is not supported.
 
 ## Usage
 
 ```tsx
-export const UseIdle = () => {
+export const UseIdleCallback = () => {
 	const [iterations, setIterations] = useState(0);
 	const [log, setLog] = useState("");
-	const [invoke] = useIdle(() => setLog("RequestIdleCallback executed"));
+	const [invoke] = useIdleCallback(() => setLog("RequestIdleCallback executed"));
 
 	const start = async() => {
 		invoke();
@@ -31,14 +31,14 @@ export const UseIdle = () => {
 > The component has:
 > - a __iterations__ variable of type string.
 > - a __log__ variable of type string.
-> - a function __invoke__ returned from _useIdle_ hook, initialized with a cb that update __log__ variable with message _"RequestIdleCallback executed"_.
+> - a function __invoke__ returned from _useIdleCallback_ hook, initialized with a cb that update __log__ variable with message _"RequestIdleCallback executed"_.
 > - a button start that when clicked executes __start__ function that executes __invoke__ function and updates __iterations__ variable inside a loop with iteration index.
 
 
 ## API
 
 ```tsx
-useIdle(cb: (deadline?: IdleDeadline | DOMHighResTimeStamp | void) => void, opts?: {timeout: number , unsupportedBehavior?: "animationFrame" | "timeout" | "immediatly" }): [() => void, () => void]
+useIdleCallback(cb: (deadline?: IdleDeadline | DOMHighResTimeStamp | void) => void, opts?: {timeout: number , unsupportedBehavior?: "animationFrame" | "timeout" | "immediatly" }): [() => void, () => void]
 ```
 
 > ### Params

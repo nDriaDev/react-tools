@@ -46,7 +46,11 @@ export type {
 	UsePointerLockProps,
 	UsePointerLockResult,
 	UsePIPProps,
-	UsePIPResult
+	UsePIPResult,
+	DocumentPIPOptions,
+	DocumentPictureInPictureEvent,
+	UseDocumentPIPProps,
+	UseDocumentPIPResult
 } from './models'
 
 export {
@@ -103,7 +107,7 @@ export {
 	useResizeObserver,
 	useIntersectionObserver,
 	useMutationObserver,
-	useIdle,
+	useIdleCallback,
 	useRaf,
 	useMeasure,
 	useFullscreen,
@@ -134,7 +138,8 @@ export {
 	useSpeechSynthesis,
 	useFPS,
 	usePointerLock,
-	usePIP
+	usePIP,
+	useDocumentPIP
 } from './hooks'
 
 export {

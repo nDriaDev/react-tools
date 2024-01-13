@@ -10,8 +10,8 @@ export const UsePIP = () => {
 	const [show, setShow] = useState(true);
 	const { isSupported, openPIP } = usePIP({
 		target: videoRef,
-		onOpened: () => setShow(false),
-		onClosed: () => setShow(true)
+		onOpen: () => setShow(false),
+		onClose: () => setShow(true)
 	});
 
 	return <div>

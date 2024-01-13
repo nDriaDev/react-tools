@@ -89,7 +89,7 @@
 	- [x] useColorScheme
 	- [x] useReducedMotion
 	- [x] useTitle
-	- [x] useIdle
+	- [x] useIdleCallback
 	- [x] useFullscreen
 	- [x] useBattery
 	- [x] useGeolocation
@@ -104,8 +104,8 @@
 	- [x] useSpeechRecognition
 	- [x] useSpeechSynthesis
 	- [x] useFPS
-	- [ ] useDocumentPIP (https://developer.mozilla.org/en-US/docs/Web/API/Document_Picture-in-Picture_API)
 	- [x] usePIP
+	- [x] useDocumentPIP
 	- [ ] useIdleDetection (https://developer.mozilla.org/en-US/docs/Web/API/Idle_Detection_API)
 	- [ ] usePopover (https://developer.mozilla.org/en-US/docs/Web/API/Popover_API)
 	- [ ] useRemotePlayback (https://developer.mozilla.org/en-US/docs/Web/API/Remote_Playback_API)
@@ -126,8 +126,7 @@
 	- [ ] useMediaDevices
 	- [ ] useMediaStream
 	- [ ] useObservable — tracks latest value of an Observable
-	- [ ] usePointerLock (https://vueuse.org/core/usePointerLock/)
-	- [ ] usePointerTouchSwipe (https://vueuse.org/core/usePointerSwipe/ https://vueuse.org/core/useSwipe/)
+   	- [ ] usePointerTouchSwipe (https://vueuse.org/core/usePointerSwipe/ https://vueuse.org/core/useSwipe/)
 	- [ ] useLock - (https://developer.mozilla.org/en-US/docs/Web/API/LockManager/request)
 	- [ ] useIndexedDB
 	- [ ] useWebWorker (https://vueuse.org/core/useWebWorker/)

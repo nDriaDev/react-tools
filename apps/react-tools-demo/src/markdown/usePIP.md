@@ -1,5 +1,5 @@
-# 
-Hook to use PIP [(Picture-in-Picture API)](https://developer.mozilla.org/en-US/docs/Web/API/Picture-in-Picture_API)
+# usePIP
+Hook to use PIP [(Picture-in-Picture API)](https://developer.mozilla.org/en-US/docs/Web/API/Picture-in-Picture_API).
 
 ## Usage
 
@@ -7,16 +7,26 @@ Hook to use PIP [(Picture-in-Picture API)](https://developer.mozilla.org/en-US/d
 export const UsePIP = () => {
 	const videoRef = useRef<HTMLVideoElement>(null);
 	const [show, setShow] = useState(true);
-	const { openPIP } = usePIP({target: videoRef})
+	const { isSupported, openPIP } = usePIP({
+		target: videoRef,
+		onOpen: () => setShow(false),
+		onClose: () => setShow(true)
+	});
 
 	return <div>
-		<video ref={videoRef} width="400" controls>
-			<source src={video} type="video/mp4"/>
-			Your browser does not support HTML video.
-		</video>
-		<div>
-			<button onClick={openPIP}>Open PIP</button>
-		</div>
+		<p>Supported: {isSupported ? 'Yes' : 'No'}</p>
+		{
+			show &&
+			<>
+				<video ref={videoRef} width="400" controls>
+					<source src={video} type="video/mp4" />
+					Your browser does not support HTML video.
+				</video>
+				<div>
+					<button onClick={openPIP}>Open PIP</button>
+				</div>
+			</>
+		}
 	</div>
 }
 ```
@@ -27,7 +37,7 @@ export const UsePIP = () => {
 ## API
 
 ```tsx
-usePIP = ({ onOpen, onOpened, onClose, onError, target }: UsePIPProps): UsePIPResult
+usePIP({ onOpen, onOpened, onClose, onError, target }: UsePIPProps): UsePIPResult
 ```
 
 > ### Params
@@ -37,11 +47,11 @@ object
 > - __param.target__: _RefObject<HTMLVideoElement>|HTMLVideoElement_  
 element to PIP.
 > - __param.onOpen?__: _()=>void_  
-function that will be executed before open PIP.
+function that will be executed on PIP opening.
 > - __param.onOpened?__: _(pip: PictureInPictureWindow)=>void_  
 function that will be executed when PIP is opened.
-> - __param.onClose?__: _()=>void_  
-function that will be executed when PIP is closed.
+> - __param.onClose?__: _(evt: PictureInPictureEvent)=>void_  
+function that will be executed on PIP closing.
 > - __param.onError?__: _(err: unknown)=>void_  
 function that will be executed when error is throwing.
 >

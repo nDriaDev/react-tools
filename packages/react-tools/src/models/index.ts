@@ -14,3 +14,4 @@ export type { SpeechSynthesisSpeakParam, UseSpeechSynthesis, UseSpeechSynthesisP
 export type { UseFPSProps, UseFPSResult } from './useFPS.model';
 export type { UsePointerLockProps, UsePointerLockResult } from './usePointerLock.model';
 export type { UsePIPProps, UsePIPResult } from './usePIP.model';
+export type { DocumentPictureInPictureEvent, DocumentPIPOptions, UseDocumentPIPProps, UseDocumentPIPResult } from './useDocumentPIP.model';

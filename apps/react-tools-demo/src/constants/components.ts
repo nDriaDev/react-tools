@@ -87,7 +87,7 @@ export const COMPONENTS = [
 			"useColorScheme",
 			"useReducedMotion",
 			"useTitle",
-			"useIdle",
+			"useIdleCallback",
 			"useFullscreen",
 			"useBattery",
 			"useGeolocation",
@@ -102,7 +102,8 @@ export const COMPONENTS = [
 			"useSpeechRecognition",
 			"useSpeechSynthesis",
 			"useFPS",
-			"usePIP"
+			"usePIP",
+			"useDocumentPIP"
 		]
 	],
 	//UTILS

@@ -2,9 +2,9 @@ import { RefObject } from "react";
 
 export interface UsePIPProps {
 	target: RefObject<HTMLVideoElement> | HTMLVideoElement;
-	onOpen?: () => void;
+	onOpen?: (evt: Event) => void;
 	onOpened?: (pipWindow: PictureInPictureWindow) => void,
-	onClosed?: () => void;
+	onClose?: (evt: PictureInPictureEvent) => void;
 	onError?: (err: unknown) => void;
 }
 
