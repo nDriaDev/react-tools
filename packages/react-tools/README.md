@@ -106,7 +106,7 @@
 	- [x] useFPS
 	- [x] usePIP
 	- [x] useDocumentPIP
-	- [ ] useIdleDetection (https://developer.mozilla.org/en-US/docs/Web/API/Idle_Detection_API)
+	- [ ] useIdleDetection (not work yet. https://developer.mozilla.org/en-US/docs/Web/API/Idle_Detection_API)
 	- [ ] usePopover (https://developer.mozilla.org/en-US/docs/Web/API/Popover_API)
 	- [ ] useRemotePlayback (https://developer.mozilla.org/en-US/docs/Web/API/Remote_Playback_API)
 	- [ ] useSensor (https://developer.mozilla.org/en-US/docs/Web/API/Sensor_APIs)
