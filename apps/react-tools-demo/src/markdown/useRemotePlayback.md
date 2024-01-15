@@ -5,16 +5,16 @@ Hook to use [RemotePlayback API](https://developer.mozilla.org/en-US/docs/Web/AP
 
 ```tsx
 export const UseRemotePlayback = () => {
-	const { isSupported, ref, prompt, state, watchAvailability } = useRemotePlayback<HTMLVideoElement>();
+	const { isSupported, ref, prompt, state } = useRemotePlayback<HTMLVideoElement>();
 
-	return <div>
+	return <div style={{display: "flex", flexDirection: "column", width: 'fit-content', alignItems: "center", margin: '0 auto'}}>
 		<p>Is supported: {isSupported ? 'Yes' : 'No'}</p>
 		<p>Current state: {state}</p>
 		<video ref={ref} width="400" controls>
 			<source src={video} type="video/mp4" />
 			Your browser does not support HTML video.
 		</video>
-		<button onClick={()=>watchAvailability(console.log)}>Prompt</button>
+		<button style={{marginTop: 20}} onClick={prompt} disabled={state === "unavailable"}>Prompt</button>
 	</div>
 }
 ```
@@ -49,7 +49,5 @@ function that will be executed on error watching or cancel watching devices avai
 > - __ref__: ref to attach media element.
 > - __isSupported__: boolean that indicates if RemotePlayback API is available or not.
 > - __state__: remote device state: _connected_, _connecting_ or _disconnect_.
-> - __watchAvailability__: function that watchs remove device availability.
-> - __cancelWatchAvailability__: function that cancel watching device availability.
 > - __prompt__: function that prompts the user to select an available remote playback device and give permission for the current media to be played using that device.
 >

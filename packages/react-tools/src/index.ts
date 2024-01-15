@@ -54,7 +54,9 @@ export type {
 	UsePopoverProps,
 	UsePopoverResult,
 	UseRemotePlaybackProps,
-	UseRemotePlaybackResult
+	UseRemotePlaybackResult,
+	UseAnimationProps,
+	UseAnimationResult
 } from './models'
 
 export {
