@@ -9,17 +9,14 @@ export const UsePopover = () => {
 		mode: "auto",
 	})
 
-	const style = useMemo<CSSProperties>(() => (isOpen ? {
-		width: 200,
-		height: 100,
-		position: "absolute",
-		inset: "unset",
-		top: 10,
-		margin: 0
-	} : {}), [isOpen]);
+	const style = useMemo<CSSProperties>(() => ({
+		width: 300,
+		height: 200,
+		position: "absolute"
+	}), []);
 
-	return <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
-		<p>Is supported: {isSupported}</p>
+	return <div>
+		<p>Is supported: {isSupported ? "Yes" : "No"}</p>
 		<button onClick={showPopover} disabled={isOpen}>Open Popover</button>
 		<Popover style={style}>
 			<h2>

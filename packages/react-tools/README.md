@@ -107,7 +107,7 @@
 	- [x] usePIP
 	- [x] useDocumentPIP
 	- [x] usePopover
-	- [ ] useRemotePlayback (https://developer.mozilla.org/en-US/docs/Web/API/Remote_Playback_API)
+	- [x] useRemotePlayback
 	- [ ] useSensor (https://developer.mozilla.org/en-US/docs/Web/API/Sensor_APIs)
 	- [ ] useSerial (https://developer.mozilla.org/en-US/docs/Web/API/Web_Serial_API)
 	- [ ] useScrollLock (https://vueuse.org/core/useScrollLock/)

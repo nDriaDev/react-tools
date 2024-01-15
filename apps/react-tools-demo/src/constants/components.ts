@@ -104,7 +104,8 @@ export const COMPONENTS = [
 			"useFPS",
 			"usePIP",
 			"useDocumentPIP",
-			"usePopover"
+			"usePopover",
+			"useRemotePlayback"
 		]
 	],
 	//UTILS

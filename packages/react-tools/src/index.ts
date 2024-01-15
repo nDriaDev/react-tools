@@ -52,7 +52,9 @@ export type {
 	UseDocumentPIPProps,
 	UseDocumentPIPResult,
 	UsePopoverProps,
-	UsePopoverResult
+	UsePopoverResult,
+	UseRemotePlaybackProps,
+	UseRemotePlaybackResult
 } from './models'
 
 export {
@@ -142,7 +144,8 @@ export {
 	usePointerLock,
 	usePIP,
 	useDocumentPIP,
-	usePopover
+	usePopover,
+	useRemotePlayback
 } from './hooks'
 
 export {
