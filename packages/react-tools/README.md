@@ -106,8 +106,7 @@
 	- [x] useFPS
 	- [x] usePIP
 	- [x] useDocumentPIP
-	- [ ] useIdleDetection (not work yet. https://developer.mozilla.org/en-US/docs/Web/API/Idle_Detection_API)
-	- [ ] usePopover (https://developer.mozilla.org/en-US/docs/Web/API/Popover_API)
+	- [x] usePopover
 	- [ ] useRemotePlayback (https://developer.mozilla.org/en-US/docs/Web/API/Remote_Playback_API)
 	- [ ] useSensor (https://developer.mozilla.org/en-US/docs/Web/API/Sensor_APIs)
 	- [ ] useSerial (https://developer.mozilla.org/en-US/docs/Web/API/Web_Serial_API)
@@ -131,6 +130,7 @@
 	- [ ] useIndexedDB
 	- [ ] useWebWorker (https://vueuse.org/core/useWebWorker/)
 	- [ ] useWebWorkerFn (https://vueuse.org/core/useWebWorkerFn/)
+	- [ ] useIdleDetection (not work yet. https://developer.mozilla.org/en-US/docs/Web/API/Idle_Detection_API)
 
 - __UTILS__
 	- [x] isShallowEqual

@@ -50,7 +50,9 @@ export type {
 	DocumentPIPOptions,
 	DocumentPictureInPictureEvent,
 	UseDocumentPIPProps,
-	UseDocumentPIPResult
+	UseDocumentPIPResult,
+	UsePopoverProps,
+	UsePopoverResult
 } from './models'
 
 export {
@@ -139,7 +141,8 @@ export {
 	useFPS,
 	usePointerLock,
 	usePIP,
-	useDocumentPIP
+	useDocumentPIP,
+	usePopover
 } from './hooks'
 
 export {

@@ -1,8 +1,22 @@
-import { RefObject } from "react"
+import { ComponentPropsWithRef } from "react";
 
-export interface UsePopoverProps<T extends HTMLElement> {
-	refBtn: RefObject<HTMLButtonElement>;
-	refPopover: RefObject<T>;
-	mode: "auto" | "manual",
-	buttonTrigger: "on/off" | "toggle"
+declare module 'react' {
+	interface HTMLAttributes<T> extends AriaAttributes, DOMAttributes<T> {
+		popover?: "auto" | "manual";
+	}
+
+}
+export interface UsePopoverProps {
+	mode: "auto" | "manual";
+	onBeforeToggle?: (evt: ToggleEvent) => void;
+	onToggle?: (evt: ToggleEvent) => void;
+}
+
+export interface UsePopoverResult {
+	isSupported: boolean,
+	isOpen: boolean,
+	showPopover: () => void,
+	hidePopover: () => void,
+	togglePopover: () => void,
+	Popover: ({ children, ...rest }: ComponentPropsWithRef<"div">) => false | JSX.Element;
 }

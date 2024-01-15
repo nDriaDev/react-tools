@@ -84,3 +84,4 @@ export { useFPS } from './useFPS';
 export { usePointerLock } from './usePointerLock';
 export { usePIP } from './usePIP';
 export { useDocumentPIP } from './useDocumentPIP';
+export { usePopover } from './usePopover';

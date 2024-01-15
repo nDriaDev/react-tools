@@ -103,7 +103,8 @@ export const COMPONENTS = [
 			"useSpeechSynthesis",
 			"useFPS",
 			"usePIP",
-			"useDocumentPIP"
+			"useDocumentPIP",
+			"usePopover"
 		]
 	],
 	//UTILS
