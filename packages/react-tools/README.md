@@ -110,7 +110,7 @@
 	- [x] useRemotePlayback
 	- [x] useAnimation
 	- [x] useAudio
-	- [ ] useVideo (???)
+	- [x] useVideo
 	- [ ] useEventSource (https://vueuse.org/core/useEventSource/)
 	- [ ] useWebSocket (https://vueuse.org/core/useWebSocket/)
 	- [ ] useFetch (with suspense ???)

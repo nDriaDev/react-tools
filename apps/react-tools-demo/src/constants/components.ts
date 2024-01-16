@@ -107,7 +107,8 @@ export const COMPONENTS = [
 			"usePopover",
 			"useRemotePlayback",
 			"useAnimation",
-			"useAudio"
+			"useAudio",
+			"useVideo"
 		]
 	],
 	//UTILS

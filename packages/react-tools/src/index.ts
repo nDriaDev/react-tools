@@ -58,7 +58,9 @@ export type {
 	UseAnimationProps,
 	UseAnimationResult,
 	UseAudioProps,
-	UseAudioResult
+	UseAudioResult,
+	UseVideoProps,
+	UseVideoResult
 } from './models'
 
 export {
@@ -151,7 +153,8 @@ export {
 	usePopover,
 	useRemotePlayback,
 	useAnimation,
-	useAudio
+	useAudio,
+	useVideo
 } from './hooks'
 
 export {

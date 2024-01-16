@@ -1,22 +1,11 @@
-export interface UseAudioProps {
-	url?: string;
-	volume?: number;
-	loop?: boolean;
-	defaultMuted?: boolean;
-	playbackRate?: number;
-	onError?: OnErrorEventHandler;
-}
+import { DetailedReactHTMLElement, HTMLAttributes, MediaHTMLAttributes, MutableRefObject } from "react";
+import { HTMLMediaControls, HTMLMediaState } from "./common.model";
+
+export type UseAudioProps = MediaHTMLAttributes<HTMLAudioElement>
 
 export interface UseAudioResult {
-	state: {
-		status: "unavailable" | "ready" | "playing" | "pause";
-		volume?: number | undefined;
-		playbackRate?: number | undefined;
-	};
-	setAudio: (audio: string) => void;
-	setPlaybackRate: (playbackRate: number) => void;
-	setVolume: (volume: number) => void;
-	play: () => void;
-	pause: () => void;
-	load: () => void;
+	state: HTMLMediaState;
+	controls: HTMLMediaControls;
+	MediaElement: DetailedReactHTMLElement<HTMLAttributes<HTMLAudioElement>, HTMLAudioElement >;
+	ref: MutableRefObject<HTMLAudioElement | null>;
 }
