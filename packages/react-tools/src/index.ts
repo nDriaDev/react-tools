@@ -56,7 +56,9 @@ export type {
 	UseRemotePlaybackProps,
 	UseRemotePlaybackResult,
 	UseAnimationProps,
-	UseAnimationResult
+	UseAnimationResult,
+	UseAudioProps,
+	UseAudioResult
 } from './models'
 
 export {
@@ -147,7 +149,9 @@ export {
 	usePIP,
 	useDocumentPIP,
 	usePopover,
-	useRemotePlayback
+	useRemotePlayback,
+	useAnimation,
+	useAudio
 } from './hooks'
 
 export {

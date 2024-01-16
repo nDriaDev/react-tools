@@ -109,7 +109,7 @@
 	- [x] usePopover
 	- [x] useRemotePlayback
 	- [x] useAnimation
-	- [ ] useAudio (???)
+	- [x] useAudio
 	- [ ] useVideo (???)
 	- [ ] useEventSource (https://vueuse.org/core/useEventSource/)
 	- [ ] useWebSocket (https://vueuse.org/core/useWebSocket/)

@@ -106,7 +106,8 @@ export const COMPONENTS = [
 			"useDocumentPIP",
 			"usePopover",
 			"useRemotePlayback",
-			"useAnimation"
+			"useAnimation",
+			"useAudio"
 		]
 	],
 	//UTILS

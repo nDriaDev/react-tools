@@ -87,3 +87,4 @@ export { useDocumentPIP } from './useDocumentPIP';
 export { usePopover } from './usePopover';
 export { useRemotePlayback } from './useRemotePlayback';
 export { useAnimation } from './useAnimation';
+export { useAudio } from './useAudio';

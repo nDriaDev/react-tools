@@ -18,3 +18,4 @@ export type { DocumentPictureInPictureEvent, DocumentPIPOptions, UseDocumentPIPP
 export type { UsePopoverProps, UsePopoverResult } from './usePopover.model';
 export type { UseRemotePlaybackProps, UseRemotePlaybackResult } from './useRemotePlayback.model';
 export type { UseAnimationProps, UseAnimationResult } from './useAnimation.model';
+export type { UseAudioProps, UseAudioResult } from './useAudio.model';
