@@ -60,7 +60,9 @@ export type {
 	UseAudioProps,
 	UseAudioResult,
 	UseVideoProps,
-	UseVideoResult
+	UseVideoResult,
+	UseEventSourceProps,
+	UseEventSourceResult
 } from './models'
 
 export {
@@ -154,7 +156,8 @@ export {
 	useRemotePlayback,
 	useAnimation,
 	useAudio,
-	useVideo
+	useVideo,
+	useEventSource
 } from './hooks'
 
 export {

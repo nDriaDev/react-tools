@@ -89,3 +89,4 @@ export { useRemotePlayback } from './useRemotePlayback';
 export { useAnimation } from './useAnimation';
 export { useAudio } from './useAudio';
 export { useVideo } from './useVideo';
+export { useEventSource } from './useEventSource';

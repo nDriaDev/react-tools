@@ -108,7 +108,8 @@ export const COMPONENTS = [
 			"useRemotePlayback",
 			"useAnimation",
 			"useAudio",
-			"useVideo"
+			"useVideo",
+			"useEventSource"
 		]
 	],
 	//UTILS

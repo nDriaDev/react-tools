@@ -111,7 +111,7 @@
 	- [x] useAnimation
 	- [x] useAudio
 	- [x] useVideo
-	- [ ] useEventSource (https://vueuse.org/core/useEventSource/)
+	- [x] useEventSource
 	- [ ] useWebSocket (https://vueuse.org/core/useWebSocket/)
 	- [ ] useFetch (with suspense ???)
 	- [ ] useAsync

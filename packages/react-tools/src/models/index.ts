@@ -20,3 +20,4 @@ export type { UseRemotePlaybackProps, UseRemotePlaybackResult } from './useRemot
 export type { UseAnimationProps, UseAnimationResult } from './useAnimation.model';
 export type { UseAudioProps, UseAudioResult } from './useAudio.model';
 export type { UseVideoProps, UseVideoResult } from './useVideo.model';
+export type { UseEventSourceProps, UseEventSourceResult } from './useEventSource.model';
