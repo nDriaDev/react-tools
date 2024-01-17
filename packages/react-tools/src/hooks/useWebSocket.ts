@@ -34,17 +34,15 @@ export const useWebSocket = <T = string | ArrayBuffer | Blob> ({ url, protocols,
 		status: immediateConnection && url ? "CONNECTING" : "READY",
 		data: null
 	});
-	const wsInitialized = !!wsRef.current;
-	const currentStatus = cachedState.current.status;
 
 	const sendBuffer = useCallback(() => {
-		if (bufferingData && wsInitialized && currentStatus === "OPENED") {
+		if (bufferingData && wsRef.current && cachedState.current.status === "OPENED") {
 			dataBuffer.current.forEach(data => {
 				wsRef.current!.send(data);
 			});
 			dataBuffer.current = [];
 		}
-	}, [bufferingData, currentStatus, wsInitialized])
+	}, [bufferingData])
 
 	if (url && immediateConnection && !alreadyOpened.current) {
 		wsRef.current = new WebSocket(url, protocols);
@@ -102,31 +100,31 @@ export const useWebSocket = <T = string | ArrayBuffer | Blob> ({ url, protocols,
 	}
 
 	const open = useCallback((urlParam?: UseWebSocketProps["url"]) => {
-		if (!wsInitialized && (url || urlParam)) {
+		if (!wsRef.current && (url || urlParam)) {
 			const urlWs = url || urlParam as string | URL;
 			wsRef.current = new WebSocket(urlWs, protocols);
 			binaryType && (wsRef.current.binaryType = binaryType);
 			cachedState.current.status = "CONNECTING";
 			notifyRef.current && notifyRef.current();
 		}
-	}, [protocols, url, wsInitialized, binaryType]);
+	}, [protocols, url, binaryType]);
 
 	const send = useCallback((data: string | ArrayBuffer | Blob | TypedArray) => {
-		if ((!wsInitialized || currentStatus !== "OPENED") && bufferingData) {
+		if ((!wsRef.current || cachedState.current.status !== "OPENED") && bufferingData) {
 			dataBuffer.current.push(data);
 		} else {
 			sendBuffer();
 			wsRef.current?.send(data);
 		}
-	}, [bufferingData, currentStatus, wsInitialized, sendBuffer]);
+	}, [bufferingData, sendBuffer]);
 
 	const close = useCallback((code?: number, reason?: string) => {
-		if (wsInitialized && currentStatus === "OPENED") {
+		if (wsRef.current && cachedState.current.status === "OPENED") {
 			wsRef.current?.close(code, reason);
 			cachedState.current.status = "CLOSED";
 			notifyRef.current && notifyRef.current();
 		}
-	}, [wsInitialized, currentStatus]);
+	}, []);
 
 	const state = useSyncExternalStore(
 		useCallback(notif => {
