@@ -69,7 +69,8 @@ export const COMPONENTS = [
 			"useScreen",
 			"useHotKeys",
 			"usePinchZoom",
-			"usePointerLock"
+			"usePointerLock",
+			"useContextMenu"
 		],
 		//API DOM
 		[

@@ -163,7 +163,8 @@ export {
 	useAudio,
 	useVideo,
 	useEventSource,
-	useWebSocket
+	useWebSocket,
+	useContextMenu
 } from './hooks'
 
 export {

@@ -69,7 +69,7 @@
 	- [x] useHotKeys
 	- [x] usePinchZoom
 	- [x] usePointerLock
-	- [ ] useContextMenu
+	- [x] useContextMenu
 	- [ ] useInfiniteScroll
 	- [ ] useDragAndDrop (check for mobile usage)
 

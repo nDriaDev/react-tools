@@ -91,3 +91,4 @@ export { useAudio } from './useAudio';
 export { useVideo } from './useVideo';
 export { useEventSource } from './useEventSource';
 export { useWebSocket } from './useWebSocket';
+export { useContextMenu } from './useContextMenu';
