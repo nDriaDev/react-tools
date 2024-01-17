@@ -62,7 +62,12 @@ export type {
 	UseVideoProps,
 	UseVideoResult,
 	UseEventSourceProps,
-	UseEventSourceResult
+	UseEventSourceResult,
+	HTMLMediaControls,
+	HTMLMediaState,
+	TypedArray,
+	UseWebSocketProps,
+	UseWebSocketResult
 } from './models'
 
 export {
@@ -157,7 +162,8 @@ export {
 	useAnimation,
 	useAudio,
 	useVideo,
-	useEventSource
+	useEventSource,
+	useWebSocket
 } from './hooks'
 
 export {

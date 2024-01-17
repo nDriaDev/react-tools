@@ -109,7 +109,8 @@ export const COMPONENTS = [
 			"useAnimation",
 			"useAudio",
 			"useVideo",
-			"useEventSource"
+			"useEventSource",
+			"useWebSocket"
 		]
 	],
 	//UTILS

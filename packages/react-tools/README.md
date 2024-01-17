@@ -112,9 +112,7 @@
 	- [x] useAudio
 	- [x] useVideo
 	- [x] useEventSource
-	- [ ] useWebSocket (https://vueuse.org/core/useWebSocket/)
-	- [ ] useFetch (with suspense ???)
-	- [ ] useAsync
+	- [x] useWebSocket
 	- [ ] useMedia
 	- [ ] useDevicesList (https://vueuse.org/core/useDevicesList/)
 	- [ ] useDisplayMedia
@@ -123,10 +121,11 @@
 	- [ ] useMediaStream
 	- [ ] useObservable — tracks latest value of an Observable
    	- [ ] usePointerTouchSwipe (https://vueuse.org/core/usePointerSwipe/ https://vueuse.org/core/useSwipe/)
-	- [ ] useLock - (https://developer.mozilla.org/en-US/docs/Web/API/LockManager/request)
-	- [ ] useIndexedDB
 	- [ ] useWebWorker (https://vueuse.org/core/useWebWorker/)
 	- [ ] useWebWorkerFn (https://vueuse.org/core/useWebWorkerFn/)
+	- [ ] useIndexedDB
+	- [ ] useFetch (with suspense ???)
+	- [ ] useLock - (https://developer.mozilla.org/en-US/docs/Web/API/LockManager/request)
 	- [ ] useIdleDetection (not work yet. https://developer.mozilla.org/en-US/docs/Web/API/Idle_Detection_API)
 
 - __UTILS__

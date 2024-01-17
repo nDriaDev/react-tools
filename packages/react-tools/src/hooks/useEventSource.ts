@@ -1,20 +1,20 @@
 import { useCallback, useMemo, useRef } from "react";
 import { UseEventSourceProps, UseEventSourceResult } from "../models";
-import { useEffectOnce, useSyncExternalStore } from ".";
+import { useSyncExternalStore } from ".";
 
 /**
  * **`useEventSource`**: Hook to handle an [EventSource](https://developer.mozilla.org/en-US/docs/Web/API/EventSource) or [Server-Sent-Events](https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events) connection to an HTTP server, which sends events in text/event-stream format.
  * @param {UseEventSourceProps} param - object
- * @param {UseEventSourceProps} param.url - string that represents the location of the remote resource serving the events/messages.
- * @param {UseEventSourceProps} [param.opts] - options to configure the new connection. The possible entries are: __withCredentials__ -> boolean value, defaulting to false, indicating if CORS should be set to include credentials.
- * @param {UseEventSourceProps} [param.events] - array of objects with properties __name__ and __handler__ to listen specified events from source.
- * @param {UseEventSourceProps} [param.immediateConnection] - boolean to start connection immediatly.
- * @param {UseEventSourceProps} [param.onOpen] - function that will be executed when connection is opened.
- * @param {UseEventSourceProps} [param.onError] - function that will be executed when an error occurred.
- * @param {UseEventSourceProps} [param.onMessage] - function that will be executed when a message from without event arrived.
+ * @param {string|URL} [param.url] - string that represents the location of the remote resource serving the events/messages.
+ * @param {EventSourceInit} [param.opts] - options to configure the new connection. The possible entries are: __withCredentials__ -> boolean value, defaulting to false, indicating if CORS should be set to include credentials.
+ * @param {{name: string, handler?:(evt:MessagEvent)=>void}[]} [param.events] - array of objects with properties __name__ and __handler__ to listen specified events from source.
+ * @param {boolean} [param.immediateConnection] - boolean to start connection immediatly.
+ * @param {(evt: Event)=>void} [param.onOpen] - function that will be executed when connection is opened.
+ * @param {(evt: Event)=>void} [param.onError] - function that will be executed when an error occurred.
+ * @param {(evt: MessageEvent<T>)=>void} [param.onMessage] - function that will be executed when a message from without event arrived.
  * @returns {UseEventSourceResult} result
  * Object with these properties:
- * - __status__: string rapresenting eventsource state connection: __READY__ __CONNECTING__ __OPENED__ or __CLOSED__
+ * - __status__: string rapresenting eventsource state connection: __READY__ __CONNECTING__ __OPENED__ or __CLOSED__.
  * - __data__: last data value arrived from eventSource.
  * - __open__: function that opens connection.
  * - __close__: function that closes connection.
@@ -34,10 +34,10 @@ export const useEventSource = <T>({ url, opts, events, immediateConnection, onOp
 		}
 	}));
 	const cachedState = useRef<{ status: UseEventSourceResult<T>["status"], data: UseEventSourceResult<T>["data"] }>({
-		status: immediateConnection ? "CONNECTING" : "READY",
+		status: immediateConnection && url ? "CONNECTING" : "READY",
 		data: null
 	});
-	if (immediateConnection && !alreadyOpened.current) {
+	if (url && immediateConnection && !alreadyOpened.current) {
 		alreadyOpened.current = true;
 		sourceRef.current = new EventSource(url, opts);
 	}
@@ -76,10 +76,13 @@ export const useEventSource = <T>({ url, opts, events, immediateConnection, onOp
 		});
 	}
 
-	const open = useCallback(() => {
-		sourceRef.current = new EventSource(url, opts);
-		cachedState.current.status = "CONNECTING";
-		notifyRef.current && notifyRef.current();
+	const open = useCallback((urlParam?: UseEventSourceProps["url"]) => {
+		if (url || urlParam) {
+			const urlES = url ?? urlParam as string | URL;
+			sourceRef.current = new EventSource(urlES, opts);
+			cachedState.current.status = "CONNECTING";
+			notifyRef.current && notifyRef.current();
+		}
 	}, [opts, url]);
 
 	const close = useCallback(() => {
@@ -98,7 +101,7 @@ export const useEventSource = <T>({ url, opts, events, immediateConnection, onOp
 		}, []),
 		useMemo(() => {
 			let state: typeof cachedState.current = {
-				status: immediateConnection ? "CONNECTING" : "READY",
+				status: immediateConnection && url ? "CONNECTING" : "READY",
 				data: null
 			}
 			return () => {
@@ -109,12 +112,10 @@ export const useEventSource = <T>({ url, opts, events, immediateConnection, onOp
 				}
 				return state;
 			}
-		}, [immediateConnection])
+		}, [immediateConnection, url])
 	);
 
 	const data = useMemo(() => (state.data), [state.data]);
-
-	useEffectOnce(() => () => close());
 
 	return {
 		status: state.status,

@@ -1,4 +1,4 @@
-export type { DependencyListTyped, CompareFn, ArrayMinLength1, LanguageBCP47Tags } from "./common.model";
+export type { DependencyListTyped, CompareFn, ArrayMinLength1, LanguageBCP47Tags, TypedArray, HTMLMediaControls, HTMLMediaState } from "./common.model";
 export type { UseScriptProps, UseScript, UseScriptStatus } from './useScript.model';
 export type { TextSelection } from './useTextSelection.model';
 export type { UseResponsiveKeys, UseResponsiveBreakpoints } from './useResponsive.model';
@@ -21,3 +21,4 @@ export type { UseAnimationProps, UseAnimationResult } from './useAnimation.model
 export type { UseAudioProps, UseAudioResult } from './useAudio.model';
 export type { UseVideoProps, UseVideoResult } from './useVideo.model';
 export type { UseEventSourceProps, UseEventSourceResult } from './useEventSource.model';
+export type { UseWebSocketProps, UseWebSocketResult } from './useWebSocket.model';

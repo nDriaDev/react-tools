@@ -11,19 +11,19 @@ useEventSource<T>({ url, opts, events, immediateConnection, onOpen, onError, onM
 >
 > - __param__: _UseEventSourceProps_  
 object
-> - __param.url__: _UseEventSourceProps_  
+> - __param.url?__: _string|URL_  
 string that represents the location of the remote resource serving the events/messages.
-> - __param.opts?__: _UseEventSourceProps_  
+> - __param.opts?__: _EventSourceInit_  
 options to configure the new connection. The possible entries are: __withCredentials__ -> boolean value, defaulting to false, indicating if CORS should be set to include credentials.
-> - __param.events?__: _UseEventSourceProps_  
+> - __param.events?__: _{name: string, handler?:(evt:MessagEvent)=>void}[]_  
 array of objects with properties __name__ and __handler__ to listen specified events from source.
-> - __param.immediateConnection?__: _UseEventSourceProps_  
+> - __param.immediateConnection?__: _boolean_  
 boolean to start connection immediatly.
-> - __param.onOpen?__: _UseEventSourceProps_  
+> - __param.onOpen?__: _(evt: Event)=>void_  
 function that will be executed when connection is opened.
-> - __param.onError?__: _UseEventSourceProps_  
+> - __param.onError?__: _(evt: Event)=>void_  
 function that will be executed when an error occurred.
-> - __param.onMessage?__: _UseEventSourceProps_  
+> - __param.onMessage?__: _(evt: MessageEvent<T>)=>void_  
 function that will be executed when a message from without event arrived.
 >
 
@@ -31,7 +31,7 @@ function that will be executed when a message from without event arrived.
 >
 > __result__:  _UseEventSourceResult_  
 > Object with these properties:
-> - __status__: string rapresenting eventsource state connection: __READY__ __CONNECTING__ __OPENED__ or __CLOSED__
+> - __status__: string rapresenting eventsource state connection: __READY__ __CONNECTING__ __OPENED__ or __CLOSED__.
 > - __data__: last data value arrived from eventSource.
 > - __open__: function that opens connection.
 > - __close__: function that closes connection.
