@@ -94,3 +94,4 @@ export { useWebSocket } from './useWebSocket';
 export { useContextMenu } from './useContextMenu';
 export { useMediaDevices } from './useMediaDevices';
 export { usePermission } from './usePermission';
+export { useDisplayMedia } from './useDisplayMedia';

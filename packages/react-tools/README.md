@@ -115,7 +115,7 @@
 	- [x] useWebSocket
 	- [x] usePermission
 	- [x] useMediaDevices
-	- [ ] useDisplayMedia
+	- [x] useDisplayMedia
 	- [ ] useScreenShare
 	- [ ] useMediaDevices
 	- [ ] useMediaStream

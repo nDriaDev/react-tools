@@ -113,7 +113,8 @@ export const COMPONENTS = [
 			"useEventSource",
 			"useWebSocket",
 			"usePermission",
-			"useMediaDevices"
+			"useMediaDevices",
+			"useDisplayMedia"
 		]
 	],
 	//UTILS

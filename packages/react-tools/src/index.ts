@@ -171,7 +171,8 @@ export {
 	useWebSocket,
 	useContextMenu,
 	useMediaDevices,
-	usePermission
+	usePermission,
+	useDisplayMedia
 } from './hooks'
 
 export {

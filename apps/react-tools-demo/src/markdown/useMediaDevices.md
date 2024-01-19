@@ -13,7 +13,12 @@ export const UseMediaDevices = () => {
 			const devices = await action(async () => {
 				setDevices(await action());
 			});
-			setDevices(devices);
+			setDevices(devices.reduce((prev, curr) => {
+				if (prev.every(el => el.deviceId !== curr.deviceId)) {
+					prev.push(curr);
+				}
+				return prev;
+			}, [] as MediaDeviceInfo[]));
 		} catch (error) {
 			alert((error as Error).message);
 		}
