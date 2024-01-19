@@ -92,3 +92,5 @@ export { useVideo } from './useVideo';
 export { useEventSource } from './useEventSource';
 export { useWebSocket } from './useWebSocket';
 export { useContextMenu } from './useContextMenu';
+export { useMediaDevices } from './useMediaDevices';
+export { usePermission } from './usePermission';

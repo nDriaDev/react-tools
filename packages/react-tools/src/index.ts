@@ -67,7 +67,12 @@ export type {
 	HTMLMediaState,
 	TypedArray,
 	UseWebSocketProps,
-	UseWebSocketResult
+	UseWebSocketResult,
+	TPermissionState,
+	TPermissionName,
+	UsePermissionResult,
+	UseMediaDevicesProps,
+	UseMediaDevicesResult
 } from './models'
 
 export {
@@ -164,7 +169,9 @@ export {
 	useVideo,
 	useEventSource,
 	useWebSocket,
-	useContextMenu
+	useContextMenu,
+	useMediaDevices,
+	usePermission
 } from './hooks'
 
 export {
@@ -174,5 +181,6 @@ export {
 	isTouchEvent,
 	isClient,
 	isAsync,
-	hotKeyHandler
+	hotKeyHandler,
+	detectBrowser
 } from './utils'

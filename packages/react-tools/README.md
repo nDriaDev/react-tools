@@ -113,8 +113,8 @@
 	- [x] useVideo
 	- [x] useEventSource
 	- [x] useWebSocket
-	- [ ] useMedia
-	- [ ] useDevicesList (https://vueuse.org/core/useDevicesList/)
+	- [x] usePermission
+	- [x] useMediaDevices
 	- [ ] useDisplayMedia
 	- [ ] useScreenShare
 	- [ ] useMediaDevices
@@ -136,6 +136,7 @@
 	- [x] isClient
 	- [x] isAsync
 	- [x] hotKeyHandler
+	- [x] detectBrowser
 	- [ ] lazy: lazy react-like customized
 	- [ ] fetch-client (???ARTS-like)
 	- [ ] useBase64 (https://vueuse.org/core/useBase64/)

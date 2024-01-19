@@ -7,3 +7,4 @@ export { PublishSubscribePattern } from './PublishSubscribePattern';
 export { EventsPattern } from './EventsPattern';
 export { isAsync } from './isAsync';
 export { hotKeyHandler } from './hotKeyHandler';
+export { detectBrowser } from './detectBrowser';

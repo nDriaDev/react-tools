@@ -70,7 +70,7 @@ export const COMPONENTS = [
 			"useHotKeys",
 			"usePinchZoom",
 			"usePointerLock",
-			"useContextMenu"
+			"useContextMenu",
 		],
 		//API DOM
 		[
@@ -111,7 +111,9 @@ export const COMPONENTS = [
 			"useAudio",
 			"useVideo",
 			"useEventSource",
-			"useWebSocket"
+			"useWebSocket",
+			"usePermission",
+			"useMediaDevices"
 		]
 	],
 	//UTILS
@@ -122,6 +124,7 @@ export const COMPONENTS = [
 		"isMouseEvent",
 		"isClient",
 		"isAsync",
-		"hotKeyHandler"
+		"hotKeyHandler",
+		"detectBrowser"
 	]
 ] as const;

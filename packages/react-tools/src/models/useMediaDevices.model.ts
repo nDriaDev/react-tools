@@ -1,0 +1,3 @@
+export type UseMediaDevicesProps = "devicesList" | "supportedConstraintsList" | "DisplayCapture" | "mediaInputCapture";
+
+export type UseMediaDevicesResult = ((onDevicesChange?: ((evt: Event) => void | Promise<void>) | undefined) => Promise<MediaDeviceInfo[]>) | ((onDevicesChange?: ((evt: Event) => void | Promise<void>) | undefined) => MediaTrackSupportedConstraints) | ((options?: DisplayMediaStreamOptions, onDevicesChange?: ((evt: Event) => void | Promise<void>) | undefined) => Promise<MediaStream>) | ((constraints?: MediaStreamConstraints, onDevicesChange?: ((evt: Event) => void | Promise<void>) | undefined) => Promise<MediaStream>);
