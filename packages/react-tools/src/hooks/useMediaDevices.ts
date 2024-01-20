@@ -1,6 +1,6 @@
 import { useRef } from "react"
 import { useEffectOnce } from ".";
-import { UseMediaDevicesProps, UseMediaDevicesResult } from "../models";
+import { TDisplayMediaStreamOptions, UseMediaDevicesProps, UseMediaDevicesResult } from "../models";
 
 let mediaDevicesOnChangeAttached = false;
 const mediaDevicesListeners = new Set<(evt: Event) => Promise<void> | void>();
@@ -63,7 +63,7 @@ function useMediaDevices(action: UseMediaDevicesProps): UseMediaDevicesResult {
 		return navigator.mediaDevices.getSupportedConstraints()
 	});
 
-	const getDisplay = useRef((options?: DisplayMediaStreamOptions, onDevicesChange?: (evt: Event) => Promise<void> | void) => {
+	const getDisplay = useRef((options?: TDisplayMediaStreamOptions, onDevicesChange?: (evt: Event) => Promise<void> | void) => {
 		if (!navigator.mediaDevices?.getDisplayMedia) {
 			throw Error("getDisplay not supported");
 		}

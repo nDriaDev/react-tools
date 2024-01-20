@@ -72,7 +72,9 @@ export type {
 	TPermissionName,
 	UsePermissionResult,
 	UseMediaDevicesProps,
-	UseMediaDevicesResult
+	UseMediaDevicesResult,
+	TDisplayMediaStreamOptions,
+	CaptureController
 } from './models'
 
 export {

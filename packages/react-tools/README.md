@@ -116,7 +116,6 @@
 	- [x] usePermission
 	- [x] useMediaDevices
 	- [x] useDisplayMedia
-	- [ ] useScreenShare
 	- [ ] useObservable — tracks latest value of an Observable
    	- [ ] usePointerTouchSwipe (https://vueuse.org/core/usePointerSwipe/ https://vueuse.org/core/useSwipe/)
 	- [ ] useWebWorker (https://vueuse.org/core/useWebWorker/)
