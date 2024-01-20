@@ -151,6 +151,7 @@ export {
 	useMergedRef,
 	useHotKeys,
 	usePinchZoom,
+	useDeferredValue,
 	useLogger,
 	useDeviceMotion,
 	useDeviceOrientation,

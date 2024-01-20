@@ -17,6 +17,7 @@
 	- [x] useDerivedState
 	- [ ] useStateValidator (???)
 	- [ ] useSignal (https://medium.com/@personal.david.kohen/the-quest-for-signals-in-react-usestate-on-steroids-71eb9fc87c14)
+	- [ ] useObservable — tracks latest value of an Observable
 	- [ ] useStore
 	- [ ] createStore (example: https://github.com/streamich/react-use/blob/master/src/factory/createGlobalState.ts)
  	- [ ] usePubSubStore (with pusSub model)
@@ -46,9 +47,9 @@
 
 - __EVENTS__
 	- [x] useEvents
-	- [x] useEventListener
+	- [x] useEventListener (edit to handle multiple type)
 	- [x] useEventDispatcher
-	- [x] usePerformAction (se non si riesce a fare il polyfill di useDeferredValue, valutare di farlo utilizzando requestIdleCallback)
+	- [x] usePerformAction
 	- [x] useDocumentVisibility
 	- [x] useHover
 	- [x] useResponsive
@@ -116,7 +117,6 @@
 	- [x] usePermission
 	- [x] useMediaDevices
 	- [x] useDisplayMedia
-	- [ ] useObservable — tracks latest value of an Observable
    	- [ ] usePointerTouchSwipe (https://vueuse.org/core/usePointerSwipe/ https://vueuse.org/core/useSwipe/)
 	- [ ] useWebWorker (https://vueuse.org/core/useWebWorker/)
 	- [ ] useWebWorkerFn (https://vueuse.org/core/useWebWorkerFn/)
@@ -136,6 +136,7 @@
 	- [x] detectBrowser
 	- [ ] lazy: lazy react-like customized
 	- [ ] fetch-client (???ARTS-like)
+	- [ ] defaultSerializer (https://github.com/vueuse/vueuse/blob/main/packages/core/useBase64/serialization.ts)
 	- [ ] useBase64 (https://vueuse.org/core/useBase64/)
 
 - __COMPONENT__
