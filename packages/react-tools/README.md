@@ -144,8 +144,8 @@
 - __COMPONENT__
 	- [ ] Show component to render or not a component by a condition. Props: when, fallback, keyed. Keyed is a boolean and needs to avoid rerenders children when it is a function.
 	- [ ] Switch and Match components with fallback and when props
-	- [ ] For: A referentially keyed loop with efficient updating of only changed items. The callback takes the current item as the first argument
-	- [ ] Index: Non-keyed list iteration (rendered nodes are keyed to an array index). This is useful when there is no conceptual key, like if the data consists of primitives and it is the index that is fixed rather than the value.
+	- [ ] For/Each: A referentially keyed loop with efficient updating of only changed items. The callback takes the current item as the first argument (ref https://javascript.plainenglish.io/react-each-and-of-pattern-b00aa4305089	)
+ - [ ] Index: Non-keyed list iteration (rendered nodes are keyed to an array index). This is useful when there is no conceptual key, like if the data consists of primitives and it is the index that is fixed rather than the value.
 	- [ ] RestrictedRoute (maybe)
 	- [ ] ErrorBoundary (?? error event listener)
 	- [ ] Suspense: Suspence compontent react-like for async component
