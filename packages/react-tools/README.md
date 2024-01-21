@@ -44,6 +44,7 @@
 	- [x] useMergedRef
 	- [x] useLazyRef
 	- [x] useId
+ - [ ] usePromise (https://github.com/vigzmv/react-promise-suspense/blob/master/lib/index.ts)
 
 - __EVENTS__
 	- [x] useEvents
