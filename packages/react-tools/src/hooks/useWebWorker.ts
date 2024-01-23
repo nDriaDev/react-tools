@@ -1,5 +1,6 @@
 import { useCallback, useRef } from "react"
 import { UseWebWorkerProps, UseWebWorkerResult } from "../models";
+import { useEffectOnce } from ".";
 
 /**
  * **`useWebWorker`**: Hook to use [Web Worker](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API), handling registration and communication.
@@ -16,21 +17,6 @@ import { UseWebWorkerProps, UseWebWorkerResult } from "../models";
  */
 export const useWebWorker = ({ url, options, onMessage, onError, onMessageError }: UseWebWorkerProps): UseWebWorkerResult => {
 	const worker = useRef<Worker>();
-	const terminated = useRef(false);
-
-	if (!worker.current && !terminated.current) {
-		const path = url instanceof URL ? url : new URL(url, import.meta.url);
-		worker.current = new Worker(path, options);
-		worker.current.onerror = (e: Event) => {
-			!!onError && onError(e);
-		}
-		worker.current.onmessageerror = (e: MessageEvent) => {
-			!!onMessageError && onMessageError(e);
-		}
-		worker.current.onmessage = (e: MessageEvent) => {
-			!!onMessage && onMessage(e);
-		}
-	}
 
 	const send: UseWebWorkerResult["send"] = useCallback(<T>(message: T, transfer?: Transferable[] | StructuredSerializeOptions) => {
 		if (Array.isArray(transfer)) {
@@ -42,9 +28,26 @@ export const useWebWorker = ({ url, options, onMessage, onError, onMessageError 
 
 	const terminate = useCallback(() => {
 		worker.current?.terminate();
-		terminated.current = true;
 		worker.current = undefined;
 	}, []);
+
+	useEffectOnce(() => {
+		const path = url instanceof URL ? url : new URL(url, import.meta.url);
+		worker.current = new Worker(path, options);
+		worker.current.onerror = (e: Event) => {
+			!!onError && onError(e);
+		}
+		worker.current.onmessageerror = (e: MessageEvent) => {
+			!!onMessageError && onMessageError(e);
+		}
+		worker.current.onmessage = (e: MessageEvent) => {
+			!!onMessage && onMessage(e);
+		}
+		return () => {
+			worker.current?.terminate();
+			worker.current = undefined;
+		}
+	})
 
 	return {
 		send,

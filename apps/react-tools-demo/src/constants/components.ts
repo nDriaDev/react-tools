@@ -116,7 +116,8 @@ export const COMPONENTS = [
 			"usePermission",
 			"useMediaDevices",
 			"useDisplayMedia",
-			"useWebWorker"
+			"useWebWorker",
+			"useWebWorkerFn"
 		]
 	],
 	//UTILS

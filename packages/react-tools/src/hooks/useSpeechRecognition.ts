@@ -1,6 +1,6 @@
 import { useCallback, useMemo, useRef } from "react";
 import { SpeechRecognition, SpeechRecognitionConfig, SpeechRecognitionEvent, SpeechRecognitionState, UseSpeechRecognitionProps } from "../models";
-import { useSyncExternalStore } from ".";
+import { useEffectOnce, useSyncExternalStore } from ".";
 
 /**
  * **`useSpeechRecognition`**: Hook to use _SpeechRecognition API_. Refer to [Web Speech API](https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognition).
@@ -40,7 +40,6 @@ export const useSpeechRecognition = ({ alreadyStarted, defaultConfig, onAudioSta
 	const recognition = useRef<SpeechRecognition>();
 	const notifRef = useRef<() => void>();
 	const isListening = useRef(false);
-	const firstExecution = useRef(true);
 	const result = useRef<{ results: SpeechRecognitionEvent["results"]|null, resultIndex: SpeechRecognitionEvent["resultIndex"]|null }>({resultIndex: null, results: null});
 
 	const start = useCallback((config?: typeof defaultConfig) => {
@@ -145,11 +144,12 @@ export const useSpeechRecognition = ({ alreadyStarted, defaultConfig, onAudioSta
 		}, [])
 	);
 
-	if (firstExecution.current && isSupported.current && alreadyStarted) {
-		isListening.current = true;
-		firstExecution.current = false;
-		start();
-	}
+	useEffectOnce(() => {
+		if (isSupported.current && alreadyStarted) {
+			isListening.current = true;
+			start();
+		}
+	})
 
 	return [state, start, stop.current, reset.current];
 }

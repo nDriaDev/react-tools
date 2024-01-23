@@ -98,3 +98,4 @@ export { usePermission } from './usePermission';
 export { useDisplayMedia } from './useDisplayMedia';
 export { useSwipe } from './useSwipe';
 export { useWebWorker } from './useWebWorker';
+export { useWebWorkerFn } from './useWebWorkerFn';

@@ -1,6 +1,6 @@
 import { useCallback, useMemo, useRef } from "react";
 import { UseEventSourceProps, UseEventSourceResult } from "../models";
-import { useSyncExternalStore } from ".";
+import { useEffectOnce, useSyncExternalStore } from ".";
 
 /**
  * **`useEventSource`**: Hook to handle an [EventSource](https://developer.mozilla.org/en-US/docs/Web/API/EventSource) or [Server-Sent-Events](https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events) connection to an HTTP server, which sends events in text/event-stream format.
@@ -20,7 +20,6 @@ import { useSyncExternalStore } from ".";
  * - __close__: function that closes connection.
  */
 export const useEventSource = <T>({ url, opts, events, immediateConnection, onOpen, onError, onMessage }: UseEventSourceProps): UseEventSourceResult<T> => {
-	const alreadyOpened = useRef(false);
 	const notifyRef = useRef<() => void>();
 	const sourceRef = useRef<EventSource>();
 	const eventsHandler = useRef((events || []).map(evt => {
@@ -37,44 +36,6 @@ export const useEventSource = <T>({ url, opts, events, immediateConnection, onOp
 		status: immediateConnection && url ? "CONNECTING" : "READY",
 		data: null
 	});
-	if (url && immediateConnection && !alreadyOpened.current) {
-		alreadyOpened.current = true;
-		sourceRef.current = new EventSource(url, opts);
-	}
-
-	if (sourceRef.current) {
-		sourceRef.current.onopen = (evt: Event) => {
-			!!onOpen && onOpen(evt);
-			cachedState.current.status = "OPENED";
-			notifyRef.current && notifyRef.current();
-		};
-		sourceRef.current.onerror = (evt: Event) => {
-			!!onError && onError(evt);
-			cachedState.current.status = "CLOSED";
-			notifyRef.current && notifyRef.current();
-		};
-		sourceRef.current.onmessage = (evt: MessageEvent<T>) => {
-			!!onMessage && onMessage(evt);
-			cachedState.current.data = evt.data;
-			notifyRef.current && notifyRef.current();
-		};
-		eventsHandler.current.forEach(evt => {
-			sourceRef.current?.removeEventListener(evt.name, evt.hanlder);
-		});
-		eventsHandler.current = (events || []).map(evt => {
-			return {
-				name: evt.name,
-				hanlder: (e: MessageEvent) => {
-					!!evt.handler && evt.handler(e);
-					cachedState.current.data = e.data;
-					notifyRef.current && notifyRef.current();
-				}
-			}
-		});
-		eventsHandler.current.forEach(evt => {
-			sourceRef.current?.addEventListener(evt.name, evt.hanlder);
-		});
-	}
 
 	const open = useCallback((urlParam?: UseEventSourceProps["url"]) => {
 		if (url || urlParam) {
@@ -116,6 +77,46 @@ export const useEventSource = <T>({ url, opts, events, immediateConnection, onOp
 	);
 
 	const data = useMemo(() => (state.data), [state.data]);
+
+	useEffectOnce(() => {
+		if (url && immediateConnection) {
+			sourceRef.current = new EventSource(url, opts);
+		}
+	})
+
+	if (sourceRef.current) {
+		sourceRef.current.onopen = (evt: Event) => {
+			!!onOpen && onOpen(evt);
+			cachedState.current.status = "OPENED";
+			notifyRef.current && notifyRef.current();
+		};
+		sourceRef.current.onerror = (evt: Event) => {
+			!!onError && onError(evt);
+			cachedState.current.status = "CLOSED";
+			notifyRef.current && notifyRef.current();
+		};
+		sourceRef.current.onmessage = (evt: MessageEvent<T>) => {
+			!!onMessage && onMessage(evt);
+			cachedState.current.data = evt.data;
+			notifyRef.current && notifyRef.current();
+		};
+		eventsHandler.current.forEach(evt => {
+			sourceRef.current?.removeEventListener(evt.name, evt.hanlder);
+		});
+		eventsHandler.current = (events || []).map(evt => {
+			return {
+				name: evt.name,
+				hanlder: (e: MessageEvent) => {
+					!!evt.handler && evt.handler(e);
+					cachedState.current.data = e.data;
+					notifyRef.current && notifyRef.current();
+				}
+			}
+		});
+		eventsHandler.current.forEach(evt => {
+			sourceRef.current?.addEventListener(evt.name, evt.hanlder);
+		});
+	}
 
 	return {
 		status: state.status,

@@ -79,7 +79,9 @@ export type {
 	UseSwipeProps,
 	UseSwipeResult,
 	UseWebWorkerProps,
-	UseWebWorkerResult
+	UseWebWorkerResult,
+	UseWebWorkerFnProps,
+	UseWebWorkerFnResult
 } from './models'
 
 export {
@@ -182,7 +184,8 @@ export {
 	usePermission,
 	useDisplayMedia,
 	useSwipe,
-	useWebWorker
+	useWebWorker,
+	useWebWorkerFn
 } from './hooks'
 
 export {

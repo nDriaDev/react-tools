@@ -1,6 +1,6 @@
 import { useCallback, useMemo, useRef } from "react";
 import { TypedArray, UseWebSocketProps, UseWebSocketResult } from "../models"
-import { useSyncExternalStore } from ".";
+import { useEffectOnce, useSyncExternalStore } from ".";
 
 /**
  * **`useWebSocket`**: Hook for creating and managing a [WebSocket](https://developer.mozilla.org/en-US/docs/Web/API/WebSocket) connection to a server, as well as for sending and receiving data on the connection.
@@ -25,7 +25,6 @@ import { useSyncExternalStore } from ".";
  */
 export const useWebSocket = <T = string | ArrayBuffer | Blob> ({ url, protocols, binaryType, onOpen, onMessage, onError, onClose, immediateConnection, bufferingData, autoReconnect }: UseWebSocketProps): UseWebSocketResult<T> => {
 	const wsRef = useRef<WebSocket>();
-	const alreadyOpened = useRef(false);
 	const notifyRef = useRef<() => void>();
 	const dataBuffer = useRef<(string | ArrayBuffer | Blob | TypedArray)[]>([]);
 	const retryConnectId = useRef<ReturnType<typeof setTimeout>>();
@@ -43,61 +42,6 @@ export const useWebSocket = <T = string | ArrayBuffer | Blob> ({ url, protocols,
 			dataBuffer.current = [];
 		}
 	}, [bufferingData])
-
-	if (url && immediateConnection && !alreadyOpened.current) {
-		wsRef.current = new WebSocket(url, protocols);
-	}
-
-	if (wsRef.current) {
-		binaryType && (wsRef.current.binaryType = binaryType);
-		wsRef.current.onopen = (evt: Event) => {
-			!!retryConnectId.current && clearInterval(retryConnectId.current);
-			cachedState.current.status = "OPENED";
-			!!onOpen && onOpen(evt);
-			notifyRef.current && notifyRef.current();
-			sendBuffer();
-		};
-		wsRef.current.onclose = (evt: CloseEvent) => {
-			cachedState.current.status = "CLOSED";
-			!!retryConnectId.current && clearInterval(retryConnectId.current);
-			!!onClose && onClose(evt);
-			wsRef.current = undefined;
-			notifyRef.current && notifyRef.current();
-		};
-		wsRef.current.onmessage = (evt: MessageEvent) => {
-			cachedState.current.data = evt.data;
-			!!onMessage && onMessage(evt);
-			notifyRef.current && notifyRef.current();
-		};
-		wsRef.current.onerror = (evt: Event) => {
-			cachedState.current.status = "CLOSED";
-			!!onError && onError(evt);
-			notifyRef.current && notifyRef.current();
-			if (autoReconnect && !retryConnectId.current) {
-				let retries: number, delay: number, onFailed: (() => void) | undefined;
-				if (typeof autoReconnect === "boolean") {
-					retries = 1;
-					delay = 1000;
-				} else {
-					retries = autoReconnect.retries;
-					delay = autoReconnect.delay;
-					onFailed = autoReconnect.onFailed;
-				}
-				retryConnectId.current = setInterval(() => {
-					if (retries === 0) {
-						clearInterval(retryConnectId.current);
-						retryConnectId.current = undefined;
-						!!onFailed && onFailed();
-					} else {
-						wsRef.current = undefined;
-						wsRef.current = new WebSocket(urlRef.current!, protocols);
-						cachedState.current.status = "CONNECTING";
-						notifyRef.current && notifyRef.current();
-					}
-				}, delay);
-			}
-		}
-	}
 
 	const open = useCallback((urlParam?: UseWebSocketProps["url"]) => {
 		if (!wsRef.current && (url || urlParam)) {
@@ -151,6 +95,63 @@ export const useWebSocket = <T = string | ArrayBuffer | Blob> ({ url, protocols,
 
 	const status = useMemo(() => state.status, [state.status]);
 	const data = useMemo(() => state.data, [state.data]);
+
+	useEffectOnce(() => {
+		if (url && immediateConnection) {
+			wsRef.current = new WebSocket(url, protocols);
+		}
+	})
+
+	if (wsRef.current) {
+		binaryType && (wsRef.current.binaryType = binaryType);
+		wsRef.current.onopen = (evt: Event) => {
+			!!retryConnectId.current && clearInterval(retryConnectId.current);
+			cachedState.current.status = "OPENED";
+			!!onOpen && onOpen(evt);
+			notifyRef.current && notifyRef.current();
+			sendBuffer();
+		};
+		wsRef.current.onclose = (evt: CloseEvent) => {
+			cachedState.current.status = "CLOSED";
+			!!retryConnectId.current && clearInterval(retryConnectId.current);
+			!!onClose && onClose(evt);
+			wsRef.current = undefined;
+			notifyRef.current && notifyRef.current();
+		};
+		wsRef.current.onmessage = (evt: MessageEvent) => {
+			cachedState.current.data = evt.data;
+			!!onMessage && onMessage(evt);
+			notifyRef.current && notifyRef.current();
+		};
+		wsRef.current.onerror = (evt: Event) => {
+			cachedState.current.status = "CLOSED";
+			!!onError && onError(evt);
+			notifyRef.current && notifyRef.current();
+			if (autoReconnect && !retryConnectId.current) {
+				let retries: number, delay: number, onFailed: (() => void) | undefined;
+				if (typeof autoReconnect === "boolean") {
+					retries = 1;
+					delay = 1000;
+				} else {
+					retries = autoReconnect.retries;
+					delay = autoReconnect.delay;
+					onFailed = autoReconnect.onFailed;
+				}
+				retryConnectId.current = setInterval(() => {
+					if (retries === 0) {
+						clearInterval(retryConnectId.current);
+						retryConnectId.current = undefined;
+						!!onFailed && onFailed();
+					} else {
+						wsRef.current = undefined;
+						wsRef.current = new WebSocket(urlRef.current!, protocols);
+						cachedState.current.status = "CONNECTING";
+						notifyRef.current && notifyRef.current();
+					}
+				}, delay);
+			}
+		}
+	}
 
 	return {
 		status,

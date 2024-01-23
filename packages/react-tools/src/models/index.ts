@@ -26,3 +26,4 @@ export type { UseMediaDevicesProps, UseMediaDevicesResult, TDisplayMediaStreamOp
 export type { TPermissionName, UsePermissionResult, TPermissionState } from './usePermission.model';
 export type { SwipeDirection, UseSwipeProps, UseSwipeResult } from './useSwipe.model';
 export type { UseWebWorkerProps, UseWebWorkerResult } from './useWebWorker.model';
+export type { UseWebWorkerFnProps, UseWebWorkerFnResult } from './useWebWorkerFn.model';

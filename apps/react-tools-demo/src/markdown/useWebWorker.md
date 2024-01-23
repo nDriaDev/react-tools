@@ -6,14 +6,12 @@ Hook to use [Web Worker](https://developer.mozilla.org/en-US/docs/Web/API/Web_Wo
 ```tsx
 export const UseWebWorker = () => {
 	const [ts, setTs] = useState(Date.now());
-	const [res, setRes] = useState<number[]>([]);
 	const [mess, setMess] = useState<string>("");
 
 	const { send } = useWebWorker({
 		url: new URL('./worker.ts', import.meta.url),
 		onMessage: useCallback((e: MessageEvent) => {
-			setMess("");
-			setRes(e.data)
+			setMess(e.data.res.join(","))
 		}, [])
 	});
 
@@ -24,7 +22,7 @@ export const UseWebWorker = () => {
 
 	return <div>
 		<p>Timestamp: {ts}</p>
-		<p>Result: {mess ? mess : res ? res.toString() : ""}</p>
+		<p>Result: {mess ? mess : ""}</p>
 		<button
 			onClick={() => {
 				setMess("Pending...");

@@ -120,7 +120,7 @@
 	- [x] useMediaDevices
 	- [x] useDisplayMedia
 	- [x] useWebWorker
-	- [ ] useWebWorkerFn (https://vueuse.org/core/useWebWorkerFn/)
+	- [x] useWebWorkerFn
 	- [ ] useIndexedDB
 	- [ ] useFetch (with suspense ???)
 	- [ ] useLock - (https://developer.mozilla.org/en-US/docs/Web/API/LockManager/request)
