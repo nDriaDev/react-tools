@@ -18,7 +18,7 @@ export const useHotKeys = ({ hotKey, type = "keydown", target = window, listener
 		return handler;
 	}, [hotKey, listener]);
 
-	const remove = useEventListener<KeyboardEvent>({
+	const remove = useEventListener({
 		type,
 		listener: handler,
 		listenerOpts,

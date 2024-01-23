@@ -74,7 +74,10 @@ export type {
 	UseMediaDevicesProps,
 	UseMediaDevicesResult,
 	TDisplayMediaStreamOptions,
-	CaptureController
+	CaptureController,
+	SwipeDirection,
+	UseSwipeProps,
+	UseSwipeResult
 } from './models'
 
 export {
@@ -175,7 +178,8 @@ export {
 	useContextMenu,
 	useMediaDevices,
 	usePermission,
-	useDisplayMedia
+	useDisplayMedia,
+	useSwipe
 } from './hooks'
 
 export {

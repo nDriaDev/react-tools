@@ -35,17 +35,17 @@ export { UseEventListener };
 ## API
 
 ```tsx
-useEventListener<T extends Event | CustomEvent>({ type, listener, element = window, listenerOpts, effectType = "normal" }: { type: string, listener: ((evt: T) => unknown | Promise<unknown>), element?: RefObject<HTMLElement> | Window, listenerOpts?: boolean | AddEventListenerOptions, effectType?: "normal" | "layout" }): (() => void)
+useEventListener<T extends keyof WindowEventMap>({ type, listener, element = window, listenerOpts, effectType = "normal" }: { type: T|(T[]), listener: ((evt: WindowEventMap[T]) => unknown | Promise<unknown>), element?: RefObject<Element> | Element | Window, listenerOpts?: boolean | AddEventListenerOptions, effectType?: "normal" | "layout" }): (() => void)
 ```
 
 > ### Params
 >
 > - __options__: _Object_
-> - __options.type__: _string_  
-event type.
+> - __options.type__: _keyof WindowEventMap|(keyof WindowEventMap)[]_  
+event or events type.
 > - __options.listener__: _(evt: Event | CustomEvent) => void_  
 listener to be executed on specified event.
-> - __options.element=window?__: _RefObject<HTMLElement> | Window_  
+> - __options.element=window?__: _RefObject<Element> | Element | Window_  
 element on which attaching eventListener.
 > - __options.listenerOpts?__: _boolean | AddEventListenerOptions_  
 options for listener.

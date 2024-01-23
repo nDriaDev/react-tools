@@ -23,4 +23,5 @@ export type { UseVideoProps, UseVideoResult } from './useVideo.model';
 export type { UseEventSourceProps, UseEventSourceResult } from './useEventSource.model';
 export type { UseWebSocketProps, UseWebSocketResult } from './useWebSocket.model';
 export type { UseMediaDevicesProps, UseMediaDevicesResult, TDisplayMediaStreamOptions, CaptureController } from './useMediaDevices.model';
-export type { TPermissionName, UsePermissionResult, TPermissionState} from './usePermission.model';
+export type { TPermissionName, UsePermissionResult, TPermissionState } from './usePermission.model';
+export type { SwipeDirection, UseSwipeProps, UseSwipeResult } from './useSwipe.model';

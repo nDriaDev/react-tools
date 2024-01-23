@@ -44,7 +44,7 @@
 	- [x] useMergedRef
 	- [x] useLazyRef
 	- [x] useId
- - [ ] usePromise (https://github.com/vigzmv/react-promise-suspense/blob/master/lib/index.ts)
+ 	- [ ] usePromise (https://github.com/vigzmv/react-promise-suspense/blob/master/lib/index.ts)
 
 - __EVENTS__
 	- [x] useEvents
@@ -72,6 +72,7 @@
 	- [x] usePinchZoom
 	- [x] usePointerLock
 	- [x] useContextMenu
+   	- [x] useSwipe
 	- [ ] useInfiniteScroll
 	- [ ] useDragAndDrop (check for mobile usage)
 
@@ -118,7 +119,6 @@
 	- [x] usePermission
 	- [x] useMediaDevices
 	- [x] useDisplayMedia
-   	- [ ] usePointerTouchSwipe (https://vueuse.org/core/usePointerSwipe/ https://vueuse.org/core/useSwipe/)
 	- [ ] useWebWorker (https://vueuse.org/core/useWebWorker/)
 	- [ ] useWebWorkerFn (https://vueuse.org/core/useWebWorkerFn/)
 	- [ ] useIndexedDB
@@ -139,12 +139,22 @@
 	- [ ] fetch-client (???ARTS-like)
 	- [ ] defaultSerializer (https://github.com/vueuse/vueuse/blob/main/packages/core/useBase64/serialization.ts)
 	- [ ] useBase64 (https://vueuse.org/core/useBase64/)
+	- [ ] removePropertiesFromArrayObject
+	- [ ] uniqueElements
+	- [ ] getKeyObjectFromValue
+	- [ ] dottedStringToObject
+	- [ ] mergeObjects
+	- [ ] alphanumericCompare
+	- [ ] camelCase
+	- [ ] pascalCase
+	- [ ] kebabCase
+	- [ ] snakeCase
 
 - __COMPONENT__
 	- [ ] Show component to render or not a component by a condition. Props: when, fallback, keyed. Keyed is a boolean and needs to avoid rerenders children when it is a function.
 	- [ ] Switch and Match components with fallback and when props
-	- [ ] For/Each: A referentially keyed loop with efficient updating of only changed items. The callback takes the current item as the first argument (ref https://javascript.plainenglish.io/react-each-and-of-pattern-b00aa4305089	)
- - [ ] Index: Non-keyed list iteration (rendered nodes are keyed to an array index). This is useful when there is no conceptual key, like if the data consists of primitives and it is the index that is fixed rather than the value.
+	- [ ] For/Each: A referentially keyed loop with efficient updating of only changed items. The callback takes the current item as the first argument (ref https://javascript.plainenglish.io/react-each-and-of-pattern-b00aa4305089)
+	- [ ] Index: Non-keyed list iteration (rendered nodes are keyed to an array index). This is useful when there is no conceptual key, like if the data consists of primitives and it is the index that is fixed rather than the value.
 	- [ ] RestrictedRoute (maybe)
 	- [ ] ErrorBoundary (?? error event listener)
 	- [ ] Suspense: Suspence compontent react-like for async component

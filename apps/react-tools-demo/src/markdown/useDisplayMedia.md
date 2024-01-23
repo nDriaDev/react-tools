@@ -5,17 +5,23 @@ Hook to capture the contents of a display.
 
 ```tsx
 export const UseDisplayMedia = () => {
-	const start = useDisplayMedia();
+	const [stream, start, stop] = useDisplayMedia();
 	const ref = useRef<HTMLVideoElement>(null);
 
 	const init = async () => {
-		const stream = await start();
-		ref.current && (ref.current.srcObject = stream);
+		await start();
 	}
 
-	return <div style={{ display: "grid", gridTemplateRows: "auto auto", justifyContent: "center", gap: 50, maxHeight: 350, overflow: "auto" }}>
+	if (ref.current) {
+		stream
+			? (ref.current.srcObject = stream)
+			: (ref.current.srcObject = null);
+	}
+
+	return <div style={{ display: "grid", gridTemplateRows: "auto auto auto", justifyContent: "center", gap: 20, maxHeight: 350, overflow: "auto" }}>
 		<button onClick={init}>Start</button>
-		<video autoPlay controls ref={ref}/>
+		<button onClick={stop}>Stop</button>
+		<video autoPlay width={300} height={200} ref={ref}/>
 	</div>
 }
 
@@ -27,7 +33,7 @@ export const UseDisplayMedia = () => {
 ## API
 
 ```tsx
-useDisplayMedia()
+useDisplayMedia(): [MediaStream | undefined, (options?: TDisplayMediaStreamOptions) => Promise<void>, () => void]
 ```
 
 > ### Params
@@ -37,8 +43,13 @@ useDisplayMedia()
 
 > ### Returns
 >
-> __start__: function to start capture.
-> - __Union of__:  
->     - _(options: DisplayMediaStreamOptions_  
->     - _undefined) => Promise<MediaStream>_  
+> __result__:  __Union of__:  
+    - __Array__:  
+        - _MediaStream|undefined_  
+        - _(options: TDisplayMediaStreamOption_  
+    - _undefined) => Promise<void>, ()=>void]_  
+> Array containing:
+> - first element: the captured stream.
+> - second element: function that starts capture.
+> - third element: function that stops capture.
 >

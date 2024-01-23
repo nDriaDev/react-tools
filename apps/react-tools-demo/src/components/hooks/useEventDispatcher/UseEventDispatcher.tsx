@@ -22,7 +22,7 @@ export const UseEventDispatcher = () => {
 	useEventListener({
 		type: "demo",
 		element: inputRef,
-		listener: (evt) => {
+		listener: (evt: CustomEvent) => {
 			setState((evt as CustomEvent<string>).detail);
 		},
 	});
