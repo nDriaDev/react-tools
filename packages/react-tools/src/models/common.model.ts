@@ -1,3 +1,26 @@
+export type NestedKeyOf<T extends object> =
+	{ [Key in keyof T & (string | number)]: T[Key] extends object
+		? `${Key}.${NestedKeyOf<T[Key]>}`
+		: `${Key}`
+	}[keyof T & (string | number)];
+
+export type SelectiveKeyOf<T extends object, E extends string> =
+	{ [key in keyof T & (string | number)]: `${E}.${key}` }[keyof T & (string | number)];
+
+export type SelectiveNestedKeyOf<T extends string, E extends string> = `${E}.${T}`;
+
+export type ErrorModel<T extends object> = {
+	[k in keyof T]: T[k] extends object ? ErrorModel<T[k]> : boolean;
+}
+
+export type SelectivePartial<T extends object, E extends keyof T> = Omit<T, E> & Partial<Pick<T, E>>;
+
+export type RecursivePartial<T extends object> = {
+	[K in keyof T]?: T[K] extends object ? RecursivePartial<T[K]> : Partial<T[K]>;
+}
+
+export type Optional<T = unknown, E = null> = T | E;
+
 export type DependencyListTyped<T = unknown> = ReadonlyArray<T>;
 
 /**

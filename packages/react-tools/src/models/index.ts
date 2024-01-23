@@ -1,4 +1,4 @@
-export type { DependencyListTyped, CompareFn, ArrayMinLength1, LanguageBCP47Tags, TypedArray, HTMLMediaControls, HTMLMediaState } from "./common.model";
+export type { NestedKeyOf, SelectiveKeyOf, SelectiveNestedKeyOf, PartialRecord, RecursivePartial, SelectivePartial, ErrorModel, Optional, DependencyListTyped, CompareFn, ArrayMinLength1, LanguageBCP47Tags, TypedArray, HTMLMediaControls, HTMLMediaState } from "./common.model";
 export type { UseScriptProps, UseScript, UseScriptStatus } from './useScript.model';
 export type { TextSelection } from './useTextSelection.model';
 export type { UseResponsiveKeys, UseResponsiveBreakpoints } from './useResponsive.model';
@@ -27,3 +27,4 @@ export type { TPermissionName, UsePermissionResult, TPermissionState } from './u
 export type { SwipeDirection, UseSwipeProps, UseSwipeResult } from './useSwipe.model';
 export type { UseWebWorkerProps, UseWebWorkerResult } from './useWebWorker.model';
 export type { UseWebWorkerFnProps, UseWebWorkerFnResult } from './useWebWorkerFn.model';
+export type { ToDataURLOptions, UseBase64ObjectOptions } from './getBase64.model';

@@ -121,7 +121,7 @@
 	- [x] useDisplayMedia
 	- [x] useWebWorker
 	- [x] useWebWorkerFn
-	- [ ] useIndexedDB
+	- [ ] useIndexedDB (TODO)
 	- [ ] useFetch (with suspense ???)
 	- [ ] useLock - (https://developer.mozilla.org/en-US/docs/Web/API/LockManager/request)
 	- [ ] useIdleDetection (not work yet. https://developer.mozilla.org/en-US/docs/Web/API/Idle_Detection_API)
@@ -137,18 +137,15 @@
 	- [x] detectBrowser
 	- [ ] lazy: lazy react-like customized
 	- [ ] fetch-client (???ARTS-like)
-	- [ ] defaultSerializer (https://github.com/vueuse/vueuse/blob/main/packages/core/useBase64/serialization.ts)
-	- [ ] useBase64 (https://vueuse.org/core/useBase64/)
-	- [ ] removePropertiesFromArrayObject
-	- [ ] uniqueElements
-	- [ ] getKeyObjectFromValue
-	- [ ] dottedStringToObject
-	- [ ] mergeObjects
-	- [ ] alphanumericCompare
-	- [ ] camelCase
-	- [ ] pascalCase
-	- [ ] kebabCase
-	- [ ] snakeCase
+	- [x] defaultSerializer
+	- [x] getBase64
+	- [x] removePropertiesFromArrayObjects
+	- [x] removeDuplicatedFromArrayObjects
+	- [x] getKeyObjectFromValue
+	- [x] getObjectFromDottedString
+	- [x] mergeObjects
+	- [x] alphanumericCompare
+	- [x] changeStringCase
 
 - __COMPONENT__
 	- [ ] Show component to render or not a component by a condition. Props: when, fallback, keyed. Keyed is a boolean and needs to avoid rerenders children when it is a function.

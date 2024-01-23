@@ -1,4 +1,12 @@
 export type {
+	NestedKeyOf,
+	SelectiveNestedKeyOf,
+	SelectiveKeyOf,
+	PartialRecord,
+	RecursivePartial,
+	SelectivePartial,
+	Optional,
+	ErrorModel,
 	DependencyListTyped,
 	CompareFn,
 	ArrayMinLength1,
@@ -81,7 +89,9 @@ export type {
 	UseWebWorkerProps,
 	UseWebWorkerResult,
 	UseWebWorkerFnProps,
-	UseWebWorkerFnResult
+	UseWebWorkerFnResult,
+	ToDataURLOptions,
+	UseBase64ObjectOptions
 } from './models'
 
 export {
@@ -196,5 +206,14 @@ export {
 	isClient,
 	isAsync,
 	hotKeyHandler,
-	detectBrowser
+	detectBrowser,
+	defaultSerializer,
+	getBase64,
+	removePropertiesFromArrayObjects,
+	removeDuplicatedFromArrayObjects,
+	getKeyObjectFromValue,
+	getObjectFromDottedString,
+	mergeObjects,
+	alphanumericCompare,
+	changeStringCase
 } from './utils'

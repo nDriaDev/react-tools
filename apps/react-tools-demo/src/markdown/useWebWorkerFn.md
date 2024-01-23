@@ -8,7 +8,7 @@ export const UseWebWorkerFn = () => {
 	const [ts, setTs] = useState(Date.now());
 	const [mess, setMess] = useState<string>("");
 	const heavyTask = useCallback(() => {
-		const numbers: number[] = Array(55_000_000).fill(true).map(() => Math.random() * 11)
+		const numbers: number[] = Array(5_000_000).fill(true).map(() => Math.random() * 11)
 		return numbers.slice(0, 5).map(el => Math.floor(el))
 	}, []);
 	const execute = useWebWorkerFn(heavyTask);
