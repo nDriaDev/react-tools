@@ -115,7 +115,8 @@ export const COMPONENTS = [
 			"useWebSocket",
 			"usePermission",
 			"useMediaDevices",
-			"useDisplayMedia"
+			"useDisplayMedia",
+			"useWebWorker"
 		]
 	],
 	//UTILS

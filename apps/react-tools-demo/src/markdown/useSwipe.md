@@ -41,11 +41,11 @@ useSwipe({ target, onSwipeStart, onSwipe, onSwipeEnd, options }: UseSwipeProps):
 object
 > - __param.target__: _RefObject<Element>|Element_  
 element on which attach swipe event.
-> - __param.onSwipeStart?__: _(e: PointerEvent|TouchEvent) => void_  
+> - __param.onSwipeStart?__: _(e: MouseEvent|TouchEvent) => void_  
 callback that will be executed when swipe starts.
-> - __param.onSwipe?__: _(e: PointerEvent|TouchEvent, direction: SwipeDirection, delta: {x: number, y: number}) => void_  
+> - __param.onSwipe?__: _(e: MouseEvent|TouchEvent, direction: SwipeDirection, delta: {x: number, y: number}) => void_  
 callback that will be executed when swipe moves.
-> - __param.onSwipeEnd?__: _(e: PointerEvent|TouchEvent, direction: SwipeDirection, delta: { x: number, y: number }) => void_  
+> - __param.onSwipeEnd?__: _(e: MouseEvent|TouchEvent, direction: SwipeDirection, delta: { x: number, y: number }) => void_  
 callback that will be executed when swipe ends.
 > - __param.options?__: _Object_  
 object to set option for listener.

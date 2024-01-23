@@ -25,3 +25,4 @@ export type { UseWebSocketProps, UseWebSocketResult } from './useWebSocket.model
 export type { UseMediaDevicesProps, UseMediaDevicesResult, TDisplayMediaStreamOptions, CaptureController } from './useMediaDevices.model';
 export type { TPermissionName, UsePermissionResult, TPermissionState } from './usePermission.model';
 export type { SwipeDirection, UseSwipeProps, UseSwipeResult } from './useSwipe.model';
+export type { UseWebWorkerProps, UseWebWorkerResult } from './useWebWorker.model';

@@ -97,3 +97,4 @@ export { useMediaDevices } from './useMediaDevices';
 export { usePermission } from './usePermission';
 export { useDisplayMedia } from './useDisplayMedia';
 export { useSwipe } from './useSwipe';
+export { useWebWorker } from './useWebWorker';

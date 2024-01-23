@@ -77,7 +77,9 @@ export type {
 	CaptureController,
 	SwipeDirection,
 	UseSwipeProps,
-	UseSwipeResult
+	UseSwipeResult,
+	UseWebWorkerProps,
+	UseWebWorkerResult
 } from './models'
 
 export {
@@ -179,7 +181,8 @@ export {
 	useMediaDevices,
 	usePermission,
 	useDisplayMedia,
-	useSwipe
+	useSwipe,
+	useWebWorker
 } from './hooks'
 
 export {

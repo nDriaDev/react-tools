@@ -119,7 +119,7 @@
 	- [x] usePermission
 	- [x] useMediaDevices
 	- [x] useDisplayMedia
-	- [ ] useWebWorker (https://vueuse.org/core/useWebWorker/)
+	- [x] useWebWorker
 	- [ ] useWebWorkerFn (https://vueuse.org/core/useWebWorkerFn/)
 	- [ ] useIndexedDB
 	- [ ] useFetch (with suspense ???)
