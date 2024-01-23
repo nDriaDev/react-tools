@@ -6,11 +6,11 @@ export interface UseSwipeProps {
 	/**Element swipable*/
 	target: RefObject<Element> | Element;
 	/**Callback that will be executed on swipe starts*/
-	onSwipeStart?: (e: PointerEvent) => void;
+	onSwipeStart?: (e: MouseEvent|TouchEvent) => void;
 	/**Callback that will be executed on swipe moves*/
-	onSwipe?: (e: PointerEvent, direction: SwipeDirection, delta: {x: number, y: number}) => void;
+	onSwipe?: (e: MouseEvent|TouchEvent, direction: SwipeDirection, delta: {x: number, y: number}) => void;
 	/**Callback that will be executed on swipe ends*/
-	onSwipeEnd?: (e: PointerEvent, direction: SwipeDirection, delta: { x: number, y: number }) => void;
+	onSwipeEnd?: (e: MouseEvent|TouchEvent, direction: SwipeDirection, delta: { x: number, y: number }) => void;
 	/**Options configurable for swipe listeners*/
 	options?: {
 		/**If true, listener never invokes _preventDefault_ method.*/

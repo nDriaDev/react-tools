@@ -10,5 +10,5 @@ export const isTouchEvent = (event: SyntheticEvent | Event): boolean => {
 		? window.TouchEvent
 			? (event as SyntheticEvent).nativeEvent instanceof TouchEvent
 			: "touches" in (event as SyntheticEvent).nativeEvent
-		: event instanceof TouchEvent || event instanceof PointerEvent;
+		: event instanceof TouchEvent;
 }

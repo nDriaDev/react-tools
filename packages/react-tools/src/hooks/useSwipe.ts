@@ -1,14 +1,15 @@
 import { useCallback, useRef } from "react";
 import { SwipeDirection, UseSwipeProps, UseSwipeResult } from "../models";
 import { useEventListener } from ".";
+import { isTouchEvent } from "..";
 
 /**
  * **`useSwipe`**: hook to handle swipe gesture.
  * @param {UseSwipeProps} param - object
  * @param {RefObject<Element>|Element} param.target - element on which attach swipe event.
- * @param {(e: PointerEvent) => void} [param.onSwipeStart] - callback that will be executed when swipe starts.
- * @param {(e: PointerEvent, direction: SwipeDirection, delta: {x: number, y: number}) => void} [param.onSwipe] - callback that will be executed when swipe moves.
- * @param {(e: PointerEvent, direction: SwipeDirection, delta: { x: number, y: number }) => void} [param.onSwipeEnd] - callback that will be executed when swipe ends.
+ * @param {(e: MouseEvent|TouchEvent) => void} [param.onSwipeStart] - callback that will be executed when swipe starts.
+ * @param {(e: MouseEvent|TouchEvent, direction: SwipeDirection, delta: {x: number, y: number}) => void} [param.onSwipe] - callback that will be executed when swipe moves.
+ * @param {(e: MouseEvent|TouchEvent, direction: SwipeDirection, delta: { x: number, y: number }) => void} [param.onSwipeEnd] - callback that will be executed when swipe ends.
  * @param {Object} [param.options] - object to set option for listener.
  * @param {boolean} [param.options.passive=true] - if true, handler callback never calls _preventDefault_ method.
  * @param {threshold} [param.options.threshold=0] - a threshold value for swipe event.
@@ -16,7 +17,6 @@ import { useEventListener } from ".";
  */
 export const useSwipe = ({ target, onSwipeStart, onSwipe, onSwipeEnd, options }: UseSwipeProps): UseSwipeResult => {
 	const isThresholdExceeded = useRef<(diffX:number, diffY:number)=>boolean>((diffX, diffY) => Math.max(Math.abs(diffX), Math.abs(diffY)) >= (options?.threshold ?? 0));
-
 	const targetRef = useRef<EventTarget|null>();
 	const getDirection = useRef<(diffX: number, diffY: number) => SwipeDirection>((diffX, diffY) => {
 		if (!isThresholdExceeded.current(diffX, diffY)) {
@@ -49,28 +49,29 @@ export const useSwipe = ({ target, onSwipeStart, onSwipe, onSwipeEnd, options }:
 	});
 
 	const stopPointerDown = useEventListener({
-		type: "pointerdown",
+		type: ["mousedown", "touchstart"],
 		element: target,
-		listener: useCallback((e: PointerEvent) => {
+		listener: useCallback((e: TouchEvent|MouseEvent) => {
 			isSwiping.current = true;
 			targetRef.current = e.target;
 			e.target && (e.target as HTMLElement).style.setProperty('touch-action', 'none')
 			e.target && (e.target as HTMLElement).style.setProperty('-webkit-user-select', 'none')
 			e.target && (e.target as HTMLElement).style.setProperty('-ms-user-select', 'none')
 			e.target && (e.target as HTMLElement).style.setProperty('user-select', 'none')
-			const { x, y } = (e.target as Element)?.getBoundingClientRect() ?? {x:0, y:0};
+			const { x, y } = (e.target as Element)?.getBoundingClientRect() ?? { x: 0, y: 0 };
+			const {clientX, clientY} = isTouchEvent(e) ? (e as TouchEvent).touches[0] : e as MouseEvent;
 			coords.current = {
 				target: {
 					x,
 					y
 				},
 				start: {
-					x: e.clientX,
-					y: e.clientY
+					x: clientX,
+					y: clientY
 				},
 				end: {
-					x: e.clientX,
-					y: e.clientY
+					x: clientX,
+					y: clientY
 				}
 			}
 			!!onSwipeStart && onSwipeStart(e);
@@ -82,12 +83,13 @@ export const useSwipe = ({ target, onSwipeStart, onSwipe, onSwipeEnd, options }:
 	});
 
 	const stopPointerMove = useEventListener({
-		type: "pointermove",
+		type: ["mousemove", "touchmove"],
 		element: window,
-		listener: useCallback((e: PointerEvent) => {
+		listener: useCallback((e: MouseEvent|TouchEvent) => {
+			const { clientX, clientY } = isTouchEvent(e) ? (e as TouchEvent).touches[0] : e as MouseEvent;
 			coords.current.end = {
-				x: e.clientX,
-				y: e.clientY
+				x: clientX,
+				y: clientY
 			}
 			const diffX = coords.current.end.x - coords.current.start.x,
 				diffY = coords.current.end.y - coords.current.start.y;
@@ -100,9 +102,9 @@ export const useSwipe = ({ target, onSwipeStart, onSwipe, onSwipeEnd, options }:
 	});
 
 	const stopPointerUpCancel = useEventListener({
-		type: ["pointerup", "pointercancel"],
+		type: ["mouseup", "mouseleave", "touchend", "touchcancel"],
 		element: window,
-		listener: useCallback((e: PointerEvent) => {
+		listener: useCallback((e: MouseEvent|TouchEvent) => {
 			const diffX = coords.current.end.x - coords.current.start.x,
 				diffY = coords.current.end.y - coords.current.start.y;
 			isSwiping.current && !!onSwipeEnd && onSwipeEnd(e, getDirection.current(diffX, diffY), {x: diffX, y: diffY});
