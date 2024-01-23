@@ -99,3 +99,4 @@ export { useDisplayMedia } from './useDisplayMedia';
 export { useSwipe } from './useSwipe';
 export { useWebWorker } from './useWebWorker';
 export { useWebWorkerFn } from './useWebWorkerFn';
+export { usePromiseSuspensible } from './usePromiseSuspensible';

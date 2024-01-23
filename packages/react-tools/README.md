@@ -44,7 +44,6 @@
 	- [x] useMergedRef
 	- [x] useLazyRef
 	- [x] useId
- 	- [ ] usePromise (https://github.com/vigzmv/react-promise-suspense/blob/master/lib/index.ts)
 
 - __EVENTS__
 	- [x] useEvents
@@ -74,8 +73,6 @@
 	- [x] useContextMenu
    	- [x] useSwipe
 	- [ ] useInfiniteScroll
-	- [ ] useDragAndDrop (check for mobile usage)
-
 
 - __API DOM__
 	- [x] usePublishSubscribe
@@ -121,9 +118,10 @@
 	- [x] useDisplayMedia
 	- [x] useWebWorker
 	- [x] useWebWorkerFn
-	- [ ] useIndexedDB (TODO)
+	- [ ] usePromiseSuspensible
 	- [ ] useFetch (with suspense ???)
 	- [ ] useLock - (https://developer.mozilla.org/en-US/docs/Web/API/LockManager/request)
+	- [ ] useIndexedDB (TODO)
 	- [ ] useIdleDetection (not work yet. https://developer.mozilla.org/en-US/docs/Web/API/Idle_Detection_API)
 
 - __UTILS__
@@ -166,7 +164,7 @@ To validate dependencies of custom hooks like `useMemoCompare`, configure `exhau
     // ...
     "react-hooks/exhaustive-deps": [
 		"warn", {
-			"additionalHooks": "(useMemoCompare|useMemoDeepCompare|useCallbackCompare|useCallbackDeepCompare|useLayoutEffectCompare|useLayoutEffectDeepCompare|useInsertionEffectCompare|useInsertionEffectDeepCompare|useEffectCompare|useEffectDeepCompare)"
+			"additionalHooks": "(useMemoCompare|useMemoDeepCompare|useCallbackCompare|useCallbackDeepCompare|useLayoutEffectCompare|useLayoutEffectDeepCompare|useInsertionEffectCompare|useInsertionEffectDeepCompare|useEffectCompare|useEffectDeepCompare|usePromiseSuspensible)"
     	}
 	]
   }

@@ -117,7 +117,8 @@ export const COMPONENTS = [
 			"useMediaDevices",
 			"useDisplayMedia",
 			"useWebWorker",
-			"useWebWorkerFn"
+			"useWebWorkerFn",
+			"usePromiseSuspensible"
 		]
 	],
 	//UTILS

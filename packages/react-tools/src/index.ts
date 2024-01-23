@@ -195,7 +195,8 @@ export {
 	useDisplayMedia,
 	useSwipe,
 	useWebWorker,
-	useWebWorkerFn
+	useWebWorkerFn,
+	usePromiseSuspensible
 } from './hooks'
 
 export {
