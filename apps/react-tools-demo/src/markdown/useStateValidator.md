@@ -11,11 +11,11 @@ export const UseStateValidator = () => {
 		},
 		(state, validation) => {
 			if (state.name.length > 10) {
-				validation.name.result = false;
+				validation.name.invalid = true;
 				validation.name.message = "Max Length 10 characters"
 			}
 			if (!state.email.includes("@")) {
-				validation.email.result = false;
+				validation.email.invalid = true;
 				validation.email.message = "@ is missing"
 			}
 			return validation;
@@ -23,17 +23,17 @@ export const UseStateValidator = () => {
 	);
 
 	return <div>
-		<div>
+		<div style={{display: "flex", flexDirection: "column", width: 'fit-content', margin: "0 auto"}}>
 			<input type="text" name="name" value={state.name} onChange={e => setState(s => ({...s, [e.target.name]: e.target.value}))} />
 			{
-				validation.name.result &&
+				validation.name.invalid &&
 				<span style={{ color: "red" }}>{validation.name.message}</span>
 			}
 		</div>
-		<div>
+		<div style={{display: "flex", flexDirection: "column", width: 'fit-content', margin: "0 auto"}}>
 			<input type="text" name="email" value={state.email} onChange={e => setState(s => ({...s, [e.target.name]: e.target.value}))} />
 			{
-				validation.email.result &&
+				validation.email.invalid &&
 				<span style={{ color: "red" }}>{validation.email.message}</span>
 			}
 		</div>
@@ -47,7 +47,7 @@ export const UseStateValidator = () => {
 ## API
 
 ```tsx
-useStateValidator<T>(initialState: T | (() => T), validator: StateValidator<T>): [T, Dispatch<SetStateAction<T>>, T extends Record<string, unknown> ? {[k in keyof T]:{result: boolean, message?: string}} : {result: boolean, message?: string}]
+useStateValidator<T>(initialState: T | (() => T), validator: StateValidator<T>): [T, Dispatch<SetStateAction<T>>, T extends Record<string, unknown> ? {[k in keyof T]:{invalid: boolean, message?: string}} : {invalid: boolean, message?: string}]
 ```
 
 > ### Params
@@ -60,10 +60,10 @@ function that will be executed to validate state.
 
 > ### Returns
 >
-> __} result__:  __Array__:  
+> __} invalid__:  __Array__:  
     - _T_  
     - _Dispatch<SetStateAction<T>>_  
-    - _T extends Record<string, unknown> ? {[k in keyof T]:{result: boolean, message?: string}} : {result: boolean, message?: strin_  
+    - _T extends Record<string, unknown> ? {[k in keyof T]:{invalid: boolean, message?: string}} : {invalid: boolean, message?: strin_  
 > Array with:
 > - first element: __state__ value.
 > - second element: __setState__ function to update state.

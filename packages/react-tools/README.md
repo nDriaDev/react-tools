@@ -155,7 +155,8 @@
 	- [ ] Index: Non-keyed list iteration (rendered nodes are keyed to an array index). This is useful when there is no conceptual key, like if the data consists of primitives and it is the index that is fixed rather than the value.
 	- [ ] RestrictedRoute (maybe)
 	- [ ] ErrorBoundary (?? error event listener)
-	- [ ] Suspense: Suspence compontent react-like for async component
+	- [ ] LazyComponent: Async component loading by path and fallback for suspense
+	- [ ] Suspense: Suspence compontent react-like for async component (or polyfill)
 	- [ ] Dynamic: This component lets you insert an arbitrary Component or tag and passes the props through to it.
 	- [ ] ImageOpt (???)
 
