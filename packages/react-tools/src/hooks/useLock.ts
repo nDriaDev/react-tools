@@ -16,7 +16,7 @@ export const useLock = <T>(name?: string, cb?: LockGrantedCallback, opts?: LockO
 		const callback = currCb ?? cb;
 		const options = currOpts ?? opts;
 		if (!n || !callback) {
-			throw Error("useLock acquire function parameters missed.");
+			return Promise.resolve() as Promise<T>;
 		}
 		if (options) {
 			return navigator.locks.request(n, options, callback) as Promise<T>
