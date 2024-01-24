@@ -10,7 +10,12 @@ export const UseBroadcastChannel = () => {
 	return <div>
 		<h2>Open page on multiple tab to see how hook work</h2>
 		<p>State: {state}</p>
-		<form onSubmit={(e: FormEvent<HTMLFormElement>) => { debugger }}>
+		<form
+			onSubmit={(e: FormEvent<HTMLFormElement>) => {
+				e.preventDefault();
+				setState(((e.target as HTMLFormElement).elements.namedItem("text") as HTMLInputElement).value)
+			}}
+		>
 			<input name="text" type="text" />
 			<button type="submit">SEND</button>
 		</form>

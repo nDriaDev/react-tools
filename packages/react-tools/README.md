@@ -15,12 +15,12 @@
 	- [x] useProxyState
 	- [x] useSyncExternalStore
 	- [x] useDerivedState
-	- [ ] useStateValidator (???)
+	- [x] useStateValidator
+	- [ ] usePubSubStore (with pusSub model)
+	- [ ] createPubSubStore (with pusSub model)
 	- [ ] useObservable — (https://netbasal.com/javascript-observables-under-the-hood-2423f760584)
 	- [ ] useSignal (https://medium.com/@personal.david.kohen/the-quest-for-signals-in-react-usestate-on-steroids-71eb9fc87c14)
 	- [ ] createSignal (https://medium.com/@personal.david.kohen/the-quest-for-signals-in-react-usestate-on-steroids-71eb9fc87c14)
-	- [ ] usePubSubStore (with pusSub model)
-	- [ ] createPubSubStore (with pusSub model)
 	- [ ] useProxyStore (TODO: https://github.com/streamich/react-use/blob/master/src/factory/createGlobalState.ts)
 	- [ ] createProxyStore (TODO: https://github.com/streamich/react-use/blob/master/src/factory/createGlobalState.ts)
 

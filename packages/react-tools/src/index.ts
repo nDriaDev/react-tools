@@ -91,7 +91,8 @@ export type {
 	UseWebWorkerFnProps,
 	UseWebWorkerFnResult,
 	ToDataURLOptions,
-	UseBase64ObjectOptions
+	UseBase64ObjectOptions,
+	StateValidator
 } from './models'
 
 export {
@@ -199,7 +200,8 @@ export {
 	usePromiseSuspensible,
 	useFetch,
 	useLock,
-	useBroadcastChannel
+	useBroadcastChannel,
+	useStateValidator
 } from './hooks'
 
 export {

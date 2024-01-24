@@ -103,3 +103,4 @@ export { usePromiseSuspensible } from './usePromiseSuspensible';
 export { useFetch } from './useFetch';
 export { useLock } from './useLock';
 export { useBroadcastChannel } from './useBroadcastChannel';
+export { useStateValidator } from './useStateValidator';
