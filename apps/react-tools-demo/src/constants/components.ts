@@ -120,7 +120,8 @@ export const COMPONENTS = [
 			"useWebWorkerFn",
 			"usePromiseSuspensible",
 			"useFetch",
-			"useLock"
+			"useLock",
+			"useBroadcastChannel"
 		]
 	],
 	//UTILS

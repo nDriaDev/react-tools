@@ -198,7 +198,8 @@ export {
 	useWebWorkerFn,
 	usePromiseSuspensible,
 	useFetch,
-	useLock
+	useLock,
+	useBroadcastChannel
 } from './hooks'
 
 export {

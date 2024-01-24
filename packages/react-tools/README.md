@@ -16,12 +16,13 @@
 	- [x] useSyncExternalStore
 	- [x] useDerivedState
 	- [ ] useStateValidator (???)
+	- [ ] useObservable — (https://netbasal.com/javascript-observables-under-the-hood-2423f760584)
 	- [ ] useSignal (https://medium.com/@personal.david.kohen/the-quest-for-signals-in-react-usestate-on-steroids-71eb9fc87c14)
-	- [ ] useObservable — tracks latest value of an Observable
-	- [ ] useStore
-	- [ ] createStore (example: https://github.com/streamich/react-use/blob/master/src/factory/createGlobalState.ts)
- 	- [ ] usePubSubStore (with pusSub model)
-	- [ ] useBroadcast (refer to https://developer.mozilla.org/en-US/docs/Web/API/Broadcast_Channel_API - https://vueuse.org/core/useBroadcastChannel/)
+	- [ ] createSignal (https://medium.com/@personal.david.kohen/the-quest-for-signals-in-react-usestate-on-steroids-71eb9fc87c14)
+	- [ ] usePubSubStore (with pusSub model)
+	- [ ] createPubSubStore (with pusSub model)
+	- [ ] useProxyStore (TODO: https://github.com/streamich/react-use/blob/master/src/factory/createGlobalState.ts)
+	- [ ] createProxyStore (TODO: https://github.com/streamich/react-use/blob/master/src/factory/createGlobalState.ts)
 
 - __LIFECYCLE__
 	- [x] useEffectCompare
@@ -123,7 +124,8 @@
 	- [x] usePromiseSuspensible
 	- [x] useFetch
 	- [x] useLock
-	- [ ] useIndexedDB (TODO)
+	- [x] useBroadcastChannel
+	- [ ] useIndexedDB (TODO: https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API?retiredLocale=it)
 	- [ ] useIdleDetection (not work yet. https://developer.mozilla.org/en-US/docs/Web/API/Idle_Detection_API)
 
 - __UTILS__

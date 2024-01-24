@@ -102,3 +102,4 @@ export { useWebWorkerFn } from './useWebWorkerFn';
 export { usePromiseSuspensible } from './usePromiseSuspensible';
 export { useFetch } from './useFetch';
 export { useLock } from './useLock';
+export { useBroadcastChannel } from './useBroadcastChannel';
