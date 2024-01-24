@@ -73,6 +73,8 @@
 	- [x] useContextMenu
    	- [x] useSwipe
 	- [ ] useInfiniteScroll
+	- [ ] useDrag(TODO: need polyfill for mobile)
+	- [ ] useDrop(TODO: need polyfill for mobile)
 
 - __API DOM__
 	- [x] usePublishSubscribe
@@ -120,7 +122,7 @@
 	- [x] useWebWorkerFn
 	- [x] usePromiseSuspensible
 	- [x] useFetch
-	- [ ] useLock - (https://developer.mozilla.org/en-US/docs/Web/API/LockManager/request)
+	- [x] useLock
 	- [ ] useIndexedDB (TODO)
 	- [ ] useIdleDetection (not work yet. https://developer.mozilla.org/en-US/docs/Web/API/Idle_Detection_API)
 
@@ -134,7 +136,6 @@
 	- [x] hotKeyHandler
 	- [x] detectBrowser
 	- [ ] lazy: lazy react-like customized
-	- [ ] fetch-client (???ARTS-like)
 	- [x] defaultSerializer
 	- [x] getBase64
 	- [x] removePropertiesFromArrayObjects

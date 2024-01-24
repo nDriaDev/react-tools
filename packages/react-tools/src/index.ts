@@ -197,7 +197,8 @@ export {
 	useWebWorker,
 	useWebWorkerFn,
 	usePromiseSuspensible,
-	useFetch
+	useFetch,
+	useLock
 } from './hooks'
 
 export {
