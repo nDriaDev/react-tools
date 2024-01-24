@@ -196,7 +196,8 @@ export {
 	useSwipe,
 	useWebWorker,
 	useWebWorkerFn,
-	usePromiseSuspensible
+	usePromiseSuspensible,
+	useFetch
 } from './hooks'
 
 export {

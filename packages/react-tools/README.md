@@ -118,8 +118,8 @@
 	- [x] useDisplayMedia
 	- [x] useWebWorker
 	- [x] useWebWorkerFn
-	- [ ] usePromiseSuspensible
-	- [ ] useFetch (with suspense ???)
+	- [x] usePromiseSuspensible
+	- [x] useFetch
 	- [ ] useLock - (https://developer.mozilla.org/en-US/docs/Web/API/LockManager/request)
 	- [ ] useIndexedDB (TODO)
 	- [ ] useIdleDetection (not work yet. https://developer.mozilla.org/en-US/docs/Web/API/Idle_Detection_API)

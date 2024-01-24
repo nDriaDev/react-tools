@@ -9,7 +9,7 @@ const promiseCache: { deps: DependencyList, promise: Promise<void>, error?: unkn
  * @param {DependencyList} deps - DependencyList for promise to suspense.
  * @returns {Awaited<ReturnType<T>>} result - resolve promise value.
  */
-export const usePromiseSuspensible = <T extends (...args: unknown[]) => Promise<unknown>>(promise: T, deps: DependencyList) => {
+export const usePromiseSuspensible = <T extends (...args: unknown[]) => Promise<unknown>>(promise: T, deps: DependencyList): Awaited<ReturnType<T>> => {
 	const index = useRef(-1);
 	useEffectOnce(() => () => {
 		index.current !== -1 && promiseCache.splice(index.current, 1);
@@ -18,10 +18,10 @@ export const usePromiseSuspensible = <T extends (...args: unknown[]) => Promise<
 	for (const cached of promiseCache) {
 		index.current = index.current+1;
 		if (isDeepEqual([...deps, promise.toString()], cached.deps)) {
-			if (Object.prototype.hasOwnProperty.call(cached, "error")) {
+			if ("error" in cached) {
 				throw cached.error;
 			}
-			if (Object.prototype.hasOwnProperty.call(cached, "response")) {
+			if ("response" in cached) {
 				return cached.response as Awaited<ReturnType<T>>;
 			}
 			throw cached.promise;
