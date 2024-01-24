@@ -7,8 +7,9 @@ The component uses _useLock_ hook to simulate a buffer write by a producer and r
 export const UseLock = () => {
 	const [buffer, setBuffer] = useState<number[]>([]);
 	const [lock, setLock] = useState<{ held: string[], pending: string[] }>({ held: [], pending: [] });
-	const [messages, setMessages] = useState<{ consumer: string[], producer: string[] }>({
+	const [messages, setMessages] = useState<{ consumer: string[], buffer: number[][], producer: string[] }>({
 		consumer: [],
+		buffer: [],
 		producer: []
 	});
 	const do_something = useCallback((mode: "read" | "write") => {
@@ -16,37 +17,45 @@ export const UseLock = () => {
 			setTimeout(() => {
 				if (mode === "read") {
 					let el: number | undefined;
-					setBuffer(b => b.filter((_, index, arr) => {
-						if (index !== arr.length - 1) {
-							return true;
-						} else {
-							el = _;
-							return false;
-						}
-					}))
-					setMessages(m => ({...m, consumer: [...m.consumer, el !== undefined ? "Consumer has read " + el : "Consumer has read nothing"]}))
+					let buffer: number[];
+					setBuffer(b => {
+						buffer = b.filter((_, index, arr) => {
+							if (index !== arr.length - 1) {
+								return true;
+							} else {
+								el = _;
+								return false;
+							}
+						});
+						return buffer;
+					})
+					setMessages(m => ({ producer: [...m.producer, "-"].filter((_, index, arr) => arr.length - index <= 5), buffer: [...m.buffer, buffer].filter((_,index,arr)=>arr.length-index<=5), consumer: [...m.consumer, el !== undefined ? "Consumer has read " + el : "Consumer has read nothing"].filter((_,index, arr) => arr.length-index<=5)}))
 				} else {
 					const n = Math.floor(Math.random() * 11);
-					setBuffer(b => [...b, n]);
-					setMessages(m => ({ ...m, producer: [...m.producer, "Producer has written " + n] }));
+					let buffer: number[];
+					setBuffer(b => {
+						buffer = [n, ...b];
+						return buffer;
+					});
+					setMessages(m => ({ consumer: [...m.consumer, "-"].filter((_, index, arr) => arr.length - index <= 5), buffer: [...m.buffer, buffer].filter((_, index, arr) => arr.length - index <= 5), producer: [...m.producer, "Producer has written " + n].filter((_, index, arr) => arr.length - index <= 5) }));
 				}
 				res();
-			}, mode === "read" ? 1600 : 2400);
+			}, 1600);
 		});
 	}, []);
 
 	const [createExclusiveLock, query] = useLock("resource", async () => {
-		await do_something("write");
+		await do_something("read");
 	});
 
 	const [createSharedLock] = useLock("resource", async () => {
-		await do_something("read");
+		await do_something("write");
 	}, { mode: "shared" });
 
 	useEffect(() => {
 		const interval = setInterval(async () => {
 			const n = Math.floor(Math.random() * 11);
-			n > 6 ? createExclusiveLock() : createSharedLock();
+			n <= 6 ? createExclusiveLock() : createSharedLock();
 		}, 700);
 		return () => clearInterval(interval);
 	}, [createExclusiveLock, createSharedLock]);
@@ -54,8 +63,8 @@ export const UseLock = () => {
 	useEffect(() => {
 		const interval = setInterval(async () => {
 			const result = await query();
-			const held = (result.held || []).map(el => el.name + " - " + el.mode);
-			const pending = (result.pending || []).map(el => el.name + " - " + el.mode);
+			const held = (result.held || []).map(el => `${el.mode === "exclusive" ? "Reader" : "Writer"} require ${el.mode} lock`);
+			const pending = (result.pending || []).map(el => `${el.mode === "exclusive" ? "Reader" : "Writer"} require ${el.mode} lock`);
 			setLock({ held, pending });
 		}, 1000)
 		return () => {
@@ -73,7 +82,9 @@ export const UseLock = () => {
 			</div>
 			<div>
 				<h3>Buffer</h3>
-				<p>{JSON.stringify(buffer, null, 6)}</p>
+				{
+					messages.buffer.map((m, index) => <p key={index}>{JSON.stringify(m)}</p>)
+				}
 			</div>
 			<div style={{ display: "grid", gridTemplateColumns: "auto", justifyContent: "center", gap: 50, overflow: 'auto', maxHeight: 400 }}>
 				<div>
