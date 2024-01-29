@@ -19,7 +19,8 @@ export const COMPONENTS = [
 			"useProxyState",
 			"useSyncExternalStore",
 			"useDerivedState",
-			"useStateValidator"
+			"useStateValidator",
+			"createPubSubStore"
 		],
 		//LIFECYCLE
 		[

@@ -19,7 +19,7 @@ export const usePublishSubscribe = <T>(topic: string): [(listener: (value?: T) =
 
 	useEffect(() => {
 		return () => {
-			const listeners = pubsub.topics.get(topic);
+			const listeners = pubsub.channels.get(topic);
 			listeners?.forEach(l => pubsub.unsubscribe(topic, l));
 		}
 	}, [topic]);

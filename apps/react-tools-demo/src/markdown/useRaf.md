@@ -6,7 +6,7 @@ Hook to execute a callback function with _requestAnimationFrame_ to optimize per
 ```tsx
 export const UseRaf = () => {
 	const [state, setState] = useState({ width: 0, height: 0 });
-	const [start] = useRaf((timer: number, repeat:()=>void, dim: DOMRectReadOnly) => {
+	const [start] = useRaf((_: number, __:()=>void, dim: DOMRectReadOnly) => {
 		setState({ width: dim.width, height: dim.height });
 	});
 	const [refCb] = useResizeObserver<HTMLTextAreaElement>(

@@ -16,8 +16,7 @@
 	- [x] useSyncExternalStore
 	- [x] useDerivedState
 	- [x] useStateValidator
-	- [ ] usePubSubStore (with pusSub model)
-	- [ ] createPubSubStore (with pusSub model)
+	- [x] createPubSubStore
 	- [ ] useObservable — (https://netbasal.com/javascript-observables-under-the-hood-2423f760584)
 	- [ ] useSignal (https://medium.com/@personal.david.kohen/the-quest-for-signals-in-react-usestate-on-steroids-71eb9fc87c14)
 	- [ ] createSignal (https://medium.com/@personal.david.kohen/the-quest-for-signals-in-react-usestate-on-steroids-71eb9fc87c14)

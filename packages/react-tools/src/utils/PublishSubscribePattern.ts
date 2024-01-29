@@ -1,29 +1,36 @@
 export class PublishSubscribePattern {
-	topics;
+	channels;
 	constructor() {
-		this.topics = new Map<string, ((val?: any) => void | Promise<void>)[]>;
+		// eslint-disable-next-line @typescript-eslint/no-explicit-any
+		this.channels = new Map<string, ((val?: any) => void | Promise<void>)[]>();
 	}
 
-	subscribe<T=unknown>(topic: string, listener: (val?: T) => void | Promise<void>) {
-		if (!this.topics.has(topic)) {
-			this.topics.set(topic, []);
+	subscribe<T>(topic: string, listener: (val?: T) => void | Promise<void>) {
+		if (!this.channels.has(topic)) {
+			this.channels.set(topic, []);
 		}
-		const listeners = this.topics.get(topic)!;
+		const listeners = this.channels.get(topic)!;
 		listeners.push(listener);
-		this.topics.set(topic, listeners);
+		this.channels.set(topic, listeners);
 	}
 
-	unsubscribe<T=unknown>(topic: string, listener: (val?: T) => void | Promise<void>) {
-		if (!this.topics.has(topic)) {
+	unsubscribe<T>(topic: string, listener: (val?: T) => void | Promise<void>) {
+		if (!this.channels.has(topic)) {
 			return false;
 		}
-		const listeners = this.topics.get(topic)!.filter(l => l !== listener);
-		this.topics.set(topic, listeners);
+		const listeners = this.channels.get(topic)!.filter(l => l !== listener);
+		this.channels.set(topic, listeners);
 		return true;
 	}
 
-	async publish<T=unknown>(topic: string, value?: T) {
-		const listeners = this.topics.get(topic) ?? [], promises: (void|Promise<void>)[] = [];
+	publish<T>(topic: string, value?: T) {
+		const listeners = this.channels.get(topic) ?? [];
+		listeners.forEach(listener => listener(value));
+	}
+
+	async publishAsync<T>(topic: string, value?: T) {
+		const listeners = this.channels.get(topic) ?? [],
+			promises: (void | Promise<void>)[] = [];
 		listeners.forEach(listener => promises.push(listener(value)));
 		await Promise.allSettled(promises);
 	}

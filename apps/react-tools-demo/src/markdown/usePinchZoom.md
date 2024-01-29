@@ -7,7 +7,7 @@ Hook to handle pinch zoom gestures.
 export const UsePinchZoom = () => {
 	const [state, setState] = useState("");
 	const ref = useRef<HTMLDivElement>(null);
-	const listener = useCallback((evt: PointerEvent, type: "zoomIn" | "zoomOut") => {
+	const listener = useCallback((_:Event, type: "zoomIn" | "zoomOut") => {
 		setState(type === "zoomIn" ? "Zooming in..." : "Zooming out...");
 	}, []);
 	usePinchZoom({

@@ -6,7 +6,7 @@ The component renders a textarea element and when it is resized, updates __state
  */
 export const UseRaf = () => {
 	const [state, setState] = useState({ width: 0, height: 0 });
-	const [start] = useRaf((timer: number, repeat:()=>void, dim: DOMRectReadOnly) => {
+	const [start] = useRaf((_: number, __:()=>void, dim: DOMRectReadOnly) => {
 		setState({ width: dim.width, height: dim.height });
 	});
 	const [refCb] = useResizeObserver<HTMLTextAreaElement>(

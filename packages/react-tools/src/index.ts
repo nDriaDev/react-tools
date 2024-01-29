@@ -203,6 +203,7 @@ export {
 	useBroadcastChannel,
 	useStateValidator,
 	useInfiniteScroll,
+	createPubSubStore
 } from './hooks'
 
 export {

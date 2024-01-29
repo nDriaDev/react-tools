@@ -1,5 +1,5 @@
 const caseFunc = {
-	pascalCase: (string?: string) => !string ? "" : string.at(0)?.toUpperCase() + string.substring(1).toLowerCase(),
+	pascalCase: (string?: string) => !string ? "" : string.charAt(0)?.toUpperCase() + string.substring(1).toLowerCase(),
 	snakeCase: (string?: string, delimiter?: "upperCase" | "lowerCase" | string) => {
 		if (!string) {
 			return "";

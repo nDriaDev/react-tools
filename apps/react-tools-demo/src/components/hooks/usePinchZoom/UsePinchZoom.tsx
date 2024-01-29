@@ -7,7 +7,7 @@ The component renders a bordered div element. When pinch zoom gestures are execu
 export const UsePinchZoom = () => {
 	const [state, setState] = useState("");
 	const ref = useRef<HTMLDivElement>(null);
-	const listener = useCallback((evt: PointerEvent, type: "zoomIn" | "zoomOut") => {
+	const listener = useCallback((_:Event, type: "zoomIn" | "zoomOut") => {
 		setState(type === "zoomIn" ? "Zooming in..." : "Zooming out...");
 	}, []);
 	usePinchZoom({

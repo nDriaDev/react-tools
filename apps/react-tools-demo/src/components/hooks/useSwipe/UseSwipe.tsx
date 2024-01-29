@@ -8,11 +8,11 @@ export const UseSwipe = () => {
 	const divRef = useRef<HTMLDivElement>(null);
 	useSwipe({
 		target: divRef,
-		onSwipe(e, direction, delta) {
+		onSwipe(_, direction, delta) {
 			console.log(direction)
 			delta.x >=0 && (divRef.current!.style.left = delta.x + "px");
 		},
-		onSwipeEnd(e, direction, delta) {
+		onSwipeEnd(_, __, delta) {
 			divRef.current!.style.left = `${delta.x>330 ? "400" : "0"}px`
 		},
 	});
