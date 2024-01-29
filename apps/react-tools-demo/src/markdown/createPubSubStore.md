@@ -86,9 +86,9 @@ boolean that indicates if the store value will be persisted on the local Storage
     - __usePubSubStore__ : _<C>(subscribe?: (store: T) => C)=>[T|C, (store: T|C|((currStore: T) => T)|((currStore: C) => C)) => void, () => T]_  
 > An object with three _immutable_ functions:
 > - __getStore__: function that returns the store object.
-> - __updateStore__: function that updates the store: it receives a callback with an only parameter, the store, and return void. Inside this function it can possible to modify to any store properties: changes will be notified to every user of the store.
-> - __usePubSubStore__: It's the hook to be used inside components to access the store. It receives an optional callback _subscribe_ to specify to which part of store you want access and to be notified of its changes. If no callback is gived, it returns the whole store. It returns an array of three elements:
->     - _first element_: the __state__. Represents the slice of store indicated by _subscribe_ callback or the whole store.
-> 	   - _second element_: the __updateState__. An _immutable_ function that represents the function to update the state. Depending on whether the hook was invoked by passing the _subscribe_ callback or not, it receives a new value for the slice or the entire store or a callback with only one parameter, the current slice or store, which returns a new slice or value of the shop.
->     - _third element_: the __getState__. An _immutable_ function that returns the current state returned by hook that can be a slice or the whole store, depending on the present of the _subscribe_ callback.
+> - __updateStore__: function that updates the store: it receives a callback with an only parameter, the store, and return void. Inside this function it can be possible to modify any store properties: changes will be published to every subscriber.
+> - __usePubSubStore__: It's the hook to be used inside components to access the store. It receives an optional callback _subscribe_ to specify to which part of store you want to subscribe.If callback missed, the whole store will be subscribed. It returns an array of three elements:
+>     - _first element_: the __state__. It represents what has been subscribed.
+> 	   - _second element_: the __updateState__. An _immutable_ function that represents the function to update the state. It can be executed given it a new version of the subscribed value or with a callback that receives the subscribed value and returns a new version of it.
+>     - _third element_: the __getState__. An _immutable_ function that returns the current subscribed value.
 >
