@@ -5,7 +5,7 @@ import { useLock } from "../../../../../../packages/react-tools/src";
 The component uses _useLock_ hook to simulate a buffer write by a producer and read from a consumer.
  */
 export const UseLock = () => {
-	const [buffer, setBuffer] = useState<number[]>([]);
+	const [, setBuffer] = useState<number[]>([]);
 	const [lock, setLock] = useState<{ held: string[], pending: string[] }>({ held: [], pending: [] });
 	const [messages, setMessages] = useState<{ consumer: string[], buffer: number[][], producer: string[] }>({
 		consumer: [],

@@ -72,7 +72,8 @@ export const COMPONENTS = [
 			"usePinchZoom",
 			"usePointerLock",
 			"useContextMenu",
-			"useSwipe"
+			"useSwipe",
+			"useInfiniteScroll"
 		],
 		//API DOM
 		[

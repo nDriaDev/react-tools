@@ -201,7 +201,8 @@ export {
 	useFetch,
 	useLock,
 	useBroadcastChannel,
-	useStateValidator
+	useStateValidator,
+	useInfiniteScroll,
 } from './hooks'
 
 export {

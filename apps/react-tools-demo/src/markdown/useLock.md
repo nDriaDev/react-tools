@@ -5,7 +5,7 @@ Hook to use [Web Locks API](https://developer.mozilla.org/en-US/docs/Web/API/Web
 
 ```tsx
 export const UseLock = () => {
-	const [buffer, setBuffer] = useState<number[]>([]);
+	const [, setBuffer] = useState<number[]>([]);
 	const [lock, setLock] = useState<{ held: string[], pending: string[] }>({ held: [], pending: [] });
 	const [messages, setMessages] = useState<{ consumer: string[], buffer: number[][], producer: string[] }>({
 		consumer: [],

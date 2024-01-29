@@ -104,3 +104,4 @@ export { useFetch } from './useFetch';
 export { useLock } from './useLock';
 export { useBroadcastChannel } from './useBroadcastChannel';
 export { useStateValidator } from './useStateValidator';
+export { useInfiniteScroll } from './useInfiniteScroll';

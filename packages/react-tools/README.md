@@ -73,7 +73,7 @@
 	- [x] usePointerLock
 	- [x] useContextMenu
    	- [x] useSwipe
-	- [ ] useInfiniteScroll
+	- [x] useInfiniteScroll
 	- [ ] useDrag(TODO: need polyfill for mobile)
 	- [ ] useDrop(TODO: need polyfill for mobile)
 
