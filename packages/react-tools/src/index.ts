@@ -221,5 +221,6 @@ export {
 	getObjectFromDottedString,
 	mergeObjects,
 	alphanumericCompare,
-	changeStringCase
+	changeStringCase,
+	lazy
 } from './utils'

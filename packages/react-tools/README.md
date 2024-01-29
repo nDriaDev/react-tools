@@ -137,7 +137,7 @@
 	- [x] isAsync
 	- [x] hotKeyHandler
 	- [x] detectBrowser
-	- [ ] lazy: lazy react-like customized
+	- [x] lazy
 	- [x] defaultSerializer
 	- [x] getBase64
 	- [x] removePropertiesFromArrayObjects

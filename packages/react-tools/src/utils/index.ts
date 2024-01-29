@@ -17,3 +17,4 @@ export { getObjectFromDottedString } from './getObjectFromDottedString';
 export { mergeObjects } from './mergeObjects';
 export { alphanumericCompare } from './alphanumericCompare';
 export { changeStringCase } from './changeStringCase';
+export { lazy } from './lazy';

@@ -134,6 +134,7 @@ export const COMPONENTS = [
 		"isClient",
 		"isAsync",
 		"hotKeyHandler",
-		"detectBrowser"
+		"detectBrowser",
+		"lazy"
 	]
 ] as const;
