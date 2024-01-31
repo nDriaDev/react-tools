@@ -32,7 +32,7 @@ const DynamicComponent = ({ factory, beforeLoad, afterLoad }: { factory: () => P
 	throw current.promise;
 };
 
-export const LazyComponent = <T extends ComponentType<unknown>>({ factory, fallback, beforeLoad, afterLoad }: { factory: () => Promise<T | { default: T }>, fallback?: ReactNode, beforeLoad?: ()=>void, afterLoad?: ()=>void }) => {
+export const Lazy = <T extends ComponentType<unknown>>({ factory, fallback, beforeLoad, afterLoad }: { factory: () => Promise<T | { default: T }>, fallback?: ReactNode, beforeLoad?: ()=>void, afterLoad?: ()=>void }) => {
 	return <Suspense fallback={fallback}>
 		<DynamicComponent factory={factory} beforeLoad={beforeLoad} afterLoad={afterLoad} />
 	</Suspense>

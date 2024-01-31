@@ -12,7 +12,6 @@ const store = createPubSubStore(
 			name: "",
 			eta: 0
 		},
-		counter: 0,
 		spinner: false
 	},
 	{
@@ -26,9 +25,6 @@ export const { usePubSubStore, mutateStore } = store;
 //import {usePubSubStore} from '../store.ts';
 const Comp1 = () => {
 	const [state, setState] = usePubSubStore(store => store.user);
-	useEffect(() => {
-		console.log(state);
-	}, [state])
 
 	return <div>
 		<label htmlFor="id">ID:</label>
@@ -58,15 +54,9 @@ const Comp2 = memo(() => {
 //import {usePubSubStore} from '../store.ts';
 export const CreatePubSubStore = () => {
 	const [spinner] = usePubSubStore(store => store.spinner);
-	const [counter, setCounter] = usePubSubStore(store => store.counter);
-	useEffect(() => {
-		const id = setInterval(() => setCounter(counter => counter++), 1000);
-		return () => clearInterval(id);
-	}, [setCounter])
 	return <div style={{ display: "grid", gridTemplateRows: "auto auto", gap: 20, justifyContent: "center" }}>
 		<fieldset style={{padding: 20}}>
 			<legend>Component 2</legend>
-			<p>{counter}</p>
 			<Comp2 />
 		</fieldset>
 		{

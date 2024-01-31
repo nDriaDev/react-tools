@@ -207,6 +207,11 @@ export {
 } from './hooks'
 
 export {
+	Show,
+	Lazy
+} from './components'
+
+export {
 	isShallowEqual,
 	isDeepEqual,
 	isMouseEvent,
