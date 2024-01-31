@@ -10,8 +10,22 @@ In this example it has been used _createPubSubStore_ hook to create a global sto
 	- _updateStore_ hook to update _spinner_ property from __store__ when button _handle spinner_ is clicked.
  */
 //File store.ts
-const store = createPubSubStore({user: { id: 0, name: "", eta: 0}, spinner: false});
-export const { usePubSubStore, updateStore } = store;
+const store = createPubSubStore(
+	{
+		user: {
+			id: 0,
+			name: "",
+			eta: 0
+		},
+		spinner: false
+	},
+	{
+		toggleSpinner: (store, val: boolean) => {
+			store.spinner = val;
+		}
+	}
+);
+export const { usePubSubStore, mutateStore } = store;
 
 //import {usePubSubStore} from '../store.ts';
 const Comp1 = () => {
@@ -27,17 +41,17 @@ const Comp1 = () => {
 	</div>
 }
 
-//import {updateStore, usePubSubStore} from '../store.ts';
+//import {usePubSubStore} from '../store.ts';
 const Comp2 = memo(() => {
-	const [state, setState] = usePubSubStore(store => store.user.name);
+	const [state, setState, , mutators] = usePubSubStore(store => store.user.name);
 
 	return <div>
 		<label htmlFor="name">NAME:</label>
 		<input type="text" name="name" value={state} onChange={(e) => setState(e.target.value)} />
 		<button onClick={async () => {
-			updateStore(store => store.spinner = true);
+			mutators.toggleSpinner(true);
 			await new Promise(res => setTimeout(res, 4000));
-			updateStore(store => store.spinner = false);
+			mutators.toggleSpinner(false);
 		}}>Enable Spinner</button>
 	</div>
 })

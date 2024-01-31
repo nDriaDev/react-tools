@@ -14,7 +14,9 @@ export const usePerformAction = <T extends (...args: unknown[]) => void>(cb: T):
 
 	useEffect(() => {
 		if (deferredValue !== 0) {
-			actionRef.current();
+			argsActionRef.current
+				? actionRef.current(...argsActionRef.current)
+				: actionRef.current();
 		}
 	}, [deferredValue])
 

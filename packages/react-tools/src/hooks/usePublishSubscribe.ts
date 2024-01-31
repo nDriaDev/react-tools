@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import { PublishSubscribePattern } from "../utils";
 
-const pubsub = new PublishSubscribePattern();
+const pubsub = new PublishSubscribePattern<string>();
 /**
  * **`usePublishSubscribe`**: Communication system based on PubSub pattern. Instantiate a topic and use the publish and subscribe functions to communicate.
  * @param {string} topic
@@ -9,18 +9,21 @@ const pubsub = new PublishSubscribePattern();
  */
 export const usePublishSubscribe = <T>(topic: string): [(listener: (value?: T) => Promise<void> | void) => () => void, (value?: T) => Promise<void> ] => {
 	const publish = useRef<(value?: T) => Promise<void>>(async (value?: T) => await pubsub.publish(topic, value));
-
+	const unsubscribeCb = useRef<Set<() => void>>(new Set());
 	const subscribe = useRef<(listener: (value?: T) => void | Promise<void>) => () => void>((listener: ((value?: T) => void | Promise<void>)) => {
 		pubsub.subscribe(topic, listener)
+		const unsubscribe = () => pubsub.unsubscribe(topic, listener);
+		unsubscribeCb.current.add(unsubscribe);
 		return () => {
+			unsubscribeCb.current.delete(unsubscribe);
 			pubsub.unsubscribe(topic, listener);
 		}
 	});
 
 	useEffect(() => {
 		return () => {
-			const listeners = pubsub.channels.get(topic);
-			listeners?.forEach(l => pubsub.unsubscribe(topic, l));
+			// eslint-disable-next-line react-hooks/exhaustive-deps
+			unsubscribeCb.current.forEach(unsub => unsub());
 		}
 	}, [topic]);
 

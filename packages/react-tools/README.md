@@ -17,10 +17,10 @@
 	- [x] useDerivedState
 	- [x] useStateValidator
 	- [x] createPubSubStore
-	- [ ] useSignal (https://medium.com/@personal.david.kohen/the-quest-for-signals-in-react-usestate-on-steroids-71eb9fc87c14)
-	- [ ] createSignal (https://medium.com/@personal.david.kohen/the-quest-for-signals-in-react-usestate-on-steroids-71eb9fc87c14)
-	- [ ] useProxyStore (TODO: https://github.com/streamich/react-use/blob/master/src/factory/createGlobalState.ts)
-	- [ ] createProxyStore (TODO: https://github.com/streamich/react-use/blob/master/src/factory/createGlobalState.ts)
+	- [ ] useSignal (TODO: like useProxyStore)
+	- [ ] createSignal (TODO: like createProxyStore)
+	- [ ] useProxyStore (TODO: proxy based)
+	- [ ] createProxyStore (TODO: proxy based)
 
 - __LIFECYCLE__
 	- [x] useEffectCompare
@@ -123,8 +123,8 @@
 	- [x] useFetch
 	- [x] useLock
 	- [x] useBroadcastChannel
-	- [ ] useIndexedDB (TODO: https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API?retiredLocale=it)
-	- [ ] useIdleDetection (not work yet. https://developer.mozilla.org/en-US/docs/Web/API/Idle_Detection_API)
+	- [ ] useIndexedDB (TODO: refer to api)
+	- [ ] useIdleDetection (TODO: not work yet)
 
 - __UTILS__
 	- [x] isShallowEqual

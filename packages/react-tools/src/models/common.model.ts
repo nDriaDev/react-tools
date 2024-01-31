@@ -23,6 +23,13 @@ export type Optional<T = unknown, E = null> = T | E;
 
 export type DependencyListTyped<T = unknown> = ReadonlyArray<T>;
 
+export type Union<T extends unknown[]> = T[number];
+
+export type ExtractTail<T extends unknown[]> = T extends [unknown, ...infer Tail] ? Tail : never;
+export type ExtractMiddle<T extends unknown[]> = T extends [unknown, ...infer Tail, unknown] ? Tail : never;
+export type ExtractHead<T extends unknown[]> = T extends [...infer Tail, unknown] ? Tail : never;
+
+
 /**
  * **`CompareFn<T>`**: receive 2 parameters of type T, respectively *old* and *new* version. It compares them
  * and returns `true` if they are different, otherwise `false`.
