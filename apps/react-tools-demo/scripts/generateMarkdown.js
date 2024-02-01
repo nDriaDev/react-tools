@@ -6,10 +6,13 @@ import process from "node:process";
 
 const __dirname = new URL('.', import.meta.url).pathname;
 
-const pathMarkdownDir = path.join(__dirname, '..', 'src', 'markdown');
-const pathHooksDemoDir = path.join(__dirname, '..', 'src', 'pages');
-const pathUtilsDir = path.join(__dirname, "..", "..", "..", "packages", "react-tools", "src", "utils");
-const pathHooksDir = path.join(__dirname, "..", "..", "..", "packages", "react-tools", "src", "hooks");
+const PATH_DEMO_SRC = path.join(__dirname, '..', 'src');
+const PATH_LIB_SRC = path.join(__dirname, "..", "..", "..", "packages", "react-tools", "src");
+const DEMO_COMPONENT_DIR_NAME = "pages";
+const MARKDOWWN_DIR_NAME = "markdown";
+const HOOKS_DIR_NAME = "hooks";
+const COMPONENTS_DIR_NAME = "components";
+const UTILS_DIR_NAME = "utils";
 
 /**
  *
@@ -385,38 +388,64 @@ ${lines.length > 0 ? lines.map(line => "> "+line).join("\n") : ""}
 }
 
 async function generateUtilsMarkDown() {
-	const utilsFiles = await fs.readdir(path.join(pathUtilsDir));
-	const indexFile = await fs.readFile(path.join(pathUtilsDir, "..", "index.ts"), {encoding: "utf8"});
+	const utilsFiles = await fs.readdir(path.join(PATH_LIB_SRC, UTILS_DIR_NAME));
+	const indexFile = await fs.readFile(path.join(PATH_LIB_SRC, "index.ts"), {encoding: "utf8"});
 	for(let file of utilsFiles) {
 		if(file !== "index.ts" && indexFile.includes(file.split(".ts")[0])) {
-			let readedFile = await fs.readFile(path.join(pathUtilsDir, file), {encoding: "utf8"});
+			let readedFile = await fs.readFile(path.join(PATH_LIB_SRC, UTILS_DIR_NAME, file), {encoding: "utf8"});
 			readedFile = removeImportLine(readedFile);
 			const jsDoc = buildHooksUtilsMarkdownObject(readedFile);
 			const title = jsDoc.title.charAt(0).toLowerCase()+jsDoc.title.substring(1)+".md";
-			await fs.writeFile(path.join(pathMarkdownDir, title), jsDoc2Markdown(jsDoc), {encoding: "utf8"});
+			await fs.writeFile(path.join(PATH_DEMO_SRC, MARKDOWWN_DIR_NAME, title), jsDoc2Markdown(jsDoc), {encoding: "utf8"});
 		}
 	}
 }
 
 async function generateHooksMarkDown() {
-	const hooksDemoDirList = await fs.readdir(path.join(pathHooksDemoDir, "hooks"));
-	for(let dir of hooksDemoDirList) {
-		const files = (await fs.readdir(path.join(pathHooksDemoDir, "hooks", dir)));
-		for(let file of files) {
-			const hookDemoFileName = file;
-			if(file.split(".")[0].toLowerCase() === dir.toLowerCase()) {
-				const extension = hookDemoFileName.endsWith(".tsx") ? ".tsx" : ".md";
-				let hookDemoFile = await fs.readFile(path.join(pathHooksDemoDir, "hooks", dir, hookDemoFileName), {encoding: "utf8"});
-				let hookFileName = (hookDemoFileName.charAt(0).toLowerCase() + hookDemoFileName.substring(1)).replace(extension, ".ts");
-				!existsSync(path.join(pathHooksDir, hookFileName)) && (hookFileName = (hookDemoFileName.charAt(0).toLowerCase() + hookDemoFileName.substring(1)).replace(extension, ".tsx"));
-				let hookFile = await fs.readFile(path.join(pathHooksDir, hookFileName), {encoding: "utf8"});
-				hookDemoFile = removeImportLine(hookDemoFile);
-				hookFile = removeImportLine(hookFile);
-				const jsDoc = buildHooksUtilsMarkdownObject(hookFile);
-				jsDoc.usage = buildComponentMarkdown(hookDemoFile, extension);
-				let title = hookDemoFileName.replace(extension, ".md");
-				title = title.charAt(0).toLowerCase() + title.substring(1);
-				await fs.writeFile(path.join(pathMarkdownDir, title), jsDoc2Markdown(jsDoc), {encoding: "utf8"});
+	const hookTypesDirList = await fs.readdir(path.join(PATH_DEMO_SRC, DEMO_COMPONENT_DIR_NAME, HOOKS_DIR_NAME));
+	for (const hookTypeDirList of hookTypesDirList) {
+		const dirsDemoHook = (await fs.readdir(path.join(PATH_DEMO_SRC, DEMO_COMPONENT_DIR_NAME, HOOKS_DIR_NAME, hookTypeDirList)));
+		for (const demoHookDir of dirsDemoHook) {
+			const files = (await fs.readdir(path.join(PATH_DEMO_SRC, DEMO_COMPONENT_DIR_NAME, HOOKS_DIR_NAME, hookTypeDirList, demoHookDir)));
+			for (let file of files) {
+				const hookDemoFileName = file;
+				if (file.split(".")[0].toLowerCase() === demoHookDir.toLowerCase()) {
+					const extension = hookDemoFileName.endsWith(".tsx") ? ".tsx" : ".md";
+					let hookDemoFile = await fs.readFile(path.join(PATH_DEMO_SRC, DEMO_COMPONENT_DIR_NAME, HOOKS_DIR_NAME, hookTypeDirList, demoHookDir, hookDemoFileName), { encoding: "utf8" });
+					let hookFileName = (hookDemoFileName.charAt(0).toLowerCase() + hookDemoFileName.substring(1)).replace(extension, ".ts");
+					!existsSync(path.join(PATH_LIB_SRC, HOOKS_DIR_NAME,  hookTypeDirList, hookFileName)) && (hookFileName = (hookDemoFileName.charAt(0).toLowerCase() + hookDemoFileName.substring(1)).replace(extension, ".tsx"));
+					let hookFile = await fs.readFile(path.join(PATH_LIB_SRC, HOOKS_DIR_NAME, hookTypeDirList, hookFileName), { encoding: "utf8" });
+					hookDemoFile = removeImportLine(hookDemoFile);
+					hookFile = removeImportLine(hookFile);
+					const jsDoc = buildHooksUtilsMarkdownObject(hookFile);
+					jsDoc.usage = buildComponentMarkdown(hookDemoFile, extension);
+					let title = hookDemoFileName.replace(extension, ".md");
+					title = title.charAt(0).toLowerCase() + title.substring(1);
+					await fs.writeFile(path.join(PATH_DEMO_SRC, MARKDOWWN_DIR_NAME, title), jsDoc2Markdown(jsDoc), { encoding: "utf8" });
+				}
+			}
+		}
+	}
+}
+
+async function generateComponentsMarkDown() {
+	const componentsDirList = await fs.readdir(path.join(PATH_DEMO_SRC, DEMO_COMPONENT_DIR_NAME, COMPONENTS_DIR_NAME));
+	for (const componentDir of componentsDirList) {
+		const files = (await fs.readdir(path.join(PATH_DEMO_SRC, DEMO_COMPONENT_DIR_NAME, COMPONENTS_DIR_NAME, componentDir)));
+		for (let file of files) {
+			const componentDemoFileName = file;
+			if (file.split(".")[0].toLowerCase() === componentDir.toLowerCase()) {
+				const extension = componentDemoFileName.endsWith(".tsx") ? ".tsx" : ".md";
+				let componentDemoFile = await fs.readFile(path.join(PATH_DEMO_SRC, DEMO_COMPONENT_DIR_NAME, COMPONENTS_DIR_NAME, componentDir, componentDemoFileName), { encoding: "utf8" });
+				let componentFileName = componentDemoFileName.replace(extension, ".ts");
+				!existsSync(path.join(PATH_LIB_SRC, COMPONENTS_DIR_NAME, componentFileName)) && (componentFileName = componentDemoFileName.replace(extension, ".tsx"));
+				let componentFile = await fs.readFile(path.join(PATH_LIB_SRC, COMPONENTS_DIR_NAME, componentFileName), { encoding: "utf8" });
+				componentDemoFile = removeImportLine(componentDemoFile);
+				componentFile = removeImportLine(componentFile);
+				const jsDoc = buildHooksUtilsMarkdownObject(componentFile);
+				jsDoc.usage = buildComponentMarkdown(componentDemoFile, extension);
+				let title = componentDemoFileName.replace(extension, ".md");
+				await fs.writeFile(path.join(PATH_DEMO_SRC, MARKDOWWN_DIR_NAME, title), jsDoc2Markdown(jsDoc), { encoding: "utf8" });
 			}
 		}
 	}
@@ -424,9 +453,10 @@ async function generateHooksMarkDown() {
 
 async function generateMarkDown() {
 	try {
-		await deleteAllFiles(pathMarkdownDir);
+		await deleteAllFiles(path.join(PATH_DEMO_SRC, MARKDOWWN_DIR_NAME));
 		await generateUtilsMarkDown();
 		await generateHooksMarkDown();
+		await generateComponentsMarkDown();
 		process.exit(0);
 	} catch (error) {
 		console.error(error);

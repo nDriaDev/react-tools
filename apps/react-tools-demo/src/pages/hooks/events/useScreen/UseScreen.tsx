@@ -1,4 +1,4 @@
-import { useScreen } from "../../../../../../packages/react-tools/src"
+import { useScreen } from "../../../../../../../packages/react-tools/src"
 
 /**
 The component shows screens information.

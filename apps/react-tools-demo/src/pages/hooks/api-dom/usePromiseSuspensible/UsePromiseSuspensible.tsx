@@ -1,5 +1,5 @@
 import { Suspense } from "react"
-import { usePromiseSuspensible } from "../../../../../../packages/react-tools/src";
+import { usePromiseSuspensible } from "../../../../../../../packages/react-tools/src";
 
 /**
 The _Delayed_ component uses _usePromiseSuspensible_ hook to call a promise that resolves with an array of number or reject: if promise has been resolved, array number is rendered, otherwise an alert is invocked. Delayed component is returned from _UsePromiseSuspensible_ component.

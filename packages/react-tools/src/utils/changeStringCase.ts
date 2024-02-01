@@ -41,7 +41,7 @@ const caseFunc = {
 };
 
 /**
- * **`convertingStringCase`**: Function that given a string, a case type, and an optional delimiter, returns the string in the specified case or empty string.
+ * **`changeStringCase`**: Function that given a string, a case type, and an optional delimiter, returns the string in the specified case or empty string.
  * @param {Object} param - object
  * @param {string|undefined} [param.string] - string to the which change case.
  * @param {"pascalCase" | "snakeCase" | "kebabCase" | "camelCase"} param.caseType - selected case to change string.

@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { useRaf, useResizeObserver } from "../../../../../../packages/react-tools/src";
+import { useRaf, useResizeObserver } from "../../../../../../../packages/react-tools/src";
 
 /**
 The component renders a textarea element and when it is resized, updates __state__ variable inside function __start__ returned from _useRaf_ hook.

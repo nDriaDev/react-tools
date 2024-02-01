@@ -1,10 +1,10 @@
-# convertingStringCase
+# changeStringCase
 Function that given a string, a case type, and an optional delimiter, returns the string in the specified case or empty string.
 
 ## API
 
 ```tsx
-convertingStringCase({string, caseType, delimiter}:{ string?: string, caseType: "pascalCase" | "snakeCase" | "kebabCase" | "camelCase", delimiter?: "upperCase" | "lowerCase" | string}): string
+changeStringCase({string, caseType, delimiter}:{ string?: string, caseType: "pascalCase" | "snakeCase" | "kebabCase" | "camelCase", delimiter?: "upperCase" | "lowerCase" | string}): string
 ```
 
 > ### Params

@@ -1,5 +1,5 @@
 import { useCallback } from "react";
-import { useColorScheme } from "../../../../../../packages/react-tools/src"
+import { useColorScheme } from "../../../../../../../packages/react-tools/src"
 
 /**
 The component uses _useColorScheme_ with these properties:

@@ -20,7 +20,7 @@ export default function Home() {
 					</code>
 				</p>
 			</div>
-			<Link className='get-started' onClick={() => document.querySelector('.container')?.scrollTo(0, 0)} to="/usePrevious">GET STARTED</Link>
+			<Link className='get-started' onClick={() => document.querySelector('.container')?.scrollTo(0, 0)} to="/hooks">GET STARTED</Link>
 			<div className='features-container'>
 				<div className='cell'>
 					<div className='title'>Typescript</div>

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useResizeObserver } from "../../../../../../packages/react-tools/src"
+import { useResizeObserver } from "../../../../../../../packages/react-tools/src"
 
 /**
 The component renders a textarea element with a ref that receives callback returned from _useResizeObserver__ hook. There are also two button to disconnect and reconnect observer by functions returned from hook.

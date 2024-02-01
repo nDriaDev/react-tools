@@ -1,4 +1,4 @@
-import { useVibrate } from "../../../../../../packages/react-tools/src"
+import { useVibrate } from "../../../../../../../packages/react-tools/src"
 
 /**
 The component uses _useVibrate_ hook to know if vibrate is supported and to activate/deactivate vibration with two buttons.

@@ -1,4 +1,4 @@
-import { useMediaQuery } from "../../../../../../packages/react-tools/src"
+import { useMediaQuery } from "../../../../../../../packages/react-tools/src"
 
 /**
 The component uses _useMediaQuery_ hook to detect color-scheme and displays result.

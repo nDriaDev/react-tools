@@ -1,5 +1,5 @@
 import { useCallback, useMemo, useRef } from "react";
-import { useInfiniteScroll } from "../../../../../../packages/react-tools/src";
+import { useInfiniteScroll } from "../../../../../../../packages/react-tools/src";
 
 /**
 The component uses _useInfiniteScroll_ hook to render an items list that load all items while user scroll its container.

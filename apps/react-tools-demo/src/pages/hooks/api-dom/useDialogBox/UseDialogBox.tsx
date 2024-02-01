@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useDialogBox } from "../../../../../../packages/react-tools/src"
+import { useDialogBox } from "../../../../../../../packages/react-tools/src"
 
 /**
 The component renders three button that execute three _useDialogBox_ hook with a __type__ for each one.

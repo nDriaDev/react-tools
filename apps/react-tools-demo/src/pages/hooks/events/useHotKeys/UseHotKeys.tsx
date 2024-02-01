@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useHotKeys } from "../../../../../../packages/react-tools/src"
+import { useHotKeys } from "../../../../../../../packages/react-tools/src"
 
 /**
 The component uses _useHotKeys_ hook to print a message on _ctrl+shift+a_, _ctrlCommand+p_ and _ctrlCommand+a_ keys combinations and clear message when _Escape_ is pressed.

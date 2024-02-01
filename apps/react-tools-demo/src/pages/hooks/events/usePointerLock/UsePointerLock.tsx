@@ -1,5 +1,5 @@
 import { useCallback, useLayoutEffect, useRef, useState } from "react";
-import { usePointerLock } from "../../../../../../packages/react-tools/src";
+import { usePointerLock } from "../../../../../../../packages/react-tools/src";
 
 const canvasDraw = (x: number, y: number, canvas: HTMLCanvasElement) => {
 	const ctx = canvas.getContext("2d");

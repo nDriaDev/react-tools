@@ -1,5 +1,4 @@
-import { useActiveElement } from "../../../../../../packages/react-tools/src"
-
+import { useActiveElement } from "../../../../../../../packages/react-tools/src";
 /**
 The component has 3 HTML elements: a _span_ element with __tabindex__ attribute, a _p_ element with __tabindex__ attribute and a _button_ element. It renders also the current _active element_. If element focused changes, _active element_ displayed will change.
  */

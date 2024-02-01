@@ -1,4 +1,4 @@
-import { useBattery } from "../../../../../../packages/react-tools/src"
+import { useBattery } from "../../../../../../../packages/react-tools/src"
 
 /**
 The component displays device battery information.

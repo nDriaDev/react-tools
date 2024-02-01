@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { useScript } from "../../../../../../packages/react-tools/src"
+import { useScript } from "../../../../../../../packages/react-tools/src"
 declare const jQuery: { fn: { jquery: string } };
 
 /**

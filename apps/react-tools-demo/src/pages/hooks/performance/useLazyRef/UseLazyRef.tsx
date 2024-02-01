@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import { useInterval, useLazyRef, useRerender } from "../../../../../../packages/react-tools/src";
+import { useInterval, useLazyRef, useRerender } from "../../../../../../../packages/react-tools/src";
 
 /**
 There are two functions __initializer__ and __initializerLazy__ that log a message when they runs then sum and return number from 0 to 100.

@@ -1,5 +1,5 @@
 import { BaseSyntheticEvent, memo, useCallback, useEffect, useState } from "react";
-import { usePublishSubscribe } from "../../../../../../packages/react-tools/src";
+import { usePublishSubscribe } from "../../../../../../../packages/react-tools/src";
 
 /**
 The component has:

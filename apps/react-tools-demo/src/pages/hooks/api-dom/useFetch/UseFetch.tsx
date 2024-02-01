@@ -1,5 +1,5 @@
 import { Suspense } from "react";
-import { useFetch } from "../../../../../../packages/react-tools/src";
+import { useFetch } from "../../../../../../../packages/react-tools/src";
 
 /**
 The component uses _useFetch_ hook to call jsonplaceholder API with suspense support and without it.

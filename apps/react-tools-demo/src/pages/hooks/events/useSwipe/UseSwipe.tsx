@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import { useSwipe } from "../../../../../../packages/react-tools/src";
+import { useSwipe } from "../../../../../../../packages/react-tools/src";
 
 /**
 The component uses _useSwipe_ hook to handle swipe event on a div element.

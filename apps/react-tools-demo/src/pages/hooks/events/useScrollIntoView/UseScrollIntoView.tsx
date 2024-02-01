@@ -1,4 +1,4 @@
-import { useScrollIntoView } from "../../../../../../packages/react-tools/src";
+import { useScrollIntoView } from "../../../../../../../packages/react-tools/src";
 
 export const UseScrollIntoView = () => {
 	const { scroll, targetRef } = useScrollIntoView<HTMLParagraphElement, HTMLDivElement>({

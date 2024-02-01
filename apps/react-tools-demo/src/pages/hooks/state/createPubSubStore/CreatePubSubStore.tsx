@@ -1,6 +1,6 @@
 /* eslint-disable react-refresh/only-export-components */
 import { memo } from "react";
-import { createPubSubStore } from "../../../../../../packages/react-tools/src";
+import { createPubSubStore } from "../../../../../../../packages/react-tools/src";
 
 /**
 In this example it has been used _createPubSubStore_ hook to create a global store that contains a _user_ object and a _spinner_ value to handle logic of two components. The _updateStore_ and _usePubSubStore_ function returned from __createPubSubStore__ are exported to be used from other components:

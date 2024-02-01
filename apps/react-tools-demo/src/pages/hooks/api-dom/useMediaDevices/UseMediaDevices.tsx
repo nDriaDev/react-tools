@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useMediaDevices } from "../../../../../../packages/react-tools/src"
+import { useMediaDevices } from "../../../../../../../packages/react-tools/src"
 
 /**
 The component uses _useMediaDevices_ to get list of all media devices and groups them into _CAMERA_ _SPEAKERS_ and _MICROPHONE_ sections.

@@ -1,5 +1,5 @@
 import { FormEvent } from "react";
-import { useBroadcastChannel } from "../../../../../../packages/react-tools/src"
+import { useBroadcastChannel } from "../../../../../../../packages/react-tools/src"
 
 /**
 The component uses _useBroadcastChannel_ hook to send a text in a broadcast channel

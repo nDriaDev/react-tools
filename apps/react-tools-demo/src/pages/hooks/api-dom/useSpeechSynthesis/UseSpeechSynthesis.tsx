@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { LanguageBCP47Tags, useSpeechSynthesis } from "../../../../../../packages/react-tools/src"
+import { LanguageBCP47Tags, useSpeechSynthesis } from "../../../../../../../packages/react-tools/src"
 
 /**
 The component use _useSpeechSynthesis_ hook to read a text from an input text. Other fields are renders to setting properties as _voice_ _rate_ and _pitch_ of SpeechRecognition.

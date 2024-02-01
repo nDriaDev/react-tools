@@ -1,4 +1,4 @@
-import { useStateValidator } from "../../../../../../packages/react-tools/src"
+import { useStateValidator } from "../../../../../../../packages/react-tools/src"
 
 /**
 The component uses _useStateValidator_ hook to declare a state object with _name_ and _email_ properties attached to two input tag and validates them during typing.

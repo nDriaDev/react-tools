@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useLogger } from "../../../../../../packages/react-tools/src";
+import { useLogger } from "../../../../../../../packages/react-tools/src";
 
 /**
 The component uses _useLogger_ hook to trace component state in lifecycle events.

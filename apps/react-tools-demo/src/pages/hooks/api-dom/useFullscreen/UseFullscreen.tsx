@@ -1,4 +1,4 @@
-import { useFullscreen } from "../../../../../../packages/react-tools/src";
+import { useFullscreen } from "../../../../../../../packages/react-tools/src";
 
 /**
 The component render a div with a label to indicate if it is in fullscreen mode or not and two button to enter and exit from fullscreen mode.

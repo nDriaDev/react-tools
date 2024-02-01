@@ -1,5 +1,5 @@
 import { BaseSyntheticEvent, useCallback, useState } from "react"
-import { useDebounce } from "../../../../../../packages/react-tools/src";
+import { useDebounce } from "../../../../../../../packages/react-tools/src";
 
 /**
 The component has:

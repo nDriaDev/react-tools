@@ -1,5 +1,5 @@
 import { useCallback, useState } from "react"
-import { useThrottle } from "../../../../../../packages/react-tools/src";
+import { useThrottle } from "../../../../../../../packages/react-tools/src";
 
 /**
 The component has:

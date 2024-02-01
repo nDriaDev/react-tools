@@ -1,4 +1,4 @@
-import { useReducedMotion } from "../../../../../../packages/react-tools/src"
+import { useReducedMotion } from "../../../../../../../packages/react-tools/src"
 
 /**
 The component display user preferences about reducing motion.
