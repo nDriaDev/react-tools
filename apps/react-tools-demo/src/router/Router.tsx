@@ -1,7 +1,7 @@
 import { RouteObject, RouterProvider, createHashRouter } from 'react-router-dom';
 import MainLayout from '../layout/MainLayout';
 import ComponentLayout from '../layout/ComponentLayout';
-import HomeWrapper from '../components/home/HomeWrapper';
+import HomeWrapper from '../pages/home/HomeWrapper';
 import { COMPONENTS } from '../constants/components';
 import { useEffect, useState } from 'react';
 
@@ -12,7 +12,7 @@ const createRoutes = async () => {
 		const nameComponet = routesFlat[i].charAt(0).toUpperCase() + routesFlat[i].substring(1);
 		let Component, Markdown;
 		try {
-			Component = (await import(`../components/hooks/${routesFlat[i]}/${nameComponet}.tsx`))[nameComponet];
+			Component = (await import(`../pages/hooks/${routesFlat[i]}/${nameComponet}.tsx`))[nameComponet];
 		} catch (error) {
 			Component = undefined
 		}

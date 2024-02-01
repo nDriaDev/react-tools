@@ -1,150 +1,150 @@
 # TODO
 - __STATE__
+	- [x] createPubSubStore
+	- [x] useArray
+	- [x] useDerivedState
+	- [x] useLocalStorageState
+	- [x] useMap
 	- [x] usePrevious
-	- [x] useStateGetReset
-	- [x] useStateHistory
-	- [x] useStateHistoryGetter
+	- [x] useProxyState
 	- [x] useReducerGetReset
 	- [x] useReducerHistory
 	- [x] useReducerHistoryGetter
-	- [x] useLocalStorage
-	- [x] useSessionStorage
-	- [x] useMap
+	- [x] useSessionStorageState
 	- [x] useSet
-	- [x] useArray
-	- [x] useProxyState
-	- [x] useSyncExternalStore
-	- [x] useDerivedState
+	- [x] useStateGetReset
+	- [x] useStateHistory
+	- [x] useStateHistoryGetter
 	- [x] useStateValidator
-	- [x] createPubSubStore
+	- [x] useSyncExternalStore
 	- [ ] useSignal (TODO: like useProxyStore)
 	- [ ] createSignal (TODO: like createProxyStore)
 	- [ ] useProxyStore (TODO: proxy based)
 	- [ ] createProxyStore (TODO: proxy based)
 
 - __LIFECYCLE__
+	- [x] useDeferredValue
 	- [x] useEffectCompare
 	- [x] useEffectDeepCompare
 	- [x] useEffectOnce
+	- [x] useIsMounted
 	- [x] useLayoutEffectCompare
 	- [x] useLayoutEffectDeepCompare
 	- [x] useLayoutEffectOnce
-	- [x] useRerender
-	- [x] useIsMounted
-	- [x] useDeferredValue
 	- [x] useLogger
+	- [x] useRerender
 
 - __PERFORMANCE__
 	- [x] useCallbackCompare
 	- [x] useCallbackDeepCompare
-	- [x] useMemoizedFunction
+	- [x] useId
+	- [x] useLazyRef
 	- [x] useMemoCompare
 	- [x] useMemoDeepCompare
+	- [x] useMemoizedFunction
 	- [x] useMergedRef
-	- [x] useLazyRef
-	- [x] useId
 
 - __EVENTS__
-	- [x] useEvents
-	- [x] useEventListener (edit to handle multiple type)
-	- [x] useEventDispatcher
-	- [x] usePerformAction
-	- [x] useDocumentVisibility
-	- [x] useHover
-	- [x] useResponsive
-	- [x] useClickOutside
-	- [x] useNetwork
-	- [x] useOnline
-	- [x] useResizeObserver
-	- [x] useIntersectionObserver
-	- [x] useMutationObserver
-	- [x] useMeasure
-	- [x] useVisibile
-	- [x] useScrollIntoView
-	- [x] useMouse
-	- [x] useLongPress
-	- [x] useDoubleClick
 	- [x] useBeforeUnload
-	- [x] useScreen (orientation and ecc)
+	- [x] useClickOutside
+	- [x] useContextMenu
+	- [x] useDocumentVisibility
+	- [x] useDoubleClick
+	- [x] useEventDispatcher
+	- [x] useEventListener
+	- [x] useEvents
 	- [x] useHotKeys
+	- [x] useHover
+	- [x] useInfiniteScroll
+	- [x] useIntersectionObserver
+	- [x] useIsOnline
+	- [x] useLongPress
+	- [x] useMeasure
+	- [x] useMouse
+	- [x] useMutationObserver
+	- [x] useNetwork
+	- [x] usePerformAction
 	- [x] usePinchZoom
 	- [x] usePointerLock
-	- [x] useContextMenu
+	- [x] useResizeObserver
+	- [x] useResponsive
+	- [x] useScreen
+	- [x] useScrollIntoView
    	- [x] useSwipe
-	- [x] useInfiniteScroll
+	- [x] useVisible
 	- [ ] useDrag(TODO: need polyfill for mobile)
 	- [ ] useDrop(TODO: need polyfill for mobile)
 
 - __API DOM__
-	- [x] usePublishSubscribe
-	- [x] useScript
-	- [x] useDebounce
-	- [x] useThrottle
 	- [x] useActiveElement
-	- [x] useRaf
-	- [x] useTimeout
-	- [x] useInterval
-	- [x] useTextSelection
-	- [x] useClipboard
-	- [x] useMediaQuery
-	- [x] useColorScheme
-	- [x] useReducedMotion
-	- [x] useTitle
-	- [x] useIdleCallback
-	- [x] useFullscreen
-	- [x] useBattery
-	- [x] useGeolocation
-	- [x] useShare
-	- [x] useEyeDropper
-	- [x] useDialogBox
-	- [x] useDeviceMotion
-	- [x] useDeviceOrientation
-	- [x] useVibrate (??? mobile)
-	- [x] useBluetooth
-	- [x] useScreenWakeLock
-	- [x] useSpeechRecognition
-	- [x] useSpeechSynthesis
-	- [x] useFPS
-	- [x] usePIP
-	- [x] useDocumentPIP
-	- [x] usePopover
-	- [x] useRemotePlayback
 	- [x] useAnimation
 	- [x] useAudio
-	- [x] useVideo
-	- [x] useEventSource
-	- [x] useWebSocket
-	- [x] usePermission
-	- [x] useMediaDevices
+	- [x] useBattery
+	- [x] useBluetooth
+	- [x] useBroadcastChannel
+	- [x] useClipboard
+	- [x] useColorScheme
+	- [x] useDebounce
+	- [x] useDeviceMotion
+	- [x] useDeviceOrientation
+	- [x] useDialogBox
 	- [x] useDisplayMedia
+	- [x] useDocumentPIP
+	- [x] useEventSource
+	- [x] useEyeDropper
+	- [x] useFPS
+	- [x] useFetch
+	- [x] useFullscreen
+	- [x] useGeolocation
+	- [x] useIdleCallback
+	- [x] useInterval
+	- [x] useLock
+	- [x] useMediaDevices (??? mobile)
+	- [x] useMediaQuery
+	- [x] usePIP
+	- [x] usePermission
+	- [x] usePopover
+	- [x] usePromiseSuspensible
+	- [x] usePublishSubscribe
+	- [x] useRaf
+	- [x] useReducedMotion
+	- [x] useRemotePlayback
+	- [x] useScreenWakeLock
+	- [x] useScript
+	- [x] useShare
+	- [x] useSpeechRecognition
+	- [x] useSpeechSynthesis
+	- [x] useTextSelection
+	- [x] useThrottle
+	- [x] useTimeout
+	- [x] useTitle
+	- [x] useVibrate
+	- [x] useVideo
+	- [x] useWebSocket
 	- [x] useWebWorker
 	- [x] useWebWorkerFn
-	- [x] usePromiseSuspensible
-	- [x] useFetch
-	- [x] useLock
-	- [x] useBroadcastChannel
 	- [ ] useIndexedDB (TODO: refer to api)
 	- [ ] useIdleDetection (TODO: not work yet)
 
 - __UTILS__
-	- [x] isShallowEqual
-	- [x] isDeepEqual
-	- [x] isMouseEvent
-	- [x] isTouchEvent
-	- [x] isClient
-	- [x] isAsync
-	- [x] hotKeyHandler
-	- [x] detectBrowser
-	- [x] lazy
-	- [x] defaultSerializer
-	- [x] getBase64
-	- [x] removePropertiesFromArrayObjects
-	- [x] removeDuplicatedFromArrayObjects
-	- [x] getKeyObjectFromValue
-	- [x] getObjectFromDottedString
-	- [x] mergeObjects
 	- [x] alphanumericCompare
 	- [x] changeStringCase
+	- [x] defaultSerializer
+	- [x] detectBrowser
+	- [x] getBase64
+	- [x] getKeyObjectFromValue
+	- [x] getObjectFromDottedString
+	- [x] hotKeyHandler
+	- [x] isAsync
+	- [x] isClient
+	- [x] isDeepEqual
+	- [x] isMouseEvent
+	- [x] isShallowEqual
+	- [x] isTouchEvent
+	- [x] lazy
+	- [x] mergeObjects
+	- [x] removeDuplicatedFromArrayObjects
+	- [x] removePropertiesFromArrayObjects
 
 - __COMPONENT__
 	- [ ] Show component to render or not a component by a condition. Props: when, fallback, keyed. Keyed is a boolean and needs to avoid rerenders children when it is a function.
