@@ -51,7 +51,7 @@ function that will be executed when popover has been showed/hidden.
 
 > ### Returns
 >
-> __reuslt__:  _UsePopoverResult_  
+> __result__:  _UsePopoverResult_  
 > Object with these properties:
 > - __isSupported__: boolean that indicates if Popover API is supported or not.
 > - __isSupported__: boolean that indicates if popover is opened or not.

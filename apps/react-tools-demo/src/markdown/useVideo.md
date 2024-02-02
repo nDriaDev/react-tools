@@ -14,6 +14,7 @@ export const UseVideo = () => {
 		<button onClick={pause} disabled={state.paused}>Pause</button>
 	</div>
 }
+
 ```
 
 > The component use _useVideo_ hook to use a video track.

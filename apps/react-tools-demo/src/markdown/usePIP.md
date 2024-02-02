@@ -29,6 +29,7 @@ export const UsePIP = () => {
 		}
 	</div>
 }
+
 ```
 
 > The component uses _usePIP_ hook to show a video and a button to enable PIP.

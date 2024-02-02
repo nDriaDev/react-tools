@@ -14,6 +14,7 @@ export const UseAudio = () => {
 		<button onClick={pause} disabled={state.paused}>Pause</button>
 	</div>
 }
+
 ```
 
 > The component use _useAudio_ hook to use an audio track.

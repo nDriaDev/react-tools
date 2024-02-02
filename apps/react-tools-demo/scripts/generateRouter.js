@@ -15,8 +15,8 @@ const UTILS_DIR_NAME = "utils";
 const HOOKS_TYPE = ["state", "lifecycle", "performance", "events", "api-dom"];
 
 /**
- * 
- * @param {{readonly value: string;add(s: string): this;set(s: string[]): this;}} router 
+ *
+ * @param {{readonly value: string;add(s: string): this;set(s: string[]): this;}} router
  */
 async function generateImportMarkdown(router) {
 	/**
@@ -30,9 +30,9 @@ async function generateImportMarkdown(router) {
 }
 
 /**
- * 
- * @param {{readonly value: string;add(s: string): this;set(s: string[]): this;}} router 
- * @returns {Promise<{readonly value: string;add(s: string): this;set(s: string[]): this;}>} router 
+ *
+ * @param {{readonly value: string;add(s: string): this;set(s: string[]): this;}} router
+ * @returns {Promise<{readonly value: string;add(s: string): this;set(s: string[]): this;}>} router
  */
 async function generateImportDemoComponent(router) {
 	const demoComponentDirs = await fs.readdir(path.join(PATH_DEMO_SRC, DEMO_COMPONENT_DIR_NAME));
@@ -59,9 +59,9 @@ async function generateImportDemoComponent(router) {
 			for (const componentDemoComponentDir of componentsDemoComponentDirs) {
 				const files = await fs.readdir(path.join(PATH_DEMO_SRC, DEMO_COMPONENT_DIR_NAME, demoComponentDir, componentDemoComponentDir));
 				files.forEach(l => {
-					const [fileName, extension] = l.split(".")[0];
+					const [fileName, extension] = l.split(".");
 					if (fileName.toLowerCase() === componentDemoComponentDir.toLowerCase() && extension === "tsx") {
-						router.add(`const ${fileName} = lazy((() => import('../${DEMO_COMPONENT_DIR_NAME}/${demoComponentDir}/${componentDemoComponentDir}/${fileName}').then(module => ({default: "default" in module ? module["default"] : module["${fileName}"]})) as unknown as () => Promise<{ default: ComponentType; }>)`);
+						router.add(`const ${fileName} = lazy((() => import('../${DEMO_COMPONENT_DIR_NAME}/${demoComponentDir}/${componentDemoComponentDir}/${fileName}').then(module => ({default: "default" in module ? module["default"] : module["${fileName}"]}))) as unknown as () => Promise<{ default: ComponentType; }>)`);
 					}
 				})
 			}
@@ -70,8 +70,8 @@ async function generateImportDemoComponent(router) {
 }
 
 /**
- * 
- * @param {{readonly value: string;add(s: string): this;set(s: string[]): this;}} router 
+ *
+ * @param {{readonly value: string;add(s: string): this;set(s: string[]): this;}} router
  */
 async function generateImport(router) {
 	router.set([
@@ -85,13 +85,13 @@ async function generateImport(router) {
 }
 
 /**
- * 
- * @param {{readonly value: string;add(s: string): this;set(s: string[]): this;}} router 
- * @param {string[]} stateFiles 
- * @param {string[]} lifecycleFiles 
- * @param {string[]} performanceFiles 
- * @param {string[]} eventsfiles 
- * @param {string[]} apiDomFiles 
+ *
+ * @param {{readonly value: string;add(s: string): this;set(s: string[]): this;}} router
+ * @param {string[]} stateFiles
+ * @param {string[]} lifecycleFiles
+ * @param {string[]} performanceFiles
+ * @param {string[]} eventsfiles
+ * @param {string[]} apiDomFiles
  */
 function createHooksRoutes(router, stateFiles, lifecycleFiles, performanceFiles, eventsFiles, apiDomFiles,) {
 	router.add('						{');
@@ -201,8 +201,8 @@ function createHooksRoutes(router, stateFiles, lifecycleFiles, performanceFiles,
 }
 
 /**
- * 
- * @param {{readonly value: string;add(s: string): this;set(s: string[]): this;}} router 
+ *
+ * @param {{readonly value: string;add(s: string): this;set(s: string[]): this;}} router
  * @param {string[]} componentsFiles
  * @param {string} parentRoot
  */
@@ -222,8 +222,8 @@ function createRoutes(router, componentsFiles, parentRoot) {
 }
 
 /**
- * 
- * @param {{readonly value: string;add(s: string): this;set(s: string[]): this;}} router 
+ *
+ * @param {{readonly value: string;add(s: string): this;set(s: string[]): this;}} router
  */
 async function createRouter(router) {
 	const libSrcIndexFile = await fs.readFile(path.join(PATH_LIB_SRC, "index.ts"));
@@ -283,8 +283,8 @@ async function generateRouter() {
 		const stringBuffer = {
 			value: "",
 			/**
-			 * 
-			 * @param {string} s 
+			 *
+			 * @param {string} s
 			 * @returns {this}
 			 */
 			add(s) {
@@ -292,8 +292,8 @@ async function generateRouter() {
 				return this;
 			},
 			/**
-			 * 
-			 * @param {string[]} s 
+			 *
+			 * @param {string[]} s
 			 * @returns {this}
 			 */
 			set(s) {

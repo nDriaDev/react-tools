@@ -131,6 +131,7 @@ import useVisibleMD from "../markdown/useVisible.md?raw"
 import useWebSocketMD from "../markdown/useWebSocket.md?raw"
 import useWebWorkerMD from "../markdown/useWebWorker.md?raw"
 import useWebWorkerFnMD from "../markdown/useWebWorkerFn.md?raw"
+const Show = lazy((() => import('../pages/components/show/Show').then(module => ({default: "default" in module ? module["default"] : module["Show"]}))) as unknown as () => Promise<{ default: ComponentType; }>)
 import HomeWrapper from '../pages/home/HomeWrapper'
 const UseActiveElement = lazy((() => import('../pages/hooks/api-dom/useActiveElement/UseActiveElement').then(module => ({default: "default" in module ? module["default"] : module["UseActiveElement"]}))) as unknown as () => Promise<{ default: ComponentType; }>)
 const UseAnimation = lazy((() => import('../pages/hooks/api-dom/useAnimation/UseAnimation').then(module => ({default: "default" in module ? module["default"] : module["UseAnimation"]}))) as unknown as () => Promise<{ default: ComponentType; }>)
@@ -986,7 +987,7 @@ function Router() {
 					{
 						path: "Show",
 						element: <Suspense>
-							<ComponentLayout markdown={ShowMD} />
+							<ComponentLayout markdown={ShowMD} component={<Show/>}/>
 						</Suspense>
 					},
 					]

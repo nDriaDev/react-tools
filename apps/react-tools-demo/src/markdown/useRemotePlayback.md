@@ -17,6 +17,7 @@ export const UseRemotePlayback = () => {
 		<button style={{marginTop: 20}} onClick={prompt} disabled={state === "unavailable"}>Prompt</button>
 	</div>
 }
+
 ```
 
 > The component use _useRemotePlayback_ hook to play a video in a remote device.
