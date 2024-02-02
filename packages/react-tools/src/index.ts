@@ -26,6 +26,7 @@ export type {
 	ExtractMiddle,
 	ExtractTail,
 	GeoLocationObject,
+	HTMLAttributes,
 	HTMLMediaControls,
 	HTMLMediaState,
 	LanguageBCP47Tags,

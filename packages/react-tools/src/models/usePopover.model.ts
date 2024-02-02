@@ -1,11 +1,9 @@
-import { ComponentPropsWithRef } from "react";
+import { ComponentPropsWithRef, AriaAttributes, DOMAttributes } from "react";
 
-declare module 'react' {
-	interface HTMLAttributes<T> extends AriaAttributes, DOMAttributes<T> {
-		popover?: "auto" | "manual";
-	}
-
+export interface HTMLAttributes<T> extends AriaAttributes, DOMAttributes<T> {
+	popover?: "auto" | "manual";
 }
+
 export interface UsePopoverProps {
 	mode: "auto" | "manual";
 	onBeforeToggle?: (evt: ToggleEvent) => void;
@@ -18,5 +16,5 @@ export interface UsePopoverResult {
 	showPopover: () => void,
 	hidePopover: () => void,
 	togglePopover: () => void,
-	Popover: ({ children, ...rest }: ComponentPropsWithRef<"div">) => false | JSX.Element;
+	Popover: ({ children, ...rest }: ComponentPropsWithRef<"div"> & HTMLAttributes<"div">) => false | JSX.Element;
 }

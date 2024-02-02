@@ -1,4 +1,4 @@
-import React, { useReducer } from "react"
+import { useReducer } from "react"
 
 /**
  * **`useRerender`**: Hook that force a render.

@@ -1,5 +1,5 @@
 import { ComponentPropsWithRef, useCallback, useMemo, useRef } from "react";
-import { UsePopoverProps, UsePopoverResult } from "../../models";
+import { HTMLAttributes, UsePopoverProps, UsePopoverResult } from "../../models";
 import { useId, useMergedRef } from "../performance";
 import { useSyncExternalStore } from "../state";
 
@@ -9,7 +9,7 @@ import { useSyncExternalStore } from "../state";
  * @param {"auto"|"manual"} param.mode - popover state: __auto__ indicates that popover can be "light dismissed" by selecting outside the popover area, by contrast __manual__ popover must always be explicity hidden.
  * @param {(evt: ToggleEvent) => void} [param.onBeforeToggle] - function that will be executed before popover showed/hidden.
  * @param {(evt: ToggleEvent) => void} [param.onToggle] - function that will be executed when popover has been showed/hidden.
- * @returns {UsePopoverResult} reuslt
+ * @returns {UsePopoverResult} result
  * Object with these properties:
  * - __isSupported__: boolean that indicates if Popover API is supported or not.
  * - __isSupported__: boolean that indicates if popover is opened or not.
@@ -48,7 +48,7 @@ function usePopover({ mode, onBeforeToggle, onToggle }: UsePopoverProps): UsePop
 	const ref = useMergedRef(popoverRef, popoverListenerRef);
 
 	const Popover = useMemo(() => {
-		return (({ children, ...rest }: ComponentPropsWithRef<"div">) => {
+		return (({ children, ...rest }: ComponentPropsWithRef<"div"> & HTMLAttributes<"div">) => {
 			return "showPopover" in document.body && <div id={id} ref={ref} popover={mode} {...rest}>
 				{children}
 			</div>
