@@ -1,5 +1,5 @@
 import { useVideo } from "../../../../../../../packages/react-tools/src";
-import video from './../../../assets/mov_bbb.mp4';
+import video from './../../../../assets/mov_bbb.mp4';
 
 /**
 The component use _useVideo_ hook to use a video track.

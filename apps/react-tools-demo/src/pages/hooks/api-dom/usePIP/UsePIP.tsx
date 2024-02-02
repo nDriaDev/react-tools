@@ -1,5 +1,5 @@
 import { useRef, useState } from "react"
-import video from './../../../assets/mov_bbb.mp4';
+import video from './../../../../assets/mov_bbb.mp4';
 import { usePIP } from "../../../../../../../packages/react-tools/src";
 
 /**

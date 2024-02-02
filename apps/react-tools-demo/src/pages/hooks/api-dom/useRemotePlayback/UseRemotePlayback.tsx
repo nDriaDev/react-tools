@@ -1,5 +1,5 @@
 import { useRemotePlayback } from "../../../../../../../packages/react-tools/src"
-import video from './../../../assets/mov_bbb.mp4';
+import video from './../../../../assets/mov_bbb.mp4';
 
 /**
 The component use _useRemotePlayback_ hook to play a video in a remote device.
