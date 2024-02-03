@@ -1,5 +1,5 @@
 {
-	"name": "react-tools-ws",
+	"name": "react-tools",
 	"private": true,
 	"workspaces": [
 		"apps/*",
