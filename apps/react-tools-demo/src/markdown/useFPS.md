@@ -1,5 +1,5 @@
 # useFPS
-Hook to detect FPS (Frames per second).
+Hook to detect FPS (Frames per second). [See demo](https://nDriaDev.io/react-tools/#/hooks/api-dom/useFPS)
 
 ## Usage
 

@@ -1,5 +1,5 @@
 # useMediaQuery
-Hook to handle CSS mediaQuery. It returns an object with __matches__ and __media__ properties and receives an optional _onChange_ function to handle _MediaQueryListEvent change_ event.
+Hook to handle CSS mediaQuery. It returns an object with __matches__ and __media__ properties and receives an optional _onChange_ function to handle _MediaQueryListEvent change_ event. [See demo](https://nDriaDev.io/react-tools/#/hooks/api-dom/useMediaQuery)
 
 ## Usage
 

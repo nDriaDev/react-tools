@@ -2,7 +2,7 @@ import { RefObject } from "react"
 import { useEventListener } from "./useEventListener";
 
 /**
- * **`useContextMenu`**: Hook to add contextmenu event listener. The contextmenu event fires when the user attempts to open a context menu. This event is typically triggered by clicking the right mouse button, or by pressing the context menu key.
+ * **`useContextMenu`**: Hook to add contextmenu event listener. The contextmenu event fires when the user attempts to open a context menu. This event is typically triggered by clicking the right mouse button, or by pressing the context menu key. [See demo](https://nDriaDev.io/react-tools/#/hooks/events/useContextMenu)
  * @param {Object} param - props
  * @param {(evt: PointerEvent)=>void|Promise<void>} [param.listener] - listener function executed when event fires.
  * @param {RefObject<HTMLElement> | Window} [options.element=window] - element on which attaching eventListener.

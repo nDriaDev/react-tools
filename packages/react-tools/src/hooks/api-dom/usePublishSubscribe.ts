@@ -3,7 +3,7 @@ import { PublishSubscribePattern } from "../../utils";
 
 const pubsub = new PublishSubscribePattern<string>();
 /**
- * **`usePublishSubscribe`**: Communication system based on PubSub pattern. Instantiate a topic and use the publish and subscribe functions to communicate.
+ * **`usePublishSubscribe`**: Communication system based on PubSub pattern. Instantiate a topic and use the publish and subscribe functions to communicate. [See demo](https://nDriaDev.io/react-tools/#/hooks/api-dom/usePublishSubscribe)
  * @param {string} topic
  * @returns {[(listener: (value?: T) => Promise<void> | void) => () => void, (value?: T) => Promise<void> ]} result - contains the _publish_ and _subscribe_ functions. The result of invoking the _subscribe_ function in turn returns a function that can be used to _unsubscribe_ the topic
  */

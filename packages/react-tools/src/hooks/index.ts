@@ -98,7 +98,7 @@ export {
 	useLazyRef,
 	useMemoCompare,
 	useMemoDeepCompare,
-	useMemoizedFunction,
+	useMemoizedFn,
 	useMergedRef
 } from './performance';
 

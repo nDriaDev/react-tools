@@ -1,7 +1,7 @@
 import { useCallback } from "react";
 
 /**
- * **``**: Hook to use [EyeDropper API](https://developer.mozilla.org/en-US/docs/Web/API/EyeDropper_API).
+ * **``**: Hook to use [EyeDropper API](https://developer.mozilla.org/en-US/docs/Web/API/EyeDropper_API). [See demo](https://nDriaDev.io/react-tools/#/hooks/api-dom/useEyeDropper)
  * @param {Object} opts - options.
  * @param {()=>void} [opts.onStart] - function that will be executed on __open__ invocation.
  * @param {(result: `#${string}`) => void} [opts.onFinish] - function that will be on __open__ retuns.

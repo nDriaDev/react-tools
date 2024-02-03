@@ -37,7 +37,7 @@ export const COMPONENTS = [
 		],
 		//PERFORMANCE
 		[
-			"useMemoizedFunction",
+			"useMemoizedFn",
 			"useMemoCompare",
 			"useMemoDeepCompare",
 			"useCallbackCompare",

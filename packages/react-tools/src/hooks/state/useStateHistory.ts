@@ -1,7 +1,7 @@
 import { Dispatch, SetStateAction, useCallback, useRef, useState } from "react"
 
 /**
- * **`useStateHistory`**: custom useState that tracks and allows to use previous values.
+ * **`useStateHistory`**: custom useState that tracks and allows to use previous values. [See demo](https://nDriaDev.io/react-tools/#/hooks/state/useStateHistory)
  * @param {T | () => T} initialState - value or a function.
  * @param {number | "no-limit"} [capacity="no-limit"] - history capacity (default 'no-limit').
  * @returns {[T, Dispatch<SetStateAction<T>>, {history: readonly T[], presentPointer: number, trackUpdate: (enable:boolean) => void, canUndo: boolean, canRedo: boolean, undo: () => void, redo: () => void, go: (index: number) => void, clear: (value?: T) => void}]} array

@@ -6,7 +6,7 @@ let mediaDevicesOnChangeAttached = false;
 const mediaDevicesListeners = new Set<(evt: Event) => Promise<void> | void>();
 
 /**
- * **`useMediaDevices`**: Hook to use [MediaDevices](https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices) interface methods, that give access to any hardware source of media data.
+ * **`useMediaDevices`**: Hook to use [MediaDevices](https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices) interface methods, that give access to any hardware source of media data. [See demo](https://nDriaDev.io/react-tools/#/hooks/api-dom/useMediaDevices)
  * @param {UseMediaDevicesProps} action - it is a string that identifies which method to return as a result. It can be _devicesList_, _supportedConstraintsList_, _DisplayCapture_, or _mediaInputCapture_.
  * @returns {UseMediaDevicesResult} result - the function returned by __action__ parameter value.
  * if __action__ is:

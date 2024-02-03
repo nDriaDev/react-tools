@@ -1,5 +1,5 @@
 /**
- * **`isAsync`**: It detects if a function is asynchronous.
+ * **`isAsync`**: It detects if a function is asynchronous. [See demo](https://nDriaDev.io/react-tools/#/utils/isAsync)
  * @param {(...args: unknown[])=> unknown | Promise<unknown>}
  * @returns {boolean} result
  */

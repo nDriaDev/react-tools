@@ -1,5 +1,5 @@
 # useDebounce
-Hook to delay a function execution with possibility to cancel execution and to invoke them immediately.
+Hook to delay a function execution with possibility to cancel execution and to invoke them immediately. [See demo](https://nDriaDev.io/react-tools/#/hooks/api-dom/useDebounce)
 
 ## Usage
 

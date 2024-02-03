@@ -1,5 +1,5 @@
 # hotKeyHandler
-Utility function for _onKeyDown_ and _onKeyUp_ events handler that supports keys combination.
+Utility function for _onKeyDown_ and _onKeyUp_ events handler that supports keys combination. [See demo](https://nDriaDev.io/react-tools/#/utils/hotKeyHandler)
 
 ## API
 

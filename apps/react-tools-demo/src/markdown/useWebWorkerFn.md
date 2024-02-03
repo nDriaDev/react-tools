@@ -1,5 +1,5 @@
 # useWebWorkerFn
-Hook to run expensive functions using a Web Worker without blocking the UI handling execution as Promise.
+Hook to run expensive functions using a Web Worker without blocking the UI handling execution as Promise. [See demo](https://nDriaDev.io/react-tools/#/hooks/api-dom/useWebWorkerFn)
 
 ## Usage
 

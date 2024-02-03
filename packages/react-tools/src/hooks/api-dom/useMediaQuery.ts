@@ -2,7 +2,7 @@ import { useCallback, useMemo, useRef } from "react"
 import { useSyncExternalStore } from "../state"
 
 /**
- * **`useMediaQuery`**: Hook to handle CSS mediaQuery. It returns an object with __matches__ and __media__ properties and receives an optional _onChange_ function to handle _MediaQueryListEvent change_ event.
+ * **`useMediaQuery`**: Hook to handle CSS mediaQuery. It returns an object with __matches__ and __media__ properties and receives an optional _onChange_ function to handle _MediaQueryListEvent change_ event. [See demo](https://nDriaDev.io/react-tools/#/hooks/api-dom/useMediaQuery)
  * @param {string} mediaQuery - media query to test.
  * @param {(evt: MediaQueryListEvent) => void} [onChange] - MediaQueryListEvent change handler.
  * @returns {{matches: boolean, media: string}} result - object with __matches__, boolean value that returns true if the document currently matches the media query, __media__, string that represents media query.

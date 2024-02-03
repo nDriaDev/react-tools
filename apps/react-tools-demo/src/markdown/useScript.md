@@ -1,5 +1,5 @@
 # useScript
-Hook to dinamically load an external script like Google Analitycs.
+Hook to dinamically load an external script like Google Analitycs. [See demo](https://nDriaDev.io/react-tools/#/hooks/api-dom/useScript)
 
 ## Usage
 

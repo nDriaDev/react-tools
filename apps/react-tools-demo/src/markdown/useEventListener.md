@@ -1,5 +1,5 @@
 # useEventListener
-Hook to simplify add and remove EventListener use. It's persist during rerendering and automatically remove eventlistener on unMount component lifecycle.
+Hook to simplify add and remove EventListener use. It's persist during rerendering and automatically remove eventlistener on unMount component lifecycle. [See demo](https://nDriaDev.io/react-tools/#/hooks/events/useEventListener)
 
 ## Usage
 

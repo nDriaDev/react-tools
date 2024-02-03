@@ -1,5 +1,5 @@
 # useReducerHistory
-Custom useReducer that tracks and allows to use previous values.
+Custom useReducer that tracks and allows to use previous values. [See demo](https://nDriaDev.io/react-tools/#/hooks/state/useReducerHistory)
 
 ## Usage
 

@@ -1,7 +1,7 @@
 import { useDeviceOrientation } from "../../../../../../../packages/react-tools/src"
 
 /**
-The component uses _useDeviceOrientation_ hook to show device motion details.
+The component uses _useDeviceOrientation_ hook to show device orientation details.
  */
 export const UseDeviceOrientation = () => {
 	const data = useDeviceOrientation();

@@ -1,5 +1,5 @@
 # useCallbackDeepCompare
-Custom useCallback that returns memoized callback that changes only if deps are different in depth.
+Custom useCallback that returns memoized callback that changes only if deps are different in depth. [See demo](https://nDriaDev.io/react-tools/#/hooks/performance/useCallbackDeepCompare)
 
 ## Usage
 

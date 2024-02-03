@@ -1,5 +1,5 @@
 # 
-Hook to use [EyeDropper API](https://developer.mozilla.org/en-US/docs/Web/API/EyeDropper_API).
+Hook to use [EyeDropper API](https://developer.mozilla.org/en-US/docs/Web/API/EyeDropper_API). [See demo](https://nDriaDev.io/react-tools/#/hooks/api-dom/useEyeDropper)
 
 ## Usage
 
@@ -18,7 +18,7 @@ export const UseEyeDropper = () => {
 		<button onClick={onClick}>Get Color</button>
 		<br />
 		<br />
-		<label>Color </label><input type="color" defaultValue={color}/>
+		<label>Color </label><input type="color" value={color}/>
 	</div>
 }
 ```

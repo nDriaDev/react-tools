@@ -4,7 +4,7 @@ import { useEventListener } from "./useEventListener";
 import { isTouchEvent } from "../../utils";
 
 /**
- * **`useSwipe`**: hook to handle swipe gesture.
+ * **`useSwipe`**: hook to handle swipe gesture. [See demo](https://nDriaDev.io/react-tools/#/hooks/events/useSwipe)
  * @param {UseSwipeProps} param - object
  * @param {RefObject<Element>|Element} param.target - element on which attach swipe event.
  * @param {(e: MouseEvent|TouchEvent) => void} [param.onSwipeStart] - callback that will be executed when swipe starts.

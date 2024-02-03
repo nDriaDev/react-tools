@@ -1,5 +1,5 @@
 # useEffectDeepCompare
-Custom useEffect that reexecutes EffectCallback only when deps are different in depth.
+Custom useEffect that reexecutes EffectCallback only when deps are different in depth. [See demo](https://nDriaDev.io/react-tools/#/hooks/lifecycle/useEffectDeepCompare)
 
 ## Usage
 

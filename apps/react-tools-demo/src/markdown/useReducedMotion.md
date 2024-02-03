@@ -1,5 +1,5 @@
 # useReducedMotion
-Hook to detect if user prefers to reduce motion.
+Hook to detect if user prefers to reduce motion. [See demo](https://nDriaDev.io/react-tools/#/hooks/api-dom/useReducedMotion)
 
 ## Usage
 

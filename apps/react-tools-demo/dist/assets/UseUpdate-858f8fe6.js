@@ -1,1 +1,0 @@
-import{j as t}from"./index-7b09dd01.js";import{u as s}from"./useUpdate-dddcae22.js";const r=()=>{const e=s();return t.jsxs(t.Fragment,{children:[t.jsx("button",{type:"button",onClick:e,children:"Update"}),t.jsx("br",{}),t.jsx("br",{}),new Date().toLocaleTimeString()]})};r.displayName="UseUpdate";export{r as UseUpdate};

@@ -1,5 +1,5 @@
 # getBase64
-Function to obtain a Base64 from value specified if supported, otherwise throw an Error.
+Function to obtain a Base64 from value specified if supported, otherwise throw an Error. [See demo](https://nDriaDev.io/react-tools/#/utils/getBase64)
 
 ## API
 

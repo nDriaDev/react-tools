@@ -1,5 +1,5 @@
 # usePromiseSuspensible
-Hook to resolve promise with Suspense support. The component that uses it, it need to be wrapped with Suspense component.
+Hook to resolve promise with Suspense support. The component that uses it, it need to be wrapped with Suspense component. [See demo](https://nDriaDev.io/react-tools/#/hooks/api-dom/usePromiseSuspensible)
 
 ## Usage
 

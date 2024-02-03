@@ -1,5 +1,5 @@
 # useArray
-Hook to use _Array data structure_ to handle component state with all Array methods.
+Hook to use _Array data structure_ to handle component state with all Array methods. [See demo](https://nDriaDev.io/react-tools/#/hooks/state/useArray)
 
 ## Usage
 

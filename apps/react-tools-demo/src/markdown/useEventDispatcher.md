@@ -1,5 +1,5 @@
 # useEventDispatcher
-Hook to dispatch an Event or a CustomEvent
+Hook to dispatch an Event or a CustomEvent. [See demo](https://nDriaDev.io/react-tools/#/hooks/events/useEventDispatcher)
 
 ## Usage
 

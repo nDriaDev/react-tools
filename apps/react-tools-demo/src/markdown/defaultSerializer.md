@@ -1,5 +1,5 @@
 # defaultSerializer
-Function to serialize any type of value.
+Function to serialize any type of value. [See demo](https://nDriaDev.io/react-tools/#/utils/defaultSerializer)
 
 ## API
 

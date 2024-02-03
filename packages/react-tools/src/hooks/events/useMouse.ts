@@ -4,7 +4,7 @@ import { useSyncExternalStore } from "../state";
 const listeners = new Set<() => void>();
 
 /**
- * **`useMouse`**: Hook to track mouse position also in relationship with an element. It works with pointerEvents.
+ * **`useMouse`**: Hook to track mouse position also in relationship with an element. It works with pointerEvents. [See demo](https://nDriaDev.io/react-tools/#/hooks/events/useMouse)
  * @param {Object} opts
  * @param {"client"|"page"|"screen"} [opts.type="client"] - position by client page or screen.
  * @param {RefObject<HTMLElement> | HTMLElement} [opts.relativeElement] - if it is presents, position is relative to element.

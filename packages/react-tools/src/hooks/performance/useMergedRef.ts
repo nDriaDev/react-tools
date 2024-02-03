@@ -1,7 +1,7 @@
 import { Ref, MutableRefObject, useMemo, useRef } from "react";
 
 /**
- * **`useMergedRef`**: Hook to merge multiple refs into one.
+ * **`useMergedRef`**: Hook to merge multiple refs into one. [See demo](https://nDriaDev.io/react-tools/#/hooks/performance/useMergedRef)
  * @param {Ref<T>[]} refs
  * @returns {RefObject<T>} mergedRef
  */

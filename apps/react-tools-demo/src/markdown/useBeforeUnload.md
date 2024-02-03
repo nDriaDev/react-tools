@@ -1,5 +1,5 @@
 # useBeforeUnload
-Hook to handle beforeunload event.
+Hook to handle beforeunload event. [See demo](https://nDriaDev.io/react-tools/#/hooks/events/useBeforeUnload)
 
 ## Usage
 

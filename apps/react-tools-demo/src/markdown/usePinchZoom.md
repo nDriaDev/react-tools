@@ -1,5 +1,5 @@
 # usePinchZoom
-Hook to handle pinch zoom gestures.
+Hook to handle pinch zoom gestures. [See demo](https://nDriaDev.io/react-tools/#/hooks/events/usePinchZoom)
 
 ## Usage
 

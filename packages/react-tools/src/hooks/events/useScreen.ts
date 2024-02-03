@@ -5,7 +5,7 @@ import { OrientationLockType, ScreenDetails, ScreenDetailsEvt } from "../../mode
 const listeners = new Set<() => void>();
 
 /**
- * **`useScreen`**: Hook to work with [Screen Orientation API](https://developer.mozilla.org/en-US/docs/Web/API/Screen_Orientation_API) and [Window Management API](https://developer.mozilla.org/en-US/docs/Web/API/Window_Management_API).
+ * **`useScreen`**: Hook to work with [Screen Orientation API](https://developer.mozilla.org/en-US/docs/Web/API/Screen_Orientation_API) and [Window Management API](https://developer.mozilla.org/en-US/docs/Web/API/Window_Management_API). [See demo](https://nDriaDev.io/react-tools/#/hooks/events/useScreen)
  * @param {boolean} [allScreen=false] - to interact with all screens or only with current screen.
  * @returns {[ScreenDetails, (orientation: OrientationLockType)=>void, ()=> void]}
  * It contains:

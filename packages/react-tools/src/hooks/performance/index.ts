@@ -1,6 +1,6 @@
 export { useCallbackCompare } from './useCallbackCompare';
 export { useCallbackDeepCompare } from './useCallbackDeepCompare';
-export { useMemoizedFunction } from './useMemoizedFunction';
+export { useMemoizedFn } from './useMemoizedFn';
 export { useMemoCompare } from './useMemoCompare';
 export { useMemoDeepCompare } from './useMemoDeepCompare';
 export { useMergedRef } from './useMergedRef';

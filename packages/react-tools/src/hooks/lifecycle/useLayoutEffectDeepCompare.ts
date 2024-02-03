@@ -2,7 +2,7 @@ import { DependencyList, EffectCallback, useLayoutEffect, useRef } from "react"
 import { isDeepEqual } from "../../utils";
 
 /**
- * **`useLayoutEffectDeepCompare`**: custom useEffect that reexecutes EffectCallback only when deps are different in depth.
+ * **`useLayoutEffectDeepCompare`**: custom useEffect that reexecutes EffectCallback only when deps are different in depth. [See demo](https://nDriaDev.io/react-tools/#/hooks/lifecycle/useLayoutEffectDeepCompare)
  * @param {EffectCallback} cb - Imperative function that can return a cleanup function.
  * @param {DependencyList} deps - dependency list.
  * @returns {void}

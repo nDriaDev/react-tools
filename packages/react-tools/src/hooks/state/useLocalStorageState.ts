@@ -1,10 +1,10 @@
 import { Dispatch, SetStateAction, useMemo, useRef, useSyncExternalStore } from "react"
-import { useMemoizedFunction } from "../performance";
+import { useMemoizedFn } from "../performance";
 import { useEvents } from "../events";
 
 
 /**
- * ___useLocalStorageState___: Custom _useState_ hook implementation using _LocalStorage_, with immutable _getter state_ function and to _remove_ key from localStorage.
+ * ___useLocalStorageState___: Custom _useState_ hook implementation using _LocalStorage_, with immutable _getter state_ function and to _remove_ key from localStorage. [See demo](https://nDriaDev.io/react-tools/#/hooks/state/useLocalStorageState)
  * @param {Object} params
  * @param {string} params.key - item key in local storage.
  * @param {T | () => T} [params.initialState] - value or a function , optional.
@@ -93,7 +93,7 @@ function useLocalStorageState<T>({ key, initialState, opts }: { key: string, ini
 	});
 
 
-	const getter = useMemoizedFunction(() => cachedState.current);
+	const getter = useMemoizedFn(() => cachedState.current);
 
 	const remove = useRef(() => {
 		localStorage.removeItem(key);

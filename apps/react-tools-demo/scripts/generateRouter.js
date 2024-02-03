@@ -78,7 +78,8 @@ async function generateImport(router) {
 		"import { ComponentType, lazy, Suspense } from 'react';",
 		"import { RouterProvider, createHashRouter, Outlet, Navigate } from 'react-router-dom';",
 		"import MainLayout from '../layout/MainLayout';",
-		"import ComponentLayout from '../layout/ComponentLayout';"
+		"import ComponentLayout from '../layout/ComponentLayout';",
+		"import { Spinner } from '../layout/Spinner';"
 	]);
 	await generateImportMarkdown(router);
 	await generateImportDemoComponent(router);
@@ -100,7 +101,7 @@ function createHooksRoutes(router, stateFiles, lifecycleFiles, performanceFiles,
 	router.add('						},');
 	router.add('						{');
 	router.add('							path: "state",');
-	router.add('							element: <Suspense>');
+	router.add('							element: <Suspense fallback={<Spinner/>}>');
 	router.add('								<Outlet/>');
 	router.add('							</Suspense>,');
 	router.add('							children: [');
@@ -111,7 +112,7 @@ function createHooksRoutes(router, stateFiles, lifecycleFiles, performanceFiles,
 	stateFiles.forEach(f => {
 		router.add('								{');
 		router.add(`									path: "${f}",`);
-		router.add('									element: <Suspense>');
+		router.add('									element: <Suspense fallback={<Spinner/>}>');
 		router.add(`										<ComponentLayout markdown={${f + "MD"}} ${router.value.includes(`const ${f.charAt(0).toUpperCase() + f.substring(1)} = lazy`) ? `component={<${f.charAt(0).toUpperCase() + f.substring(1)}/>}` : ""}/>`);
 		router.add('									</Suspense>');
 		router.add('								},');
@@ -120,7 +121,7 @@ function createHooksRoutes(router, stateFiles, lifecycleFiles, performanceFiles,
 	router.add('						},');
 	router.add('						{');
 	router.add('							path: "lifecycle",');
-	router.add('							element: <Suspense>');
+	router.add('							element: <Suspense fallback={<Spinner/>}>');
 	router.add('								<Outlet/>');
 	router.add('							</Suspense>,');
 	router.add('							children: [');
@@ -131,7 +132,7 @@ function createHooksRoutes(router, stateFiles, lifecycleFiles, performanceFiles,
 	lifecycleFiles.forEach(f => {
 		router.add('								{');
 		router.add(`									path: "${f}",`);
-		router.add('									element: <Suspense>');
+		router.add('									element: <Suspense fallback={<Spinner/>}>');
 		router.add(`										<ComponentLayout markdown={${f + "MD"}} ${router.value.includes(`const ${f.charAt(0).toUpperCase() + f.substring(1)} = lazy`) ? `component={<${f.charAt(0).toUpperCase() + f.substring(1)}/>}` : ""}/>`);
 		router.add('									</Suspense>');
 		router.add('								},');
@@ -140,7 +141,7 @@ function createHooksRoutes(router, stateFiles, lifecycleFiles, performanceFiles,
 	router.add('						},');
 	router.add('						{');
 	router.add('							path: "performance",');
-	router.add('							element: <Suspense>');
+	router.add('							element: <Suspense fallback={<Spinner/>}>');
 	router.add('								<Outlet/>');
 	router.add('							</Suspense>,');
 	router.add('							children: [');
@@ -151,7 +152,7 @@ function createHooksRoutes(router, stateFiles, lifecycleFiles, performanceFiles,
 	performanceFiles.forEach(f => {
 		router.add('								{');
 		router.add(`									path: "${f}",`);
-		router.add('									element: <Suspense>');
+		router.add('									element: <Suspense fallback={<Spinner/>}>');
 		router.add(`										<ComponentLayout markdown={${f + "MD"}} ${router.value.includes(`const ${f.charAt(0).toUpperCase() + f.substring(1)} = lazy`) ? `component={<${f.charAt(0).toUpperCase() + f.substring(1)}/>}` : ""}/>`);
 		router.add('									</Suspense>');
 		router.add('								},');
@@ -160,7 +161,7 @@ function createHooksRoutes(router, stateFiles, lifecycleFiles, performanceFiles,
 	router.add('						},');
 	router.add('						{');
 	router.add('							path: "events",');
-	router.add('							element: <Suspense>');
+	router.add('							element: <Suspense fallback={<Spinner/>}>');
 	router.add('								<Outlet/>');
 	router.add('							</Suspense>,');
 	router.add('							children: [');
@@ -171,7 +172,7 @@ function createHooksRoutes(router, stateFiles, lifecycleFiles, performanceFiles,
 	eventsFiles.forEach(f => {
 		router.add('								{');
 		router.add(`									path: "${f}",`);
-		router.add('									element: <Suspense>');
+		router.add('									element: <Suspense fallback={<Spinner/>}>');
 		router.add(`										<ComponentLayout markdown={${f + "MD"}} ${router.value.includes(`const ${f.charAt(0).toUpperCase() + f.substring(1)} = lazy`) ? `component={<${f.charAt(0).toUpperCase() + f.substring(1)}/>}` : ""}/>`);
 		router.add('									</Suspense>');
 		router.add('								},');
@@ -180,7 +181,7 @@ function createHooksRoutes(router, stateFiles, lifecycleFiles, performanceFiles,
 	router.add('						},');
 	router.add('						{');
 	router.add('							path: "api-dom",');
-	router.add('							element: <Suspense>');
+	router.add('							element: <Suspense fallback={<Spinner/>}>');
 	router.add('								<Outlet/>');
 	router.add('							</Suspense>,');
 	router.add('							children: [');
@@ -191,7 +192,7 @@ function createHooksRoutes(router, stateFiles, lifecycleFiles, performanceFiles,
 	apiDomFiles.forEach(f => {
 		router.add('								{');
 		router.add(`									path: "${f}",`);
-		router.add('									element: <Suspense>');
+		router.add('									element: <Suspense fallback={<Spinner/>}>');
 		router.add(`										<ComponentLayout markdown={${f + "MD"}} ${router.value.includes(`const ${f.charAt(0).toUpperCase() + f.substring(1)} = lazy`) ? `component={<${f.charAt(0).toUpperCase() + f.substring(1)}/>}` : ""}/>`);
 		router.add('									</Suspense>');
 		router.add('								},');
@@ -214,7 +215,7 @@ function createRoutes(router, componentsFiles, parentRoot) {
 	componentsFiles.forEach(f => {
 		router.add('					{');
 		router.add(`						path: "${f}",`);
-		router.add('						element: <Suspense>');
+		router.add('						element: <Suspense fallback={<Spinner/>}>');
 		router.add(`							<ComponentLayout markdown={${f + "MD"}} ${router.value.includes(`const ${f.charAt(0).toUpperCase() + f.substring(1)} = lazy`) ? `component={<${f.charAt(0).toUpperCase() + f.substring(1)}/>}` : ""}/>`);
 		router.add('						</Suspense>');
 		router.add('					},');
@@ -242,13 +243,13 @@ async function createRouter(router) {
 	router.add("			children: [");
 	router.add("				{");
 	router.add("					index: true,");
-	router.add("					element: <Suspense>");
+	router.add("					element: <Suspense fallback={<Spinner/>}>");
 	router.add("						<HomeWrapper />");
 	router.add("						</Suspense>");
 	router.add("				},");
 	router.add("				{");
 	router.add('					path: "hooks",');
-	router.add("					element: <Suspense>");
+	router.add("					element: <Suspense fallback={<Spinner/>}>");
 	router.add("						<Outlet />");
 	router.add("					</Suspense>,");
 	router.add(`					children: [`);
@@ -257,7 +258,7 @@ async function createRouter(router) {
 	router.add('				},');
 	router.add('				{');
 	router.add('					path: "components",');
-	router.add('					element: <Suspense>');
+	router.add('					element: <Suspense fallback={<Spinner/>}>');
 	router.add('						<Outlet />');
 	router.add('					</Suspense>,');
 	router.add(`					children: [`);
@@ -266,7 +267,7 @@ async function createRouter(router) {
 	router.add('				},');
 	router.add('				{');
 	router.add('					path: "utils",');
-	router.add('					element: <Suspense>');
+	router.add('					element: <Suspense fallback={<Spinner/>}>');
 	router.add('						<Outlet />');
 	router.add('					</Suspense>,');
 	router.add(`					children: [`);

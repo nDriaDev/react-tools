@@ -2,6 +2,7 @@ import { ComponentType, lazy, Suspense } from 'react';
 import { RouterProvider, createHashRouter, Outlet, Navigate } from 'react-router-dom';
 import MainLayout from '../layout/MainLayout';
 import ComponentLayout from '../layout/ComponentLayout';
+import { Spinner } from '../layout/Spinner';
 import LazyMD from "../markdown/Lazy.md?raw"
 import ShowMD from "../markdown/Show.md?raw"
 import alphanumericCompareMD from "../markdown/alphanumericCompare.md?raw"
@@ -82,7 +83,7 @@ import useMediaDevicesMD from "../markdown/useMediaDevices.md?raw"
 import useMediaQueryMD from "../markdown/useMediaQuery.md?raw"
 import useMemoCompareMD from "../markdown/useMemoCompare.md?raw"
 import useMemoDeepCompareMD from "../markdown/useMemoDeepCompare.md?raw"
-import useMemoizedFunctionMD from "../markdown/useMemoizedFunction.md?raw"
+import useMemoizedFnMD from "../markdown/useMemoizedFn.md?raw"
 import useMergedRefMD from "../markdown/useMergedRef.md?raw"
 import useMouseMD from "../markdown/useMouse.md?raw"
 import useMutationObserverMD from "../markdown/useMutationObserver.md?raw"
@@ -216,7 +217,7 @@ const UseCallbackDeepCompare = lazy((() => import('../pages/hooks/performance/us
 const UseLazyRef = lazy((() => import('../pages/hooks/performance/useLazyRef/UseLazyRef').then(module => ({default: "default" in module ? module["default"] : module["UseLazyRef"]}))) as unknown as () => Promise<{ default: ComponentType; }>)
 const UseMemoCompare = lazy((() => import('../pages/hooks/performance/useMemoCompare/UseMemoCompare').then(module => ({default: "default" in module ? module["default"] : module["UseMemoCompare"]}))) as unknown as () => Promise<{ default: ComponentType; }>)
 const UseMemoDeepCompare = lazy((() => import('../pages/hooks/performance/useMemoDeepCompare/UseMemoDeepCompare').then(module => ({default: "default" in module ? module["default"] : module["UseMemoDeepCompare"]}))) as unknown as () => Promise<{ default: ComponentType; }>)
-const UseMemoizedFunction = lazy((() => import('../pages/hooks/performance/useMemoizedFunction/UseMemoizedFunction').then(module => ({default: "default" in module ? module["default"] : module["UseMemoizedFunction"]}))) as unknown as () => Promise<{ default: ComponentType; }>)
+const UseMemoizedFn = lazy((() => import('../pages/hooks/performance/useMemoizedFn/UseMemoizedFn').then(module => ({default: "default" in module ? module["default"] : module["UseMemoizedFn"]}))) as unknown as () => Promise<{ default: ComponentType; }>)
 const UseMergedRef = lazy((() => import('../pages/hooks/performance/useMergedRef/UseMergedRef').then(module => ({default: "default" in module ? module["default"] : module["UseMergedRef"]}))) as unknown as () => Promise<{ default: ComponentType; }>)
 const CreatePubSubStore = lazy((() => import('../pages/hooks/state/createPubSubStore/CreatePubSubStore').then(module => ({default: "default" in module ? module["default"] : module["CreatePubSubStore"]}))) as unknown as () => Promise<{ default: ComponentType; }>)
 const UseArray = lazy((() => import('../pages/hooks/state/useArray/UseArray').then(module => ({default: "default" in module ? module["default"] : module["UseArray"]}))) as unknown as () => Promise<{ default: ComponentType; }>)
@@ -238,13 +239,13 @@ function Router() {
 			children: [
 				{
 					index: true,
-					element: <Suspense>
+					element: <Suspense fallback={<Spinner/>}>
 						<HomeWrapper />
 						</Suspense>
 				},
 				{
 					path: "hooks",
-					element: <Suspense>
+					element: <Suspense fallback={<Spinner/>}>
 						<Outlet />
 					</Suspense>,
 					children: [
@@ -254,7 +255,7 @@ function Router() {
 						},
 						{
 							path: "state",
-							element: <Suspense>
+							element: <Suspense fallback={<Spinner/>}>
 								<Outlet/>
 							</Suspense>,
 							children: [
@@ -264,103 +265,103 @@ function Router() {
 								},
 								{
 									path: "createPubSubStore",
-									element: <Suspense>
+									element: <Suspense fallback={<Spinner/>}>
 										<ComponentLayout markdown={createPubSubStoreMD} component={<CreatePubSubStore/>}/>
 									</Suspense>
 								},
 								{
 									path: "useArray",
-									element: <Suspense>
+									element: <Suspense fallback={<Spinner/>}>
 										<ComponentLayout markdown={useArrayMD} component={<UseArray/>}/>
 									</Suspense>
 								},
 								{
 									path: "useDerivedState",
-									element: <Suspense>
+									element: <Suspense fallback={<Spinner/>}>
 										<ComponentLayout markdown={useDerivedStateMD} component={<UseDerivedState/>}/>
 									</Suspense>
 								},
 								{
 									path: "useLocalStorageState",
-									element: <Suspense>
+									element: <Suspense fallback={<Spinner/>}>
 										<ComponentLayout markdown={useLocalStorageStateMD} component={<UseLocalStorageState/>}/>
 									</Suspense>
 								},
 								{
 									path: "useMap",
-									element: <Suspense>
+									element: <Suspense fallback={<Spinner/>}>
 										<ComponentLayout markdown={useMapMD} component={<UseMap/>}/>
 									</Suspense>
 								},
 								{
 									path: "usePrevious",
-									element: <Suspense>
+									element: <Suspense fallback={<Spinner/>}>
 										<ComponentLayout markdown={usePreviousMD} component={<UsePrevious/>}/>
 									</Suspense>
 								},
 								{
 									path: "useProxyState",
-									element: <Suspense>
+									element: <Suspense fallback={<Spinner/>}>
 										<ComponentLayout markdown={useProxyStateMD} component={<UseProxyState/>}/>
 									</Suspense>
 								},
 								{
 									path: "useReducerGetReset",
-									element: <Suspense>
+									element: <Suspense fallback={<Spinner/>}>
 										<ComponentLayout markdown={useReducerGetResetMD} />
 									</Suspense>
 								},
 								{
 									path: "useReducerHistory",
-									element: <Suspense>
+									element: <Suspense fallback={<Spinner/>}>
 										<ComponentLayout markdown={useReducerHistoryMD} />
 									</Suspense>
 								},
 								{
 									path: "useReducerHistoryGetter",
-									element: <Suspense>
+									element: <Suspense fallback={<Spinner/>}>
 										<ComponentLayout markdown={useReducerHistoryGetterMD} />
 									</Suspense>
 								},
 								{
 									path: "useSessionStorageState",
-									element: <Suspense>
+									element: <Suspense fallback={<Spinner/>}>
 										<ComponentLayout markdown={useSessionStorageStateMD} component={<UseSessionStorageState/>}/>
 									</Suspense>
 								},
 								{
 									path: "useSet",
-									element: <Suspense>
+									element: <Suspense fallback={<Spinner/>}>
 										<ComponentLayout markdown={useSetMD} component={<UseSet/>}/>
 									</Suspense>
 								},
 								{
 									path: "useStateGetReset",
-									element: <Suspense>
+									element: <Suspense fallback={<Spinner/>}>
 										<ComponentLayout markdown={useStateGetResetMD} component={<UseStateGetReset/>}/>
 									</Suspense>
 								},
 								{
 									path: "useStateHistory",
-									element: <Suspense>
+									element: <Suspense fallback={<Spinner/>}>
 										<ComponentLayout markdown={useStateHistoryMD} component={<UseStateHistory/>}/>
 									</Suspense>
 								},
 								{
 									path: "useStateHistoryGetter",
-									element: <Suspense>
+									element: <Suspense fallback={<Spinner/>}>
 										<ComponentLayout markdown={useStateHistoryGetterMD} />
 									</Suspense>
 								},
 								{
 									path: "useStateValidator",
-									element: <Suspense>
+									element: <Suspense fallback={<Spinner/>}>
 										<ComponentLayout markdown={useStateValidatorMD} component={<UseStateValidator/>}/>
 									</Suspense>
 								},
 								{
 									path: "useSyncExternalStore",
-									element: <Suspense>
+									element: <Suspense fallback={<Spinner/>}>
 										<ComponentLayout markdown={useSyncExternalStoreMD} />
 									</Suspense>
 								},
@@ -368,7 +369,7 @@ function Router() {
 						},
 						{
 							path: "lifecycle",
-							element: <Suspense>
+							element: <Suspense fallback={<Spinner/>}>
 								<Outlet/>
 							</Suspense>,
 							children: [
@@ -378,61 +379,61 @@ function Router() {
 								},
 								{
 									path: "useDeferredValue",
-									element: <Suspense>
+									element: <Suspense fallback={<Spinner/>}>
 										<ComponentLayout markdown={useDeferredValueMD} />
 									</Suspense>
 								},
 								{
 									path: "useEffectCompare",
-									element: <Suspense>
+									element: <Suspense fallback={<Spinner/>}>
 										<ComponentLayout markdown={useEffectCompareMD} component={<UseEffectCompare/>}/>
 									</Suspense>
 								},
 								{
 									path: "useEffectDeepCompare",
-									element: <Suspense>
+									element: <Suspense fallback={<Spinner/>}>
 										<ComponentLayout markdown={useEffectDeepCompareMD} component={<UseEffectDeepCompare/>}/>
 									</Suspense>
 								},
 								{
 									path: "useEffectOnce",
-									element: <Suspense>
+									element: <Suspense fallback={<Spinner/>}>
 										<ComponentLayout markdown={useEffectOnceMD} component={<UseEffectOnce/>}/>
 									</Suspense>
 								},
 								{
 									path: "useIsMounted",
-									element: <Suspense>
+									element: <Suspense fallback={<Spinner/>}>
 										<ComponentLayout markdown={useIsMountedMD} component={<UseIsMounted/>}/>
 									</Suspense>
 								},
 								{
 									path: "useLayoutEffectCompare",
-									element: <Suspense>
+									element: <Suspense fallback={<Spinner/>}>
 										<ComponentLayout markdown={useLayoutEffectCompareMD} />
 									</Suspense>
 								},
 								{
 									path: "useLayoutEffectDeepCompare",
-									element: <Suspense>
+									element: <Suspense fallback={<Spinner/>}>
 										<ComponentLayout markdown={useLayoutEffectDeepCompareMD} />
 									</Suspense>
 								},
 								{
 									path: "useLayoutEffectOnce",
-									element: <Suspense>
+									element: <Suspense fallback={<Spinner/>}>
 										<ComponentLayout markdown={useLayoutEffectOnceMD} />
 									</Suspense>
 								},
 								{
 									path: "useLogger",
-									element: <Suspense>
+									element: <Suspense fallback={<Spinner/>}>
 										<ComponentLayout markdown={useLoggerMD} component={<UseLogger/>}/>
 									</Suspense>
 								},
 								{
 									path: "useRerender",
-									element: <Suspense>
+									element: <Suspense fallback={<Spinner/>}>
 										<ComponentLayout markdown={useRerenderMD} component={<UseRerender/>}/>
 									</Suspense>
 								},
@@ -440,7 +441,7 @@ function Router() {
 						},
 						{
 							path: "performance",
-							element: <Suspense>
+							element: <Suspense fallback={<Spinner/>}>
 								<Outlet/>
 							</Suspense>,
 							children: [
@@ -450,49 +451,49 @@ function Router() {
 								},
 								{
 									path: "useCallbackCompare",
-									element: <Suspense>
+									element: <Suspense fallback={<Spinner/>}>
 										<ComponentLayout markdown={useCallbackCompareMD} component={<UseCallbackCompare/>}/>
 									</Suspense>
 								},
 								{
 									path: "useCallbackDeepCompare",
-									element: <Suspense>
+									element: <Suspense fallback={<Spinner/>}>
 										<ComponentLayout markdown={useCallbackDeepCompareMD} component={<UseCallbackDeepCompare/>}/>
 									</Suspense>
 								},
 								{
 									path: "useId",
-									element: <Suspense>
+									element: <Suspense fallback={<Spinner/>}>
 										<ComponentLayout markdown={useIdMD} />
 									</Suspense>
 								},
 								{
 									path: "useLazyRef",
-									element: <Suspense>
+									element: <Suspense fallback={<Spinner/>}>
 										<ComponentLayout markdown={useLazyRefMD} component={<UseLazyRef/>}/>
 									</Suspense>
 								},
 								{
 									path: "useMemoCompare",
-									element: <Suspense>
+									element: <Suspense fallback={<Spinner/>}>
 										<ComponentLayout markdown={useMemoCompareMD} component={<UseMemoCompare/>}/>
 									</Suspense>
 								},
 								{
 									path: "useMemoDeepCompare",
-									element: <Suspense>
+									element: <Suspense fallback={<Spinner/>}>
 										<ComponentLayout markdown={useMemoDeepCompareMD} component={<UseMemoDeepCompare/>}/>
 									</Suspense>
 								},
 								{
-									path: "useMemoizedFunction",
-									element: <Suspense>
-										<ComponentLayout markdown={useMemoizedFunctionMD} component={<UseMemoizedFunction/>}/>
+									path: "useMemoizedFn",
+									element: <Suspense fallback={<Spinner/>}>
+										<ComponentLayout markdown={useMemoizedFnMD} component={<UseMemoizedFn/>}/>
 									</Suspense>
 								},
 								{
 									path: "useMergedRef",
-									element: <Suspense>
+									element: <Suspense fallback={<Spinner/>}>
 										<ComponentLayout markdown={useMergedRefMD} component={<UseMergedRef/>}/>
 									</Suspense>
 								},
@@ -500,7 +501,7 @@ function Router() {
 						},
 						{
 							path: "events",
-							element: <Suspense>
+							element: <Suspense fallback={<Spinner/>}>
 								<Outlet/>
 							</Suspense>,
 							children: [
@@ -510,163 +511,163 @@ function Router() {
 								},
 								{
 									path: "useBeforeUnload",
-									element: <Suspense>
+									element: <Suspense fallback={<Spinner/>}>
 										<ComponentLayout markdown={useBeforeUnloadMD} component={<UseBeforeUnload/>}/>
 									</Suspense>
 								},
 								{
 									path: "useClickOutside",
-									element: <Suspense>
+									element: <Suspense fallback={<Spinner/>}>
 										<ComponentLayout markdown={useClickOutsideMD} component={<UseClickOutside/>}/>
 									</Suspense>
 								},
 								{
 									path: "useContextMenu",
-									element: <Suspense>
+									element: <Suspense fallback={<Spinner/>}>
 										<ComponentLayout markdown={useContextMenuMD} component={<UseContextMenu/>}/>
 									</Suspense>
 								},
 								{
 									path: "useDocumentVisibility",
-									element: <Suspense>
+									element: <Suspense fallback={<Spinner/>}>
 										<ComponentLayout markdown={useDocumentVisibilityMD} component={<UseDocumentVisibility/>}/>
 									</Suspense>
 								},
 								{
 									path: "useDoubleClick",
-									element: <Suspense>
+									element: <Suspense fallback={<Spinner/>}>
 										<ComponentLayout markdown={useDoubleClickMD} component={<UseDoubleClick/>}/>
 									</Suspense>
 								},
 								{
 									path: "useEventDispatcher",
-									element: <Suspense>
+									element: <Suspense fallback={<Spinner/>}>
 										<ComponentLayout markdown={useEventDispatcherMD} component={<UseEventDispatcher/>}/>
 									</Suspense>
 								},
 								{
 									path: "useEventListener",
-									element: <Suspense>
+									element: <Suspense fallback={<Spinner/>}>
 										<ComponentLayout markdown={useEventListenerMD} component={<UseEventListener/>}/>
 									</Suspense>
 								},
 								{
 									path: "useEvents",
-									element: <Suspense>
+									element: <Suspense fallback={<Spinner/>}>
 										<ComponentLayout markdown={useEventsMD} component={<UseEvents/>}/>
 									</Suspense>
 								},
 								{
 									path: "useHotKeys",
-									element: <Suspense>
+									element: <Suspense fallback={<Spinner/>}>
 										<ComponentLayout markdown={useHotKeysMD} component={<UseHotKeys/>}/>
 									</Suspense>
 								},
 								{
 									path: "useHover",
-									element: <Suspense>
+									element: <Suspense fallback={<Spinner/>}>
 										<ComponentLayout markdown={useHoverMD} component={<UseHover/>}/>
 									</Suspense>
 								},
 								{
 									path: "useInfiniteScroll",
-									element: <Suspense>
+									element: <Suspense fallback={<Spinner/>}>
 										<ComponentLayout markdown={useInfiniteScrollMD} component={<UseInfiniteScroll/>}/>
 									</Suspense>
 								},
 								{
 									path: "useIntersectionObserver",
-									element: <Suspense>
+									element: <Suspense fallback={<Spinner/>}>
 										<ComponentLayout markdown={useIntersectionObserverMD} component={<UseIntersectionObserver/>}/>
 									</Suspense>
 								},
 								{
 									path: "useIsOnline",
-									element: <Suspense>
+									element: <Suspense fallback={<Spinner/>}>
 										<ComponentLayout markdown={useIsOnlineMD} component={<UseIsOnline/>}/>
 									</Suspense>
 								},
 								{
 									path: "useLongPress",
-									element: <Suspense>
+									element: <Suspense fallback={<Spinner/>}>
 										<ComponentLayout markdown={useLongPressMD} component={<UseLongPress/>}/>
 									</Suspense>
 								},
 								{
 									path: "useMeasure",
-									element: <Suspense>
+									element: <Suspense fallback={<Spinner/>}>
 										<ComponentLayout markdown={useMeasureMD} component={<UseMeasure/>}/>
 									</Suspense>
 								},
 								{
 									path: "useMouse",
-									element: <Suspense>
+									element: <Suspense fallback={<Spinner/>}>
 										<ComponentLayout markdown={useMouseMD} component={<UseMouse/>}/>
 									</Suspense>
 								},
 								{
 									path: "useMutationObserver",
-									element: <Suspense>
+									element: <Suspense fallback={<Spinner/>}>
 										<ComponentLayout markdown={useMutationObserverMD} component={<UseMutationObserver/>}/>
 									</Suspense>
 								},
 								{
 									path: "useNetwork",
-									element: <Suspense>
+									element: <Suspense fallback={<Spinner/>}>
 										<ComponentLayout markdown={useNetworkMD} component={<UseNetwork/>}/>
 									</Suspense>
 								},
 								{
 									path: "usePerformAction",
-									element: <Suspense>
+									element: <Suspense fallback={<Spinner/>}>
 										<ComponentLayout markdown={usePerformActionMD} component={<UsePerformAction/>}/>
 									</Suspense>
 								},
 								{
 									path: "usePinchZoom",
-									element: <Suspense>
+									element: <Suspense fallback={<Spinner/>}>
 										<ComponentLayout markdown={usePinchZoomMD} component={<UsePinchZoom/>}/>
 									</Suspense>
 								},
 								{
 									path: "usePointerLock",
-									element: <Suspense>
+									element: <Suspense fallback={<Spinner/>}>
 										<ComponentLayout markdown={usePointerLockMD} component={<UsePointerLock/>}/>
 									</Suspense>
 								},
 								{
 									path: "useResizeObserver",
-									element: <Suspense>
+									element: <Suspense fallback={<Spinner/>}>
 										<ComponentLayout markdown={useResizeObserverMD} component={<UseResizeObserver/>}/>
 									</Suspense>
 								},
 								{
 									path: "useResponsive",
-									element: <Suspense>
+									element: <Suspense fallback={<Spinner/>}>
 										<ComponentLayout markdown={useResponsiveMD} component={<UseResponsive/>}/>
 									</Suspense>
 								},
 								{
 									path: "useScreen",
-									element: <Suspense>
+									element: <Suspense fallback={<Spinner/>}>
 										<ComponentLayout markdown={useScreenMD} component={<UseScreen/>}/>
 									</Suspense>
 								},
 								{
 									path: "useScrollIntoView",
-									element: <Suspense>
+									element: <Suspense fallback={<Spinner/>}>
 										<ComponentLayout markdown={useScrollIntoViewMD} component={<UseScrollIntoView/>}/>
 									</Suspense>
 								},
 								{
 									path: "useSwipe",
-									element: <Suspense>
+									element: <Suspense fallback={<Spinner/>}>
 										<ComponentLayout markdown={useSwipeMD} component={<UseSwipe/>}/>
 									</Suspense>
 								},
 								{
 									path: "useVisible",
-									element: <Suspense>
+									element: <Suspense fallback={<Spinner/>}>
 										<ComponentLayout markdown={useVisibleMD} component={<UseVisible/>}/>
 									</Suspense>
 								},
@@ -674,7 +675,7 @@ function Router() {
 						},
 						{
 							path: "api-dom",
-							element: <Suspense>
+							element: <Suspense fallback={<Spinner/>}>
 								<Outlet/>
 							</Suspense>,
 							children: [
@@ -684,283 +685,283 @@ function Router() {
 								},
 								{
 									path: "useActiveElement",
-									element: <Suspense>
+									element: <Suspense fallback={<Spinner/>}>
 										<ComponentLayout markdown={useActiveElementMD} component={<UseActiveElement/>}/>
 									</Suspense>
 								},
 								{
 									path: "useAnimation",
-									element: <Suspense>
+									element: <Suspense fallback={<Spinner/>}>
 										<ComponentLayout markdown={useAnimationMD} component={<UseAnimation/>}/>
 									</Suspense>
 								},
 								{
 									path: "useAudio",
-									element: <Suspense>
+									element: <Suspense fallback={<Spinner/>}>
 										<ComponentLayout markdown={useAudioMD} component={<UseAudio/>}/>
 									</Suspense>
 								},
 								{
 									path: "useBattery",
-									element: <Suspense>
+									element: <Suspense fallback={<Spinner/>}>
 										<ComponentLayout markdown={useBatteryMD} component={<UseBattery/>}/>
 									</Suspense>
 								},
 								{
 									path: "useBluetooth",
-									element: <Suspense>
+									element: <Suspense fallback={<Spinner/>}>
 										<ComponentLayout markdown={useBluetoothMD} component={<UseBluetooth/>}/>
 									</Suspense>
 								},
 								{
 									path: "useBroadcastChannel",
-									element: <Suspense>
+									element: <Suspense fallback={<Spinner/>}>
 										<ComponentLayout markdown={useBroadcastChannelMD} component={<UseBroadcastChannel/>}/>
 									</Suspense>
 								},
 								{
 									path: "useClipboard",
-									element: <Suspense>
+									element: <Suspense fallback={<Spinner/>}>
 										<ComponentLayout markdown={useClipboardMD} component={<UseClipboard/>}/>
 									</Suspense>
 								},
 								{
 									path: "useColorScheme",
-									element: <Suspense>
+									element: <Suspense fallback={<Spinner/>}>
 										<ComponentLayout markdown={useColorSchemeMD} component={<UseColorScheme/>}/>
 									</Suspense>
 								},
 								{
 									path: "useDebounce",
-									element: <Suspense>
+									element: <Suspense fallback={<Spinner/>}>
 										<ComponentLayout markdown={useDebounceMD} component={<UseDebounce/>}/>
 									</Suspense>
 								},
 								{
 									path: "useDeviceMotion",
-									element: <Suspense>
+									element: <Suspense fallback={<Spinner/>}>
 										<ComponentLayout markdown={useDeviceMotionMD} component={<UseDeviceMotion/>}/>
 									</Suspense>
 								},
 								{
 									path: "useDeviceOrientation",
-									element: <Suspense>
+									element: <Suspense fallback={<Spinner/>}>
 										<ComponentLayout markdown={useDeviceOrientationMD} component={<UseDeviceOrientation/>}/>
 									</Suspense>
 								},
 								{
 									path: "useDialogBox",
-									element: <Suspense>
+									element: <Suspense fallback={<Spinner/>}>
 										<ComponentLayout markdown={useDialogBoxMD} component={<UseDialogBox/>}/>
 									</Suspense>
 								},
 								{
 									path: "useDisplayMedia",
-									element: <Suspense>
+									element: <Suspense fallback={<Spinner/>}>
 										<ComponentLayout markdown={useDisplayMediaMD} component={<UseDisplayMedia/>}/>
 									</Suspense>
 								},
 								{
 									path: "useDocumentPIP",
-									element: <Suspense>
+									element: <Suspense fallback={<Spinner/>}>
 										<ComponentLayout markdown={useDocumentPIPMD} component={<UseDocumentPIP/>}/>
 									</Suspense>
 								},
 								{
 									path: "useEventSource",
-									element: <Suspense>
+									element: <Suspense fallback={<Spinner/>}>
 										<ComponentLayout markdown={useEventSourceMD} />
 									</Suspense>
 								},
 								{
 									path: "useEyeDropper",
-									element: <Suspense>
+									element: <Suspense fallback={<Spinner/>}>
 										<ComponentLayout markdown={useEyeDropperMD} component={<UseEyeDropper/>}/>
 									</Suspense>
 								},
 								{
 									path: "useFetch",
-									element: <Suspense>
+									element: <Suspense fallback={<Spinner/>}>
 										<ComponentLayout markdown={useFetchMD} component={<UseFetch/>}/>
 									</Suspense>
 								},
 								{
 									path: "useFPS",
-									element: <Suspense>
+									element: <Suspense fallback={<Spinner/>}>
 										<ComponentLayout markdown={useFPSMD} component={<UseFPS/>}/>
 									</Suspense>
 								},
 								{
 									path: "useFullscreen",
-									element: <Suspense>
+									element: <Suspense fallback={<Spinner/>}>
 										<ComponentLayout markdown={useFullscreenMD} component={<UseFullscreen/>}/>
 									</Suspense>
 								},
 								{
 									path: "useGeolocation",
-									element: <Suspense>
+									element: <Suspense fallback={<Spinner/>}>
 										<ComponentLayout markdown={useGeolocationMD} component={<UseGeolocation/>}/>
 									</Suspense>
 								},
 								{
 									path: "useIdleCallback",
-									element: <Suspense>
+									element: <Suspense fallback={<Spinner/>}>
 										<ComponentLayout markdown={useIdleCallbackMD} component={<UseIdleCallback/>}/>
 									</Suspense>
 								},
 								{
 									path: "useInterval",
-									element: <Suspense>
+									element: <Suspense fallback={<Spinner/>}>
 										<ComponentLayout markdown={useIntervalMD} component={<UseInterval/>}/>
 									</Suspense>
 								},
 								{
 									path: "useLock",
-									element: <Suspense>
+									element: <Suspense fallback={<Spinner/>}>
 										<ComponentLayout markdown={useLockMD} component={<UseLock/>}/>
 									</Suspense>
 								},
 								{
 									path: "useMediaDevices",
-									element: <Suspense>
+									element: <Suspense fallback={<Spinner/>}>
 										<ComponentLayout markdown={useMediaDevicesMD} component={<UseMediaDevices/>}/>
 									</Suspense>
 								},
 								{
 									path: "useMediaQuery",
-									element: <Suspense>
+									element: <Suspense fallback={<Spinner/>}>
 										<ComponentLayout markdown={useMediaQueryMD} component={<UseMediaQuery/>}/>
 									</Suspense>
 								},
 								{
 									path: "usePermission",
-									element: <Suspense>
+									element: <Suspense fallback={<Spinner/>}>
 										<ComponentLayout markdown={usePermissionMD} component={<UsePermission/>}/>
 									</Suspense>
 								},
 								{
 									path: "usePIP",
-									element: <Suspense>
+									element: <Suspense fallback={<Spinner/>}>
 										<ComponentLayout markdown={usePIPMD} component={<UsePIP/>}/>
 									</Suspense>
 								},
 								{
 									path: "usePopover",
-									element: <Suspense>
+									element: <Suspense fallback={<Spinner/>}>
 										<ComponentLayout markdown={usePopoverMD} component={<UsePopover/>}/>
 									</Suspense>
 								},
 								{
 									path: "usePromiseSuspensible",
-									element: <Suspense>
+									element: <Suspense fallback={<Spinner/>}>
 										<ComponentLayout markdown={usePromiseSuspensibleMD} component={<UsePromiseSuspensible/>}/>
 									</Suspense>
 								},
 								{
 									path: "usePublishSubscribe",
-									element: <Suspense>
+									element: <Suspense fallback={<Spinner/>}>
 										<ComponentLayout markdown={usePublishSubscribeMD} component={<UsePublishSubscribe/>}/>
 									</Suspense>
 								},
 								{
 									path: "useRaf",
-									element: <Suspense>
+									element: <Suspense fallback={<Spinner/>}>
 										<ComponentLayout markdown={useRafMD} component={<UseRaf/>}/>
 									</Suspense>
 								},
 								{
 									path: "useReducedMotion",
-									element: <Suspense>
+									element: <Suspense fallback={<Spinner/>}>
 										<ComponentLayout markdown={useReducedMotionMD} component={<UseReducedMotion/>}/>
 									</Suspense>
 								},
 								{
 									path: "useRemotePlayback",
-									element: <Suspense>
+									element: <Suspense fallback={<Spinner/>}>
 										<ComponentLayout markdown={useRemotePlaybackMD} component={<UseRemotePlayback/>}/>
 									</Suspense>
 								},
 								{
 									path: "useScreenWakeLock",
-									element: <Suspense>
+									element: <Suspense fallback={<Spinner/>}>
 										<ComponentLayout markdown={useScreenWakeLockMD} component={<UseScreenWakeLock/>}/>
 									</Suspense>
 								},
 								{
 									path: "useScript",
-									element: <Suspense>
+									element: <Suspense fallback={<Spinner/>}>
 										<ComponentLayout markdown={useScriptMD} component={<UseScript/>}/>
 									</Suspense>
 								},
 								{
 									path: "useShare",
-									element: <Suspense>
+									element: <Suspense fallback={<Spinner/>}>
 										<ComponentLayout markdown={useShareMD} component={<UseShare/>}/>
 									</Suspense>
 								},
 								{
 									path: "useSpeechRecognition",
-									element: <Suspense>
+									element: <Suspense fallback={<Spinner/>}>
 										<ComponentLayout markdown={useSpeechRecognitionMD} component={<UseSpeechRecognition/>}/>
 									</Suspense>
 								},
 								{
 									path: "useSpeechSynthesis",
-									element: <Suspense>
+									element: <Suspense fallback={<Spinner/>}>
 										<ComponentLayout markdown={useSpeechSynthesisMD} component={<UseSpeechSynthesis/>}/>
 									</Suspense>
 								},
 								{
 									path: "useTextSelection",
-									element: <Suspense>
+									element: <Suspense fallback={<Spinner/>}>
 										<ComponentLayout markdown={useTextSelectionMD} component={<UseTextSelection/>}/>
 									</Suspense>
 								},
 								{
 									path: "useThrottle",
-									element: <Suspense>
+									element: <Suspense fallback={<Spinner/>}>
 										<ComponentLayout markdown={useThrottleMD} component={<UseThrottle/>}/>
 									</Suspense>
 								},
 								{
 									path: "useTimeout",
-									element: <Suspense>
+									element: <Suspense fallback={<Spinner/>}>
 										<ComponentLayout markdown={useTimeoutMD} component={<UseTimeout/>}/>
 									</Suspense>
 								},
 								{
 									path: "useTitle",
-									element: <Suspense>
+									element: <Suspense fallback={<Spinner/>}>
 										<ComponentLayout markdown={useTitleMD} component={<UseTitle/>}/>
 									</Suspense>
 								},
 								{
 									path: "useVibrate",
-									element: <Suspense>
+									element: <Suspense fallback={<Spinner/>}>
 										<ComponentLayout markdown={useVibrateMD} component={<UseVibrate/>}/>
 									</Suspense>
 								},
 								{
 									path: "useVideo",
-									element: <Suspense>
+									element: <Suspense fallback={<Spinner/>}>
 										<ComponentLayout markdown={useVideoMD} component={<UseVideo/>}/>
 									</Suspense>
 								},
 								{
 									path: "useWebSocket",
-									element: <Suspense>
+									element: <Suspense fallback={<Spinner/>}>
 										<ComponentLayout markdown={useWebSocketMD} />
 									</Suspense>
 								},
 								{
 									path: "useWebWorker",
-									element: <Suspense>
+									element: <Suspense fallback={<Spinner/>}>
 										<ComponentLayout markdown={useWebWorkerMD} component={<UseWebWorker/>}/>
 									</Suspense>
 								},
 								{
 									path: "useWebWorkerFn",
-									element: <Suspense>
+									element: <Suspense fallback={<Spinner/>}>
 										<ComponentLayout markdown={useWebWorkerFnMD} component={<UseWebWorkerFn/>}/>
 									</Suspense>
 								},
@@ -970,7 +971,7 @@ function Router() {
 				},
 				{
 					path: "components",
-					element: <Suspense>
+					element: <Suspense fallback={<Spinner/>}>
 						<Outlet />
 					</Suspense>,
 					children: [
@@ -980,13 +981,13 @@ function Router() {
 						},
 					{
 						path: "Lazy",
-						element: <Suspense>
+						element: <Suspense fallback={<Spinner/>}>
 							<ComponentLayout markdown={LazyMD} />
 						</Suspense>
 					},
 					{
 						path: "Show",
-						element: <Suspense>
+						element: <Suspense fallback={<Spinner/>}>
 							<ComponentLayout markdown={ShowMD} component={<Show/>}/>
 						</Suspense>
 					},
@@ -994,7 +995,7 @@ function Router() {
 				},
 				{
 					path: "utils",
-					element: <Suspense>
+					element: <Suspense fallback={<Spinner/>}>
 						<Outlet />
 					</Suspense>,
 					children: [
@@ -1004,109 +1005,109 @@ function Router() {
 						},
 					{
 						path: "alphanumericCompare",
-						element: <Suspense>
+						element: <Suspense fallback={<Spinner/>}>
 							<ComponentLayout markdown={alphanumericCompareMD} />
 						</Suspense>
 					},
 					{
 						path: "changeStringCase",
-						element: <Suspense>
+						element: <Suspense fallback={<Spinner/>}>
 							<ComponentLayout markdown={changeStringCaseMD} />
 						</Suspense>
 					},
 					{
 						path: "defaultSerializer",
-						element: <Suspense>
+						element: <Suspense fallback={<Spinner/>}>
 							<ComponentLayout markdown={defaultSerializerMD} />
 						</Suspense>
 					},
 					{
 						path: "detectBrowser",
-						element: <Suspense>
+						element: <Suspense fallback={<Spinner/>}>
 							<ComponentLayout markdown={detectBrowserMD} />
 						</Suspense>
 					},
 					{
 						path: "getBase64",
-						element: <Suspense>
+						element: <Suspense fallback={<Spinner/>}>
 							<ComponentLayout markdown={getBase64MD} />
 						</Suspense>
 					},
 					{
 						path: "getKeyObjectFromValue",
-						element: <Suspense>
+						element: <Suspense fallback={<Spinner/>}>
 							<ComponentLayout markdown={getKeyObjectFromValueMD} />
 						</Suspense>
 					},
 					{
 						path: "getObjectFromDottedString",
-						element: <Suspense>
+						element: <Suspense fallback={<Spinner/>}>
 							<ComponentLayout markdown={getObjectFromDottedStringMD} />
 						</Suspense>
 					},
 					{
 						path: "hotKeyHandler",
-						element: <Suspense>
+						element: <Suspense fallback={<Spinner/>}>
 							<ComponentLayout markdown={hotKeyHandlerMD} />
 						</Suspense>
 					},
 					{
 						path: "isAsync",
-						element: <Suspense>
+						element: <Suspense fallback={<Spinner/>}>
 							<ComponentLayout markdown={isAsyncMD} />
 						</Suspense>
 					},
 					{
 						path: "isClient",
-						element: <Suspense>
+						element: <Suspense fallback={<Spinner/>}>
 							<ComponentLayout markdown={isClientMD} />
 						</Suspense>
 					},
 					{
 						path: "isDeepEqual",
-						element: <Suspense>
+						element: <Suspense fallback={<Spinner/>}>
 							<ComponentLayout markdown={isDeepEqualMD} />
 						</Suspense>
 					},
 					{
 						path: "isMouseEvent",
-						element: <Suspense>
+						element: <Suspense fallback={<Spinner/>}>
 							<ComponentLayout markdown={isMouseEventMD} />
 						</Suspense>
 					},
 					{
 						path: "isShallowEqual",
-						element: <Suspense>
+						element: <Suspense fallback={<Spinner/>}>
 							<ComponentLayout markdown={isShallowEqualMD} />
 						</Suspense>
 					},
 					{
 						path: "isTouchEvent",
-						element: <Suspense>
+						element: <Suspense fallback={<Spinner/>}>
 							<ComponentLayout markdown={isTouchEventMD} />
 						</Suspense>
 					},
 					{
 						path: "lazy",
-						element: <Suspense>
+						element: <Suspense fallback={<Spinner/>}>
 							<ComponentLayout markdown={lazyMD} />
 						</Suspense>
 					},
 					{
 						path: "mergeObjects",
-						element: <Suspense>
+						element: <Suspense fallback={<Spinner/>}>
 							<ComponentLayout markdown={mergeObjectsMD} />
 						</Suspense>
 					},
 					{
 						path: "removeDuplicatedFromArrayObjects",
-						element: <Suspense>
+						element: <Suspense fallback={<Spinner/>}>
 							<ComponentLayout markdown={removeDuplicatedFromArrayObjectsMD} />
 						</Suspense>
 					},
 					{
 						path: "removePropertiesFromArrayObjects",
-						element: <Suspense>
+						element: <Suspense fallback={<Spinner/>}>
 							<ComponentLayout markdown={removePropertiesFromArrayObjectsMD} />
 						</Suspense>
 					},

@@ -18,7 +18,7 @@ const askPermission = (type: "clipboard-read" | "clipboard-write") => {
 const isFirefox = () => navigator.clipboard.read === undefined;
 
 /**
- * **`useClipboard`**: Hook to handle Clipboard. Refers to [Clipboard API](https://developer.mozilla.org/en-US/docs/Web/API/Clipboard_API). __N.B.__: The hook has the same compatibility issues as the Clipboard API for Firefox, i.e. it is currently impossible to read from the clipboard.
+ * **`useClipboard`**: Hook to handle Clipboard. Refers to [Clipboard API](https://developer.mozilla.org/en-US/docs/Web/API/Clipboard_API). __N.B.__: The hook has the same compatibility issues as the Clipboard API for Firefox, i.e. it is currently impossible to read from the clipboard. [See demo](https://nDriaDev.io/react-tools/#/hooks/api-dom/useClipboard)
  * @param {Object} param
  * @param {boolean} param.useValue - return a value with current clipboard value or not.
  * @param {RefObject<HTMLElement>|HTMLElement} [param.target] - target on which delimiter handling.

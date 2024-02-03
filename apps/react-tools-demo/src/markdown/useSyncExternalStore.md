@@ -1,5 +1,5 @@
 # useSyncExternalStore
-_useSyncExternalStore_ hook polyfilled for React versions below 18 ___only client side___.
+_useSyncExternalStore_ hook polyfilled for React versions below 18 ___only client side___. [See demo](https://nDriaDev.io/react-tools/#/hooks/state/useSyncExternalStore)
 
 ## API
 

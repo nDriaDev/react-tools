@@ -3,7 +3,7 @@ import { UseWebWorkerProps, UseWebWorkerResult } from "../../models";
 import { useEffectOnce } from "../lifecycle";
 
 /**
- * **`useWebWorker`**: Hook to use [Web Worker](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API), handling registration and communication.
+ * **`useWebWorker`**: Hook to use [Web Worker](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API), handling registration and communication. [See demo](https://nDriaDev.io/react-tools/#/hooks/api-dom/useWebWorker)
  * @param {UseWebWorkerProps} param - object
  * @param {string|URL} [param.url] - A string representing the URL of the script the worker will execute. It must obey the same-origin policy.
  * @param {WorkerOptions} [param.options] - An object containing option properties that can be set when creating the object instance.

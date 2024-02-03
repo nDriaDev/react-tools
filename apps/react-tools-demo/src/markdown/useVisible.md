@@ -1,5 +1,5 @@
 # useVisible
-Hook to know if an element is visible and optionally the visible area ration of the element.
+Hook to know if an element is visible and optionally the visible area ration of the element. [See demo](https://nDriaDev.io/react-tools/#/hooks/events/useVisible)
 
 ## Usage
 

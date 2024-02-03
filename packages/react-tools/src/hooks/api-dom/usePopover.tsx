@@ -4,7 +4,7 @@ import { useId, useMergedRef } from "../performance";
 import { useSyncExternalStore } from "../state";
 
 /**
- * **`usePopover`**: Hook to use [Popover API](https://developer.mozilla.org/en-US/docs/Web/API/Popover_API).
+ * **`usePopover`**: Hook to use [Popover API](https://developer.mozilla.org/en-US/docs/Web/API/Popover_API). [See demo](https://nDriaDev.io/react-tools/#/hooks/api-dom/usePopover)
  * @param {UsePopoverProps} param - object
  * @param {"auto"|"manual"} param.mode - popover state: __auto__ indicates that popover can be "light dismissed" by selecting outside the popover area, by contrast __manual__ popover must always be explicity hidden.
  * @param {(evt: ToggleEvent) => void} [param.onBeforeToggle] - function that will be executed before popover showed/hidden.

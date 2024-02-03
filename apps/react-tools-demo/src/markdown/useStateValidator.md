@@ -1,5 +1,5 @@
 # useStateValidator
-Custom _useState_ hook that validates state on every update.
+Custom _useState_ hook that validates state on every update. [See demo](https://nDriaDev.io/react-tools/#/hooks/state/useStateValidator)
 
 ## Usage
 

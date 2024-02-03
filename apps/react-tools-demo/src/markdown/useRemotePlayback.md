@@ -1,5 +1,5 @@
 # useRemotePlayback
-Hook to use [RemotePlayback API](https://developer.mozilla.org/en-US/docs/Web/API/RemotePlayback)
+Hook to use [RemotePlayback API](https://developer.mozilla.org/en-US/docs/Web/API/RemotePlayback). [See demo](https://nDriaDev.io/react-tools/#/hooks/api-dom/useRemotePlayback)
 
 ## Usage
 

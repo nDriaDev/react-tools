@@ -1,5 +1,5 @@
 # usePIP
-Hook to use PIP [(Picture-in-Picture API)](https://developer.mozilla.org/en-US/docs/Web/API/Picture-in-Picture_API).
+Hook to use PIP [(Picture-in-Picture API)](https://developer.mozilla.org/en-US/docs/Web/API/Picture-in-Picture_API). [See demo](https://nDriaDev.io/react-tools/#/hooks/api-dom/usePIP)
 
 ## Usage
 

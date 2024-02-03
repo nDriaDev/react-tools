@@ -160,7 +160,7 @@ export {
 	useMediaQuery,
 	useMemoCompare,
 	useMemoDeepCompare,
-	useMemoizedFunction,
+	useMemoizedFn,
 	useMergedRef,
 	useMouse,
 	useMutationObserver,

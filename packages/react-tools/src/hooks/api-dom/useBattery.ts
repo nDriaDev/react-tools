@@ -12,7 +12,7 @@ const eventsListeners = {
 let batteryCached: undefined | BatteryStatus & { onchargingchange: null | ((evt: Event) => void), onlevelchange: null | ((evt: Event) => void), onchargingtimechange: null | ((evt: Event) => void), ondischargingtimechange: null | ((evt: Event) => void) };
 
 /**
- * **`useBattery`**: Hook for accessing and monitoring device battery status. Refer to [Battery Status API](https://developer.mozilla.org/en-US/docs/Web/API/Battery_Status_API)
+ * **`useBattery`**: Hook for accessing and monitoring device battery status. Refer to [Battery Status API](https://developer.mozilla.org/en-US/docs/Web/API/Battery_Status_API). [See demo](https://nDriaDev.io/react-tools/#/hooks/api-dom/useBattery)
  * @param {Object} [opts] - optional object parameter to listen battery events change.
  * @param {(evt: Event) => void} [opts.onChargingChange] - callback that will be executed when chargingchange event is fired.
  * @param {(evt: Event) => void} [opts.onChargingTimeChange] - callback that will be executed when chargingtimechange event is fired.

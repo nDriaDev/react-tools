@@ -2,7 +2,7 @@ import { useCallback, useMemo, useRef } from "react"
 import { useSyncExternalStore } from "../state";
 
 /**
- * **`useScreenWakeLock`**: Hook to use [Screen Wake Lock API](https://developer.mozilla.org/en-US/docs/Web/API/Screen_Wake_Lock_API).
+ * **`useScreenWakeLock`**: Hook to use [Screen Wake Lock API](https://developer.mozilla.org/en-US/docs/Web/API/Screen_Wake_Lock_API). [See demo](https://nDriaDev.io/react-tools/#/hooks/api-dom/useScreenWakeLock)
  * @param {(evt?:Event)=>void} [onRelease] - function that will be executed on release event.
  * @returns {[{isSupported: boolean, type: "screen"|null, isActive: boolean|null}, ()=>Promise<void>, ()=>Promise<void>]} result - An array with three element:
  * - 1. __info__: object with these properties:

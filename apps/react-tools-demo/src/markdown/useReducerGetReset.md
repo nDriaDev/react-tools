@@ -1,5 +1,5 @@
 # useReducerGetReset
-Custom useReducer with get and reset state functions.
+Custom useReducer with get and reset state functions. [See demo](https://nDriaDev.io/react-tools/#/hooks/state/useReducerGetReset)
 
 ## Usage
 

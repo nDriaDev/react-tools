@@ -3,7 +3,7 @@ import { UseRemotePlaybackProps, UseRemotePlaybackResult } from "../../models";
 import { useSyncExternalStore } from "../state";
 
 /**
- * **`useRemotePlayback`**: Hook to use [RemotePlayback API](https://developer.mozilla.org/en-US/docs/Web/API/RemotePlayback)
+ * **`useRemotePlayback`**: Hook to use [RemotePlayback API](https://developer.mozilla.org/en-US/docs/Web/API/RemotePlayback). [See demo](https://nDriaDev.io/react-tools/#/hooks/api-dom/useRemotePlayback)
  * @param {UseRemotePlaybackProps} param - object
  * @param {(evt:Event) => void} [param.onConnecting] - function that will be executed when remote device has been connected.
  * @param {(evt:Event) => void} [param.onConnect] - function that will be executed when remote device connecting.

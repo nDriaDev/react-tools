@@ -1,5 +1,5 @@
 # useAudio
-Hook to use an HTML audio element.
+Hook to use an HTML audio element. [See demo](https://nDriaDev.io/react-tools/#/hooks/api-dom/useAudio)
 
 ## Usage
 

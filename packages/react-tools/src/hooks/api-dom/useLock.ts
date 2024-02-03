@@ -1,7 +1,7 @@
 import { useCallback } from "react"
 
 /**
- * **`useLock`**: Hook to use [Web Locks API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Locks_API).
+ * **`useLock`**: Hook to use [Web Locks API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Locks_API). [See demo](https://nDriaDev.io/react-tools/#/hooks/api-dom/useLock)
  * @param {string} [name] - an identifier for the lock.
  * @param {LockGrantedCallback | LockOptions} [options] - an object describing characteristics of the lock.
  * @param {LockGrantedCallback} [callback] - method called when the lock is granted.

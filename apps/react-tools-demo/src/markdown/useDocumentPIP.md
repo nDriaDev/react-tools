@@ -1,5 +1,5 @@
 # useDocumentPIP
-Hook to use Document PIP [(Document-Picture-in-Picture API)](https://developer.mozilla.org/en-US/docs/Web/API/Document_Picture-in-Picture_API).
+Hook to use Document PIP [(Document-Picture-in-Picture API)](https://developer.mozilla.org/en-US/docs/Web/API/Document_Picture-in-Picture_API). [See demo](https://nDriaDev.io/react-tools/#/hooks/api-dom/useDocumentPIP)
 
 ## Usage
 

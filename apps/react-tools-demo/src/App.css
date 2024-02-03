@@ -82,7 +82,7 @@
 }
 
 h2 {
-	font-size: 2em;
+	font-size: 1.5em;
 }
 
 code {
@@ -178,20 +178,20 @@ code {
 .nav>.type {
 	margin: 1em 0;
 	padding-left: 1em;
-	font-size: 1.5em;
+	font-size: 1em;
 }
 
 .nav>.sub-type {
 	margin: 0 0 0.5em;
 	padding-left: 1.55em;
-	font-size: 1.3125em;
+	font-size: .95em;
 }
 
 .nav>.sub-type ~ .sub-type {
 	margin-top: 1em;
 }
 .nav>a {
-	font-size: 1em;
+	font-size: .875em;
 	padding: 1em 2.5em;
 }
 
@@ -252,16 +252,20 @@ blockquote > h6 {
 	margin-top: 0;
 }
 
+blockquote>p {
+	font-size: 14px;
+}
+
 blockquote > ul > li {
 	font-size: 14px;
 }
 
 blockquote>ul>li>em {
-	font-size: 16px;
+	font-size: 14px;
 }
 
 blockquote>ul>li>strong {
-	font-size: 16px;
+	font-size: 14px;
 }
 
 .demo {
@@ -273,6 +277,9 @@ blockquote>ul>li>strong {
 	position: relative;
 	margin: 1rem 8rem 1rem;
 	text-align: center;
+}
+.demo > div {
+	overflow-x: auto;
 }
 
 .demo-label {
@@ -363,14 +370,13 @@ blockquote>ul>li>strong {
 		border-radius: 8px;
 		border: 1px solid transparent;
 		padding: 0.6em 1.2em;
-		font-size: 1em;
 		font-weight: 500;
 		font-family: inherit;
 		background-color: #1a1a1a;
 		cursor: pointer;
 		transition: border-color 0.25s;
 		margin: 50px 0px;
-		font-size: 1.4em;
+		font-size: 1.5em;
 		color: initial;
 	}
 
@@ -396,14 +402,14 @@ blockquote>ul>li>strong {
 			background-color: #444242;
 
 			.title {
-				font-size: 1.45em;
+				font-size: 1.25em;
 				font-weight: 400;
 				font-style: italic;
 			}
 
 			.body {
 				margin-top: 15px;
-				font-size: 1em;
+				font-size: .95em;
 			}
 		}
 	}
@@ -542,7 +548,8 @@ button:not(:disabled) {
 
 @media (max-width: 540px) {
 	.features-container {
-		grid-template-columns: repeat(1, 1fr);
+		grid-template-columns: unset !important;
+		grid-template-rows: repeat(1, 1fr);
 	}
 }
 
@@ -569,7 +576,8 @@ button:not(:disabled) {
 	}
 
 	.demo {
-		margin: 1rem 2rem 1rem;
+		margin: 1rem 0 1rem;
+		padding: 1rem 1rem;
 	}
 
 	.docs-md {

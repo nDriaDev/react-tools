@@ -1,5 +1,5 @@
 # useTextSelection
-Hook to track text selection. Refers to [Selection API](https://developer.mozilla.org/en-US/docs/Web/API/Selection).
+Hook to track text selection. Refers to [Selection API](https://developer.mozilla.org/en-US/docs/Web/API/Selection). [See demo](https://nDriaDev.io/react-tools/#/hooks/api-dom/useTextSelection)
 
 ## Usage
 

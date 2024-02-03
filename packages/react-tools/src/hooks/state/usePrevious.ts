@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useRef } from "react"
 
 /**
- * **`usePrevious`**: It's track the previous value of a variable, with possibility to enable/disable tracking.
+ * **`usePrevious`**: It's track the previous value of a variable, with possibility to enable/disable tracking. [See demo](https://nDriaDev.io/react-tools/#/hooks/state/usePrevious)
  * @param {T} variable - variable whose value is to be tracked.
  * @returns {[T|undefined, (enable:boolean)=>void]} array
  */

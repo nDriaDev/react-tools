@@ -1,5 +1,5 @@
 # useBroadcastChannel
-Hook to use [Broadcast Channel API](https://developer.mozilla.org/en-US/docs/Web/API/Broadcast_Channel_API).
+Hook to use [Broadcast Channel API](https://developer.mozilla.org/en-US/docs/Web/API/Broadcast_Channel_API). [See demo](https://nDriaDev.io/react-tools/#/hooks/api-dom/useBroadcastChannel)
 
 ## Usage
 

@@ -1,5 +1,5 @@
 /**
- * **`alphanumericCompare`**: Function which, given two strings, the type of comparison to be verified, and optional options, performs the comparison between the two strings and returns a boolean indicating whether the indicated comparison is respected or not.
+ * **`alphanumericCompare`**: Function which, given two strings, the type of comparison to be verified, and optional options, performs the comparison between the two strings and returns a boolean indicating whether the indicated comparison is respected or not. [See demo](https://nDriaDev.io/react-tools/#/utils/alphanumericCompare)
  * @param {string} string1 - first string to compare.
  * @param {string} string2 - second string to compare.
  * @param {"<" | ">" | "=" | ">=" | "<="} compareType - type of compare to verify.

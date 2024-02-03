@@ -1,5 +1,5 @@
 # useIsMounted
-Hoos to know when a component is mounted or not.
+Hoos to know when a component is mounted or not. [See demo](https://nDriaDev.io/react-tools/#/hooks/lifecycle/useIsMounted)
 
 ## Usage
 

@@ -1,5 +1,5 @@
 /**
- * **`getObjectFromDottedString`**: Function that, given a path, a value and an optional object, returns an object with as many properties as there are in the path, assigning the value passed to the last one specified.
+ * **`getObjectFromDottedString`**: Function that, given a path, a value and an optional object, returns an object with as many properties as there are in the path, assigning the value passed to the last one specified. [See demo](https://nDriaDev.io/react-tools/#/utils/getObjectFromDottedString)
  * @param {string} path - string value separated by dot, indicating that path where assign the passed value.
  * @param {unknown} value - value to assign to the property specified in path.
  * @param {Record<string,unknown>} [object] - optional object that will be used as start object.

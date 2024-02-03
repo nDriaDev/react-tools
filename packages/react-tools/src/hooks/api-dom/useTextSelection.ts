@@ -4,7 +4,7 @@ import { useSyncExternalStore } from "../state";
 import { isDeepEqual } from "../../utils";
 
 /**
- * **`useTextSelection`**: Hook to track text selection. Refers to [Selection API](https://developer.mozilla.org/en-US/docs/Web/API/Selection).
+ * **`useTextSelection`**: Hook to track text selection. Refers to [Selection API](https://developer.mozilla.org/en-US/docs/Web/API/Selection). [See demo](https://nDriaDev.io/react-tools/#/hooks/api-dom/useTextSelection)
  * @param {Object} param - object with selection properties
  * @param {RefObject<HTMLElement> | HTMLElement} [param.target] - element in which allow selection. Default is _document.body_.
  * @param {(evt: Event) => void} [param.onStart] - function to execute when selection starts.

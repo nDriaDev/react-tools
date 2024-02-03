@@ -3,7 +3,7 @@ import { useSyncExternalStore } from "../state";
 import { GeoLocationObject } from "../../models";
 
 /**
- * **`useGeolocation`**: Hook to use user's geographic location. Refer to [GeoLocation API](https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API).
+ * **`useGeolocation`**: Hook to use user's geographic location. Refer to [GeoLocation API](https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API). [See demo](https://nDriaDev.io/react-tools/#/hooks/api-dom/useGeolocation)
  * @param {Object} opts - options to use geolocation.
  * @param {PositionOptions} [opts.locationOptions] - An optional object which provides options for retrieval of the position data.
  * @param {boolean} [opts.mode] - it establishes how to obtain the geographic location:

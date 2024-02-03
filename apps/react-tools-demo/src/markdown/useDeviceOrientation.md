@@ -1,5 +1,5 @@
 # useDeviceOrientation
-Hook to handle [device orientation](https://developer.mozilla.org/en-US/docs/Web/API/Window/deviceorientation_event).
+Hook to handle [device orientation](https://developer.mozilla.org/en-US/docs/Web/API/Window/deviceorientation_event). [See demo](https://nDriaDev.io/react-tools/#/hooks/api-dom/useDeviceOrientation)
 
 ## Usage
 
@@ -18,7 +18,7 @@ export const UseDeviceOrientation = () => {
 }
 ```
 
-> The component uses _useDeviceOrientation_ hook to show device motion details.
+> The component uses _useDeviceOrientation_ hook to show device orientation details.
 
 
 ## API

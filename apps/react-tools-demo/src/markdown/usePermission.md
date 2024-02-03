@@ -1,5 +1,5 @@
 # usePermission
-Hook to query the status of API permissions attributed to the current context. Refer to [PermissionAPI](https://developer.mozilla.org/en-US/docs/Web/API/Permissions_API).
+Hook to query the status of API permissions attributed to the current context. Refer to [PermissionAPI](https://developer.mozilla.org/en-US/docs/Web/API/Permissions_API). [See demo](https://nDriaDev.io/react-tools/#/hooks/api-dom/usePermission)
 
 ## Usage
 

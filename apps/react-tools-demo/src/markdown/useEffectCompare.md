@@ -1,5 +1,5 @@
 # useEffectCompare
-Custom useEffect that reexecutes EffectCallback only when comparator function, received as third parameter, returns true.
+Custom useEffect that reexecutes EffectCallback only when comparator function, received as third parameter, returns true. [See demo](https://nDriaDev.io/react-tools/#/hooks/lifecycle/useEffectCompare)
 
 ## Usage
 

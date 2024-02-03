@@ -1,5 +1,5 @@
 # useResponsive
-Hook for getting responsive window size. It receives an optional param __config__ to manually setting breakpoint keys. __config__ can have a keys subset and value can be a number or an object with _value_ and _condition_ properties. If _value_ is a number, the condition will be ">". By default Breakpoints are:
+Hook for getting responsive window size. [See demo](https://nDriaDev.io/react-tools/#/hooks/events/useResponsive). It receives an optional param __config__ to manually setting breakpoint keys. __config__ can have a keys subset and value can be a number or an object with _value_ and _condition_ properties. If _value_ is a number, the condition will be ">". By default Breakpoints are:
 - xs: { value: 576, condition: "<" }
 - sm: { value: 576, condition: ">=" }
 - md: { value: 768, condition: ">=" }

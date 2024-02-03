@@ -41,7 +41,7 @@
 	- [x] useLazyRef
 	- [x] useMemoCompare
 	- [x] useMemoDeepCompare
-	- [x] useMemoizedFunction
+	- [x] useMemoizedFn
 	- [x] useMergedRef
 
 - __EVENTS__

@@ -1,5 +1,5 @@
 # removeDuplicatedFromArrayObjects
-Function that given a property or an array of properties, and one or more array of object, returns a single array with unique objects by specified properties. If property is __none__, will be return an unique array.
+Function that given a property or an array of properties, and one or more array of object, returns a single array with unique objects by specified properties. If property is __none__, will be return an unique array. [See demo](https://nDriaDev.io/react-tools/#/utils/removeDuplicatedFromArrayObjects)
 
 ## API
 

@@ -1,5 +1,5 @@
 # useStateGetReset
-Custom useState with get and reset state functions.
+Custom useState with get and reset state functions. [See demo](https://nDriaDev.io/react-tools/#/hooks/state/useStateGetReset)
 
 ## Usage
 

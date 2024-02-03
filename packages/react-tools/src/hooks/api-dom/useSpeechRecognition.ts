@@ -4,7 +4,7 @@ import { useEffectOnce } from "../lifecycle";
 import { useSyncExternalStore } from "../state";
 
 /**
- * **`useSpeechRecognition`**: Hook to use _SpeechRecognition API_. Refer to [Web Speech API](https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognition).
+ * **`useSpeechRecognition`**: Hook to use _SpeechRecognition API_. Refer to [Web Speech API](https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognition). [See demo](https://nDriaDev.io/react-tools/#/hooks/api-dom/useSpeechRecognition)
  * @param {UseSpeechRecognitionProps} opts - options.
  * @param {boolean} [opts.alreadyStarted=false] - istant start SpeechRecognition if it is available.
  * @param {Object} [opts.defaultConfig] - config parameters for current SpeechRecognition.

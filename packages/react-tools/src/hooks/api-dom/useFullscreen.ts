@@ -2,7 +2,7 @@ import { RefCallback, useCallback, useMemo, useRef } from "react";
 import { useSyncExternalStore } from "../state"
 
 /**
- * **`useFullscreen`**: Hook to use [Fullscreen API](https://developer.mozilla.org/en-US/docs/Web/API/Fullscreen_API).
+ * **`useFullscreen`**: Hook to use [Fullscreen API](https://developer.mozilla.org/en-US/docs/Web/API/Fullscreen_API). [See demo](https://nDriaDev.io/react-tools/#/hooks/api-dom/useFullscreen)
  * @param {()=>void|Promise<void>} [onEnter] - callback that will be executed before enter in fullscreen mode.
  * @param {(evt: Event)=>void} [onChange] - callback that will be executed when target element fullscreen change.
  * @param {()=>void|Promise<void>} [onExit] - callback that will be executed before exit from fullscreen mode.

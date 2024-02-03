@@ -1,5 +1,6 @@
 import { useRef } from "react";
-import { usePerformAction, useScript } from "../../../../../../../packages/react-tools/src";
+import { usePerformAction } from "../../../../../../../packages/react-tools/src/hooks/events/usePerformAction";
+import { useScript } from "../../../../../../../packages/react-tools/src/hooks/api-dom/useScript"
 import { Dropdown } from "./Dropdown";
 import { Select } from "./Select";
 

@@ -13,27 +13,27 @@ const UTILS_DIR_NAME = "utils";
 const HOOKS_TYPE = ["state", "lifecycle", "performance", "events", "api-dom"];
 
 /**
- * 
- * @param {{readonly value: string;add(s: string): this;set(s: string[]): this;}} router 
+ *
+ * @param {{readonly value: string;add(s: string): this;set(s: string[]): this;}} router
  */
 async function generateImport(router) {
 	router.set([
 		"import { Link, useLocation, useOutlet } from 'react-router-dom';",
 		"import Logo from '../assets/github.svg';",
 		"import React from '../assets/react-red.webp';",
-		"import { useCallback, useRef } from 'react';",
+		"import { useEffect, useCallback, useRef } from 'react';",
 		"import { CSSTransition, SwitchTransition } from 'react-transition-group'"
 	]);
 }
 
 /**
- * 
- * @param {{readonly value: string;add(s: string): this;set(s: string[]): this;}} router 
- * @param {string[]} stateFiles 
- * @param {string[]} lifecycleFiles 
- * @param {string[]} performanceFiles 
- * @param {string[]} eventsfiles 
- * @param {string[]} apiDomFiles 
+ *
+ * @param {{readonly value: string;add(s: string): this;set(s: string[]): this;}} router
+ * @param {string[]} stateFiles
+ * @param {string[]} lifecycleFiles
+ * @param {string[]} performanceFiles
+ * @param {string[]} eventsfiles
+ * @param {string[]} apiDomFiles
  */
 function createLinkHooksRoutes(router, stateFiles, lifecycleFiles, performanceFiles, eventsFiles, apiDomFiles,) {
 	router.add('						<p className="sub-type">State</p>');
@@ -41,6 +41,7 @@ function createLinkHooksRoutes(router, stateFiles, lifecycleFiles, performanceFi
 		const [name] = f.split(".");
 		router.add('						<Link');
 		router.add(`							className={pathname === "/hooks/state/${name}" ? 'active' : ''}`);
+		router.add(`							ref={node => linksRef.current["${name}"] = node}`);
 		router.add(`							to="/hooks/state/${name}"`);
 		router.add('							onClick={() => {');
 		router.add('								containerRef.current?.scrollTo(0, 0);');
@@ -55,6 +56,7 @@ function createLinkHooksRoutes(router, stateFiles, lifecycleFiles, performanceFi
 		const [name] = f.split(".");
 		router.add('						<Link');
 		router.add(`							className={pathname === "/hooks/lifecycle/${name}" ? 'active' : ''}`);
+		router.add(`							ref={node => linksRef.current["${name}"] = node}`);
 		router.add(`							to="/hooks/lifecycle/${name}"`);
 		router.add('							onClick={() => {');
 		router.add('								containerRef.current?.scrollTo(0, 0);');
@@ -69,6 +71,7 @@ function createLinkHooksRoutes(router, stateFiles, lifecycleFiles, performanceFi
 		const [name] = f.split(".");
 		router.add('						<Link');
 		router.add(`							className={pathname === "/hooks/performance/${name}" ? 'active' : ''}`);
+		router.add(`							ref={node => linksRef.current["${name}"] = node}`);
 		router.add(`							to="/hooks/performance/${name}"`);
 		router.add('							onClick={() => {');
 		router.add('								containerRef.current?.scrollTo(0, 0);');
@@ -83,6 +86,7 @@ function createLinkHooksRoutes(router, stateFiles, lifecycleFiles, performanceFi
 		const [name] = f.split(".");
 		router.add('						<Link');
 		router.add(`							className={pathname === "/hooks/events/${name}" ? 'active' : ''}`);
+		router.add(`							ref={node => linksRef.current["${name}"] = node}`);
 		router.add(`							to="/hooks/events/${name}"`);
 		router.add('							onClick={() => {');
 		router.add('								containerRef.current?.scrollTo(0, 0);');
@@ -97,6 +101,7 @@ function createLinkHooksRoutes(router, stateFiles, lifecycleFiles, performanceFi
 		const [name] = f.split(".");
 		router.add('						<Link');
 		router.add(`							className={pathname === "/hooks/api-${name}" ? 'active' : ''}`);
+		router.add(`							ref={node => linksRef.current["${name}"] = node}`);
 		router.add(`							to="/hooks/api-dom/${name}"`);
 		router.add('							onClick={() => {');
 		router.add('								containerRef.current?.scrollTo(0, 0);');
@@ -109,8 +114,8 @@ function createLinkHooksRoutes(router, stateFiles, lifecycleFiles, performanceFi
 }
 
 /**
- * 
- * @param {{readonly value: string;add(s: string): this;set(s: string[]): this;}} router 
+ *
+ * @param {{readonly value: string;add(s: string): this;set(s: string[]): this;}} router
  * @param {string[]} componentsFiles
  * @param {string} parentRoot
  */
@@ -120,6 +125,7 @@ function createLinkRoutes(router, componentsFiles, parentRoot) {
 		const [name] = f.split(".");
 		router.add('						<Link');
 		router.add(`							className={pathname === "/${parentRoot}/${name}" ? 'active' : ''}`);
+		router.add(`							ref={node => linksRef.current["${name}"] = node}`);
 		router.add(`							to="/${parentRoot}/${name}"`);
 		router.add('							onClick={() => {');
 		router.add('								containerRef.current?.scrollTo(0, 0);');
@@ -132,8 +138,8 @@ function createLinkRoutes(router, componentsFiles, parentRoot) {
 }
 
 /**
- * 
- * @param {{readonly value: string;add(s: string): this;set(s: string[]): this;}} router 
+ *
+ * @param {{readonly value: string;add(s: string): this;set(s: string[]): this;}} router
  */
 async function createLinkRouter(router) {
 	const libSrcIndexFile = await fs.readFile(path.join(PATH_LIB_SRC, "index.ts"));
@@ -156,8 +162,8 @@ async function generateMainLayout() {
 		const stringBuffer = {
 			value: "",
 			/**
-			 * 
-			 * @param {string} s 
+			 *
+			 * @param {string} s
 			 * @returns {this}
 			 */
 			add(s) {
@@ -165,8 +171,8 @@ async function generateMainLayout() {
 				return this;
 			},
 			/**
-			 * 
-			 * @param {string[]} s 
+			 *
+			 * @param {string[]} s
 			 * @returns {this}
 			 */
 			set(s) {
@@ -182,6 +188,7 @@ async function generateMainLayout() {
 			"	const currentOutlet = useOutlet()",
 			"	const nodeRef = useRef<HTMLDivElement>(null);",
 			"	const navRef = useRef<HTMLUnknownElement>(null);",
+			"	const linksRef = useRef<{[k:string]: HTMLAnchorElement|null}>({});",
 			"	const containerRef = useRef<HTMLDivElement>(null);",
 			"	const openNav = useCallback(() => {",
 			'		navRef.current && (navRef.current.style.width = "100%");',
@@ -189,6 +196,18 @@ async function generateMainLayout() {
 			"	const closeNav = useCallback(() => {",
 			'		navRef.current && (navRef.current.style.width= "0");',
 			"	}, []);",
+			'	useEffect(() => {',
+			'		if (window.innerWidth < 1000) {',
+			'			return;',
+			'		}',
+			'		const nodes = Object.values(linksRef.current);',
+			'		for (const node of nodes) {',
+			'			if (node?.getAttribute("href") === window.location.hash && node?.offsetTop > window.innerHeight) {',
+			'				node?.scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });',
+			'				break;',
+			'			}',
+			'		}',
+			'	}, []);',
 			'    return (',
 			'        <>',
 			'			{',

@@ -1,7 +1,7 @@
 import { useCallback, useRef, useState } from "react"
 
 /**
- * **`useFetch`**: Hook to use [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) with more control and the possibility to execute request with suspense support.
+ * **`useFetch`**: Hook to use [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) with more control and the possibility to execute request with suspense support. [See demo](https://nDriaDev.io/react-tools/#/hooks/api-dom/useFetch)
  * @param {RequestInfo|URL} url - The resource that you wish to fetch. This can either be a string, a Request object or an URL object.
  * @param {Object} [options] - An object containing any custom settings you want to apply to the fetch invokation.
  * @param {RequestInit} [...options.rest] - properties to customize fetch settings.

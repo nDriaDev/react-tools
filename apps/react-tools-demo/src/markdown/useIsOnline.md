@@ -1,5 +1,5 @@
 # useIsOnline
-Hook to detect network connection status.
+Hook to detect network connection status. [See demo](https://nDriaDev.io/react-tools/#/hooks/events/useIsOnline)
 
 ## Usage
 

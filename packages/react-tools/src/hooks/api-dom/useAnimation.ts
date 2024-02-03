@@ -2,7 +2,7 @@ import { RefCallback, useCallback, useRef } from "react"
 import { UseAnimationProps, UseAnimationResult } from "../../models";
 
 /**
- * **`useAnimation`**: Hook to use [Web Animations API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Animations_API).
+ * **`useAnimation`**: Hook to use [Web Animations API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Animations_API). [See demo](https://nDriaDev.io/react-tools/#/hooks/api-dom/useAnimation)
  * @param {UseAnimationProps} param - object
  * @param {Keyframe[] | PropertyIndexedKeyframes | null} param.keyFrames - array of keyfram objects ot a keyframe object whose properties are arrays of values to iterate over.
  * @param {boolean} [param.immediate=false] - boolean to start animation immediatly or not.

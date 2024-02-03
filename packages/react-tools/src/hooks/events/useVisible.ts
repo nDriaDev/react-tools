@@ -3,7 +3,7 @@ import { useSyncExternalStore } from "../state";
 import { useEffectOnce } from "../lifecycle";
 
 /**
- * **`useVisible`**: Hook to know if an element is visible and optionally the visible area ration of the element.
+ * **`useVisible`**: Hook to know if an element is visible and optionally the visible area ration of the element. [See demo](https://nDriaDev.io/react-tools/#/hooks/events/useVisible)
  * @param {{root?: Element|Document|null, rootMargin?: string, threshold?: number|number[], withRatio?: boolean}} opts - object to set options to observation.
  * @returns {[RefCallback<T>, boolean] | [RefCallback<T>, boolean, number]} result - callback for ref element attribute to observe, a boolean to known if element is visible or not and eventually the element ratio.
  */

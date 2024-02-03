@@ -1,6 +1,6 @@
 import { useCallback, useRef } from "react";
 import { useEventListener } from "./useEventListener";
-import { useReducedMotion } from "../api-dom";
+import { useReducedMotion } from "../api-dom/useReducedMotion";
 
 function easeInOutSine(x: number): number {
 	return -(Math.cos(Math.PI * x) - 1) / 2;
@@ -77,7 +77,7 @@ function getDelta<T extends Element, E extends Element>(axis: "x" | "y", target:
 
 
 /**
- * **`useScrollIntoView`**:
+ * **`useScrollIntoView`**: Hook to scroll an element into view. [See demo](https://nDriaDev.io/react-tools/#/hooks/events/useScrollIntoView)
  * @param {Object} param
  * @param {number} [param.duration=1000] - animation duration in milliseconds.
  * @param {"x"|"y"} [param.axis="x"] - scrolling axis.

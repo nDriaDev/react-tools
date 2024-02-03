@@ -1,5 +1,5 @@
 # useSwipe
-Hook to handle swipe gesture.
+Hook to handle swipe gesture. [See demo](https://nDriaDev.io/react-tools/#/hooks/events/useSwipe)
 
 ## Usage
 

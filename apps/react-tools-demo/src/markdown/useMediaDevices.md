@@ -1,5 +1,5 @@
 # useMediaDevices
-Hook to use [MediaDevices](https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices) interface methods, that give access to any hardware source of media data.
+Hook to use [MediaDevices](https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices) interface methods, that give access to any hardware source of media data. [See demo](https://nDriaDev.io/react-tools/#/hooks/api-dom/useMediaDevices)
 
 ## Usage
 

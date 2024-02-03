@@ -1,5 +1,5 @@
 # useMeasure
-Hook to  measure and track element's dimensions.
+Hook to  measure and track element's dimensions. [See demo](https://nDriaDev.io/react-tools/#/hooks/events/useMeasure)
 
 ## Usage
 

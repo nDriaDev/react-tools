@@ -2,7 +2,7 @@ import { RefObject, useCallback, useRef } from "react";
 import { useEventListener } from "./useEventListener";
 
 /**
- * **`usePinchZoom`**: Hook to handle pinch zoom gestures.
+ * **`usePinchZoom`**: Hook to handle pinch zoom gestures. [See demo](https://nDriaDev.io/react-tools/#/hooks/events/usePinchZoom)
  * @param {Object} options
  * @param {(evt: PointerEvent, type: "zoomIn"|"zoomOut") => void | Promise<void>} options.listener - listener to be executed on pinch zoom event.
  * @param {RefObject<HTMLElement> | Window} [options.target=window] - element on which attaching eventListener.

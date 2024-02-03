@@ -19,7 +19,9 @@ SyntaxHighlighter.registerLanguage("markdown", markdown);
 SyntaxHighlighter.registerLanguage("json", json);
 SyntaxHighlighter.registerLanguage("lua", lua);
 
-export default function MarkdownLayout({ source }: {source: string}) {
+export default function MarkdownLayout({ source }: { source: string }) {
+	const ss = source.split("\n").map(el => el.indexOf(" [See demo") !== -1 ? el.substring(0, el.indexOf(" [See")) : el).join("\n");
+	
     return (
         <div className="docs">
             <div className="docs-md">
@@ -66,7 +68,7 @@ export default function MarkdownLayout({ source }: {source: string}) {
                         },
                     }}
                 >
-                    {source}
+                    {ss}
                 </ReactMarkdown>
             </div>
         </div>

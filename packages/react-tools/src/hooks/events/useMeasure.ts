@@ -2,7 +2,7 @@ import { useCallback, useState } from "react";
 import { useResizeObserver } from "./useResizeObserver"
 
 /**
- * **`useMeasure`**: Hook to  measure and track element's dimensions.
+ * **`useMeasure`**: Hook to  measure and track element's dimensions. [See demo](https://nDriaDev.io/react-tools/#/hooks/events/useMeasure)
  * @returns {[React.RefCallback<T>, DOMRectReadOnly]} result - a refCallback for target element and a object with target element size.
  */
 export const useMeasure = <T extends Element>(): [React.RefCallback<T>, DOMRectReadOnly] => {

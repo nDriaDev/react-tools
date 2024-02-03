@@ -1,5 +1,5 @@
 # getObjectFromDottedString
-Function that, given a path, a value and an optional object, returns an object with as many properties as there are in the path, assigning the value passed to the last one specified.
+Function that, given a path, a value and an optional object, returns an object with as many properties as there are in the path, assigning the value passed to the last one specified. [See demo](https://nDriaDev.io/react-tools/#/utils/getObjectFromDottedString)
 
 ## API
 

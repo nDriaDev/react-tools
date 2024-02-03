@@ -1,5 +1,5 @@
 /**
- * **`removeDuplicatedFromArrayObjects`**: Function that given a property or an array of properties, and one or more array of object, returns a single array with unique objects by specified properties. If property is __none__, will be return an unique array.
+ * **`removeDuplicatedFromArrayObjects`**: Function that given a property or an array of properties, and one or more array of object, returns a single array with unique objects by specified properties. If property is __none__, will be return an unique array. [See demo](https://nDriaDev.io/react-tools/#/utils/removeDuplicatedFromArrayObjects)
  * @param {keyof T | (keyof T)[] | "none"} property - property or array of properties belonged to objects inside _arrays_ that will be used like discriminating.
  * @param {(T[])[]} args - arrays from which remove duplicated
  * @returns {T[]} result - array

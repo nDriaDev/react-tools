@@ -1,5 +1,5 @@
 # isDeepEqual
-It returns true if the params are equal in depth.
+It returns true if the params are equal in depth. [See demo](https://nDriaDev.io/react-tools/#/utils/isDeepEqual)
 
 ## API
 

@@ -1,5 +1,5 @@
 # useFullscreen
-Hook to use [Fullscreen API](https://developer.mozilla.org/en-US/docs/Web/API/Fullscreen_API).
+Hook to use [Fullscreen API](https://developer.mozilla.org/en-US/docs/Web/API/Fullscreen_API). [See demo](https://nDriaDev.io/react-tools/#/hooks/api-dom/useFullscreen)
 
 ## Usage
 
