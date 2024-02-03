@@ -1274,6 +1274,17 @@ export default function MainLayout() {
 						>
 							Show
 						</Link>
+						<Link
+							className={pathname === "/components/SwitchCase" ? 'active' : ''}
+							ref={node => linksRef.current["SwitchCase"] = node}
+							to="/components/SwitchCase"
+							onClick={() => {
+								containerRef.current?.scrollTo(0, 0);
+								window.innerWidth < 1190 && closeNav();
+							}}
+						>
+							SwitchCase
+						</Link>
 						<p className="sub-type">Utils</p>
 						<Link
 							className={pathname === "/utils/alphanumericCompare" ? 'active' : ''}

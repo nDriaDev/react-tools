@@ -81,7 +81,7 @@ async function generateImport(router) {
 		"import ComponentLayout from '../layout/ComponentLayout';",
 		"import { Spinner } from '../layout/Spinner';"
 	]);
-	await generateImportMarkdown(router);
+	process.argv && process.argv[2] === "no-docs" ? undefined : await generateImportMarkdown(router);
 	await generateImportDemoComponent(router);
 }
 
@@ -113,7 +113,7 @@ function createHooksRoutes(router, stateFiles, lifecycleFiles, performanceFiles,
 		router.add('								{');
 		router.add(`									path: "${f}",`);
 		router.add('									element: <Suspense fallback={<Spinner/>}>');
-		router.add(`										<ComponentLayout markdown={${f + "MD"}} ${router.value.includes(`const ${f.charAt(0).toUpperCase() + f.substring(1)} = lazy`) ? `component={<${f.charAt(0).toUpperCase() + f.substring(1)}/>}` : ""}/>`);
+		router.add(`										<ComponentLayout ${router.value.includes(`import ${f}MD from`) ? `markdown={${f}MD}` : ""} ${router.value.includes(`const ${f.charAt(0).toUpperCase() + f.substring(1)} = lazy`) ? `component={<${f.charAt(0).toUpperCase() + f.substring(1)}/>}` : ""}/>`);
 		router.add('									</Suspense>');
 		router.add('								},');
 	})
@@ -133,7 +133,7 @@ function createHooksRoutes(router, stateFiles, lifecycleFiles, performanceFiles,
 		router.add('								{');
 		router.add(`									path: "${f}",`);
 		router.add('									element: <Suspense fallback={<Spinner/>}>');
-		router.add(`										<ComponentLayout markdown={${f + "MD"}} ${router.value.includes(`const ${f.charAt(0).toUpperCase() + f.substring(1)} = lazy`) ? `component={<${f.charAt(0).toUpperCase() + f.substring(1)}/>}` : ""}/>`);
+		router.add(`										<ComponentLayout ${router.value.includes(`import ${f}MD from`) ? `markdown={${f}MD}` : ""} ${router.value.includes(`const ${f.charAt(0).toUpperCase() + f.substring(1)} = lazy`) ? `component={<${f.charAt(0).toUpperCase() + f.substring(1)}/>}` : ""}/>`);
 		router.add('									</Suspense>');
 		router.add('								},');
 	})
@@ -153,7 +153,7 @@ function createHooksRoutes(router, stateFiles, lifecycleFiles, performanceFiles,
 		router.add('								{');
 		router.add(`									path: "${f}",`);
 		router.add('									element: <Suspense fallback={<Spinner/>}>');
-		router.add(`										<ComponentLayout markdown={${f + "MD"}} ${router.value.includes(`const ${f.charAt(0).toUpperCase() + f.substring(1)} = lazy`) ? `component={<${f.charAt(0).toUpperCase() + f.substring(1)}/>}` : ""}/>`);
+		router.add(`										<ComponentLayout ${router.value.includes(`import ${f}MD from`) ? `markdown={${f}MD}` : ""} ${router.value.includes(`const ${f.charAt(0).toUpperCase() + f.substring(1)} = lazy`) ? `component={<${f.charAt(0).toUpperCase() + f.substring(1)}/>}` : ""}/>`);
 		router.add('									</Suspense>');
 		router.add('								},');
 	})
@@ -173,7 +173,7 @@ function createHooksRoutes(router, stateFiles, lifecycleFiles, performanceFiles,
 		router.add('								{');
 		router.add(`									path: "${f}",`);
 		router.add('									element: <Suspense fallback={<Spinner/>}>');
-		router.add(`										<ComponentLayout markdown={${f + "MD"}} ${router.value.includes(`const ${f.charAt(0).toUpperCase() + f.substring(1)} = lazy`) ? `component={<${f.charAt(0).toUpperCase() + f.substring(1)}/>}` : ""}/>`);
+		router.add(`										<ComponentLayout ${router.value.includes(`import ${f}MD from`) ? `markdown={${f}MD}` : ""} ${router.value.includes(`const ${f.charAt(0).toUpperCase() + f.substring(1)} = lazy`) ? `component={<${f.charAt(0).toUpperCase() + f.substring(1)}/>}` : ""}/>`);
 		router.add('									</Suspense>');
 		router.add('								},');
 	})
@@ -193,7 +193,7 @@ function createHooksRoutes(router, stateFiles, lifecycleFiles, performanceFiles,
 		router.add('								{');
 		router.add(`									path: "${f}",`);
 		router.add('									element: <Suspense fallback={<Spinner/>}>');
-		router.add(`										<ComponentLayout markdown={${f + "MD"}} ${router.value.includes(`const ${f.charAt(0).toUpperCase() + f.substring(1)} = lazy`) ? `component={<${f.charAt(0).toUpperCase() + f.substring(1)}/>}` : ""}/>`);
+		router.add(`										<ComponentLayout ${router.value.includes(`import ${f}MD from`) ? `markdown={${f}MD}` : ""} ${router.value.includes(`const ${f.charAt(0).toUpperCase() + f.substring(1)} = lazy`) ? `component={<${f.charAt(0).toUpperCase() + f.substring(1)}/>}` : ""}/>`);
 		router.add('									</Suspense>');
 		router.add('								},');
 	})
@@ -216,7 +216,7 @@ function createRoutes(router, componentsFiles, parentRoot) {
 		router.add('					{');
 		router.add(`						path: "${f}",`);
 		router.add('						element: <Suspense fallback={<Spinner/>}>');
-		router.add(`							<ComponentLayout markdown={${f + "MD"}} ${router.value.includes(`const ${f.charAt(0).toUpperCase() + f.substring(1)} = lazy`) ? `component={<${f.charAt(0).toUpperCase() + f.substring(1)}/>}` : ""}/>`);
+		router.add(`							<ComponentLayout ${router.value.includes(`import ${f}MD from`) ? `markdown={${f}MD}` : ""} ${router.value.includes(`const ${f.charAt(0).toUpperCase() + f.substring(1)} = lazy`) ? `component={<${f.charAt(0).toUpperCase() + f.substring(1)}/>}` : ""}/>`);
 		router.add('						</Suspense>');
 		router.add('					},');
 	})

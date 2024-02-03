@@ -213,7 +213,8 @@ export {
 
 export {
 	Show,
-	Lazy
+	Lazy,
+	SwitchCase
 } from './components'
 
 export {

@@ -7,7 +7,10 @@ Component Wrapper to lazy loading a Component. [See demo](https://nDriaDev.io/re
 export default function LC() {
 	return (
 		<Lazy
-			factory={() => import('./LazyComponent').then(res => new Promise<{ [k: string]: ComponentType<unknown> }>(resolve => setTimeout(()=>resolve(res), 5000)))}
+			factory={() => import('./LazyComponent').then(async res => {
+				await new Promise(resolve => setTimeout(resolve, 5000));
+				return res;
+			})}
 			fallback={<p>Loading component...</p>}
 		/>
 	);

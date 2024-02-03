@@ -22,13 +22,13 @@ export default function ShowComponent() {
 ## API
 
 ```tsx
-Show({ when, fallback, children }: PropsWithChildren<{ when: boolean, fallback?: ReactNode }>)
+Show<T extends unknown>({ when, fallback, children }: PropsWithChildren<{ when: T|boolean|undefined|null, fallback?: ReactNode }>)
 ```
 
 > ### Params
 >
 > - __object__: _PropsWithChildren<{when: boolean, fallback?: ReactNode}>_
-> - __object.when__: _boolean_  
+> - __object.when__: _T|boolean|undefined|null_  
 boolean indicating if to show _children_ or _fallback_/_null_.
 > - __object.fallback?__: _ReactNode_  
 optional element to render when _when_ prop is false.

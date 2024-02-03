@@ -5,6 +5,7 @@ import ComponentLayout from '../layout/ComponentLayout';
 import { Spinner } from '../layout/Spinner';
 import LazyMD from "../markdown/Lazy.md?raw"
 import ShowMD from "../markdown/Show.md?raw"
+import SwitchCaseMD from "../markdown/SwitchCase.md?raw"
 import alphanumericCompareMD from "../markdown/alphanumericCompare.md?raw"
 import changeStringCaseMD from "../markdown/changeStringCase.md?raw"
 import createPubSubStoreMD from "../markdown/createPubSubStore.md?raw"
@@ -134,6 +135,7 @@ import useWebWorkerMD from "../markdown/useWebWorker.md?raw"
 import useWebWorkerFnMD from "../markdown/useWebWorkerFn.md?raw"
 const Lazy = lazy((() => import('../pages/components/lazy/Lazy').then(module => ({default: "default" in module ? module["default"] : module["Lazy"]}))) as unknown as () => Promise<{ default: ComponentType; }>)
 const Show = lazy((() => import('../pages/components/show/Show').then(module => ({default: "default" in module ? module["default"] : module["Show"]}))) as unknown as () => Promise<{ default: ComponentType; }>)
+const SwitchCase = lazy((() => import('../pages/components/switchCase/SwitchCase').then(module => ({default: "default" in module ? module["default"] : module["SwitchCase"]}))) as unknown as () => Promise<{ default: ComponentType; }>)
 import HomeWrapper from '../pages/home/HomeWrapper'
 const UseActiveElement = lazy((() => import('../pages/hooks/api-dom/useActiveElement/UseActiveElement').then(module => ({default: "default" in module ? module["default"] : module["UseActiveElement"]}))) as unknown as () => Promise<{ default: ComponentType; }>)
 const UseAnimation = lazy((() => import('../pages/hooks/api-dom/useAnimation/UseAnimation').then(module => ({default: "default" in module ? module["default"] : module["UseAnimation"]}))) as unknown as () => Promise<{ default: ComponentType; }>)
@@ -990,6 +992,12 @@ function Router() {
 						path: "Show",
 						element: <Suspense fallback={<Spinner/>}>
 							<ComponentLayout markdown={ShowMD} component={<Show/>}/>
+						</Suspense>
+					},
+					{
+						path: "SwitchCase",
+						element: <Suspense fallback={<Spinner/>}>
+							<ComponentLayout markdown={SwitchCaseMD} component={<SwitchCase/>}/>
 						</Suspense>
 					},
 					]
