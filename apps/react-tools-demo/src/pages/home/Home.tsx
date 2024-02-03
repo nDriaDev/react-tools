@@ -6,7 +6,7 @@ export default function Home() {
 		<div className='home-container'>
 			<img src={Logo} alt="react" className="logo"/>
 			<h1 className='title'>React Tools</h1>
-			<h2>A collection of hooks and utilities for React</h2>
+			<h2>A collection of hooks, components and utilities for React</h2>
 			<div className='npm-container'>
 				<span
 					className='npm-copy'
@@ -32,7 +32,7 @@ export default function Home() {
 				</div>
 				<div className='cell'>
 					<div className='title'>Demos</div>
-					<div className='body'>All hooks have a demo that allow you to try them.</div>
+					<div className='body'>All implementations have a demo that allow you to try them.</div>
 				</div>
 			</div>
 		</div>

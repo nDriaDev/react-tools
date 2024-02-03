@@ -18,7 +18,7 @@ export const usePromiseSuspensible = <T extends (...args: unknown[]) => Promise<
 	})
 	for (const cached of promiseCache) {
 		index.current = index.current+1;
-		if (isDeepEqual([...deps, promise.toString()], cached.deps)) {
+		if (isDeepEqual([...deps, String.raw`${promise.toString()}`], cached.deps)) {
 			if ("error" in cached) {
 				throw cached.error;
 			}
@@ -29,7 +29,7 @@ export const usePromiseSuspensible = <T extends (...args: unknown[]) => Promise<
 		}
 	}
 	const cached: { deps: DependencyList, promise: Promise<void>, error?: unknown, response?: Awaited<ReturnType<T>> } = {
-		deps:[...deps, promise.toString()],
+		deps:[...deps, String.raw`${promise.toString()}`],
 		promise: promise()
 			.then(response => {
 				cached.response = response as Awaited<ReturnType<T>>;

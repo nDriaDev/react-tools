@@ -132,6 +132,7 @@ import useVisibleMD from "../markdown/useVisible.md?raw"
 import useWebSocketMD from "../markdown/useWebSocket.md?raw"
 import useWebWorkerMD from "../markdown/useWebWorker.md?raw"
 import useWebWorkerFnMD from "../markdown/useWebWorkerFn.md?raw"
+const Lazy = lazy((() => import('../pages/components/lazy/Lazy').then(module => ({default: "default" in module ? module["default"] : module["Lazy"]}))) as unknown as () => Promise<{ default: ComponentType; }>)
 const Show = lazy((() => import('../pages/components/show/Show').then(module => ({default: "default" in module ? module["default"] : module["Show"]}))) as unknown as () => Promise<{ default: ComponentType; }>)
 import HomeWrapper from '../pages/home/HomeWrapper'
 const UseActiveElement = lazy((() => import('../pages/hooks/api-dom/useActiveElement/UseActiveElement').then(module => ({default: "default" in module ? module["default"] : module["UseActiveElement"]}))) as unknown as () => Promise<{ default: ComponentType; }>)
@@ -982,7 +983,7 @@ function Router() {
 					{
 						path: "Lazy",
 						element: <Suspense fallback={<Spinner/>}>
-							<ComponentLayout markdown={LazyMD} />
+							<ComponentLayout markdown={LazyMD} component={<Lazy/>}/>
 						</Suspense>
 					},
 					{
@@ -1090,7 +1091,7 @@ function Router() {
 					{
 						path: "lazy",
 						element: <Suspense fallback={<Spinner/>}>
-							<ComponentLayout markdown={lazyMD} />
+							<ComponentLayout markdown={lazyMD} component={<Lazy/>}/>
 						</Suspense>
 					},
 					{

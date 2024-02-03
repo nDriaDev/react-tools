@@ -1,10 +1,26 @@
 # Lazy
 Component Wrapper to lazy loading a Component. [See demo](https://nDriaDev.io/react-tools/#/components/Lazy)
 
+## Usage
+
+```tsx
+export default function LC() {
+	return (
+		<Lazy
+			factory={() => import('./LazyComponent').then(res => new Promise<{ [k: string]: ComponentType<unknown> }>(resolve => setTimeout(()=>resolve(res), 5000)))}
+			fallback={<p>Loading component...</p>}
+		/>
+	);
+}
+```
+
+> The component uses _Lazy_ component to lazy load a component imported dynamically by _factory_ prop. The component loading is delayed by 5 seconds. During this time, _fallback_ prop is shown that renders a p element with the text __Loading component...__.
+
+
 ## API
 
 ```tsx
-Lazy<T extends ComponentType<unknown>>({ factory, componentName, fallback, beforeLoad, afterLoad }: { factory: () => Promise<{ [K:string]: T }>, componentName?: string, fallback?: ReactNode, beforeLoad?: ()=>void, afterLoad?: ()=>void })
+Lazy<T extends { default: ComponentType<unknown> } | { [k: string]: ComponentType<unknown> }>({ factory, componentName, fallback, beforeLoad, afterLoad }: { factory: () => Promise<T>, componentName?: string, fallback?: ReactNode, beforeLoad?: ()=>void, afterLoad?: ()=>void })
 ```
 
 > ### Params
