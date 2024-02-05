@@ -3,6 +3,7 @@ import { RouterProvider, createHashRouter, Outlet, Navigate } from 'react-router
 import MainLayout from '../layout/MainLayout';
 import ComponentLayout from '../layout/ComponentLayout';
 import { Spinner } from '../layout/Spinner';
+import ForMD from "../markdown/For.md?raw"
 import LazyMD from "../markdown/Lazy.md?raw"
 import ShowMD from "../markdown/Show.md?raw"
 import SwitchCaseMD from "../markdown/SwitchCase.md?raw"
@@ -133,6 +134,7 @@ import useVisibleMD from "../markdown/useVisible.md?raw"
 import useWebSocketMD from "../markdown/useWebSocket.md?raw"
 import useWebWorkerMD from "../markdown/useWebWorker.md?raw"
 import useWebWorkerFnMD from "../markdown/useWebWorkerFn.md?raw"
+const For = lazy((() => import('../pages/components/for/For').then(module => ({default: "default" in module ? module["default"] : module["For"]}))) as unknown as () => Promise<{ default: ComponentType; }>)
 const Lazy = lazy((() => import('../pages/components/lazy/Lazy').then(module => ({default: "default" in module ? module["default"] : module["Lazy"]}))) as unknown as () => Promise<{ default: ComponentType; }>)
 const Show = lazy((() => import('../pages/components/show/Show').then(module => ({default: "default" in module ? module["default"] : module["Show"]}))) as unknown as () => Promise<{ default: ComponentType; }>)
 const SwitchCase = lazy((() => import('../pages/components/switchCase/SwitchCase').then(module => ({default: "default" in module ? module["default"] : module["SwitchCase"]}))) as unknown as () => Promise<{ default: ComponentType; }>)
@@ -980,8 +982,14 @@ function Router() {
 					children: [
 						{
 							index: true,
-							element: <Navigate to={"/components/Lazy"} replace/>,
+							element: <Navigate to={"/components/For"} replace/>,
 						},
+					{
+						path: "For",
+						element: <Suspense fallback={<Spinner/>}>
+							<ComponentLayout markdown={ForMD} component={<For/>}/>
+						</Suspense>
+					},
 					{
 						path: "Lazy",
 						element: <Suspense fallback={<Spinner/>}>

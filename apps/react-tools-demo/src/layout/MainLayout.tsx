@@ -1253,6 +1253,17 @@ export default function MainLayout() {
 						</Link>
 						<p className="sub-type">Components</p>
 						<Link
+							className={pathname === "/components/For" ? 'active' : ''}
+							ref={node => linksRef.current["For"] = node}
+							to="/components/For"
+							onClick={() => {
+								containerRef.current?.scrollTo(0, 0);
+								window.innerWidth < 1190 && closeNav();
+							}}
+						>
+							For
+						</Link>
+						<Link
 							className={pathname === "/components/Lazy" ? 'active' : ''}
 							ref={node => linksRef.current["Lazy"] = node}
 							to="/components/Lazy"

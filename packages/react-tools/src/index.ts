@@ -25,6 +25,7 @@ export type {
 	ExtractHead,
 	ExtractMiddle,
 	ExtractTail,
+	ForProps,
 	GeoLocationObject,
 	HTMLAttributes,
 	HTMLMediaControls,
@@ -212,8 +213,9 @@ export {
 } from './hooks'
 
 export {
-	Show,
+	For,
 	Lazy,
+	Show,
 	SwitchCase
 } from './components'
 

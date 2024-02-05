@@ -149,7 +149,7 @@
 - __COMPONENT__
 	- [x] Show
 	- [x] SwitchCase
-	- [ ] For/Each: A referentially keyed loop with efficient updating of only changed items. The callback takes the current item as the first argument (ref https://javascript.plainenglish.io/react-each-and-of-pattern-b00aa4305089)
+	- [x] For
 	- [ ] Index: Non-keyed list iteration (rendered nodes are keyed to an array index). This is useful when there is no conceptual key, like if the data consists of primitives and it is the index that is fixed rather than the value.
 	- [ ] RestrictedRoute (maybe)
 	- [ ] ErrorBoundary (?? error event listener)

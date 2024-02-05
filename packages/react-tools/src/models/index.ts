@@ -29,3 +29,4 @@ export type { UseWebWorkerProps, UseWebWorkerResult } from './useWebWorker.model
 export type { UseWebWorkerFnProps, UseWebWorkerFnResult } from './useWebWorkerFn.model';
 export type { ToDataURLOptions, UseBase64ObjectOptions } from './getBase64.model';
 export type { StateValidator } from './useStateValidator.model';
+export type { ForProps } from './For.model';
