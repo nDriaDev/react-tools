@@ -152,10 +152,7 @@
 	- [x] Lazy
 	- [x] Show
 	- [x] SwitchCase
-	- [ ] RestrictedRoute (maybe)
-	- [ ] Suspense: Suspence compontent react-like for async component (or polyfill)
-	- [ ] Dynamic: This component lets you insert an arbitrary Component or tag and passes the props through to it.
-	- [ ] ImageOpt (???)
+	- [ ] ImageOpt (TODO:)
 
 ## ESlint configuration
 To validate dependencies of custom hooks like `useMemoCompare`, configure `exhaustive-deps` with the `additionalHooks` option
