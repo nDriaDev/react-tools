@@ -3,6 +3,7 @@ import { RouterProvider, createHashRouter, Outlet, Navigate } from 'react-router
 import MainLayout from '../layout/MainLayout';
 import ComponentLayout from '../layout/ComponentLayout';
 import { Spinner } from '../layout/Spinner';
+import ErrorBoundaryMD from "../markdown/ErrorBoundary.md?raw"
 import ForMD from "../markdown/For.md?raw"
 import LazyMD from "../markdown/Lazy.md?raw"
 import ShowMD from "../markdown/Show.md?raw"
@@ -134,6 +135,7 @@ import useVisibleMD from "../markdown/useVisible.md?raw"
 import useWebSocketMD from "../markdown/useWebSocket.md?raw"
 import useWebWorkerMD from "../markdown/useWebWorker.md?raw"
 import useWebWorkerFnMD from "../markdown/useWebWorkerFn.md?raw"
+const ErrorBoundary = lazy((() => import('../pages/components/errorBoundary/ErrorBoundary').then(module => ({default: "default" in module ? module["default"] : module["ErrorBoundary"]}))) as unknown as () => Promise<{ default: ComponentType; }>)
 const For = lazy((() => import('../pages/components/for/For').then(module => ({default: "default" in module ? module["default"] : module["For"]}))) as unknown as () => Promise<{ default: ComponentType; }>)
 const Lazy = lazy((() => import('../pages/components/lazy/Lazy').then(module => ({default: "default" in module ? module["default"] : module["Lazy"]}))) as unknown as () => Promise<{ default: ComponentType; }>)
 const Show = lazy((() => import('../pages/components/show/Show').then(module => ({default: "default" in module ? module["default"] : module["Show"]}))) as unknown as () => Promise<{ default: ComponentType; }>)
@@ -982,8 +984,14 @@ function Router() {
 					children: [
 						{
 							index: true,
-							element: <Navigate to={"/components/For"} replace/>,
+							element: <Navigate to={"/components/ErrorBoundary"} replace/>,
 						},
+					{
+						path: "ErrorBoundary",
+						element: <Suspense fallback={<Spinner/>}>
+							<ComponentLayout markdown={ErrorBoundaryMD} component={<ErrorBoundary/>}/>
+						</Suspense>
+					},
 					{
 						path: "For",
 						element: <Suspense fallback={<Spinner/>}>

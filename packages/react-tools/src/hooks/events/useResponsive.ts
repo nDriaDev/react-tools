@@ -38,7 +38,7 @@ function calcResponsive<T extends UseResponsiveKeys>(config?: UseResponsiveBreak
 		if (Reflect.get(target, key)) {
 			const point = Reflect.get(target, key);
 			const { value, condition } = typeof point === "number" ? { value: point, condition: ">" } : point;
-			Reflect.set(conf, key, eval(`${width}${condition}${value}`) as boolean);
+			Reflect.set(conf, key, Function(`return ${width}${condition}${value}`)() as boolean);
 		}
 	}
 	return conf as typeof config extends undefined ? { [k in keyof typeof defaultConfig]: boolean } : { [k in UseResponsiveKeys<T>]: boolean };

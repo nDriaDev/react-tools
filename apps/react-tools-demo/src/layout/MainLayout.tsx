@@ -1253,6 +1253,17 @@ export default function MainLayout() {
 						</Link>
 						<p className="sub-type">Components</p>
 						<Link
+							className={pathname === "/components/ErrorBoundary" ? 'active' : ''}
+							ref={node => linksRef.current["ErrorBoundary"] = node}
+							to="/components/ErrorBoundary"
+							onClick={() => {
+								containerRef.current?.scrollTo(0, 0);
+								window.innerWidth < 1190 && closeNav();
+							}}
+						>
+							ErrorBoundary
+						</Link>
+						<Link
 							className={pathname === "/components/For" ? 'active' : ''}
 							ref={node => linksRef.current["For"] = node}
 							to="/components/For"

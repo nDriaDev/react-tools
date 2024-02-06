@@ -213,6 +213,7 @@ export {
 } from './hooks'
 
 export {
+	ErrorBoundary,
 	For,
 	Lazy,
 	Show,
