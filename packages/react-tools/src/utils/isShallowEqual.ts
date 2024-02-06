@@ -1,5 +1,5 @@
 /**
- * **`isShallowEqual`**: It returns true if the params are equal until first level depth. [See demo](https://nDriaDev.io/react-tools/#/utils/isShallowEqual)
+ * **`isShallowEqual`**: It returns true if the params are equal until first level depth. [See demo](https://ndriadev.github.io/react-tools/#/utils/isShallowEqual)
  * @param {unknown} objA
  * @param {unknown} objB
  * @returns {boolean} result

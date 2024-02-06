@@ -1,7 +1,7 @@
 import { useCallback, useRef } from "react"
 
 /**
- * **`useIdleCallback`**: Hook to invoke a callback when the browser is idle. Refer to [requestIdleCallback](https://developer.mozilla.org/en-US/docs/Web/API/Window/requestIdleCallback) in React. The __options__ parameter differs from _IdleRequestOptions_ type: it adds the possibility to pass another property __unsupportedBehavior__ to specify what do if requestIdleCallback is not supported. [See demo](https://nDriaDev.io/react-tools/#/hooks/api-dom/useIdleCallback)
+ * **`useIdleCallback`**: Hook to invoke a callback when the browser is idle. Refer to [requestIdleCallback](https://developer.mozilla.org/en-US/docs/Web/API/Window/requestIdleCallback) in React. The __options__ parameter differs from _IdleRequestOptions_ type: it adds the possibility to pass another property __unsupportedBehavior__ to specify what do if requestIdleCallback is not supported. [See demo](https://ndriadev.github.io/react-tools/#/hooks/api-dom/useIdleCallback)
  * @param {(deadline?: IdleDeadline | DOMHighResTimeStamp | void)=> void} cb -callback that should be called in the near future.
  * @param {IdleRequestOptions & { unsupportedBehavior: "animationFrame"|"timeout"|"immediatly" }} [opts] - Contains optional configuration parameters.
  * @returns {[()=>void, ()=>void]} result - array where functions to invoke and cancel execution.

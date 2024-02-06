@@ -1,5 +1,5 @@
 # useNetwork
-Hook to detect network connection infos, refer to [Network Information API](https://developer.mozilla.org/en-US/docs/Web/API/NetworkInformation). It takes optinally a parameter __selectedInfo__ to specify a subset of connection status property. [See demo](https://nDriaDev.io/react-tools/#/hooks/events/useNetwork)
+Hook to detect network connection infos, refer to [Network Information API](https://developer.mozilla.org/en-US/docs/Web/API/NetworkInformation). It takes optinally a parameter __selectedInfo__ to specify a subset of connection status property. [See demo](https://ndriadev.github.io/react-tools/#/hooks/events/useNetwork)
 
 ## Usage
 

@@ -8,7 +8,7 @@ const FIREFOX_PERMISSIONS = ["geolocation", "notifications", "push", "persistent
 const CHROME_PERMISSIONS = ["geolocation", "notifications", "push", "midi", "camera", "microphone", "background-fetch", "background-sync", "persistent-storage", "ambient-light-sensor", "accelerometer", "gyroscope", "magnetometer", "screen-wake-lock", "nfc", "display-capture", "accessibility-events", "clipboard-read", "clipboard-write", "payment-handler", "idle-detection", "periodic-background-sync", "system-wake-lock", "storage-access", "window-management", "window-placement", "local-fonts", "top-level-storage-access", "captured-surface-control"];
 
 /**
- * **`usePermission`**: Hook to query the status of API permissions attributed to the current context. Refer to [PermissionAPI](https://developer.mozilla.org/en-US/docs/Web/API/Permissions_API). [See demo](https://nDriaDev.io/react-tools/#/hooks/api-dom/usePermission)
+ * **`usePermission`**: Hook to query the status of API permissions attributed to the current context. Refer to [PermissionAPI](https://developer.mozilla.org/en-US/docs/Web/API/Permissions_API). [See demo](https://ndriadev.github.io/react-tools/#/hooks/api-dom/usePermission)
  * @param {TPermissionName} permission - name of the API whose permissions you want to query.
  * @returns {UsePermissionResult} result
  * Array of two elements:

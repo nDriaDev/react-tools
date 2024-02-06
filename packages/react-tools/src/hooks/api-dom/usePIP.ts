@@ -2,7 +2,7 @@ import { RefObject, useCallback } from "react";
 import { UsePIPProps, UsePIPResult } from "../../models";
 
 /**
- * **`usePIP`**: Hook to use PIP [(Picture-in-Picture API)](https://developer.mozilla.org/en-US/docs/Web/API/Picture-in-Picture_API). [See demo](https://nDriaDev.io/react-tools/#/hooks/api-dom/usePIP)
+ * **`usePIP`**: Hook to use PIP [(Picture-in-Picture API)](https://developer.mozilla.org/en-US/docs/Web/API/Picture-in-Picture_API). [See demo](https://ndriadev.github.io/react-tools/#/hooks/api-dom/usePIP)
  * @param {UsePIPProps} param - object
  * @param {RefObject<HTMLVideoElement>|HTMLVideoElement} param.target - element to PIP.
  * @param {()=>void} [param.onOpen] - function that will be executed on PIP opening.

@@ -1,7 +1,7 @@
 import createHTMLMediaHook from "../../utils/createHTMLMediaElement";
 
 /**
- * **`useAudio`**: Hook to use an HTML audio element. [See demo](https://nDriaDev.io/react-tools/#/hooks/api-dom/useAudio)
+ * **`useAudio`**: Hook to use an HTML audio element. [See demo](https://ndriadev.github.io/react-tools/#/hooks/api-dom/useAudio)
  * @param {UseAudioProps} param - Media HTML Attributes of an html audio element.
  * @returns {UseAudioResult} result
  * Object with these properties:

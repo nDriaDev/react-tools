@@ -1,5 +1,5 @@
 # useMemoCompare
-Custom useMemo that returns memoized value that changes only when comparator function, received as third parameter, returns true. [See demo](https://nDriaDev.io/react-tools/#/hooks/performance/useMemoCompare)
+Custom useMemo that returns memoized value that changes only when comparator function, received as third parameter, returns true. [See demo](https://ndriadev.github.io/react-tools/#/hooks/performance/useMemoCompare)
 
 ## Usage
 

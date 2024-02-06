@@ -1,5 +1,5 @@
 # mergeObjects
-Function that, given two objects version, merges them into a single one. Via an optional parameter _forceUndefinedValue_ you can define how undefined values are treated. [See demo](https://nDriaDev.io/react-tools/#/utils/mergedObject)
+Function that, given two objects version, merges them into a single one. Via an optional parameter _forceUndefinedValue_ you can define how undefined values are treated. [See demo](https://ndriadev.github.io/react-tools/#/utils/mergedObject)
 
 ## API
 

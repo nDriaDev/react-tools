@@ -1,7 +1,7 @@
 import { KeyboardEvent as KeyEvt } from "react";
 
 /**
- * **`hotKeyHandler`**: utility function for _onKeyDown_ and _onKeyUp_ events handler that supports keys combination. [See demo](https://nDriaDev.io/react-tools/#/utils/hotKeyHandler)
+ * **`hotKeyHandler`**: utility function for _onKeyDown_ and _onKeyUp_ events handler that supports keys combination. [See demo](https://ndriadev.github.io/react-tools/#/utils/hotKeyHandler)
  * @param {`${string}` | `${'alt' | 'ctrl' | 'meta' | 'shift' | 'ctrlCommand'}+${string}` | `${'alt' | 'ctrl' | 'meta' | 'shift' | 'ctrlCommand'}+${'alt' | 'ctrl' | 'meta' | 'shift' | 'ctrlCommand'}+${string}`} hotKeys - hotKey string: _ctrlCommand_ indicates to listen __Ctrl__ (on Windows) or __Command__ (on Mac) keys.
  * @param {(evt: KeyboardEvent|React.KeyboardEvent<HTMLElement>) => void | Promise<void>} listener - listener to be executed on specified event
  * @returns {(evt: KeyboardEvent|React.KeyboardEvent<HTMLElement>) => void}

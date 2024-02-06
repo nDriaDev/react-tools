@@ -4,7 +4,7 @@ import { TDisplayMediaStreamOptions } from "../../models";
 import { useMediaDevices } from "./useMediaDevices";
 
 /**
- * **`useDisplayMedia`**: Hook to capture the contents of a display. [See demo](https://nDriaDev.io/react-tools/#/hooks/api-dom/useDisplayMedia)
+ * **`useDisplayMedia`**: Hook to capture the contents of a display. [See demo](https://ndriadev.github.io/react-tools/#/hooks/api-dom/useDisplayMedia)
  * @returns {[MediaStream|undefined, (options: TDisplayMediaStreamOptions | undefined) => Promise<void>, ()=>void]} result
  * Array containing:
  * - first element: the captured stream.

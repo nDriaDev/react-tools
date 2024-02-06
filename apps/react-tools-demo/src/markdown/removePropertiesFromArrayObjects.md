@@ -1,5 +1,5 @@
 # removePropertiesFromArrayObjects
-Function that, given an array of objects and a property or an array of properties, return a new array without specified properties. [See demo](https://nDriaDev.io/react-tools/#/utils/removePropertiesFromArrayObjects)
+Function that, given an array of objects and a property or an array of properties, return a new array without specified properties. [See demo](https://ndriadev.github.io/react-tools/#/utils/removePropertiesFromArrayObjects)
 
 ## API
 

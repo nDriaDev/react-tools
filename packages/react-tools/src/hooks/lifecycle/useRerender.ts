@@ -1,7 +1,7 @@
 import { useReducer } from "react"
 
 /**
- * **`useRerender`**: Hook that force a render. [See demo](https://nDriaDev.io/react-tools/#/hooks/lifecycle/useRerender)
+ * **`useRerender`**: Hook that force a render. [See demo](https://ndriadev.github.io/react-tools/#/hooks/lifecycle/useRerender)
  * @returns {React.DispatchWithoutAction} update
  */
 export const useRerender = (): React.DispatchWithoutAction => {

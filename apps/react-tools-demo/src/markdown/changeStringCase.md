@@ -1,5 +1,5 @@
 # changeStringCase
-Function that given a string, a case type, and an optional delimiter, returns the string in the specified case or empty string. [See demo](https://nDriaDev.io/react-tools/#/utils/changeStringCase)
+Function that given a string, a case type, and an optional delimiter, returns the string in the specified case or empty string. [See demo](https://ndriadev.github.io/react-tools/#/utils/changeStringCase)
 
 ## API
 

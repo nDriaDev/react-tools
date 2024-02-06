@@ -8,7 +8,7 @@ const Case = ({ children, when }: PropsWithChildren<{ when: boolean | undefined 
 }
 
 /**
- * **`SwitchCase`**: It works like switch-case construct. It useful for when there are more than 2 mutual exclusive conditions. [See demo](https://nDriaDev.io/react-tools/#/components/SwitchCase)
+ * **`SwitchCase`**: It works like switch-case construct. It useful for when there are more than 2 mutual exclusive conditions. [See demo](https://ndriadev.github.io/react-tools/#/components/SwitchCase)
  * @param {ReactNode} [object.fallback] - optional element to render when _when_ prop is false.
  * @param {PropsWithChildren<any>["children"]} [object.children] - __Case__ components.
  * @returns {JSX.Element|null} element - __Case__ component with _when_ prop value __`true`__ or _fallback_ prop.

@@ -1,5 +1,5 @@
 /**
- * **`getKeyObjectFromValue`**: Function that given an object and a value, returns the corrispondent key of this value or undefined. [See demo](https://nDriaDev.io/react-tools/#/utils/getKeyObjectFromValue)
+ * **`getKeyObjectFromValue`**: Function that given an object and a value, returns the corrispondent key of this value or undefined. [See demo](https://ndriadev.github.io/react-tools/#/utils/getKeyObjectFromValue)
  * @param {Record<string,unknown>} object - object from which get key by a value.
  * @param {unknown} value - value of the object
  * @returns {keyof Record<string,unknown>|undefined} key - object key for the given value.

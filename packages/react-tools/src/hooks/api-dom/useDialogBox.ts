@@ -3,7 +3,7 @@ import { useCallback } from "react"
 
 
 /**
- * **`useDialogBox`**: Hook to use Dialog Box _prompt_, _alert_ or _confirm_. [See demo](https://nDriaDev.io/react-tools/#/hooks/api-dom/useDialogBox)
+ * **`useDialogBox`**: Hook to use Dialog Box _prompt_, _alert_ or _confirm_. [See demo](https://ndriadev.github.io/react-tools/#/hooks/api-dom/useDialogBox)
  * @param {"prompt"|"alert"|"confirm"} type - set dialog box type.
  * @returns {((message?: string, default?: string) => string|null) | ((message?: any) => void) | ((message?: string) => boolean)} open - function to activate dialog box.
  */

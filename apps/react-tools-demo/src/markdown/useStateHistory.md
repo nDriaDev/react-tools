@@ -1,5 +1,5 @@
 # useStateHistory
-Custom useState that tracks and allows to use previous values. [See demo](https://nDriaDev.io/react-tools/#/hooks/state/useStateHistory)
+Custom useState that tracks and allows to use previous values. [See demo](https://ndriadev.github.io/react-tools/#/hooks/state/useStateHistory)
 
 ## Usage
 

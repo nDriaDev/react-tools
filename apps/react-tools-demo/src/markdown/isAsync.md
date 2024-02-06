@@ -1,5 +1,5 @@
 # isAsync
-It detects if a function is asynchronous. [See demo](https://nDriaDev.io/react-tools/#/utils/isAsync)
+It detects if a function is asynchronous. [See demo](https://ndriadev.github.io/react-tools/#/utils/isAsync)
 
 ## API
 

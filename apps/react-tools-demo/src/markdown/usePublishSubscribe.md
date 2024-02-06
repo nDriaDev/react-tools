@@ -1,5 +1,5 @@
 # usePublishSubscribe
-Communication system based on PubSub pattern. Instantiate a topic and use the publish and subscribe functions to communicate. [See demo](https://nDriaDev.io/react-tools/#/hooks/api-dom/usePublishSubscribe)
+Communication system based on PubSub pattern. Instantiate a topic and use the publish and subscribe functions to communicate. [See demo](https://ndriadev.github.io/react-tools/#/hooks/api-dom/usePublishSubscribe)
 
 ## Usage
 

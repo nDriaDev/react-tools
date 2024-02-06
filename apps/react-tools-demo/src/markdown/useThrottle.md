@@ -1,5 +1,5 @@
 # useThrottle
-Hook to limit function execution frequency. [See demo](https://nDriaDev.io/react-tools/#/hooks/api-dom/useThrottle)
+Hook to limit function execution frequency. [See demo](https://ndriadev.github.io/react-tools/#/hooks/api-dom/useThrottle)
 
 ## Usage
 

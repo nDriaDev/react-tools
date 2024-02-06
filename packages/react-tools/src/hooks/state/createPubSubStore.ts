@@ -40,7 +40,7 @@ function updateReference<T extends Record<string, unknown>, C>(currStore: T, sto
 }
 
 /**
- * **`createPubSubStore`**: A state management hook implemented on Publish-Subscribe pattern. It allows components to subscribe to state changes and receive updates whenever the state is modified, providing a scalable and decoupled state management solution.__N.B.: to work properly, objects like Set, Map, Date or more generally objects without _Symbol.iterator_ must be treated as immutable__. [See demo](https://nDriaDev.io/react-tools/#/hooks/state/createPubSubStore)
+ * **`createPubSubStore`**: A state management hook implemented on Publish-Subscribe pattern. It allows components to subscribe to state changes and receive updates whenever the state is modified, providing a scalable and decoupled state management solution.__N.B.: to work properly, objects like Set, Map, Date or more generally objects without _Symbol.iterator_ must be treated as immutable__. [See demo](https://ndriadev.github.io/react-tools/#/hooks/state/createPubSubStore)
  * @param {T extends Record<string, unknown>} obj - Object that rapresent the initialState of the store.
  * @param {E extends Record<string, (store: T, ...args: any) => void>} [mutatorsFn] - Object that contains specified void function to mutate the store value, not the store itself, that receives the store as first parameter and other optional parameters.
  * @param {boolean} [persist=false] - boolean that indicates if the store value will be persisted on the local Storage.

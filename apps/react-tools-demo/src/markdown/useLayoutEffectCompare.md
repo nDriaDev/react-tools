@@ -1,5 +1,5 @@
 # useLayoutEffectCompare
-Custom useLayoutEffect that reexecutes EffectCallback only when comparator function, received as third parameter, returns true. [See demo](https://nDriaDev.io/react-tools/#/hooks/lifecycle/useLayoutEffectCompare)
+Custom useLayoutEffect that reexecutes EffectCallback only when comparator function, received as third parameter, returns true. [See demo](https://ndriadev.github.io/react-tools/#/hooks/lifecycle/useLayoutEffectCompare)
 
 ## Usage
 

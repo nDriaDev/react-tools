@@ -1,5 +1,5 @@
 /**
- * **`detectBrowser`**: It detects used browser or return __"No detection"__. [See demo](https://nDriaDev.io/react-tools/#/utils/detectBrowser)
+ * **`detectBrowser`**: It detects used browser or return __"No detection"__. [See demo](https://ndriadev.github.io/react-tools/#/utils/detectBrowser)
  * @returns {"chrome"|"firefox"|"safari"|"opera"|"edge"|"No detection"} result
  */
 export function detectBrowser(): "chrome" | "firefox" | "safari" | "opera" | "edge" | "No detection" {

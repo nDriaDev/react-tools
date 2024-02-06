@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useRef } from "react"
 
 /**
- * **`useTimeout`**: Hook to handle setTimeout timer function with the possibility to clear and promisify execution. [See demo](https://nDriaDev.io/react-tools/#/hooks/api-dom/useTimeout)
+ * **`useTimeout`**: Hook to handle setTimeout timer function with the possibility to clear and promisify execution. [See demo](https://ndriadev.github.io/react-tools/#/hooks/api-dom/useTimeout)
  * @param {(...args: unknown[])=>void} callback - Function to call when the timer elapses.
  * @param {number} delay - The number of milliseconds to wait before calling the `callback`.
  * @returns {[(...args: TArgs) => void, () => void, (...args: TArgs) => Promise<void>]} - array: first element is the function to call setTimeout; second element is the function to clearTimeout; thrid element promisify setTimeout.

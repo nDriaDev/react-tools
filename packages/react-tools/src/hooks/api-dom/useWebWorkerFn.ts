@@ -36,7 +36,7 @@ function createWorkerBlobUrl(fn: Function, deps?: string[]) {
 }
 
 /**
- * **`useWebWorkerFn`**: Hook to run expensive functions using a Web Worker without blocking the UI handling execution as Promise. [See demo](https://nDriaDev.io/react-tools/#/hooks/api-dom/useWebWorkerFn)
+ * **`useWebWorkerFn`**: Hook to run expensive functions using a Web Worker without blocking the UI handling execution as Promise. [See demo](https://ndriadev.github.io/react-tools/#/hooks/api-dom/useWebWorkerFn)
  * @param {UseWebWorkerFnProps["fn"]} fn - Expensive function to be executed in worker.
  * @param {UseWebWorkerFnProps["deps"]} [deps] - An array that contains the external dependencies needed to run the worker.
  * @returns {UseWebWorkerFnResult} execute - function to execute expansive function: return a promise.

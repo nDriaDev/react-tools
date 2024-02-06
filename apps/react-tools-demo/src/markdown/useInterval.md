@@ -1,5 +1,5 @@
 # useInterval
-Hook to handle setInterval timer function with the possibility to clear and promisify execution. [See demo](https://nDriaDev.io/react-tools/#/hooks/api-dom/useInterval)
+Hook to handle setInterval timer function with the possibility to clear and promisify execution. [See demo](https://ndriadev.github.io/react-tools/#/hooks/api-dom/useInterval)
 
 ## Usage
 

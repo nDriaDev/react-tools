@@ -1,5 +1,5 @@
 # useResizeObserver
-Hook to use Resize Observer. Refer to [Resize Observer API](https://developer.mozilla.org/en-US/docs/Web/API/Resize_Observer_API). [See demo](https://nDriaDev.io/react-tools/#/hooks/events/useResizeObserver)
+Hook to use Resize Observer. Refer to [Resize Observer API](https://developer.mozilla.org/en-US/docs/Web/API/Resize_Observer_API). [See demo](https://ndriadev.github.io/react-tools/#/hooks/events/useResizeObserver)
 
 ## Usage
 

@@ -2,7 +2,7 @@ import { useCallback, useRef } from "react"
 import { isAsync } from "../../utils";
 
 /**
- * **`useThrottle`**: Hook to limit function execution frequency. [See demo](https://nDriaDev.io/react-tools/#/hooks/api-dom/useThrottle)
+ * **`useThrottle`**: Hook to limit function execution frequency. [See demo](https://ndriadev.github.io/react-tools/#/hooks/api-dom/useThrottle)
  * @param {T extends (...args: unknown[]) => void} fn - The function to handle.
  * @param {Object} opts - options for throttle behaviors.
  * @param {number} [opts.delay] - time in milliseconds to limit next function execution.

@@ -1,5 +1,5 @@
 # useHotKeys
-Hook to listen for the keyboard press, support key combinations, built on [hotKeyHandler](#/hotKeyHandler) utility function. [See demo](https://nDriaDev.io/react-tools/#/hooks/events/useHotKeys)
+Hook to listen for the keyboard press, support key combinations, built on [hotKeyHandler](#/hotKeyHandler) utility function. [See demo](https://ndriadev.github.io/react-tools/#/hooks/events/useHotKeys)
 
 ## Usage
 

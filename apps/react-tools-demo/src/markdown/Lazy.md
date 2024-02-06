@@ -1,5 +1,5 @@
 # Lazy
-Component Wrapper to lazy loading a Component. [See demo](https://nDriaDev.io/react-tools/#/components/Lazy)
+Component Wrapper to lazy loading a Component. [See demo](https://ndriadev.github.io/react-tools/#/components/Lazy)
 
 ## Usage
 

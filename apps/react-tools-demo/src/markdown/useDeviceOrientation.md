@@ -1,5 +1,5 @@
 # useDeviceOrientation
-Hook to handle [device orientation](https://developer.mozilla.org/en-US/docs/Web/API/Window/deviceorientation_event). [See demo](https://nDriaDev.io/react-tools/#/hooks/api-dom/useDeviceOrientation)
+Hook to handle [device orientation](https://developer.mozilla.org/en-US/docs/Web/API/Window/deviceorientation_event). [See demo](https://ndriadev.github.io/react-tools/#/hooks/api-dom/useDeviceOrientation)
 
 ## Usage
 

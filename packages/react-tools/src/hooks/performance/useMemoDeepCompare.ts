@@ -2,7 +2,7 @@ import { DependencyList, useMemo, useRef } from "react"
 import { isDeepEqual } from "../../utils";
 
 /**
- * **`useMemoDeepCompare`**: custom useMemo that returns memoized value that changes only if deps are different in depth. [See demo](https://nDriaDev.io/react-tools/#/hooks/performance/useMemoDeepCompare)
+ * **`useMemoDeepCompare`**: custom useMemo that returns memoized value that changes only if deps are different in depth. [See demo](https://ndriadev.github.io/react-tools/#/hooks/performance/useMemoDeepCompare)
  * @param {() => T} factory - computes value.
  * @param {DependencyList} deps - DependencyList.
  * @returns {T} result - memoized value

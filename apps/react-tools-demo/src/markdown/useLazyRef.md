@@ -1,5 +1,5 @@
 # useLazyRef
-Hook that works 'partially' like the _useState_ hook with lazy initialization: ensures that the __initializer__ function is executed only once. [See demo](https://nDriaDev.io/react-tools/#/hooks/performance/useLazyRef)
+Hook that works 'partially' like the _useState_ hook with lazy initialization: ensures that the __initializer__ function is executed only once. [See demo](https://ndriadev.github.io/react-tools/#/hooks/performance/useLazyRef)
 
 ## Usage
 

@@ -1,5 +1,5 @@
 # useMouse
-Hook to track mouse position also in relationship with an element. It works with pointerEvents. [See demo](https://nDriaDev.io/react-tools/#/hooks/events/useMouse)
+Hook to track mouse position also in relationship with an element. It works with pointerEvents. [See demo](https://ndriadev.github.io/react-tools/#/hooks/events/useMouse)
 
 ## Usage
 

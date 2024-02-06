@@ -3,7 +3,7 @@ import { useSyncExternalStore } from "../state";
 import { UseSpeechSynthesis, SpeechSynthesisSpeakParam, UseSpeechSynthesisProps } from "../../models";
 
 /**
- * **`useSpeechSynthesis`**: Hook to use _SpeechSynthesis API_. Refer to [Web Speech API](https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesis). [See demo](https://nDriaDev.io/react-tools/#/hooks/api-dom/useSpeechSynthesis)
+ * **`useSpeechSynthesis`**: Hook to use _SpeechSynthesis API_. Refer to [Web Speech API](https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesis). [See demo](https://ndriadev.github.io/react-tools/#/hooks/api-dom/useSpeechSynthesis)
  * @param {UseSpeechSynthesisProps} [opts] - options.
  * @param {() => void} [opts.onSpeak] - function that will be executed when _speak_ event is fired.
  * @param {SpeechSynthesisUtterance["onstart"]} [opts.onStart] - function that will be executed when _start_ event is fired.

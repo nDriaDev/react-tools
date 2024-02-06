@@ -4,7 +4,7 @@ import { UseFPSProps, UseFPSResult } from "../../models";
 import { useRaf } from "./useRaf";
 
 /**
- * **`useFPS`**: Hook to detect FPS (Frames per second). [See demo](https://nDriaDev.io/react-tools/#/hooks/api-dom/useFPS)
+ * **`useFPS`**: Hook to detect FPS (Frames per second). [See demo](https://ndriadev.github.io/react-tools/#/hooks/api-dom/useFPS)
  * @param {UseFPSProps} [opts] - configuration options to detect FPS.
  * @param {number} [opts.everySeconds=0.5] - it indicates how often to compute FPS. Default is 0.5 second.
  * @param {number} [opts.windowSize=10] - it indicates how FPS result keep in memory and computing average. Default is 10.

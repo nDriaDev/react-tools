@@ -77,7 +77,7 @@ function getDelta<T extends Element, E extends Element>(axis: "x" | "y", target:
 
 
 /**
- * **`useScrollIntoView`**: Hook to scroll an element into view. [See demo](https://nDriaDev.io/react-tools/#/hooks/events/useScrollIntoView)
+ * **`useScrollIntoView`**: Hook to scroll an element into view. [See demo](https://ndriadev.github.io/react-tools/#/hooks/events/useScrollIntoView)
  * @param {Object} param
  * @param {number} [param.duration=1000] - animation duration in milliseconds.
  * @param {"x"|"y"} [param.axis="x"] - scrolling axis.

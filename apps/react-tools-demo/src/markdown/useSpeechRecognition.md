@@ -1,5 +1,5 @@
 # useSpeechRecognition
-Hook to use _SpeechRecognition API_. Refer to [Web Speech API](https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognition). [See demo](https://nDriaDev.io/react-tools/#/hooks/api-dom/useSpeechRecognition)
+Hook to use _SpeechRecognition API_. Refer to [Web Speech API](https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognition). [See demo](https://ndriadev.github.io/react-tools/#/hooks/api-dom/useSpeechRecognition)
 
 ## Usage
 

@@ -1,5 +1,5 @@
 # useLocalStorageState
-Custom _useState_ hook implementation using _LocalStorage_, with immutable _getter state_ function and to _remove_ key from localStorage. [See demo](https://nDriaDev.io/react-tools/#/hooks/state/useLocalStorageState)
+Custom _useState_ hook implementation using _LocalStorage_, with immutable _getter state_ function and to _remove_ key from localStorage. [See demo](https://ndriadev.github.io/react-tools/#/hooks/state/useLocalStorageState)
 
 ## Usage
 

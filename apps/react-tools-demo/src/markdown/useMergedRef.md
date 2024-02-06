@@ -1,5 +1,5 @@
 # useMergedRef
-Hook to merge multiple refs into one. [See demo](https://nDriaDev.io/react-tools/#/hooks/performance/useMergedRef)
+Hook to merge multiple refs into one. [See demo](https://ndriadev.github.io/react-tools/#/hooks/performance/useMergedRef)
 
 ## Usage
 

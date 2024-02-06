@@ -6,7 +6,7 @@ const listeners = new Set<(evt:DeviceMotionEvent) => void>();
 const handler = (evt: DeviceMotionEvent) => listeners.forEach(l => l(evt));
 
 /**
- * **`useDeviceMotion`**: Hook to handle [device motion](https://developer.mozilla.org/en-US/docs/Web/API/Window/devicemotion_event). [See demo](https://nDriaDev.io/react-tools/#/hooks/api-dom/useDeviceMotion)
+ * **`useDeviceMotion`**: Hook to handle [device motion](https://developer.mozilla.org/en-US/docs/Web/API/Window/devicemotion_event). [See demo](https://ndriadev.github.io/react-tools/#/hooks/api-dom/useDeviceMotion)
  * @returns {DeviceMotionProps} props - device motion properties.
  */
 export const useDeviceMotion = (): DeviceMotionProps => {

@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useRef } from "react"
 
 /**
- * **`useInterval`**: Hook to handle setInterval timer function with the possibility to clear and promisify execution. [See demo](https://nDriaDev.io/react-tools/#/hooks/api-dom/useInterval)
+ * **`useInterval`**: Hook to handle setInterval timer function with the possibility to clear and promisify execution. [See demo](https://ndriadev.github.io/react-tools/#/hooks/api-dom/useInterval)
  * @param {(...args: unknown[])=>void} callback - Function to call when the timer elapses.
  * @param {number} delay - The number of milliseconds to wait before calling the `callback`.
  * @returns {[(...args: TArgs) => void, () => void, (...args: TArgs) => Promise<void>]} - array: first element is the function to call setInterval; second element is the function to clearInterval; thrid element promisify setInterval.

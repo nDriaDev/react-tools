@@ -2,7 +2,7 @@ import { DependencyList, useRef, useReducer, useCallback, Dispatch, SetStateActi
 import { isShallowEqual } from "../../utils";
 
 /**
- * **`useDerivedState`**: Hook useful when the internal state of a component depends on one or more props. It receives an _initial state_ and a _dependency array_ that works the same way as that of a _useEffect_, _useMemo_, and _useCallback_. Every time the dependencies change, the __derived state__ is resetted to _initial state_. A third optional parameter can be passed, to execute a _compute_ function after the dependencies are updated, without having a _useEffect_ within the component. [See demo](https://nDriaDev.io/react-tools/#/hooks/state/useDerivedState)
+ * **`useDerivedState`**: Hook useful when the internal state of a component depends on one or more props. It receives an _initial state_ and a _dependency array_ that works the same way as that of a _useEffect_, _useMemo_, and _useCallback_. Every time the dependencies change, the __derived state__ is resetted to _initial state_. A third optional parameter can be passed, to execute a _compute_ function after the dependencies are updated, without having a _useEffect_ within the component. [See demo](https://ndriadev.github.io/react-tools/#/hooks/state/useDerivedState)
  * @param {T|()=>T} initialState
  * @param {DependencyList} deps - dependencies list from which depends derived state.
  * @param {EffectCallback} [compute] - function that will be executed when dependencies list change after resetting derived state to __initialState__.

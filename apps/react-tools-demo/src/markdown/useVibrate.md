@@ -1,5 +1,5 @@
 # useVibrate
-Hook to use device vibration hardware. [See demo](https://nDriaDev.io/react-tools/#/hooks/api-dom/useVibrate)
+Hook to use device vibration hardware. [See demo](https://ndriadev.github.io/react-tools/#/hooks/api-dom/useVibrate)
 
 ## Usage
 

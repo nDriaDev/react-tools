@@ -1,7 +1,7 @@
 import { useCallback } from "react";
 
 /**
- * **`useVibrate`**: Hook to use device vibration hardware. [See demo](https://nDriaDev.io/react-tools/#/hooks/api-dom/useVibrate)
+ * **`useVibrate`**: Hook to use device vibration hardware. [See demo](https://ndriadev.github.io/react-tools/#/hooks/api-dom/useVibrate)
  * @returns {{isSupported: boolean, vibrate: ((pattern: number | number[]) => void), cancel: ()=>void}} result - object with:
  * - _isSupported_: boolean to detect if vibration is supported or not.
  * - _vibrate_: function to activate device vibration hardware.

@@ -6,7 +6,7 @@ const listeners = new Set<(evt:DeviceOrientationEvent) => void>();
 const handler = (evt: DeviceOrientationEvent) => listeners.forEach(l => l(evt));
 
 /**
- * **`useDeviceOrientation`**: Hook to handle [device orientation](https://developer.mozilla.org/en-US/docs/Web/API/Window/deviceorientation_event). [See demo](https://nDriaDev.io/react-tools/#/hooks/api-dom/useDeviceOrientation)
+ * **`useDeviceOrientation`**: Hook to handle [device orientation](https://developer.mozilla.org/en-US/docs/Web/API/Window/deviceorientation_event). [See demo](https://ndriadev.github.io/react-tools/#/hooks/api-dom/useDeviceOrientation)
  * @returns {DeviceOrientationProps} props - device orientation properties.
  */
 export const useDeviceOrientation = (): DeviceOrientationProps => {

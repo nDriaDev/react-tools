@@ -2,7 +2,7 @@ import { RefCallback, useCallback, useRef } from "react";
 import { useLongPressCallback, useLongPressOptions } from "../../models/useLongPress.model";
 
 /**
- * **`useLongPress`**: Hook to execute a callback on a long press event. [See demo](https://nDriaDev.io/react-tools/#/hooks/events/useLongPress)
+ * **`useLongPress`**: Hook to execute a callback on a long press event. [See demo](https://ndriadev.github.io/react-tools/#/hooks/events/useLongPress)
  * @param {(evt:E)=>void} cb - callback to execute after a certain duration.
  * @param {Object} opts
  * @param {number} [opts.duration=1000] - long press event duration in milliseconds.

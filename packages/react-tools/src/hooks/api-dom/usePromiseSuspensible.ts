@@ -5,7 +5,7 @@ import { isDeepEqual } from "../../utils";
 const promiseCache: { deps: DependencyList, promise: Promise<void>, error?: unknown, response?: unknown }[] = [];
 
 /**
- * **`usePromiseSuspensible`**: Hook to resolve promise with Suspense support. The component that uses it, it need to be wrapped with Suspense component. [See demo](https://nDriaDev.io/react-tools/#/hooks/api-dom/usePromiseSuspensible)
+ * **`usePromiseSuspensible`**: Hook to resolve promise with Suspense support. The component that uses it, it need to be wrapped with Suspense component. [See demo](https://ndriadev.github.io/react-tools/#/hooks/api-dom/usePromiseSuspensible)
  * @param {T} promise - Function that returns a promise to suspense.
  * @param {DependencyList} deps - DependencyList for promise to suspense.
  * @returns {Awaited<ReturnType<T>>} result - resolve promise value.

@@ -1,5 +1,5 @@
 # For
-Component to optimize the rendering of a list of elements without need to specify a key value for all elements, and other options. [See demo](https://nDriaDev.io/react-tools/#/components/For)
+Component to optimize the rendering of a list of elements without need to specify a key value for all elements, and other options. [See demo](https://ndriadev.github.io/react-tools/#/components/For)
 
 ## Usage
 

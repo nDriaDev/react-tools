@@ -2,7 +2,7 @@ import { useCallback, useEffect, useReducer, useRef } from "react"
 import { useDeferredValue } from "../lifecycle";
 
 /**
- * **`usePerformAction`**: Hook that executes a callback after a render. [See demo](https://nDriaDev.io/react-tools/#/hooks/events/usePerformAction)
+ * **`usePerformAction`**: Hook that executes a callback after a render. [See demo](https://ndriadev.github.io/react-tools/#/hooks/events/usePerformAction)
  * @param {(...args: unknown[])=>void} cb - callback to execute
  * @returns {(...args: unknown[]) => void} performAction
  */

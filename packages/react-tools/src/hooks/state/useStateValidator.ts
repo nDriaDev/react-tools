@@ -3,7 +3,7 @@ import { StateValidator } from "../../models";
 import { useMemoizedFn } from "../performance";
 
 /**
- * **`useStateValidator`**: custom _useState_ hook that validates state on every update. [See demo](https://nDriaDev.io/react-tools/#/hooks/state/useStateValidator)
+ * **`useStateValidator`**: custom _useState_ hook that validates state on every update. [See demo](https://ndriadev.github.io/react-tools/#/hooks/state/useStateValidator)
  * @param {T | () => T} initialState - value or a function.
  * @param {StateValidator} validator - function that will be executed to validate state.
  * @returns {[T, Dispatch<SetStateAction<T>>, T extends Record<string, unknown> ? {[k in keyof T]:{invalid: boolean, message?: string}} : {invalid: boolean, message?: string}]} invalid

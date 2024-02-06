@@ -4,7 +4,7 @@ import { EventsPattern } from "../../utils"
 const events = new EventsPattern();
 
 /**
- * **`useEvents`**: Communication system based on Events pattern implemented on a EventTarget subclass. AddListener and dispatch functions to communicate. The result of invoking the _addListener_ function in turn returns a function that can be used to _removeListener_ on event. Otherwise, the listener is automatically removed when the component that has instantiated it is unmounted. [See demo](https://nDriaDev.io/react-tools/#/hooks/events/useEvents)
+ * **`useEvents`**: Communication system based on Events pattern implemented on a EventTarget subclass. AddListener and dispatch functions to communicate. The result of invoking the _addListener_ function in turn returns a function that can be used to _removeListener_ on event. Otherwise, the listener is automatically removed when the component that has instantiated it is unmounted. [See demo](https://ndriadev.github.io/react-tools/#/hooks/events/useEvents)
  * @returns {[(type: string, callback<T>:(evt: Event | CustomEvent<T>) => void, options?: boolean | AddEventListenerOptions) => ()=>void, <T>(evt: Event | CustomEvent<T>) => void]} result - contains the _addListener_ and _dispatch_ functions.
  */
 export const useEvents = (): [(type: string, callback:<T>(evt: Event|CustomEvent<T>) => void, options?: boolean | AddEventListenerOptions) => ()=>void, <T>(evt: Event|CustomEvent<T>) => void] => {

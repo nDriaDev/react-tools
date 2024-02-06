@@ -1,5 +1,5 @@
 # useTitle
-Hook to handling app page title. It works _outside Component_ also and it returns array of two functions to read and write title. [See demo](https://nDriaDev.io/react-tools/#/hooks/api-dom/useTitle)
+Hook to handling app page title. It works _outside Component_ also and it returns array of two functions to read and write title. [See demo](https://ndriadev.github.io/react-tools/#/hooks/api-dom/useTitle)
 
 ## Usage
 

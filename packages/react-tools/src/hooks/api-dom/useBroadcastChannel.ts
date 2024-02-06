@@ -2,7 +2,7 @@ import { useCallback, useLayoutEffect, useMemo, useRef } from "react"
 import { useSyncExternalStore } from "../state";
 
 /**
- * **`useBroadcastChannel`**: Hook to use [Broadcast Channel API](https://developer.mozilla.org/en-US/docs/Web/API/Broadcast_Channel_API). [See demo](https://nDriaDev.io/react-tools/#/hooks/api-dom/useBroadcastChannel)
+ * **`useBroadcastChannel`**: Hook to use [Broadcast Channel API](https://developer.mozilla.org/en-US/docs/Web/API/Broadcast_Channel_API). [See demo](https://ndriadev.github.io/react-tools/#/hooks/api-dom/useBroadcastChannel)
  * @param {string} name - broadcast channel name.
  * @param {(evt:MessageEvent)=>void} [onMessage] - function that will be execute when a message occurred.
  * @param {(evt:MessageEvent)=>void} [onError] - function that will be execute when a error message occurred.

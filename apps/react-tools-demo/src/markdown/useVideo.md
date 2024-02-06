@@ -1,5 +1,5 @@
 # useVideo
-Hook to use an HTML video element. [See demo](https://nDriaDev.io/react-tools/#/hooks/api-dom/useVideo)
+Hook to use an HTML video element. [See demo](https://ndriadev.github.io/react-tools/#/hooks/api-dom/useVideo)
 
 ## Usage
 

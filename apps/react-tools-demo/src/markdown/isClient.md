@@ -1,5 +1,5 @@
 # isClient
-It detects if code is running on client. [See demo](https://nDriaDev.io/react-tools/#/utils/isClient)
+It detects if code is running on client. [See demo](https://ndriadev.github.io/react-tools/#/utils/isClient)
 
 ## API
 

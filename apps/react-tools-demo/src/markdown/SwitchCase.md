@@ -1,5 +1,5 @@
 # SwitchCase
-It works like switch-case construct. It useful for when there are more than 2 mutual exclusive conditions. [See demo](https://nDriaDev.io/react-tools/#/components/SwitchCase)
+It works like switch-case construct. It useful for when there are more than 2 mutual exclusive conditions. [See demo](https://ndriadev.github.io/react-tools/#/components/SwitchCase)
 
 ## Usage
 

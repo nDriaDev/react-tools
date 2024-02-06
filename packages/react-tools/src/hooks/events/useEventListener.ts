@@ -2,7 +2,7 @@ import { RefObject, useEffect, useLayoutEffect, useRef } from "react"
 import { useMemoizedFn } from "../performance";
 
 /**
- * __`useEventListener`__: Hook to simplify add and remove EventListener use. It's persist during rerendering and automatically remove eventlistener on unMount component lifecycle. [See demo](https://nDriaDev.io/react-tools/#/hooks/events/useEventListener)
+ * __`useEventListener`__: Hook to simplify add and remove EventListener use. It's persist during rerendering and automatically remove eventlistener on unMount component lifecycle. [See demo](https://ndriadev.github.io/react-tools/#/hooks/events/useEventListener)
  * @param {Object} options
  * @param {keyof WindowEventMap|(keyof WindowEventMap)[]} options.type - event or events type.
  * @param {(evt: Event | CustomEvent) => void} options.listener - listener to be executed on specified event.

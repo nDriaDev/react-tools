@@ -2,7 +2,7 @@ import { RefCallback, useCallback, useRef } from "react"
 import { useEffectOnce } from "../lifecycle";
 
 /**
- * **`useMutationObserver`**: Hook to use Mutation Observer. Refer to [Mutation Observer API](https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver). [See demo](https://nDriaDev.io/react-tools/#/hooks/events/useMutationObserver)
+ * **`useMutationObserver`**: Hook to use Mutation Observer. Refer to [Mutation Observer API](https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver). [See demo](https://ndriadev.github.io/react-tools/#/hooks/events/useMutationObserver)
  * @param {MutationCallback} cb - The function which will be called on each DOM change that qualifies given the observed node or subtree and options. The callback takes as input two parameters: __mutationList__ and __observer__.
  * @param {MutationObserverInit} [opts] - An options object allowing you to set options for the observation.
  * @returns {[RefCallback<T>, ()=>void, ()=>void, () => MutationRecord[]|undefined]} result - array with: cb for ref component attribute to observe, function to _disconnect_ observer, function _takeRecords_ to take observer records not yet processed, function to _reconnect_ observer.

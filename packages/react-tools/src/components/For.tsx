@@ -3,7 +3,7 @@ import { Children, memo } from "react";
 import { ForProps } from "../models";
 
 /**
- * **`For`**: Component to optimize the rendering of a list of elements without need to specify a key value for all elements, and other options. [See demo](https://nDriaDev.io/react-tools/#/components/For)
+ * **`For`**: Component to optimize the rendering of a list of elements without need to specify a key value for all elements, and other options. [See demo](https://ndriadev.github.io/react-tools/#/components/For)
  * @param {ForProps<T>} props - component properties object.
  * @param {T[]} props.of - array of elements.
  * @param {T extends Record<string,unknown> ? keyof T : never} [props.elementKey] - a key of array elements if elements are object.

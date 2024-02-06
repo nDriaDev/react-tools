@@ -1,5 +1,5 @@
 # useScrollIntoView
-Hook to scroll an element into view. [See demo](https://nDriaDev.io/react-tools/#/hooks/events/useScrollIntoView)
+Hook to scroll an element into view. [See demo](https://ndriadev.github.io/react-tools/#/hooks/events/useScrollIntoView)
 
 ## Usage
 

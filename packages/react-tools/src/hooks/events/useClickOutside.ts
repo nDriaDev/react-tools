@@ -18,7 +18,7 @@ const isClickInside = (node: HTMLElement | null, target: Node | null) => {
 	return false;
 }
 /**
- * **`useClickOutside`**: Hook to listen and execute an action when there is a click outside an element. [See demo](https://nDriaDev.io/react-tools/#/hooks/events/useClickOutside)
+ * **`useClickOutside`**: Hook to listen and execute an action when there is a click outside an element. [See demo](https://ndriadev.github.io/react-tools/#/hooks/events/useClickOutside)
  * @param {RefObject<HTMLElement> | HTMLElement} target - DOM element or ref
  * @param {(evt:Event)=>void} handler - callback to be executed.
  */

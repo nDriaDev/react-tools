@@ -1,5 +1,5 @@
 # useLongPress
-Hook to execute a callback on a long press event. [See demo](https://nDriaDev.io/react-tools/#/hooks/events/useLongPress)
+Hook to execute a callback on a long press event. [See demo](https://ndriadev.github.io/react-tools/#/hooks/events/useLongPress)
 
 ## Usage
 
