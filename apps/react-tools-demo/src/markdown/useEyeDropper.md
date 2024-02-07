@@ -42,6 +42,7 @@ function that will be executed on __open__ invocation.
 function that will be on __open__ retuns.
 >
 
+
 > ### Returns
 >
 > __result__: __isSupported__ to known if EyeDropper API is supported and __share__ function to use EyeDropper API.

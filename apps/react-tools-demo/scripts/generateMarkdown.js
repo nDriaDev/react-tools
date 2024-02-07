@@ -8,6 +8,7 @@ const __dirname = new URL('.', import.meta.url).pathname;
 
 const PATH_DEMO_SRC = path.join(__dirname, '..', 'src');
 const PATH_LIB_SRC = path.join(__dirname, "..", "..", "..", "packages", "react-tools-lib", "src");
+const PATH_UTILITY_MODEL_TYPES_FILE = path.join(__dirname, "..", "..", "..", "packages", "react-tools-lib", "src", "models", "utilityTypes.model.ts");
 const DEMO_COMPONENT_DIR_NAME = "pages";
 const MARKDOWWN_DIR_NAME = "markdown";
 const HOOKS_DIR_NAME = "hooks";
@@ -213,13 +214,15 @@ ${jsDoc.usage ? `\n## Usage\n\n${jsDoc.usage}\n`:""}
 ${jsDoc.type}
 \`\`\`
 
-> ### Params
+${jsDoc.params && jsDoc.params.length > 0 ?
+`> ### Params
 >
 ${jsDoc.params && jsDoc.params.length > 0
-	? jsDoc.params.map(el => `> - __${el.name}__: _${el.type}_${el.description ? '  \n'+el.description : ""}`).join("\n")
+	? jsDoc.params.map(el => `> - __${el.name}__: _${el.type}_${el.description ? '  \n' + el.description : ""}`).join("\n")
 	: ">"
 }
 >
+`:""}
 
 > ### Returns
 >
@@ -452,11 +455,72 @@ async function generateComponentsMarkDown() {
 	}
 }
 
+async function generateModelMarkDown() {
+	const utilityTypesFile = await fs.readFile(path.join(PATH_UTILITY_MODEL_TYPES_FILE), { encoding: "utf8" });
+	const stringBuffer = {
+		value: "",
+		/**
+		 *
+		 * @param {string} s
+		 * @returns {this}
+		 */
+		add(s) {
+			this.value += s + "\n";
+			return this;
+		},
+		/**
+		 *
+		 * @param {string[]} s
+		 * @returns {this}
+		 */
+		set(s) {
+			s.forEach(slice => { this.value += slice + "\n" });
+			return this;
+		}
+	}
+	const utilityTypesFileSplitted = utilityTypesFile.split("\n").slice(2).filter(el => !["/**", " */", ""].includes(el));
+	stringBuffer.set([
+		"# Utility Types",
+		"",
+		"Typescript utility types for specified use cases.",
+		""
+	]);
+	for (let i = 0, size = utilityTypesFileSplitted.length; i < size;) {
+		const description = utilityTypesFileSplitted[i].substring(3);
+		const type = utilityTypesFileSplitted[i + 1];
+		let title, generics;
+		if (type.indexOf("> =") !== -1) {
+			title = type.substring(12, type.indexOf("<"));
+			generics = type.substring(type.indexOf("<"), type.indexOf("> =") + 1);
+		} else {
+			title = type.substring(12, type.indexOf(" ="));
+		}
+		stringBuffer.set([
+			"## " + title,
+			"",
+			description,
+			"```tsx",
+			"type " + title + (generics ? generics : ""),
+			"```",
+			""
+		]);
+		i++;
+		while (!utilityTypesFileSplitted[i].startsWith(" * ")) {
+			i++;
+			if (i === size) {
+				break;
+			}
+		}
+	}
+	await fs.writeFile(path.join(PATH_DEMO_SRC, MARKDOWWN_DIR_NAME, "utilityTypes.md"), stringBuffer.value, { encoding: "utf8" });
+}
+
 async function generateMarkDown() {
 	try {
 		await deleteAllFiles(path.join(PATH_DEMO_SRC, MARKDOWWN_DIR_NAME));
 		await generateUtilsMarkDown();
 		await generateHooksMarkDown();
+		await generateModelMarkDown();
 		await generateComponentsMarkDown();
 		process.exit(0);
 	} catch (error) {

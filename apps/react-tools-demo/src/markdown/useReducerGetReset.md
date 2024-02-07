@@ -23,6 +23,7 @@ The value from which the initial state is calculated. How the initial state is c
 Function that should return the _initial state_. If it’s not specified, the initial state is set to _initialState_, otherwise is set to the result of calling _initializer(initialState)_.
 >
 
+
 > ### Returns
 >
 > __array__

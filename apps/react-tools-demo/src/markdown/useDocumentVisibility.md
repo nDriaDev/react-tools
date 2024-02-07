@@ -32,10 +32,7 @@ export const UseDocumentVisibility = () => {
 useDocumentVisibility(): DocumentVisibilityState
 ```
 
-> ### Params
->
->
->
+
 
 > ### Returns
 >

@@ -65,10 +65,7 @@ export { UseIsMounted };
 useIsMounted(): ()=>boolean
 ```
 
-> ### Params
->
->
->
+
 
 > ### Returns
 >

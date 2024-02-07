@@ -1506,6 +1506,18 @@ export default function MainLayout() {
 						>
 							removePropertiesFromArrayObjects
 						</Link>
+						<p className="sub-type">Types</p>
+						<Link
+							className={pathname === "/types/utilityTypes" ? 'active' : ''}
+							ref={node => linksRef.current["utilityTypes"] = node}
+							to="/types/utilityTypes"
+							onClick={() => {
+								containerRef.current?.scrollTo(0, 0);
+								window.innerWidth < 1190 && closeNav();
+							}}
+						>
+							utilityTypes
+						</Link>
 					</nav>
 				</>
 			}

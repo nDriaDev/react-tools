@@ -132,6 +132,7 @@ function that will be executed when _speechend_ event is dispatched.
 function that will be executed when _start_ event is dispatched.
 >
 
+
 > ### Returns
 >
 > __result__:  __Array__:  

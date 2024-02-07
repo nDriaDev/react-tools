@@ -17,6 +17,7 @@ value to assign to the property specified in path.
 optional object that will be used as start object.
 >
 
+
 > ### Returns
 >
 > __result__: object create by path and value indicated.

@@ -27,10 +27,7 @@ export const UseDeviceOrientation = () => {
 useDeviceOrientation(): DeviceOrientationProps
 ```
 
-> ### Params
->
->
->
+
 
 > ### Returns
 >

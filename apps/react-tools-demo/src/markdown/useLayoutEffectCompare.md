@@ -23,6 +23,7 @@ typed dependency list.
 optional function that executes comparing between old and new `deps`: it returns true if they are different, otherwise false. If there isn't, hook works like normal useLayoutEffect.
 >
 
+
 > ### Returns
 >
 > 

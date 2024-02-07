@@ -17,6 +17,7 @@ new object version.
 boolean to indicate how treat undefined value.
 >
 
+
 > ### Returns
 >
 > __result__: mergedObject

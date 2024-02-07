@@ -41,6 +41,7 @@ listener to be executed on pinch zoom event.
 element on which attaching eventListener.
 >
 
+
 > ### Returns
 >
 > __remove__: remove listener manually.

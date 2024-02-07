@@ -274,6 +274,24 @@ async function createRouter(router) {
 	router.add(`					children: [`);
 	createRoutes(router, UTILS_FILES, "utils")
 	router.add(`					]`);
+	router.add('				},');
+	router.add('				{');
+	router.add('					path: "types",');
+	router.add('					element: <Suspense fallback={<Spinner/>}>');
+	router.add('						<Outlet />');
+	router.add('					</Suspense>,');
+	router.add(`					children: [`);
+	router.add(`						{`);
+	router.add(`							index: true,`);
+	router.add(`							element: <Navigate to={"/types/utilityTypes"} replace/>,`);
+	router.add(`						},`);
+	router.add(`						{`);
+	router.add(`							path: "utilityTypes",`);
+	router.add(`							element: <Suspense fallback={<Spinner/>}>`);
+	router.add(`								<ComponentLayout markdown={utilityTypesMD} />`);
+	router.add(`							</Suspense>`);
+	router.add(`						}`);
+	router.add(`					]`);
 	router.add('				}');
 	router.add('			]');
 	router.add('		}');

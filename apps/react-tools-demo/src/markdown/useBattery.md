@@ -40,6 +40,7 @@ callback that will be executed when dischargingtimechange event is fired.
 callback that will be executed when levelchange event is fired.
 >
 
+
 > ### Returns
 >
 > __result__:  _BatteryStatus_  

@@ -35,6 +35,7 @@ useScreen(allScreen?:boolean): [ScreenDetails, (orientation: OrientationLockType
 to interact with all screens or only with current screen.
 >
 
+
 > ### Returns
 >
 > :  __Array__:  

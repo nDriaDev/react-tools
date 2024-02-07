@@ -48,6 +48,7 @@ useIdleCallback(cb: (deadline?: IdleDeadline | DOMHighResTimeStamp | void) => vo
 Contains optional configuration parameters.
 >
 
+
 > ### Returns
 >
 > __result__: array where functions to invoke and cancel execution.

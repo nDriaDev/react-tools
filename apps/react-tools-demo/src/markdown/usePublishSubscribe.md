@@ -56,6 +56,7 @@ usePublishSubscribe<T>(topic: string): [(listener: (value?: T) => Promise<void> 
 > - __topic__: _string_
 >
 
+
 > ### Returns
 >
 > __result__: contains the _publish_ and _subscribe_ functions. The result of invoking the _subscribe_ function in turn returns a function that can be used to _unsubscribe_ the topic

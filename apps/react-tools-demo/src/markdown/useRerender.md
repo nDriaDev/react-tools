@@ -32,10 +32,7 @@ export { UseRerender };
 useRerender(): React.DispatchWithoutAction
 ```
 
-> ### Params
->
->
->
+
 
 > ### Returns
 >

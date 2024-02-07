@@ -94,6 +94,7 @@ Object that contains specified void function to mutate the store value, not the 
 boolean that indicates if the store value will be persisted on the local Storage.
 >
 
+
 > ### Returns
 >
 > __result__:  __Object__:  

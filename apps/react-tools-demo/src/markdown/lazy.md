@@ -21,6 +21,7 @@ function that will be executed before load component.
 function that will be executed after load component.
 >
 
+
 > ### Returns
 >
 > __result__: a React component you can render in your tree.

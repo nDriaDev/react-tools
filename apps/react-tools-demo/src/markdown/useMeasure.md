@@ -24,10 +24,7 @@ export const UseMeasure = () => {
 useMeasure<T extends Element>(): [React.RefCallback<T>, DOMRectReadOnly]
 ```
 
-> ### Params
->
->
->
+
 
 > ### Returns
 >

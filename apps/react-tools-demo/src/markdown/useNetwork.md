@@ -32,6 +32,7 @@ useNetwork<T extends keyof ConnectionState>(selectedInfo?: ArrayMinLength1<T>): 
 array of connection property.
 >
 
+
 > ### Returns
 >
 > __object__: Network connection property or a subset if __selectedInfo__ is specified.

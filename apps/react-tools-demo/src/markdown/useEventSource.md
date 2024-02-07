@@ -27,6 +27,7 @@ function that will be executed when an error occurred.
 function that will be executed when a message from without event arrived.
 >
 
+
 > ### Returns
 >
 > __result__:  _UseEventSourceResult_  

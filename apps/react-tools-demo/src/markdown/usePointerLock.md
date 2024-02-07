@@ -85,6 +85,7 @@ function that will be executed when lock has been acquired.
 function that will be executed when lock has been released.
 >
 
+
 > ### Returns
 >
 > __result__:  _UsePointerLockResult_  

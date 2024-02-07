@@ -74,6 +74,7 @@ useStateGetReset<T>(initialState: T | (() => T)): [T, Dispatch<SetStateAction<T>
 value or a function.
 >
 
+
 > ### Returns
 >
 > __array__

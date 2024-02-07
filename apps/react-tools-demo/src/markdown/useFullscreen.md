@@ -41,6 +41,7 @@ callback that will be executed when target element fullscreen change.
 callback that will be executed before exit from fullscreen mode.
 >
 
+
 > ### Returns
 >
 > __result__: array with: _isFullscreen_: boolean to indicate if there is fullscreen or not; _refCallback_: ref callback to be attached at target element; _enter_: function to enter in fullscreen mode; _exit_: function to exit from fullscreen mode.

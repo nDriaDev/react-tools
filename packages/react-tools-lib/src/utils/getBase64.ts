@@ -71,7 +71,7 @@ function getBase64<T>(target: string | Blob | ArrayBuffer | HTMLCanvasElement | 
 				}).catch(rej)
 			}
 			else if (typeof target === 'object') {
-				const serializeFn = (options as UseBase64ObjectOptions<T|T[]>)?.serializer || defaultSerializer(target)
+				const serializeFn = (options as UseBase64ObjectOptions<T|T[]>)?.serializer || defaultSerializer
 
 				const serialized = serializeFn(target)
 

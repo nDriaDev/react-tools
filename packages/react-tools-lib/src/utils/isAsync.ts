@@ -1,6 +1,6 @@
 /**
  * **`isAsync`**: It detects if a function is asynchronous. [See demo](https://ndriadev.github.io/react-tools/#/utils/isAsync)
- * @param {(...args: unknown[])=> unknown | Promise<unknown>}
+ * @param {(...args: unknown[])=> unknown | Promise<unknown>} fn
  * @returns {boolean} result
  */
 export const isAsync = <T extends unknown[], E = unknown>(fn: E | Promise<E> | ((...args: T)=> E | Promise<E>)): boolean => {

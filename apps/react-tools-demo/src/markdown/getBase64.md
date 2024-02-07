@@ -13,6 +13,7 @@ getBase64<T>(target: string | Blob | ArrayBuffer | HTMLCanvasElement | HTMLImage
 > - __options?__: _ToDataURLOptions | UseBase64ObjectOptions<T>_
 >
 
+
 > ### Returns
 >
 > 

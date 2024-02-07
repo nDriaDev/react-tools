@@ -43,6 +43,7 @@ function that will be executed when remote device has been disconnected.
 function that will be executed on error watching or cancel watching devices availability.
 >
 
+
 > ### Returns
 >
 > __result__:  _UseRemotePlaybackResult_  

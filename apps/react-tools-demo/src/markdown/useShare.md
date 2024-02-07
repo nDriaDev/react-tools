@@ -30,10 +30,7 @@ export const UseShare = () => {
 useShare(): {isSupported: boolean, share: (data?: ShareData)=>Promise<void>}
 ```
 
-> ### Params
->
->
->
+
 
 > ### Returns
 >

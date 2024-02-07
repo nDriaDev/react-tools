@@ -56,6 +56,7 @@ time in milliseconds to delay function execution.
 if true, the function is executed after delay but only if the window is focused. __N.B._: works only in browser context.
 >
 
+
 > ### Returns
 >
 > __- array with debounced function, cancel function to abor debounced function and and immediate function to execute function immediately.__

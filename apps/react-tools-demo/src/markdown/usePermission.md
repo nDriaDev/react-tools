@@ -36,6 +36,7 @@ usePermission(permission: TPermissionName): UsePermissionResult
 name of the API whose permissions you want to query.
 >
 
+
 > ### Returns
 >
 > __result__:  _UsePermissionResult_  

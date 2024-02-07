@@ -38,8 +38,6 @@ export type {
 	RecursivePartial,
 	ScreenDetail,
 	ScreenDetails,
-	SelectiveKeyOf,
-	SelectiveNestedKeyOf,
 	SelectivePartial,
 	SpeechGrammar,
 	SpeechGrammarList,

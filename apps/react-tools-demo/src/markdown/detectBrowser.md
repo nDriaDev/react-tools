@@ -7,10 +7,7 @@ It detects used browser or return __"No detection"__. [See demo](https://ndriade
 detectBrowser(): "chrome" | "firefox" | "safari" | "opera" | "edge" | "No detection"
 ```
 
-> ### Params
->
->
->
+
 
 > ### Returns
 >

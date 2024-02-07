@@ -36,10 +36,7 @@ export const UseDisplayMedia = () => {
 useDisplayMedia(): [MediaStream | undefined, (options?: TDisplayMediaStreamOptions) => Promise<void>, () => void]
 ```
 
-> ### Params
->
->
->
+
 
 > ### Returns
 >

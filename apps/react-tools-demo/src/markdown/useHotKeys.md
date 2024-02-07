@@ -65,6 +65,7 @@ element on which attaching eventListener.
 options for listener.
 >
 
+
 > ### Returns
 >
 > __remove__: used to manually remove the eventListener, otherwise is removed when component is unmounted.

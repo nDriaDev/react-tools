@@ -42,6 +42,7 @@ function that will be execute when a message occurred.
 function that will be execute when a error message occurred.
 >
 
+
 > ### Returns
 >
 > __result__:  __Array__:  

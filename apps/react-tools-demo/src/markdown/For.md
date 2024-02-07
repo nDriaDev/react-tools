@@ -62,6 +62,7 @@ callback executed to map _of_ elements.
 callback executed to sort _of_ elements.
 >
 
+
 > ### Returns
 >
 > __result__: elements list, rendered from _of_ prop or _fallback_.

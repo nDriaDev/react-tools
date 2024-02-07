@@ -29,6 +29,7 @@ it indicates how often to compute FPS. Default is 0.5 second.
 it indicates how FPS result keep in memory and computing average. Default is 10.
 >
 
+
 > ### Returns
 >
 > __result__:  _UseFPSResult_  

@@ -51,10 +51,7 @@ export { UseEvents };
 useEvents(): [(type: string, callback:<T>(evt: Event|CustomEvent<T>) => void, options?: boolean | AddEventListenerOptions) => ()=>void, <T>(evt: Event|CustomEvent<T>) => void]
 ```
 
-> ### Params
->
->
->
+
 
 > ### Returns
 >

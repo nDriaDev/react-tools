@@ -44,6 +44,7 @@ The function which is called when the percentage of the target element is visibl
 An options object allowing you to set options for the observation.
 >
 
+
 > ### Returns
 >
 > __result__: array with: callback for ref element attribute to observe, function to _disconnect_ observer, function to _reconnect_ observer.

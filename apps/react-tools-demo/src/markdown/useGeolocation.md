@@ -57,6 +57,7 @@ it establishes how to obtain the geographic location:
 callback that will be executed if there will be errors.
 >
 
+
 > ### Returns
 >
 > __results__:  __Array__:  

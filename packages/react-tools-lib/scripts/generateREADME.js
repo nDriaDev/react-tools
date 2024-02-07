@@ -7,6 +7,7 @@ const __dirname = new URL('.', import.meta.url).pathname;
 
 const PATH_ROOT = path.join(__dirname, "..");
 const PATH_LIB_SRC = path.join(__dirname, "..", "src");
+const PATH_UTILITY_MODEL_TYPES_FILE = path.join(__dirname, "..", "src", "models", "utilityTypes.model.ts");
 const HOOKS_DIR_NAME = "hooks";
 const COMPONENTS_DIR_NAME = "components";
 const UTILS_DIR_NAME = "utils";
@@ -335,6 +336,50 @@ async function buildSummary(listUsedFiles, dirPath) {
 
 /**
  *
+ * @param {{readonly value: string;add(s: string): this;set(s: string[]): this;}} stringBuffer
+ */
+async function generateModelMarkDown(stringBuffer) {
+	const utilityTypesFile = await fs.readFile(path.join(PATH_UTILITY_MODEL_TYPES_FILE), { encoding: "utf8" });
+	const utilityTypesFileSplitted = utilityTypesFile.split("\n").slice(2).filter(el => !["/**", " */", ""].includes(el));
+	stringBuffer.set([
+		"## TYPES",
+		"",
+		"## Utility Types",
+		"",
+		"Typescript utility types for specified use cases.",
+		""
+	]);
+	for (let i = 0, size = utilityTypesFileSplitted.length; i < size;) {
+		const description = utilityTypesFileSplitted[i].substring(3);
+		const type = utilityTypesFileSplitted[i + 1];
+		let title, generics;
+		if (type.indexOf("> =") !== -1) {
+			title = type.substring(12, type.indexOf("<"));
+			generics = type.substring(type.indexOf("<"), type.indexOf("> =") + 1);
+		} else {
+			title = type.substring(12, type.indexOf(" ="));
+		}
+		stringBuffer.set([
+			"### " + title,
+			"",
+			description,
+			"```tsx",
+			"type " + title + (generics ? generics : ""),
+			"```",
+			""
+		]);
+		i++;
+		while (!utilityTypesFileSplitted[i].startsWith(" * ")) {
+			i++;
+			if (i === size) {
+				break;
+			}
+		}
+	}
+}
+
+/**
+ *
  * @param {{readonly value: string;add(s: string): this;set(s: string[]): this;}} md
  */
 async function generateTools(md) {
@@ -387,6 +432,10 @@ async function generateTools(md) {
 	md.add("- [__UTILS__](#utils)");
 	md.add("");
 	md.set(utils.map(el => `	- [_${el.title}_](#${el.title})`))
+	md.add("");
+	md.add("- [__TYPES__](#types)");
+	md.add("");
+	md.add("	- [__UTILITY TYPES__](#utility-types)");
 	md.add("");
 	md.add("## HOOKS");
 	md.add("");
@@ -465,7 +514,9 @@ async function generateTools(md) {
 		md.add("```tsx");
 		md.add(el.type);
 		md.add("```");
-	})
+	});
+	md.add("");
+	await generateModelMarkDown(md);
 }
 
 async function generateReadme() {
@@ -502,7 +553,7 @@ async function generateReadme() {
 			'	<br>',
 			'</h1>',
 			'',
-			'<h3 align="center">A collection of Hooks, Components and Utilities for React',
+			'<h3 align="center">A collection of Hooks, Components, Utilities and Types for React',
 			'</h3>',
 			'',
 			'<div align="center">',

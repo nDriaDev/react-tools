@@ -49,10 +49,7 @@ export const UseBluetooth = () => {
 useBluetooth():[{isSupported: boolean, isConnected: boolean, device: BluetoothDevice|null, server: BluetoothRemoteGATTServer|null}, (opts?: BluetoothDevicesOptions)=>Promise<void>]
 ```
 
-> ### Params
->
->
->
+
 
 > ### Returns
 >

@@ -48,6 +48,7 @@ time in milliseconds to limit next function execution.
 if true, next function execution taking place when current has finished.
 >
 
+
 > ### Returns
 >
 > __- array with throttled function, cancel function to allow other execution and immediate function to execute function immediately.__

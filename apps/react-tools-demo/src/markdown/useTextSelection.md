@@ -85,6 +85,7 @@ function to execute while selection changes.
 function to execute while selection ends.
 >
 
+
 > ### Returns
 >
 > __TextSelection__: object with: _text_: selected text; _direction_: selection direction; _outsideRectangle_: a __DOMRect__ of selection rectangle; _innerRectangles_: list of __DOMRect__ representing the selection slices.

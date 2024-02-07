@@ -53,6 +53,7 @@ useEventDispatcher(element: RefObject<HTMLElement> | Window = window): (evt: Eve
 target on which dispatch event
 >
 
+
 > ### Returns
 >
 > __dispatch__: function that dispatch the event on target

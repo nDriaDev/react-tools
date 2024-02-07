@@ -42,6 +42,7 @@ callback executed on single click.
 delay to execute __singleClick__ callback.
 >
 
+
 > ### Returns
 >
 > __callback__

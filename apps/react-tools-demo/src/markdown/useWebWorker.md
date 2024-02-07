@@ -60,6 +60,7 @@ function that will be executed when a messageError occurred.
 function that will be executed when an error occurred.
 >
 
+
 > ### Returns
 >
 > __result__:  _UseWebWorkerResult_  

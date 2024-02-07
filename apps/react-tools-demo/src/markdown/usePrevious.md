@@ -67,6 +67,7 @@ usePrevious<T = unknown>(variable: T): [T|undefined, (enable: boolean) => void]
 variable whose value is to be tracked.
 >
 
+
 > ### Returns
 >
 > __array__

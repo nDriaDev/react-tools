@@ -42,6 +42,7 @@ The function called whenever an observed resize occurs. The callback is called w
 An options object allowing you to set options for the observation.
 >
 
+
 > ### Returns
 >
 > __result__: array with: cb for ref component attribute to observe, function to _disconnect_ observer, function to _reconnect_ observer.

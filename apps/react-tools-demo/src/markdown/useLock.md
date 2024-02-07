@@ -130,6 +130,7 @@ an object describing characteristics of the lock.
 method called when the lock is granted.
 >
 
+
 > ### Returns
 >
 > __result__:  __Array__:  

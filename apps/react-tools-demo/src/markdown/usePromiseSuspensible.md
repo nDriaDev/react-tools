@@ -43,6 +43,7 @@ Function that returns a promise to suspense.
 DependencyList for promise to suspense.
 >
 
+
 > ### Returns
 >
 > __result__: resolve promise value.

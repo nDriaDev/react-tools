@@ -57,6 +57,7 @@ computes value.
 DependencyList.
 >
 
+
 > ### Returns
 >
 > __result__: memoized value

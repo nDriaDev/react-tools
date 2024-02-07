@@ -19,6 +19,7 @@ selected case to change string.
 optional delemiter for case that support it.
 >
 
+
 > ### Returns
 >
 > __result__: string with changed case or empty string.

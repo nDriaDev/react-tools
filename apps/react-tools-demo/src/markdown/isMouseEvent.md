@@ -12,6 +12,7 @@ isMouseEvent(event: SyntheticEvent): boolean
 > - __event__: _SyntheticEvent_
 >
 
+
 > ### Returns
 >
 > __result__

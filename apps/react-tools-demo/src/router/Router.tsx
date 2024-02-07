@@ -135,6 +135,7 @@ import useVisibleMD from "../markdown/useVisible.md?raw"
 import useWebSocketMD from "../markdown/useWebSocket.md?raw"
 import useWebWorkerMD from "../markdown/useWebWorker.md?raw"
 import useWebWorkerFnMD from "../markdown/useWebWorkerFn.md?raw"
+import utilityTypesMD from "../markdown/utilityTypes.md?raw"
 const ErrorBoundary = lazy((() => import('../pages/components/errorBoundary/ErrorBoundary').then(module => ({default: "default" in module ? module["default"] : module["ErrorBoundary"]}))) as unknown as () => Promise<{ default: ComponentType; }>)
 const For = lazy((() => import('../pages/components/for/For').then(module => ({default: "default" in module ? module["default"] : module["For"]}))) as unknown as () => Promise<{ default: ComponentType; }>)
 const LazyComponent = lazy((() => import('../pages/components/lazyComponent/LazyComponent').then(module => ({default: "default" in module ? module["default"] : module["LazyComponent"]}))) as unknown as () => Promise<{ default: ComponentType; }>)
@@ -1136,6 +1137,24 @@ function Router() {
 							<ComponentLayout markdown={removePropertiesFromArrayObjectsMD} />
 						</Suspense>
 					},
+					]
+				},
+				{
+					path: "types",
+					element: <Suspense fallback={<Spinner/>}>
+						<Outlet />
+					</Suspense>,
+					children: [
+						{
+							index: true,
+							element: <Navigate to={"/types/utilityTypes"} replace/>,
+						},
+						{
+							path: "utilityTypes",
+							element: <Suspense fallback={<Spinner/>}>
+								<ComponentLayout markdown={utilityTypesMD} />
+							</Suspense>
+						}
 					]
 				}
 			]

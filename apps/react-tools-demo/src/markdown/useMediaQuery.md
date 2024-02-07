@@ -35,6 +35,7 @@ media query to test.
 MediaQueryListEvent change handler.
 >
 
+
 > ### Returns
 >
 > __result__: object with __matches__, boolean value that returns true if the document currently matches the media query, __media__, string that represents media query.

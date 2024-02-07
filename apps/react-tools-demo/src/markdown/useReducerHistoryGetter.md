@@ -25,6 +25,7 @@ Function that should return the _initial state_. If it’s not specified, the in
 history capacity (default 'no-limit').
 >
 
+
 > ### Returns
 >
 > __array__

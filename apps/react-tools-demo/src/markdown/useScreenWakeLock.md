@@ -39,6 +39,7 @@ useScreenWakeLock(onRelease?: (evt?: Event) =>void): [{isSupported: boolean, typ
 function that will be executed on release event.
 >
 
+
 > ### Returns
 >
 > __result__:  __Array__:  

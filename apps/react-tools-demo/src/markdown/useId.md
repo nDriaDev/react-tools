@@ -7,10 +7,7 @@ _useId_ hook polyfilled for React versions below 18: __not use for key prop__. [
 useId(): string
 ```
 
-> ### Params
->
->
->
+
 
 > ### Returns
 >

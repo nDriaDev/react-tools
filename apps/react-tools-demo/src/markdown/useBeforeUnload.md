@@ -38,6 +38,7 @@ element on which attaching eventListener.
 options for listener
 >
 
+
 > ### Returns
 >
 > __remove__: function to manually remove listener.

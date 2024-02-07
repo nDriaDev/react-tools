@@ -27,10 +27,7 @@ export const UseActiveElement = () => {
 useActiveElement():Element|null
 ```
 
-> ### Params
->
->
->
+
 
 > ### Returns
 >

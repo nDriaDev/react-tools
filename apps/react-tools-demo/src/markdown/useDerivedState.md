@@ -136,6 +136,7 @@ dependencies list from which depends derived state.
 function that will be executed when dependencies list change after resetting derived state to __initialState__.
 >
 
+
 > ### Returns
 >
 > __result__: array with a stateful value and a function to update it.

@@ -58,6 +58,7 @@ value or a function.
 function that will be executed to validate state.
 >
 
+
 > ### Returns
 >
 > __} invalid__:  __Array__:  

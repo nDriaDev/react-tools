@@ -53,6 +53,7 @@ options for listener.
 option to set which hook is used to attach event listener.
 >
 
+
 > ### Returns
 >
 > __remove__: used to manually remove the eventListener, otherwise is removed when component is unmounted.

@@ -19,6 +19,7 @@ type of compare to verify.
 options object to execute compare.
 >
 
+
 > ### Returns
 >
 > __result__: boolean that indicates whether the indicated comparison is respected or not.

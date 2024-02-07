@@ -58,6 +58,7 @@ Expensive function to be executed in worker.
 An array that contains the external dependencies needed to run the worker.
 >
 
+
 > ### Returns
 >
 > __execute__: function to execute expansive function: return a promise.

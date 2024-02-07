@@ -24,10 +24,7 @@ export const UseVibrate = () => {
 useVibrate():{isSupported: boolean, vibrate: ((pattern: number | number[]) => void), cancel: ()=>void}
 ```
 
-> ### Params
->
->
->
+
 
 > ### Returns
 >

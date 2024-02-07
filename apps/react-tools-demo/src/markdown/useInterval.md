@@ -54,6 +54,7 @@ Function to call when the timer elapses.
 The number of milliseconds to wait before calling the `callback`.
 >
 
+
 > ### Returns
 >
 > __- array: first element is the function to call setInterval; second element is the function to clearInterval; thrid element promisify setInterval.__

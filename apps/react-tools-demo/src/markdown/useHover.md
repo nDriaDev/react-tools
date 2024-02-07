@@ -36,6 +36,7 @@ DOM element or ref
 __onEnter__ function to be executed on starting hover, __onLeave__ function to be executed on hover finished, __onChange__ function to be executed when hover state changes, __return value__ boolean to return hover state value or not.
 >
 
+
 > ### Returns
 >
 > __result__: if __returnValue__ option is true or not specified, hook return state hover value, otherwise returns nothing.

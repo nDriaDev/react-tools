@@ -55,6 +55,7 @@ if true, handler callback never calls _preventDefault_ method.
 a threshold value for swipe event.
 >
 
+
 > ### Returns
 >
 > __- callback that stops listener.__

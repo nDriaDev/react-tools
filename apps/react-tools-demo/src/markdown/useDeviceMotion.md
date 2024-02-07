@@ -45,10 +45,7 @@ export const UseDeviceMotion = () => {
 useDeviceMotion(): DeviceMotionProps
 ```
 
-> ### Params
->
->
->
+
 
 > ### Returns
 >

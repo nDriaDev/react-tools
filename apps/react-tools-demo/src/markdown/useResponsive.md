@@ -33,6 +33,7 @@ useResponsive<T extends UseResponsiveKeys>(config?: UseResponsiveBreakpoints<T>)
 custom breakpoint object.
 >
 
+
 > ### Returns
 >
 > __breakpoint key__: returns the __size key__ of the __config__, parameter if passed otherwise  __default config__, corresponding to the size of the window.

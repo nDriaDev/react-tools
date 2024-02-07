@@ -49,6 +49,7 @@ script attributes.
 to handle appending and removing script, to automatically remove script when component unmount and to append script to an iframe.
 >
 
+
 > ### Returns
 >
 > __array__: first element returns script status and second and thirds elements allow to manually handle script.

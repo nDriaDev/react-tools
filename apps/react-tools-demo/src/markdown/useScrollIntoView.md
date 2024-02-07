@@ -57,6 +57,7 @@ callback to be executed when animation ends.
 scrollable parent element, ref or function that returns element.
 >
 
+
 > ### Returns
 >
 > __result__: a __targetRef__ to target element, a __scroll__ function to start scrolling, a __cancel__ function to cancel scrolling.

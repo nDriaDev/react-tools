@@ -26,10 +26,7 @@ export const UseReducedMotion = () => {
 useReducedMotion(): boolean
 ```
 
-> ### Params
->
->
->
+
 
 > ### Returns
 >

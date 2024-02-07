@@ -56,6 +56,7 @@ useDialogBox(type: "prompt" | "confirm" | "alert"): ((message?: string, _default
 set dialog box type.
 >
 
+
 > ### Returns
 >
 > __open__: function to activate dialog box.

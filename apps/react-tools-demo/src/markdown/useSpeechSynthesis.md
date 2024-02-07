@@ -156,6 +156,7 @@ function that will be executed when _cancel_ event is fired.
 [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechSynthesisUtterance/volume).
 >
 
+
 > ### Returns
 >
 > __return__:  _ReturnType<UseSpeechSynthesis>_  

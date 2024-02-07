@@ -12,6 +12,7 @@ isTouchEvent(event: SyntheticEvent | Event): boolean
 > - __event__: _SyntheticEvent_
 >
 
+
 > ### Returns
 >
 > __result__

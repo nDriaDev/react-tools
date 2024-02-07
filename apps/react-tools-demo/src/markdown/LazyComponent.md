@@ -42,6 +42,7 @@ function that will be executed before loading component .
 function that will be executed after loading component .
 >
 
+
 > ### Returns
 >
 > __element__

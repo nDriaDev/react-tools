@@ -53,6 +53,7 @@ function that will be executed when error occurred.
 boolean that indicates if fetch request need to be suspends or not.
 >
 
+
 > ### Returns
 >
 > :  __Array__:  

@@ -15,6 +15,7 @@ object from which get key by a value.
 value of the object
 >
 
+
 > ### Returns
 >
 > __key__: object key for the given value.

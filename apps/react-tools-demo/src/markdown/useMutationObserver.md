@@ -62,6 +62,7 @@ The function which will be called on each DOM change that qualifies given the ob
 An options object allowing you to set options for the observation.
 >
 
+
 > ### Returns
 >
 > __result__: array with: cb for ref component attribute to observe, function to _disconnect_ observer, function _takeRecords_ to take observer records not yet processed, function to _reconnect_ observer.

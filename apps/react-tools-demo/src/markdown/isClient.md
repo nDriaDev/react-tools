@@ -7,10 +7,7 @@ It detects if code is running on client. [See demo](https://ndriadev.github.io/r
 isClient(): boolean
 ```
 
-> ### Params
->
->
->
+
 
 > ### Returns
 >

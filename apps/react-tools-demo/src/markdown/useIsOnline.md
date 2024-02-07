@@ -22,10 +22,7 @@ export const UseIsOnline = () => {
 useIsOnline(): boolean
 ```
 
-> ### Params
->
->
->
+
 
 > ### Returns
 >

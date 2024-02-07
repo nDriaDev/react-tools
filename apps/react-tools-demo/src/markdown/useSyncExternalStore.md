@@ -15,6 +15,7 @@ function to register a callback that is called whenever the store changes.
 function that returns the current value of the store.
 >
 
+
 > ### Returns
 >
 > __result__: state

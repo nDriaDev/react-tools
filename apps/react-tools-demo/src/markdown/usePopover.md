@@ -49,6 +49,7 @@ function that will be executed before popover showed/hidden.
 function that will be executed when popover has been showed/hidden.
 >
 
+
 > ### Returns
 >
 > __result__:  _UsePopoverResult_  

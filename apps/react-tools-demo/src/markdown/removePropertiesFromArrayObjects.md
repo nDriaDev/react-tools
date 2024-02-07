@@ -15,6 +15,7 @@ array of object.
 a property object or an array of properties inside objects of the given array.
 >
 
+
 > ### Returns
 >
 > __array__: a new array without targeted properites.

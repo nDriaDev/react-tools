@@ -21,6 +21,7 @@ value or a function.
 history capacity (default 'no-limit').
 >
 
+
 > ### Returns
 >
 > __array__

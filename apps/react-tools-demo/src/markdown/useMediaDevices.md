@@ -71,6 +71,7 @@ useMediaDevices(action: UseMediaDevicesProps): UseMediaDevicesResult
 it is a string that identifies which method to return as a result. It can be _devicesList_, _supportedConstraintsList_, _DisplayCapture_, or _mediaInputCapture_.
 >
 
+
 > ### Returns
 >
 > __result__:  _UseMediaDevicesResult_  

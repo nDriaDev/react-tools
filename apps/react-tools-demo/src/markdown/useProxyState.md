@@ -62,6 +62,7 @@ value or function
 if true, it creates proxy for nested object also.
 >
 
+
 > ### Returns
 >
 > __state__

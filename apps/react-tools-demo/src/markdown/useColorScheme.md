@@ -48,6 +48,7 @@ an optional function, which should work in conjunction with the _getter_ functio
 if true returns only a function to manually change the color scheme value.
 >
 
+
 > ### Returns
 >
 > __result__: if _returnValue_ is true, _result_ is the function to update color scheme value, otherwise is an array where first element is current value and second element is the function to update value.

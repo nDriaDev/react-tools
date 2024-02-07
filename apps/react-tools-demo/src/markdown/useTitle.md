@@ -37,6 +37,7 @@ useTitle(title?: string): [() => string, (title: string) => void]
 > - __title?__: _string_
 >
 
+
 > ### Returns
 >
 > __array__

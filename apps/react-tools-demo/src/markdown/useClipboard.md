@@ -68,6 +68,7 @@ target on which delimiter handling.
 data type handling. Based on it, Hook will return the functions for writing or reading text only or any type of data.
 >
 
+
 > ### Returns
 >
 > __array__: elements depends on _useValue_ and _dataType_ values: if _dataType_ equals __text__ there will are only function to writing and reading text data type, otherwise any data type. If _useValue_ is true the first element will be _clipboard current value_.

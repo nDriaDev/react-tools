@@ -48,6 +48,7 @@ optional element to render when _when_ prop is false.
 __Case__ components.
 >
 
+
 > ### Returns
 >
 > __element__:  _JSX.Element|null_  

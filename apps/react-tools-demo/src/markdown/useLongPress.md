@@ -65,6 +65,7 @@ callback that will be executed when long press callback has done.
 callback executed on normal press event.
 >
 
+
 > ### Returns
 >
 > __ref callback__: to be attached on target element.

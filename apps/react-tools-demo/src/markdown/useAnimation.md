@@ -61,6 +61,7 @@ function that will be executed when animation has been canceled.
 function that will be executed when an error occurred.
 >
 
+
 > ### Returns
 >
 > __result__:  _UseAnimationResult_  

@@ -37,6 +37,7 @@ useRaf<T extends unknown[]>(cb: (timer: number, repeat: ()=>void, ...args: T) =>
  callback to execute prior to the next repaint. In addition to the classic timeStamp parameter, which indicates the end time of rendering of the previous frame, the second parameter is a function which, if invoked, re-executes the requestAnimationFrame with the callback itself, and finally various parameters can be added, passed with the invocation function returned by the hook.
 >
 
+
 > ### Returns
 >
 > __results__: array with __start__ function to invoke _requestAnimationFrame_ and __cancel__ function to invoke _cancelAnimationFrame_.

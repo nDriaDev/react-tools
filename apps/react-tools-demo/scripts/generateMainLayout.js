@@ -156,6 +156,7 @@ async function createLinkRouter(router) {
 	createLinkHooksRoutes(router, HOOKS_STATE_FILES, HOOKS_LIFECYCLE_FILES, HOOKS_PERFORMANCE_FILES, HOOKS_EVENTS_FILES, HOOKS_APIDOM_FILES);
 	createLinkRoutes(router, COMPONENTS_FILES, "components")
 	createLinkRoutes(router, UTILS_FILES, "utils")
+	createLinkRoutes(router, ["utilityTypes"], "types")
 }
 
 async function generateMainLayout() {

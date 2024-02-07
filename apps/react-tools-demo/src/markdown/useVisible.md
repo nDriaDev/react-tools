@@ -52,6 +52,7 @@ useVisible<T extends Element>(opts?: IntersectionObserverInit & { withRatio?: bo
 object to set options to observation.
 >
 
+
 > ### Returns
 >
 > __result__: callback for ref element attribute to observe, a boolean to known if element is visible or not and eventually the element ratio.
