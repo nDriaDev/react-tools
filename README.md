@@ -171,7 +171,7 @@ Go to [Demo](https://ndriadev.github.io/react-tools) to see and try all implemen
 
 	- [_ErrorBoundary_](#ErrorBoundary)
 	- [_For_](#For)
-	- [_Lazy_](#Lazy)
+	- [_LazyComponent_](#LazyComponent)
 	- [_Show_](#Show)
 	- [_SwitchCase_](#SwitchCase)
 
@@ -992,11 +992,11 @@ Component to optimize the rendering of a list of elements without need to specif
 For = memo(<T extends unknown>({ of, children, filter, map, sort, elementKey, fallback }: ForProps<T>)
 ```
 
-### Lazy
+### LazyComponent
 
-Component Wrapper to lazy loading a Component. [See demo](https://ndriadev.github.io/react-tools/#/components/Lazy)
+Component Wrapper to lazy loading a Component. [See demo](https://ndriadev.github.io/react-tools/#/components/LazyComponent)
 ```tsx
-Lazy<T extends { default: ComponentType<unknown> } | { [k: string]: ComponentType<unknown> }>({ factory, componentName, fallback, beforeLoad, afterLoad }: { factory: () => Promise<T>, componentName?: string, fallback?: ReactNode, beforeLoad?: ()=>void, afterLoad?: ()=>void })
+LazyComponent<T extends { default: ComponentType<unknown> } | { [k: string]: ComponentType<unknown> }>({ factory, componentName, fallback, beforeLoad, afterLoad }: { factory: () => Promise<T>, componentName?: string, fallback?: ReactNode, beforeLoad?: ()=>void, afterLoad?: ()=>void })
 ```
 
 ### Show

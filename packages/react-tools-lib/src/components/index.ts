@@ -1,4 +1,4 @@
-export { Lazy } from './Lazy';
+export { LazyComponent } from './LazyComponent';
 export { Show } from './Show';
 export { SwitchCase } from './SwitchCase';
 export { For } from './For';

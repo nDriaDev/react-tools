@@ -1275,15 +1275,15 @@ export default function MainLayout() {
 							For
 						</Link>
 						<Link
-							className={pathname === "/components/Lazy" ? 'active' : ''}
-							ref={node => linksRef.current["Lazy"] = node}
-							to="/components/Lazy"
+							className={pathname === "/components/LazyComponent" ? 'active' : ''}
+							ref={node => linksRef.current["LazyComponent"] = node}
+							to="/components/LazyComponent"
 							onClick={() => {
 								containerRef.current?.scrollTo(0, 0);
 								window.innerWidth < 1190 && closeNav();
 							}}
 						>
-							Lazy
+							LazyComponent
 						</Link>
 						<Link
 							className={pathname === "/components/Show" ? 'active' : ''}

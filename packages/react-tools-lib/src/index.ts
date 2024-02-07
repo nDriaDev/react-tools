@@ -215,7 +215,7 @@ export {
 export {
 	ErrorBoundary,
 	For,
-	Lazy,
+	LazyComponent,
 	Show,
 	SwitchCase
 } from './components'

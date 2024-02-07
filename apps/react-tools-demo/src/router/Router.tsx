@@ -5,7 +5,7 @@ import ComponentLayout from '../layout/ComponentLayout';
 import { Spinner } from '../layout/Spinner';
 import ErrorBoundaryMD from "../markdown/ErrorBoundary.md?raw"
 import ForMD from "../markdown/For.md?raw"
-import LazyMD from "../markdown/Lazy.md?raw"
+import LazyComponentMD from "../markdown/LazyComponent.md?raw"
 import ShowMD from "../markdown/Show.md?raw"
 import SwitchCaseMD from "../markdown/SwitchCase.md?raw"
 import alphanumericCompareMD from "../markdown/alphanumericCompare.md?raw"
@@ -137,7 +137,7 @@ import useWebWorkerMD from "../markdown/useWebWorker.md?raw"
 import useWebWorkerFnMD from "../markdown/useWebWorkerFn.md?raw"
 const ErrorBoundary = lazy((() => import('../pages/components/errorBoundary/ErrorBoundary').then(module => ({default: "default" in module ? module["default"] : module["ErrorBoundary"]}))) as unknown as () => Promise<{ default: ComponentType; }>)
 const For = lazy((() => import('../pages/components/for/For').then(module => ({default: "default" in module ? module["default"] : module["For"]}))) as unknown as () => Promise<{ default: ComponentType; }>)
-const Lazy = lazy((() => import('../pages/components/lazy/Lazy').then(module => ({default: "default" in module ? module["default"] : module["Lazy"]}))) as unknown as () => Promise<{ default: ComponentType; }>)
+const LazyComponent = lazy((() => import('../pages/components/lazyComponent/LazyComponent').then(module => ({default: "default" in module ? module["default"] : module["LazyComponent"]}))) as unknown as () => Promise<{ default: ComponentType; }>)
 const Show = lazy((() => import('../pages/components/show/Show').then(module => ({default: "default" in module ? module["default"] : module["Show"]}))) as unknown as () => Promise<{ default: ComponentType; }>)
 const SwitchCase = lazy((() => import('../pages/components/switchCase/SwitchCase').then(module => ({default: "default" in module ? module["default"] : module["SwitchCase"]}))) as unknown as () => Promise<{ default: ComponentType; }>)
 import HomeWrapper from '../pages/home/HomeWrapper'
@@ -999,9 +999,9 @@ function Router() {
 						</Suspense>
 					},
 					{
-						path: "Lazy",
+						path: "LazyComponent",
 						element: <Suspense fallback={<Spinner/>}>
-							<ComponentLayout markdown={LazyMD} component={<Lazy/>}/>
+							<ComponentLayout markdown={LazyComponentMD} component={<LazyComponent/>}/>
 						</Suspense>
 					},
 					{
@@ -1115,7 +1115,7 @@ function Router() {
 					{
 						path: "lazy",
 						element: <Suspense fallback={<Spinner/>}>
-							<ComponentLayout markdown={lazyMD} component={<Lazy/>}/>
+							<ComponentLayout markdown={lazyMD} />
 						</Suspense>
 					},
 					{
