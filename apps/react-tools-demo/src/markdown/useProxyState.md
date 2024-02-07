@@ -51,7 +51,7 @@ export { UseProxyState };
 ## API
 
 ```tsx
-useProxyState
+useProxyState<T extends Record<string, any>>(initialState: T | (() => T), proxyInDepth:boolean=false): T
 ```
 
 > ### Params
