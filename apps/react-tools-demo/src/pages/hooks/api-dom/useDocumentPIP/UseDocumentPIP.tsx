@@ -1,5 +1,5 @@
 import { useCallback, useState } from "react";
-import { useDocumentPIP } from "../../../../../../../packages/react-tools/src";
+import { useDocumentPIP } from "../../../../../../../packages/react-tools-lib/src";
 
 /**
 The component uses _useDocumentPIP_ hook to show in a separate window the counter showed renderes by the component.

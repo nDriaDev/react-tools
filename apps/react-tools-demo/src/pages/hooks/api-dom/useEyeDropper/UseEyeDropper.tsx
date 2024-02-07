@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { useEyeDropper } from "../../../../../../../packages/react-tools/src"
+import { useEyeDropper } from "../../../../../../../packages/react-tools-lib/src"
 
 /**
 The component uses _useEyeDropper_ hook to know if EyeDropper API is supported and returns a button to get a color with EyeDropper API.

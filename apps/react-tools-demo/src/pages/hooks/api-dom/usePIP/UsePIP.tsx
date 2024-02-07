@@ -1,6 +1,6 @@
 import { useRef, useState } from "react"
 import video from './../../../../assets/mov_bbb.mp4';
-import { usePIP } from "../../../../../../../packages/react-tools/src";
+import { usePIP } from "../../../../../../../packages/react-tools-lib/src";
 
 /**
 The component uses _usePIP_ hook to show a video and a button to enable PIP.

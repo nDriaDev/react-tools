@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useEffectDeepCompare } from "../../../../../../../packages/react-tools/src";
+import { useEffectDeepCompare } from "../../../../../../../packages/react-tools-lib/src";
 
 /**
 The component has:

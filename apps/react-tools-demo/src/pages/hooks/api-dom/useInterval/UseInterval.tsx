@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { useInterval } from "../../../../../../../packages/react-tools/src";
+import { useInterval } from "../../../../../../../packages/react-tools-lib/src";
 
 /**
 The component has:

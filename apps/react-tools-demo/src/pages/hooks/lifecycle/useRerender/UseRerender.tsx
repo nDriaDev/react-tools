@@ -1,4 +1,4 @@
-import { useRerender } from "../../../../../../../packages/react-tools/src"
+import { useRerender } from "../../../../../../../packages/react-tools-lib/src"
 
 /**
 The component has:

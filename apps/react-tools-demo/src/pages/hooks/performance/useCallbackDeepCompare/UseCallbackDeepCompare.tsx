@@ -1,5 +1,5 @@
 import { useCallback, useState } from "react";
-import { useCallbackDeepCompare } from "../../../../../../../packages/react-tools/src";
+import { useCallbackDeepCompare } from "../../../../../../../packages/react-tools-lib/src";
 
 /**
 The component has:

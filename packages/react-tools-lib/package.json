@@ -2,7 +2,7 @@
 	"name": "@ndriadev/react-tools",
 	"description": "A React library of hooks, components and utils ready to use",
 	"private": false,
-	"version": "1.0.0",
+	"version": "0.0.0",
 	"type": "module",
 	"files": [
 		"./dist"
@@ -20,12 +20,13 @@
 	"sideEffects": false,
 	"scripts": {
 		"build": "tsc && vite build",
+		"readme": "node scripts/generateREADME.js",
 		"lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
 		"lint:fix": "eslint --fix 'src/**/*.{jsx,ts,tsx}'",
 		"release:patch": "pnpm version patch",
 		"release:minor": "pnpm version minor",
 		"release:major": "pnpm version major",
-		"postversion": "pnpm --filter react-tools-demo run build && node scripts/generateREADME.js && git add . && git commit -m '[UPDATE] version' && git push && git push origin --tags && pnpm publish --access public",
+		"postversion": "pnpm --filter react-tools-demo run build &&  && git add . && git commit -m '[UPDATE] version' && git push && git push origin --tags && pnpm publish --access public",
 		"preview": "vite preview",
 		"prepare": "pnpm run build",
 		"prepublishOnly": "pnpm run lint"

@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import { useMouse } from "../../../../../../../packages/react-tools/src";
+import { useMouse } from "../../../../../../../packages/react-tools-lib/src";
 
 /**
 The component tracks the relative mouse position to _element_

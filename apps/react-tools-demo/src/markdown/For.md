@@ -39,7 +39,7 @@ export default function ForComponent() {
 ## API
 
 ```tsx
-Formemo(<T extends unknown>({ of, children, filter, map, sort, elementKey, fallback }: ForProps<T>)
+For = memo(<T extends unknown>({ of, children, filter, map, sort, elementKey, fallback }: ForProps<T>)
 ```
 
 > ### Params

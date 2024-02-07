@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useIntersectionObserver } from "../../../../../../../packages/react-tools/src"
+import { useIntersectionObserver } from "../../../../../../../packages/react-tools-lib/src"
 
 /**
 The component renders a textarea element with a ref that receives callback returned from __useIntersectionObserver__ hook. There are also two button to disconnect and reconnect observer by functions returned from hook. The textarea element is inside a div, at 400px from top, so it isn't visible. It need to scroll div to see textarea.

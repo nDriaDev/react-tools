@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useGeolocation } from "../../../../../../../packages/react-tools/src"
+import { useGeolocation } from "../../../../../../../packages/react-tools-lib/src"
 
 /**
 The component displays geographic location info.

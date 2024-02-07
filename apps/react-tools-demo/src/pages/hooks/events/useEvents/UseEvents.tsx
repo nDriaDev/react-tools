@@ -1,5 +1,5 @@
 import { BaseSyntheticEvent, memo, useCallback, useEffect, useState } from "react";
-import { useEvents } from "../../../../../../../packages/react-tools/src";
+import { useEvents } from "../../../../../../../packages/react-tools-lib/src";
 
 /**
 The component has:

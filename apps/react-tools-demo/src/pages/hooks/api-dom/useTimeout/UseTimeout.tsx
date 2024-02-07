@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { useTimeout } from "../../../../../../../packages/react-tools/src";
+import { useTimeout } from "../../../../../../../packages/react-tools-lib/src";
 
 /**
 The component has:

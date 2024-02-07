@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { SwitchCase } from "../../../../../../packages/react-tools/src";
+import { SwitchCase } from "../../../../../../packages/react-tools-lib/src";
 
 /**
 The component has an array of numbers and a variable state number used like index of array. Every 2 seconds index changes value. It uses __SwitchCase__ component to render different p element with a text indicating the value of array with the current index.

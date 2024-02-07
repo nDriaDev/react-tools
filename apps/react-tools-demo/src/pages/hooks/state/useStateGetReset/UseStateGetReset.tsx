@@ -1,5 +1,5 @@
 import { BaseSyntheticEvent, useCallback, useState } from 'react';
-import { useStateGetReset } from "../../../../../../../packages/react-tools/src";
+import { useStateGetReset } from "../../../../../../../packages/react-tools-lib/src";
 import { Input } from './InputMemo';
 
 /**

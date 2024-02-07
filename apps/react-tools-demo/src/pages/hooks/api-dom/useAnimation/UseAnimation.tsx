@@ -1,4 +1,4 @@
-import { useAnimation } from "../../../../../../../packages/react-tools/src";
+import { useAnimation } from "../../../../../../../packages/react-tools-lib/src";
 
 /**
 The component uses _useAnimation_ to compute an animation on p element. Use the buttons to perform action on animation.

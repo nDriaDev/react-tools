@@ -1,5 +1,5 @@
 import { useCallback, useState } from "react";
-import { useBluetooth } from "../../../../../../../packages/react-tools/src"
+import { useBluetooth } from "../../../../../../../packages/react-tools-lib/src"
 
 /**
 The component uses _useBluetooth_ hook to detect if Bluetooth API is supported and show all available bluetooth devices and show renders its name after connection.

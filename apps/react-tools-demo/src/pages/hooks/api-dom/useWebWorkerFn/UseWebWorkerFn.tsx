@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from "react";
-import { useWebWorkerFn } from "../../../../../../../packages/react-tools/src";
+import { useWebWorkerFn } from "../../../../../../../packages/react-tools-lib/src";
 
 /**
 The component uses _useWebWorkerFn_ hook to execute an expensive function in a worker. Same function can be executed in main thread. Try to execute it to see the differences.

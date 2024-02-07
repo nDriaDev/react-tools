@@ -5,8 +5,8 @@ export default function Home() {
 	return (
 		<div className='home-container'>
 			<img src={Logo} alt="react" className="logo"/>
-			<h1 className='title'>React Tools</h1>
-			<h2>A collection of hooks, components and utilities for React</h2>
+			<h1 className='title'>React-Tools</h1>
+			<h2>A collection of Hooks, Components and Utilities for React</h2>
 			<div className='npm-container'>
 				<span
 					className='npm-copy'

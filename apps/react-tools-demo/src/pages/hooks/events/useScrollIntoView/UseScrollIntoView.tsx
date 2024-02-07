@@ -1,4 +1,4 @@
-import { useScrollIntoView } from "../../../../../../../packages/react-tools/src/hooks/events/useScrollIntoView";
+import { useScrollIntoView } from "../../../../../../../packages/react-tools-lib/src/hooks/events/useScrollIntoView";
 
 export const UseScrollIntoView = () => {
 	const { scroll, targetRef } = useScrollIntoView<HTMLParagraphElement, HTMLDivElement>({

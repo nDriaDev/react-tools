@@ -1,4 +1,4 @@
-import { useVisible } from "../../../../../../../packages/react-tools/src";
+import { useVisible } from "../../../../../../../packages/react-tools-lib/src";
 
 /**
 The component renders a scrollable div with inside a bordered div element to which is attached __cbRef_ refCallback returned from _useVisible_ hook. Component displays the bordered div __visibility__ and __ratio__ that change when parent div is scrolled.

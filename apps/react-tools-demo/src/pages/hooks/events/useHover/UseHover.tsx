@@ -1,5 +1,5 @@
 import { useRef } from "react"
-import { useHover } from "../../../../../../../packages/react-tools/src";
+import { useHover } from "../../../../../../../packages/react-tools-lib/src";
 
 /**
 The component renders a paragraph element with some text to which is attacched a ref used for __useHover__ hook that returns if element is hovered or not. This value is rendered into another paragraph element.

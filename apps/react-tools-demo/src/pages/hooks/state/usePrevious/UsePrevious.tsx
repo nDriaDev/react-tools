@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { usePrevious } from "../../../../../../../packages/react-tools/src";
+import { usePrevious } from "../../../../../../../packages/react-tools-lib/src";
 
 /**
 The component has:

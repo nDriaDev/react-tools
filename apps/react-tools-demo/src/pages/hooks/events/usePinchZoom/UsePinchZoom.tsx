@@ -1,5 +1,5 @@
 import { useCallback, useRef, useState } from "react"
-import { usePinchZoom } from "../../../../../../../packages/react-tools/src";
+import { usePinchZoom } from "../../../../../../../packages/react-tools-lib/src";
 
 /**
 The component renders a bordered div element. When pinch zoom gestures are executed in this div, a message is shown inside it with zoom type.

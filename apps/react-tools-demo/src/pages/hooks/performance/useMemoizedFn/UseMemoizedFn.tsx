@@ -1,5 +1,5 @@
 import { BaseSyntheticEvent, useCallback, useState } from "react";
-import { useMemoizedFn } from "../../../../../../../packages/react-tools/src";
+import { useMemoizedFn } from "../../../../../../../packages/react-tools-lib/src";
 import { Input } from "./InputMemo";
 
 /**

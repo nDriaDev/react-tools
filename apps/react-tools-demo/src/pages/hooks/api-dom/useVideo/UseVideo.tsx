@@ -1,4 +1,4 @@
-import { useVideo } from "../../../../../../../packages/react-tools/src";
+import { useVideo } from "../../../../../../../packages/react-tools-lib/src";
 import video from './../../../../assets/mov_bbb.mp4';
 
 /**

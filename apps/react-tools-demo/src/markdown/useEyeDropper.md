@@ -1,4 +1,4 @@
-# 
+# useEyeDropper
 Hook to use [EyeDropper API](https://developer.mozilla.org/en-US/docs/Web/API/EyeDropper_API). [See demo](https://ndriadev.github.io/react-tools/#/hooks/api-dom/useEyeDropper)
 
 ## Usage
@@ -29,7 +29,7 @@ export const UseEyeDropper = () => {
 ## API
 
 ```tsx
-useEyeDropper = ({ onStart, onFinish }: { onStart?: () => void, onFinish?: (result: `#${string}`) => void } = {})
+useEyeDropper({ onStart, onFinish }: { onStart?: () => void, onFinish?: (result: `#${string}`) => void } = {})
 ```
 
 > ### Params

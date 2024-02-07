@@ -1,4 +1,4 @@
-import { useNetwork } from "../../../../../../../packages/react-tools/src/hooks/events/useNetwork"
+import { useNetwork } from "../../../../../../../packages/react-tools-lib/src/hooks/events/useNetwork"
 
 /**
 The component display the network connection informations. Try to change connection type from console to see changes.

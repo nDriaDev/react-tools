@@ -1,4 +1,4 @@
-import { useFPS } from "../../../../../../../packages/react-tools/src"
+import { useFPS } from "../../../../../../../packages/react-tools-lib/src"
 
 /**
 The component uses _useFPS_ hook to compute FPS and shows details on screen.

@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from "react";
-import { useWebWorker } from "../../../../../../../packages/react-tools/src"
+import { useWebWorker } from "../../../../../../../packages/react-tools-lib/src"
 
 /**
 The component uses _useWebWorker_ hook to execute an heavy function in a worker to avoid burdening the main thread.

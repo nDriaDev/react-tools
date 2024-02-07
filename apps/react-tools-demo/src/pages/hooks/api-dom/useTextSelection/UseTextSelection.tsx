@@ -1,5 +1,5 @@
 import { useMemo, useRef } from "react";
-import { useTextSelection } from "../../../../../../../packages/react-tools/src"
+import { useTextSelection } from "../../../../../../../packages/react-tools-lib/src"
 
 /**
 The component renders a grid with two columns. First column contains _two tag p elements_ with text and secondo column the result of _useTextSelection hook_.

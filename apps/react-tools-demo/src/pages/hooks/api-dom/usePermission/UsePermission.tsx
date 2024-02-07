@@ -1,4 +1,4 @@
-import { usePermission } from "../../../../../../../packages/react-tools/src"
+import { usePermission } from "../../../../../../../packages/react-tools-lib/src"
 
 /**
 The component uses _usePermission_ hook to check permission status of accelerometer, camera, microphone, notifications ans speaker.

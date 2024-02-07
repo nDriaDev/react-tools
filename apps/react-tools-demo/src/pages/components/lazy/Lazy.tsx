@@ -1,4 +1,4 @@
-import { Lazy } from "../../../../../../packages/react-tools/src";
+import { Lazy } from "../../../../../../packages/react-tools-lib/src";
 
 /**
 The component uses _Lazy_ component to lazy load a component imported dynamically by _factory_ prop. The component loading is delayed by 5 seconds. During this time, _fallback_ prop is shown that renders a p element with the text __Loading component...__.

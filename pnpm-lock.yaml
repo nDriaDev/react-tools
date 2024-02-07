@@ -68,7 +68,7 @@ importers:
         specifier: ^1.17.2
         version: 1.17.2(vite@4.4.11)
 
-  packages/react-tools:
+  packages/react-tools-lib:
     devDependencies:
       '@types/node':
         specifier: ^20.6.0

@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import { useDisplayMedia } from "../../../../../../../packages/react-tools/src"
+import { useDisplayMedia } from "../../../../../../../packages/react-tools-lib/src"
 
 /**
 The component renders a button that if clicked activate the capturing of the screen selected by user and render it on a video element.

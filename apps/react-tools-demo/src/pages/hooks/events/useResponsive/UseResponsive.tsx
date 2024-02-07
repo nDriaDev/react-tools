@@ -1,4 +1,4 @@
-import { useResponsive } from "../../../../../../../packages/react-tools/src"
+import { useResponsive } from "../../../../../../../packages/react-tools-lib/src"
 
 /**
 The component initialize _useResponsive_ hook without param and displays screen size value.

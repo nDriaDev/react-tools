@@ -316,9 +316,9 @@ function convertJSDoc2Object(file) {
 }
 
 /**
- * 
- * @param {string[]} listUsedFiles 
- * @param {string} dirPath 
+ *
+ * @param {string[]} listUsedFiles
+ * @param {string} dirPath
  * @returns {Promise<{title: string, description: string, params: [{name: string, description: string, type: string}], returns: {name: string, description: string, type: string}, type: string}[]>} array
  */
 async function buildSummary(listUsedFiles, dirPath) {
@@ -357,28 +357,35 @@ async function generateTools(md) {
 		buildSummary(COMPONENTS_FILES, path.join(path.join(PATH_LIB_SRC, COMPONENTS_DIR_NAME))),
 		buildSummary(UTILS_FILES, path.join(path.join(PATH_LIB_SRC, UTILS_DIR_NAME))),
 	]);
-	
+
 	md.add("- [__HOOKS__](#hooks)");
 	md.add("");
 	md.add("	- [__STATE__](#state)");
+	md.add("");
 	md.set(state.map(el => `		- [_${el.title}_](#${el.title})`))
 	md.add("");
 	md.add("	- [__LIFECYCLE__](#lifecycle)");
+	md.add("");
 	md.set(lifecycle.map(el => `		- [_${el.title}_](#${el.title})`))
 	md.add("");
 	md.add("	- [__PERFORMANCE__](#performance)");
+	md.add("");
 	md.set(performance.map(el => `		- [_${el.title}_](#${el.title})`))
 	md.add("");
 	md.add("	- [__EVENTS__](#events)");
+	md.add("");
 	md.set(events.map(el => `		- [_${el.title}_](#${el.title})`))
 	md.add("");
 	md.add("	- [__API DOM__](#api-dom)");
+	md.add("");
 	md.set(apiDom.map(el => `		- [_${el.title}_](#${el.title})`))
 	md.add("");
 	md.add("- [__COMPONENTS__](#components)");
+	md.add("");
 	md.set(components.map(el => `	- [_${el.title}_](#${el.title})`))
 	md.add("");
 	md.add("- [__UTILS__](#utils)");
+	md.add("");
 	md.set(utils.map(el => `	- [_${el.title}_](#${el.title})`))
 	md.add("");
 	md.add("## HOOKS");

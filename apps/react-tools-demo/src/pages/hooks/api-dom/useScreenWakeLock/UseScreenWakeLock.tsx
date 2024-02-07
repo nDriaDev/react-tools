@@ -1,4 +1,4 @@
-import { useScreenWakeLock } from "../../../../../../../packages/react-tools/src"
+import { useScreenWakeLock } from "../../../../../../../packages/react-tools-lib/src"
 
 /**
 The component uses _useScreenWakeLock_ hook to detect if WakeLock API is available and renders informations about it. It has a button also, to acquire and release a WakeLock.

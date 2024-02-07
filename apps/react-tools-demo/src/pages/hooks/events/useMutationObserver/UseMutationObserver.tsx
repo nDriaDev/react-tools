@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { useMutationObserver } from "../../../../../../../packages/react-tools/src"
+import { useMutationObserver } from "../../../../../../../packages/react-tools-lib/src"
 
 /**
 The component has an ul element and two button to add and remove li childs. The __cbRef__ callback returned from _useMutationObserver_ hook is attached to ul element, so then ul childs change, the callback passed to hook update __messages__ state variable with added and removed nodes.

@@ -1,5 +1,5 @@
 import { memo, useCallback } from "react";
-import { useProxyState } from "../../../../../../../packages/react-tools/src";
+import { useProxyState } from "../../../../../../../packages/react-tools-lib/src";
 
 /**
 The component has:

@@ -1,5 +1,5 @@
 import { useRef } from "react"
-import { useShare } from "../../../../../../../packages/react-tools/src"
+import { useShare } from "../../../../../../../packages/react-tools-lib/src"
 
 /**
 The component uses _useShare_ hook to know if Web share API is supported and returns a button to share link to this library.

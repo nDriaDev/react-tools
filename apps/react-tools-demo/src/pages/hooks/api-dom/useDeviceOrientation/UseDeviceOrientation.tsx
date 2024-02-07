@@ -1,4 +1,4 @@
-import { useDeviceOrientation } from "../../../../../../../packages/react-tools/src"
+import { useDeviceOrientation } from "../../../../../../../packages/react-tools-lib/src"
 
 /**
 The component uses _useDeviceOrientation_ hook to show device orientation details.

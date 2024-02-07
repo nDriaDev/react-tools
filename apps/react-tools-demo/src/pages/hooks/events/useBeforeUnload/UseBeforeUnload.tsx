@@ -1,5 +1,5 @@
 import { useCallback } from "react";
-import { useBeforeUnload } from "../../../../../../../packages/react-tools/src"
+import { useBeforeUnload } from "../../../../../../../packages/react-tools-lib/src"
 
 /**
 The component uses _useBeforeUnload_ hook to ask confirm to user if he is sure to leave page when he changes page.

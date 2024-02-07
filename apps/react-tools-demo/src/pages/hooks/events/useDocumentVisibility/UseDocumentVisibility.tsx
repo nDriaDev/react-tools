@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useDocumentVisibility } from "../../../../../../../packages/react-tools/src"
+import { useDocumentVisibility } from "../../../../../../../packages/react-tools-lib/src"
 
 /**
 The component tracks every document visibility status change and display them on screen with date they taking place. Minimize window or change tab to show them.

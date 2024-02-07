@@ -1,4 +1,4 @@
-import { ErrorBoundary } from "../../../../../../packages/react-tools/src";
+import { ErrorBoundary } from "../../../../../../packages/react-tools-lib/src";
 
 /**
 The component uses _ErrorBoundary_ Component to wrap _Component_. _Component_ throw an error so _ErrorBoundary_ catch it and show the _fallback_ element passing to it _error_ and _retry_ function. [See demo](https://ndriadev.github.io/react-tools/#/components/ErrorBoundary)

@@ -7,7 +7,7 @@ import process from "node:process";
 const __dirname = new URL('.', import.meta.url).pathname;
 
 const PATH_DEMO_SRC = path.join(__dirname, '..', 'src');
-const PATH_LIB_SRC = path.join(__dirname, "..", "..", "..", "packages", "react-tools", "src");
+const PATH_LIB_SRC = path.join(__dirname, "..", "..", "..", "packages", "react-tools-lib", "src");
 const DEMO_COMPONENT_DIR_NAME = "pages";
 const MARKDOWWN_DIR_NAME = "markdown";
 const HOOKS_DIR_NAME = "hooks";
@@ -360,8 +360,9 @@ function buildHooksUtilsMarkdownObject(file) {
 	if(typeLine.startsWith("{")) {
 		typeLine = typeLine.substring("{".length);
 	}
-	typeLine = typeLine.split("").reverse().join("");
-	obj.type = obj.title.trim()+typeLine.trim();
+	typeLine = typeLine.split("").reverse().join("").trim();
+	typeLine.startsWith("memo") && (typeLine = " = " + typeLine);
+	obj.type = (typeLine.trim().startsWith("class") ? "" : obj.title.trim()) + typeLine;
 	return obj;
 }
 

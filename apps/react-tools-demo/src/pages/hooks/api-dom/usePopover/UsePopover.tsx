@@ -1,5 +1,5 @@
 import { CSSProperties, useMemo } from "react"
-import { usePopover } from "../../../../../../../packages/react-tools/src"
+import { usePopover } from "../../../../../../../packages/react-tools-lib/src"
 
 /**
 The component uses _usePopover_ hook to show a popover when a button is clicked.

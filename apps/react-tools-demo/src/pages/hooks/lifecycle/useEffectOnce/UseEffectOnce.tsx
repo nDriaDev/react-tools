@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useEffectOnce } from "../../../../../../../packages/react-tools/src";
+import { useEffectOnce } from "../../../../../../../packages/react-tools-lib/src";
 
 /**
 The component has:

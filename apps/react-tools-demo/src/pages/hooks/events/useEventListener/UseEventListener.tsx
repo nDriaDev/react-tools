@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import { useEventListener } from "../../../../../../../packages/react-tools/src";
+import { useEventListener } from "../../../../../../../packages/react-tools-lib/src";
 
 /**
 The component has:

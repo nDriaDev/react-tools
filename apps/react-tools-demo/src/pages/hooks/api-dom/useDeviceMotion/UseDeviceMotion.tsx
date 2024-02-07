@@ -1,5 +1,5 @@
 import { Fragment } from "react";
-import { useDeviceMotion } from "../../../../../../../packages/react-tools/src"
+import { useDeviceMotion } from "../../../../../../../packages/react-tools-lib/src"
 
 /**
 The component uses _useDeviceMotion_ hook to show device motion details.

@@ -1,5 +1,5 @@
 import { useCallback, useRef, useState } from "react";
-import { useClipboard } from "../../../../../../../packages/react-tools/src";
+import { useClipboard } from "../../../../../../../packages/react-tools-lib/src";
 
 /**
 - The component has an internal state _val_ and invokes _useClipboard_ hook with these properties: _useValue_=__true__ _target_=__ref__ and _dataType_=__text__. It means that hook will return _value_ of type __string__ and _write_ and _read_ functions that handle __text__ data type. The component declares also two functions:

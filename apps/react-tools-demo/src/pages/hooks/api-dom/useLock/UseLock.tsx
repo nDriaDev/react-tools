@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from "react"
-import { useLock } from "../../../../../../../packages/react-tools/src";
+import { useLock } from "../../../../../../../packages/react-tools-lib/src";
 
 /**
 The component uses _useLock_ hook to simulate a buffer write by a producer and read from a consumer.

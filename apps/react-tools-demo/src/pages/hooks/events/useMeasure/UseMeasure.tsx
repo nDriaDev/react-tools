@@ -1,4 +1,4 @@
-import { useMeasure } from "../../../../../../../packages/react-tools/src"
+import { useMeasure } from "../../../../../../../packages/react-tools-lib/src"
 
 /**
 The component tracks div element dimensions and display them on screen. Try to resize div to see its current dimensions.

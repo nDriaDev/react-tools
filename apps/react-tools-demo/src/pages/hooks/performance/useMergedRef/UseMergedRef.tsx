@@ -1,5 +1,5 @@
 import { useCallback, useRef, useState } from "react";
-import { useMergedRef, useResizeObserver } from "../../../../../../../packages/react-tools/src";
+import { useMergedRef, useResizeObserver } from "../../../../../../../packages/react-tools-lib/src";
 
 /**
 The component has a ref to change border color of a div element when a button is clicked and use _useResizeObserver_ hook to observe the size of div element to check when its width is less of 100px. Since _useResizeObserver_ works with a ref attached to an element, there are two ref that will be attached to the div element. So it has been used _useMergedRef_ hook to merge refs.

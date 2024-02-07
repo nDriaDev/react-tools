@@ -1,5 +1,5 @@
 import { useCallback, useRef } from "react"
-import { useContextMenu } from "../../../../../../../packages/react-tools/src";
+import { useContextMenu } from "../../../../../../../packages/react-tools-lib/src";
 
 /**
 The component uses _useContextMenu_ hook and renders two paragraph. It uses the hook to disabled native contextmenu event on first paragraph.
