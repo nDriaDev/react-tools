@@ -53,7 +53,6 @@ export const useScript: UseScript = function (attributes, options) {
 
 	useEffectOnce(() => {
 		return () => {
-			// eslint-disable-next-line react-hooks/exhaustive-deps
 			if (opts.current.removeOnUnmount) {
 				removeScript();
 			}

@@ -95,7 +95,6 @@ export default function createHTMLMediaHook<T extends HTMLAudioElement | HTMLVid
 				onDurationChange: wrapEvent(props.onDurationChange, onDurationChange),
 				onTimeUpdate: wrapEvent(props.onTimeUpdate, onTimeUpdate),
 				onProgress: wrapEvent(props.onProgress, onProgress),
-				// eslint-disable-next-line @typescript-eslint/no-explicit-any
 			} as unknown as DetailedReactHTMLElement<HTMLAttributes<HTMLAudioElement>, HTMLAudioElement>);
 		}, [props])
 

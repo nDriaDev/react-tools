@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unnecessary-type-constraint */
 import { Children, PropsWithChildren, ReactNode, isValidElement } from "react"
 
 const Case = ({ children, when }: PropsWithChildren<{ when: boolean | undefined | null }>) => {

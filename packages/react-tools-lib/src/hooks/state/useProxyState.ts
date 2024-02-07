@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useReducer, useRef } from "react"
 
 /**
@@ -6,7 +7,6 @@ import { useReducer, useRef } from "react"
  * @param {boolean} [proxyInDepth=false] - if true, it creates proxy for nested object also.
  * @returns {T} state
  */
-
 export const useProxyState = <T extends Record<string, any>>(initialState: T | (() => T), proxyInDepth:boolean=false): T => {
 	const initialStateComputed = useRef(initialState instanceof Function ? initialState() : initialState);
 	const [, update] = useReducer(t => t + 1, 0);

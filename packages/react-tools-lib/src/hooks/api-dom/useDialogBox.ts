@@ -12,7 +12,6 @@ function useDialogBox(type: "alert"): ((message?: any) => void);
 function useDialogBox(type: "confirm"): ((message?: string) => boolean);
 function useDialogBox(type: "prompt" | "confirm" | "alert"): ((message?: string, _default?: string) => string | null) | ((message?: any) => void) | ((message?: string) => boolean) {
 	const prompt = useCallback((message?: string, _default?: string) => window.prompt(message, _default), []);
-	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	const alert = useCallback((message?: any) => window.alert(message), []);
 	const confirm = useCallback((message?: string) => window.confirm(message), []);
 
