@@ -246,7 +246,7 @@ usePrevious<T = unknown>(variable: T): [T|undefined, (enable: boolean) => void]
 
 Hook to handle component state that allows you to use an object for your state and mutating it in a way more idiomatic for JS. __*N.B.*__ not destructure state, otherwise break changes updated. [See demo](https://ndriadev.github.io/react-tools/#/hooks/state/useProxyState)
 ```tsx
-useProxyState
+useProxyState<T extends Record<string, any>>(initialState: T | (() => T), proxyInDepth:boolean=false): T
 ```
 
 ### useReducerGetReset
