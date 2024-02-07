@@ -6,7 +6,7 @@
 	"scripts": {
 		"dev": "node scripts/generateMarkdown.js && node scripts/generateRouter.js && node scripts/generateMainLayout.js && vite",
 		"dev:no-docs": "node scripts/generateRouter.js no-docs && node scripts/generateMainLayout.js && vite",
-		"build": "node scripts/generateMarkdown.js && node scripts/generateRouter.js && node scripts/generateMainLayout.js && tsc && vite build",
+		"build": "node scripts/generateMarkdown.js && node scripts/generateRouter.js && node scripts/generateMainLayout.js && tsc && vite build && rm -rf ../../docs && mv ./dist ./../../docs",
 		"lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
 		"preview": "vite preview"
 	},
