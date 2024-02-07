@@ -581,7 +581,7 @@ async function generateReadme() {
 		]);
 		await Promise.all([
 			fs.writeFile(path.join(PATH_ROOT, "README.md"), stringBuffer.value, { encoding: "utf8" }),
-			fs.writeFile(path.join(PATH_ROOT, "..", "README.md"), stringBuffer.value, { encoding: "utf8" })
+			fs.writeFile(path.join(PATH_ROOT, "..", "..", "README.md"), stringBuffer.value, { encoding: "utf8" })
 		]);
 		process.exit(0);
 	} catch (error) {
