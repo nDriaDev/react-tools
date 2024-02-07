@@ -1,7 +1,7 @@
 <h1 align="center">
   	<br>
-	<a href="https://nDriaDev.io/react-tools/">
-  		<img src="https://nDriaDev.io/react-tools/react-red.png" alt="logo">
+	<a href="https://ndriadev.github.io/react-tools/">
+  		<img src="https://ndriadev.github.io/react-tools/react-red.png" alt="logo">
 	</a>
 	<br>
 	React-Tools
