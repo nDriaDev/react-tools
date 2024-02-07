@@ -9,7 +9,7 @@ isAsync<T extends unknown[], E = unknown>(fn: E | Promise<E> | ((...args: T)=> E
 
 > ### Params
 >
-> - ____: _(...args: unknown[])=> unknown | Promise<unknown>_
+> - __fn__: _(...args: unknown[])=> unknown | Promise<unknown>_
 >
 
 
