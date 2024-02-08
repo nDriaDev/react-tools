@@ -4,7 +4,7 @@ Function that given a property or an array of properties, and one or more array 
 ## API
 
 ```tsx
-removeDuplicatedFromArrayObjects<T extends Record<string, unknown>>(property: keyof T | (keyof T)[] | "none", ...args: (T[])[]): T[]
+removeDuplicatedFromArrayObjects<T extends object>(property: keyof T | (keyof T)[] | "none", ...args: (T[])[]): T[]
 ```
 
 > ### Params

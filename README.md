@@ -1128,14 +1128,14 @@ lazy<T extends ComponentType<unknown>>(load: () => Promise<{ [k:string]: T }>, o
 
 Function that, given two objects version, merges them into a single one. Via an optional parameter _forceUndefinedValue_ you can define how undefined values are treated. [See demo](https://ndriadev.github.io/react-tools/#/utils/mergedObject)
 ```tsx
-mergeObjects<T extends Record<string,unknown>>(oldObj: T, newObj: RecursivePartial<T>, forceUndefinedValue?: boolean): T
+mergeObjects<T extends object>(oldObj: T, newObj: RecursivePartial<T>, forceUndefinedValue?: boolean): T
 ```
 
 ### removeDuplicatedFromArrayObjects
 
 Function that given a property or an array of properties, and one or more array of object, returns a single array with unique objects by specified properties. If property is __none__, will be return an unique array. [See demo](https://ndriadev.github.io/react-tools/#/utils/removeDuplicatedFromArrayObjects)
 ```tsx
-removeDuplicatedFromArrayObjects<T extends Record<string, unknown>>(property: keyof T | (keyof T)[] | "none", ...args: (T[])[]): T[]
+removeDuplicatedFromArrayObjects<T extends object>(property: keyof T | (keyof T)[] | "none", ...args: (T[])[]): T[]
 ```
 
 ### removePropertiesFromArrayObjects

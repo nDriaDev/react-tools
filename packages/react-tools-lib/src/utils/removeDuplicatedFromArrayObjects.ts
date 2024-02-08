@@ -4,7 +4,7 @@
  * @param {(T[])[]} args - arrays from which remove duplicated
  * @returns {T[]} result - array
  */
-export function removeDuplicatedFromArrayObjects<T extends Record<string, unknown>>(property: keyof T | (keyof T)[] | "none", ...args: (T[])[]): T[] {
+export function removeDuplicatedFromArrayObjects<T extends object>(property: keyof T | (keyof T)[] | "none", ...args: (T[])[]): T[] {
 	const newArray: T[] = [];
 	for (const array of args) {
 		newArray.push(...array);
