@@ -6,8 +6,7 @@ import mkcert from 'vite-plugin-mkcert'
 export default defineConfig({
 	base:"/react-tools",
 	server: {
-		host: true,
-		https: true
+		host: true
 	},
 	plugins: [react(), mkcert()],
 })
