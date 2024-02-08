@@ -1,1 +1,0 @@
-import{r as e}from"./index-e6x_fAxq.js";const s=u=>{const r=e.useRef(!1),t=e.useRef(),c=e.useRef(!1);e.useEffect(()=>(r.current||(t.current=u(),r.current=!0,setTimeout(()=>c.current=!0,1)),()=>{c.current&&(t.current&&t.current(),r.current=!1)}),[])};export{s as u};
