@@ -26,7 +26,7 @@
 		"release:patch": "pnpm version patch",
 		"release:minor": "pnpm version minor",
 		"release:major": "pnpm version major",
-		"postversion": "pnpm --filter react-tools-demo run generator && pnpm --filter @ndriadev/react-tools run readme && git add . && git commit -m '[UPDATE] version' && git push && git push origin --tags && pnpm --filter @ndriadev/react-tools publish --access public",
+		"postversion": "git add . && git commit -m '[UPDATE] version' && git push && git push origin --tags && pnpm --filter @ndriadev/react-tools publish --access public",
 		"preview": "vite preview",
 		"prepare": "pnpm run build",
 		"prepublishOnly": "pnpm run lint"
