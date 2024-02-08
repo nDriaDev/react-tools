@@ -2,7 +2,7 @@
 	"name": "@ndriadev/react-tools",
 	"description": "A React library of hooks, components, utils and types ready to use",
 	"private": false,
-	"version": "1.1.0",
+	"version": "1.1.1",
 	"type": "module",
 	"files": [
 		"./dist"
@@ -26,7 +26,7 @@
 		"release:patch": "pnpm version patch",
 		"release:minor": "pnpm version minor",
 		"release:major": "pnpm version major",
-		"postversion": "pnpm --filter react-tools-demo run buid && pnpm --filter @ndriadev/react-tools run build && pnpm --filter @ndriadev/react-tools run readme && git add . && git commit -m '[UPDATE] version' && git push && git push origin --tags && pnpm --filter @ndriadev/react-tools publish --access public",
+		"postversion": "pnpm --filter react-tools-demo run generator && pnpm --filter @ndriadev/react-tools run readme && git add . && git commit -m '[UPDATE] version' && git push && git push origin --tags && pnpm --filter @ndriadev/react-tools publish --access public",
 		"preview": "vite preview",
 		"prepare": "pnpm run build",
 		"prepublishOnly": "pnpm run lint"

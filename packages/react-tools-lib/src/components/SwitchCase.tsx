@@ -1,3 +1,4 @@
+/* eslint-disable react-refresh/only-export-components */
 import { Children, PropsWithChildren, ReactNode, isValidElement } from "react"
 
 const Case = ({ children, when }: PropsWithChildren<{ when: boolean | undefined | null }>) => {
