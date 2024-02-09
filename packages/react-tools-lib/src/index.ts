@@ -235,6 +235,6 @@ export {
 	isTouchEvent,
 	lazy,
 	mergeObjects,
-	removeDuplicatedFromArray,
-	removePropertiesFromArrayObjects
+	removePropertiesFromArrayObjects,
+	uniqueElementsArray
 } from './utils'

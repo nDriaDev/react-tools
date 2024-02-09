@@ -11,7 +11,7 @@ export { detectBrowser } from './detectBrowser';
 export { defaultSerializer } from './defaultSerializer';
 export { getBase64 } from './getBase64';
 export { removePropertiesFromArrayObjects } from './removePropertiesFromArrayObjects';
-export { removeDuplicatedFromArray } from './removeDuplicatedFromArray';
+export { uniqueElementsArray } from './uniqueElementsArray';
 export { getKeyObjectFromValue } from './getKeyObjectFromValue';
 export { getObjectFromDottedString } from './getObjectFromDottedString';
 export { mergeObjects } from './mergeObjects';

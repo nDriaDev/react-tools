@@ -25,8 +25,8 @@ import isShallowEqualMD from "../markdown/isShallowEqual.md?raw"
 import isTouchEventMD from "../markdown/isTouchEvent.md?raw"
 import lazyMD from "../markdown/lazy.md?raw"
 import mergeObjectsMD from "../markdown/mergeObjects.md?raw"
-import removeDuplicatedFromArrayMD from "../markdown/removeDuplicatedFromArray.md?raw"
 import removePropertiesFromArrayObjectsMD from "../markdown/removePropertiesFromArrayObjects.md?raw"
+import uniqueElementsArrayMD from "../markdown/uniqueElementsArray.md?raw"
 import useActiveElementMD from "../markdown/useActiveElement.md?raw"
 import useAnimationMD from "../markdown/useAnimation.md?raw"
 import useArrayMD from "../markdown/useArray.md?raw"
@@ -1126,15 +1126,15 @@ function Router() {
 						</Suspense>
 					},
 					{
-						path: "removeDuplicatedFromArray",
-						element: <Suspense fallback={<Spinner/>}>
-							<ComponentLayout markdown={removeDuplicatedFromArrayMD} />
-						</Suspense>
-					},
-					{
 						path: "removePropertiesFromArrayObjects",
 						element: <Suspense fallback={<Spinner/>}>
 							<ComponentLayout markdown={removePropertiesFromArrayObjectsMD} />
+						</Suspense>
+					},
+					{
+						path: "uniqueElementsArray",
+						element: <Suspense fallback={<Spinner/>}>
+							<ComponentLayout markdown={uniqueElementsArrayMD} />
 						</Suspense>
 					},
 					]

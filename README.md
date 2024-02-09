@@ -193,8 +193,8 @@ Go to [Demo](https://ndriadev.github.io/react-tools) to see and try all implemen
 	- [_isTouchEvent_](#isTouchEvent)
 	- [_lazy_](#lazy)
 	- [_mergeObjects_](#mergeObjects)
-	- [_removeDuplicatedFromArray_](#removeDuplicatedFromArray)
 	- [_removePropertiesFromArrayObjects_](#removePropertiesFromArrayObjects)
+	- [_uniqueElementsArray_](#uniqueElementsArray)
 
 - [__TYPES__](#types)
 
@@ -1131,18 +1131,18 @@ Function that, given two objects version, merges them into a single one. Via an 
 mergeObjects<T extends object>(oldObj: T, newObj: RecursivePartial<T>, forceUndefinedValue?: boolean): T
 ```
 
-### removeDuplicatedFromArray
-
-Function that given one or more array of object, returns a single array with unique elements by a specified property, an array of properties or _none_. [See demo](https://ndriadev.github.io/react-tools/#/utils/removeDuplicatedFromArray)
-```tsx
-removeDuplicatedFromArray<T extends string | number | boolean | ((...args: unknown[]) => unknown) | bigint | object>(property: keyof T | (keyof T)[] | "none", ...args: (T[])[]): T[]
-```
-
 ### removePropertiesFromArrayObjects
 
 Function that, given an array of objects and a property or an array of properties, return a new array without specified properties. [See demo](https://ndriadev.github.io/react-tools/#/utils/removePropertiesFromArrayObjects)
 ```tsx
 removePropertiesFromArrayObjects<T, E extends string | number | symbol = keyof T>(array: T[], property: E | E[]): Omit<T, E>[]
+```
+
+### uniqueElementsArray
+
+Function that given one or more array of object, returns a single array with unique elements by a specified property, an array of properties or _none_. [See demo](https://ndriadev.github.io/react-tools/#/utils/removeDuplicatedFromArray)
+```tsx
+uniqueElementsArray<T extends string | number | boolean | ((...args: unknown[]) => unknown) | bigint | object>(property: keyof T | (keyof T)[] | "none", ...args: (T[])[]): T[]
 ```
 
 ## TYPES

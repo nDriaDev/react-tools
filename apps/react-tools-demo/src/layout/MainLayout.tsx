@@ -1485,17 +1485,6 @@ export default function MainLayout() {
 							mergeObjects
 						</Link>
 						<Link
-							className={pathname === "/utils/removeDuplicatedFromArray" ? 'active' : ''}
-							ref={node => linksRef.current["removeDuplicatedFromArray"] = node}
-							to="/utils/removeDuplicatedFromArray"
-							onClick={() => {
-								containerRef.current?.scrollTo(0, 0);
-								window.innerWidth < 1190 && closeNav();
-							}}
-						>
-							removeDuplicatedFromArray
-						</Link>
-						<Link
 							className={pathname === "/utils/removePropertiesFromArrayObjects" ? 'active' : ''}
 							ref={node => linksRef.current["removePropertiesFromArrayObjects"] = node}
 							to="/utils/removePropertiesFromArrayObjects"
@@ -1505,6 +1494,17 @@ export default function MainLayout() {
 							}}
 						>
 							removePropertiesFromArrayObjects
+						</Link>
+						<Link
+							className={pathname === "/utils/uniqueElementsArray" ? 'active' : ''}
+							ref={node => linksRef.current["uniqueElementsArray"] = node}
+							to="/utils/uniqueElementsArray"
+							onClick={() => {
+								containerRef.current?.scrollTo(0, 0);
+								window.innerWidth < 1190 && closeNav();
+							}}
+						>
+							uniqueElementsArray
 						</Link>
 						<p className="sub-type">Types</p>
 						<Link
