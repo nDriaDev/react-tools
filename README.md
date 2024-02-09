@@ -193,7 +193,7 @@ Go to [Demo](https://ndriadev.github.io/react-tools) to see and try all implemen
 	- [_isTouchEvent_](#isTouchEvent)
 	- [_lazy_](#lazy)
 	- [_mergeObjects_](#mergeObjects)
-	- [_removeDuplicatedFromArrayObjects_](#removeDuplicatedFromArrayObjects)
+	- [_removeDuplicatedFromArray_](#removeDuplicatedFromArray)
 	- [_removePropertiesFromArrayObjects_](#removePropertiesFromArrayObjects)
 
 - [__TYPES__](#types)
@@ -1131,11 +1131,11 @@ Function that, given two objects version, merges them into a single one. Via an 
 mergeObjects<T extends object>(oldObj: T, newObj: RecursivePartial<T>, forceUndefinedValue?: boolean): T
 ```
 
-### removeDuplicatedFromArrayObjects
+### removeDuplicatedFromArray
 
-Function that given a property or an array of properties, and one or more array of object, returns a single array with unique objects by specified properties. If property is __none__, will be return an unique array. [See demo](https://ndriadev.github.io/react-tools/#/utils/removeDuplicatedFromArrayObjects)
+Function that given one or more array of object, returns a single array with unique elements by a specified property, an array of properties or _none_. [See demo](https://ndriadev.github.io/react-tools/#/utils/removeDuplicatedFromArray)
 ```tsx
-removeDuplicatedFromArrayObjects<T extends object>(property: keyof T | (keyof T)[] | "none", ...args: (T[])[]): T[]
+removeDuplicatedFromArray<T extends string | number | boolean | ((...args: unknown[]) => unknown) | bigint | object>(property: keyof T | (keyof T)[] | "none", ...args: (T[])[]): T[]
 ```
 
 ### removePropertiesFromArrayObjects

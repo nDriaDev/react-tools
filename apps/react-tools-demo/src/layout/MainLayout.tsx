@@ -1485,15 +1485,15 @@ export default function MainLayout() {
 							mergeObjects
 						</Link>
 						<Link
-							className={pathname === "/utils/removeDuplicatedFromArrayObjects" ? 'active' : ''}
-							ref={node => linksRef.current["removeDuplicatedFromArrayObjects"] = node}
-							to="/utils/removeDuplicatedFromArrayObjects"
+							className={pathname === "/utils/removeDuplicatedFromArray" ? 'active' : ''}
+							ref={node => linksRef.current["removeDuplicatedFromArray"] = node}
+							to="/utils/removeDuplicatedFromArray"
 							onClick={() => {
 								containerRef.current?.scrollTo(0, 0);
 								window.innerWidth < 1190 && closeNav();
 							}}
 						>
-							removeDuplicatedFromArrayObjects
+							removeDuplicatedFromArray
 						</Link>
 						<Link
 							className={pathname === "/utils/removePropertiesFromArrayObjects" ? 'active' : ''}
