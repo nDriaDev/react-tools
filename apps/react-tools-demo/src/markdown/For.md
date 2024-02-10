@@ -51,7 +51,7 @@ array of elements.
 > - __props.elementKey?__: _T extends Record<string,unknown> ? keyof T : never_  
 a key of array elements if elements are object.
 > - __props.children__: _(item: T, index: T extends Record<string,unknown> ? number | T[keyof T] : number) => ReactNode_  
-it's a function that takes the current item as first argument and optionally a second argument that is number if element of array aren't object, otherwise it can be a number or the value of the element key specified in the _elementKey_ prop if it is preset.
+it's a function that takes the current item as first argument and optionally a second argument that is number if element of array aren't object, otherwise it can be a number or the value of the element key specified in the _elementKey_ prop.
 > - __props.fallback?__: _ReactNode_  
 optional element to render when _of_ prop is an empty array.
 > - __props.filter?__: _<S extends T>(val: T, index: number, arr: T[]) => val is S_  
