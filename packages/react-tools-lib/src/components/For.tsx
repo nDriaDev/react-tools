@@ -7,7 +7,7 @@ import { ForProps } from "../models";
  * @param {ForProps<T>} props - component properties object.
  * @param {T[]} props.of - array of elements.
  * @param {T extends Record<string,unknown> ? keyof T : never} [props.elementKey] - a key of array elements if elements are object.
- * @param {(item: T, index: T extends Record<string,unknown> ? number | T[keyof T] : number) => ReactNode} props.children - it's a function that takes the current item as first argument and optionally a second argument that is number if element of array aren't object, otherwise it can be a number or the value of the element key specified in the _elementKey_ prop if it is preset.
+ * @param {(item: T, index: T extends Record<string,unknown> ? number | T[keyof T] : number) => ReactNode} props.children - it's a function that takes the current item as first argument and optionally a second argument that is number if element of array aren't object, otherwise it can be a number or the value of the element key specified in the _elementKey_ prop.
  * @param {ReactNode} [props.fallback] - optional element to render when _of_ prop is an empty array.
  * @param {<S extends T>(val: T, index: number, arr: T[]) => val is S} [props.filter] - callback executed to filter _of_ elements.
  * @param {<U extends T>(val: T, index: number, arr: T[]) => U} [props.map] - callback executed to map _of_ elements.
