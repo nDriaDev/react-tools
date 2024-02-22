@@ -19,7 +19,7 @@ function handler<T>(path: string[]) {
 	}
 }
 
-function updateReference<T extends Record<string, unknown>, C>(currStore: T, storeSlice: Record<string, unknown>, property: string, updatedValue: C) {
+function updateReference<T extends object, C>(currStore: T, storeSlice: object, property: string, updatedValue: C) {
 	if (currStore === storeSlice) {
 		currStore[property as keyof T] = updatedValue as T[keyof T];
 		return;
@@ -29,7 +29,7 @@ function updateReference<T extends Record<string, unknown>, C>(currStore: T, sto
 			if (Array.isArray(currStore[prop])) {
 				currStore[prop] = [...(currStore[prop] as Array<unknown>)] as T[Extract<keyof T, string>];
 			} else {
-				currStore[prop] = { ...(currStore[prop] as Record<string, unknown>) } as T[Extract<keyof T, string>];
+				currStore[prop] = { ...(currStore[prop] as object) } as T[Extract<keyof T, string>];
 			}
 			currStore[prop][property as keyof typeof currStore[typeof prop]] = updatedValue as T[Extract<keyof T, string>][keyof T[typeof prop]];
 			return;
@@ -41,7 +41,7 @@ function updateReference<T extends Record<string, unknown>, C>(currStore: T, sto
 
 /**
  * **`createPubSubStore`**: A state management hook implemented on Publish-Subscribe pattern. It allows components to subscribe to state changes and receive updates whenever the state is modified, providing a scalable and decoupled state management solution.__N.B.: to work properly, objects like Set, Map, Date or more generally objects without _Symbol.iterator_ must be treated as immutable__. [See demo](https://ndriadev.github.io/react-tools/#/hooks/state/createPubSubStore)
- * @param {T extends Record<string, unknown>} obj - Object that rapresent the initialState of the store.
+ * @param {T extends object} obj - Object that rapresent the initialState of the store.
  * @param {E extends Record<string, (store: T, ...args: any) => void>} [mutatorsFn] - Object that contains specified void function to mutate the store value, not the store itself, that receives the store as first parameter and other optional parameters.
  * @param {boolean} [persist=false] - boolean that indicates if the store value will be persisted on the local Storage.
  * @returns {{getStore:()=>T, mutateStore:(cb:(globStore:T)=>void), usePubSubStore:<C>(subscribe?: (store: T) => C)=>[T|C, (store: T|C|((currStore: T) => T)|((currStore: C) => C)) => void, () => T]}} result
@@ -55,7 +55,7 @@ function updateReference<T extends Record<string, unknown>, C>(currStore: T, sto
  *     - _third element_: the __getState__. An _immutable_ function that returns the current subscribed value.
  *     - _fourth element_: the __mutators__. Like above.
  */
-export const createPubSubStore = <T extends Record<string, unknown>, E extends Record<string, (store: T, ...args: any) => void>>(obj: T, mutatorsFn?: E, persist?: boolean): { getStore: () => T; mutateStore: (cb: (globStore: T) => void) => void; mutators: Record<keyof E, (...args: ExtractTail<Parameters<E[keyof E]>>) => void>, usePubSubStore: { (subscribe?: undefined): [T, (store: T | ((currStore: T) => T)) => void, () => T, Record<keyof E, (...args: ExtractTail<Parameters<E[keyof E]>>) => void>]; <C>(subscribe?: (store: T) => C): [C, (store: C | ((currStore: C) => C)) => void, () => C, Record<keyof E, (...args: ExtractTail<Parameters<E[keyof E]>>) => void>]; <C>(subscribe?: (store: T) => C): [T | C, (store: T | C | ((currStore: T) => T) | ((currStore: C) => C)) => void, () => T, Record<keyof E, (...args: ExtractTail<Parameters<E[keyof E]>>) => void>] }} => {
+export const createPubSubStore = <T extends object, E extends Record<string, (store: T, ...args: any) => void>>(obj: T, mutatorsFn?: E, persist?: boolean): { getStore: () => T; mutateStore: (cb: (globStore: T) => void) => void; mutators: Record<keyof E, (...args: ExtractTail<Parameters<E[keyof E]>>) => void>, usePubSubStore: { (subscribe?: undefined): [T, (store: T | ((currStore: T) => T)) => void, () => T, Record<keyof E, (...args: ExtractTail<Parameters<E[keyof E]>>) => void>]; <C>(subscribe?: (store: T) => C): [C, (store: C | ((currStore: C) => C)) => void, () => C, Record<keyof E, (...args: ExtractTail<Parameters<E[keyof E]>>) => void>]; <C>(subscribe?: (store: T) => C): [T | C, (store: T | C | ((currStore: T) => T) | ((currStore: C) => C)) => void, () => T, Record<keyof E, (...args: ExtractTail<Parameters<E[keyof E]>>) => void>] }} => {
 	const pubSub = new PublishSubscribePattern();
 	const topicName = "pub_Sub_str-" + id;
 	id++;
@@ -148,7 +148,7 @@ export const createPubSubStore = <T extends Record<string, unknown>, E extends R
 				 * properties the reference to storeSlice value.
 				 */
 				const updatedValue = store instanceof Function ? (store as ((currStore: C) => C))(currentStore.current as C) : store as C;
-				let storeSlice: Record<string, unknown> = getStore();
+				let storeSlice: Record<string, unknown> = getStore() as Record<string, unknown>;
 				for (let i = 0; i < path.current.length - 1; i++) {
 					!(path.current[i] in storeSlice) && (storeSlice[path.current[i]] = getStore()[path.current[i] as keyof ReturnType<typeof getStore>]);
 					storeSlice = storeSlice[path.current[i]] as Record<string, unknown>;
@@ -160,7 +160,7 @@ export const createPubSubStore = <T extends Record<string, unknown>, E extends R
 				} else {
 					const currStore = getStore();
 					updateReference(currStore, storeSlice, path.current[path.current.length - 1], updatedValue);
-					storeSlice = currStore;
+					storeSlice = currStore as Record<string, unknown>;
 					persist && localStorage.setItem(topicName, JSON.stringify(storeSlice));
 					pubSub.publish(topicName, storeSlice);
 				}

@@ -27,16 +27,16 @@ function imgLoaded(img: HTMLImageElement) {
 
 /**
  * **`getBase64`**: Function to obtain a Base64 from value specified if supported, otherwise throw an Error. [See demo](https://ndriadev.github.io/react-tools/#/utils/getBase64)
- * @param {target: string | Blob | ArrayBuffer | HTMLCanvasElement | HTMLImageElement | T | T[]} target
+ * @param {string | Blob | ArrayBuffer | HTMLCanvasElement | HTMLImageElement | T | T[]} target
  * @param {ToDataURLOptions | UseBase64ObjectOptions<T>} [options]
  * @returns {string}
  */
-function getBase64(target: string): Promise<string>
-function getBase64(target: Blob): Promise<string>
-function getBase64(target: ArrayBuffer): Promise<string>
+function getBase64(target: string, options?: undefined): Promise<string>
+function getBase64(target: Blob, options?: undefined): Promise<string>
+function getBase64(target: ArrayBuffer, options?: undefined): Promise<string>
 function getBase64(target: HTMLCanvasElement, options?: ToDataURLOptions): Promise<string>
 function getBase64(target: HTMLImageElement, options?: ToDataURLOptions): Promise<string>
-function getBase64<T extends Record<string, unknown>>(target: T, options?: UseBase64ObjectOptions<T>): Promise<string>
+function getBase64<T extends object>(target: T, options?: UseBase64ObjectOptions<T>): Promise<string>
 function getBase64<T extends Map<string, unknown>>(target: T, options?: UseBase64ObjectOptions<T>): Promise<string>
 function getBase64<T extends Set<unknown>>(target: T, options?: UseBase64ObjectOptions<T>): Promise<string>
 function getBase64<T>(target: T[], options?: UseBase64ObjectOptions<T[]>): Promise<string>

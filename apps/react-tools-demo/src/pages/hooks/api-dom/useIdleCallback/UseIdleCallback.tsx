@@ -12,7 +12,7 @@ The component has:
 export const UseIdleCallback = () => {
 	const [iterations, setIterations] = useState(0);
 	const [log, setLog] = useState("");
-	const [invoke] = useIdleCallback(() => setLog("RequestIdleCallback executed"));
+	const [isSupported, invoke] = useIdleCallback(() => setLog("RequestIdleCallback executed"));
 
 	const start = async() => {
 		invoke();
@@ -25,6 +25,7 @@ export const UseIdleCallback = () => {
 		setIterations(0);
 	}
 	return (<div>
+		<p>Supported: {isSupported ? "Yes" : "No"}</p>
 		<p>Iterations are: {iterations}</p>
 		<p>Log is: {log}</p>
 		<button onClick={start}>START</button>

@@ -9,7 +9,7 @@ export const UseBattery = () => {
 	return (<div style={{ textAlign: "center" }}>
 		{
 			Object.keys(status).map(el => (
-				<p key={el}>{el}: {status[el as keyof typeof status]}</p>
+				<p key={el}>{el}: {el === "isSupported" ? status.isSupported ? "Yes" : "No": status[el as keyof typeof status]}</p>
 			))
 		}
 	</div>)

@@ -1,0 +1,1 @@
+import{j as n}from"./index-0wVqskhd.js";import{u as t}from"./useNetwork-1EANnSyu.js";import"./useSyncExternalStore-DXEdMsTG.js";const s=()=>t(["isOnline"]).isOnline,l=()=>{const e=s();return n.jsx("div",{style:{textAlign:"center"},children:n.jsxs("p",{children:["Online: ",JSON.stringify(e)]})})};export{l as UseIsOnline};

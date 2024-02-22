@@ -7,7 +7,7 @@ Hook to invoke a callback when the browser is idle. Refer to [requestIdleCallbac
 export const UseIdleCallback = () => {
 	const [iterations, setIterations] = useState(0);
 	const [log, setLog] = useState("");
-	const [invoke] = useIdleCallback(() => setLog("RequestIdleCallback executed"));
+	const [isSupported, invoke] = useIdleCallback(() => setLog("RequestIdleCallback executed"));
 
 	const start = async() => {
 		invoke();
@@ -20,6 +20,7 @@ export const UseIdleCallback = () => {
 		setIterations(0);
 	}
 	return (<div>
+		<p>Supported: {isSupported ? "Yes" : "No"}</p>
 		<p>Iterations are: {iterations}</p>
 		<p>Log is: {log}</p>
 		<button onClick={start}>START</button>
@@ -38,7 +39,7 @@ export const UseIdleCallback = () => {
 ## API
 
 ```tsx
-useIdleCallback(cb: (deadline?: IdleDeadline | DOMHighResTimeStamp | void) => void, opts?: {timeout: number , unsupportedBehavior?: "animationFrame" | "timeout" | "immediatly" }): [() => void, () => void]
+useIdleCallback(cb: (deadline?: IdleDeadline | DOMHighResTimeStamp | void) => void, opts?: {timeout: number , unsupportedBehavior?: "animationFrame" | "timeout" | "immediatly" }): [boolean, () => void, () => void]
 ```
 
 > ### Params
@@ -51,8 +52,11 @@ Contains optional configuration parameters.
 
 > ### Returns
 >
-> __result__: array where functions to invoke and cancel execution.
-> - __Array__:  
->     - _()=>void_  
->     - _()=>void_  
+> __result__:  __Array__:  
+    - _()=>void_  
+    - _()=>void_  
+> Array with three elements:
+> - first element: __isSupported__; boolean value that indicates if _requestIdleCallback_ is supported or not.
+> - second element: __invoke__: function to invoke execution.
+> - third element: __cancel__: function to cancel execution.
 >

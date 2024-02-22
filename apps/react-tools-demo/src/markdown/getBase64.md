@@ -9,7 +9,7 @@ getBase64<T>(target: string | Blob | ArrayBuffer | HTMLCanvasElement | HTMLImage
 
 > ### Params
 >
-> - __target__: _target: string | Blob | ArrayBuffer | HTMLCanvasElement | HTMLImageElement | T | T[]_
+> - __target__: _string | Blob | ArrayBuffer | HTMLCanvasElement | HTMLImageElement | T | T[]_
 > - __options?__: _ToDataURLOptions | UseBase64ObjectOptions<T>_
 >
 

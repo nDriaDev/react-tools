@@ -47,7 +47,7 @@ export const UseStateValidator = () => {
 ## API
 
 ```tsx
-useStateValidator<T>(initialState: T | (() => T), validator: StateValidator<T>): [T, Dispatch<SetStateAction<T>>, T extends Record<string, unknown> ? {[k in keyof T]:{invalid: boolean, message?: string}} : {invalid: boolean, message?: string}]
+useStateValidator<T>(initialState: T | (() => T), validator: StateValidator<T>): [T, Dispatch<SetStateAction<T>>, T extends object ? {[k in keyof T]:{invalid: boolean, message?: string}} : {invalid: boolean, message?: string}]
 ```
 
 > ### Params
@@ -64,7 +64,7 @@ function that will be executed to validate state.
 > __} invalid__:  __Array__:  
     - _T_  
     - _Dispatch<SetStateAction<T>>_  
-    - _T extends Record<string, unknown> ? {[k in keyof T]:{invalid: boolean, message?: string}} : {invalid: boolean, message?: strin_  
+    - _T extends object ? {[k in keyof T]:{invalid: boolean, message?: string}} : {invalid: boolean, message?: strin_  
 > Array with:
 > - first element: __state__ value.
 > - second element: __setState__ function to update state.

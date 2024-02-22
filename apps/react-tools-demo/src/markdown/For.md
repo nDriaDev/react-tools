@@ -48,9 +48,9 @@ For = memo(<T extends unknown>({ of, children, filter, map, sort, elementKey, fa
 component properties object.
 > - __props.of__: _T[]_  
 array of elements.
-> - __props.elementKey?__: _T extends Record<string,unknown> ? keyof T|((item:T)=> string|number) : never_  
-if elements are objects, this prop is a key of the array elements or a function with one parameter which type is the type of the elements in __of__ prop and returns a string or a number, otherwise this prop is unsettable.
-> - __props.children__: _(item: T, index: T extends Record<string,unknown> ? number | T[keyof T] | string : number) => ReactNode_  
+> - __props.elementKey?__: _T extends object ? keyof T | ((item: T) => string | number) : string | number | ((item: T) => string | number)_  
+if the elements are objects, this prop is a key of the array elements or a function with one parameter which type is the type of the elements in __of__ prop and returns a string or a number, otherwise this prop can be the function described before, a string or a number.
+> - __props.children__: _(item: T, index: T extends object ? number | T[keyof T] | string : number) => ReactNode_  
 it's a function that takes the current item as first argument and optionally a second argument that is number if element of array aren't object, otherwise it can be a number or the value of the element key specified in the _elementKey_ prop.
 > - __props.fallback?__: _ReactNode_  
 optional element to render when _of_ prop is an empty array.
