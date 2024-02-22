@@ -6,8 +6,8 @@ import { ForProps } from "../models";
  * **`For`**: Component to optimize the rendering of a list of elements without need to specify a key value for all elements, and other options. [See demo](https://ndriadev.github.io/react-tools/#/components/For)
  * @param {ForProps<T>} props - component properties object.
  * @param {T[]} props.of - array of elements.
- * @param {T extends Record<string,unknown> ? keyof T : never} [props.elementKey] - a key of array elements if elements are object.
- * @param {(item: T, index: T extends Record<string,unknown> ? number | T[keyof T] : number) => ReactNode} props.children - it's a function that takes the current item as first argument and optionally a second argument that is number if element of array aren't object, otherwise it can be a number or the value of the element key specified in the _elementKey_ prop.
+ * @param {T extends Record<string,unknown> ? keyof T|((item:T)=> string|number) : never} [props.elementKey] - if elements are objects, this prop is a key of the array elements or a function with one parameter which type is the type of the elements in __of__ prop and returns a string or a number, otherwise this prop is unsettable.
+ * @param {(item: T, index: T extends Record<string,unknown> ? number | T[keyof T] | string : number) => ReactNode} props.children - it's a function that takes the current item as first argument and optionally a second argument that is number if element of array aren't object, otherwise it can be a number or the value of the element key specified in the _elementKey_ prop.
  * @param {ReactNode} [props.fallback] - optional element to render when _of_ prop is an empty array.
  * @param {<S extends T>(val: T, index: number, arr: T[]) => val is S} [props.filter] - callback executed to filter _of_ elements.
  * @param {<U extends T>(val: T, index: number, arr: T[]) => U} [props.map] - callback executed to map _of_ elements.
@@ -25,7 +25,7 @@ export const For = memo(<T extends unknown>({ of, children, filter, map, sort, e
 		<>
 			{Children.toArray(
 				arr.map((item, index) => (
-					children(item, (elementKey ? item[elementKey] : index) as T extends Record<string, unknown> ? number | T[keyof T] : number)
+					children(item, (elementKey ? typeof elementKey === "function" ? elementKey(item) : item[elementKey as keyof T] : index) as Parameters<ForProps<T>["children"]>[1])
 				))
 			)}
 		</>
