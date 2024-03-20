@@ -25,7 +25,7 @@ export const For = memo(<T extends unknown>({ of, children, filter, map, sort, e
 		<>
 			{
 				arr.map((el, index) => {
-					const key = (elementKey ? typeof elementKey === "function" ? elementKey(el) : typeof el === "object" && el !== null && (elementKey as keyof T) in el ? el[elementKey as keyof T] : elementKey : index) as Key;
+					const key = (elementKey ? typeof elementKey === "function" ? elementKey(el as object) : typeof el === "object" && el !== null && (elementKey as keyof T) in el ? el[elementKey as keyof T] : elementKey : index) as Key;
 					const elem = children(el, index, key) as ReactElement
 					return isValidElement(elem)
 						? cloneElement(
