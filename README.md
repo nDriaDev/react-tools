@@ -171,9 +171,12 @@ Go to [Demo](https://ndriadev.github.io/react-tools) to see and try all implemen
 
 	- [_ErrorBoundary_](#ErrorBoundary)
 	- [_For_](#For)
+	- [_ForMemoized_](#ForMemoized)
 	- [_LazyComponent_](#LazyComponent)
 	- [_Show_](#Show)
+	- [_ShowMemoized_](#ShowMemoized)
 	- [_SwitchCase_](#SwitchCase)
+	- [_SwitchCaseMemoized_](#SwitchCaseMemoized)
 
 - [__UTILS__](#utils)
 
@@ -993,7 +996,14 @@ class ErrorBoundary extends Component<PropsWithChildren<{ onCatch?: (error: Erro
 
 Component to optimize the rendering of a list of elements without need to specify a key value for all elements, and other options. [See demo](https://ndriadev.github.io/react-tools/#/components/For)
 ```tsx
-For = memo(<T extends unknown>({ of, children, filter, map, sort, elementKey, fallback }: ForProps<T>)
+For<T, S extends T>({ of, elementKey, fallback, filter, sort, map, children }: { of: Array<T>, elementKey?: (T|S) extends object ? keyof (T|S) | ((item: T|S) => Key) : Key | ((item: T|S) => Key), children: (item: T|S, index: number, key: Key) => ReactNode, fallback?: ReactNode, filter?: Parameters<Array<T>["filter"]>[0], sort?: true | Parameters<Array<T>["sort"]>[0], map?: (...args: Parameters<Parameters<Array<T>["map"]>[0]>) => S }): JSX.Element|Array<JSX.Element>
+```
+
+### ForMemoized
+
+Memoized version of _For_ component. [See demo](https://ndriadev.github.io/react-tools/#/components/ForMemoized)
+```tsx
+ForMemoized = memo(For) as typeof For;
 ```
 
 ### LazyComponent
@@ -1010,11 +1020,25 @@ Generic component used to conditional render part of the view: it renders _child
 Show<T extends unknown>({ when, fallback, children }: PropsWithChildren<{ when: T|boolean|undefined|null, fallback?: ReactNode }>)
 ```
 
+### ShowMemoized
+
+Memoized version of _Show_ component. [See demo](https://ndriadev.github.io/react-tools/#/components/ShowMemoized)
+```tsx
+ShowMemoized = memo(Show);
+```
+
 ### SwitchCase
 
 It works like switch-case construct. It useful for when there are more than 2 mutual exclusive conditions. [See demo](https://ndriadev.github.io/react-tools/#/components/SwitchCase)
 ```tsx
-SwitchCaseSwitch = ({ children, fallback }: PropsWithChildren<{ fallback?: ReactNode }>)
+SwitchCase = { Switch, Case };
+```
+
+### SwitchCaseMemoized
+
+Memoized version of _SwitchCase_ component. [See demo](https://ndriadev.github.io/react-tools/#/components/SwitchCaseMemoized)
+```tsx
+SwitchCaseMemoized =
 ```
 
 ## UTILS
