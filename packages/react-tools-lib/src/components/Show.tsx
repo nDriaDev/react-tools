@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unnecessary-type-constraint */
 import { PropsWithChildren, ReactNode } from "react";
 
 /**
@@ -9,9 +8,10 @@ import { PropsWithChildren, ReactNode } from "react";
  * @param {PropsWithChildren<any>["children"]} [object.children] - optional element to render when _when_ prop is true.
  * @returns {JSX.Element|null} element - the element rendered or null.
  */
-export const Show = <T extends unknown>({ when, fallback, children }: PropsWithChildren<{ when: T|boolean|undefined|null, fallback?: ReactNode }>) => {
+function Show<T>({ when, fallback, children }: PropsWithChildren<{ when: T|boolean|undefined|null, fallback?: ReactNode }>) {
 	if (!when) {
 		return fallback ? <>{fallback}</> : null;
 	}
 	return <>{children}</>;
 }
+export { Show };

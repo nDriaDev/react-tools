@@ -8,13 +8,17 @@ const promiseCache: { deps: DependencyList, promise: Promise<void>, error?: unkn
  * **`usePromiseSuspensible`**: Hook to resolve promise with Suspense support. The component that uses it, it need to be wrapped with Suspense component. [See demo](https://ndriadev.github.io/react-tools/#/hooks/api-dom/usePromiseSuspensible)
  * @param {T} promise - Function that returns a promise to suspense.
  * @param {DependencyList} deps - DependencyList for promise to suspense.
+ * @param {{ clearCacheOnUnmount?: boolean }} [options] - optional options.
+ * @param {boolean} [options.clearCacheOnUnmount=false] - if value is true, promise cached will be cleaned on unmount phase.
  * @returns {Awaited<ReturnType<T>>} result - resolve promise value.
  */
-export const usePromiseSuspensible = <T extends (...args: unknown[]) => Promise<unknown>>(promise: T, deps: DependencyList): Awaited<ReturnType<T>> => {
+export const usePromiseSuspensible = <T extends (...args: unknown[]) => Promise<unknown>>(promise: T, deps: DependencyList, options: { clearCacheOnUnmount?: boolean } = {clearCacheOnUnmount: false}): Awaited<ReturnType<T>> => {
 	const index = useRef(-1);
 	useEffectOnce(() => () => {
-		index.current !== -1 && promiseCache.splice(index.current, 1);
-		index.current = -1;
+		if (options.clearCacheOnUnmount) {
+			index.current !== -1 && promiseCache.splice(index.current, 1);
+			index.current = -1;
+		}
 	})
 	for (const cached of promiseCache) {
 		index.current = index.current+1;

@@ -22,7 +22,7 @@ export default function ShowComponent() {
 ## API
 
 ```tsx
-Show<T extends unknown>({ when, fallback, children }: PropsWithChildren<{ when: T|boolean|undefined|null, fallback?: ReactNode }>)
+Show<T>({ when, fallback, children }: PropsWithChildren<{ when: T|boolean|undefined|null, fallback?: ReactNode }>)
 ```
 
 

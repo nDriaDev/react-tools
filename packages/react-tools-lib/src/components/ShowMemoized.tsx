@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unnecessary-type-constraint */
 import { memo } from "react";
 import { Show } from "./Show";
 

@@ -32,7 +32,7 @@ export const UsePromiseSuspensible = () => {
 ## API
 
 ```tsx
-usePromiseSuspensible<T extends (...args: unknown[]) => Promise<unknown>>(promise: T, deps: DependencyList): Awaited<ReturnType<T>>
+usePromiseSuspensible<T extends (...args: unknown[]) => Promise<unknown>>(promise: T, deps: DependencyList, options: { clearCacheOnUnmount?: boolean } = {clearCacheOnUnmount: false}): Awaited<ReturnType<T>>
 ```
 
 
@@ -42,6 +42,10 @@ usePromiseSuspensible<T extends (...args: unknown[]) => Promise<unknown>>(promis
 Function that returns a promise to suspense.
 > - __deps__: _DependencyList_  
 DependencyList for promise to suspense.
+> - __options?__: _{ clearCacheOnUnmount?: boolean }_  
+optional options.
+> - __options.clearCacheOnUnmount=false?__: _boolean_  
+if value is true, promise cached will be cleaned on unmount phase.
 >
 
 

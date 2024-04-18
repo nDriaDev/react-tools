@@ -854,7 +854,7 @@ usePopover({ mode, onBeforeToggle, onToggle }: UsePopoverProps): UsePopoverResul
 
 Hook to resolve promise with Suspense support. The component that uses it, it need to be wrapped with Suspense component. [See demo](https://ndriadev.github.io/react-tools/#/hooks/api-dom/usePromiseSuspensible)
 ```tsx
-usePromiseSuspensible<T extends (...args: unknown[]) => Promise<unknown>>(promise: T, deps: DependencyList): Awaited<ReturnType<T>>
+usePromiseSuspensible<T extends (...args: unknown[]) => Promise<unknown>>(promise: T, deps: DependencyList, options: { clearCacheOnUnmount?: boolean } = {clearCacheOnUnmount: false}): Awaited<ReturnType<T>>
 ```
 
 ### usePublishSubscribe
@@ -1017,7 +1017,7 @@ LazyComponent<T extends { default: ComponentType<unknown> } | { [k: string]: Com
 
 Generic component used to conditional render part of the view: it renders _children_ when the _when_ prop is truthy, otherwise the _fallback_ prop, if it is present, or null. [See demo](https://ndriadev.github.io/react-tools/#/components/Show)
 ```tsx
-Show<T extends unknown>({ when, fallback, children }: PropsWithChildren<{ when: T|boolean|undefined|null, fallback?: ReactNode }>)
+Show<T>({ when, fallback, children }: PropsWithChildren<{ when: T|boolean|undefined|null, fallback?: ReactNode }>)
 ```
 
 ### ShowMemoized
