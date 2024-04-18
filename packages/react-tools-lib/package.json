@@ -41,7 +41,7 @@
 		"release:patch": "pnpm version patch",
 		"release:minor": "pnpm version minor",
 		"release:major": "pnpm version major",
-		"postversion": "git add . && git commit -m '[UPDATE] version' && git push && pnpm publish --access public",
+		"postversion": "git add . && git commit -m '[UPDATE] version' && git push --follow-tags && pnpm publish --access public",
 		"preview": "vite preview",
 		"prepare": "pnpm run build",
 		"prepublishOnly": "pnpm run lint"
