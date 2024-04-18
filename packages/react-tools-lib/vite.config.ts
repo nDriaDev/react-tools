@@ -26,10 +26,14 @@ export default defineConfig({
 		copyPublicDir: false,
 		minify: "esbuild",
 		lib: {
-			entry: resolve(__dirname, "src", "index.ts"),
-			name: "react-tools",
-			formats: ["es", "umd"],
-			fileName: format => `react-tools.${format}.js`
+			entry: {
+				"react-tools": resolve(__dirname, "src", "index.ts"),
+				"utils": resolve(__dirname, "src", "utils", "exports.ts"),
+				"hooks": resolve(__dirname, "src", "hooks", "index.ts"),
+				"components": resolve(__dirname, "src", "components", "index.ts"),
+			},
+			formats: ["es", "cjs"],
+			fileName: (format, entryName) => `${entryName}.${format}.js`
 		},
 		rollupOptions: {
 			treeshake: 'smallest',
@@ -38,7 +42,9 @@ export default defineConfig({
 				globals: {
 					react: "React",
 					"react-dom": "ReactDOM"
-				}
+				},
+				noConflict: true,
+				validate: true
 			}
 		}
 	}

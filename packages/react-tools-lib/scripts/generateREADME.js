@@ -281,7 +281,12 @@ function convertJSDoc2Object(file) {
 	if (typeLine.startsWith("const")) {
 		typeLine = typeLine.substring("const ".length);
 	}
-
+	if (typeLine.startsWith(obj.title + " = {")) {
+		typeLine = "#" + typeLine;
+	}
+	if (typeLine.startsWith(obj.title + "= {")) {
+		typeLine = "#" + typeLine;
+	}
 	if (typeLine.startsWith(obj.title + "= ")) {
 		typeLine = typeLine.substring((obj.title + "= ").length);
 	}
@@ -312,7 +317,9 @@ function convertJSDoc2Object(file) {
 	}
 	typeLine = typeLine.split("").reverse().join("").trim();
 	typeLine.startsWith("memo") && (typeLine = " = " + typeLine);
-	obj.type = (typeLine.trim().startsWith("class") ? "" : obj.title.trim()) + typeLine;
+	obj.type = typeLine.trim().startsWith("#")
+		? typeLine.substring(1).trim()
+		: (typeLine.trim().startsWith("class") ? "" : obj.title.trim()) + typeLine;
 	return obj;
 }
 

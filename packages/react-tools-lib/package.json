@@ -7,14 +7,29 @@
 	"files": [
 		"./dist"
 	],
-	"main": "./dist/react-tools.umd.js",
+	"main": "./dist/react-tools.cjs.js",
 	"module": "./dist/react-tools.es.js",
-	"types": "./dist/index.d.ts",
+	"types": "./dist/react-tools.d.ts",
 	"exports": {
 		".": {
-			"require": "./dist/react-tools.umd.js",
+			"require": "./dist/react-tools.cjs.js",
 			"import": "./dist/react-tools.es.js",
-			"types": "./dist/index.d.ts"
+			"types": "./dist/react-tools.d.ts"
+		},
+		"./hooks": {
+			"require": "./dist/hooks.cjs.js",
+			"import": "./dist/hooks.es.js",
+			"types": "./dist/hooks.d.ts"
+		},
+		"./components": {
+			"require": "./dist/components.cjs.js",
+			"import": "./dist/components.es.js",
+			"types": "./dist/components.d.ts"
+		},
+		"./utils": {
+			"require": "./dist/utils.cjs.js",
+			"import": "./dist/utils.es.js",
+			"types": "./dist/utils.d.ts"
 		}
 	},
 	"sideEffects": false,

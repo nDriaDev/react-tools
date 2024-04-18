@@ -25,7 +25,6 @@ export type {
 	ExtractHead,
 	ExtractMiddle,
 	ExtractTail,
-	ForProps,
 	GeoLocationObject,
 	HTMLAttributes,
 	HTMLMediaControls,
@@ -213,9 +212,12 @@ export {
 export {
 	ErrorBoundary,
 	For,
+	ForMemoized,
 	LazyComponent,
 	Show,
-	SwitchCase
+	ShowMemoized,
+	SwitchCase,
+	SwitchCaseMemoized
 } from './components'
 
 export {
