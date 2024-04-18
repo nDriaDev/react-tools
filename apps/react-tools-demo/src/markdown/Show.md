@@ -25,9 +25,10 @@ export default function ShowComponent() {
 Show<T extends unknown>({ when, fallback, children }: PropsWithChildren<{ when: T|boolean|undefined|null, fallback?: ReactNode }>)
 ```
 
+
 > ### Params
 >
-> - __object__: _PropsWithChildren<{when: boolean, fallback?: ReactNode}>_
+> - __object__: _PropsWithChildren<{when: T|boolean|undefined|null, fallback?: ReactNode}>_
 > - __object.when__: _T|boolean|undefined|null_  
 boolean indicating if to show _children_ or _fallback_/_null_.
 > - __object.fallback?__: _ReactNode_  
@@ -35,6 +36,7 @@ optional element to render when _when_ prop is false.
 > - __object.children?__: _PropsWithChildren<any>["children"]_  
 optional element to render when _when_ prop is true.
 >
+
 
 
 > ### Returns

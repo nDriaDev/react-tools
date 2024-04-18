@@ -69,6 +69,7 @@ export const UsePointerLock = () => {
 usePointerLock<T extends HTMLElement>({ target, unadjustedMovement, onLock, onUnlock, onError }: UsePointerLockProps<T>): UsePointerLockResult
 ```
 
+
 > ### Params
 >
 > - __param__: _UsePointerLockProps_  
@@ -84,6 +85,7 @@ function that will be executed when lock has been acquired.
 > - __param.onUnlock?__: _() => void_  
 function that will be executed when lock has been released.
 >
+
 
 
 > ### Returns

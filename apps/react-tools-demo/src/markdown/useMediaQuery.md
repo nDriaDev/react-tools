@@ -27,6 +27,7 @@ export const UseMediaQuery = () => {
 useMediaQuery(mediaQuery: string, onChange?: (evt: MediaQueryListEvent) => void ): {matches: boolean, media: string}
 ```
 
+
 > ### Params
 >
 > - __mediaQuery__: _string_  
@@ -34,6 +35,7 @@ media query to test.
 > - __onChange?__: _(evt: MediaQueryListEvent) => void_  
 MediaQueryListEvent change handler.
 >
+
 
 
 > ### Returns

@@ -7,10 +7,12 @@ _useDeferredValue_ hook polyfilled for React versions below 18. [See demo](https
 useDeferredValue<T>(value: T): T
 ```
 
+
 > ### Params
 >
 > - __value__: _T_
 >
+
 
 
 > ### Returns

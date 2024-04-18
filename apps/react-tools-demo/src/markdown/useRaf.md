@@ -31,11 +31,13 @@ export const UseRaf = () => {
 useRaf<T extends unknown[]>(cb: (timer: number, repeat: ()=>void, ...args: T) => void): [(...args: T)=>void, ()=>void]
 ```
 
+
 > ### Params
 >
 > - __cb__: _(timer:number, repeat:()=>void, ...args: T)=>void_  
  callback to execute prior to the next repaint. In addition to the classic timeStamp parameter, which indicates the end time of rendering of the previous frame, the second parameter is a function which, if invoked, re-executes the requestAnimationFrame with the callback itself, and finally various parameters can be added, passed with the invocation function returned by the hook.
 >
+
 
 
 > ### Returns

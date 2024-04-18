@@ -32,6 +32,7 @@ export const UseBroadcastChannel = () => {
 useBroadcastChannel<T>(name: string, onMessage?: (evt:MessageEvent<T>)=>void, onError?: (evt: MessageEvent)=>void):[T|undefined, (data:T)=>void]
 ```
 
+
 > ### Params
 >
 > - __name__: _string_  
@@ -41,6 +42,7 @@ function that will be execute when a message occurred.
 > - __onError?__: _(evt:MessageEvent)=>void_  
 function that will be execute when a error message occurred.
 >
+
 
 
 > ### Returns

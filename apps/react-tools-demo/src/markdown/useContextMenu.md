@@ -29,6 +29,7 @@ export const UseContextMenu = () => {
 useContextMenu({ element, listener, effectType, listenerOpts }: { element: RefObject<HTMLElement> | Window, listener: (evt: PointerEvent) => void | Promise<void>, effectType?: "normal" | "layout", listenerOpts?: boolean | AddEventListenerOptions | undefined })
 ```
 
+
 > ### Params
 >
 > - __param__: _Object_  
@@ -44,8 +45,3 @@ props
 >
 
 
-> ### Returns
->
-> 
-> 
->

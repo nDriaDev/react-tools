@@ -29,6 +29,7 @@ export const UseRemotePlayback = () => {
 useRemotePlayback<T extends HTMLMediaElement>({ onConnecting, onConnect, onDisconnect, onError }: UseRemotePlaybackProps={}): UseRemotePlaybackResult<T>
 ```
 
+
 > ### Params
 >
 > - __param__: _UseRemotePlaybackProps_  
@@ -42,6 +43,7 @@ function that will be executed when remote device has been disconnected.
 > - __param.onError?__: _(err: unknown) => void_  
 function that will be executed on error watching or cancel watching devices availability.
 >
+
 
 
 > ### Returns

@@ -26,6 +26,8 @@ useVibrate():{isSupported: boolean, vibrate: ((pattern: number | number[]) => vo
 
 
 
+
+
 > ### Returns
 >
 > __result__:  __Union of__:  

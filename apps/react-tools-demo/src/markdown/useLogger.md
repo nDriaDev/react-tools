@@ -33,6 +33,7 @@ export const UseLogger = () => {
 useLogger(name: string, props: object)
 ```
 
+
 > ### Params
 >
 > - __name__: _string_  
@@ -42,8 +43,3 @@ props object to track.
 >
 
 
-> ### Returns
->
-> 
-> 
->

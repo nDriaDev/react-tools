@@ -47,6 +47,8 @@ useDeviceMotion(): DeviceMotionProps
 
 
 
+
+
 > ### Returns
 >
 > __props__: device motion properties.

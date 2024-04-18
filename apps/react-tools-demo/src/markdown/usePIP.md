@@ -41,6 +41,7 @@ export const UsePIP = () => {
 usePIP({ onOpen, onOpened, onClose, onError, target }: UsePIPProps): UsePIPResult
 ```
 
+
 > ### Params
 >
 > - __param__: _UsePIPProps_  
@@ -56,6 +57,7 @@ function that will be executed on PIP closing.
 > - __param.onError?__: _(err: unknown)=>void_  
 function that will be executed when error is throwing.
 >
+
 
 
 > ### Returns

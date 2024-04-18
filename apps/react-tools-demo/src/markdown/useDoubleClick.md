@@ -31,6 +31,7 @@ export const UseDoubleClick = () => {
 useDoubleClick<T extends Element = Element, E extends Event = Event>(handler: ((evt: SyntheticEvent<T, E>) => Promise<void> | void) | { doubleClick: (evt: SyntheticEvent<T, E>) => Promise<void> | void, singleClick?: (evt: SyntheticEvent<T, E>) => Promise<void> | void, tolerance?: number }): ((evt: SyntheticEvent<T, E>) => Promise<void> | void)
 ```
 
+
 > ### Params
 >
 > - __handler__: _((evt: SyntheticEvent<T, E>) => Promise<void>|void)|Object_
@@ -41,6 +42,7 @@ callback executed on single click.
 > - __handler.tolerance=300?__: _number_  
 delay to execute __singleClick__ callback.
 >
+
 
 
 > ### Returns

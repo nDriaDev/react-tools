@@ -7,6 +7,7 @@ Hook for creating and managing a [WebSocket](https://developer.mozilla.org/en-US
 useWebSocket<T = string | ArrayBuffer | Blob> ({ url, protocols, binaryType, onOpen, onMessage, onError, onClose, immediateConnection, bufferingData, autoReconnect }: UseWebSocketProps): UseWebSocketResult<T>
 ```
 
+
 > ### Params
 >
 > - __param__: _UseWebSocketProps_  
@@ -32,6 +33,7 @@ boolean that indicates to use a buffer to keep data sent if connection aren't al
 > - __param.autoReconnect?__: _UseWebSocketProps_  
 boolean or object with properties __retries__, __delay__ and __onFailed__. If an error closes connection and its value isn't false or undefined, a connection will be restored every _delay_ milliseconds for __retries__ time: if connection won't be restored __onFailed__ function will be executed if it is present.
 >
+
 
 
 > ### Returns

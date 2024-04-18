@@ -7,6 +7,7 @@ Function which, given two strings, the type of comparison to be verified, and op
 alphanumericCompare(string1: string, string2: string, compareType?: "<" | ">" | "=" | ">=" | "<=", opts?: Intl.CollatorOptions)
 ```
 
+
 > ### Params
 >
 > - __string1__: _string_  
@@ -18,6 +19,7 @@ type of compare to verify.
 > - __opts__: _Intl.CollatorOptions_  
 options object to execute compare.
 >
+
 
 
 > ### Returns

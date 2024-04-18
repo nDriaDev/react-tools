@@ -44,6 +44,7 @@ export const UseDebounce = () => {
 useDebounce<T extends unknown[]>(fn: (...args: T)=>void, opts: { delay: number, focusedWindow?: boolean }): [(...args: T) => void, () => void, (...args: T) => void]
 ```
 
+
 > ### Params
 >
 > - __fn__: _T extends (...args: unknown[]) => void_  
@@ -55,6 +56,7 @@ time in milliseconds to delay function execution.
 > - __opts.focusedWindow?__: _boolean_  
 if true, the function is executed after delay but only if the window is focused. __N.B._: works only in browser context.
 >
+
 
 
 > ### Returns

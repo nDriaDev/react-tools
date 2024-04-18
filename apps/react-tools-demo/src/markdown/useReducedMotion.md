@@ -28,6 +28,8 @@ useReducedMotion(): boolean
 
 
 
+
+
 > ### Returns
 >
 > __result__: it is true if user prefers reduced motion, otherwise it is false.

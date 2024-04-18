@@ -50,11 +50,13 @@ export const UseDialogBox = () => {
 useDialogBox(type: "prompt" | "confirm" | "alert"): ((message?: string, _default?: string) => string | null) | ((message?: any) => void) | ((message?: string) => boolean)
 ```
 
+
 > ### Params
 >
 > - __type__: _"prompt"|"alert"|"confirm"_  
 set dialog box type.
 >
+
 
 
 > ### Returns

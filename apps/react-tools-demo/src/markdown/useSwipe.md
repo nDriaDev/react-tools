@@ -35,6 +35,7 @@ export const UseSwipe = () => {
 useSwipe({ target, onSwipeStart, onSwipe, onSwipeEnd, options }: UseSwipeProps): UseSwipeResult
 ```
 
+
 > ### Params
 >
 > - __param__: _UseSwipeProps_  
@@ -54,6 +55,7 @@ if true, handler callback never calls _preventDefault_ method.
 > - __param.options.threshold=0?__: _threshold_  
 a threshold value for swipe event.
 >
+
 
 
 > ### Returns

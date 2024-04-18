@@ -7,10 +7,12 @@ It returns true if the event param is of TouchEvent type. [See demo](https://ndr
 isTouchEvent(event: SyntheticEvent | Event): boolean
 ```
 
+
 > ### Params
 >
 > - __event__: _SyntheticEvent_
 >
+
 
 
 > ### Returns

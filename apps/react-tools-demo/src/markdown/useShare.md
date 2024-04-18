@@ -32,6 +32,8 @@ useShare(): {isSupported: boolean, share: (data?: ShareData)=>Promise<void>}
 
 
 
+
+
 > ### Returns
 >
 > __object__: __isSupported__ to known if share API is supported and __share__ function to use Web share API.

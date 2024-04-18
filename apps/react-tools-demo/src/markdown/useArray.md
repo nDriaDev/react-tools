@@ -47,11 +47,13 @@ export { UseArray }
 useArray<T>(initialState?: Array<T> | (() => Array<T>))
 ```
 
+
 > ### Params
 >
 > - __initialState?__: _Array<T> | (() => Array<T>_  
 An Array or function that returns it.
 >
+
 
 
 > ### Returns

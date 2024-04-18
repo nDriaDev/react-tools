@@ -51,10 +51,12 @@ export { UsePublishSubscribe };
 usePublishSubscribe<T>(topic: string): [(listener: (value?: T) => Promise<void> | void) => () => void, (value?: T) => Promise<void> ]
 ```
 
+
 > ### Params
 >
 > - __topic__: _string_
 >
+
 
 
 > ### Returns

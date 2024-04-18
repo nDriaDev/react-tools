@@ -62,14 +62,10 @@ export { UseEffectOnce };
 useEffectOnce(effect: EffectCallback)
 ```
 
+
 > ### Params
 >
 > - __effect__: _EffectCallback_
 >
 
 
-> ### Returns
->
-> 
-> 
->

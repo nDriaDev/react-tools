@@ -46,10 +46,12 @@ export const UseMemoizedFn = () => {
 useMemoizedFn<T extends (...args: any[]) => any>(fn: T)
 ```
 
+
 > ### Params
 >
 > - __fn__: _T_
 >
+
 
 
 > ### Returns

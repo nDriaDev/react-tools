@@ -72,11 +72,13 @@ export { UsePerformAction };
 usePerformAction<T extends (...args: unknown[]) => void>(cb: T): (...args: Parameters<T>) => void
 ```
 
+
 > ### Params
 >
 > - __cb__: _(...args: unknown[])=>void_  
 callback to execute
 >
+
 
 
 > ### Returns

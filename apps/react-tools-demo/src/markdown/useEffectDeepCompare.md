@@ -47,6 +47,7 @@ export { UseEffectDeepCompare };
 useEffectDeepCompare(cb: EffectCallback, deps: DependencyList):void
 ```
 
+
 > ### Params
 >
 > - __cb__: _EffectCallback_  
@@ -54,6 +55,7 @@ Imperative function that can return a cleanup function.
 > - __deps__: _DependencyList_  
 dependency list.
 >
+
 
 
 > ### Returns

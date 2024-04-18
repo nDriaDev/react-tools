@@ -54,6 +54,7 @@ export const UseMutationObserver = () => {
 useMutationObserver<T extends Element>(cb: MutationCallback, opts?: MutationObserverInit): [RefCallback<T>, () => void, () => void, () => MutationRecord[] | undefined]
 ```
 
+
 > ### Params
 >
 > - __cb__: _MutationCallback_  
@@ -61,6 +62,7 @@ The function which will be called on each DOM change that qualifies given the ob
 > - __opts?__: _MutationObserverInit_  
 An options object allowing you to set options for the observation.
 >
+
 
 
 > ### Returns

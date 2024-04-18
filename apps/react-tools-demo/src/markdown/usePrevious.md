@@ -61,11 +61,13 @@ export { UsePrevious };
 usePrevious<T = unknown>(variable: T): [T|undefined, (enable: boolean) => void]
 ```
 
+
 > ### Params
 >
 > - __variable__: _T_  
 variable whose value is to be tracked.
 >
+
 
 
 > ### Returns

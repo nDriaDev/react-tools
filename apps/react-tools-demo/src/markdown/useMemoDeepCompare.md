@@ -49,6 +49,7 @@ export { UseMemoDeepCompare };
 useMemoDeepCompare<T=unknown>(cb: () => T, deps: DependencyList):T
 ```
 
+
 > ### Params
 >
 > - __factory__: _() => T_  
@@ -56,6 +57,7 @@ computes value.
 > - __deps__: _DependencyList_  
 DependencyList.
 >
+
 
 
 > ### Returns

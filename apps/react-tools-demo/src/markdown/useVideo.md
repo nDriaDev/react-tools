@@ -26,11 +26,13 @@ export const UseVideo = () => {
 useVideocreateHTMLMediaHook<HTMLVideoElement>("video");
 ```
 
+
 > ### Params
 >
 > - __param__: _UseVideoProps_  
 Media HTML Attributes of an html video element.
 >
+
 
 
 > ### Returns

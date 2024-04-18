@@ -68,11 +68,13 @@ export {UseMap}
 useMap<K, V>(initialState?: Iterable<readonly [K, V]> | (() => Iterable<readonly [K, V]>))
 ```
 
+
 > ### Params
 >
 > - __initialState?__: _Iterable<readonly [K, V]> | (() => Iterable<readonly [K, V]>)_  
 An Array or other iterable object whose elements are key-value pairs, or function that returns it.
 >
+
 
 
 > ### Returns

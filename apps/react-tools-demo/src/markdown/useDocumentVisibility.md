@@ -34,6 +34,8 @@ useDocumentVisibility(): DocumentVisibilityState
 
 
 
+
+
 > ### Returns
 >
 > __documentVisibility__

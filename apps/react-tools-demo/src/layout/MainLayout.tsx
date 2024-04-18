@@ -1275,6 +1275,17 @@ export default function MainLayout() {
 							For
 						</Link>
 						<Link
+							className={pathname === "/components/ForMemoized" ? 'active' : ''}
+							ref={node => linksRef.current["ForMemoized"] = node}
+							to="/components/ForMemoized"
+							onClick={() => {
+								containerRef.current?.scrollTo(0, 0);
+								window.innerWidth < 1190 && closeNav();
+							}}
+						>
+							ForMemoized
+						</Link>
+						<Link
 							className={pathname === "/components/LazyComponent" ? 'active' : ''}
 							ref={node => linksRef.current["LazyComponent"] = node}
 							to="/components/LazyComponent"
@@ -1297,6 +1308,17 @@ export default function MainLayout() {
 							Show
 						</Link>
 						<Link
+							className={pathname === "/components/ShowMemoized" ? 'active' : ''}
+							ref={node => linksRef.current["ShowMemoized"] = node}
+							to="/components/ShowMemoized"
+							onClick={() => {
+								containerRef.current?.scrollTo(0, 0);
+								window.innerWidth < 1190 && closeNav();
+							}}
+						>
+							ShowMemoized
+						</Link>
+						<Link
 							className={pathname === "/components/SwitchCase" ? 'active' : ''}
 							ref={node => linksRef.current["SwitchCase"] = node}
 							to="/components/SwitchCase"
@@ -1306,6 +1328,17 @@ export default function MainLayout() {
 							}}
 						>
 							SwitchCase
+						</Link>
+						<Link
+							className={pathname === "/components/SwitchCaseMemoized" ? 'active' : ''}
+							ref={node => linksRef.current["SwitchCaseMemoized"] = node}
+							to="/components/SwitchCaseMemoized"
+							onClick={() => {
+								containerRef.current?.scrollTo(0, 0);
+								window.innerWidth < 1190 && closeNav();
+							}}
+						>
+							SwitchCaseMemoized
 						</Link>
 						<p className="sub-type">Utils</p>
 						<Link

@@ -69,6 +69,7 @@ export { UseStateHistory };
 useStateHistory<T>(initialState: T | (() => T), capacity: number | "no-limit" = "no-limit"): [T, Dispatch<SetStateAction<T>>, { history: readonly T[], presentPointer: number, trackUpdate: (enable:boolean) => void, canUndo: boolean, canRedo: boolean, undo: () => void, redo: () => void, go: (index: number) => void, clear: (value?: T) => void }]
 ```
 
+
 > ### Params
 >
 > - __initialState__: _T | () => T_  
@@ -76,6 +77,7 @@ value or a function.
 > - __capacity="no-limit"?__: _number | "no-limit"_  
 history capacity (default 'no-limit').
 >
+
 
 
 > ### Returns

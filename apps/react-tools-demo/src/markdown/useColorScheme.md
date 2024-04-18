@@ -35,6 +35,7 @@ export const UseColorScheme = () => {
 useColorScheme({ defaultValue, getter, setter, returnValue }: { defaultValue: "dark" | "light" | "mediaQuery", getter?: () => "dark" | "light" | null | undefined, setter?: (schema: "light"|"dark") => void, returnValue: boolean }): ["light" | "dark", (schema: "light" | "dark") => void] | ((schema: "light" | "dark") => void)
 ```
 
+
 > ### Params
 >
 > - __param__: _Object_
@@ -47,6 +48,7 @@ an optional function, which should work in conjunction with the _getter_ functio
 > - __param.returnValue__: _boolean_  
 if true returns only a function to manually change the color scheme value.
 >
+
 
 
 > ### Returns

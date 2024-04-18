@@ -7,11 +7,13 @@ Function to obtain a Base64 from value specified if supported, otherwise throw a
 getBase64<T>(target: string | Blob | ArrayBuffer | HTMLCanvasElement | HTMLImageElement | T | T[], options?: ToDataURLOptions | UseBase64ObjectOptions<T>): Promise<string>
 ```
 
+
 > ### Params
 >
 > - __target__: _string | Blob | ArrayBuffer | HTMLCanvasElement | HTMLImageElement | T | T[]_
 > - __options?__: _ToDataURLOptions | UseBase64ObjectOptions<T>_
 >
+
 
 
 > ### Returns

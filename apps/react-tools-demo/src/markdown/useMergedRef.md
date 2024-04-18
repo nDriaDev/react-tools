@@ -40,10 +40,12 @@ export const UseMergedRef = () => {
 useMergedRef<T>(...refs: Ref<T>[]): Ref<T>
 ```
 
+
 > ### Params
 >
 > - __refs__: _Ref<T>[]_
 >
+
 
 
 > ### Returns

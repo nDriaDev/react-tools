@@ -90,6 +90,7 @@ export const UseSpeechRecognition = () => {
 useSpeechRecognition({ alreadyStarted, defaultConfig, onAudioStart, onAudioEnd, onEnd, onError, onNoMatch, onResult, onSoundStart, onSoundEnd, onSpeechStart, onSpeechEnd, onStart }: UseSpeechRecognitionProps): [SpeechRecognitionState, (config?: SpeechRecognitionConfig) => void, () => void, (resultAlso?: boolean) => void]
 ```
 
+
 > ### Params
 >
 > - __opts__: _UseSpeechRecognitionProps_  
@@ -131,6 +132,7 @@ function that will be executed when _speechend_ event is dispatched.
 > - __opts.onStart?__: _((this: SpeechRecognition, ev: Event) => void) | null_  
 function that will be executed when _start_ event is dispatched.
 >
+
 
 
 > ### Returns

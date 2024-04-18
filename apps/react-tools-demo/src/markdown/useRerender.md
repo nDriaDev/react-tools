@@ -34,6 +34,8 @@ useRerender(): React.DispatchWithoutAction
 
 
 
+
+
 > ### Returns
 >
 > __update__

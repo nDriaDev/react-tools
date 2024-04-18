@@ -31,6 +31,7 @@ export const UseFullscreen = () => {
 useFullscreen<T extends Element>(onEnter?: () => void|Promise<void>, onChange?: (evt: Event) => void, onExit?: () => void|Promise<void>): [boolean, RefCallback<T>, (opts?: FullscreenOptions) => Promise<void>, () => Promise<void>]
 ```
 
+
 > ### Params
 >
 > - __onEnter?__: _()=>void|Promise<void>_  
@@ -40,6 +41,7 @@ callback that will be executed when target element fullscreen change.
 > - __onExit?__: _()=>void|Promise<void>_  
 callback that will be executed before exit from fullscreen mode.
 >
+
 
 
 > ### Returns

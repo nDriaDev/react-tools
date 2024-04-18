@@ -44,6 +44,7 @@ export const UseWebWorker = () => {
 useWebWorker({ url, options, onMessage, onError, onMessageError }: UseWebWorkerProps): UseWebWorkerResult
 ```
 
+
 > ### Params
 >
 > - __param__: _UseWebWorkerProps_  
@@ -59,6 +60,7 @@ function that will be executed when a messageError occurred.
 > - __param.onError?__: _(e: Event)=>void_  
 function that will be executed when an error occurred.
 >
+
 
 
 > ### Returns

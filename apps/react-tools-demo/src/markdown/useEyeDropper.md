@@ -32,6 +32,7 @@ export const UseEyeDropper = () => {
 useEyeDropper({ onStart, onFinish }: { onStart?: () => void, onFinish?: (result: `#${string}`) => void } = {})
 ```
 
+
 > ### Params
 >
 > - __opts__: _Object_  
@@ -41,6 +42,7 @@ function that will be executed on __open__ invocation.
 > - __opts.onFinish?__: _(result: `#${string}`) => void_  
 function that will be on __open__ retuns.
 >
+
 
 
 > ### Returns

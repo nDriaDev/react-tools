@@ -7,6 +7,7 @@ Function that, given a path, a value and an optional object, returns an object w
 getObjectFromDottedString<T, E extends Record<string, unknown>>(path: string, value: T, object?: E): E
 ```
 
+
 > ### Params
 >
 > - __path__: _string_  
@@ -16,6 +17,7 @@ value to assign to the property specified in path.
 > - __object?__: _Record<string,unknown>_  
 optional object that will be used as start object.
 >
+
 
 
 > ### Returns

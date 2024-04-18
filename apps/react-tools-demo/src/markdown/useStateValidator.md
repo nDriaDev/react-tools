@@ -50,6 +50,7 @@ export const UseStateValidator = () => {
 useStateValidator<T>(initialState: T | (() => T), validator: StateValidator<T>): [T, Dispatch<SetStateAction<T>>, T extends object ? {[k in keyof T]:{invalid: boolean, message?: string}} : {invalid: boolean, message?: string}]
 ```
 
+
 > ### Params
 >
 > - __initialState__: _T | () => T_  
@@ -57,6 +58,7 @@ value or a function.
 > - __validator__: _StateValidator_  
 function that will be executed to validate state.
 >
+
 
 
 > ### Returns

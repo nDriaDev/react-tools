@@ -61,11 +61,13 @@ export {UseSet}
 useSet<T>(initialState?: Iterable<T> | (() => Iterable<T>))
 ```
 
+
 > ### Params
 >
 > - __initialState?__: _Iterable<T> | (() => Iterable<T>)_  
 An iterable object whose elements are added to Set, or function that returns it.
 >
+
 
 
 > ### Returns

@@ -50,6 +50,7 @@ export const UseLongPress = () => {
 useLongPress<T extends Element = Element, E extends Event = Event>(cb: useLongPressCallback<E>, { duration = 1000, normalPress, onStart, onFinish }: useLongPressOptions<E>): RefCallback<T>
 ```
 
+
 > ### Params
 >
 > - __cb__: _(evt:E)=>void_  
@@ -64,6 +65,7 @@ callback that will be executed when long press callback has done.
 > - __opts.normalPress?__: _(evt:E)=>void_  
 callback executed on normal press event.
 >
+
 
 
 > ### Returns

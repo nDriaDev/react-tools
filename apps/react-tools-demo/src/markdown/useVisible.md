@@ -46,11 +46,13 @@ export const UseVisible = () => {
 useVisible<T extends Element>(opts?: IntersectionObserverInit & { withRatio?: boolean }): [RefCallback<T>, boolean] | [RefCallback<T>, boolean, number]
 ```
 
+
 > ### Params
 >
 > - __opts__: _{root?: Element|Document|null, rootMargin?: string, threshold?: number|number[], withRatio?: boolean}_  
 object to set options to observation.
 >
+
 
 
 > ### Returns

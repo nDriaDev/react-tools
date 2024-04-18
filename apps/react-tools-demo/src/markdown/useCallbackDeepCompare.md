@@ -51,6 +51,7 @@ export { UseCallbackDeepCompare };
 useCallbackDeepCompare<T extends Function>(cb: T, deps: DependencyList):T
 ```
 
+
 > ### Params
 >
 > - __cb__: _T_  
@@ -58,6 +59,7 @@ callback.
 > - __deps__: _React.DependencyList_  
 DependencyList.
 >
+
 
 
 > ### Returns

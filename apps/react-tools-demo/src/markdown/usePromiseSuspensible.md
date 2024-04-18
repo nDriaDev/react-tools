@@ -35,6 +35,7 @@ export const UsePromiseSuspensible = () => {
 usePromiseSuspensible<T extends (...args: unknown[]) => Promise<unknown>>(promise: T, deps: DependencyList): Awaited<ReturnType<T>>
 ```
 
+
 > ### Params
 >
 > - __promise__: _T_  
@@ -42,6 +43,7 @@ Function that returns a promise to suspense.
 > - __deps__: _DependencyList_  
 DependencyList for promise to suspense.
 >
+
 
 
 > ### Returns

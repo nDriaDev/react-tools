@@ -7,6 +7,7 @@ Hook to handle an [EventSource](https://developer.mozilla.org/en-US/docs/Web/API
 useEventSource<T>({ url, opts, events, immediateConnection, onOpen, onError, onMessage }: UseEventSourceProps): UseEventSourceResult<T>
 ```
 
+
 > ### Params
 >
 > - __param__: _UseEventSourceProps_  
@@ -26,6 +27,7 @@ function that will be executed when an error occurred.
 > - __param.onMessage?__: _(evt: MessageEvent<T>)=>void_  
 function that will be executed when a message from without event arrived.
 >
+
 
 
 > ### Returns

@@ -24,6 +24,8 @@ useIsOnline(): boolean
 
 
 
+
+
 > ### Returns
 >
 > __isOnline__

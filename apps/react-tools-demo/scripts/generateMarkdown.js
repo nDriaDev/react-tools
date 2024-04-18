@@ -186,7 +186,7 @@ function removeImportLine(file) {
  */
 function getJsDoc(fileSplitted) {
 	let start, end, lines=[];
-	for(let index=0;index<fileSplitted.length;index++) {
+	for (let index = 0; index < fileSplitted.length; index++) {
 		fileSplitted[index].startsWith("/**") && (start=index+1);
 		if(fileSplitted[index].startsWith(" */") || fileSplitted[index].startsWith("*/")) {
 			end = index;
@@ -207,12 +207,14 @@ function jsDoc2Markdown(jsDoc) {
 	const markdown =
 `# ${jsDoc.title}
 ${jsDoc.description}
-${jsDoc.usage ? `\n## Usage\n\n${jsDoc.usage}\n`:""}
-## API
+${jsDoc.usage ? `\n## Usage\n\n${jsDoc.usage}\n` : ""}
+${jsDoc.type ?
+`## API
 
 \`\`\`tsx
 ${jsDoc.type}
 \`\`\`
+`: ""}
 
 ${jsDoc.params && jsDoc.params.length > 0 ?
 `> ### Params
@@ -222,13 +224,16 @@ ${jsDoc.params && jsDoc.params.length > 0
 	: ">"
 }
 >
-`:""}
+`: ""}
 
+${Object.values(jsDoc.returns).some(el => !!el) ?
+`
 > ### Returns
 >
 > ${jsDoc.returns.name ? `__${jsDoc.returns.name}__` : ""}${jsDoc.returns.description ? ': '+jsDoc.returns.description : ""}
 ${Array.isArray(jsDoc.returns.type) ? jsDoc.returns.type.map(el => `> `+el).join("\n") : "> "+jsDoc.returns.type}
->`;
+>`
+:""}`;
 
 	return markdown;
 }
@@ -251,7 +256,7 @@ function buildHooksUtilsMarkdownObject(file) {
 		},
 		type: ""
 	}
-	if(fileSplitted.length === 1) {
+	if(fileSplitted.length === 1 || fileSplitted.find(el => el.includes("//#IGNORE"))) {
 		return obj;
 	}
 	const lines = getJsDoc(fileSplitted);
@@ -334,38 +339,46 @@ function buildHooksUtilsMarkdownObject(file) {
 	if(typeLine.startsWith("const")) {
 		typeLine = typeLine.substring("const ".length);
 	}
-
-	if(typeLine.startsWith(obj.title+"= ")) {
-		typeLine = typeLine.substring((obj.title+"= ").length);
+	if (typeLine.startsWith(obj.title + " = {")) {
+		typeLine = "#" + typeLine;
 	}
-	if(typeLine.startsWith(obj.title+"=")) {
-		typeLine = typeLine.substring((obj.title+"=").length);
+	if (typeLine.startsWith(obj.title + "= {")) {
+		typeLine = "#" + typeLine;
 	}
-	if(typeLine.startsWith(obj.title+" =")) {
-		typeLine = typeLine.substring((obj.title+" =").length);
+	if (typeLine.startsWith(obj.title + "= ")) {
+		typeLine = typeLine.substring((obj.title + "= ").length);
 	}
-	if(typeLine.startsWith(obj.title+" = ")) {
-		typeLine = typeLine.substring((obj.title+" = ").length);
+	if (typeLine.startsWith(obj.title + "=")) {
+		typeLine = typeLine.substring((obj.title + "=").length);
 	}
-	if(typeLine.startsWith(obj.title+"(")) {
+	if (typeLine.startsWith(obj.title + " =")) {
+		typeLine = typeLine.substring((obj.title + " =").length);
+	}
+	if (typeLine.startsWith(obj.title + " = ")) {
+		typeLine = typeLine.substring((obj.title + " = ").length);
+	}
+	if (typeLine.startsWith(obj.title + "(")) {
 		typeLine = typeLine.substring((obj.title).length);
 	}
-	if(typeLine.startsWith(obj.title+" (")) {
-		typeLine = typeLine.substring((obj.title+" ").length);
+	if (typeLine.startsWith(obj.title + " (")) {
+		typeLine = typeLine.substring((obj.title + " ").length);
 	}
 	typeLine = typeLine.split("").reverse().join("");
-	if(typeLine.startsWith(" { >=")) {
+	if (typeLine.startsWith(" { >=")) {
 		typeLine = typeLine.substring(" { >=".length);
 	}
-	if(typeLine.startsWith("{ >=")) {
+	if (typeLine.startsWith("{ >=")) {
 		typeLine = typeLine.substring("{ >=".length);
 	}
-	if(typeLine.startsWith("{")) {
+	if (typeLine.startsWith("{")) {
 		typeLine = typeLine.substring("{".length);
 	}
 	typeLine = typeLine.split("").reverse().join("").trim();
 	typeLine.startsWith("memo") && (typeLine = " = " + typeLine);
-	obj.type = (typeLine.trim().startsWith("class") ? "" : obj.title.trim()) + typeLine;
+
+	obj.type = typeLine.trim().startsWith("#")
+		? typeLine.substring(1).trim()
+		: (typeLine.trim().startsWith("class") ? "" : obj.title.trim()) + typeLine;
 	return obj;
 }
 

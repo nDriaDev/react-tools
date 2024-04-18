@@ -127,6 +127,7 @@ const WithUseDerivedState = memo(({ user }: { user: string }) => {
 useDerivedState<T>(initialState: T | (() => T), deps: DependencyList, compute?: EffectCallback): [T, Dispatch<SetStateAction<T>>]
 ```
 
+
 > ### Params
 >
 > - __initialState__: _T|()=>T_
@@ -135,6 +136,7 @@ dependencies list from which depends derived state.
 > - __compute?__: _EffectCallback_  
 function that will be executed when dependencies list change after resetting derived state to __initialState__.
 >
+
 
 
 > ### Returns

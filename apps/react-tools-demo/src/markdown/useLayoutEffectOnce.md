@@ -5,7 +5,7 @@ Hook to executes _effect_ and _clean up_ after component mount __only once__. It
 
 The implementation is like that _useEffectOnce_.
 
-Please visit [useEffectOnce](#/useEffectOnce) example to see how it works.
+Please visit [useEffectOnce](#/hooks/lifecycle/useEffectOnce) example to see how it works.
 
 ## API
 
@@ -13,14 +13,10 @@ Please visit [useEffectOnce](#/useEffectOnce) example to see how it works.
 useLayoutEffectOnce(effect: EffectCallback)
 ```
 
+
 > ### Params
 >
 > - __effect__: _EffectCallback_
 >
 
 
-> ### Returns
->
-> 
-> 
->

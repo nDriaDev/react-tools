@@ -54,6 +54,7 @@ export { UseProxyState };
 useProxyState<T extends Record<string, any>>(initialState: T | (() => T), proxyInDepth:boolean=false): T
 ```
 
+
 > ### Params
 >
 > - __initialState__: _T | () => T_  
@@ -61,6 +62,7 @@ value or function
 > - __proxyInDepth=false?__: _boolean_  
 if true, it creates proxy for nested object also.
 >
+
 
 
 > ### Returns

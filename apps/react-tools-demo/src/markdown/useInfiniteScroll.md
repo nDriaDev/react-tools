@@ -68,6 +68,7 @@ export const UseInfiniteScroll = () => {
 useInfiniteScroll<T, E extends Element>({ request, ref, hasMoreData, threshold, onBefore, onError, onSuccess }: { request: (data?: T) => Promise<T>, ref: RefObject<E>, hasMoreData: (data?: T) => boolean, threshold?: number, onBefore?: () => void, onSuccess?: () => void, onError?: (err: unknown) => void }): { data: T | undefined, loading: boolean, fullData: boolean, updateData: (data: T | ((currentState?: T) => T)) => void, loadData: () => Promise<void> }
 ```
 
+
 > ### Params
 >
 > - __param__: _Object_
@@ -86,6 +87,7 @@ function that will be executed if __request__ execution has success.
 > - __param.onError?__: _(err:unknown)=>void_  
 function that will be executed if an error occurred calling __request__.
 >
+
 
 
 > ### Returns

@@ -9,6 +9,8 @@ isClient(): boolean
 
 
 
+
+
 > ### Returns
 >
 > __result__

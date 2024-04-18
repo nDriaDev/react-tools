@@ -7,11 +7,13 @@ It returns true if the params are equal until first level depth. [See demo](http
 isShallowEqual(objA: unknown, objB: unknown): boolean
 ```
 
+
 > ### Params
 >
 > - __objA__: _unknown_
 > - __objB__: _unknown_
 >
+
 
 
 > ### Returns

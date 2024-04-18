@@ -45,6 +45,7 @@ export const UseGeolocation = () => {
 useGeolocation({mode, locationOptions, onError}: { locationOptions?: PositionOptions, mode: "observe" | "current" | "manual", onError?: (error: GeolocationPositionError) => void }): [GeoLocationObject, ()=>Promise<void>, ()=>Promise<()=>void>]
 ```
 
+
 > ### Params
 >
 > - __opts__: _Object_  
@@ -56,6 +57,7 @@ it establishes how to obtain the geographic location:
 > - __opts.onError?__: _GeolocationPositionError_  
 callback that will be executed if there will be errors.
 >
+
 
 
 > ### Returns

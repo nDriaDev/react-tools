@@ -46,6 +46,7 @@ export const UseInterval = () => {
 useInterval<TArgs extends unknown[]>(callback: (...args: TArgs) => void, delay: number): [(...args: TArgs) => void, () => void, (...args: TArgs) => Promise<void>]
 ```
 
+
 > ### Params
 >
 > - __callback__: _(...args: unknown[])=>void_  
@@ -53,6 +54,7 @@ Function to call when the timer elapses.
 > - __delay__: _number_  
 The number of milliseconds to wait before calling the `callback`.
 >
+
 
 
 > ### Returns

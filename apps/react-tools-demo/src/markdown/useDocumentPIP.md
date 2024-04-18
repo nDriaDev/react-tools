@@ -50,6 +50,7 @@ export const UseDocumentPIP = () => {
 useDocumentPIP({ options: { inheritCSS, window: wind } = { window: { height: 300, width: 450 } }, onOpen, onOpened, onClose, onError }: UseDocumentPIPProps): UseDocumentPIPResult
 ```
 
+
 > ### Params
 >
 > - __param__: _UseDocumentPIPProps_  
@@ -73,6 +74,7 @@ function that will be executed on PIP closing.
 > - __param.onError?__: _(err: unknown)=>void_  
 function that will be executed when error is throwing.
 >
+
 
 
 > ### Returns

@@ -5,13 +5,14 @@ Custom useReducer that tracks and allows to use previous values. [See demo](http
 
 The implementation is like that _useStateHistory_ but built on _useReducer_.
 
-Please visit [useStateHistory](#/useStateHistory) example to see how it works.
+Please visit [useStateHistory](#/hooks/state/useStateHistory) example to see how it works.
 
 ## API
 
 ```tsx
 useReducerHistory<R extends Reducer<any, any>>(reducer: R, initialState: ReducerState<R>, initializer?: (init: ReducerState<R>) => ReducerState<R>, capacity: number | "no-limit" = "no-limit"): [ReducerState<R>, Dispatch<ReducerAction<R>>, { history: readonly ReducerState<R>[], presentPointer: number, trackUpdate: (enable: boolean) => void, canUndo: boolean, canRedo: boolean, undo: () => void, redo: () => void, go: (index: number) => void, clear: (value?: ReducerAction<R>) => void }]
 ```
+
 
 > ### Params
 >
@@ -24,6 +25,7 @@ Function that should return the _initial state_. If it’s not specified, the in
 > - __capacity="no-limit"?__: _number | "no-limit"_  
 history capacity (default 'no-limit').
 >
+
 
 
 > ### Returns

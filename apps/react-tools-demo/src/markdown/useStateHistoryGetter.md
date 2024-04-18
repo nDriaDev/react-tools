@@ -5,13 +5,14 @@ Custom useState with getter state function and that tracks and allows to use pre
 
 The implementation is like that _useStateHistory_, adding getter function of _useStateGetReset_.
 
-Please visit [useStateHistory](#/useStateHistory) and [useStateGetReset](#/useStateGetReset) examples to see how it works.
+Please visit [useStateHistory](#/hooks/state/useStateHistory) and [useStateGetReset](#/hooks/state/useStateGetReset) examples to see how it works.
 
 ## API
 
 ```tsx
 useStateHistoryGetter<T>(initialState: T | (() => T), capacity: number | "no-limit" = "no-limit"): [T, Dispatch<SetStateAction<T>>, () => T, ReturnType<typeof useStateHistory<T>>[2]]
 ```
+
 
 > ### Params
 >
@@ -20,6 +21,7 @@ value or a function.
 > - __capacity="no-limit"?__: _number | "no-limit"_  
 history capacity (default 'no-limit').
 >
+
 
 
 > ### Returns

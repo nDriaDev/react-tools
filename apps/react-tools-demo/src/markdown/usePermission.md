@@ -30,11 +30,13 @@ export const UsePermission = () => {
 usePermission(permission: TPermissionName): UsePermissionResult
 ```
 
+
 > ### Params
 >
 > - __permission__: _TPermissionName_  
 name of the API whose permissions you want to query.
 >
+
 
 
 > ### Returns

@@ -37,6 +37,7 @@ export const UseFetch = () => {
 useFetch<T>(url: RequestInfo | URL, { suspensable, onError, onLoading, ...rest }: RequestInit & { suspensable?: boolean, onLoading?: (loading: boolean) => void, onError?: (err: unknown) => void } = {}): [T|undefined, (conf?: RequestInit) => Promise<void>, boolean, unknown]
 ```
 
+
 > ### Params
 >
 > - __url__: _RequestInfo|URL_  
@@ -52,6 +53,7 @@ function that will be executed when error occurred.
 > - __options.suspensable?__: _boolean_  
 boolean that indicates if fetch request need to be suspends or not.
 >
+
 
 
 > ### Returns

@@ -34,6 +34,7 @@ export const UseResizeObserver = () => {
 useResizeObserver<T extends Element>(cb: ResizeObserverCallback, opts?: ResizeObserverOptions):[RefCallback<T>, () => void, () => void]
 ```
 
+
 > ### Params
 >
 > - __cb__: _ResizeObserverCallback_  
@@ -41,6 +42,7 @@ The function called whenever an observed resize occurs. The callback is called w
 > - __opts?__: _ResizeObserverOptions_  
 An options object allowing you to set options for the observation.
 >
+
 
 
 > ### Returns

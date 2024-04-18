@@ -7,6 +7,7 @@ Wrapper around _React.lazy_ that works also with component without default expor
 lazy<T extends ComponentType<unknown>>(load: () => Promise<{ [k:string]: T }>, opts: { componentName?: string, beforeLoad?: () => void, afterLoad?: () => void } = {}): LazyExoticComponent<T>
 ```
 
+
 > ### Params
 >
 > - __load__: _() => Promise<{ [k:string]: T }>_  
@@ -20,6 +21,7 @@ function that will be executed before load component.
 > - __opts.afterLoad?__: _()=> void_  
 function that will be executed after load component.
 >
+
 
 
 > ### Returns

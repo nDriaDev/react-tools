@@ -7,10 +7,12 @@ It returns true if the event param is of MouseEvent type. [See demo](https://ndr
 isMouseEvent(event: SyntheticEvent): boolean
 ```
 
+
 > ### Params
 >
 > - __event__: _SyntheticEvent_
 >
+
 
 
 > ### Returns

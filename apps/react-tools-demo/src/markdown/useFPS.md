@@ -19,6 +19,7 @@ export const UseFPS = () => {
 useFPS({ everySeconds, windowSize }:UseFPSProps={windowSize:10, everySeconds:.5}): UseFPSResult
 ```
 
+
 > ### Params
 >
 > - __opts?__: _UseFPSProps_  
@@ -28,6 +29,7 @@ it indicates how often to compute FPS. Default is 0.5 second.
 > - __opts.windowSize=10?__: _number_  
 it indicates how FPS result keep in memory and computing average. Default is 10.
 >
+
 
 
 > ### Returns

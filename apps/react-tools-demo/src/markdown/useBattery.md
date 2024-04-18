@@ -26,6 +26,7 @@ export const UseBattery = () => {
 useBattery(opts?: { onChargingChange?: (evt: Event) => void, onChargingTimeChange?: (evt: Event) => void, onDischargingTimeChange?: (evt: Event) => void, onLevelChange?: (evt: Event) => void }): BatteryStatus
 ```
 
+
 > ### Params
 >
 > - __opts?__: _Object_  
@@ -39,6 +40,7 @@ callback that will be executed when dischargingtimechange event is fired.
 > - __opts.onLevelChange?__: _(evt: Event) => void_  
 callback that will be executed when levelchange event is fired.
 >
+
 
 
 > ### Returns

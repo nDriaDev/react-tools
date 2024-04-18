@@ -38,6 +38,7 @@ export { UseEventListener };
 useEventListener<T extends keyof WindowEventMap, E extends Element>({ type, listener, element = window, listenerOpts, effectType = "normal" }: { type: T|(T[]), listener: ((evt: WindowEventMap[T]) => unknown | Promise<unknown>), element?: RefObject<E> | E | Window, listenerOpts?: boolean | AddEventListenerOptions, effectType?: "normal" | "layout" }): (() => void)
 ```
 
+
 > ### Params
 >
 > - __options__: _Object_
@@ -52,6 +53,7 @@ options for listener.
 > - __options.effectType="normal"?__: _"normal"|"layout"_  
 option to set which hook is used to attach event listener.
 >
+
 
 
 > ### Returns

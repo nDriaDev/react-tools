@@ -37,22 +37,22 @@ export default function SM() {
 ## API
 
 ```tsx
-SwitchCaseSwitch = ({ children, fallback }: PropsWithChildren<{ fallback?: ReactNode }>)
+SwitchCase = { Switch, Case };
 ```
+
 
 > ### Params
 >
-> - __object.fallback?__: _ReactNode_  
-optional element to render when _when_ prop is false.
-> - __object.children?__: _PropsWithChildren<any>["children"]_  
-__Case__ components.
+> - __object__: _Object_  
+Object with _Switch_ and _Case_ components.
 >
+
 
 
 > ### Returns
 >
-> __element__:  _JSX.Element|null_  
-> __Case__ Component has these properties:
-> - _children_: element to render.
-> - _when_: condition that if true return _children_, otherwise null.
+> 
+> - __Object__:  
+>     - __Switch__ : _(props:{children:ReactElement<CaseProps>|ReactElement<CaseProps>[], fallback?:ReactNode})=>JSX.Element|null_  
+>     - __Case__ : _(props:{children:ReactNode, when:booleaan|undefined|null})=>JSX.Element|nul_  
 >

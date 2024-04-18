@@ -5,13 +5,14 @@ Custom useReducer with getter state function and that tracks and allows to use p
 
 The implementation is like that _useReducerHistory_, adding getter function of _useReducerGetReset_.
 
-Please visit [useReducerHistory](#/useReducerHistory) and [useReducerGetReset](#/useReducerGetReset) examples to see how it works.
+Please visit [useReducerHistory](#/hooks/state/useReducerHistory) and [useReducerGetReset](#/hooks/state/useReducerGetReset) examples to see how it works.
 
 ## API
 
 ```tsx
 useReducerHistoryGetter<R extends Reducer<any, any>>(reducer: R, initialState: ReducerState<R>, initializer?: (init: ReducerState<R>) => ReducerState<R>, capacity: number | "no-limit" = "no-limit"): [ReducerState<R>, Dispatch<ReducerAction<R>>,()=>ReducerState<R>, { history: readonly ReducerState<R>[], presentPointer: number, trackUpdate: (enable: boolean) => void, canUndo: boolean, canRedo: boolean, undo: () => void, redo: () => void, go: (index: number) => void, clear: (value?: ReducerAction<R>) => void }]
 ```
+
 
 > ### Params
 >
@@ -24,6 +25,7 @@ Function that should return the _initial state_. If it’s not specified, the in
 > - __capacity="no-limit"?__: _number | "no-limit"_  
 history capacity (default 'no-limit').
 >
+
 
 
 > ### Returns

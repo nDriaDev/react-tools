@@ -36,6 +36,7 @@ export const UseThrottle = () => {
 useThrottle<T extends unknown[]>(fn: (...args: T) => void | Promise<void> , opts: { delay?: number, waitFn?: boolean }): [(...args: T) => void, () => void, (...args: T) => void]
 ```
 
+
 > ### Params
 >
 > - __fn__: _T extends (...args: unknown[]) => void_  
@@ -47,6 +48,7 @@ time in milliseconds to limit next function execution.
 > - __opts.waitFn?__: _boolean_  
 if true, next function execution taking place when current has finished.
 >
+
 
 
 > ### Returns

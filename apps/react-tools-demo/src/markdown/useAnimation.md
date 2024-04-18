@@ -41,6 +41,7 @@ export const UseAnimation = () => {
 useAnimation<T extends Element>({ keyFrames, immediate, opts, onCancel, onFinish, onRemove, onError }: UseAnimationProps): UseAnimationResult<T>
 ```
 
+
 > ### Params
 >
 > - __param__: _UseAnimationProps_  
@@ -60,6 +61,7 @@ function that will be executed when animation has been canceled.
 > - __param.onError?__: _(err: unknown) => void_  
 function that will be executed when an error occurred.
 >
+
 
 
 > ### Returns

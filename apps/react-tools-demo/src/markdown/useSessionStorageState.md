@@ -63,6 +63,7 @@ export { UseSessionStorageState };
 useSessionStorageState<T>({ key, initialState, opts }: { key: string, initialState?: T | (() => T), opts?: { serializer?: (item: T) => string, deserializer?: (item: string) => T, mode?: "read" | "write" | "read/write" } }): [T, () => T, () => void] | [Dispatch<SetStateAction<T>>, () => T, () => void] | [T, Dispatch<SetStateAction<T>>, () => T, () => void]
 ```
 
+
 > ### Params
 >
 > - __params__: _Object_
@@ -73,6 +74,7 @@ value or a function , optional.
 > - __params.opts={serializer: JSON.stringify, deserializer: jSON.parse, mode: "read/write"}?__: _{serializer: (item: T)=> string, deserializer: (item: string)=> T, mode?: "read" | "write" | "read/write"}_  
 object with serializer and deserializer function to handle values in sessionStorage and mode property to use hook only to read, write or both.
 >
+
 
 
 > ### Returns

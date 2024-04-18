@@ -51,6 +51,8 @@ useBluetooth():[{isSupported: boolean, isConnected: boolean, device: BluetoothDe
 
 
 
+
+
 > ### Returns
 >
 > __result__

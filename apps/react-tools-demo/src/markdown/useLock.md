@@ -120,6 +120,7 @@ export const UseLock = () => {
 useLock<T>(name?: string, cb?: LockGrantedCallback, opts?: LockOptions): [(currName?: string, currCb?: LockGrantedCallback, currOpts?: LockOptions) => Promise<T>, () => Promise<LockManagerSnapshot>]
 ```
 
+
 > ### Params
 >
 > - __name?__: _string_  
@@ -129,6 +130,7 @@ an object describing characteristics of the lock.
 > - __callback?__: _LockGrantedCallback_  
 method called when the lock is granted.
 >
+
 
 
 > ### Returns

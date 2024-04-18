@@ -29,11 +29,13 @@ export const UseScreen = () => {
 useScreen(allScreen?:boolean): [ScreenDetails, (orientation: OrientationLockType) => Promise<void>, ()=>void]
 ```
 
+
 > ### Params
 >
 > - __allScreen=false?__: _boolean_  
 to interact with all screens or only with current screen.
 >
+
 
 
 > ### Returns

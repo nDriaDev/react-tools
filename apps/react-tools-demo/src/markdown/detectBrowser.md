@@ -9,6 +9,8 @@ detectBrowser(): "chrome" | "firefox" | "safari" | "opera" | "edge" | "No detect
 
 
 
+
+
 > ### Returns
 >
 > __result__

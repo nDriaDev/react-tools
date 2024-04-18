@@ -27,11 +27,13 @@ export const UseResponsive = () => {
 useResponsive<T extends UseResponsiveKeys>(config?: UseResponsiveBreakpoints<T>): { [s in (keyof typeof defaultConfig)]: boolean } | { [s in UseResponsiveKeys<T>]: boolean }
 ```
 
+
 > ### Params
 >
 > - __config?__: _UseResponsiveBreakpoints_  
 custom breakpoint object.
 >
+
 
 
 > ### Returns

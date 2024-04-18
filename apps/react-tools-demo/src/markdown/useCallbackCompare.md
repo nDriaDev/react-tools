@@ -49,6 +49,7 @@ export { UseCallbackCompare };
 useCallbackCompare<T extends Function, E = unknown>(cb: T, deps: DependencyListTyped<E>, compareFn?: CompareFn<E>):T
 ```
 
+
 > ### Params
 >
 > - __cb__: _T_  
@@ -58,6 +59,7 @@ typed DependencyList.
 > - __compareFn?__: _CompareFn_  
 optional function that executes comparing between old and new `deps`: it returns true if they are different, otherwise false. If there isn't, hook works like normal useCallback.
 >
+
 
 
 > ### Returns

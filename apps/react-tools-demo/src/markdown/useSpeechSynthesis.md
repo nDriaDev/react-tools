@@ -122,6 +122,7 @@ export const UseSpeechSynthesis = () => {
 useSpeechSynthesis(opts?: UseSpeechSynthesisProps): ReturnType<UseSpeechSynthesis>
 ```
 
+
 > ### Params
 >
 > - __opts?__: _UseSpeechSynthesisProps_  
@@ -155,6 +156,7 @@ function that will be executed when _cancel_ event is fired.
 > - __opts.volume?__: _SpeechSynthesisUtterance["volume"]_  
 [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechSynthesisUtterance/volume).
 >
+
 
 
 > ### Returns

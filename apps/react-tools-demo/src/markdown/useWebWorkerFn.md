@@ -50,6 +50,7 @@ export const UseWebWorkerFn = () => {
 useWebWorkerFn<T extends (...args: unknown[]) => unknown>(fn: UseWebWorkerFnProps<T>["fn"], deps?: UseWebWorkerFnProps<T>["deps"]): UseWebWorkerFnResult<T>
 ```
 
+
 > ### Params
 >
 > - __fn__: _UseWebWorkerFnProps["fn"]_  
@@ -57,6 +58,7 @@ Expensive function to be executed in worker.
 > - __deps?__: _UseWebWorkerFnProps["deps"]_  
 An array that contains the external dependencies needed to run the worker.
 >
+
 
 
 > ### Returns

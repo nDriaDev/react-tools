@@ -36,6 +36,7 @@ export const UseIntersectionObserver = () => {
 useIntersectionObserver<T extends Element>(cb: IntersectionObserverCallback, opts?: IntersectionObserverInit):[RefCallback<T>, () => void, () => void]
 ```
 
+
 > ### Params
 >
 > - __cb__: _IntersectionObserverCallback_  
@@ -43,6 +44,7 @@ The function which is called when the percentage of the target element is visibl
 > - __opts?__: _IntersectionObserverInit_  
 An options object allowing you to set options for the observation.
 >
+
 
 
 > ### Returns

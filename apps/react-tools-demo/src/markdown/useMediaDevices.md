@@ -65,11 +65,13 @@ export const UseMediaDevices = () => {
 useMediaDevices(action: UseMediaDevicesProps): UseMediaDevicesResult
 ```
 
+
 > ### Params
 >
 > - __action__: _UseMediaDevicesProps_  
 it is a string that identifies which method to return as a result. It can be _devicesList_, _supportedConstraintsList_, _DisplayCapture_, or _mediaInputCapture_.
 >
+
 
 
 > ### Returns

@@ -32,10 +32,12 @@ export const UseTitle = () => {
 useTitle(title?: string): [() => string, (title: string) => void]
 ```
 
+
 > ### Params
 >
 > - __title?__: _string_
 >
+
 
 
 > ### Returns

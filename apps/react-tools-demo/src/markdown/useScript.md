@@ -41,6 +41,7 @@ export const UseScript = () => {
 useScriptuseScript: UseScript = function (attributes, options)
 ```
 
+
 > ### Params
 >
 > - __attributes__: _{ src?: string, async?: boolean, crossorigin?: "anonymous" | "use-credentials" | "", defer?: boolean, fetchpriority?: "high" | "low" | "auto", integrity?: string, nomodule?: boolean, nonce?: string, referrerpolicy?: "no-referrer" | "no-referrer-when-downgrade" | "origin" | "origin-when-cross-origin" | "same-origin" | "strict-origin" | "strict-origin-when-cross-origin" | "unsafe-url", type?: string }_  
@@ -48,6 +49,7 @@ script attributes.
 > - __options__: _{ handleAppending?: boolean, removeOnUnmount?: boolean, iframe?: HTMLIFrameElement }_  
 to handle appending and removing script, to automatically remove script when component unmount and to append script to an iframe.
 >
+
 
 
 > ### Returns

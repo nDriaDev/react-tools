@@ -7,6 +7,7 @@ Function that given a string, a case type, and an optional delimiter, returns th
 changeStringCase({string, caseType, delimiter}:{ string?: string, caseType: "pascalCase" | "snakeCase" | "kebabCase" | "camelCase", delimiter?: "upperCase" | "lowerCase" | string}): string
 ```
 
+
 > ### Params
 >
 > - __param__: _Object_  
@@ -18,6 +19,7 @@ selected case to change string.
 > - __param.delemiter?__: _"upperCase" | "lowerCase" | string_  
 optional delemiter for case that support it.
 >
+
 
 
 > ### Returns

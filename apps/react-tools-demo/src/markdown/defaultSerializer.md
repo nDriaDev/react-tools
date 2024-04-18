@@ -7,10 +7,12 @@ Function to serialize any type of value. [See demo](https://ndriadev.github.io/r
 defaultSerializer<T>(target: T)
 ```
 
+
 > ### Params
 >
 > - __target__: _T_
 >
+
 
 
 > ### Returns

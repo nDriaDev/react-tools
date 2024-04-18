@@ -57,6 +57,7 @@ export const UseClipboard = () => {
 useClipboard({ useValue, dataType, target }: { useValue: boolean, dataType: "text" | "any", target?: RefObject<HTMLElement> | HTMLElement }): [string, (text: string) => Promise<void>, () => Promise<string>] | [string | Blob | (string | Blob)[], (blob: Blob | Blob[]) => Promise<void>, () => Promise<string | Blob | (string | Blob)[]>] | [(text: string) => Promise<void>, () => Promise<string>] | [(blob: Blob | Blob[]) => Promise<void>, () => Promise<string | Blob | (string | Blob)[]>]
 ```
 
+
 > ### Params
 >
 > - __param__: _Object_
@@ -67,6 +68,7 @@ target on which delimiter handling.
 > - __param.dataType?__: _"text"|"any"_  
 data type handling. Based on it, Hook will return the functions for writing or reading text only or any type of data.
 >
+
 
 
 > ### Returns

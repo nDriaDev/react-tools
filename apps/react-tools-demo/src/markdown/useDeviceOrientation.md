@@ -29,6 +29,8 @@ useDeviceOrientation(): DeviceOrientationProps
 
 
 
+
+
 > ### Returns
 >
 > __props__: device orientation properties.

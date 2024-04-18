@@ -47,11 +47,13 @@ export const UseEventDispatcher = () => {
 useEventDispatcher(element: RefObject<HTMLElement> | Window = window): (evt: Event | CustomEvent) => void
 ```
 
+
 > ### Params
 >
 > - __element=window?__: _RefObject<HTMLElement> | Window_  
 target on which dispatch event
 >
+
 
 
 > ### Returns

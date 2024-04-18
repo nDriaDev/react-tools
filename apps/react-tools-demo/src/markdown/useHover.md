@@ -28,6 +28,7 @@ export const UseHover = () => {
 useHover(target: RefObject<HTMLElement> | HTMLElement, opts?: { onEnter?: (evt: Event) => void, onChange?: (isHover: boolean) => void, onLeave?: (evt: Event) => void, returnValue?: boolean }): boolean | void
 ```
 
+
 > ### Params
 >
 > - __target__: _RefObject<HTMLElement> | HTMLElement_  
@@ -35,6 +36,7 @@ DOM element or ref
 > - __opts?__: _{ onEnter?: (evt: Event) => void, onChange?: (isHover: boolean) => void, onLeave?: (evt: Event) => void, returnValue?: boolean }_  
 __onEnter__ function to be executed on starting hover, __onLeave__ function to be executed on hover finished, __onChange__ function to be executed when hover state changes, __return value__ boolean to return hover state value or not.
 >
+
 
 
 > ### Returns

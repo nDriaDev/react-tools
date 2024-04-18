@@ -53,6 +53,8 @@ useEvents(): [(type: string, callback:<T>(evt: Event|CustomEvent<T>) => void, op
 
 
 
+
+
 > ### Returns
 >
 > __result__: contains the _addListener_ and _dispatch_ functions.

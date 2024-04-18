@@ -5,13 +5,14 @@ Custom useReducer with get and reset state functions. [See demo](https://ndriade
 
 The implementation is like that _useStateGetReset_ but built on _useReducer_.
 
-Please visit [useStateGetReset](#/useStateGetReset) example to see how it works.
+Please visit [useStateGetReset](#/hooks/state/useStateGetReset) example to see how it works.
 
 ## API
 
 ```tsx
 useReducerGetReset<R extends Reducer<any, any>>(reducer: R, initialState: ReducerState<R>, initializer?: (init: ReducerState<R>) => ReducerState<R>): [ReducerState<R>, Dispatch<ReducerAction<R>>, ()=>ReducerState<R>, ()=>void]
 ```
+
 
 > ### Params
 >
@@ -22,6 +23,7 @@ The value from which the initial state is calculated. How the initial state is c
 > - __initializer?__: _(init: ReducerState<R>) => ReducerState<R>_  
 Function that should return the _initial state_. If it’s not specified, the initial state is set to _initialState_, otherwise is set to the result of calling _initializer(initialState)_.
 >
+
 
 
 > ### Returns

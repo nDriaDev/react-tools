@@ -5,9 +5,12 @@ import ComponentLayout from '../layout/ComponentLayout';
 import { Spinner } from '../layout/Spinner';
 import ErrorBoundaryMD from "../markdown/ErrorBoundary.md?raw"
 import ForMD from "../markdown/For.md?raw"
+import ForMemoizedMD from "../markdown/ForMemoized.md?raw"
 import LazyComponentMD from "../markdown/LazyComponent.md?raw"
 import ShowMD from "../markdown/Show.md?raw"
+import ShowMemoizedMD from "../markdown/ShowMemoized.md?raw"
 import SwitchCaseMD from "../markdown/SwitchCase.md?raw"
+import SwitchCaseMemoizedMD from "../markdown/SwitchCaseMemoized.md?raw"
 import alphanumericCompareMD from "../markdown/alphanumericCompare.md?raw"
 import changeStringCaseMD from "../markdown/changeStringCase.md?raw"
 import createPubSubStoreMD from "../markdown/createPubSubStore.md?raw"
@@ -1000,6 +1003,12 @@ function Router() {
 						</Suspense>
 					},
 					{
+						path: "ForMemoized",
+						element: <Suspense fallback={<Spinner/>}>
+							<ComponentLayout markdown={ForMemoizedMD} />
+						</Suspense>
+					},
+					{
 						path: "LazyComponent",
 						element: <Suspense fallback={<Spinner/>}>
 							<ComponentLayout markdown={LazyComponentMD} component={<LazyComponent/>}/>
@@ -1012,9 +1021,21 @@ function Router() {
 						</Suspense>
 					},
 					{
+						path: "ShowMemoized",
+						element: <Suspense fallback={<Spinner/>}>
+							<ComponentLayout markdown={ShowMemoizedMD} />
+						</Suspense>
+					},
+					{
 						path: "SwitchCase",
 						element: <Suspense fallback={<Spinner/>}>
 							<ComponentLayout markdown={SwitchCaseMD} component={<SwitchCase/>}/>
+						</Suspense>
+					},
+					{
+						path: "SwitchCaseMemoized",
+						element: <Suspense fallback={<Spinner/>}>
+							<ComponentLayout markdown={SwitchCaseMemoizedMD} />
 						</Suspense>
 					},
 					]

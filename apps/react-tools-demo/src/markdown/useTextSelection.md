@@ -71,6 +71,7 @@ export const UseTextSelection = () => {
 useTextSelection({ target, onStart, onChange, onEnd }: { target?: RefObject<HTMLElement> | HTMLElement, onStart?: (evt: Event) => void, onChange?: (evt: Event) => void, onEnd?: (evt: Event) => void } = {}): TextSelection | null
 ```
 
+
 > ### Params
 >
 > - __param__: _Object_  
@@ -84,6 +85,7 @@ function to execute while selection changes.
 > - __param.onEnd?__: _(evt: Event) => void_  
 function to execute while selection ends.
 >
+
 
 
 > ### Returns

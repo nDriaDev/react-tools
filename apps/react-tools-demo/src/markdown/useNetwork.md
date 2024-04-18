@@ -26,11 +26,13 @@ export const UseNetwork = () => {
 useNetwork<T extends keyof ConnectionState>(selectedInfo?: ArrayMinLength1<T>): ConnectionState | {[k in T] : ConnectionState[k]}
 ```
 
+
 > ### Params
 >
 > - __selectedInfo?__: _ArrayMinLength1<T>_  
 array of connection property.
 >
+
 
 
 > ### Returns

@@ -26,11 +26,13 @@ export const UseAudio = () => {
 useAudiocreateHTMLMediaHook<HTMLAudioElement>("audio");
 ```
 
+
 > ### Params
 >
 > - __param__: _UseAudioProps_  
 Media HTML Attributes of an html audio element.
 >
+
 
 
 > ### Returns

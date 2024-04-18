@@ -32,6 +32,7 @@ export const UsePinchZoom = () => {
 usePinchZoom({ target = window, listener }: { target?: RefObject<HTMLElement> | Window, listener: (evt: PointerEvent, type: "zoomIn" | "zoomOut") => void | Promise<void> }): (()=>void)
 ```
 
+
 > ### Params
 >
 > - __options__: _Object_
@@ -40,6 +41,7 @@ listener to be executed on pinch zoom event.
 > - __options.target=window?__: _RefObject<HTMLElement> | Window_  
 element on which attaching eventListener.
 >
+
 
 
 > ### Returns

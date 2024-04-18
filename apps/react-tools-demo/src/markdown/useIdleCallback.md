@@ -42,12 +42,14 @@ export const UseIdleCallback = () => {
 useIdleCallback(cb: (deadline?: IdleDeadline | DOMHighResTimeStamp | void) => void, opts?: {timeout: number , unsupportedBehavior?: "animationFrame" | "timeout" | "immediatly" }): [boolean, () => void, () => void]
 ```
 
+
 > ### Params
 >
 > - __cb -callback that should be called in the near future.__: _(deadline?: IdleDeadline | DOMHighResTimeStamp | void)=> void_
 > - __opts?__: _IdleRequestOptions & { unsupportedBehavior: "animationFrame"|"timeout"|"immediatly" }_  
 Contains optional configuration parameters.
 >
+
 
 
 > ### Returns

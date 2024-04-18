@@ -68,11 +68,13 @@ export { UseStateGetReset };
 useStateGetReset<T>(initialState: T | (() => T)): [T, Dispatch<SetStateAction<T>>, () => T, () => void]
 ```
 
+
 > ### Params
 >
 > - __initialState__: _T | () => T_  
 value or a function.
 >
+
 
 
 > ### Returns

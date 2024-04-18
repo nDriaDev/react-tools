@@ -24,6 +24,7 @@ export default function EB() {
 class ErrorBoundary extends Component<PropsWithChildren<{ onCatch?: (error: Error, info: ErrorInfo) => void, fallback?: ReactNode | ((error: Error, info: ErrorInfo, retry: () => void) => ReactNode) | ((props: { error: Error, info: ErrorInfo, retry: () => void })=>JSX.Element)}>, { hasError: boolean, error?:Error, info?: ErrorInfo }>
 ```
 
+
 > ### Params
 >
 > - __props__: _Object_
@@ -34,6 +35,7 @@ it is rendered when an error occurred. It can be an element, or a Component or a
 > - __props.children__: _ReactNode_  
 element to render.
 >
+
 
 
 > ### Returns

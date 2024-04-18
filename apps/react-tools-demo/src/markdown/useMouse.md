@@ -45,6 +45,7 @@ export const UseMouse = () => {
 useMouse(opts: { type?: "client" | "page" | "screen", relativeElement?: RefObject<HTMLElement | null> | HTMLElement } = { type: "client" }): { x: number | null, y: number | null } | { x: number | null, y: number | null, relativeElementDim?: DOMRect }
 ```
 
+
 > ### Params
 >
 > - __opts__: _Object_
@@ -53,6 +54,7 @@ position by client page or screen.
 > - __opts.relativeElement?__: _RefObject<HTMLElement> | HTMLElement_  
 if it is presents, position is relative to element.
 >
+
 
 
 > ### Returns

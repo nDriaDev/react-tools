@@ -33,11 +33,13 @@ export const UseScreenWakeLock = () => {
 useScreenWakeLock(onRelease?: (evt?: Event) =>void): [{isSupported: boolean, type: "screen"|null, isActive: boolean|null}, ()=>Promise<void>, ()=>Promise<void>]
 ```
 
+
 > ### Params
 >
 > - __onRelease?__: _(evt?:Event)=>void_  
 function that will be executed on release event.
 >
+
 
 
 > ### Returns

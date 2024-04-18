@@ -49,32 +49,34 @@ export default function ForComponent() {
 ## API
 
 ```tsx
-For = memo(<T extends unknown>({ of, children, filter, map, sort, elementKey, fallback }: ForProps<T>)
+For<T, S extends T>({ of, elementKey, fallback, filter, sort, map, children }: { of: Array<T>, elementKey?: (T|S) extends object ? keyof (T|S) | ((item: T|S) => Key) : Key | ((item: T|S) => Key), children: (item: T|S, index: number, key: Key) => ReactNode, fallback?: ReactNode, filter?: Parameters<Array<T>["filter"]>[0], sort?: true | Parameters<Array<T>["sort"]>[0], map?: (...args: Parameters<Parameters<Array<T>["map"]>[0]>) => S }): JSX.Element|Array<JSX.Element>
 ```
+
 
 > ### Params
 >
-> - __props__: _ForProps<T>_  
+> - __props__: _Object_  
 component properties object.
-> - __props.of__: _T[]_  
+> - __props.of__: _Array<T>_  
 array of elements.
-> - __props.elementKey?__: _T extends object ? keyof T | ((item: T) => Key) : Key | ((item: T) => Key)_  
+> - __props.elementKey?__: _(T|S) extends object ? keyof (T|S) | ((item: T|S) => Key) : Key | ((item: T|S) => Key)_  
 if the elements are objects, this prop can be a key of the elements in __of__ prop, or a function with one parameter which type is the type of the elements in __of__ prop and returns a __React.Key__ type, otherwise this prop can be the function described before or a __React.Key__. If it isn't specified, element index in __of__ props will be used as key.
-> - __props.children__: _(item: T, index: number, key: Key) => ReactNode_  
-it's a function that takes the current item as first argument and optionally a second argument that is the index of element in _of_ prop and a third element that is the key specified in the _elementKey_ prop.
+> - __props.children__: _(item: T|S, index: number, key: Key) => ReactNode_  
+it's a function that takes the current item as first argument and optionally a second argument that is the index of current item and a third element that is the key specified in the _elementKey_ prop. Item is the current element of __of__ prop or, if __map__ prop is present, is the current element produces from __map__ prop.
 > - __props.fallback?__: _ReactNode_  
 optional element to render when _of_ prop is an empty array.
-> - __props.filter?__: _<S extends T>(val: T, index: number, arr: T[]) => val is S_  
+> - __props.filter?__: _Parameters<Array<T>["filter"]>[0]_  
 callback executed to filter _of_ elements.
-> - __props.map?__: _<U extends T>(val: T, index: number, arr: T[]) => U_  
+> - __props.map?__: _undefined|((...args: Parameters<Parameters<Array<T>["map"]>[0]>) => S)_  
 callback executed to map _of_ elements.
-> - __props.sort?__: _true | ((a: T, b: T) => number)_  
+> - __props.sort?__: _true|Parameters<Array<T>["sort"]>[0]_  
 callback executed to sort _of_ elements or __`true`__ to use native sort.
 >
+
 
 
 > ### Returns
 >
 > __result__: elements list, rendered from _of_ prop or _fallback_.
-> - _JSX.Element_  
+> - _JSX.Element|Array<JSX.Element>_  
 >

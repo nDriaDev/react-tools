@@ -26,6 +26,7 @@ export default function LC() {
 LazyComponent<T extends { default: ComponentType<unknown> } | { [k: string]: ComponentType<unknown> }>({ factory, componentName, fallback, beforeLoad, afterLoad }: { factory: () => Promise<T>, componentName?: string, fallback?: ReactNode, beforeLoad?: ()=>void, afterLoad?: ()=>void })
 ```
 
+
 > ### Params
 >
 > - __param__: _Object_  
@@ -41,6 +42,7 @@ function that will be executed before loading component .
 > - __param.afterLoad?__: _()=>void_  
 function that will be executed after loading component .
 >
+
 
 
 > ### Returns

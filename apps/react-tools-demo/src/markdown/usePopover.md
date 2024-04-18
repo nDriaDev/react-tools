@@ -37,6 +37,7 @@ export const UsePopover = () => {
 usePopover({ mode, onBeforeToggle, onToggle }: UsePopoverProps): UsePopoverResult
 ```
 
+
 > ### Params
 >
 > - __param__: _UsePopoverProps_  
@@ -48,6 +49,7 @@ function that will be executed before popover showed/hidden.
 > - __param.onToggle?__: _(evt: ToggleEvent) => void_  
 function that will be executed when popover has been showed/hidden.
 >
+
 
 
 > ### Returns

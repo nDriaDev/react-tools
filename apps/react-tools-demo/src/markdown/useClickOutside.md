@@ -29,6 +29,7 @@ export const UseClickOutside = () => {
 useClickOutside(target: RefObject<HTMLElement> | HTMLElement, handler: (evt: Event) => void):void
 ```
 
+
 > ### Params
 >
 > - __target__: _RefObject<HTMLElement> | HTMLElement_  
@@ -38,8 +39,3 @@ callback to be executed.
 >
 
 
-> ### Returns
->
-> 
-> 
->

@@ -27,6 +27,7 @@ export const UseBeforeUnload = () => {
 useBeforeUnload({element, listener, opts}:{ element?: RefObject<HTMLElement> | Window | undefined, listener: (evt: BeforeUnloadEvent) => void, opts?: boolean | AddEventListenerOptions}): ()=>void
 ```
 
+
 > ### Params
 >
 > - __options__: _Object_
@@ -37,6 +38,7 @@ element on which attaching eventListener.
 > - __options.listenerOpts?__: _boolean | AddEventListenerOptions_  
 options for listener
 >
+
 
 
 > ### Returns
