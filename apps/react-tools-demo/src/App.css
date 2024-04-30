@@ -81,8 +81,26 @@
 	display: flex;
 }
 
-h2 {
+.h2 {
+	display: block;
 	font-size: 1.5em;
+	margin-block-start: 0.83em;
+	margin-block-end: 0.83em;
+	margin-inline-start: 0px;
+	margin-inline-end: 0px;
+	font-weight: bold;
+	unicode-bidi: isolate;
+}
+
+.h3 {
+	display: block;
+	font-size: 1.17em;
+	margin-block-start: 1em;
+	margin-block-end: 1em;
+	margin-inline-start: 0px;
+	margin-inline-end: 0px;
+	font-weight: bold;
+	unicode-bidi: isolate;
 }
 
 code {
@@ -154,6 +172,10 @@ code {
 			width: 2em;
 			height: 1.825em;
 			vertical-align: text-top;
+		}
+
+		.img:hover {
+			filter: drop-shadow(1px 1px 4px #f53340)
 		}
 	}
 
@@ -338,7 +360,7 @@ blockquote>ul>li>strong {
 	align-items: center;
 
 	.logo {
-		padding: 2rem;
+		padding: 1.8rem;
 		width: 18rem;
 		height: 15rem;
 	}
@@ -352,17 +374,23 @@ blockquote>ul>li>strong {
 		border-radius: 12px;
 		position: relative;
 
-		.npm-copy {
-			cursor: pointer;
-			position: absolute;
-			top: 0px;
-			right: 5px;
-			width: fit-content;
-			font-size: 0.875em;
-		}
 		.npm-command {
 			font-size: 1.25em;
 			padding: 0 1em;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+			.npm-copy {
+				margin-left: 2rem;
+				padding: 0;
+				background-color: transparent;
+				svg {
+					width: 1.6rem;
+					height: 1.6rem;
+					fill: rgb(151, 147, 21);
+				}
+			}
 		}
 	}
 
@@ -392,6 +420,9 @@ blockquote>ul>li>strong {
 	.features-container {
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);
+		grid-template-areas:
+		"cell1 cell2 cell3"
+		"footer footer footer";
 		gap: 20px;
 		margin-bottom: 1rem;
 
@@ -412,6 +443,37 @@ blockquote>ul>li>strong {
 				font-size: .95em;
 			}
 		}
+
+		.cell1 {
+			grid-area: cell1;
+		}
+
+		.cell2 {
+			grid-area: cell2;
+		}
+
+		.cell3 {
+			grid-area: cell3;
+		}
+	}
+}
+
+.footer {
+	grid-area: footer;
+	padding: 4rem 0rem 0rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	a {
+		display: flex;
+	}
+
+	.img {
+		width: 3rem;
+		height: 3rem;
+	}
+	.img:hover {
+		filter: drop-shadow(2px 2px 6px #f53340)
 	}
 }
 
@@ -550,6 +612,14 @@ button:not(:disabled) {
 	.features-container {
 		grid-template-columns: unset !important;
 		grid-template-rows: repeat(1, 1fr);
+		grid-template-areas:
+		"cell1"
+		"cell2"
+		"cell3"
+		"footer" !important;
+	}
+	.footer {
+		padding: 2rem 0rem .5rem;
 	}
 }
 
@@ -605,4 +675,74 @@ button:not(:disabled) {
 .btn-animated {
 	background-color: #1a1a1a;
 	animation: spin 1s linear forwards;
+}
+
+@property --deg {
+	syntax: '<angle>';
+	inherits: false;
+	initial-value: 0deg;
+}
+
+.version {
+	margin-top: .6rem;
+	font-weight: 400;
+	background: radial-gradient(circle at 100% 100%, #242424 0, #242424 2px, transparent 2px) 0% 0%/4px 4px no-repeat,
+			radial-gradient(circle at 0 100%, #242424 0, #242424 2px, transparent 2px) 100% 0%/4px 4px no-repeat,
+			radial-gradient(circle at 100% 0, #242424 0, #242424 2px, transparent 2px) 0% 100%/4px 4px no-repeat,
+			radial-gradient(circle at 0 0, #242424 0, #242424 2px, transparent 2px) 100% 100%/4px 4px no-repeat,
+			linear-gradient(#242424, #242424) 50% 50%/calc(100% - 4px) calc(100% - 8px) no-repeat,
+			linear-gradient(#242424, #242424) 50% 50%/calc(100% - 8px) calc(100% - 4px) no-repeat,
+			linear-gradient(var(--deg), #242424 0%, #f53340 100%);
+	border-radius: 4px;
+	padding: 6px 8px;
+	box-sizing: border-box;
+	animation: anim-gradient 2s linear infinite;
+}
+
+@keyframes anim-gradient {
+	from {
+		--deg: 0deg;
+	}
+
+	to {
+		--deg: 360deg;
+	}
+}
+
+/* Firefox (uncomment to work in Firefox, although other properties will not work!)  */
+/* * {
+  scrollbar-width: thin;
+  scrollbar-color: #9c2129 #242424;
+} */
+
+/* Chrome, Edge and Safari */
+*::-webkit-scrollbar {
+	height: 6px;
+	width: 6px;
+}
+
+*::-webkit-scrollbar-track {
+	border-radius: 4px;
+	background-color: #242424;
+}
+
+*::-webkit-scrollbar-track:hover {
+	background-color: #242424;
+}
+
+*::-webkit-scrollbar-track:active {
+	background-color: #242424;
+}
+
+*::-webkit-scrollbar-thumb {
+	border-radius: 4px;
+	background-color: #9c2129;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+	background-color: #F53340;
+}
+
+*::-webkit-scrollbar-thumb:active {
+	background-color: #9c2129;
 }

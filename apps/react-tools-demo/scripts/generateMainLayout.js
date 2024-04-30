@@ -5,6 +5,8 @@ import process from "node:process";
 
 const __dirname = new URL('.', import.meta.url).pathname;
 
+const PATH_LIB_PACKAGE_JSON = path.join(__dirname, "..", "..", "..", "packages", "react-tools-lib", "package.json");
+const PATH_DEMO_PACKAGE_JSON = path.join(__dirname, '..', 'package.json');
 const PATH_DEMO_SRC = path.join(__dirname, '..', 'src');
 const PATH_LIB_SRC = path.join(__dirname, "..", "..", "..", "packages", "react-tools-lib", "src");
 const HOOKS_DIR_NAME = "hooks";
@@ -159,6 +161,17 @@ async function createLinkRouter(router) {
 	createLinkRoutes(router, ["utilityTypes"], "types")
 }
 
+async function updateDemoPackageVersion() {
+	try {
+		const packageLib = JSON.parse(await fs.readFile(PATH_LIB_PACKAGE_JSON, { encoding: "utf8" }));
+		const packageDemo = JSON.parse(await fs.readFile(PATH_DEMO_PACKAGE_JSON, { encoding: "utf8" }));
+		packageDemo.version = packageLib.version;
+		await fs.writeFile(PATH_DEMO_PACKAGE_JSON, JSON.stringify(packageDemo), { encoding: "utf8" });
+	} catch (error) {
+		console.error(error);
+	}
+}
+
 async function generateMainLayout() {
 	try {
 		const stringBuffer = {
@@ -255,6 +268,7 @@ async function generateMainLayout() {
 			'}'
 		]);
 		await fs.writeFile(path.join(PATH_DEMO_SRC, "layout", "MainLayout.tsx"), stringBuffer.value, { encoding: "utf8" });
+		await updateDemoPackageVersion();
 		process.exit(0);
 	} catch (error) {
 		console.error(error);
