@@ -25,6 +25,12 @@ module.exports = {
 			{
 				"additionalHooks": "(useMemoCompare|useMemoDeepCompare|useCallbackCompare|useCallbackDeepCompare|useLayoutEffectCompare|useLayoutEffectDeepCompare|useInsertionEffectCompare|useInsertionEffectDeepCompare|useEffectCompare|useEffectDeepCompare|usePromiseSuspensible)"
 			}
+		],
+		"react-hooks/rules-of-hooks": [
+			"off",
+			{
+				"additionalHooks": "(usePromiseSuspensible)"
+			}
 		]
 	},
 }

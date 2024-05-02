@@ -5,18 +5,29 @@ Hook to resolve promise with Suspense support. The component that uses it, it ne
 
 ```tsx
 const Delayed = () => {
-	const data = usePromiseSuspensible(() => {
-		return new Promise<number[]>((res, rej) => {
-			console.log("called")
-			setTimeout(() => {
-				Math.random() > 0.5
-					? res([1, 2, 3, 4, 5])
-					: rej();
-			},4000)
-		}).catch(() => alert("Error throwed by promise"))
-	}, []);
+	const data = usePromiseSuspensible(
+		() => {
+			return new Promise<number[]>((res, rej) => {
+				console.log("called")
+				setTimeout(() => {
+					Math.random() > 0.5
+						? res([1, 2, 3, 4, 5])
+						: rej("Error throwed by promise");
+				},4000)
+			}).catch((err) => {
+				alert(err);
+				return [0,0,0]
+			})
+		},
+		[],
+		{
+			cache: "unmount"
+		}
+	);
 
-	return <pre>{JSON.stringify(data)}</pre>;
+	return <>
+		<pre>{JSON.stringify(data)}</pre>
+	</>;
 }
 
 export const UsePromiseSuspensible = () => {
@@ -32,7 +43,7 @@ export const UsePromiseSuspensible = () => {
 ## API
 
 ```tsx
-usePromiseSuspensible<T extends (...args: unknown[]) => Promise<unknown>>(promise: T, deps: DependencyList, options: { clearCacheOnUnmount?: boolean } = {clearCacheOnUnmount: false}): Awaited<ReturnType<T>>
+usePromiseSuspensible<T extends (...args: unknown[]) => Promise<unknown>>(promise: T, deps: DependencyList, options: { cache?: "unmount" | number } = {}): Awaited<ReturnType<T>>
 ```
 
 
@@ -44,8 +55,8 @@ Function that returns a promise to suspense.
 DependencyList for promise to suspense.
 > - __options?__: _{ clearCacheOnUnmount?: boolean }_  
 optional options.
-> - __options.clearCacheOnUnmount=false?__: _boolean_  
-if value is true, promise cached will be cleaned on unmount phase.
+> - __options.cache=undefined?__: _"unmount"|number_  
+value can be "unmount", to clean promise cached at component unmounting, or it can be the duration in millisecond of cached promise.
 >
 
 

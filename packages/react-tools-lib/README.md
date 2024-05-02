@@ -852,9 +852,9 @@ usePopover({ mode, onBeforeToggle, onToggle }: UsePopoverProps): UsePopoverResul
 
 ### usePromiseSuspensible
 
-Hook to resolve promise with Suspense support. The component that uses it, it need to be wrapped with Suspense component. [See demo](https://ndriadev.github.io/react-tools/#/hooks/api-dom/usePromiseSuspensible)
+Hook to resolve promise with Suspense support. The component that uses it, it need to be wrapped with Suspense component. This hook can be used in conditional blocks. [See demo](https://ndriadev.github.io/react-tools/#/hooks/api-dom/usePromiseSuspensible)
 ```tsx
-usePromiseSuspensible<T extends (...args: unknown[]) => Promise<unknown>>(promise: T, deps: DependencyList, options: { clearCacheOnUnmount?: boolean } = {clearCacheOnUnmount: false}): Awaited<ReturnType<T>>
+usePromiseSuspensible<T>(promise: ()=>Promise<T>, deps: DependencyList, options: { cache?: "unmount" | number, cleanOnError?: boolean } = {}): Awaited<ReturnType<typeof promise>>
 ```
 
 ### usePublishSubscribe
@@ -1281,8 +1281,15 @@ To validate dependencies of custom hooks like `useMemoCompare`, configure `exhau
   	"rules": {
     	// ...
     	"react-hooks/exhaustive-deps": [
-			"warn", {
+			"warn",
+            {
 				"additionalHooks": "(useMemoCompare|useMemoDeepCompare|useCallbackCompare|useCallbackDeepCompare|useLayoutEffectCompare|useLayoutEffectDeepCompare|useInsertionEffectCompare|useInsertionEffectDeepCompare|useEffectCompare|useEffectDeepCompare|usePromiseSuspensible)"
+  		  	}
+		]
+    	"react-hooks/rules-of-hooks": [
+			"of",
+            {
+				"additionalHooks": "(usePromiseSuspensible)"
   		  	}
 		]
 	}
