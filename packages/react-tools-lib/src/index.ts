@@ -29,6 +29,7 @@ export type {
 	HTMLAttributes,
 	HTMLMediaControls,
 	HTMLMediaState,
+	KeyboardEventCode,
 	LanguageBCP47Tags,
 	NestedKeyOf,
 	Optional,
@@ -223,6 +224,7 @@ export {
 export {
 	alphanumericCompare,
 	changeStringCase,
+	clickElementOnKeydownEvent,
 	defaultSerializer,
 	detectBrowser,
 	getBase64,

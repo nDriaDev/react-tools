@@ -1,4 +1,4 @@
-export type { NestedKeyOf, PartialRecord, RecursivePartial, SelectivePartial, ErrorModel, Optional, DependencyListTyped, ExtractHead, ExtractMiddle, ExtractTail, ArrayMinLength1, LanguageBCP47Tags, TypedArray } from './utilityTypes.model';
+export type { NestedKeyOf, PartialRecord, RecursivePartial, SelectivePartial, ErrorModel, Optional, DependencyListTyped, ExtractHead, ExtractMiddle, ExtractTail, ArrayMinLength1, LanguageBCP47Tags, TypedArray, KeyboardEventCode } from './utilityTypes.model';
 export type { CompareFn, HTMLMediaControls, HTMLMediaState } from "./common.model";
 export type { UseScriptProps, UseScript, UseScriptStatus } from './useScript.model';
 export type { TextSelection } from './useTextSelection.model';

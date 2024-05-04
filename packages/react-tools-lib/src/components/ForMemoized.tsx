@@ -11,6 +11,10 @@ import { For } from "./For";
  * @param {Parameters<Array<T>["filter"]>[0]} [props.filter] - callback executed to filter _of_ elements.
  * @param {undefined|((...args: Parameters<Parameters<Array<T>["map"]>[0]>) => S)} [props.map] - callback executed to map _of_ elements.
  * @param {true|Parameters<Array<T>["sort"]>[0]} [props.sort] - callback executed to sort _of_ elements or __`true`__ to use native sort.
- * @returns {JSX.Element|Array<JSX.Element>} result - elements list, rendered from _of_ prop or _fallback_.
+ * @returns {null|JSX.Element|Array<JSX.Element>} result - elements list, rendered from _of_ prop or _fallback_ if exist, otherwise null.
  */
-export const ForMemoized = memo(For) as typeof For;
+const ForMemoized = memo(For) as typeof For;
+
+ForMemoized.displayName = "ForMemoized";
+
+export { ForMemoized };
