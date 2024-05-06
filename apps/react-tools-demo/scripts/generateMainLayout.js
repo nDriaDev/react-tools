@@ -166,7 +166,7 @@ async function updateDemoPackageVersion() {
 		const packageLib = JSON.parse(await fs.readFile(PATH_LIB_PACKAGE_JSON, { encoding: "utf8" }));
 		const packageDemo = JSON.parse(await fs.readFile(PATH_DEMO_PACKAGE_JSON, { encoding: "utf8" }));
 		packageDemo.version = packageLib.version;
-		await fs.writeFile(PATH_DEMO_PACKAGE_JSON, JSON.stringify(packageDemo), { encoding: "utf8" });
+		await fs.writeFile(PATH_DEMO_PACKAGE_JSON, JSON.stringify(packageDemo, null, 4), { encoding: "utf8" });
 	} catch (error) {
 		console.error(error);
 	}
