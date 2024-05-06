@@ -1,5 +1,5 @@
 # useRerender
-Hook that force a render. [See demo](https://ndriadev.github.io/react-tools/#/hooks/lifecycle/useRerender)
+Hook to force a render. [See demo](https://ndriadev.github.io/react-tools/#/hooks/lifecycle/useRerender)
 
 ## Usage
 
@@ -29,15 +29,20 @@ export { UseRerender };
 ## API
 
 ```tsx
-useRerender(): React.DispatchWithoutAction
+useRerender<T>(withValue?: true|false|never): DispatchWithoutAction | [T, DispatchWithoutAction]
 ```
 
 
+> ### Params
+>
+> - __withValue?__: _boolean_  
+optional boolean value: if it is true, an array with _value_ and _rerender_ function is returned.
+>
 
 
 
 > ### Returns
 >
-> __update__
-> - _React.DispatchWithoutAction_  
+> __array with _value_ and _updateValue_ function or _rerender_ function.__
+> - _DispatchWithoutAction|[T,DispatchWithoutAction]_  
 >

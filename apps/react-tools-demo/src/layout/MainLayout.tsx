@@ -1364,6 +1364,17 @@ export default function MainLayout() {
 							changeStringCase
 						</Link>
 						<Link
+							className={pathname === "/utils/clickElementOnKeydownEvent" ? 'active' : ''}
+							ref={node => linksRef.current["clickElementOnKeydownEvent"] = node}
+							to="/utils/clickElementOnKeydownEvent"
+							onClick={() => {
+								containerRef.current?.scrollTo(0, 0);
+								window.innerWidth < 1190 && closeNav();
+							}}
+						>
+							clickElementOnKeydownEvent
+						</Link>
+						<Link
 							className={pathname === "/utils/defaultSerializer" ? 'active' : ''}
 							ref={node => linksRef.current["defaultSerializer"] = node}
 							to="/utils/defaultSerializer"

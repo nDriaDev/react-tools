@@ -13,6 +13,7 @@ import SwitchCaseMD from "../markdown/SwitchCase.md?raw"
 import SwitchCaseMemoizedMD from "../markdown/SwitchCaseMemoized.md?raw"
 import alphanumericCompareMD from "../markdown/alphanumericCompare.md?raw"
 import changeStringCaseMD from "../markdown/changeStringCase.md?raw"
+import clickElementOnKeydownEventMD from "../markdown/clickElementOnKeydownEvent.md?raw"
 import createPubSubStoreMD from "../markdown/createPubSubStore.md?raw"
 import defaultSerializerMD from "../markdown/defaultSerializer.md?raw"
 import detectBrowserMD from "../markdown/detectBrowser.md?raw"
@@ -1060,6 +1061,12 @@ function Router() {
 						path: "changeStringCase",
 						element: <Suspense fallback={<Spinner/>}>
 							<ComponentLayout markdown={changeStringCaseMD} />
+						</Suspense>
+					},
+					{
+						path: "clickElementOnKeydownEvent",
+						element: <Suspense fallback={<Spinner/>}>
+							<ComponentLayout markdown={clickElementOnKeydownEventMD} />
 						</Suspense>
 					},
 					{

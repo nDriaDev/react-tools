@@ -49,7 +49,7 @@ export default function ForComponent() {
 ## API
 
 ```tsx
-For<T, S extends T>({ of, elementKey, fallback, filter, sort, map, children }: { of: Array<T>, elementKey?: (T|S) extends object ? keyof (T|S) | ((item: T|S) => Key) : Key | ((item: T|S) => Key), children: (item: T|S, index: number, key: Key) => ReactNode, fallback?: ReactNode, filter?: Parameters<Array<T>["filter"]>[0], sort?: true | Parameters<Array<T>["sort"]>[0], map?: (...args: Parameters<Parameters<Array<T>["map"]>[0]>) => S }): JSX.Element|Array<JSX.Element>
+For<T, S extends T>({ of, elementKey, fallback, filter, sort, map, children }: { of: Array<T>, elementKey?: (T|S) extends object ? keyof (T|S) | ((item: T|S) => Key) : Key | ((item: T|S) => Key), children: (item: T|S, index: number, key: Key) => ReactNode, fallback?: ReactNode, filter?: Parameters<Array<T>["filter"]>[0], sort?: true | Parameters<Array<T>["sort"]>[0], map?: (...args: Parameters<Parameters<Array<T>["map"]>[0]>) => S }): null|JSX.Element|Array<JSX.Element>
 ```
 
 
@@ -77,6 +77,6 @@ callback executed to sort _of_ elements or __`true`__ to use native sort.
 
 > ### Returns
 >
-> __result__: elements list, rendered from _of_ prop or _fallback_.
-> - _JSX.Element|Array<JSX.Element>_  
+> __result__: elements list, rendered from _of_ prop or _fallback_ if exist, otherwise null.
+> - _null|JSX.Element|Array<JSX.Element>_  
 >

@@ -100,3 +100,10 @@ Utility type for __`Typed Arrays`__.
 type TypedArray
 ```
 
+## KeyboardEventCode
+
+Utility type fot __`Keyboard Event Code`__
+```tsx
+type KeyboardEventCode
+```
+

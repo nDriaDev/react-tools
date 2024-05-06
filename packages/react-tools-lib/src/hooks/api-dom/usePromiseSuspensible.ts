@@ -2,7 +2,7 @@ import { DependencyList } from "react";
 import { useEffectOnce } from "../lifecycle";
 import { isDeepEqual } from "../../utils";
 
-const promiseCache: { deps: DependencyList, promise: Promise<void>, error?: unknown, response?: unknown, cache: "unmount" | number | null, errorTimeout?: number }[] = [];
+const promiseCache: { deps: DependencyList, promise: Promise<void>, error?: unknown, response?: unknown, cache: "unmount" | number | null, errorTimeout?: number, identifier: string | null }[] = [];
 
 /**
  * **`usePromiseSuspensible`**: Hook to resolve promise with Suspense support. The component that uses it, it need to be wrapped with Suspense component. This hook can be used in conditional blocks. [See demo](https://ndriadev.github.io/react-tools/#/hooks/api-dom/usePromiseSuspensible)
@@ -11,9 +11,10 @@ const promiseCache: { deps: DependencyList, promise: Promise<void>, error?: unkn
  * @param {{ clearCacheOnUnmount?: "unmount"|number, cleanOnError?: boolean }} [options] - optional options.
  * @param {"unmount"|number} [options.cache=undefined] - value can be "unmount", to clean promise cached at component unmounting, or it can be the duration in __seconds__ of cached promise.
  * @param {boolean} [options.cleanOnError=undefined] - if true, when there is an error, remove promise from cache with a delay of 20 millisecond (due to multiple renders of react strict mode).
+ * @param {string} [options.identifier=undefined] - a string to identify _promise_. If it isn't present, a serialization of _promise_ will be used.
  * @returns {Awaited<ReturnType<T>>} result - resolve promise value.
  */
-export const usePromiseSuspensible = <T>(promise: ()=>Promise<T>, deps: DependencyList, options: { cache?: "unmount" | number, cleanOnError?: boolean } = {}): Awaited<ReturnType<typeof promise>> => {
+export const usePromiseSuspensible = <T>(promise: ()=>Promise<T>, deps: DependencyList, options: { cache?: "unmount" | number, cleanOnError?: boolean, identifier?: string } = {}): Awaited<ReturnType<typeof promise>> => {
 	let index = -1;
 	useEffectOnce(() => () => {
 		if (options.cache === "unmount") {
@@ -22,7 +23,7 @@ export const usePromiseSuspensible = <T>(promise: ()=>Promise<T>, deps: Dependen
 		}
 	})
 	for (const ind in promiseCache) {
-		if (isDeepEqual([...deps, String.raw`${promise.toString()}`], promiseCache[ind].deps)) {
+		if (isDeepEqual([...deps, options.identifier ?? String.raw`${promise.toString()}`], [...promiseCache[ind].deps, promiseCache[ind].identifier])) {
 			if (promiseCache[ind].cache && promiseCache[ind].cache !== "unmount" && Date.now() > (promiseCache[ind].cache as number)) {
 				promiseCache.splice(Number(ind), 1);
 				break;
@@ -44,8 +45,9 @@ export const usePromiseSuspensible = <T>(promise: ()=>Promise<T>, deps: Dependen
 			}
 		}
 	}
-	const cached: { deps: DependencyList, promise: Promise<void>, error?: unknown, response?: Awaited<ReturnType<typeof promise>>, cache: "unmount" | number | null } = {
-		deps: [...deps, String.raw`${promise.toString()}`],
+	const cached: { deps: DependencyList, promise: Promise<void>, error?: unknown, response?: Awaited<ReturnType<typeof promise>>, cache: "unmount" | number | null, identifier: string|null } = {
+		deps: deps,
+		identifier: options.identifier ?? String.raw`${promise.toString()}`,
 		cache: options.cache ? options.cache === "unmount" ? "unmount" : Date.now() + (options.cache*1000) : null,
 		promise: promise()
 			.then(response => {

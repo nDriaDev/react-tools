@@ -19,7 +19,8 @@ const Delayed = () => {
 		[],
 		{
 			cache: 25, //25 seconds
-			cleanOnError: true
+			cleanOnError: true,
+			identifier: "ss"
 		}
 	);
 
