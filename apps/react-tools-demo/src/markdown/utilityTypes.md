@@ -102,7 +102,7 @@ type TypedArray
 
 ## KeyboardEventCode
 
-Utility type fot __`Keyboard Event Code`__
+Utility type for __`Keyboard Event Code`__
 ```tsx
 type KeyboardEventCode
 ```

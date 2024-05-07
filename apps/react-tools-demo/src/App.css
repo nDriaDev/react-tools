@@ -198,23 +198,43 @@ code {
 }
 
 .nav>.type {
+	display: flex;
+	flex-direction: column;
 	margin: 1em 0;
 	padding-left: 1em;
 	font-size: 1em;
 }
-
-.nav>.sub-type {
-	margin: 0 0 0.5em;
-	padding-left: 1.55em;
-	font-size: .95em;
+.nav>.type ~ .type {
+	margin-top: 0em;
 }
 
-.nav>.sub-type ~ .sub-type {
+.nav>.type>.sub-type {
+	display: flex;
+	flex-direction: column;
+	height: inherit;
+	overflow-y: auto;
+	margin: 0.5em 0;
+	padding-left: .75em;
+	font-size: 1em;
+}
+
+.nav>.type>.sub-type ~ .sub-type {
 	margin-top: 1em;
 }
-.nav>a {
+
+.nav>.type>a {
 	font-size: .875em;
-	padding: 1em 2.5em;
+	padding: 1em 1em 1em 2.5em;
+}
+
+.nav>.type>.sub-type>a {
+	font-size: .875em;
+	padding: 1em 1em 1em 1.75em;
+}
+
+summary:hover {
+	/* color: #f53340; */
+	color: #9c2129;
 }
 
 .docs {
@@ -366,7 +386,7 @@ blockquote>ul>li>strong {
 	}
 
 	.title {
-		margin-top: 0;
+		margin-top: 40px;
 	}
 
 	.npm-container {
@@ -375,7 +395,7 @@ blockquote>ul>li>strong {
 		position: relative;
 
 		.npm-command {
-			font-size: 1.25em;
+			font-size: 1.4em;
 			padding: 0 1em;
 			display: flex;
 			justify-content: center;
@@ -403,7 +423,7 @@ blockquote>ul>li>strong {
 		background-color: #1a1a1a;
 		cursor: pointer;
 		transition: border-color 0.25s;
-		margin: 50px 0px;
+		margin: 40px 0px;
 		font-size: 1.5em;
 		color: initial;
 	}

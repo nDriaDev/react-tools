@@ -38,81 +38,94 @@ async function generateImport(router) {
  * @param {string[]} apiDomFiles
  */
 function createLinkHooksRoutes(router, stateFiles, lifecycleFiles, performanceFiles, eventsFiles, apiDomFiles,) {
-	router.add('						<p className="sub-type">State</p>');
+	router.add("						<details open className='type'>");
+	router.add("							<summary>Hooks</summary>");
+	router.add("							<details open className='sub-type'>");
+	router.add("								<summary>State</summary>");
 	stateFiles.forEach(f => {
 		const [name] = f.split(".");
-		router.add('						<Link');
-		router.add(`							className={pathname === "/hooks/state/${name}" ? 'active' : ''}`);
-		router.add(`							ref={node => linksRef.current["${name}"] = node}`);
-		router.add(`							to="/hooks/state/${name}"`);
-		router.add('							onClick={() => {');
-		router.add('								containerRef.current?.scrollTo(0, 0);');
-		router.add('								window.innerWidth < 1190 && closeNav();');
-		router.add('							}}');
-		router.add('						>');
-		router.add(`							${name}`);
-		router.add('						</Link>');
+		router.add('								<Link');
+		router.add(`									className={pathname === "/hooks/state/${name}" ? 'active' : ''}`);
+		router.add(`									ref={node => linksRef.current["${name}"] = node}`);
+		router.add(`									to="/hooks/state/${name}"`);
+		router.add('									onClick={() => {');
+		router.add('										containerRef.current?.scrollTo(0, 0);');
+		router.add('										window.innerWidth < 1190 && closeNav();');
+		router.add('									}}');
+		router.add('								>');
+		router.add(`									${name}`);
+		router.add('								</Link>');
 	});
-	router.add('						<p className="sub-type">Lifecycle</p>');
+	router.add("							</details>");
+	router.add("							<details open className='sub-type'>");
+	router.add("								<summary>Lifecycle</summary>");
 	lifecycleFiles.forEach(f => {
 		const [name] = f.split(".");
-		router.add('						<Link');
-		router.add(`							className={pathname === "/hooks/lifecycle/${name}" ? 'active' : ''}`);
-		router.add(`							ref={node => linksRef.current["${name}"] = node}`);
-		router.add(`							to="/hooks/lifecycle/${name}"`);
-		router.add('							onClick={() => {');
-		router.add('								containerRef.current?.scrollTo(0, 0);');
-		router.add('								window.innerWidth < 1190 && closeNav();');
-		router.add('							}}');
-		router.add('						>');
-		router.add(`							${name}`);
-		router.add('						</Link>');
+		router.add('								<Link');
+		router.add(`									className={pathname === "/hooks/lifecycle/${name}" ? 'active' : ''}`);
+		router.add(`									ref={node => linksRef.current["${name}"] = node}`);
+		router.add(`									to="/hooks/lifecycle/${name}"`);
+		router.add('									onClick={() => {');
+		router.add('										containerRef.current?.scrollTo(0, 0);');
+		router.add('										window.innerWidth < 1190 && closeNav();');
+		router.add('									}}');
+		router.add('								>');
+		router.add(`									${name}`);
+		router.add('								</Link>');
 	});
-	router.add('						<p className="sub-type">Performance</p>');
+	router.add("							</details>");
+	router.add("							<details open className='sub-type'>");
+	router.add("								<summary>Performance</summary>");
 	performanceFiles.forEach(f => {
 		const [name] = f.split(".");
-		router.add('						<Link');
-		router.add(`							className={pathname === "/hooks/performance/${name}" ? 'active' : ''}`);
-		router.add(`							ref={node => linksRef.current["${name}"] = node}`);
-		router.add(`							to="/hooks/performance/${name}"`);
-		router.add('							onClick={() => {');
-		router.add('								containerRef.current?.scrollTo(0, 0);');
-		router.add('								window.innerWidth < 1190 && closeNav();');
-		router.add('							}}');
-		router.add('						>');
-		router.add(`							${name}`);
-		router.add('						</Link>');
+		router.add('								<Link');
+		router.add(`									className={pathname === "/hooks/performance/${name}" ? 'active' : ''}`);
+		router.add(`									ref={node => linksRef.current["${name}"] = node}`);
+		router.add(`									to="/hooks/performance/${name}"`);
+		router.add('									onClick={() => {');
+		router.add('										containerRef.current?.scrollTo(0, 0);');
+		router.add('										window.innerWidth < 1190 && closeNav();');
+		router.add('									}}');
+		router.add('								>');
+		router.add(`									${name}`);
+		router.add('								</Link>');
 	});
-	router.add('						<p className="sub-type">Events</p>');
+	router.add("							</details>");
+	router.add("							<details open className='sub-type'>");
+	router.add("								<summary>Events</summary>");
 	eventsFiles.forEach(f => {
 		const [name] = f.split(".");
-		router.add('						<Link');
-		router.add(`							className={pathname === "/hooks/events/${name}" ? 'active' : ''}`);
-		router.add(`							ref={node => linksRef.current["${name}"] = node}`);
-		router.add(`							to="/hooks/events/${name}"`);
-		router.add('							onClick={() => {');
-		router.add('								containerRef.current?.scrollTo(0, 0);');
-		router.add('								window.innerWidth < 1190 && closeNav();');
-		router.add('							}}');
-		router.add('						>');
-		router.add(`							${name}`);
-		router.add('						</Link>');
+		router.add('								<Link');
+		router.add(`									className={pathname === "/hooks/events/${name}" ? 'active' : ''}`);
+		router.add(`									ref={node => linksRef.current["${name}"] = node}`);
+		router.add(`									to="/hooks/events/${name}"`);
+		router.add('									onClick={() => {');
+		router.add('										containerRef.current?.scrollTo(0, 0);');
+		router.add('										window.innerWidth < 1190 && closeNav();');
+		router.add('									}}');
+		router.add('								>');
+		router.add(`									${name}`);
+		router.add('								</Link>');
 	});
-	router.add('						<p className="sub-type">API DOM</p>');
+	router.add("							</details>");
+	router.add("							<details open className='sub-type'>");
+	router.add("								<summary>API DOM</summary>");
 	apiDomFiles.forEach(f => {
 		const [name] = f.split(".");
-		router.add('						<Link');
-		router.add(`							className={pathname === "/hooks/api-${name}" ? 'active' : ''}`);
-		router.add(`							ref={node => linksRef.current["${name}"] = node}`);
-		router.add(`							to="/hooks/api-dom/${name}"`);
-		router.add('							onClick={() => {');
-		router.add('								containerRef.current?.scrollTo(0, 0);');
-		router.add('								window.innerWidth < 1190 && closeNav();');
-		router.add('							}}');
-		router.add('						>');
-		router.add(`							${name}`);
-		router.add('						</Link>');
+		router.add('								<Link');
+		router.add(`									className={pathname === "/hooks/api-${name}" ? 'active' : ''}`);
+		router.add(`									ref={node => linksRef.current["${name}"] = node}`);
+		router.add(`									to="/hooks/api-dom/${name}"`);
+		router.add('									onClick={() => {');
+		router.add('										containerRef.current?.scrollTo(0, 0);');
+		router.add('										window.innerWidth < 1190 && closeNav();');
+		router.add('									}}');
+		router.add('								>');
+		router.add(`									${name}`);
+		router.add('								</Link>');
 	});
+	router.add("							</details>");
+	router.add("						</details>");
 }
 
 /**
@@ -122,21 +135,23 @@ function createLinkHooksRoutes(router, stateFiles, lifecycleFiles, performanceFi
  * @param {string} parentRoot
  */
 function createLinkRoutes(router, componentsFiles, parentRoot) {
-	router.add(`						<p className="sub-type">${parentRoot.charAt(0).toUpperCase()+parentRoot.substring(1)}</p>`);
+	router.add("						<details open className='type'>");
+	router.add(`							<summary>${parentRoot.charAt(0).toUpperCase() + parentRoot.substring(1)}</summary>`);
 	componentsFiles.forEach(f => {
 		const [name] = f.split(".");
-		router.add('						<Link');
-		router.add(`							className={pathname === "/${parentRoot}/${name}" ? 'active' : ''}`);
-		router.add(`							ref={node => linksRef.current["${name}"] = node}`);
-		router.add(`							to="/${parentRoot}/${name}"`);
-		router.add('							onClick={() => {');
-		router.add('								containerRef.current?.scrollTo(0, 0);');
-		router.add('								window.innerWidth < 1190 && closeNav();');
-		router.add('							}}');
-		router.add('						>');
-		router.add(`							${name}`);
-		router.add('						</Link>');
+		router.add('							<Link');
+		router.add(`								className={pathname === "/${parentRoot}/${name}" ? 'active' : ''}`);
+		router.add(`								ref={node => linksRef.current["${name}"] = node}`);
+		router.add(`								to="/${parentRoot}/${name}"`);
+		router.add('								onClick={() => {');
+		router.add('									containerRef.current?.scrollTo(0, 0);');
+		router.add('									window.innerWidth < 1190 && closeNav();');
+		router.add('								}}');
+		router.add('							>');
+		router.add(`								${name}`);
+		router.add('							</Link>');
 	});
+	router.add("						</details>");
 }
 
 /**
@@ -154,7 +169,6 @@ async function createLinkRouter(router) {
 		fs.readFile((path.join(PATH_LIB_SRC, COMPONENTS_DIR_NAME, "index.ts")), { encoding: "utf8" }).then(res => res.replaceAll("export { ", "").replaceAll("export ", "").split("\n").map(el => el.substring(0, el.indexOf(" } from") !== -1 ? el.indexOf(" } from") : el.indexOf(" from"))).filter(el => !!el && libSrcIndexFile.includes(el)).sort((a, b) => a.localeCompare(b, 'en'))),
 		fs.readFile((path.join(PATH_LIB_SRC, UTILS_DIR_NAME, "index.ts")), { encoding: "utf8" }).then(res => res.replaceAll("export { ", "").replaceAll("export ", "").split("\n").map(el => el.substring(0, el.indexOf(" } from") !== -1 ? el.indexOf(" } from") : el.indexOf(" from"))).filter(el => !!el && libSrcIndexFile.includes(el)).sort((a, b) => a.localeCompare(b, 'en')))
 	]);
-	router.add("						<p className='type'>Hooks</p>");
 	createLinkHooksRoutes(router, HOOKS_STATE_FILES, HOOKS_LIFECYCLE_FILES, HOOKS_PERFORMANCE_FILES, HOOKS_EVENTS_FILES, HOOKS_APIDOM_FILES);
 	createLinkRoutes(router, COMPONENTS_FILES, "components")
 	createLinkRoutes(router, UTILS_FILES, "utils")
