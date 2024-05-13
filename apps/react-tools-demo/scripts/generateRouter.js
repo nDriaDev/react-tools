@@ -76,7 +76,7 @@ async function generateImportDemoComponent(router) {
 async function generateImport(router) {
 	router.set([
 		"import { ComponentType, lazy, Suspense } from 'react';",
-		"import { RouterProvider, createBrowserRouter, Outlet, Navigate } from 'react-router-dom';",
+		"import { RouterProvider, createHashRouter, Outlet, Navigate } from 'react-router-dom';",
 		"import MainLayout from '../layout/MainLayout';",
 		"import ComponentLayout from '../layout/ComponentLayout';",
 		"import { Spinner } from '../layout/Spinner';"
@@ -237,7 +237,7 @@ async function createRouter(router) {
 		fs.readFile((path.join(PATH_LIB_SRC, COMPONENTS_DIR_NAME, "index.ts")), { encoding: "utf8" }).then(res => res.replaceAll("export { ", "").replaceAll("export ", "").split("\n").map(el => el.substring(0, el.indexOf(" } from") !== -1 ? el.indexOf(" } from") : el.indexOf(" from"))).filter(el => !!el && libSrcIndexFile.includes(el)).sort((a, b) => a.localeCompare(b, 'en'))),
 		fs.readFile((path.join(PATH_LIB_SRC, UTILS_DIR_NAME, "index.ts")), { encoding: "utf8" }).then(res => res.replaceAll("export { ", "").replaceAll("export ", "").split("\n").map(el => el.substring(0, el.indexOf(" } from") !== -1 ? el.indexOf(" } from") : el.indexOf(" from"))).filter(el => !!el && libSrcIndexFile.includes(el)).sort((a, b) => a.localeCompare(b, 'en')))
 	]);
-	router.add("	const router = createBrowserRouter([");
+	router.add("	const router = createHashRouter([");
 	router.add("		{");
 	router.add('			path: "/",');
 	router.add("			element: <MainLayout />,");
