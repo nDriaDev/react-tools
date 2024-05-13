@@ -1,7 +1,7 @@
 {
     "name": "react-tools-demo",
     "private": true,
-    "version": "1.7.0",
+    "version": "1.8.0",
     "type": "module",
     "scripts": {
         "generator": "node scripts/generateMarkdown.js && node scripts/generateRouter.js && node scripts/generateMainLayout.js",
