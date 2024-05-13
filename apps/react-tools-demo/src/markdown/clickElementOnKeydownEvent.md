@@ -4,7 +4,7 @@ Function which, given a triggering code, executes _click_ on element when a keyD
 ## API
 
 ```tsx
-clickElementOnKeydownEvent(codeTriggering: KeyboardEventCode): (e: KeyboardEvent) => void
+clickElementOnKeydownEvent(codeTriggering: KeyboardEventCode): ((e: KeyboardEvent) => void)
 ```
 
 

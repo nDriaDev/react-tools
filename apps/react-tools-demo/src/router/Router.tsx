@@ -1,5 +1,5 @@
 import { ComponentType, lazy, Suspense } from 'react';
-import { RouterProvider, createHashRouter, Outlet, Navigate } from 'react-router-dom';
+import { RouterProvider, createBrowserRouter, Outlet, Navigate } from 'react-router-dom';
 import MainLayout from '../layout/MainLayout';
 import ComponentLayout from '../layout/ComponentLayout';
 import { Spinner } from '../layout/Spinner';
@@ -244,7 +244,7 @@ const UseStateGetReset = lazy((() => import('../pages/hooks/state/useStateGetRes
 const UseStateHistory = lazy((() => import('../pages/hooks/state/useStateHistory/UseStateHistory').then(module => ({default: "default" in module ? module["default"] : module["UseStateHistory"]}))) as unknown as () => Promise<{ default: ComponentType; }>)
 const UseStateValidator = lazy((() => import('../pages/hooks/state/useStateValidator/UseStateValidator').then(module => ({default: "default" in module ? module["default"] : module["UseStateValidator"]}))) as unknown as () => Promise<{ default: ComponentType; }>)
 function Router() {
-	const router = createHashRouter([
+	const router = createBrowserRouter([
 		{
 			path: "/",
 			element: <MainLayout />,
