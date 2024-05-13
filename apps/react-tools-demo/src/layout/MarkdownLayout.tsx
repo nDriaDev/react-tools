@@ -21,13 +21,19 @@ SyntaxHighlighter.registerLanguage("lua", lua);
 
 export default function MarkdownLayout({ source }: { source: string }) {
 	const ss = source.split("\n").map(el => el.indexOf(" [See demo") !== -1 ? el.substring(0, el.indexOf(" [See")) : el).join("\n");
-	
+
     return (
         <div className="docs">
             <div className="docs-md">
 				<ReactMarkdown
 					remarkPlugins={[remarkGfm]}
-                    components={{
+					components={{
+						h1(props) {
+							return <h1 {...props} translate="no"/>
+						},
+						h3(props) {
+							return <h3 {...props} translate="no" />
+						},
                         code({ className, ...props }) {
                             const hasLang = /language-(\w+)/.exec(className || "");
                             return hasLang ? (

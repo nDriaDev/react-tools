@@ -182,6 +182,7 @@ Go to [Demo](https://ndriadev.github.io/react-tools) to see and try all implemen
 
 	- [_alphanumericCompare_](#alphanumericCompare)
 	- [_changeStringCase_](#changeStringCase)
+	- [_clickElementOnKeydownEvent_](#clickElementOnKeydownEvent)
 	- [_defaultSerializer_](#defaultSerializer)
 	- [_detectBrowser_](#detectBrowser)
 	- [_getBase64_](#getBase64)
@@ -393,9 +394,9 @@ useLogger(name: string, props: object)
 
 ### useRerender
 
-Hook that force a render. [See demo](https://ndriadev.github.io/react-tools/#/hooks/lifecycle/useRerender)
+Hook to force a render. [See demo](https://ndriadev.github.io/react-tools/#/hooks/lifecycle/useRerender)
 ```tsx
-useRerender(): React.DispatchWithoutAction
+useRerender<T>(withValue?: true|false|never): DispatchWithoutAction | [T, DispatchWithoutAction]
 ```
 
 ## PERFORMANCE
@@ -854,7 +855,7 @@ usePopover({ mode, onBeforeToggle, onToggle }: UsePopoverProps): UsePopoverResul
 
 Hook to resolve promise with Suspense support. The component that uses it, it need to be wrapped with Suspense component. This hook can be used in conditional blocks. [See demo](https://ndriadev.github.io/react-tools/#/hooks/api-dom/usePromiseSuspensible)
 ```tsx
-usePromiseSuspensible<T>(promise: ()=>Promise<T>, deps: DependencyList, options: { cache?: "unmount" | number, cleanOnError?: boolean } = {}): Awaited<ReturnType<typeof promise>>
+usePromiseSuspensible<T>(promise: ()=>Promise<T>, deps: DependencyList, options: { cache?: "unmount" | number, cleanOnError?: boolean, identifier?: string } = {}): Awaited<ReturnType<typeof promise>>
 ```
 
 ### usePublishSubscribe
@@ -1055,6 +1056,13 @@ alphanumericCompare(string1: string, string2: string, compareType?: "<" | ">" | 
 Function that given a string, a case type, and an optional delimiter, returns the string in the specified case or empty string. [See demo](https://ndriadev.github.io/react-tools/#/utils/changeStringCase)
 ```tsx
 changeStringCase({string, caseType, delimiter}:{ string?: string, caseType: "pascalCase" | "snakeCase" | "kebabCase" | "camelCase", delimiter?: "upperCase" | "lowerCase" | string}): string
+```
+
+### clickElementOnKeydownEvent
+
+Function which, given a triggering code, executes _click_ on element when a keyDown event with triggering code is executed. [See demo](https://ndriadev.github.io/react-tools/#/utils/clickElementOnKeydownEvent)
+```tsx
+clickElementOnKeydownEvent(codeTriggering: KeyboardEventCode): ((e: KeyboardEvent) => void)
 ```
 
 ### defaultSerializer
@@ -1271,6 +1279,13 @@ type LanguageBCP47Tags
 Utility type for __`Typed Arrays`__.
 ```tsx
 type TypedArray
+```
+
+### KeyboardEventCode
+
+Utility type for __`Keyboard Event Code`__
+```tsx
+type KeyboardEventCode
 ```
 
 

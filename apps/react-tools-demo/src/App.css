@@ -235,6 +235,7 @@ code {
 summary:hover {
 	/* color: #f53340; */
 	color: #9c2129;
+	cursor: pointer;
 }
 
 .docs {

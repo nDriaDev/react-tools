@@ -9,11 +9,11 @@ export default function Home() {
 			<Link to="https://github.com/nDriaDev/react-tools">
 				<img src={Logo} alt="react" className="logo" />
 			</Link>
-			<h1 className='title' style={{marginBottom: 0}}>React-Tools</h1>
+			<h1 className='title' style={{marginBottom: 0}} translate='no'>React-Tools</h1>
 			<h2 className='h3 version'>{conf.version}</h2>
 			<h3 className='title h2' style={{textAlign: "center"}}>A collection of Hooks, Components, Utilities and Types for React</h3>
 			<div className='npm-container'>
-				<p className='npm-command'>
+				<p className='npm-command' translate='no'>
 					<code>
 						npm i @ndriadev/react-tools
 					</code>
@@ -40,15 +40,15 @@ export default function Home() {
 			<Link className='get-started' onClick={() => document.querySelector('.container')?.scrollTo(0, 0)} to="/hooks">GET STARTED</Link>
 			<div className='features-container'>
 				<div className='cell cell1'>
-					<div className='title'>Typescript</div>
+					<div className='title' translate='no'>Typescript</div>
 					<div className='body'>Written in typescript for type safety.</div>
 				</div>
 				<div className='cell cell2'>
-					<div className='title'>Tree Shakable</div>
+					<div className='title' translate='no'>Tree Shakable</div>
 					<div className='body'>Import only that you use. Indivual import cost is tiny.</div>
 				</div>
 				<div className='cell cell3'>
-					<div className='title'>Demos</div>
+					<div className='title' translate='no'>Demos</div>
 					<div className='body'>All implementations have a demo that allow you to try them.</div>
 				</div>
 				<div className="footer">

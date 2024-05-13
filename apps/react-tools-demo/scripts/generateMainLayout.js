@@ -39,9 +39,9 @@ async function generateImport(router) {
  */
 function createLinkHooksRoutes(router, stateFiles, lifecycleFiles, performanceFiles, eventsFiles, apiDomFiles,) {
 	router.add("						<details open className='type'>");
-	router.add("							<summary>Hooks</summary>");
+	router.add("							<summary translate='no'>Hooks</summary>");
 	router.add("							<details open className='sub-type'>");
-	router.add("								<summary>State</summary>");
+	router.add("								<summary translate='no'>State</summary>");
 	stateFiles.forEach(f => {
 		const [name] = f.split(".");
 		router.add('								<Link');
@@ -52,13 +52,14 @@ function createLinkHooksRoutes(router, stateFiles, lifecycleFiles, performanceFi
 		router.add('										containerRef.current?.scrollTo(0, 0);');
 		router.add('										window.innerWidth < 1190 && closeNav();');
 		router.add('									}}');
+		router.add('									translate="no"');
 		router.add('								>');
 		router.add(`									${name}`);
 		router.add('								</Link>');
 	});
 	router.add("							</details>");
 	router.add("							<details open className='sub-type'>");
-	router.add("								<summary>Lifecycle</summary>");
+	router.add("								<summary translate='no'>Lifecycle</summary>");
 	lifecycleFiles.forEach(f => {
 		const [name] = f.split(".");
 		router.add('								<Link');
@@ -69,13 +70,14 @@ function createLinkHooksRoutes(router, stateFiles, lifecycleFiles, performanceFi
 		router.add('										containerRef.current?.scrollTo(0, 0);');
 		router.add('										window.innerWidth < 1190 && closeNav();');
 		router.add('									}}');
+		router.add('									translate="no"');
 		router.add('								>');
 		router.add(`									${name}`);
 		router.add('								</Link>');
 	});
 	router.add("							</details>");
 	router.add("							<details open className='sub-type'>");
-	router.add("								<summary>Performance</summary>");
+	router.add("								<summary translate='no'>Performance</summary>");
 	performanceFiles.forEach(f => {
 		const [name] = f.split(".");
 		router.add('								<Link');
@@ -86,13 +88,14 @@ function createLinkHooksRoutes(router, stateFiles, lifecycleFiles, performanceFi
 		router.add('										containerRef.current?.scrollTo(0, 0);');
 		router.add('										window.innerWidth < 1190 && closeNav();');
 		router.add('									}}');
+		router.add('									translate="no"');
 		router.add('								>');
 		router.add(`									${name}`);
 		router.add('								</Link>');
 	});
 	router.add("							</details>");
 	router.add("							<details open className='sub-type'>");
-	router.add("								<summary>Events</summary>");
+	router.add("								<summary translate='no'>Events</summary>");
 	eventsFiles.forEach(f => {
 		const [name] = f.split(".");
 		router.add('								<Link');
@@ -103,13 +106,14 @@ function createLinkHooksRoutes(router, stateFiles, lifecycleFiles, performanceFi
 		router.add('										containerRef.current?.scrollTo(0, 0);');
 		router.add('										window.innerWidth < 1190 && closeNav();');
 		router.add('									}}');
+		router.add('									translate="no"');
 		router.add('								>');
 		router.add(`									${name}`);
 		router.add('								</Link>');
 	});
 	router.add("							</details>");
 	router.add("							<details open className='sub-type'>");
-	router.add("								<summary>API DOM</summary>");
+	router.add("								<summary translate='no'>API DOM</summary>");
 	apiDomFiles.forEach(f => {
 		const [name] = f.split(".");
 		router.add('								<Link');
@@ -120,6 +124,7 @@ function createLinkHooksRoutes(router, stateFiles, lifecycleFiles, performanceFi
 		router.add('										containerRef.current?.scrollTo(0, 0);');
 		router.add('										window.innerWidth < 1190 && closeNav();');
 		router.add('									}}');
+		router.add('									translate="no"');
 		router.add('								>');
 		router.add(`									${name}`);
 		router.add('								</Link>');
@@ -136,7 +141,7 @@ function createLinkHooksRoutes(router, stateFiles, lifecycleFiles, performanceFi
  */
 function createLinkRoutes(router, componentsFiles, parentRoot) {
 	router.add("						<details open className='type'>");
-	router.add(`							<summary>${parentRoot.charAt(0).toUpperCase() + parentRoot.substring(1)}</summary>`);
+	router.add(`							<summary translate="no">${parentRoot.charAt(0).toUpperCase() + parentRoot.substring(1)}</summary>`);
 	componentsFiles.forEach(f => {
 		const [name] = f.split(".");
 		router.add('							<Link');
@@ -147,6 +152,7 @@ function createLinkRoutes(router, componentsFiles, parentRoot) {
 		router.add('									containerRef.current?.scrollTo(0, 0);');
 		router.add('									window.innerWidth < 1190 && closeNav();');
 		router.add('								}}');
+		router.add('								translate="no"');
 		router.add('							>');
 		router.add(`								${name}`);
 		router.add('							</Link>');
@@ -248,7 +254,7 @@ async function generateMainLayout() {
 			'						<div className="title-container">',
 			'							<Link to="/" className="title">',
 			'								<img src={React} alt="react" className="img" />',
-			'								<p className="text">React Tools</p>',
+			'								<p className="text" translate="no">React Tools</p>',
 			'							</Link>',
 			'							<Link to="https://github.com/nDriaDev/react-tools">',
 			'								<img src={Logo} className="img" alt="github" />',

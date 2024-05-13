@@ -40,16 +40,16 @@ export default function MainLayout() {
 						<div className="title-container">
 							<Link to="/" className="title">
 								<img src={React} alt="react" className="img" />
-								<p className="text">React Tools</p>
+								<p className="text" translate="no">React Tools</p>
 							</Link>
 							<Link to="https://github.com/nDriaDev/react-tools">
 								<img src={Logo} className="img" alt="github" />
 							</Link>
 						</div>
 						<details open className='type'>
-							<summary>Hooks</summary>
+							<summary translate='no'>Hooks</summary>
 							<details open className='sub-type'>
-								<summary>State</summary>
+								<summary translate='no'>State</summary>
 								<Link
 									className={pathname === "/hooks/state/createPubSubStore" ? 'active' : ''}
 									ref={node => linksRef.current["createPubSubStore"] = node}
@@ -58,6 +58,7 @@ export default function MainLayout() {
 										containerRef.current?.scrollTo(0, 0);
 										window.innerWidth < 1190 && closeNav();
 									}}
+									translate="no"
 								>
 									createPubSubStore
 								</Link>
@@ -69,6 +70,7 @@ export default function MainLayout() {
 										containerRef.current?.scrollTo(0, 0);
 										window.innerWidth < 1190 && closeNav();
 									}}
+									translate="no"
 								>
 									useArray
 								</Link>
@@ -80,6 +82,7 @@ export default function MainLayout() {
 										containerRef.current?.scrollTo(0, 0);
 										window.innerWidth < 1190 && closeNav();
 									}}
+									translate="no"
 								>
 									useDerivedState
 								</Link>
@@ -91,6 +94,7 @@ export default function MainLayout() {
 										containerRef.current?.scrollTo(0, 0);
 										window.innerWidth < 1190 && closeNav();
 									}}
+									translate="no"
 								>
 									useLocalStorageState
 								</Link>
@@ -102,6 +106,7 @@ export default function MainLayout() {
 										containerRef.current?.scrollTo(0, 0);
 										window.innerWidth < 1190 && closeNav();
 									}}
+									translate="no"
 								>
 									useMap
 								</Link>
@@ -113,6 +118,7 @@ export default function MainLayout() {
 										containerRef.current?.scrollTo(0, 0);
 										window.innerWidth < 1190 && closeNav();
 									}}
+									translate="no"
 								>
 									usePrevious
 								</Link>
@@ -124,6 +130,7 @@ export default function MainLayout() {
 										containerRef.current?.scrollTo(0, 0);
 										window.innerWidth < 1190 && closeNav();
 									}}
+									translate="no"
 								>
 									useProxyState
 								</Link>
@@ -135,6 +142,7 @@ export default function MainLayout() {
 										containerRef.current?.scrollTo(0, 0);
 										window.innerWidth < 1190 && closeNav();
 									}}
+									translate="no"
 								>
 									useReducerGetReset
 								</Link>
@@ -146,6 +154,7 @@ export default function MainLayout() {
 										containerRef.current?.scrollTo(0, 0);
 										window.innerWidth < 1190 && closeNav();
 									}}
+									translate="no"
 								>
 									useReducerHistory
 								</Link>
@@ -157,6 +166,7 @@ export default function MainLayout() {
 										containerRef.current?.scrollTo(0, 0);
 										window.innerWidth < 1190 && closeNav();
 									}}
+									translate="no"
 								>
 									useReducerHistoryGetter
 								</Link>
@@ -168,6 +178,7 @@ export default function MainLayout() {
 										containerRef.current?.scrollTo(0, 0);
 										window.innerWidth < 1190 && closeNav();
 									}}
+									translate="no"
 								>
 									useSessionStorageState
 								</Link>
@@ -179,6 +190,7 @@ export default function MainLayout() {
 										containerRef.current?.scrollTo(0, 0);
 										window.innerWidth < 1190 && closeNav();
 									}}
+									translate="no"
 								>
 									useSet
 								</Link>
@@ -190,6 +202,7 @@ export default function MainLayout() {
 										containerRef.current?.scrollTo(0, 0);
 										window.innerWidth < 1190 && closeNav();
 									}}
+									translate="no"
 								>
 									useStateGetReset
 								</Link>
@@ -201,6 +214,7 @@ export default function MainLayout() {
 										containerRef.current?.scrollTo(0, 0);
 										window.innerWidth < 1190 && closeNav();
 									}}
+									translate="no"
 								>
 									useStateHistory
 								</Link>
@@ -212,6 +226,7 @@ export default function MainLayout() {
 										containerRef.current?.scrollTo(0, 0);
 										window.innerWidth < 1190 && closeNav();
 									}}
+									translate="no"
 								>
 									useStateHistoryGetter
 								</Link>
@@ -223,6 +238,7 @@ export default function MainLayout() {
 										containerRef.current?.scrollTo(0, 0);
 										window.innerWidth < 1190 && closeNav();
 									}}
+									translate="no"
 								>
 									useStateValidator
 								</Link>
@@ -234,12 +250,13 @@ export default function MainLayout() {
 										containerRef.current?.scrollTo(0, 0);
 										window.innerWidth < 1190 && closeNav();
 									}}
+									translate="no"
 								>
 									useSyncExternalStore
 								</Link>
 							</details>
 							<details open className='sub-type'>
-								<summary>Lifecycle</summary>
+								<summary translate='no'>Lifecycle</summary>
 								<Link
 									className={pathname === "/hooks/lifecycle/useDeferredValue" ? 'active' : ''}
 									ref={node => linksRef.current["useDeferredValue"] = node}
@@ -248,6 +265,7 @@ export default function MainLayout() {
 										containerRef.current?.scrollTo(0, 0);
 										window.innerWidth < 1190 && closeNav();
 									}}
+									translate="no"
 								>
 									useDeferredValue
 								</Link>
@@ -259,6 +277,7 @@ export default function MainLayout() {
 										containerRef.current?.scrollTo(0, 0);
 										window.innerWidth < 1190 && closeNav();
 									}}
+									translate="no"
 								>
 									useEffectCompare
 								</Link>
@@ -270,6 +289,7 @@ export default function MainLayout() {
 										containerRef.current?.scrollTo(0, 0);
 										window.innerWidth < 1190 && closeNav();
 									}}
+									translate="no"
 								>
 									useEffectDeepCompare
 								</Link>
@@ -281,6 +301,7 @@ export default function MainLayout() {
 										containerRef.current?.scrollTo(0, 0);
 										window.innerWidth < 1190 && closeNav();
 									}}
+									translate="no"
 								>
 									useEffectOnce
 								</Link>
@@ -292,6 +313,7 @@ export default function MainLayout() {
 										containerRef.current?.scrollTo(0, 0);
 										window.innerWidth < 1190 && closeNav();
 									}}
+									translate="no"
 								>
 									useIsMounted
 								</Link>
@@ -303,6 +325,7 @@ export default function MainLayout() {
 										containerRef.current?.scrollTo(0, 0);
 										window.innerWidth < 1190 && closeNav();
 									}}
+									translate="no"
 								>
 									useLayoutEffectCompare
 								</Link>
@@ -314,6 +337,7 @@ export default function MainLayout() {
 										containerRef.current?.scrollTo(0, 0);
 										window.innerWidth < 1190 && closeNav();
 									}}
+									translate="no"
 								>
 									useLayoutEffectDeepCompare
 								</Link>
@@ -325,6 +349,7 @@ export default function MainLayout() {
 										containerRef.current?.scrollTo(0, 0);
 										window.innerWidth < 1190 && closeNav();
 									}}
+									translate="no"
 								>
 									useLayoutEffectOnce
 								</Link>
@@ -336,6 +361,7 @@ export default function MainLayout() {
 										containerRef.current?.scrollTo(0, 0);
 										window.innerWidth < 1190 && closeNav();
 									}}
+									translate="no"
 								>
 									useLogger
 								</Link>
@@ -347,12 +373,13 @@ export default function MainLayout() {
 										containerRef.current?.scrollTo(0, 0);
 										window.innerWidth < 1190 && closeNav();
 									}}
+									translate="no"
 								>
 									useRerender
 								</Link>
 							</details>
 							<details open className='sub-type'>
-								<summary>Performance</summary>
+								<summary translate='no'>Performance</summary>
 								<Link
 									className={pathname === "/hooks/performance/useCallbackCompare" ? 'active' : ''}
 									ref={node => linksRef.current["useCallbackCompare"] = node}
@@ -361,6 +388,7 @@ export default function MainLayout() {
 										containerRef.current?.scrollTo(0, 0);
 										window.innerWidth < 1190 && closeNav();
 									}}
+									translate="no"
 								>
 									useCallbackCompare
 								</Link>
@@ -372,6 +400,7 @@ export default function MainLayout() {
 										containerRef.current?.scrollTo(0, 0);
 										window.innerWidth < 1190 && closeNav();
 									}}
+									translate="no"
 								>
 									useCallbackDeepCompare
 								</Link>
@@ -383,6 +412,7 @@ export default function MainLayout() {
 										containerRef.current?.scrollTo(0, 0);
 										window.innerWidth < 1190 && closeNav();
 									}}
+									translate="no"
 								>
 									useId
 								</Link>
@@ -394,6 +424,7 @@ export default function MainLayout() {
 										containerRef.current?.scrollTo(0, 0);
 										window.innerWidth < 1190 && closeNav();
 									}}
+									translate="no"
 								>
 									useLazyRef
 								</Link>
@@ -405,6 +436,7 @@ export default function MainLayout() {
 										containerRef.current?.scrollTo(0, 0);
 										window.innerWidth < 1190 && closeNav();
 									}}
+									translate="no"
 								>
 									useMemoCompare
 								</Link>
@@ -416,6 +448,7 @@ export default function MainLayout() {
 										containerRef.current?.scrollTo(0, 0);
 										window.innerWidth < 1190 && closeNav();
 									}}
+									translate="no"
 								>
 									useMemoDeepCompare
 								</Link>
@@ -427,6 +460,7 @@ export default function MainLayout() {
 										containerRef.current?.scrollTo(0, 0);
 										window.innerWidth < 1190 && closeNav();
 									}}
+									translate="no"
 								>
 									useMemoizedFn
 								</Link>
@@ -438,12 +472,13 @@ export default function MainLayout() {
 										containerRef.current?.scrollTo(0, 0);
 										window.innerWidth < 1190 && closeNav();
 									}}
+									translate="no"
 								>
 									useMergedRef
 								</Link>
 							</details>
 							<details open className='sub-type'>
-								<summary>Events</summary>
+								<summary translate='no'>Events</summary>
 								<Link
 									className={pathname === "/hooks/events/useBeforeUnload" ? 'active' : ''}
 									ref={node => linksRef.current["useBeforeUnload"] = node}
@@ -452,6 +487,7 @@ export default function MainLayout() {
 										containerRef.current?.scrollTo(0, 0);
 										window.innerWidth < 1190 && closeNav();
 									}}
+									translate="no"
 								>
 									useBeforeUnload
 								</Link>
@@ -463,6 +499,7 @@ export default function MainLayout() {
 										containerRef.current?.scrollTo(0, 0);
 										window.innerWidth < 1190 && closeNav();
 									}}
+									translate="no"
 								>
 									useClickOutside
 								</Link>
@@ -474,6 +511,7 @@ export default function MainLayout() {
 										containerRef.current?.scrollTo(0, 0);
 										window.innerWidth < 1190 && closeNav();
 									}}
+									translate="no"
 								>
 									useContextMenu
 								</Link>
@@ -485,6 +523,7 @@ export default function MainLayout() {
 										containerRef.current?.scrollTo(0, 0);
 										window.innerWidth < 1190 && closeNav();
 									}}
+									translate="no"
 								>
 									useDocumentVisibility
 								</Link>
@@ -496,6 +535,7 @@ export default function MainLayout() {
 										containerRef.current?.scrollTo(0, 0);
 										window.innerWidth < 1190 && closeNav();
 									}}
+									translate="no"
 								>
 									useDoubleClick
 								</Link>
@@ -507,6 +547,7 @@ export default function MainLayout() {
 										containerRef.current?.scrollTo(0, 0);
 										window.innerWidth < 1190 && closeNav();
 									}}
+									translate="no"
 								>
 									useEventDispatcher
 								</Link>
@@ -518,6 +559,7 @@ export default function MainLayout() {
 										containerRef.current?.scrollTo(0, 0);
 										window.innerWidth < 1190 && closeNav();
 									}}
+									translate="no"
 								>
 									useEventListener
 								</Link>
@@ -529,6 +571,7 @@ export default function MainLayout() {
 										containerRef.current?.scrollTo(0, 0);
 										window.innerWidth < 1190 && closeNav();
 									}}
+									translate="no"
 								>
 									useEvents
 								</Link>
@@ -540,6 +583,7 @@ export default function MainLayout() {
 										containerRef.current?.scrollTo(0, 0);
 										window.innerWidth < 1190 && closeNav();
 									}}
+									translate="no"
 								>
 									useHotKeys
 								</Link>
@@ -551,6 +595,7 @@ export default function MainLayout() {
 										containerRef.current?.scrollTo(0, 0);
 										window.innerWidth < 1190 && closeNav();
 									}}
+									translate="no"
 								>
 									useHover
 								</Link>
@@ -562,6 +607,7 @@ export default function MainLayout() {
 										containerRef.current?.scrollTo(0, 0);
 										window.innerWidth < 1190 && closeNav();
 									}}
+									translate="no"
 								>
 									useInfiniteScroll
 								</Link>
@@ -573,6 +619,7 @@ export default function MainLayout() {
 										containerRef.current?.scrollTo(0, 0);
 										window.innerWidth < 1190 && closeNav();
 									}}
+									translate="no"
 								>
 									useIntersectionObserver
 								</Link>
@@ -584,6 +631,7 @@ export default function MainLayout() {
 										containerRef.current?.scrollTo(0, 0);
 										window.innerWidth < 1190 && closeNav();
 									}}
+									translate="no"
 								>
 									useIsOnline
 								</Link>
@@ -595,6 +643,7 @@ export default function MainLayout() {
 										containerRef.current?.scrollTo(0, 0);
 										window.innerWidth < 1190 && closeNav();
 									}}
+									translate="no"
 								>
 									useLongPress
 								</Link>
@@ -606,6 +655,7 @@ export default function MainLayout() {
 										containerRef.current?.scrollTo(0, 0);
 										window.innerWidth < 1190 && closeNav();
 									}}
+									translate="no"
 								>
 									useMeasure
 								</Link>
@@ -617,6 +667,7 @@ export default function MainLayout() {
 										containerRef.current?.scrollTo(0, 0);
 										window.innerWidth < 1190 && closeNav();
 									}}
+									translate="no"
 								>
 									useMouse
 								</Link>
@@ -628,6 +679,7 @@ export default function MainLayout() {
 										containerRef.current?.scrollTo(0, 0);
 										window.innerWidth < 1190 && closeNav();
 									}}
+									translate="no"
 								>
 									useMutationObserver
 								</Link>
@@ -639,6 +691,7 @@ export default function MainLayout() {
 										containerRef.current?.scrollTo(0, 0);
 										window.innerWidth < 1190 && closeNav();
 									}}
+									translate="no"
 								>
 									useNetwork
 								</Link>
@@ -650,6 +703,7 @@ export default function MainLayout() {
 										containerRef.current?.scrollTo(0, 0);
 										window.innerWidth < 1190 && closeNav();
 									}}
+									translate="no"
 								>
 									usePerformAction
 								</Link>
@@ -661,6 +715,7 @@ export default function MainLayout() {
 										containerRef.current?.scrollTo(0, 0);
 										window.innerWidth < 1190 && closeNav();
 									}}
+									translate="no"
 								>
 									usePinchZoom
 								</Link>
@@ -672,6 +727,7 @@ export default function MainLayout() {
 										containerRef.current?.scrollTo(0, 0);
 										window.innerWidth < 1190 && closeNav();
 									}}
+									translate="no"
 								>
 									usePointerLock
 								</Link>
@@ -683,6 +739,7 @@ export default function MainLayout() {
 										containerRef.current?.scrollTo(0, 0);
 										window.innerWidth < 1190 && closeNav();
 									}}
+									translate="no"
 								>
 									useResizeObserver
 								</Link>
@@ -694,6 +751,7 @@ export default function MainLayout() {
 										containerRef.current?.scrollTo(0, 0);
 										window.innerWidth < 1190 && closeNav();
 									}}
+									translate="no"
 								>
 									useResponsive
 								</Link>
@@ -705,6 +763,7 @@ export default function MainLayout() {
 										containerRef.current?.scrollTo(0, 0);
 										window.innerWidth < 1190 && closeNav();
 									}}
+									translate="no"
 								>
 									useScreen
 								</Link>
@@ -716,6 +775,7 @@ export default function MainLayout() {
 										containerRef.current?.scrollTo(0, 0);
 										window.innerWidth < 1190 && closeNav();
 									}}
+									translate="no"
 								>
 									useScrollIntoView
 								</Link>
@@ -727,6 +787,7 @@ export default function MainLayout() {
 										containerRef.current?.scrollTo(0, 0);
 										window.innerWidth < 1190 && closeNav();
 									}}
+									translate="no"
 								>
 									useSwipe
 								</Link>
@@ -738,12 +799,13 @@ export default function MainLayout() {
 										containerRef.current?.scrollTo(0, 0);
 										window.innerWidth < 1190 && closeNav();
 									}}
+									translate="no"
 								>
 									useVisible
 								</Link>
 							</details>
 							<details open className='sub-type'>
-								<summary>API DOM</summary>
+								<summary translate='no'>API DOM</summary>
 								<Link
 									className={pathname === "/hooks/api-useActiveElement" ? 'active' : ''}
 									ref={node => linksRef.current["useActiveElement"] = node}
@@ -752,6 +814,7 @@ export default function MainLayout() {
 										containerRef.current?.scrollTo(0, 0);
 										window.innerWidth < 1190 && closeNav();
 									}}
+									translate="no"
 								>
 									useActiveElement
 								</Link>
@@ -763,6 +826,7 @@ export default function MainLayout() {
 										containerRef.current?.scrollTo(0, 0);
 										window.innerWidth < 1190 && closeNav();
 									}}
+									translate="no"
 								>
 									useAnimation
 								</Link>
@@ -774,6 +838,7 @@ export default function MainLayout() {
 										containerRef.current?.scrollTo(0, 0);
 										window.innerWidth < 1190 && closeNav();
 									}}
+									translate="no"
 								>
 									useAudio
 								</Link>
@@ -785,6 +850,7 @@ export default function MainLayout() {
 										containerRef.current?.scrollTo(0, 0);
 										window.innerWidth < 1190 && closeNav();
 									}}
+									translate="no"
 								>
 									useBattery
 								</Link>
@@ -796,6 +862,7 @@ export default function MainLayout() {
 										containerRef.current?.scrollTo(0, 0);
 										window.innerWidth < 1190 && closeNav();
 									}}
+									translate="no"
 								>
 									useBluetooth
 								</Link>
@@ -807,6 +874,7 @@ export default function MainLayout() {
 										containerRef.current?.scrollTo(0, 0);
 										window.innerWidth < 1190 && closeNav();
 									}}
+									translate="no"
 								>
 									useBroadcastChannel
 								</Link>
@@ -818,6 +886,7 @@ export default function MainLayout() {
 										containerRef.current?.scrollTo(0, 0);
 										window.innerWidth < 1190 && closeNav();
 									}}
+									translate="no"
 								>
 									useClipboard
 								</Link>
@@ -829,6 +898,7 @@ export default function MainLayout() {
 										containerRef.current?.scrollTo(0, 0);
 										window.innerWidth < 1190 && closeNav();
 									}}
+									translate="no"
 								>
 									useColorScheme
 								</Link>
@@ -840,6 +910,7 @@ export default function MainLayout() {
 										containerRef.current?.scrollTo(0, 0);
 										window.innerWidth < 1190 && closeNav();
 									}}
+									translate="no"
 								>
 									useDebounce
 								</Link>
@@ -851,6 +922,7 @@ export default function MainLayout() {
 										containerRef.current?.scrollTo(0, 0);
 										window.innerWidth < 1190 && closeNav();
 									}}
+									translate="no"
 								>
 									useDeviceMotion
 								</Link>
@@ -862,6 +934,7 @@ export default function MainLayout() {
 										containerRef.current?.scrollTo(0, 0);
 										window.innerWidth < 1190 && closeNav();
 									}}
+									translate="no"
 								>
 									useDeviceOrientation
 								</Link>
@@ -873,6 +946,7 @@ export default function MainLayout() {
 										containerRef.current?.scrollTo(0, 0);
 										window.innerWidth < 1190 && closeNav();
 									}}
+									translate="no"
 								>
 									useDialogBox
 								</Link>
@@ -884,6 +958,7 @@ export default function MainLayout() {
 										containerRef.current?.scrollTo(0, 0);
 										window.innerWidth < 1190 && closeNav();
 									}}
+									translate="no"
 								>
 									useDisplayMedia
 								</Link>
@@ -895,6 +970,7 @@ export default function MainLayout() {
 										containerRef.current?.scrollTo(0, 0);
 										window.innerWidth < 1190 && closeNav();
 									}}
+									translate="no"
 								>
 									useDocumentPIP
 								</Link>
@@ -906,6 +982,7 @@ export default function MainLayout() {
 										containerRef.current?.scrollTo(0, 0);
 										window.innerWidth < 1190 && closeNav();
 									}}
+									translate="no"
 								>
 									useEventSource
 								</Link>
@@ -917,6 +994,7 @@ export default function MainLayout() {
 										containerRef.current?.scrollTo(0, 0);
 										window.innerWidth < 1190 && closeNav();
 									}}
+									translate="no"
 								>
 									useEyeDropper
 								</Link>
@@ -928,6 +1006,7 @@ export default function MainLayout() {
 										containerRef.current?.scrollTo(0, 0);
 										window.innerWidth < 1190 && closeNav();
 									}}
+									translate="no"
 								>
 									useFetch
 								</Link>
@@ -939,6 +1018,7 @@ export default function MainLayout() {
 										containerRef.current?.scrollTo(0, 0);
 										window.innerWidth < 1190 && closeNav();
 									}}
+									translate="no"
 								>
 									useFPS
 								</Link>
@@ -950,6 +1030,7 @@ export default function MainLayout() {
 										containerRef.current?.scrollTo(0, 0);
 										window.innerWidth < 1190 && closeNav();
 									}}
+									translate="no"
 								>
 									useFullscreen
 								</Link>
@@ -961,6 +1042,7 @@ export default function MainLayout() {
 										containerRef.current?.scrollTo(0, 0);
 										window.innerWidth < 1190 && closeNav();
 									}}
+									translate="no"
 								>
 									useGeolocation
 								</Link>
@@ -972,6 +1054,7 @@ export default function MainLayout() {
 										containerRef.current?.scrollTo(0, 0);
 										window.innerWidth < 1190 && closeNav();
 									}}
+									translate="no"
 								>
 									useIdleCallback
 								</Link>
@@ -983,6 +1066,7 @@ export default function MainLayout() {
 										containerRef.current?.scrollTo(0, 0);
 										window.innerWidth < 1190 && closeNav();
 									}}
+									translate="no"
 								>
 									useInterval
 								</Link>
@@ -994,6 +1078,7 @@ export default function MainLayout() {
 										containerRef.current?.scrollTo(0, 0);
 										window.innerWidth < 1190 && closeNav();
 									}}
+									translate="no"
 								>
 									useLock
 								</Link>
@@ -1005,6 +1090,7 @@ export default function MainLayout() {
 										containerRef.current?.scrollTo(0, 0);
 										window.innerWidth < 1190 && closeNav();
 									}}
+									translate="no"
 								>
 									useMediaDevices
 								</Link>
@@ -1016,6 +1102,7 @@ export default function MainLayout() {
 										containerRef.current?.scrollTo(0, 0);
 										window.innerWidth < 1190 && closeNav();
 									}}
+									translate="no"
 								>
 									useMediaQuery
 								</Link>
@@ -1027,6 +1114,7 @@ export default function MainLayout() {
 										containerRef.current?.scrollTo(0, 0);
 										window.innerWidth < 1190 && closeNav();
 									}}
+									translate="no"
 								>
 									usePermission
 								</Link>
@@ -1038,6 +1126,7 @@ export default function MainLayout() {
 										containerRef.current?.scrollTo(0, 0);
 										window.innerWidth < 1190 && closeNav();
 									}}
+									translate="no"
 								>
 									usePIP
 								</Link>
@@ -1049,6 +1138,7 @@ export default function MainLayout() {
 										containerRef.current?.scrollTo(0, 0);
 										window.innerWidth < 1190 && closeNav();
 									}}
+									translate="no"
 								>
 									usePopover
 								</Link>
@@ -1060,6 +1150,7 @@ export default function MainLayout() {
 										containerRef.current?.scrollTo(0, 0);
 										window.innerWidth < 1190 && closeNav();
 									}}
+									translate="no"
 								>
 									usePromiseSuspensible
 								</Link>
@@ -1071,6 +1162,7 @@ export default function MainLayout() {
 										containerRef.current?.scrollTo(0, 0);
 										window.innerWidth < 1190 && closeNav();
 									}}
+									translate="no"
 								>
 									usePublishSubscribe
 								</Link>
@@ -1082,6 +1174,7 @@ export default function MainLayout() {
 										containerRef.current?.scrollTo(0, 0);
 										window.innerWidth < 1190 && closeNav();
 									}}
+									translate="no"
 								>
 									useRaf
 								</Link>
@@ -1093,6 +1186,7 @@ export default function MainLayout() {
 										containerRef.current?.scrollTo(0, 0);
 										window.innerWidth < 1190 && closeNav();
 									}}
+									translate="no"
 								>
 									useReducedMotion
 								</Link>
@@ -1104,6 +1198,7 @@ export default function MainLayout() {
 										containerRef.current?.scrollTo(0, 0);
 										window.innerWidth < 1190 && closeNav();
 									}}
+									translate="no"
 								>
 									useRemotePlayback
 								</Link>
@@ -1115,6 +1210,7 @@ export default function MainLayout() {
 										containerRef.current?.scrollTo(0, 0);
 										window.innerWidth < 1190 && closeNav();
 									}}
+									translate="no"
 								>
 									useScreenWakeLock
 								</Link>
@@ -1126,6 +1222,7 @@ export default function MainLayout() {
 										containerRef.current?.scrollTo(0, 0);
 										window.innerWidth < 1190 && closeNav();
 									}}
+									translate="no"
 								>
 									useScript
 								</Link>
@@ -1137,6 +1234,7 @@ export default function MainLayout() {
 										containerRef.current?.scrollTo(0, 0);
 										window.innerWidth < 1190 && closeNav();
 									}}
+									translate="no"
 								>
 									useShare
 								</Link>
@@ -1148,6 +1246,7 @@ export default function MainLayout() {
 										containerRef.current?.scrollTo(0, 0);
 										window.innerWidth < 1190 && closeNav();
 									}}
+									translate="no"
 								>
 									useSpeechRecognition
 								</Link>
@@ -1159,6 +1258,7 @@ export default function MainLayout() {
 										containerRef.current?.scrollTo(0, 0);
 										window.innerWidth < 1190 && closeNav();
 									}}
+									translate="no"
 								>
 									useSpeechSynthesis
 								</Link>
@@ -1170,6 +1270,7 @@ export default function MainLayout() {
 										containerRef.current?.scrollTo(0, 0);
 										window.innerWidth < 1190 && closeNav();
 									}}
+									translate="no"
 								>
 									useTextSelection
 								</Link>
@@ -1181,6 +1282,7 @@ export default function MainLayout() {
 										containerRef.current?.scrollTo(0, 0);
 										window.innerWidth < 1190 && closeNav();
 									}}
+									translate="no"
 								>
 									useThrottle
 								</Link>
@@ -1192,6 +1294,7 @@ export default function MainLayout() {
 										containerRef.current?.scrollTo(0, 0);
 										window.innerWidth < 1190 && closeNav();
 									}}
+									translate="no"
 								>
 									useTimeout
 								</Link>
@@ -1203,6 +1306,7 @@ export default function MainLayout() {
 										containerRef.current?.scrollTo(0, 0);
 										window.innerWidth < 1190 && closeNav();
 									}}
+									translate="no"
 								>
 									useTitle
 								</Link>
@@ -1214,6 +1318,7 @@ export default function MainLayout() {
 										containerRef.current?.scrollTo(0, 0);
 										window.innerWidth < 1190 && closeNav();
 									}}
+									translate="no"
 								>
 									useVibrate
 								</Link>
@@ -1225,6 +1330,7 @@ export default function MainLayout() {
 										containerRef.current?.scrollTo(0, 0);
 										window.innerWidth < 1190 && closeNav();
 									}}
+									translate="no"
 								>
 									useVideo
 								</Link>
@@ -1236,6 +1342,7 @@ export default function MainLayout() {
 										containerRef.current?.scrollTo(0, 0);
 										window.innerWidth < 1190 && closeNav();
 									}}
+									translate="no"
 								>
 									useWebSocket
 								</Link>
@@ -1247,6 +1354,7 @@ export default function MainLayout() {
 										containerRef.current?.scrollTo(0, 0);
 										window.innerWidth < 1190 && closeNav();
 									}}
+									translate="no"
 								>
 									useWebWorker
 								</Link>
@@ -1258,13 +1366,14 @@ export default function MainLayout() {
 										containerRef.current?.scrollTo(0, 0);
 										window.innerWidth < 1190 && closeNav();
 									}}
+									translate="no"
 								>
 									useWebWorkerFn
 								</Link>
 							</details>
 						</details>
 						<details open className='type'>
-							<summary>Components</summary>
+							<summary translate="no">Components</summary>
 							<Link
 								className={pathname === "/components/ErrorBoundary" ? 'active' : ''}
 								ref={node => linksRef.current["ErrorBoundary"] = node}
@@ -1273,6 +1382,7 @@ export default function MainLayout() {
 									containerRef.current?.scrollTo(0, 0);
 									window.innerWidth < 1190 && closeNav();
 								}}
+								translate="no"
 							>
 								ErrorBoundary
 							</Link>
@@ -1284,6 +1394,7 @@ export default function MainLayout() {
 									containerRef.current?.scrollTo(0, 0);
 									window.innerWidth < 1190 && closeNav();
 								}}
+								translate="no"
 							>
 								For
 							</Link>
@@ -1295,6 +1406,7 @@ export default function MainLayout() {
 									containerRef.current?.scrollTo(0, 0);
 									window.innerWidth < 1190 && closeNav();
 								}}
+								translate="no"
 							>
 								ForMemoized
 							</Link>
@@ -1306,6 +1418,7 @@ export default function MainLayout() {
 									containerRef.current?.scrollTo(0, 0);
 									window.innerWidth < 1190 && closeNav();
 								}}
+								translate="no"
 							>
 								LazyComponent
 							</Link>
@@ -1317,6 +1430,7 @@ export default function MainLayout() {
 									containerRef.current?.scrollTo(0, 0);
 									window.innerWidth < 1190 && closeNav();
 								}}
+								translate="no"
 							>
 								Show
 							</Link>
@@ -1328,6 +1442,7 @@ export default function MainLayout() {
 									containerRef.current?.scrollTo(0, 0);
 									window.innerWidth < 1190 && closeNav();
 								}}
+								translate="no"
 							>
 								ShowMemoized
 							</Link>
@@ -1339,6 +1454,7 @@ export default function MainLayout() {
 									containerRef.current?.scrollTo(0, 0);
 									window.innerWidth < 1190 && closeNav();
 								}}
+								translate="no"
 							>
 								SwitchCase
 							</Link>
@@ -1350,12 +1466,13 @@ export default function MainLayout() {
 									containerRef.current?.scrollTo(0, 0);
 									window.innerWidth < 1190 && closeNav();
 								}}
+								translate="no"
 							>
 								SwitchCaseMemoized
 							</Link>
 						</details>
 						<details open className='type'>
-							<summary>Utils</summary>
+							<summary translate="no">Utils</summary>
 							<Link
 								className={pathname === "/utils/alphanumericCompare" ? 'active' : ''}
 								ref={node => linksRef.current["alphanumericCompare"] = node}
@@ -1364,6 +1481,7 @@ export default function MainLayout() {
 									containerRef.current?.scrollTo(0, 0);
 									window.innerWidth < 1190 && closeNav();
 								}}
+								translate="no"
 							>
 								alphanumericCompare
 							</Link>
@@ -1375,6 +1493,7 @@ export default function MainLayout() {
 									containerRef.current?.scrollTo(0, 0);
 									window.innerWidth < 1190 && closeNav();
 								}}
+								translate="no"
 							>
 								changeStringCase
 							</Link>
@@ -1386,6 +1505,7 @@ export default function MainLayout() {
 									containerRef.current?.scrollTo(0, 0);
 									window.innerWidth < 1190 && closeNav();
 								}}
+								translate="no"
 							>
 								clickElementOnKeydownEvent
 							</Link>
@@ -1397,6 +1517,7 @@ export default function MainLayout() {
 									containerRef.current?.scrollTo(0, 0);
 									window.innerWidth < 1190 && closeNav();
 								}}
+								translate="no"
 							>
 								defaultSerializer
 							</Link>
@@ -1408,6 +1529,7 @@ export default function MainLayout() {
 									containerRef.current?.scrollTo(0, 0);
 									window.innerWidth < 1190 && closeNav();
 								}}
+								translate="no"
 							>
 								detectBrowser
 							</Link>
@@ -1419,6 +1541,7 @@ export default function MainLayout() {
 									containerRef.current?.scrollTo(0, 0);
 									window.innerWidth < 1190 && closeNav();
 								}}
+								translate="no"
 							>
 								getBase64
 							</Link>
@@ -1430,6 +1553,7 @@ export default function MainLayout() {
 									containerRef.current?.scrollTo(0, 0);
 									window.innerWidth < 1190 && closeNav();
 								}}
+								translate="no"
 							>
 								getKeyObjectFromValue
 							</Link>
@@ -1441,6 +1565,7 @@ export default function MainLayout() {
 									containerRef.current?.scrollTo(0, 0);
 									window.innerWidth < 1190 && closeNav();
 								}}
+								translate="no"
 							>
 								getObjectFromDottedString
 							</Link>
@@ -1452,6 +1577,7 @@ export default function MainLayout() {
 									containerRef.current?.scrollTo(0, 0);
 									window.innerWidth < 1190 && closeNav();
 								}}
+								translate="no"
 							>
 								hotKeyHandler
 							</Link>
@@ -1463,6 +1589,7 @@ export default function MainLayout() {
 									containerRef.current?.scrollTo(0, 0);
 									window.innerWidth < 1190 && closeNav();
 								}}
+								translate="no"
 							>
 								isAsync
 							</Link>
@@ -1474,6 +1601,7 @@ export default function MainLayout() {
 									containerRef.current?.scrollTo(0, 0);
 									window.innerWidth < 1190 && closeNav();
 								}}
+								translate="no"
 							>
 								isClient
 							</Link>
@@ -1485,6 +1613,7 @@ export default function MainLayout() {
 									containerRef.current?.scrollTo(0, 0);
 									window.innerWidth < 1190 && closeNav();
 								}}
+								translate="no"
 							>
 								isDeepEqual
 							</Link>
@@ -1496,6 +1625,7 @@ export default function MainLayout() {
 									containerRef.current?.scrollTo(0, 0);
 									window.innerWidth < 1190 && closeNav();
 								}}
+								translate="no"
 							>
 								isMouseEvent
 							</Link>
@@ -1507,6 +1637,7 @@ export default function MainLayout() {
 									containerRef.current?.scrollTo(0, 0);
 									window.innerWidth < 1190 && closeNav();
 								}}
+								translate="no"
 							>
 								isShallowEqual
 							</Link>
@@ -1518,6 +1649,7 @@ export default function MainLayout() {
 									containerRef.current?.scrollTo(0, 0);
 									window.innerWidth < 1190 && closeNav();
 								}}
+								translate="no"
 							>
 								isTouchEvent
 							</Link>
@@ -1529,6 +1661,7 @@ export default function MainLayout() {
 									containerRef.current?.scrollTo(0, 0);
 									window.innerWidth < 1190 && closeNav();
 								}}
+								translate="no"
 							>
 								lazy
 							</Link>
@@ -1540,6 +1673,7 @@ export default function MainLayout() {
 									containerRef.current?.scrollTo(0, 0);
 									window.innerWidth < 1190 && closeNav();
 								}}
+								translate="no"
 							>
 								mergeObjects
 							</Link>
@@ -1551,6 +1685,7 @@ export default function MainLayout() {
 									containerRef.current?.scrollTo(0, 0);
 									window.innerWidth < 1190 && closeNav();
 								}}
+								translate="no"
 							>
 								removePropertiesFromArrayObjects
 							</Link>
@@ -1562,12 +1697,13 @@ export default function MainLayout() {
 									containerRef.current?.scrollTo(0, 0);
 									window.innerWidth < 1190 && closeNav();
 								}}
+								translate="no"
 							>
 								uniqueElementsArray
 							</Link>
 						</details>
 						<details open className='type'>
-							<summary>Types</summary>
+							<summary translate="no">Types</summary>
 							<Link
 								className={pathname === "/types/utilityTypes" ? 'active' : ''}
 								ref={node => linksRef.current["utilityTypes"] = node}
@@ -1576,6 +1712,7 @@ export default function MainLayout() {
 									containerRef.current?.scrollTo(0, 0);
 									window.innerWidth < 1190 && closeNav();
 								}}
+								translate="no"
 							>
 								utilityTypes
 							</Link>
