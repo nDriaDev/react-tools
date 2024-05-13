@@ -1,5 +1,5 @@
 # isMouseEvent
-It returns true if the event param is of MouseEvent type. [See demo](https://ndriadev.github.io/react-tools/#/utils/isMouseEvent)
+It returns true if the event param is of MouseEvent type. [See demo](https://react-tools.ndria.dev/#/utils/isMouseEvent)
 
 ## API
 

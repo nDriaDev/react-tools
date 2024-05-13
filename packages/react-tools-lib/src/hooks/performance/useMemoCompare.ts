@@ -2,7 +2,7 @@ import { useMemo, useRef } from "react"
 import { DependencyListTyped, CompareFn } from "../../models"
 
 /**
- * **`useMemoCompare`**: custom useMemo that returns memoized value that changes only when comparator function, received as third parameter, returns true. [See demo](https://ndriadev.github.io/react-tools/#/hooks/performance/useMemoCompare)
+ * **`useMemoCompare`**: custom useMemo that returns memoized value that changes only when comparator function, received as third parameter, returns true. [See demo](https://react-tools.ndria.dev/#/hooks/performance/useMemoCompare)
  * @param {() => T} factory - computes value.
  * @param {DependencyListTyped} deps - typed DependencyList.
  * @param {CompareFn} [compareFn] - optional function that executes comparing between old and new `deps`: it returns true if they are different, otherwise false. If there isn't, hook works like normal useMemo.

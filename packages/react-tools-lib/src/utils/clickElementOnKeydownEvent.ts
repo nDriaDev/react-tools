@@ -1,7 +1,7 @@
 import { KeyboardEventCode } from "../models";
 
 /**
- * **`clickElementOnKeydownEvent`**: Function which, given a triggering code, executes _click_ on element when a keyDown event with triggering code is executed. [See demo](https://ndriadev.github.io/react-tools/#/utils/clickElementOnKeydownEvent)
+ * **`clickElementOnKeydownEvent`**: Function which, given a triggering code, executes _click_ on element when a keyDown event with triggering code is executed. [See demo](https://react-tools.ndria.dev/#/utils/clickElementOnKeydownEvent)
  * @param {codeTriggering: KeyboardEventCode} codeTriggering
  * @returns {(e: KeyboardEvent) => void}
  */

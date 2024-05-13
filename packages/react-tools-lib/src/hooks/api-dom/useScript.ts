@@ -30,7 +30,7 @@ const createScriptNode = (attributes: UseScriptProps["attributes"]): HTMLScriptE
 }
 
 /**
- * **`useScript`**: Hook to dinamically load an external script like Google Analitycs. [See demo](https://ndriadev.github.io/react-tools/#/hooks/api-dom/useScript)
+ * **`useScript`**: Hook to dinamically load an external script like Google Analitycs. [See demo](https://react-tools.ndria.dev/#/hooks/api-dom/useScript)
  * @param {{ src?: string, async?: boolean, crossorigin?: "anonymous" | "use-credentials" | "", defer?: boolean, fetchpriority?: "high" | "low" | "auto", integrity?: string, nomodule?: boolean, nonce?: string, referrerpolicy?: "no-referrer" | "no-referrer-when-downgrade" | "origin" | "origin-when-cross-origin" | "same-origin" | "strict-origin" | "strict-origin-when-cross-origin" | "unsafe-url", type?: string }} attributes - script attributes.
  * @param {{ handleAppending?: boolean, removeOnUnmount?: boolean, iframe?: HTMLIFrameElement }} options - to handle appending and removing script, to automatically remove script when component unmount and to append script to an iframe.
  * @returns {[status: UseScriptStatus, (attributes: UseScriptProps["attributes"], iframe?: HTMLIFrameElement) => void, () => void]} array - first element returns script status and second and thirds elements allow to manually handle script.

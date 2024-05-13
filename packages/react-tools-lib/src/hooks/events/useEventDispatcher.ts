@@ -2,7 +2,7 @@ import { RefObject } from "react"
 import { useMemoizedFn } from "../performance";
 
 /**
- * __`useEventDispatcher`__: Hook to dispatch an Event or a CustomEvent. [See demo](https://ndriadev.github.io/react-tools/#/hooks/events/useEventDispatcher)
+ * __`useEventDispatcher`__: Hook to dispatch an Event or a CustomEvent. [See demo](https://react-tools.ndria.dev/#/hooks/events/useEventDispatcher)
  * @param {RefObject<HTMLElement> | Window} [element=window] - target on which dispatch event
  * @returns {(evt: Event | CustomEvent) => void} dispatch - function that dispatch the event on target
  */

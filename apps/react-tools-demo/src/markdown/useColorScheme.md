@@ -1,5 +1,5 @@
 # useColorScheme
-Hook to handle ColorScheme. [See demo](https://ndriadev.github.io/react-tools/#/hooks/api-dom/useColorScheme)
+Hook to handle ColorScheme. [See demo](https://react-tools.ndria.dev/#/hooks/api-dom/useColorScheme)
 
 ## Usage
 

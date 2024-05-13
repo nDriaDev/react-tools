@@ -2,7 +2,7 @@ import { DependencyList, useCallback, useRef } from "react"
 import { isDeepEqual } from "../../utils";
 
 /**
- * **`useCallbackDeepCompare`**: custom useCallback that returns memoized callback that changes only if deps are different in depth. [See demo](https://ndriadev.github.io/react-tools/#/hooks/performance/useCallbackDeepCompare)
+ * **`useCallbackDeepCompare`**: custom useCallback that returns memoized callback that changes only if deps are different in depth. [See demo](https://react-tools.ndria.dev/#/hooks/performance/useCallbackDeepCompare)
  * @param {T} cb - callback.
  * @param {React.DependencyList} deps - DependencyList.
  * @returns {T} cb - memoized callback

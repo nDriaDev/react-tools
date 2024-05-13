@@ -41,7 +41,7 @@ const caseFunc = {
 };
 
 /**
- * **`changeStringCase`**: Function that given a string, a case type, and an optional delimiter, returns the string in the specified case or empty string. [See demo](https://ndriadev.github.io/react-tools/#/utils/changeStringCase)
+ * **`changeStringCase`**: Function that given a string, a case type, and an optional delimiter, returns the string in the specified case or empty string. [See demo](https://react-tools.ndria.dev/#/utils/changeStringCase)
  * @param {Object} param - object
  * @param {string|undefined} [param.string] - string to the which change case.
  * @param {"pascalCase" | "snakeCase" | "kebabCase" | "camelCase"} param.caseType - selected case to change string.

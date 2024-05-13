@@ -1,5 +1,5 @@
 # useLock
-Hook to use [Web Locks API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Locks_API). [See demo](https://ndriadev.github.io/react-tools/#/hooks/api-dom/useLock)
+Hook to use [Web Locks API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Locks_API). [See demo](https://react-tools.ndria.dev/#/hooks/api-dom/useLock)
 
 ## Usage
 

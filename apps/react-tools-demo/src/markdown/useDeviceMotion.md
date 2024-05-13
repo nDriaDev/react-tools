@@ -1,5 +1,5 @@
 # useDeviceMotion
-Hook to handle [device motion](https://developer.mozilla.org/en-US/docs/Web/API/Window/devicemotion_event). [See demo](https://ndriadev.github.io/react-tools/#/hooks/api-dom/useDeviceMotion)
+Hook to handle [device motion](https://developer.mozilla.org/en-US/docs/Web/API/Window/devicemotion_event). [See demo](https://react-tools.ndria.dev/#/hooks/api-dom/useDeviceMotion)
 
 ## Usage
 

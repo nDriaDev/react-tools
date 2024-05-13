@@ -2,7 +2,7 @@ import { memo } from "react";
 import { For } from "./For";
 //#IGNORE
 /**
- * **`ForMemoized`**: Memoized version of _For_ component. [See demo](https://ndriadev.github.io/react-tools/#/components/ForMemoized)
+ * **`ForMemoized`**: Memoized version of _For_ component. [See demo](https://react-tools.ndria.dev/#/components/ForMemoized)
  * @param {Object} props - component properties object.
  * @param {Array<T>} props.of - array of elements.
  * @param {(T|S) extends object ? keyof (T|S) | ((item: T|S) => Key) : Key | ((item: T|S) => Key)} [props.elementKey] - if the elements are objects, this prop can be a key of the elements in __of__ prop, or a function with one parameter which type is the type of the elements in __of__ prop and returns a __React.Key__ type, otherwise this prop can be the function described before or a __React.Key__. If it isn't specified, element index in __of__ props will be used as key.

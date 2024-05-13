@@ -4,7 +4,7 @@ import { useSyncExternalStore } from "../state";
 import { useEffectOnce } from "../lifecycle";
 
 /**
- * **`useEventSource`**: Hook to handle an [EventSource](https://developer.mozilla.org/en-US/docs/Web/API/EventSource) or [Server-Sent-Events](https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events) connection to an HTTP server, which sends events in text/event-stream format. [See demo](https://ndriadev.github.io/react-tools/#/hooks/api-dom/useEventSource)
+ * **`useEventSource`**: Hook to handle an [EventSource](https://developer.mozilla.org/en-US/docs/Web/API/EventSource) or [Server-Sent-Events](https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events) connection to an HTTP server, which sends events in text/event-stream format. [See demo](https://react-tools.ndria.dev/#/hooks/api-dom/useEventSource)
  * @param {UseEventSourceProps} param - object
  * @param {string|URL} [param.url] - string that represents the location of the remote resource serving the events/messages.
  * @param {EventSourceInit} [param.opts] - options to configure the new connection. The possible entries are: __withCredentials__ -> boolean value, defaulting to false, indicating if CORS should be set to include credentials.

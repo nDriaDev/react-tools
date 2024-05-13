@@ -1,7 +1,7 @@
 import { useState } from "react"
 
 /**
- * __`useArray`__: Hook to use _Array data structure_ to handle component state with all Array methods. [See demo](https://ndriadev.github.io/react-tools/#/hooks/state/useArray)
+ * __`useArray`__: Hook to use _Array data structure_ to handle component state with all Array methods. [See demo](https://react-tools.ndria.dev/#/hooks/state/useArray)
  * @param {Array<T> | (() => Array<T>} [initialState] - An Array or function that returns it.
  * @returns {Array<T>}
  */

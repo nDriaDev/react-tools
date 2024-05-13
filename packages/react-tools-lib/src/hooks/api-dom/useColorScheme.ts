@@ -2,7 +2,7 @@ import { useCallback, useMemo, useRef } from "react";
 import { useSyncExternalStore } from "../state"
 
 /**
- * **`useColorScheme`**: Hook to handle ColorScheme. [See demo](https://ndriadev.github.io/react-tools/#/hooks/api-dom/useColorScheme)
+ * **`useColorScheme`**: Hook to handle ColorScheme. [See demo](https://react-tools.ndria.dev/#/hooks/api-dom/useColorScheme)
  * @param {Object} param
  * @param {"dark"|"light"|"mediaQuery"} param.defaultValue - initial value if _getter_ function isn't present or isn't return a valid value. It can be _dark_ _light_ or _mediaQuery_ which means that must to be used media query prefers-color-scheme to detect initial value.
  * @param {()=>"dark"|"light"|null|undefined} [param.getter] - an optional function used to initialize current value. For example, it can be useful for reading the value from an attribute of an html file or from localStorage.

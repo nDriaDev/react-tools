@@ -1,5 +1,5 @@
 # useSpeechSynthesis
-Hook to use _SpeechSynthesis API_. Refer to [Web Speech API](https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesis). [See demo](https://ndriadev.github.io/react-tools/#/hooks/api-dom/useSpeechSynthesis)
+Hook to use _SpeechSynthesis API_. Refer to [Web Speech API](https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesis). [See demo](https://react-tools.ndria.dev/#/hooks/api-dom/useSpeechSynthesis)
 
 ## Usage
 

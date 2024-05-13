@@ -1,5 +1,5 @@
 # useHover
-Hook that determines whether the item is hovered or not and handles state hovers. [See demo](https://ndriadev.github.io/react-tools/#/hooks/events/useHover)
+Hook that determines whether the item is hovered or not and handles state hovers. [See demo](https://react-tools.ndria.dev/#/hooks/events/useHover)
 
 ## Usage
 

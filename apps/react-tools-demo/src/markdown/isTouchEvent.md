@@ -1,5 +1,5 @@
 # isTouchEvent
-It returns true if the event param is of TouchEvent type. [See demo](https://ndriadev.github.io/react-tools/#/utils/isTouchEvent)
+It returns true if the event param is of TouchEvent type. [See demo](https://react-tools.ndria.dev/#/utils/isTouchEvent)
 
 ## API
 

@@ -1,5 +1,5 @@
 # useSessionStorageState
-Custom _useState_ hook implementation using _sessionStorage_, with immutable _getter state_ function and to _remove_ key from sessionStorage. [See demo](https://ndriadev.github.io/react-tools/#/hooks/state/useSessionStorageState)
+Custom _useState_ hook implementation using _sessionStorage_, with immutable _getter state_ function and to _remove_ key from sessionStorage. [See demo](https://react-tools.ndria.dev/#/hooks/state/useSessionStorageState)
 
 ## Usage
 

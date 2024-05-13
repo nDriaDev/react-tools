@@ -1,5 +1,5 @@
 # getKeyObjectFromValue
-Function that given an object and a value, returns the corrispondent key of this value or undefined. [See demo](https://ndriadev.github.io/react-tools/#/utils/getKeyObjectFromValue)
+Function that given an object and a value, returns the corrispondent key of this value or undefined. [See demo](https://react-tools.ndria.dev/#/utils/getKeyObjectFromValue)
 
 ## API
 

@@ -1,5 +1,5 @@
 # lazy
-Wrapper around _React.lazy_ that works also with component without default export and with possibility to execute a function before and after component loading. [See demo](https://ndriadev.github.io/react-tools/#/utils/lazy)
+Wrapper around _React.lazy_ that works also with component without default export and with possibility to execute a function before and after component loading. [See demo](https://react-tools.ndria.dev/#/utils/lazy)
 
 ## API
 

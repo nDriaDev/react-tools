@@ -1,5 +1,5 @@
 # useDisplayMedia
-Hook to capture the contents of a display. [See demo](https://ndriadev.github.io/react-tools/#/hooks/api-dom/useDisplayMedia)
+Hook to capture the contents of a display. [See demo](https://react-tools.ndria.dev/#/hooks/api-dom/useDisplayMedia)
 
 ## Usage
 

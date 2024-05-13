@@ -1,5 +1,5 @@
 # useDialogBox
-Hook to use Dialog Box _prompt_, _alert_ or _confirm_. [See demo](https://ndriadev.github.io/react-tools/#/hooks/api-dom/useDialogBox)
+Hook to use Dialog Box _prompt_, _alert_ or _confirm_. [See demo](https://react-tools.ndria.dev/#/hooks/api-dom/useDialogBox)
 
 ## Usage
 

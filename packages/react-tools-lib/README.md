@@ -1,7 +1,7 @@
 <h1 align="center">
   	<br>
-	<a href="https://ndriadev.github.io/react-tools/">
-  		<img src="https://ndriadev.github.io/react-tools/react-red.png" alt="logo">
+	<a href="https://react-tools.ndria.dev/">
+  		<img src="https://react-tools.ndria.dev/react-red.png" alt="logo">
 	</a>
 	<br>
 	React-Tools
@@ -38,7 +38,7 @@
 
 ## Demo
 
-Go to [Demo](https://ndriadev.github.io/react-tools) to see and try all implementations.
+Go to [Demo](https://react-tools.ndria.dev) to see and try all implementations.
 
 ## Tools
 - [__HOOKS__](#hooks)
@@ -210,119 +210,119 @@ Go to [Demo](https://ndriadev.github.io/react-tools) to see and try all implemen
 
 ### createPubSubStore
 
-A state management hook implemented on Publish-Subscribe pattern. It allows components to subscribe to state changes and receive updates whenever the state is modified, providing a scalable and decoupled state management solution.__N.B.: to work properly, objects like Set, Map, Date or more generally objects without _Symbol.iterator_ must be treated as immutable__. [See demo](https://ndriadev.github.io/react-tools/#/hooks/state/createPubSubStore)
+A state management hook implemented on Publish-Subscribe pattern. It allows components to subscribe to state changes and receive updates whenever the state is modified, providing a scalable and decoupled state management solution.__N.B.: to work properly, objects like Set, Map, Date or more generally objects without _Symbol.iterator_ must be treated as immutable__. [See demo](https://react-tools.ndria.dev/#/hooks/state/createPubSubStore)
 ```tsx
 createPubSubStore<T extends object, E extends Record<string, (store: T, ...args: any) => void>>(obj: T, mutatorsFn?: E, persist?: boolean): { getStore: () => T; mutateStore: (cb: (globStore: T) => void) => void; mutators: Record<keyof E, (...args: ExtractTail<Parameters<E[keyof E]>>) => void>, usePubSubStore: { (subscribe?: undefined): [T, (store: T | ((currStore: T) => T)) => void, () => T, Record<keyof E, (...args: ExtractTail<Parameters<E[keyof E]>>) => void>]; <C>(subscribe?: (store: T) => C): [C, (store: C | ((currStore: C) => C)) => void, () => C, Record<keyof E, (...args: ExtractTail<Parameters<E[keyof E]>>) => void>]; <C>(subscribe?: (store: T) => C): [T | C, (store: T | C | ((currStore: T) => T) | ((currStore: C) => C)) => void, () => T, Record<keyof E, (...args: ExtractTail<Parameters<E[keyof E]>>) => void>] }}
 ```
 
 ### useArray
 
-Hook to use _Array data structure_ to handle component state with all Array methods. [See demo](https://ndriadev.github.io/react-tools/#/hooks/state/useArray)
+Hook to use _Array data structure_ to handle component state with all Array methods. [See demo](https://react-tools.ndria.dev/#/hooks/state/useArray)
 ```tsx
 useArray<T>(initialState?: Array<T> | (() => Array<T>))
 ```
 
 ### useDerivedState
 
-Hook useful when the internal state of a component depends on one or more props. It receives an _initial state_ and a _dependency array_ that works the same way as that of a _useEffect_, _useMemo_, and _useCallback_. Every time the dependencies change, the __derived state__ is resetted to _initial state_. A third optional parameter can be passed, to execute a _compute_ function after the dependencies are updated, without having a _useEffect_ within the component. [See demo](https://ndriadev.github.io/react-tools/#/hooks/state/useDerivedState)
+Hook useful when the internal state of a component depends on one or more props. It receives an _initial state_ and a _dependency array_ that works the same way as that of a _useEffect_, _useMemo_, and _useCallback_. Every time the dependencies change, the __derived state__ is resetted to _initial state_. A third optional parameter can be passed, to execute a _compute_ function after the dependencies are updated, without having a _useEffect_ within the component. [See demo](https://react-tools.ndria.dev/#/hooks/state/useDerivedState)
 ```tsx
 useDerivedState<T>(initialState: T | (() => T), deps: DependencyList, compute?: EffectCallback): [T, Dispatch<SetStateAction<T>>]
 ```
 
 ### useLocalStorageState
 
-Custom _useState_ hook implementation using _LocalStorage_, with immutable _getter state_ function and to _remove_ key from localStorage. [See demo](https://ndriadev.github.io/react-tools/#/hooks/state/useLocalStorageState)
+Custom _useState_ hook implementation using _LocalStorage_, with immutable _getter state_ function and to _remove_ key from localStorage. [See demo](https://react-tools.ndria.dev/#/hooks/state/useLocalStorageState)
 ```tsx
 useLocalStorageState<T>({ key, initialState, opts }: { key: string, initialState?: T | (() => T), opts?: { serializer?: (item: T) => string, deserializer?: (item: string) => T, mode?: "read" | "write" | "read/write" } }): [T, () => T, () => void] | [Dispatch<SetStateAction<T>>, () => T, () => void] | [T, Dispatch<SetStateAction<T>>, () => T, () => void]
 ```
 
 ### useMap
 
-Hook to use _Map data structure_ to handle component state with all Map methods. [See demo](https://ndriadev.github.io/react-tools/#/hooks/state/useMap)
+Hook to use _Map data structure_ to handle component state with all Map methods. [See demo](https://react-tools.ndria.dev/#/hooks/state/useMap)
 ```tsx
 useMap<K, V>(initialState?: Iterable<readonly [K, V]> | (() => Iterable<readonly [K, V]>))
 ```
 
 ### usePrevious
 
-It's track the previous value of a variable, with possibility to enable/disable tracking. [See demo](https://ndriadev.github.io/react-tools/#/hooks/state/usePrevious)
+It's track the previous value of a variable, with possibility to enable/disable tracking. [See demo](https://react-tools.ndria.dev/#/hooks/state/usePrevious)
 ```tsx
 usePrevious<T = unknown>(variable: T): [T|undefined, (enable: boolean) => void]
 ```
 
 ### useProxyState
 
-Hook to handle component state that allows you to use an object for your state and mutating it in a way more idiomatic for JS. __*N.B.*__ not destructure state, otherwise break changes updated. [See demo](https://ndriadev.github.io/react-tools/#/hooks/state/useProxyState)
+Hook to handle component state that allows you to use an object for your state and mutating it in a way more idiomatic for JS. __*N.B.*__ not destructure state, otherwise break changes updated. [See demo](https://react-tools.ndria.dev/#/hooks/state/useProxyState)
 ```tsx
 useProxyState<T extends Record<string, any>>(initialState: T | (() => T), proxyInDepth:boolean=false): T
 ```
 
 ### useReducerGetReset
 
-Custom useReducer with get and reset state functions. [See demo](https://ndriadev.github.io/react-tools/#/hooks/state/useReducerGetReset)
+Custom useReducer with get and reset state functions. [See demo](https://react-tools.ndria.dev/#/hooks/state/useReducerGetReset)
 ```tsx
 useReducerGetReset<R extends Reducer<any, any>>(reducer: R, initialState: ReducerState<R>, initializer?: (init: ReducerState<R>) => ReducerState<R>): [ReducerState<R>, Dispatch<ReducerAction<R>>, ()=>ReducerState<R>, ()=>void]
 ```
 
 ### useReducerHistory
 
-Custom useReducer that tracks and allows to use previous values. [See demo](https://ndriadev.github.io/react-tools/#/hooks/state/useReducerHistory)
+Custom useReducer that tracks and allows to use previous values. [See demo](https://react-tools.ndria.dev/#/hooks/state/useReducerHistory)
 ```tsx
 useReducerHistory<R extends Reducer<any, any>>(reducer: R, initialState: ReducerState<R>, initializer?: (init: ReducerState<R>) => ReducerState<R>, capacity: number | "no-limit" = "no-limit"): [ReducerState<R>, Dispatch<ReducerAction<R>>, { history: readonly ReducerState<R>[], presentPointer: number, trackUpdate: (enable: boolean) => void, canUndo: boolean, canRedo: boolean, undo: () => void, redo: () => void, go: (index: number) => void, clear: (value?: ReducerAction<R>) => void }]
 ```
 
 ### useReducerHistoryGetter
 
-Custom useReducer with getter state function and that tracks and allows to use previous values. [See demo](https://ndriadev.github.io/react-tools/#/hooks/state/useReducerHistoryGetter)
+Custom useReducer with getter state function and that tracks and allows to use previous values. [See demo](https://react-tools.ndria.dev/#/hooks/state/useReducerHistoryGetter)
 ```tsx
 useReducerHistoryGetter<R extends Reducer<any, any>>(reducer: R, initialState: ReducerState<R>, initializer?: (init: ReducerState<R>) => ReducerState<R>, capacity: number | "no-limit" = "no-limit"): [ReducerState<R>, Dispatch<ReducerAction<R>>,()=>ReducerState<R>, { history: readonly ReducerState<R>[], presentPointer: number, trackUpdate: (enable: boolean) => void, canUndo: boolean, canRedo: boolean, undo: () => void, redo: () => void, go: (index: number) => void, clear: (value?: ReducerAction<R>) => void }]
 ```
 
 ### useSessionStorageState
 
-Custom _useState_ hook implementation using _sessionStorage_, with immutable _getter state_ function and to _remove_ key from sessionStorage. [See demo](https://ndriadev.github.io/react-tools/#/hooks/state/useSessionStorageState)
+Custom _useState_ hook implementation using _sessionStorage_, with immutable _getter state_ function and to _remove_ key from sessionStorage. [See demo](https://react-tools.ndria.dev/#/hooks/state/useSessionStorageState)
 ```tsx
 useSessionStorageState<T>({ key, initialState, opts }: { key: string, initialState?: T | (() => T), opts?: { serializer?: (item: T) => string, deserializer?: (item: string) => T, mode?: "read" | "write" | "read/write" } }): [T, () => T, () => void] | [Dispatch<SetStateAction<T>>, () => T, () => void] | [T, Dispatch<SetStateAction<T>>, () => T, () => void]
 ```
 
 ### useSet
 
-Hook to use _Set data structure_ to handle component state with all Set methods. [See demo](https://ndriadev.github.io/react-tools/#/hooks/state/useSet)
+Hook to use _Set data structure_ to handle component state with all Set methods. [See demo](https://react-tools.ndria.dev/#/hooks/state/useSet)
 ```tsx
 useSet<T>(initialState?: Iterable<T> | (() => Iterable<T>))
 ```
 
 ### useStateGetReset
 
-Custom useState with get and reset state functions. [See demo](https://ndriadev.github.io/react-tools/#/hooks/state/useStateGetReset)
+Custom useState with get and reset state functions. [See demo](https://react-tools.ndria.dev/#/hooks/state/useStateGetReset)
 ```tsx
 useStateGetReset<T>(initialState: T | (() => T)): [T, Dispatch<SetStateAction<T>>, () => T, () => void]
 ```
 
 ### useStateHistory
 
-Custom useState that tracks and allows to use previous values. [See demo](https://ndriadev.github.io/react-tools/#/hooks/state/useStateHistory)
+Custom useState that tracks and allows to use previous values. [See demo](https://react-tools.ndria.dev/#/hooks/state/useStateHistory)
 ```tsx
 useStateHistory<T>(initialState: T | (() => T), capacity: number | "no-limit" = "no-limit"): [T, Dispatch<SetStateAction<T>>, { history: readonly T[], presentPointer: number, trackUpdate: (enable:boolean) => void, canUndo: boolean, canRedo: boolean, undo: () => void, redo: () => void, go: (index: number) => void, clear: (value?: T) => void }]
 ```
 
 ### useStateHistoryGetter
 
-Custom useState with getter state function and that tracks and allows to use previous values. [See demo](https://ndriadev.github.io/react-tools/#/hooks/state/useStateHistoryGetter)
+Custom useState with getter state function and that tracks and allows to use previous values. [See demo](https://react-tools.ndria.dev/#/hooks/state/useStateHistoryGetter)
 ```tsx
 useStateHistoryGetter<T>(initialState: T | (() => T), capacity: number | "no-limit" = "no-limit"): [T, Dispatch<SetStateAction<T>>, () => T, ReturnType<typeof useStateHistory<T>>[2]]
 ```
 
 ### useStateValidator
 
-Custom _useState_ hook that validates state on every update. [See demo](https://ndriadev.github.io/react-tools/#/hooks/state/useStateValidator)
+Custom _useState_ hook that validates state on every update. [See demo](https://react-tools.ndria.dev/#/hooks/state/useStateValidator)
 ```tsx
 useStateValidator<T>(initialState: T | (() => T), validator: StateValidator<T>): [T, Dispatch<SetStateAction<T>>, T extends object ? {[k in keyof T]:{invalid: boolean, message?: string}} : {invalid: boolean, message?: string}]
 ```
 
 ### useSyncExternalStore
 
-_useSyncExternalStore_ hook polyfilled for React versions below 18 ___only client side___. [See demo](https://ndriadev.github.io/react-tools/#/hooks/state/useSyncExternalStore)
+_useSyncExternalStore_ hook polyfilled for React versions below 18 ___only client side___. [See demo](https://react-tools.ndria.dev/#/hooks/state/useSyncExternalStore)
 ```tsx
 useSyncExternalStore<Snapshot>(subscribe: (onStoreChange: () => void) => () => void, getSnapshot: () => Snapshot): Snapshot
 ```
@@ -331,70 +331,70 @@ useSyncExternalStore<Snapshot>(subscribe: (onStoreChange: () => void) => () => v
 
 ### useDeferredValue
 
-_useDeferredValue_ hook polyfilled for React versions below 18. [See demo](https://ndriadev.github.io/react-tools/#/hooks/lifecycle/useDeferredValue)
+_useDeferredValue_ hook polyfilled for React versions below 18. [See demo](https://react-tools.ndria.dev/#/hooks/lifecycle/useDeferredValue)
 ```tsx
 useDeferredValue<T>(value: T): T
 ```
 
 ### useEffectCompare
 
-Custom useEffect that reexecutes EffectCallback only when comparator function, received as third parameter, returns true. [See demo](https://ndriadev.github.io/react-tools/#/hooks/lifecycle/useEffectCompare)
+Custom useEffect that reexecutes EffectCallback only when comparator function, received as third parameter, returns true. [See demo](https://react-tools.ndria.dev/#/hooks/lifecycle/useEffectCompare)
 ```tsx
 useEffectCompare<T = unknown>(cb: EffectCallback, deps: DependencyListTyped<T>, compareFn?: CompareFn<T>)
 ```
 
 ### useEffectDeepCompare
 
-Custom useEffect that reexecutes EffectCallback only when deps are different in depth. [See demo](https://ndriadev.github.io/react-tools/#/hooks/lifecycle/useEffectDeepCompare)
+Custom useEffect that reexecutes EffectCallback only when deps are different in depth. [See demo](https://react-tools.ndria.dev/#/hooks/lifecycle/useEffectDeepCompare)
 ```tsx
 useEffectDeepCompare(cb: EffectCallback, deps: DependencyList):void
 ```
 
 ### useEffectOnce
 
-Hook to executes _effect_ and _clean up_ after component mount __only once__. It prevents _React 18 StrictMode_ behavior if present, otherwise it works like a normal _useEffect_ with empty dependencies array. __*N.B.*__ Not use in a component with normal _useEffect_, if it executes a _React.DispatchAction_, because this action is executes twice if there is _React.StrictMode_. [See demo](https://ndriadev.github.io/react-tools/#/hooks/lifecycle/useEffectOnce)
+Hook to executes _effect_ and _clean up_ after component mount __only once__. It prevents _React 18 StrictMode_ behavior if present, otherwise it works like a normal _useEffect_ with empty dependencies array. __*N.B.*__ Not use in a component with normal _useEffect_, if it executes a _React.DispatchAction_, because this action is executes twice if there is _React.StrictMode_. [See demo](https://react-tools.ndria.dev/#/hooks/lifecycle/useEffectOnce)
 ```tsx
 useEffectOnce(effect: EffectCallback)
 ```
 
 ### useIsMounted
 
-Hoos to know when a component is mounted or not. [See demo](https://ndriadev.github.io/react-tools/#/hooks/lifecycle/useIsMounted)
+Hoos to know when a component is mounted or not. [See demo](https://react-tools.ndria.dev/#/hooks/lifecycle/useIsMounted)
 ```tsx
 useIsMounted(): ()=>boolean
 ```
 
 ### useLayoutEffectCompare
 
-Custom useLayoutEffect that reexecutes EffectCallback only when comparator function, received as third parameter, returns true. [See demo](https://ndriadev.github.io/react-tools/#/hooks/lifecycle/useLayoutEffectCompare)
+Custom useLayoutEffect that reexecutes EffectCallback only when comparator function, received as third parameter, returns true. [See demo](https://react-tools.ndria.dev/#/hooks/lifecycle/useLayoutEffectCompare)
 ```tsx
 useLayoutEffectCompare<T = unknown>(cb: EffectCallback, deps: DependencyListTyped<T>, compareFn?: CompareFn<T>)
 ```
 
 ### useLayoutEffectDeepCompare
 
-Custom useEffect that reexecutes EffectCallback only when deps are different in depth. [See demo](https://ndriadev.github.io/react-tools/#/hooks/lifecycle/useLayoutEffectDeepCompare)
+Custom useEffect that reexecutes EffectCallback only when deps are different in depth. [See demo](https://react-tools.ndria.dev/#/hooks/lifecycle/useLayoutEffectDeepCompare)
 ```tsx
 useLayoutEffectDeepCompare(cb: EffectCallback, deps: DependencyList):void
 ```
 
 ### useLayoutEffectOnce
 
-Hook to executes _effect_ and _clean up_ after component mount __only once__. It prevents _React 18 StrictMode_ behavior if present, otherwise it works like a normal _useLayoutEffect_ with empty dependencies array. __*N.B.*__ Not use in a component with normal _useLayoutEffect_, if it executes a _React.DispatchAction_, because this action is executes twice if there is _React.StrictMode_. [See demo](https://ndriadev.github.io/react-tools/#/hooks/lifecycle/useLayoutEffectOnce)
+Hook to executes _effect_ and _clean up_ after component mount __only once__. It prevents _React 18 StrictMode_ behavior if present, otherwise it works like a normal _useLayoutEffect_ with empty dependencies array. __*N.B.*__ Not use in a component with normal _useLayoutEffect_, if it executes a _React.DispatchAction_, because this action is executes twice if there is _React.StrictMode_. [See demo](https://react-tools.ndria.dev/#/hooks/lifecycle/useLayoutEffectOnce)
 ```tsx
 useLayoutEffectOnce(effect: EffectCallback)
 ```
 
 ### useLogger
 
-Hook to log componet details during Lifecycle events. [See demo](https://ndriadev.github.io/react-tools/#/hooks/lifecycle/useLogger)
+Hook to log componet details during Lifecycle events. [See demo](https://react-tools.ndria.dev/#/hooks/lifecycle/useLogger)
 ```tsx
 useLogger(name: string, props: object)
 ```
 
 ### useRerender
 
-Hook to force a render. [See demo](https://ndriadev.github.io/react-tools/#/hooks/lifecycle/useRerender)
+Hook to force a render. [See demo](https://react-tools.ndria.dev/#/hooks/lifecycle/useRerender)
 ```tsx
 useRerender<T>(withValue?: true|false|never): DispatchWithoutAction | [T, DispatchWithoutAction]
 ```
@@ -403,56 +403,56 @@ useRerender<T>(withValue?: true|false|never): DispatchWithoutAction | [T, Dispat
 
 ### useCallbackCompare
 
-Custom useCallback that returns memoized callback that changes only when comparator function, received as third parameter, returns true. [See demo](https://ndriadev.github.io/react-tools/#/hooks/performance/useCallbackCompare)
+Custom useCallback that returns memoized callback that changes only when comparator function, received as third parameter, returns true. [See demo](https://react-tools.ndria.dev/#/hooks/performance/useCallbackCompare)
 ```tsx
 useCallbackCompare<T extends Function, E = unknown>(cb: T, deps: DependencyListTyped<E>, compareFn?: CompareFn<E>):T
 ```
 
 ### useCallbackDeepCompare
 
-Custom useCallback that returns memoized callback that changes only if deps are different in depth. [See demo](https://ndriadev.github.io/react-tools/#/hooks/performance/useCallbackDeepCompare)
+Custom useCallback that returns memoized callback that changes only if deps are different in depth. [See demo](https://react-tools.ndria.dev/#/hooks/performance/useCallbackDeepCompare)
 ```tsx
 useCallbackDeepCompare<T extends Function>(cb: T, deps: DependencyList):T
 ```
 
 ### useId
 
-_useId_ hook polyfilled for React versions below 18: __not use for key prop__. [See demo](https://ndriadev.github.io/react-tools/#/hooks/performance/useId)
+_useId_ hook polyfilled for React versions below 18: __not use for key prop__. [See demo](https://react-tools.ndria.dev/#/hooks/performance/useId)
 ```tsx
 useId(): string
 ```
 
 ### useLazyRef
 
-Hook that works 'partially' like the _useState_ hook with lazy initialization: ensures that the __initializer__ function is executed only once. [See demo](https://ndriadev.github.io/react-tools/#/hooks/performance/useLazyRef)
+Hook that works 'partially' like the _useState_ hook with lazy initialization: ensures that the __initializer__ function is executed only once. [See demo](https://react-tools.ndria.dev/#/hooks/performance/useLazyRef)
 ```tsx
 useLazyRef<T>(initializer: () => T): React.MutableRefObject<T>
 ```
 
 ### useMemoCompare
 
-Custom useMemo that returns memoized value that changes only when comparator function, received as third parameter, returns true. [See demo](https://ndriadev.github.io/react-tools/#/hooks/performance/useMemoCompare)
+Custom useMemo that returns memoized value that changes only when comparator function, received as third parameter, returns true. [See demo](https://react-tools.ndria.dev/#/hooks/performance/useMemoCompare)
 ```tsx
 useMemoCompare<T = unknown, E = unknown>(cb: () => T, deps: DependencyListTyped<E>, compareFn?: CompareFn<E>):T
 ```
 
 ### useMemoDeepCompare
 
-Custom useMemo that returns memoized value that changes only if deps are different in depth. [See demo](https://ndriadev.github.io/react-tools/#/hooks/performance/useMemoDeepCompare)
+Custom useMemo that returns memoized value that changes only if deps are different in depth. [See demo](https://react-tools.ndria.dev/#/hooks/performance/useMemoDeepCompare)
 ```tsx
 useMemoDeepCompare<T=unknown>(cb: () => T, deps: DependencyList):T
 ```
 
 ### useMemoizedFn
 
-Hook to store a function that will never change while keeping its dependencies always up to date. Can be used instead of _useCallback_, without esplicity dependencies array. [See demo](https://ndriadev.github.io/react-tools/#/hooks/performance/useMemoizedFn)
+Hook to store a function that will never change while keeping its dependencies always up to date. Can be used instead of _useCallback_, without esplicity dependencies array. [See demo](https://react-tools.ndria.dev/#/hooks/performance/useMemoizedFn)
 ```tsx
 useMemoizedFn<T extends (...args: any[]) => any>(fn: T)
 ```
 
 ### useMergedRef
 
-Hook to merge multiple refs into one. [See demo](https://ndriadev.github.io/react-tools/#/hooks/performance/useMergedRef)
+Hook to merge multiple refs into one. [See demo](https://react-tools.ndria.dev/#/hooks/performance/useMergedRef)
 ```tsx
 useMergedRef<T>(...refs: Ref<T>[]): Ref<T>
 ```
@@ -461,161 +461,161 @@ useMergedRef<T>(...refs: Ref<T>[]): Ref<T>
 
 ### useBeforeUnload
 
-Hook to handle beforeunload event. [See demo](https://ndriadev.github.io/react-tools/#/hooks/events/useBeforeUnload)
+Hook to handle beforeunload event. [See demo](https://react-tools.ndria.dev/#/hooks/events/useBeforeUnload)
 ```tsx
 useBeforeUnload({element, listener, opts}:{ element?: RefObject<HTMLElement> | Window | undefined, listener: (evt: BeforeUnloadEvent) => void, opts?: boolean | AddEventListenerOptions}): ()=>void
 ```
 
 ### useClickOutside
 
-Hook to listen and execute an action when there is a click outside an element. [See demo](https://ndriadev.github.io/react-tools/#/hooks/events/useClickOutside)
+Hook to listen and execute an action when there is a click outside an element. [See demo](https://react-tools.ndria.dev/#/hooks/events/useClickOutside)
 ```tsx
 useClickOutside(target: RefObject<HTMLElement> | HTMLElement, handler: (evt: Event) => void):void
 ```
 
 ### useContextMenu
 
-Hook to add contextmenu event listener. The contextmenu event fires when the user attempts to open a context menu. This event is typically triggered by clicking the right mouse button, or by pressing the context menu key. [See demo](https://ndriadev.github.io/react-tools/#/hooks/events/useContextMenu)
+Hook to add contextmenu event listener. The contextmenu event fires when the user attempts to open a context menu. This event is typically triggered by clicking the right mouse button, or by pressing the context menu key. [See demo](https://react-tools.ndria.dev/#/hooks/events/useContextMenu)
 ```tsx
 useContextMenu({ element, listener, effectType, listenerOpts }: { element: RefObject<HTMLElement> | Window, listener: (evt: PointerEvent) => void | Promise<void>, effectType?: "normal" | "layout", listenerOpts?: boolean | AddEventListenerOptions | undefined })
 ```
 
 ### useDocumentVisibility
 
-Hook to track document visibility. Refers to [Document VisibilityState](https://developer.mozilla.org/en-US/docs/Web/API/Document/visibilityState). [See demo](https://ndriadev.github.io/react-tools/#/hooks/events/useDocumentVisibility)
+Hook to track document visibility. Refers to [Document VisibilityState](https://developer.mozilla.org/en-US/docs/Web/API/Document/visibilityState). [See demo](https://react-tools.ndria.dev/#/hooks/events/useDocumentVisibility)
 ```tsx
 useDocumentVisibility(): DocumentVisibilityState
 ```
 
 ### useDoubleClick
 
-Hook to handle double click event. Double clicking in react as well as with vanilla js, it is possible to manage it but it is not possible to have both managers on the same element. Thanks to this hook it is possible to do this, and it works with all events that can be associated with a user click (for example _mousedown_ but also _touchstart_). [See demo](https://ndriadev.github.io/react-tools/#/hooks/events/useDoubleClick)
+Hook to handle double click event. Double clicking in react as well as with vanilla js, it is possible to manage it but it is not possible to have both managers on the same element. Thanks to this hook it is possible to do this, and it works with all events that can be associated with a user click (for example _mousedown_ but also _touchstart_). [See demo](https://react-tools.ndria.dev/#/hooks/events/useDoubleClick)
 ```tsx
 useDoubleClick<T extends Element = Element, E extends Event = Event>(handler: ((evt: SyntheticEvent<T, E>) => Promise<void> | void) | { doubleClick: (evt: SyntheticEvent<T, E>) => Promise<void> | void, singleClick?: (evt: SyntheticEvent<T, E>) => Promise<void> | void, tolerance?: number }): ((evt: SyntheticEvent<T, E>) => Promise<void> | void)
 ```
 
 ### useEventDispatcher
 
-Hook to dispatch an Event or a CustomEvent. [See demo](https://ndriadev.github.io/react-tools/#/hooks/events/useEventDispatcher)
+Hook to dispatch an Event or a CustomEvent. [See demo](https://react-tools.ndria.dev/#/hooks/events/useEventDispatcher)
 ```tsx
 useEventDispatcher(element: RefObject<HTMLElement> | Window = window): (evt: Event | CustomEvent) => void
 ```
 
 ### useEventListener
 
-Hook to simplify add and remove EventListener use. It's persist during rerendering and automatically remove eventlistener on unMount component lifecycle. [See demo](https://ndriadev.github.io/react-tools/#/hooks/events/useEventListener)
+Hook to simplify add and remove EventListener use. It's persist during rerendering and automatically remove eventlistener on unMount component lifecycle. [See demo](https://react-tools.ndria.dev/#/hooks/events/useEventListener)
 ```tsx
 useEventListener<T extends keyof WindowEventMap, E extends Element>({ type, listener, element = window, listenerOpts, effectType = "normal" }: { type: T|(T[]), listener: ((evt: WindowEventMap[T]) => unknown | Promise<unknown>), element?: RefObject<E> | E | Window, listenerOpts?: boolean | AddEventListenerOptions, effectType?: "normal" | "layout" }): (() => void)
 ```
 
 ### useEvents
 
-Communication system based on Events pattern implemented on a EventTarget subclass. AddListener and dispatch functions to communicate. The result of invoking the _addListener_ function in turn returns a function that can be used to _removeListener_ on event. Otherwise, the listener is automatically removed when the component that has instantiated it is unmounted. [See demo](https://ndriadev.github.io/react-tools/#/hooks/events/useEvents)
+Communication system based on Events pattern implemented on a EventTarget subclass. AddListener and dispatch functions to communicate. The result of invoking the _addListener_ function in turn returns a function that can be used to _removeListener_ on event. Otherwise, the listener is automatically removed when the component that has instantiated it is unmounted. [See demo](https://react-tools.ndria.dev/#/hooks/events/useEvents)
 ```tsx
 useEvents(): [(type: string, callback:<T>(evt: Event|CustomEvent<T>) => void, options?: boolean | AddEventListenerOptions) => ()=>void, <T>(evt: Event|CustomEvent<T>) => void]
 ```
 
 ### useHotKeys
 
-Hook to listen for the keyboard press, support key combinations, built on [hotKeyHandler](#/hotKeyHandler) utility function. [See demo](https://ndriadev.github.io/react-tools/#/hooks/events/useHotKeys)
+Hook to listen for the keyboard press, support key combinations, built on [hotKeyHandler](#/hotKeyHandler) utility function. [See demo](https://react-tools.ndria.dev/#/hooks/events/useHotKeys)
 ```tsx
 useHotKeys({ hotKey, type = "keydown", target = window, listener, listenerOpts }: { hotKey: `${string}` | `${'alt' | 'ctrl' | 'meta' | 'shift' | 'ctrlCommand'}+${string}` | `${'alt' | 'ctrl' | 'meta' | 'shift' | 'ctrlCommand'}+${'alt' | 'ctrl' | 'meta' | 'shift' | 'ctrlCommand'}+${string}`, type?: "keydown" | "keyup", target?: RefObject<HTMLElement> | Window, listener: (evt: KeyboardEvent | KeyEvt<HTMLElement>) => void | Promise<void>, listenerOpts?: boolean | AddEventListenerOptions }): (() => void)
 ```
 
 ### useHover
 
-Hook that determines whether the item is hovered or not and handles state hovers. [See demo](https://ndriadev.github.io/react-tools/#/hooks/events/useHover)
+Hook that determines whether the item is hovered or not and handles state hovers. [See demo](https://react-tools.ndria.dev/#/hooks/events/useHover)
 ```tsx
 useHover(target: RefObject<HTMLElement> | HTMLElement, opts?: { onEnter?: (evt: Event) => void, onChange?: (isHover: boolean) => void, onLeave?: (evt: Event) => void, returnValue?: boolean }): boolean | void
 ```
 
 ### useInfiniteScroll
 
-Hook to deal with large sets of data. It allow users to scroll through content endlessly without explicit pagination or loading new pages. [See demo](https://ndriadev.github.io/react-tools/#/hooks/events/useInfiniteScroll)
+Hook to deal with large sets of data. It allow users to scroll through content endlessly without explicit pagination or loading new pages. [See demo](https://react-tools.ndria.dev/#/hooks/events/useInfiniteScroll)
 ```tsx
 useInfiniteScroll<T, E extends Element>({ request, ref, hasMoreData, threshold, onBefore, onError, onSuccess }: { request: (data?: T) => Promise<T>, ref: RefObject<E>, hasMoreData: (data?: T) => boolean, threshold?: number, onBefore?: () => void, onSuccess?: () => void, onError?: (err: unknown) => void }): { data: T | undefined, loading: boolean, fullData: boolean, updateData: (data: T | ((currentState?: T) => T)) => void, loadData: () => Promise<void> }
 ```
 
 ### useIntersectionObserver
 
-Hook to use Intersection Observer. Refer to [Intersection Observer API](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API). [See demo](https://ndriadev.github.io/react-tools/#/hooks/events/useIntersectionObserver)
+Hook to use Intersection Observer. Refer to [Intersection Observer API](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API). [See demo](https://react-tools.ndria.dev/#/hooks/events/useIntersectionObserver)
 ```tsx
 useIntersectionObserver<T extends Element>(cb: IntersectionObserverCallback, opts?: IntersectionObserverInit):[RefCallback<T>, () => void, () => void]
 ```
 
 ### useIsOnline
 
-Hook to detect network connection status. [See demo](https://ndriadev.github.io/react-tools/#/hooks/events/useIsOnline)
+Hook to detect network connection status. [See demo](https://react-tools.ndria.dev/#/hooks/events/useIsOnline)
 ```tsx
 useIsOnline(): boolean
 ```
 
 ### useLongPress
 
-Hook to execute a callback on a long press event. [See demo](https://ndriadev.github.io/react-tools/#/hooks/events/useLongPress)
+Hook to execute a callback on a long press event. [See demo](https://react-tools.ndria.dev/#/hooks/events/useLongPress)
 ```tsx
 useLongPress<T extends Element = Element, E extends Event = Event>(cb: useLongPressCallback<E>, { duration = 1000, normalPress, onStart, onFinish }: useLongPressOptions<E>): RefCallback<T>
 ```
 
 ### useMeasure
 
-Hook to  measure and track element's dimensions. [See demo](https://ndriadev.github.io/react-tools/#/hooks/events/useMeasure)
+Hook to  measure and track element's dimensions. [See demo](https://react-tools.ndria.dev/#/hooks/events/useMeasure)
 ```tsx
 useMeasure<T extends Element>(): [React.RefCallback<T>, DOMRectReadOnly]
 ```
 
 ### useMouse
 
-Hook to track mouse position also in relationship with an element. It works with pointerEvents. [See demo](https://ndriadev.github.io/react-tools/#/hooks/events/useMouse)
+Hook to track mouse position also in relationship with an element. It works with pointerEvents. [See demo](https://react-tools.ndria.dev/#/hooks/events/useMouse)
 ```tsx
 useMouse(opts: { type?: "client" | "page" | "screen", relativeElement?: RefObject<HTMLElement | null> | HTMLElement } = { type: "client" }): { x: number | null, y: number | null } | { x: number | null, y: number | null, relativeElementDim?: DOMRect }
 ```
 
 ### useMutationObserver
 
-Hook to use Mutation Observer. Refer to [Mutation Observer API](https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver). [See demo](https://ndriadev.github.io/react-tools/#/hooks/events/useMutationObserver)
+Hook to use Mutation Observer. Refer to [Mutation Observer API](https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver). [See demo](https://react-tools.ndria.dev/#/hooks/events/useMutationObserver)
 ```tsx
 useMutationObserver<T extends Element>(cb: MutationCallback, opts?: MutationObserverInit): [RefCallback<T>, () => void, () => void, () => MutationRecord[] | undefined]
 ```
 
 ### useNetwork
 
-Hook to detect network connection infos, refer to [Network Information API](https://developer.mozilla.org/en-US/docs/Web/API/NetworkInformation). It takes optinally a parameter __selectedInfo__ to specify a subset of connection status property. [See demo](https://ndriadev.github.io/react-tools/#/hooks/events/useNetwork)
+Hook to detect network connection infos, refer to [Network Information API](https://developer.mozilla.org/en-US/docs/Web/API/NetworkInformation). It takes optinally a parameter __selectedInfo__ to specify a subset of connection status property. [See demo](https://react-tools.ndria.dev/#/hooks/events/useNetwork)
 ```tsx
 useNetwork<T extends keyof ConnectionState>(selectedInfo?: ArrayMinLength1<T>): ConnectionState | {[k in T] : ConnectionState[k]}
 ```
 
 ### usePerformAction
 
-Hook that executes a callback after a render. [See demo](https://ndriadev.github.io/react-tools/#/hooks/events/usePerformAction)
+Hook that executes a callback after a render. [See demo](https://react-tools.ndria.dev/#/hooks/events/usePerformAction)
 ```tsx
 usePerformAction<T extends (...args: unknown[]) => void>(cb: T): (...args: Parameters<T>) => void
 ```
 
 ### usePinchZoom
 
-Hook to handle pinch zoom gestures. [See demo](https://ndriadev.github.io/react-tools/#/hooks/events/usePinchZoom)
+Hook to handle pinch zoom gestures. [See demo](https://react-tools.ndria.dev/#/hooks/events/usePinchZoom)
 ```tsx
 usePinchZoom({ target = window, listener }: { target?: RefObject<HTMLElement> | Window, listener: (evt: PointerEvent, type: "zoomIn" | "zoomOut") => void | Promise<void> }): (()=>void)
 ```
 
 ### usePointerLock
 
-Hook to use [PointerLock API](https://developer.mozilla.org/en-US/docs/Web/API/Pointer_Lock_API). [See demo](https://ndriadev.github.io/react-tools/#/hooks/events/usePointerLock)
+Hook to use [PointerLock API](https://developer.mozilla.org/en-US/docs/Web/API/Pointer_Lock_API). [See demo](https://react-tools.ndria.dev/#/hooks/events/usePointerLock)
 ```tsx
 usePointerLock<T extends HTMLElement>({ target, unadjustedMovement, onLock, onUnlock, onError }: UsePointerLockProps<T>): UsePointerLockResult
 ```
 
 ### useResizeObserver
 
-Hook to use Resize Observer. Refer to [Resize Observer API](https://developer.mozilla.org/en-US/docs/Web/API/Resize_Observer_API). [See demo](https://ndriadev.github.io/react-tools/#/hooks/events/useResizeObserver)
+Hook to use Resize Observer. Refer to [Resize Observer API](https://developer.mozilla.org/en-US/docs/Web/API/Resize_Observer_API). [See demo](https://react-tools.ndria.dev/#/hooks/events/useResizeObserver)
 ```tsx
 useResizeObserver<T extends Element>(cb: ResizeObserverCallback, opts?: ResizeObserverOptions):[RefCallback<T>, () => void, () => void]
 ```
 
 ### useResponsive
 
-Hook for getting responsive window size. [See demo](https://ndriadev.github.io/react-tools/#/hooks/events/useResponsive). It receives an optional param __config__ to manually setting breakpoint keys. __config__ can have a keys subset and value can be a number or an object with _value_ and _condition_ properties. If _value_ is a number, the condition will be ">". By default Breakpoints are:
+Hook for getting responsive window size. [See demo](https://react-tools.ndria.dev/#/hooks/events/useResponsive). It receives an optional param __config__ to manually setting breakpoint keys. __config__ can have a keys subset and value can be a number or an object with _value_ and _condition_ properties. If _value_ is a number, the condition will be ">". By default Breakpoints are:
 - xs: { value: 576, condition: "<" }
 - sm: { value: 576, condition: ">=" }
 - md: { value: 768, condition: ">=" }
@@ -627,28 +627,28 @@ useResponsive<T extends UseResponsiveKeys>(config?: UseResponsiveBreakpoints<T>)
 
 ### useScreen
 
-Hook to work with [Screen Orientation API](https://developer.mozilla.org/en-US/docs/Web/API/Screen_Orientation_API) and [Window Management API](https://developer.mozilla.org/en-US/docs/Web/API/Window_Management_API). [See demo](https://ndriadev.github.io/react-tools/#/hooks/events/useScreen)
+Hook to work with [Screen Orientation API](https://developer.mozilla.org/en-US/docs/Web/API/Screen_Orientation_API) and [Window Management API](https://developer.mozilla.org/en-US/docs/Web/API/Window_Management_API). [See demo](https://react-tools.ndria.dev/#/hooks/events/useScreen)
 ```tsx
 useScreen(allScreen?:boolean): [ScreenDetails, (orientation: OrientationLockType) => Promise<void>, ()=>void]
 ```
 
 ### useScrollIntoView
 
-Hook to scroll an element into view. [See demo](https://ndriadev.github.io/react-tools/#/hooks/events/useScrollIntoView)
+Hook to scroll an element into view. [See demo](https://react-tools.ndria.dev/#/hooks/events/useScrollIntoView)
 ```tsx
 useScrollIntoView<T extends Element, E extends Element | null = null>({ duration = 1000, axis = "y", animation = easeInOutSine, offset = 0, cancelable = false, onFinish, scrollableElement }: { duration?: number, axis?: "x" | "y", animation?: (t: number) => number, offset?: number, cancelable?: boolean, onFinish?: () => void, scrollableElement: (()=>E)|E|React.RefObject<E|null> }): { targetRef: React.MutableRefObject<T | null>, scroll: (alignment?: "start" | "center" | "end") => void, cancel: () => void }
 ```
 
 ### useSwipe
 
-Hook to handle swipe gesture. [See demo](https://ndriadev.github.io/react-tools/#/hooks/events/useSwipe)
+Hook to handle swipe gesture. [See demo](https://react-tools.ndria.dev/#/hooks/events/useSwipe)
 ```tsx
 useSwipe({ target, onSwipeStart, onSwipe, onSwipeEnd, options }: UseSwipeProps): UseSwipeResult
 ```
 
 ### useVisible
 
-Hook to know if an element is visible and optionally the visible area ration of the element. [See demo](https://ndriadev.github.io/react-tools/#/hooks/events/useVisible)
+Hook to know if an element is visible and optionally the visible area ration of the element. [See demo](https://react-tools.ndria.dev/#/hooks/events/useVisible)
 ```tsx
 useVisible<T extends Element>(opts?: IntersectionObserverInit & { withRatio?: boolean }): [RefCallback<T>, boolean] | [RefCallback<T>, boolean, number]
 ```
@@ -657,329 +657,329 @@ useVisible<T extends Element>(opts?: IntersectionObserverInit & { withRatio?: bo
 
 ### useActiveElement
 
-Hook that returns activeElement and listen its changes. [See demo](https://ndriadev.github.io/react-tools/#/hooks/api-dom/useActiveElement)
+Hook that returns activeElement and listen its changes. [See demo](https://react-tools.ndria.dev/#/hooks/api-dom/useActiveElement)
 ```tsx
 useActiveElement():Element|null
 ```
 
 ### useAnimation
 
-Hook to use [Web Animations API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Animations_API). [See demo](https://ndriadev.github.io/react-tools/#/hooks/api-dom/useAnimation)
+Hook to use [Web Animations API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Animations_API). [See demo](https://react-tools.ndria.dev/#/hooks/api-dom/useAnimation)
 ```tsx
 useAnimation<T extends Element>({ keyFrames, immediate, opts, onCancel, onFinish, onRemove, onError }: UseAnimationProps): UseAnimationResult<T>
 ```
 
 ### useAudio
 
-Hook to use an HTML audio element. [See demo](https://ndriadev.github.io/react-tools/#/hooks/api-dom/useAudio)
+Hook to use an HTML audio element. [See demo](https://react-tools.ndria.dev/#/hooks/api-dom/useAudio)
 ```tsx
 useAudiocreateHTMLMediaHook<HTMLAudioElement>("audio");
 ```
 
 ### useBattery
 
-Hook for accessing and monitoring device battery status. Refer to [Battery Status API](https://developer.mozilla.org/en-US/docs/Web/API/Battery_Status_API). [See demo](https://ndriadev.github.io/react-tools/#/hooks/api-dom/useBattery)
+Hook for accessing and monitoring device battery status. Refer to [Battery Status API](https://developer.mozilla.org/en-US/docs/Web/API/Battery_Status_API). [See demo](https://react-tools.ndria.dev/#/hooks/api-dom/useBattery)
 ```tsx
 useBattery(opts?: { onChargingChange?: (evt: Event) => void, onChargingTimeChange?: (evt: Event) => void, onDischargingTimeChange?: (evt: Event) => void, onLevelChange?: (evt: Event) => void }): BatteryStatus
 ```
 
 ### useBluetooth
 
-Hook to use [Web Bluetooth API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Bluetooth_API). [See demo](https://ndriadev.github.io/react-tools/#/hooks/api-dom/useBluetooth)
+Hook to use [Web Bluetooth API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Bluetooth_API). [See demo](https://react-tools.ndria.dev/#/hooks/api-dom/useBluetooth)
 ```tsx
 useBluetooth():[{isSupported: boolean, isConnected: boolean, device: BluetoothDevice|null, server: BluetoothRemoteGATTServer|null}, (opts?: BluetoothDevicesOptions)=>Promise<void>]
 ```
 
 ### useBroadcastChannel
 
-Hook to use [Broadcast Channel API](https://developer.mozilla.org/en-US/docs/Web/API/Broadcast_Channel_API). [See demo](https://ndriadev.github.io/react-tools/#/hooks/api-dom/useBroadcastChannel)
+Hook to use [Broadcast Channel API](https://developer.mozilla.org/en-US/docs/Web/API/Broadcast_Channel_API). [See demo](https://react-tools.ndria.dev/#/hooks/api-dom/useBroadcastChannel)
 ```tsx
 useBroadcastChannel<T>(name: string, onMessage?: (evt:MessageEvent<T>)=>void, onError?: (evt: MessageEvent)=>void):[T|undefined, (data:T)=>void]
 ```
 
 ### useClipboard
 
-Hook to handle Clipboard. Refers to [Clipboard API](https://developer.mozilla.org/en-US/docs/Web/API/Clipboard_API). __N.B.__: The hook has the same compatibility issues as the Clipboard API for Firefox, i.e. it is currently impossible to read from the clipboard. [See demo](https://ndriadev.github.io/react-tools/#/hooks/api-dom/useClipboard)
+Hook to handle Clipboard. Refers to [Clipboard API](https://developer.mozilla.org/en-US/docs/Web/API/Clipboard_API). __N.B.__: The hook has the same compatibility issues as the Clipboard API for Firefox, i.e. it is currently impossible to read from the clipboard. [See demo](https://react-tools.ndria.dev/#/hooks/api-dom/useClipboard)
 ```tsx
 useClipboard({ useValue, dataType, target }: { useValue: boolean, dataType: "text" | "any", target?: RefObject<HTMLElement> | HTMLElement }): [string, (text: string) => Promise<void>, () => Promise<string>] | [string | Blob | (string | Blob)[], (blob: Blob | Blob[]) => Promise<void>, () => Promise<string | Blob | (string | Blob)[]>] | [(text: string) => Promise<void>, () => Promise<string>] | [(blob: Blob | Blob[]) => Promise<void>, () => Promise<string | Blob | (string | Blob)[]>]
 ```
 
 ### useColorScheme
 
-Hook to handle ColorScheme. [See demo](https://ndriadev.github.io/react-tools/#/hooks/api-dom/useColorScheme)
+Hook to handle ColorScheme. [See demo](https://react-tools.ndria.dev/#/hooks/api-dom/useColorScheme)
 ```tsx
 useColorScheme({ defaultValue, getter, setter, returnValue }: { defaultValue: "dark" | "light" | "mediaQuery", getter?: () => "dark" | "light" | null | undefined, setter?: (schema: "light"|"dark") => void, returnValue: boolean }): ["light" | "dark", (schema: "light" | "dark") => void] | ((schema: "light" | "dark") => void)
 ```
 
 ### useDebounce
 
-Hook to delay a function execution with possibility to cancel execution and to invoke them immediately. [See demo](https://ndriadev.github.io/react-tools/#/hooks/api-dom/useDebounce)
+Hook to delay a function execution with possibility to cancel execution and to invoke them immediately. [See demo](https://react-tools.ndria.dev/#/hooks/api-dom/useDebounce)
 ```tsx
 useDebounce<T extends unknown[]>(fn: (...args: T)=>void, opts: { delay: number, focusedWindow?: boolean }): [(...args: T) => void, () => void, (...args: T) => void]
 ```
 
 ### useDeviceMotion
 
-Hook to handle [device motion](https://developer.mozilla.org/en-US/docs/Web/API/Window/devicemotion_event). [See demo](https://ndriadev.github.io/react-tools/#/hooks/api-dom/useDeviceMotion)
+Hook to handle [device motion](https://developer.mozilla.org/en-US/docs/Web/API/Window/devicemotion_event). [See demo](https://react-tools.ndria.dev/#/hooks/api-dom/useDeviceMotion)
 ```tsx
 useDeviceMotion(): DeviceMotionProps
 ```
 
 ### useDeviceOrientation
 
-Hook to handle [device orientation](https://developer.mozilla.org/en-US/docs/Web/API/Window/deviceorientation_event). [See demo](https://ndriadev.github.io/react-tools/#/hooks/api-dom/useDeviceOrientation)
+Hook to handle [device orientation](https://developer.mozilla.org/en-US/docs/Web/API/Window/deviceorientation_event). [See demo](https://react-tools.ndria.dev/#/hooks/api-dom/useDeviceOrientation)
 ```tsx
 useDeviceOrientation(): DeviceOrientationProps
 ```
 
 ### useDialogBox
 
-Hook to use Dialog Box _prompt_, _alert_ or _confirm_. [See demo](https://ndriadev.github.io/react-tools/#/hooks/api-dom/useDialogBox)
+Hook to use Dialog Box _prompt_, _alert_ or _confirm_. [See demo](https://react-tools.ndria.dev/#/hooks/api-dom/useDialogBox)
 ```tsx
 useDialogBox(type: "prompt" | "confirm" | "alert"): ((message?: string, _default?: string) => string | null) | ((message?: any) => void) | ((message?: string) => boolean)
 ```
 
 ### useDisplayMedia
 
-Hook to capture the contents of a display. [See demo](https://ndriadev.github.io/react-tools/#/hooks/api-dom/useDisplayMedia)
+Hook to capture the contents of a display. [See demo](https://react-tools.ndria.dev/#/hooks/api-dom/useDisplayMedia)
 ```tsx
 useDisplayMedia(): [MediaStream | undefined, (options?: TDisplayMediaStreamOptions) => Promise<void>, () => void]
 ```
 
 ### useDocumentPIP
 
-Hook to use Document PIP [(Document-Picture-in-Picture API)](https://developer.mozilla.org/en-US/docs/Web/API/Document_Picture-in-Picture_API). [See demo](https://ndriadev.github.io/react-tools/#/hooks/api-dom/useDocumentPIP)
+Hook to use Document PIP [(Document-Picture-in-Picture API)](https://developer.mozilla.org/en-US/docs/Web/API/Document_Picture-in-Picture_API). [See demo](https://react-tools.ndria.dev/#/hooks/api-dom/useDocumentPIP)
 ```tsx
 useDocumentPIP({ options: { inheritCSS, window: wind } = { window: { height: 300, width: 450 } }, onOpen, onOpened, onClose, onError }: UseDocumentPIPProps): UseDocumentPIPResult
 ```
 
 ### useEventSource
 
-Hook to handle an [EventSource](https://developer.mozilla.org/en-US/docs/Web/API/EventSource) or [Server-Sent-Events](https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events) connection to an HTTP server, which sends events in text/event-stream format. [See demo](https://ndriadev.github.io/react-tools/#/hooks/api-dom/useEventSource)
+Hook to handle an [EventSource](https://developer.mozilla.org/en-US/docs/Web/API/EventSource) or [Server-Sent-Events](https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events) connection to an HTTP server, which sends events in text/event-stream format. [See demo](https://react-tools.ndria.dev/#/hooks/api-dom/useEventSource)
 ```tsx
 useEventSource<T>({ url, opts, events, immediateConnection, onOpen, onError, onMessage }: UseEventSourceProps): UseEventSourceResult<T>
 ```
 
 ### useEyeDropper
 
-Hook to use [EyeDropper API](https://developer.mozilla.org/en-US/docs/Web/API/EyeDropper_API). [See demo](https://ndriadev.github.io/react-tools/#/hooks/api-dom/useEyeDropper)
+Hook to use [EyeDropper API](https://developer.mozilla.org/en-US/docs/Web/API/EyeDropper_API). [See demo](https://react-tools.ndria.dev/#/hooks/api-dom/useEyeDropper)
 ```tsx
 useEyeDropper({ onStart, onFinish }: { onStart?: () => void, onFinish?: (result: `#${string}`) => void } = {})
 ```
 
 ### useFPS
 
-Hook to detect FPS (Frames per second). [See demo](https://ndriadev.github.io/react-tools/#/hooks/api-dom/useFPS)
+Hook to detect FPS (Frames per second). [See demo](https://react-tools.ndria.dev/#/hooks/api-dom/useFPS)
 ```tsx
 useFPS({ everySeconds, windowSize }:UseFPSProps={windowSize:10, everySeconds:.5}): UseFPSResult
 ```
 
 ### useFetch
 
-Hook to use [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) with more control and the possibility to execute request with suspense support. [See demo](https://ndriadev.github.io/react-tools/#/hooks/api-dom/useFetch)
+Hook to use [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) with more control and the possibility to execute request with suspense support. [See demo](https://react-tools.ndria.dev/#/hooks/api-dom/useFetch)
 ```tsx
 useFetch<T>(url: RequestInfo | URL, { suspensable, onError, onLoading, ...rest }: RequestInit & { suspensable?: boolean, onLoading?: (loading: boolean) => void, onError?: (err: unknown) => void } = {}): [T|undefined, (conf?: RequestInit) => Promise<void>, boolean, unknown]
 ```
 
 ### useFullscreen
 
-Hook to use [Fullscreen API](https://developer.mozilla.org/en-US/docs/Web/API/Fullscreen_API). [See demo](https://ndriadev.github.io/react-tools/#/hooks/api-dom/useFullscreen)
+Hook to use [Fullscreen API](https://developer.mozilla.org/en-US/docs/Web/API/Fullscreen_API). [See demo](https://react-tools.ndria.dev/#/hooks/api-dom/useFullscreen)
 ```tsx
 useFullscreen<T extends Element>(onEnter?: () => void|Promise<void>, onChange?: (evt: Event) => void, onExit?: () => void|Promise<void>): [boolean, RefCallback<T>, (opts?: FullscreenOptions) => Promise<void>, () => Promise<void>]
 ```
 
 ### useGeolocation
 
-Hook to use user's geographic location. Refer to [GeoLocation API](https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API). [See demo](https://ndriadev.github.io/react-tools/#/hooks/api-dom/useGeolocation)
+Hook to use user's geographic location. Refer to [GeoLocation API](https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API). [See demo](https://react-tools.ndria.dev/#/hooks/api-dom/useGeolocation)
 ```tsx
 useGeolocation({mode, locationOptions, onError}: { locationOptions?: PositionOptions, mode: "observe" | "current" | "manual", onError?: (error: GeolocationPositionError) => void }): [GeoLocationObject, ()=>Promise<void>, ()=>Promise<()=>void>]
 ```
 
 ### useIdleCallback
 
-Hook to invoke a callback when the browser is idle. Refer to [requestIdleCallback](https://developer.mozilla.org/en-US/docs/Web/API/Window/requestIdleCallback) in React. The __options__ parameter differs from _IdleRequestOptions_ type: it adds the possibility to pass another property __unsupportedBehavior__ to specify what do if requestIdleCallback is not supported. [See demo](https://ndriadev.github.io/react-tools/#/hooks/api-dom/useIdleCallback)
+Hook to invoke a callback when the browser is idle. Refer to [requestIdleCallback](https://developer.mozilla.org/en-US/docs/Web/API/Window/requestIdleCallback) in React. The __options__ parameter differs from _IdleRequestOptions_ type: it adds the possibility to pass another property __unsupportedBehavior__ to specify what do if requestIdleCallback is not supported. [See demo](https://react-tools.ndria.dev/#/hooks/api-dom/useIdleCallback)
 ```tsx
 useIdleCallback(cb: (deadline?: IdleDeadline | DOMHighResTimeStamp | void) => void, opts?: {timeout: number , unsupportedBehavior?: "animationFrame" | "timeout" | "immediatly" }): [boolean, () => void, () => void]
 ```
 
 ### useInterval
 
-Hook to handle setInterval timer function with the possibility to clear and promisify execution. [See demo](https://ndriadev.github.io/react-tools/#/hooks/api-dom/useInterval)
+Hook to handle setInterval timer function with the possibility to clear and promisify execution. [See demo](https://react-tools.ndria.dev/#/hooks/api-dom/useInterval)
 ```tsx
 useInterval<TArgs extends unknown[]>(callback: (...args: TArgs) => void, delay: number): [(...args: TArgs) => void, () => void, (...args: TArgs) => Promise<void>]
 ```
 
 ### useLock
 
-Hook to use [Web Locks API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Locks_API). [See demo](https://ndriadev.github.io/react-tools/#/hooks/api-dom/useLock)
+Hook to use [Web Locks API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Locks_API). [See demo](https://react-tools.ndria.dev/#/hooks/api-dom/useLock)
 ```tsx
 useLock<T>(name?: string, cb?: LockGrantedCallback, opts?: LockOptions): [(currName?: string, currCb?: LockGrantedCallback, currOpts?: LockOptions) => Promise<T>, () => Promise<LockManagerSnapshot>]
 ```
 
 ### useMediaDevices
 
-Hook to use [MediaDevices](https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices) interface methods, that give access to any hardware source of media data. [See demo](https://ndriadev.github.io/react-tools/#/hooks/api-dom/useMediaDevices)
+Hook to use [MediaDevices](https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices) interface methods, that give access to any hardware source of media data. [See demo](https://react-tools.ndria.dev/#/hooks/api-dom/useMediaDevices)
 ```tsx
 useMediaDevices(action: UseMediaDevicesProps): UseMediaDevicesResult
 ```
 
 ### useMediaQuery
 
-Hook to handle CSS mediaQuery. It returns an object with __matches__ and __media__ properties and receives an optional _onChange_ function to handle _MediaQueryListEvent change_ event. [See demo](https://ndriadev.github.io/react-tools/#/hooks/api-dom/useMediaQuery)
+Hook to handle CSS mediaQuery. It returns an object with __matches__ and __media__ properties and receives an optional _onChange_ function to handle _MediaQueryListEvent change_ event. [See demo](https://react-tools.ndria.dev/#/hooks/api-dom/useMediaQuery)
 ```tsx
 useMediaQuery(mediaQuery: string, onChange?: (evt: MediaQueryListEvent) => void ): {matches: boolean, media: string}
 ```
 
 ### usePIP
 
-Hook to use PIP [(Picture-in-Picture API)](https://developer.mozilla.org/en-US/docs/Web/API/Picture-in-Picture_API). [See demo](https://ndriadev.github.io/react-tools/#/hooks/api-dom/usePIP)
+Hook to use PIP [(Picture-in-Picture API)](https://developer.mozilla.org/en-US/docs/Web/API/Picture-in-Picture_API). [See demo](https://react-tools.ndria.dev/#/hooks/api-dom/usePIP)
 ```tsx
 usePIP({ onOpen, onOpened, onClose, onError, target }: UsePIPProps): UsePIPResult
 ```
 
 ### usePermission
 
-Hook to query the status of API permissions attributed to the current context. Refer to [PermissionAPI](https://developer.mozilla.org/en-US/docs/Web/API/Permissions_API). [See demo](https://ndriadev.github.io/react-tools/#/hooks/api-dom/usePermission)
+Hook to query the status of API permissions attributed to the current context. Refer to [PermissionAPI](https://developer.mozilla.org/en-US/docs/Web/API/Permissions_API). [See demo](https://react-tools.ndria.dev/#/hooks/api-dom/usePermission)
 ```tsx
 usePermission(permission: TPermissionName): UsePermissionResult
 ```
 
 ### usePopover
 
-Hook to use [Popover API](https://developer.mozilla.org/en-US/docs/Web/API/Popover_API). [See demo](https://ndriadev.github.io/react-tools/#/hooks/api-dom/usePopover)
+Hook to use [Popover API](https://developer.mozilla.org/en-US/docs/Web/API/Popover_API). [See demo](https://react-tools.ndria.dev/#/hooks/api-dom/usePopover)
 ```tsx
 usePopover({ mode, onBeforeToggle, onToggle }: UsePopoverProps): UsePopoverResult
 ```
 
 ### usePromiseSuspensible
 
-Hook to resolve promise with Suspense support. The component that uses it, it need to be wrapped with Suspense component. This hook can be used in conditional blocks. [See demo](https://ndriadev.github.io/react-tools/#/hooks/api-dom/usePromiseSuspensible)
+Hook to resolve promise with Suspense support. The component that uses it, it need to be wrapped with Suspense component. This hook can be used in conditional blocks. [See demo](https://react-tools.ndria.dev/#/hooks/api-dom/usePromiseSuspensible)
 ```tsx
 usePromiseSuspensible<T>(promise: ()=>Promise<T>, deps: DependencyList, options: { cache?: "unmount" | number, cleanOnError?: boolean, identifier?: string } = {}): Awaited<ReturnType<typeof promise>>
 ```
 
 ### usePublishSubscribe
 
-Communication system based on PubSub pattern. Instantiate a topic and use the publish and subscribe functions to communicate. [See demo](https://ndriadev.github.io/react-tools/#/hooks/api-dom/usePublishSubscribe)
+Communication system based on PubSub pattern. Instantiate a topic and use the publish and subscribe functions to communicate. [See demo](https://react-tools.ndria.dev/#/hooks/api-dom/usePublishSubscribe)
 ```tsx
 usePublishSubscribe<T>(topic: string): [(listener: (value?: T) => Promise<void> | void) => () => void, (value?: T) => Promise<void> ]
 ```
 
 ### useRaf
 
-Hook to execute a callback function with _requestAnimationFrame_ to optimize performance. Refer to (requestAnimationFrame)[https://developer.mozilla.org/en-US/docs/Web/API/window/requestAnimationFrame]. [See demo](https://ndriadev.github.io/react-tools/#/hooks/api-dom/useRaf)
+Hook to execute a callback function with _requestAnimationFrame_ to optimize performance. Refer to (requestAnimationFrame)[https://developer.mozilla.org/en-US/docs/Web/API/window/requestAnimationFrame]. [See demo](https://react-tools.ndria.dev/#/hooks/api-dom/useRaf)
 ```tsx
 useRaf<T extends unknown[]>(cb: (timer: number, repeat: ()=>void, ...args: T) => void): [(...args: T)=>void, ()=>void]
 ```
 
 ### useReducedMotion
 
-Hook to detect if user prefers to reduce motion. [See demo](https://ndriadev.github.io/react-tools/#/hooks/api-dom/useReducedMotion)
+Hook to detect if user prefers to reduce motion. [See demo](https://react-tools.ndria.dev/#/hooks/api-dom/useReducedMotion)
 ```tsx
 useReducedMotion(): boolean
 ```
 
 ### useRemotePlayback
 
-Hook to use [RemotePlayback API](https://developer.mozilla.org/en-US/docs/Web/API/RemotePlayback). [See demo](https://ndriadev.github.io/react-tools/#/hooks/api-dom/useRemotePlayback)
+Hook to use [RemotePlayback API](https://developer.mozilla.org/en-US/docs/Web/API/RemotePlayback). [See demo](https://react-tools.ndria.dev/#/hooks/api-dom/useRemotePlayback)
 ```tsx
 useRemotePlayback<T extends HTMLMediaElement>({ onConnecting, onConnect, onDisconnect, onError }: UseRemotePlaybackProps={}): UseRemotePlaybackResult<T>
 ```
 
 ### useScreenWakeLock
 
-Hook to use [Screen Wake Lock API](https://developer.mozilla.org/en-US/docs/Web/API/Screen_Wake_Lock_API). [See demo](https://ndriadev.github.io/react-tools/#/hooks/api-dom/useScreenWakeLock)
+Hook to use [Screen Wake Lock API](https://developer.mozilla.org/en-US/docs/Web/API/Screen_Wake_Lock_API). [See demo](https://react-tools.ndria.dev/#/hooks/api-dom/useScreenWakeLock)
 ```tsx
 useScreenWakeLock(onRelease?: (evt?: Event) =>void): [{isSupported: boolean, type: "screen"|null, isActive: boolean|null}, ()=>Promise<void>, ()=>Promise<void>]
 ```
 
 ### useScript
 
-Hook to dinamically load an external script like Google Analitycs. [See demo](https://ndriadev.github.io/react-tools/#/hooks/api-dom/useScript)
+Hook to dinamically load an external script like Google Analitycs. [See demo](https://react-tools.ndria.dev/#/hooks/api-dom/useScript)
 ```tsx
 useScriptuseScript: UseScript = function (attributes, options)
 ```
 
 ### useShare
 
-Hook to use [Web Share Api](https://developer.mozilla.org/en-US/docs/Web/API/Web_Share_API). [See demo](https://ndriadev.github.io/react-tools/#/hooks/api-dom/useShare)
+Hook to use [Web Share Api](https://developer.mozilla.org/en-US/docs/Web/API/Web_Share_API). [See demo](https://react-tools.ndria.dev/#/hooks/api-dom/useShare)
 ```tsx
 useShare(): {isSupported: boolean, share: (data?: ShareData)=>Promise<void>}
 ```
 
 ### useSpeechRecognition
 
-Hook to use _SpeechRecognition API_. Refer to [Web Speech API](https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognition). [See demo](https://ndriadev.github.io/react-tools/#/hooks/api-dom/useSpeechRecognition)
+Hook to use _SpeechRecognition API_. Refer to [Web Speech API](https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognition). [See demo](https://react-tools.ndria.dev/#/hooks/api-dom/useSpeechRecognition)
 ```tsx
 useSpeechRecognition({ alreadyStarted, defaultConfig, onAudioStart, onAudioEnd, onEnd, onError, onNoMatch, onResult, onSoundStart, onSoundEnd, onSpeechStart, onSpeechEnd, onStart }: UseSpeechRecognitionProps): [SpeechRecognitionState, (config?: SpeechRecognitionConfig) => void, () => void, (resultAlso?: boolean) => void]
 ```
 
 ### useSpeechSynthesis
 
-Hook to use _SpeechSynthesis API_. Refer to [Web Speech API](https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesis). [See demo](https://ndriadev.github.io/react-tools/#/hooks/api-dom/useSpeechSynthesis)
+Hook to use _SpeechSynthesis API_. Refer to [Web Speech API](https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesis). [See demo](https://react-tools.ndria.dev/#/hooks/api-dom/useSpeechSynthesis)
 ```tsx
 useSpeechSynthesis(opts?: UseSpeechSynthesisProps): ReturnType<UseSpeechSynthesis>
 ```
 
 ### useTextSelection
 
-Hook to track text selection. Refers to [Selection API](https://developer.mozilla.org/en-US/docs/Web/API/Selection). [See demo](https://ndriadev.github.io/react-tools/#/hooks/api-dom/useTextSelection)
+Hook to track text selection. Refers to [Selection API](https://developer.mozilla.org/en-US/docs/Web/API/Selection). [See demo](https://react-tools.ndria.dev/#/hooks/api-dom/useTextSelection)
 ```tsx
 useTextSelection({ target, onStart, onChange, onEnd }: { target?: RefObject<HTMLElement> | HTMLElement, onStart?: (evt: Event) => void, onChange?: (evt: Event) => void, onEnd?: (evt: Event) => void } = {}): TextSelection | null
 ```
 
 ### useThrottle
 
-Hook to limit function execution frequency. [See demo](https://ndriadev.github.io/react-tools/#/hooks/api-dom/useThrottle)
+Hook to limit function execution frequency. [See demo](https://react-tools.ndria.dev/#/hooks/api-dom/useThrottle)
 ```tsx
 useThrottle<T extends unknown[]>(fn: (...args: T) => void | Promise<void> , opts: { delay?: number, waitFn?: boolean }): [(...args: T) => void, () => void, (...args: T) => void]
 ```
 
 ### useTimeout
 
-Hook to handle setTimeout timer function with the possibility to clear and promisify execution. [See demo](https://ndriadev.github.io/react-tools/#/hooks/api-dom/useTimeout)
+Hook to handle setTimeout timer function with the possibility to clear and promisify execution. [See demo](https://react-tools.ndria.dev/#/hooks/api-dom/useTimeout)
 ```tsx
 useTimeout<TArgs extends unknown[]>(callback: (...args: TArgs) => void, delay: number): [(...args: TArgs) => void, () => void, (...args: TArgs) => Promise<void>]
 ```
 
 ### useTitle
 
-Hook to handling app page title. It works _outside Component_ also and it returns array of two functions to read and write title. [See demo](https://ndriadev.github.io/react-tools/#/hooks/api-dom/useTitle)
+Hook to handling app page title. It works _outside Component_ also and it returns array of two functions to read and write title. [See demo](https://react-tools.ndria.dev/#/hooks/api-dom/useTitle)
 ```tsx
 useTitle(title?: string): [() => string, (title: string) => void]
 ```
 
 ### useVibrate
 
-Hook to use device vibration hardware. [See demo](https://ndriadev.github.io/react-tools/#/hooks/api-dom/useVibrate)
+Hook to use device vibration hardware. [See demo](https://react-tools.ndria.dev/#/hooks/api-dom/useVibrate)
 ```tsx
 useVibrate():{isSupported: boolean, vibrate: ((pattern: number | number[]) => void), cancel: ()=>void}
 ```
 
 ### useVideo
 
-Hook to use an HTML video element. [See demo](https://ndriadev.github.io/react-tools/#/hooks/api-dom/useVideo)
+Hook to use an HTML video element. [See demo](https://react-tools.ndria.dev/#/hooks/api-dom/useVideo)
 ```tsx
 useVideocreateHTMLMediaHook<HTMLVideoElement>("video");
 ```
 
 ### useWebSocket
 
-Hook for creating and managing a [WebSocket](https://developer.mozilla.org/en-US/docs/Web/API/WebSocket) connection to a server, as well as for sending and receiving data on the connection. [See demo](https://ndriadev.github.io/react-tools/#/hooks/api-dom/useWebSocket)
+Hook for creating and managing a [WebSocket](https://developer.mozilla.org/en-US/docs/Web/API/WebSocket) connection to a server, as well as for sending and receiving data on the connection. [See demo](https://react-tools.ndria.dev/#/hooks/api-dom/useWebSocket)
 ```tsx
 useWebSocket<T = string | ArrayBuffer | Blob> ({ url, protocols, binaryType, onOpen, onMessage, onError, onClose, immediateConnection, bufferingData, autoReconnect }: UseWebSocketProps): UseWebSocketResult<T>
 ```
 
 ### useWebWorker
 
-Hook to use [Web Worker](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API), handling registration and communication. [See demo](https://ndriadev.github.io/react-tools/#/hooks/api-dom/useWebWorker)
+Hook to use [Web Worker](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API), handling registration and communication. [See demo](https://react-tools.ndria.dev/#/hooks/api-dom/useWebWorker)
 ```tsx
 useWebWorker({ url, options, onMessage, onError, onMessageError }: UseWebWorkerProps): UseWebWorkerResult
 ```
 
 ### useWebWorkerFn
 
-Hook to run expensive functions using a Web Worker without blocking the UI handling execution as Promise. [See demo](https://ndriadev.github.io/react-tools/#/hooks/api-dom/useWebWorkerFn)
+Hook to run expensive functions using a Web Worker without blocking the UI handling execution as Promise. [See demo](https://react-tools.ndria.dev/#/hooks/api-dom/useWebWorkerFn)
 ```tsx
 useWebWorkerFn<T extends (...args: unknown[]) => unknown>(fn: UseWebWorkerFnProps<T>["fn"], deps?: UseWebWorkerFnProps<T>["deps"]): UseWebWorkerFnResult<T>
 ```
@@ -988,56 +988,56 @@ useWebWorkerFn<T extends (...args: unknown[]) => unknown>(fn: UseWebWorkerFnProp
 
 ### ErrorBoundary
 
-Wrapper component that lets you display some fallback UI when your application throws an error during rendering. [See demo](https://ndriadev.github.io/react-tools/#/components/ErrorBoundary)
+Wrapper component that lets you display some fallback UI when your application throws an error during rendering. [See demo](https://react-tools.ndria.dev/#/components/ErrorBoundary)
 ```tsx
 class ErrorBoundary extends Component<PropsWithChildren<{ onCatch?: (error: Error, info: ErrorInfo) => void, fallback?: ReactNode | ((error: Error, info: ErrorInfo, retry: () => void) => ReactNode) | ((props: { error: Error, info: ErrorInfo, retry: () => void })=>JSX.Element)}>, { hasError: boolean, error?:Error, info?: ErrorInfo }>
 ```
 
 ### For
 
-Component to optimize the rendering of a list of elements without need to specify a key value for all elements, and other options. [See demo](https://ndriadev.github.io/react-tools/#/components/For)
+Component to optimize the rendering of a list of elements without need to specify a key value for all elements, and other options. [See demo](https://react-tools.ndria.dev/#/components/For)
 ```tsx
 For<T, S extends T>({ of, elementKey, fallback, filter, sort, map, children }: { of: Array<T>, elementKey?: (T|S) extends object ? keyof (T|S) | ((item: T|S) => Key) : Key | ((item: T|S) => Key), children: (item: T|S, index: number, key: Key) => ReactNode, fallback?: ReactNode, filter?: Parameters<Array<T>["filter"]>[0], sort?: true | Parameters<Array<T>["sort"]>[0], map?: (...args: Parameters<Parameters<Array<T>["map"]>[0]>) => S }): null|JSX.Element|Array<JSX.Element>
 ```
 
 ### ForMemoized
 
-Memoized version of _For_ component. [See demo](https://ndriadev.github.io/react-tools/#/components/ForMemoized)
+Memoized version of _For_ component. [See demo](https://react-tools.ndria.dev/#/components/ForMemoized)
 ```tsx
 ForMemoized = memo(For) as typeof For;
 ```
 
 ### LazyComponent
 
-Component Wrapper to lazy loading a Component. [See demo](https://ndriadev.github.io/react-tools/#/components/LazyComponent)
+Component Wrapper to lazy loading a Component. [See demo](https://react-tools.ndria.dev/#/components/LazyComponent)
 ```tsx
 LazyComponent<T extends { default: ComponentType<unknown> } | { [k: string]: ComponentType<unknown> }>({ factory, componentName, fallback, beforeLoad, afterLoad }: { factory: () => Promise<T>, componentName?: string, fallback?: ReactNode, beforeLoad?: ()=>void, afterLoad?: ()=>void })
 ```
 
 ### Show
 
-Generic component used to conditional render part of the view: it renders _children_ when the _when_ prop is truthy, otherwise the _fallback_ prop, if it is present, or null. [See demo](https://ndriadev.github.io/react-tools/#/components/Show)
+Generic component used to conditional render part of the view: it renders _children_ when the _when_ prop is truthy, otherwise the _fallback_ prop, if it is present, or null. [See demo](https://react-tools.ndria.dev/#/components/Show)
 ```tsx
 Show<T>({ when, fallback, children }: PropsWithChildren<{ when: T|boolean|undefined|null, fallback?: ReactNode }>)
 ```
 
 ### ShowMemoized
 
-Memoized version of _Show_ component. [See demo](https://ndriadev.github.io/react-tools/#/components/ShowMemoized)
+Memoized version of _Show_ component. [See demo](https://react-tools.ndria.dev/#/components/ShowMemoized)
 ```tsx
 ShowMemoized = memo(Show);
 ```
 
 ### SwitchCase
 
-It works like switch-case construct. It useful for when there are more than 2 mutual exclusive conditions. [See demo](https://ndriadev.github.io/react-tools/#/components/SwitchCase)
+It works like switch-case construct. It useful for when there are more than 2 mutual exclusive conditions. [See demo](https://react-tools.ndria.dev/#/components/SwitchCase)
 ```tsx
 SwitchCase = { Switch, Case };
 ```
 
 ### SwitchCaseMemoized
 
-Memoized version of _SwitchCase_ component. [See demo](https://ndriadev.github.io/react-tools/#/components/SwitchCaseMemoized)
+Memoized version of _SwitchCase_ component. [See demo](https://react-tools.ndria.dev/#/components/SwitchCaseMemoized)
 ```tsx
 SwitchCaseMemoized =
 ```
@@ -1046,133 +1046,133 @@ SwitchCaseMemoized =
 
 ### alphanumericCompare
 
-Function which, given two strings, the type of comparison to be verified, and optional options, performs the comparison between the two strings and returns a boolean indicating whether the indicated comparison is respected or not. [See demo](https://ndriadev.github.io/react-tools/#/utils/alphanumericCompare)
+Function which, given two strings, the type of comparison to be verified, and optional options, performs the comparison between the two strings and returns a boolean indicating whether the indicated comparison is respected or not. [See demo](https://react-tools.ndria.dev/#/utils/alphanumericCompare)
 ```tsx
 alphanumericCompare(string1: string, string2: string, compareType?: "<" | ">" | "=" | ">=" | "<=", opts?: Intl.CollatorOptions)
 ```
 
 ### changeStringCase
 
-Function that given a string, a case type, and an optional delimiter, returns the string in the specified case or empty string. [See demo](https://ndriadev.github.io/react-tools/#/utils/changeStringCase)
+Function that given a string, a case type, and an optional delimiter, returns the string in the specified case or empty string. [See demo](https://react-tools.ndria.dev/#/utils/changeStringCase)
 ```tsx
 changeStringCase({string, caseType, delimiter}:{ string?: string, caseType: "pascalCase" | "snakeCase" | "kebabCase" | "camelCase", delimiter?: "upperCase" | "lowerCase" | string}): string
 ```
 
 ### clickElementOnKeydownEvent
 
-Function which, given a triggering code, executes _click_ on element when a keyDown event with triggering code is executed. [See demo](https://ndriadev.github.io/react-tools/#/utils/clickElementOnKeydownEvent)
+Function which, given a triggering code, executes _click_ on element when a keyDown event with triggering code is executed. [See demo](https://react-tools.ndria.dev/#/utils/clickElementOnKeydownEvent)
 ```tsx
 clickElementOnKeydownEvent(codeTriggering: KeyboardEventCode): ((e: KeyboardEvent) => void)
 ```
 
 ### defaultSerializer
 
-Function to serialize any type of value. [See demo](https://ndriadev.github.io/react-tools/#/utils/defaultSerializer)
+Function to serialize any type of value. [See demo](https://react-tools.ndria.dev/#/utils/defaultSerializer)
 ```tsx
 defaultSerializer<T>(target: T)
 ```
 
 ### detectBrowser
 
-It detects used browser or return __"No detection"__. [See demo](https://ndriadev.github.io/react-tools/#/utils/detectBrowser)
+It detects used browser or return __"No detection"__. [See demo](https://react-tools.ndria.dev/#/utils/detectBrowser)
 ```tsx
 detectBrowser(): "chrome" | "firefox" | "safari" | "opera" | "edge" | "No detection"
 ```
 
 ### getBase64
 
-Function to obtain a Base64 from value specified if supported, otherwise throw an Error. [See demo](https://ndriadev.github.io/react-tools/#/utils/getBase64)
+Function to obtain a Base64 from value specified if supported, otherwise throw an Error. [See demo](https://react-tools.ndria.dev/#/utils/getBase64)
 ```tsx
 getBase64<T>(target: string | Blob | ArrayBuffer | HTMLCanvasElement | HTMLImageElement | T | T[], options?: ToDataURLOptions | UseBase64ObjectOptions<T>): Promise<string>
 ```
 
 ### getKeyObjectFromValue
 
-Function that given an object and a value, returns the corrispondent key of this value or undefined. [See demo](https://ndriadev.github.io/react-tools/#/utils/getKeyObjectFromValue)
+Function that given an object and a value, returns the corrispondent key of this value or undefined. [See demo](https://react-tools.ndria.dev/#/utils/getKeyObjectFromValue)
 ```tsx
 getKeyObjectFromValue<T extends Record<string, unknown>, E extends string|number|symbol = keyof T>(object: T, value?: unknown): E | undefined
 ```
 
 ### getObjectFromDottedString
 
-Function that, given a path, a value and an optional object, returns an object with as many properties as there are in the path, assigning the value passed to the last one specified. [See demo](https://ndriadev.github.io/react-tools/#/utils/getObjectFromDottedString)
+Function that, given a path, a value and an optional object, returns an object with as many properties as there are in the path, assigning the value passed to the last one specified. [See demo](https://react-tools.ndria.dev/#/utils/getObjectFromDottedString)
 ```tsx
 getObjectFromDottedString<T, E extends Record<string, unknown>>(path: string, value: T, object?: E): E
 ```
 
 ### hotKeyHandler
 
-Utility function for _onKeyDown_ and _onKeyUp_ events handler that supports keys combination. [See demo](https://ndriadev.github.io/react-tools/#/utils/hotKeyHandler)
+Utility function for _onKeyDown_ and _onKeyUp_ events handler that supports keys combination. [See demo](https://react-tools.ndria.dev/#/utils/hotKeyHandler)
 ```tsx
 hotKeyHandler(hotKeys: `${string}` | `${'alt' | 'ctrl' | 'meta' | 'shift' | 'ctrlCommand'}+${string}` | `${'alt' | 'ctrl' | 'meta' | 'shift' | 'ctrlCommand'}+${'alt' | 'ctrl' | 'meta' | 'shift' | 'ctrlCommand'}+${string}`, listener: (evt: KeyboardEvent | KeyEvt<HTMLElement>) => void | Promise<void>): (evt: KeyboardEvent | KeyEvt<HTMLElement>) => void
 ```
 
 ### isAsync
 
-It detects if a function is asynchronous. [See demo](https://ndriadev.github.io/react-tools/#/utils/isAsync)
+It detects if a function is asynchronous. [See demo](https://react-tools.ndria.dev/#/utils/isAsync)
 ```tsx
 isAsync<T extends unknown[], E = unknown>(fn: E | Promise<E> | ((...args: T)=> E | Promise<E>)): boolean
 ```
 
 ### isClient
 
-It detects if code is running on client. [See demo](https://ndriadev.github.io/react-tools/#/utils/isClient)
+It detects if code is running on client. [See demo](https://react-tools.ndria.dev/#/utils/isClient)
 ```tsx
 isClient(): boolean
 ```
 
 ### isDeepEqual
 
-It returns true if the params are equal in depth. [See demo](https://ndriadev.github.io/react-tools/#/utils/isDeepEqual)
+It returns true if the params are equal in depth. [See demo](https://react-tools.ndria.dev/#/utils/isDeepEqual)
 ```tsx
 isDeepEqual(objA: unknown, objB: unknown, map = new WeakMap()):boolean
 ```
 
 ### isMouseEvent
 
-It returns true if the event param is of MouseEvent type. [See demo](https://ndriadev.github.io/react-tools/#/utils/isMouseEvent)
+It returns true if the event param is of MouseEvent type. [See demo](https://react-tools.ndria.dev/#/utils/isMouseEvent)
 ```tsx
 isMouseEvent(event: SyntheticEvent): boolean
 ```
 
 ### isShallowEqual
 
-It returns true if the params are equal until first level depth. [See demo](https://ndriadev.github.io/react-tools/#/utils/isShallowEqual)
+It returns true if the params are equal until first level depth. [See demo](https://react-tools.ndria.dev/#/utils/isShallowEqual)
 ```tsx
 isShallowEqual(objA: unknown, objB: unknown): boolean
 ```
 
 ### isTouchEvent
 
-It returns true if the event param is of TouchEvent type. [See demo](https://ndriadev.github.io/react-tools/#/utils/isTouchEvent)
+It returns true if the event param is of TouchEvent type. [See demo](https://react-tools.ndria.dev/#/utils/isTouchEvent)
 ```tsx
 isTouchEvent(event: SyntheticEvent | Event): boolean
 ```
 
 ### lazy
 
-Wrapper around _React.lazy_ that works also with component without default export and with possibility to execute a function before and after component loading. [See demo](https://ndriadev.github.io/react-tools/#/utils/lazy)
+Wrapper around _React.lazy_ that works also with component without default export and with possibility to execute a function before and after component loading. [See demo](https://react-tools.ndria.dev/#/utils/lazy)
 ```tsx
 lazy<T extends ComponentType<unknown>>(load: () => Promise<{ [k:string]: T }>, opts: { componentName?: string, beforeLoad?: () => void, afterLoad?: () => void } = {}): LazyExoticComponent<T>
 ```
 
 ### mergeObjects
 
-Function that, given two objects version, merges them into a single one. Via an optional parameter _forceUndefinedValue_ you can define how undefined values are treated. [See demo](https://ndriadev.github.io/react-tools/#/utils/mergedObject)
+Function that, given two objects version, merges them into a single one. Via an optional parameter _forceUndefinedValue_ you can define how undefined values are treated. [See demo](https://react-tools.ndria.dev/#/utils/mergedObject)
 ```tsx
 mergeObjects<T extends object>(oldObj: T, newObj: RecursivePartial<T>, forceUndefinedValue?: boolean): T
 ```
 
 ### removePropertiesFromArrayObjects
 
-Function that, given an array of objects and a property or an array of properties, return a new array without specified properties. [See demo](https://ndriadev.github.io/react-tools/#/utils/removePropertiesFromArrayObjects)
+Function that, given an array of objects and a property or an array of properties, return a new array without specified properties. [See demo](https://react-tools.ndria.dev/#/utils/removePropertiesFromArrayObjects)
 ```tsx
 removePropertiesFromArrayObjects<T, E extends string | number | symbol = keyof T>(array: T[], property: E | E[]): Omit<T, E>[]
 ```
 
 ### uniqueElementsArray
 
-Function that given one or more array of object, returns a single array with unique elements by a specified property, an array of properties or _none_. [See demo](https://ndriadev.github.io/react-tools/#/utils/removeDuplicatedFromArray)
+Function that given one or more array of object, returns a single array with unique elements by a specified property, an array of properties or _none_. [See demo](https://react-tools.ndria.dev/#/utils/removeDuplicatedFromArray)
 ```tsx
 uniqueElementsArray<T extends string | number | boolean | ((...args: unknown[]) => unknown) | bigint | object>(property: keyof T | (keyof T)[] | "none", ...args: (T[])[]): T[]
 ```

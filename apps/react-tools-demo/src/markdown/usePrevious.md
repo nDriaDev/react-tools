@@ -1,5 +1,5 @@
 # usePrevious
-It's track the previous value of a variable, with possibility to enable/disable tracking. [See demo](https://ndriadev.github.io/react-tools/#/hooks/state/usePrevious)
+It's track the previous value of a variable, with possibility to enable/disable tracking. [See demo](https://react-tools.ndria.dev/#/hooks/state/usePrevious)
 
 ## Usage
 

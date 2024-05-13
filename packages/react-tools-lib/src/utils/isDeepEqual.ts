@@ -1,5 +1,5 @@
 /**
- * __`isDeepEqual`__: It returns true if the params are equal in depth. [See demo](https://ndriadev.github.io/react-tools/#/utils/isDeepEqual)
+ * __`isDeepEqual`__: It returns true if the params are equal in depth. [See demo](https://react-tools.ndria.dev/#/utils/isDeepEqual)
  * @param {unknown} objA
  * @param {unknown} objB
  * @param {WeakMap} [map=new WeakMap()]

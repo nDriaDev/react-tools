@@ -3,7 +3,7 @@ import { useMemoizedFn } from "../performance";
 import { useEvents } from "../events";
 
 /**
- * ___useSessionStorageState___: Custom _useState_ hook implementation using _sessionStorage_, with immutable _getter state_ function and to _remove_ key from sessionStorage. [See demo](https://ndriadev.github.io/react-tools/#/hooks/state/useSessionStorageState)
+ * ___useSessionStorageState___: Custom _useState_ hook implementation using _sessionStorage_, with immutable _getter state_ function and to _remove_ key from sessionStorage. [See demo](https://react-tools.ndria.dev/#/hooks/state/useSessionStorageState)
  * @param {Object} params
  * @param {string} params.key - item key in session storage.
  * @param {T | () => T} [params.initialState] - value or a function , optional.

@@ -1,5 +1,5 @@
 # useMutationObserver
-Hook to use Mutation Observer. Refer to [Mutation Observer API](https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver). [See demo](https://ndriadev.github.io/react-tools/#/hooks/events/useMutationObserver)
+Hook to use Mutation Observer. Refer to [Mutation Observer API](https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver). [See demo](https://react-tools.ndria.dev/#/hooks/events/useMutationObserver)
 
 ## Usage
 

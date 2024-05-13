@@ -1,7 +1,7 @@
 import { SyntheticEvent } from "react";
 
 /**
- * __`isTouchEvent`__: It returns true if the event param is of TouchEvent type. [See demo](https://ndriadev.github.io/react-tools/#/utils/isTouchEvent)
+ * __`isTouchEvent`__: It returns true if the event param is of TouchEvent type. [See demo](https://react-tools.ndria.dev/#/utils/isTouchEvent)
  * @param {SyntheticEvent} event
  * @returns {boolean} result
  */

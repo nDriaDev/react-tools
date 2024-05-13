@@ -1,5 +1,5 @@
 # useIntersectionObserver
-Hook to use Intersection Observer. Refer to [Intersection Observer API](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API). [See demo](https://ndriadev.github.io/react-tools/#/hooks/events/useIntersectionObserver)
+Hook to use Intersection Observer. Refer to [Intersection Observer API](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API). [See demo](https://react-tools.ndria.dev/#/hooks/events/useIntersectionObserver)
 
 ## Usage
 

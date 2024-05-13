@@ -1,5 +1,5 @@
 # usePointerLock
-Hook to use [PointerLock API](https://developer.mozilla.org/en-US/docs/Web/API/Pointer_Lock_API). [See demo](https://ndriadev.github.io/react-tools/#/hooks/events/usePointerLock)
+Hook to use [PointerLock API](https://developer.mozilla.org/en-US/docs/Web/API/Pointer_Lock_API). [See demo](https://react-tools.ndria.dev/#/hooks/events/usePointerLock)
 
 ## Usage
 

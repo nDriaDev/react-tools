@@ -1,5 +1,5 @@
 # useAnimation
-Hook to use [Web Animations API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Animations_API). [See demo](https://ndriadev.github.io/react-tools/#/hooks/api-dom/useAnimation)
+Hook to use [Web Animations API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Animations_API). [See demo](https://react-tools.ndria.dev/#/hooks/api-dom/useAnimation)
 
 ## Usage
 

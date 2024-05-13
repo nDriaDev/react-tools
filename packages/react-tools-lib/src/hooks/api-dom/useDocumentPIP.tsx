@@ -4,7 +4,7 @@ import { createPortal } from "react-dom";
 import { useEffectOnce, useRerender } from "../lifecycle";
 
 /**
- * **`useDocumentPIP`**: Hook to use Document PIP [(Document-Picture-in-Picture API)](https://developer.mozilla.org/en-US/docs/Web/API/Document_Picture-in-Picture_API). [See demo](https://ndriadev.github.io/react-tools/#/hooks/api-dom/useDocumentPIP)
+ * **`useDocumentPIP`**: Hook to use Document PIP [(Document-Picture-in-Picture API)](https://developer.mozilla.org/en-US/docs/Web/API/Document_Picture-in-Picture_API). [See demo](https://react-tools.ndria.dev/#/hooks/api-dom/useDocumentPIP)
  * @param {UseDocumentPIPProps} param - object
  * @param {DocumentPIPOptions} [param.options] - object
  * @param {boolean} [param.options.inheritCSS] - boolean that indicates if PIP window will inherit CSS from main window.

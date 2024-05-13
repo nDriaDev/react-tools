@@ -1,5 +1,5 @@
 # useMemoDeepCompare
-Custom useMemo that returns memoized value that changes only if deps are different in depth. [See demo](https://ndriadev.github.io/react-tools/#/hooks/performance/useMemoDeepCompare)
+Custom useMemo that returns memoized value that changes only if deps are different in depth. [See demo](https://react-tools.ndria.dev/#/hooks/performance/useMemoDeepCompare)
 
 ## Usage
 

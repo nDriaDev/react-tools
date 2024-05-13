@@ -1,5 +1,5 @@
 # useInfiniteScroll
-Hook to deal with large sets of data. It allow users to scroll through content endlessly without explicit pagination or loading new pages. [See demo](https://ndriadev.github.io/react-tools/#/hooks/events/useInfiniteScroll)
+Hook to deal with large sets of data. It allow users to scroll through content endlessly without explicit pagination or loading new pages. [See demo](https://react-tools.ndria.dev/#/hooks/events/useInfiniteScroll)
 
 ## Usage
 

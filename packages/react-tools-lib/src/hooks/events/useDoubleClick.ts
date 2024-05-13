@@ -1,7 +1,7 @@
 import { SyntheticEvent, useCallback, useRef } from "react";
 
 /**
- * **`useDoubleClick`**: hook to handle double click event. Double clicking in react as well as with vanilla js, it is possible to manage it but it is not possible to have both managers on the same element. Thanks to this hook it is possible to do this, and it works with all events that can be associated with a user click (for example _mousedown_ but also _touchstart_). [See demo](https://ndriadev.github.io/react-tools/#/hooks/events/useDoubleClick)
+ * **`useDoubleClick`**: hook to handle double click event. Double clicking in react as well as with vanilla js, it is possible to manage it but it is not possible to have both managers on the same element. Thanks to this hook it is possible to do this, and it works with all events that can be associated with a user click (for example _mousedown_ but also _touchstart_). [See demo](https://react-tools.ndria.dev/#/hooks/events/useDoubleClick)
  * @param {((evt: SyntheticEvent<T, E>) => Promise<void>|void)|Object} handler
  * @param {((evt: SyntheticEvent<T, E>) => Promise<void> | void)} handler.doubleClick - callback executed on double click.
  * @param {((evt: SyntheticEvent<T, E>) => Promise<void> | void)} [handler.singleClick] - callback executed on single click.

@@ -1,5 +1,5 @@
 # useRerender
-Hook to force a render. [See demo](https://ndriadev.github.io/react-tools/#/hooks/lifecycle/useRerender)
+Hook to force a render. [See demo](https://react-tools.ndria.dev/#/hooks/lifecycle/useRerender)
 
 ## Usage
 

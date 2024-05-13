@@ -7,7 +7,7 @@ const increment = () => {
 }
 
 /**
- * __`useId`__: _useId_ hook polyfilled for React versions below 18: __not use for key prop__. [See demo](https://ndriadev.github.io/react-tools/#/hooks/performance/useId)
+ * __`useId`__: _useId_ hook polyfilled for React versions below 18: __not use for key prop__. [See demo](https://react-tools.ndria.dev/#/hooks/performance/useId)
  * @returns {string}
  */
 function useIdPolyfilled(): string {

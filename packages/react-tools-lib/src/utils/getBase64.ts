@@ -26,7 +26,7 @@ function imgLoaded(img: HTMLImageElement) {
 }
 
 /**
- * **`getBase64`**: Function to obtain a Base64 from value specified if supported, otherwise throw an Error. [See demo](https://ndriadev.github.io/react-tools/#/utils/getBase64)
+ * **`getBase64`**: Function to obtain a Base64 from value specified if supported, otherwise throw an Error. [See demo](https://react-tools.ndria.dev/#/utils/getBase64)
  * @param {string | Blob | ArrayBuffer | HTMLCanvasElement | HTMLImageElement | T | T[]} target
  * @param {ToDataURLOptions | UseBase64ObjectOptions<T>} [options]
  * @returns {string}

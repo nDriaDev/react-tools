@@ -1,5 +1,5 @@
 /**
- * **`defaultSerializer`**: Function to serialize any type of value. [See demo](https://ndriadev.github.io/react-tools/#/utils/defaultSerializer)
+ * **`defaultSerializer`**: Function to serialize any type of value. [See demo](https://react-tools.ndria.dev/#/utils/defaultSerializer)
  * @param {T} target
  * @returns {string}
  */

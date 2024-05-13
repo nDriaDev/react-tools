@@ -1,5 +1,5 @@
 # useMap
-Hook to use _Map data structure_ to handle component state with all Map methods. [See demo](https://ndriadev.github.io/react-tools/#/hooks/state/useMap)
+Hook to use _Map data structure_ to handle component state with all Map methods. [See demo](https://react-tools.ndria.dev/#/hooks/state/useMap)
 
 ## Usage
 

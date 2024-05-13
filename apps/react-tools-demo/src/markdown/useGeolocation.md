@@ -1,5 +1,5 @@
 # useGeolocation
-Hook to use user's geographic location. Refer to [GeoLocation API](https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API). [See demo](https://ndriadev.github.io/react-tools/#/hooks/api-dom/useGeolocation)
+Hook to use user's geographic location. Refer to [GeoLocation API](https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API). [See demo](https://react-tools.ndria.dev/#/hooks/api-dom/useGeolocation)
 
 ## Usage
 

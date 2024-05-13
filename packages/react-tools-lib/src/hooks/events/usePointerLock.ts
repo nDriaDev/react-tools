@@ -2,7 +2,7 @@ import { RefObject, useCallback, useRef } from "react";
 import { UsePointerLockProps, UsePointerLockResult } from "../../models";
 
 /**
- * **`usePointerLock`**: Hook to use [PointerLock API](https://developer.mozilla.org/en-US/docs/Web/API/Pointer_Lock_API). [See demo](https://ndriadev.github.io/react-tools/#/hooks/events/usePointerLock)
+ * **`usePointerLock`**: Hook to use [PointerLock API](https://developer.mozilla.org/en-US/docs/Web/API/Pointer_Lock_API). [See demo](https://react-tools.ndria.dev/#/hooks/events/usePointerLock)
  * @param {UsePointerLockProps} param - object
  * @param {RefObject<T>|T} param.target - element that requires lock.
  * @param {boolean} [param.unadjustedMovement] - Disables OS-level adjustment for mouse acceleration, and accesses raw mouse input instead. The default value is false; setting it to true will disable mouse acceleration.

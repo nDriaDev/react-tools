@@ -1,5 +1,5 @@
 # ErrorBoundary
-Wrapper component that lets you display some fallback UI when your application throws an error during rendering. [See demo](https://ndriadev.github.io/react-tools/#/components/ErrorBoundary)
+Wrapper component that lets you display some fallback UI when your application throws an error during rendering. [See demo](https://react-tools.ndria.dev/#/components/ErrorBoundary)
 
 ## Usage
 
@@ -15,7 +15,7 @@ export default function EB() {
 }
 ```
 
-> The component uses _ErrorBoundary_ Component to wrap _Component_. _Component_ throw an error so _ErrorBoundary_ catch it and show the _fallback_ element passing to it _error_ and _retry_ function. [See demo](https://ndriadev.github.io/react-tools/#/components/ErrorBoundary)
+> The component uses _ErrorBoundary_ Component to wrap _Component_. _Component_ throw an error so _ErrorBoundary_ catch it and show the _fallback_ element passing to it _error_ and _retry_ function. [See demo](https://react-tools.ndria.dev/#/components/ErrorBoundary)
 
 
 ## API

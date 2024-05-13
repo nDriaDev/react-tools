@@ -1,5 +1,5 @@
 # useSet
-Hook to use _Set data structure_ to handle component state with all Set methods. [See demo](https://ndriadev.github.io/react-tools/#/hooks/state/useSet)
+Hook to use _Set data structure_ to handle component state with all Set methods. [See demo](https://react-tools.ndria.dev/#/hooks/state/useSet)
 
 ## Usage
 

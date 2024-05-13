@@ -42,7 +42,7 @@ const DynamicComponent = ({ factory, componentName, beforeLoad, afterLoad }: { f
 };
 
 /**
- * **`LazyComponent`**: Component Wrapper to lazy loading a Component. [See demo](https://ndriadev.github.io/react-tools/#/components/LazyComponent)
+ * **`LazyComponent`**: Component Wrapper to lazy loading a Component. [See demo](https://react-tools.ndria.dev/#/components/LazyComponent)
  * @param {Object} param - properties to load component.
  * @param {() => Promise<{ [k:string]: T }>} param.factory - function that returns a Promise or another thenable.
  * @param {string} [param.componentName] - name of the of the module to load lazy. If it is missing, and the _load_ execution result not have a default property, the first key in res is returned as result.

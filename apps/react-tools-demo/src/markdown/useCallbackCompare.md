@@ -1,5 +1,5 @@
 # useCallbackCompare
-Custom useCallback that returns memoized callback that changes only when comparator function, received as third parameter, returns true. [See demo](https://ndriadev.github.io/react-tools/#/hooks/performance/useCallbackCompare)
+Custom useCallback that returns memoized callback that changes only when comparator function, received as third parameter, returns true. [See demo](https://react-tools.ndria.dev/#/hooks/performance/useCallbackCompare)
 
 ## Usage
 

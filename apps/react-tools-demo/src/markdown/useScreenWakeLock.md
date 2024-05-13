@@ -1,5 +1,5 @@
 # useScreenWakeLock
-Hook to use [Screen Wake Lock API](https://developer.mozilla.org/en-US/docs/Web/API/Screen_Wake_Lock_API). [See demo](https://ndriadev.github.io/react-tools/#/hooks/api-dom/useScreenWakeLock)
+Hook to use [Screen Wake Lock API](https://developer.mozilla.org/en-US/docs/Web/API/Screen_Wake_Lock_API). [See demo](https://react-tools.ndria.dev/#/hooks/api-dom/useScreenWakeLock)
 
 ## Usage
 

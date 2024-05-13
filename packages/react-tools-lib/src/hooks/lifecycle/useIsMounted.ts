@@ -2,7 +2,7 @@ import { useCallback, useRef } from "react"
 import { useEffectOnce } from "./useEffectOnce";
 
 /**
- * **`useIsMounted`**: Hoos to know when a component is mounted or not. [See demo](https://ndriadev.github.io/react-tools/#/hooks/lifecycle/useIsMounted)
+ * **`useIsMounted`**: Hoos to know when a component is mounted or not. [See demo](https://react-tools.ndria.dev/#/hooks/lifecycle/useIsMounted)
  * @returns {()=>boolean}
  */
 export const useIsMounted = (): ()=>boolean => {

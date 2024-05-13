@@ -1,7 +1,7 @@
 import { useDeferredValue as legacy, useRef, useState } from "react"
 
 /**
- * __`useDeferredValue`__: _useDeferredValue_ hook polyfilled for React versions below 18. [See demo](https://ndriadev.github.io/react-tools/#/hooks/lifecycle/useDeferredValue)
+ * __`useDeferredValue`__: _useDeferredValue_ hook polyfilled for React versions below 18. [See demo](https://react-tools.ndria.dev/#/hooks/lifecycle/useDeferredValue)
  * @param {T} value
  * @returns {T} deferred value
  */

@@ -1,5 +1,5 @@
 # useLogger
-Hook to log componet details during Lifecycle events. [See demo](https://ndriadev.github.io/react-tools/#/hooks/lifecycle/useLogger)
+Hook to log componet details during Lifecycle events. [See demo](https://react-tools.ndria.dev/#/hooks/lifecycle/useLogger)
 
 ## Usage
 

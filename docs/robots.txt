@@ -17,4 +17,4 @@ User-agent: MSNBot
 Crawl-delay: 10
 
 
-Sitemap: https://ndriadev.github.io/react-tools/sitemap.xml
+Sitemap: https://react-tools.ndria.dev/sitemap.xml

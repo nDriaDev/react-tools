@@ -1,5 +1,5 @@
 # useClickOutside
-Hook to listen and execute an action when there is a click outside an element. [See demo](https://ndriadev.github.io/react-tools/#/hooks/events/useClickOutside)
+Hook to listen and execute an action when there is a click outside an element. [See demo](https://react-tools.ndria.dev/#/hooks/events/useClickOutside)
 
 ## Usage
 

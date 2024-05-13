@@ -1,5 +1,5 @@
 # useActiveElement
-Hook that returns activeElement and listen its changes. [See demo](https://ndriadev.github.io/react-tools/#/hooks/api-dom/useActiveElement)
+Hook that returns activeElement and listen its changes. [See demo](https://react-tools.ndria.dev/#/hooks/api-dom/useActiveElement)
 
 ## Usage
 

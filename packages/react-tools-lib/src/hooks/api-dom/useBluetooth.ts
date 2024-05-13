@@ -3,7 +3,7 @@ import { Bluetooth, BluetoothDevice, BluetoothDevicesOptions, BluetoothRemoteGAT
 import { useSyncExternalStore } from "../state";
 
 /**
- * **`useBluetooth`**: Hook to use [Web Bluetooth API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Bluetooth_API). [See demo](https://ndriadev.github.io/react-tools/#/hooks/api-dom/useBluetooth)
+ * **`useBluetooth`**: Hook to use [Web Bluetooth API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Bluetooth_API). [See demo](https://react-tools.ndria.dev/#/hooks/api-dom/useBluetooth)
  * @returns {[{isSupported: boolean, isConnected: boolean, device: BluetoothDevice|null, server: BluetoothRemoteGATTServer|null}, (opts?: BluetoothDevicesOptions)=>Promise<void>]} result
  */
 export const useBluetooth = ():[{isSupported: boolean, isConnected: boolean, device: BluetoothDevice|null, server: BluetoothRemoteGATTServer|null}, (opts?: BluetoothDevicesOptions)=>Promise<void>] => {

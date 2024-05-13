@@ -1,7 +1,7 @@
 import { useState } from "react"
 
 /**
- * __`useSet`__: Hook to use _Set data structure_ to handle component state with all Set methods. [See demo](https://ndriadev.github.io/react-tools/#/hooks/state/useSet)
+ * __`useSet`__: Hook to use _Set data structure_ to handle component state with all Set methods. [See demo](https://react-tools.ndria.dev/#/hooks/state/useSet)
  * @param {Iterable<T> | (() => Iterable<T>)} [initialState] - An iterable object whose elements are added to Set, or function that returns it.
  * @returns {Set<T>}
  */

@@ -1,5 +1,5 @@
 # usePerformAction
-Hook that executes a callback after a render. [See demo](https://ndriadev.github.io/react-tools/#/hooks/events/usePerformAction)
+Hook that executes a callback after a render. [See demo](https://react-tools.ndria.dev/#/hooks/events/usePerformAction)
 
 ## Usage
 

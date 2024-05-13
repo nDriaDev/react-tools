@@ -1,5 +1,5 @@
 # useWebWorker
-Hook to use [Web Worker](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API), handling registration and communication. [See demo](https://ndriadev.github.io/react-tools/#/hooks/api-dom/useWebWorker)
+Hook to use [Web Worker](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API), handling registration and communication. [See demo](https://react-tools.ndria.dev/#/hooks/api-dom/useWebWorker)
 
 ## Usage
 

@@ -1,7 +1,7 @@
 import createHTMLMediaHook from "../../utils/createHTMLMediaElement";
 
 /**
- * **`useVideo`**: Hook to use an HTML video element. [See demo](https://ndriadev.github.io/react-tools/#/hooks/api-dom/useVideo)
+ * **`useVideo`**: Hook to use an HTML video element. [See demo](https://react-tools.ndria.dev/#/hooks/api-dom/useVideo)
  * @param {UseVideoProps} param - Media HTML Attributes of an html video element.
  * @returns {UseVideoResult} result
  * Object with these properties:

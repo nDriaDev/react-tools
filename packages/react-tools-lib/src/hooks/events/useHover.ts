@@ -2,7 +2,7 @@ import { RefObject, useCallback, useMemo, useRef } from "react";
 import { useSyncExternalStore } from "../state";
 
 /**
- * **`useHover`**: Hook that determines whether the item is hovered or not and handles state hovers. [See demo](https://ndriadev.github.io/react-tools/#/hooks/events/useHover)
+ * **`useHover`**: Hook that determines whether the item is hovered or not and handles state hovers. [See demo](https://react-tools.ndria.dev/#/hooks/events/useHover)
  * @param {RefObject<HTMLElement> | HTMLElement} target - DOM element or ref
  * @param {{ onEnter?: (evt: Event) => void, onChange?: (isHover: boolean) => void, onLeave?: (evt: Event) => void, returnValue?: boolean }} [opts] - __onEnter__ function to be executed on starting hover, __onLeave__ function to be executed on hover finished, __onChange__ function to be executed when hover state changes, __return value__ boolean to return hover state value or not.
  * @returns {boolean|void} result - if __returnValue__ option is true or not specified, hook return state hover value, otherwise returns nothing.

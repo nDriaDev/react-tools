@@ -2,7 +2,7 @@ import { RefObject, useCallback, useEffect, useMemo, useRef } from "react";
 import { useSyncExternalStore } from "../state";
 
 /**
- * **`useInfiniteScroll`**: Hook to deal with large sets of data. It allow users to scroll through content endlessly without explicit pagination or loading new pages. [See demo](https://ndriadev.github.io/react-tools/#/hooks/events/useInfiniteScroll)
+ * **`useInfiniteScroll`**: Hook to deal with large sets of data. It allow users to scroll through content endlessly without explicit pagination or loading new pages. [See demo](https://react-tools.ndria.dev/#/hooks/events/useInfiniteScroll)
  * @param {Object} param
  * @param {(data?: T | undefined) => Promise<T>} param.request - request to obtain data.
  * @param {RefObject<E extends Element>} param.ref - a reference to container element.

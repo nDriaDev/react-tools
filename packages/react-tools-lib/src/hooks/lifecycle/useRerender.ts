@@ -1,7 +1,7 @@
 import { DispatchWithoutAction, useReducer } from "react"
 
 /**
- * **`useRerender`**: Hook to force a render. [See demo](https://ndriadev.github.io/react-tools/#/hooks/lifecycle/useRerender)
+ * **`useRerender`**: Hook to force a render. [See demo](https://react-tools.ndria.dev/#/hooks/lifecycle/useRerender)
  * @param {boolean} [withValue] - optional boolean value: if it is true, an array with _value_ and _rerender_ function is returned.
  * @returns {DispatchWithoutAction|[T,DispatchWithoutAction]} array with _value_ and _updateValue_ function or _rerender_ function.
  */

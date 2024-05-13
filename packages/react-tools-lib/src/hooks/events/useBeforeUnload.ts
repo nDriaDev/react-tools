@@ -2,7 +2,7 @@ import { RefObject } from "react";
 import { useEventListener } from "./useEventListener"
 
 /**
- * **`useBeforeUnload`**: Hook to handle beforeunload event. [See demo](https://ndriadev.github.io/react-tools/#/hooks/events/useBeforeUnload)
+ * **`useBeforeUnload`**: Hook to handle beforeunload event. [See demo](https://react-tools.ndria.dev/#/hooks/events/useBeforeUnload)
  * @param {Object} options
  * @param {(evt: BeforeUnloadEvent) => void} options.listener - listener to be executed on beforeunload event fired.
  * @param {RefObject<HTMLElement> | Window} [options.element=window] - element on which attaching eventListener.

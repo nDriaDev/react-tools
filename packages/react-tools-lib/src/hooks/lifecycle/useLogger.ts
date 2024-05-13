@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react"
 
 /**
- * **`useLogger`**: Hook to log componet details during Lifecycle events. [See demo](https://ndriadev.github.io/react-tools/#/hooks/lifecycle/useLogger)
+ * **`useLogger`**: Hook to log componet details during Lifecycle events. [See demo](https://react-tools.ndria.dev/#/hooks/lifecycle/useLogger)
  * @param {string} name - component name.
  * @param {object} props - props object to track.
  */

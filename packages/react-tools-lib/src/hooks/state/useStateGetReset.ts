@@ -2,7 +2,7 @@ import { Dispatch, SetStateAction, useCallback, useState } from "react"
 import { useMemoizedFn } from "../performance";
 
 /**
- * **`useStateGetReset`**: Custom useState with get and reset state functions. [See demo](https://ndriadev.github.io/react-tools/#/hooks/state/useStateGetReset)
+ * **`useStateGetReset`**: Custom useState with get and reset state functions. [See demo](https://react-tools.ndria.dev/#/hooks/state/useStateGetReset)
  * @param {T | () => T} initialState - value or a function.
  * @returns {[T, Dispatch<SetStateAction<T>>, () => T, ()=>void]} array
  */

@@ -1,7 +1,7 @@
 import { RecursivePartial } from "../models";
 
 /**
- * **`mergeObjects`**: Function that, given two objects version, merges them into a single one. Via an optional parameter _forceUndefinedValue_ you can define how undefined values are treated. [See demo](https://ndriadev.github.io/react-tools/#/utils/mergedObject)
+ * **`mergeObjects`**: Function that, given two objects version, merges them into a single one. Via an optional parameter _forceUndefinedValue_ you can define how undefined values are treated. [See demo](https://react-tools.ndria.dev/#/utils/mergedObject)
  * @param {object} oldObj - previous object version.
  * @param {RecursivePartial<object>} newObj - new object version.
  * @param {boolean} [forceUndefinedValue=false] - boolean to indicate how treat undefined value.

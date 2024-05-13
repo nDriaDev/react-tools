@@ -26,7 +26,7 @@ const cancelDebounce = (handle: {id: number}, focusedWindow=false) => {
 }
 
 /**
- * **`useDebounce`**: Hook to delay a function execution with possibility to cancel execution and to invoke them immediately. [See demo](https://ndriadev.github.io/react-tools/#/hooks/api-dom/useDebounce)
+ * **`useDebounce`**: Hook to delay a function execution with possibility to cancel execution and to invoke them immediately. [See demo](https://react-tools.ndria.dev/#/hooks/api-dom/useDebounce)
  * @param {T extends (...args: unknown[]) => void} fn - The function to debounce.
  * @param {Object} opts - options for debounce behaviors.
  * @param {number} opts.delay - time in milliseconds to delay function execution.

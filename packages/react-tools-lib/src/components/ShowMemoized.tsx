@@ -4,7 +4,7 @@ import { Show } from "./Show";
 //#IGNORE
 
 /**
- * **`ShowMemoized`**: Memoized version of _Show_ component. [See demo](https://ndriadev.github.io/react-tools/#/components/ShowMemoized)
+ * **`ShowMemoized`**: Memoized version of _Show_ component. [See demo](https://react-tools.ndria.dev/#/components/ShowMemoized)
  * @param {PropsWithChildren<{when: T|boolean|undefined|null, fallback?: ReactNode}>} object
  * @param {T|boolean|undefined|null} object.when - boolean indicating if to show _children_ or _fallback_/_null_.
  * @param {ReactNode} [object.fallback] - optional element to render when _when_ prop is false.

@@ -3,7 +3,7 @@ import { useEventListener } from "./useEventListener";
 import { hotKeyHandler } from "../../utils";
 
 /**
- * __`useHotKeys`__: Hook to listen for the keyboard press, support key combinations, built on [hotKeyHandler](#/hotKeyHandler) utility function. [See demo](https://ndriadev.github.io/react-tools/#/hooks/events/useHotKeys)
+ * __`useHotKeys`__: Hook to listen for the keyboard press, support key combinations, built on [hotKeyHandler](#/hotKeyHandler) utility function. [See demo](https://react-tools.ndria.dev/#/hooks/events/useHotKeys)
  * @param {Object} options
  * @param {`${string}` | `${'alt' | 'ctrl' | 'meta' | 'shift' | 'ctrlCommand'}+${string}` | `${'alt' | 'ctrl' | 'meta' | 'shift' | 'ctrlCommand'}+${'alt' | 'ctrl' | 'meta' | 'shift' | 'ctrlCommand'}+${string}`} options.hotKey - hotKey string: _ctrlCommand_ indicates to listen __Ctrl__ (on Windows) or __Command__ (on Mac) keys.
  * @param {"keydown"|"keyup"} [options.type="keydown"] - event type.

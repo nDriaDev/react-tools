@@ -1,5 +1,5 @@
 # useEyeDropper
-Hook to use [EyeDropper API](https://developer.mozilla.org/en-US/docs/Web/API/EyeDropper_API). [See demo](https://ndriadev.github.io/react-tools/#/hooks/api-dom/useEyeDropper)
+Hook to use [EyeDropper API](https://developer.mozilla.org/en-US/docs/Web/API/EyeDropper_API). [See demo](https://react-tools.ndria.dev/#/hooks/api-dom/useEyeDropper)
 
 ## Usage
 

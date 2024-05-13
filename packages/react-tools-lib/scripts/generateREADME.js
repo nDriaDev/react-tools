@@ -552,8 +552,8 @@ async function generateReadme() {
 		stringBuffer.set([
 			'<h1 align="center">',
 			'  	<br>',
-			'	<a href="https://ndriadev.github.io/react-tools/">',
-			'  		<img src="https://ndriadev.github.io/react-tools/react-red.png" alt="logo">',
+			'	<a href="https://react-tools.ndria.dev/">',
+			'  		<img src="https://react-tools.ndria.dev/react-red.png" alt="logo">',
 			'	</a>',
 			'	<br>',
 			'	React-Tools',
@@ -590,7 +590,7 @@ async function generateReadme() {
 			'',
 			'## Demo',
 			'',
-			'Go to [Demo](https://ndriadev.github.io/react-tools) to see and try all implementations.',
+			'Go to [Demo](https://react-tools.ndria.dev) to see and try all implementations.',
 			'',
 			'## Tools',
 		]);

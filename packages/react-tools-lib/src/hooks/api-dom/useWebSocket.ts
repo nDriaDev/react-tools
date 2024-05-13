@@ -4,7 +4,7 @@ import { useEffectOnce } from "../lifecycle";
 import { useSyncExternalStore } from "../state";
 
 /**
- * **`useWebSocket`**: Hook for creating and managing a [WebSocket](https://developer.mozilla.org/en-US/docs/Web/API/WebSocket) connection to a server, as well as for sending and receiving data on the connection. [See demo](https://ndriadev.github.io/react-tools/#/hooks/api-dom/useWebSocket)
+ * **`useWebSocket`**: Hook for creating and managing a [WebSocket](https://developer.mozilla.org/en-US/docs/Web/API/WebSocket) connection to a server, as well as for sending and receiving data on the connection. [See demo](https://react-tools.ndria.dev/#/hooks/api-dom/useWebSocket)
  * @param {UseWebSocketProps} param - object
  * @param {UseWebSocketProps} [param.url] - the URL to which to connect; this should be the URL to which the WebSocket server will respond.
  * @param {UseWebSocketProps} [param.protocols] - either a single protocol string or an array of protocol strings. These strings are used to indicate sub-protocols, so that a single server can implement multiple WebSocket sub-protocols.
