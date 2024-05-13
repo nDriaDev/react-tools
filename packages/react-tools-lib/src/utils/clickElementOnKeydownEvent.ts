@@ -5,7 +5,7 @@ import { KeyboardEventCode } from "../models";
  * @param {codeTriggering: KeyboardEventCode} codeTriggering
  * @returns {(e: KeyboardEvent) => void}
  */
-export function clickElementOnKeydownEvent(codeTriggering: KeyboardEventCode): (e: KeyboardEvent) => void {
+export function clickElementOnKeydownEvent(codeTriggering: KeyboardEventCode): ((e: KeyboardEvent) => void) {
 	return (e: KeyboardEvent): void => {
 		e.code === codeTriggering && (e.target as HTMLElement)?.click();
 	}
