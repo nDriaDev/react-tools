@@ -1,1 +1,0 @@
-import{r as a}from"./index-HAZn9Uo2.js";const c=r=>{const e=a.useRef();return[a.useCallback((...n)=>{const u=()=>{e.current=requestAnimationFrame(t=>r(t,u,...n))};e.current=requestAnimationFrame(t=>r(t,u,...n))},[r]),a.useCallback(()=>{e.current&&cancelAnimationFrame(e.current)},[])]};export{c as u};

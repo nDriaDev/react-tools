@@ -81,7 +81,7 @@ export const CreatePubSubStore = () => {
 ## API
 
 ```tsx
-createPubSubStore<T extends object, E extends Record<string, (store: T, ...args: any) => void>>(obj: T, mutatorsFn?: E, persist?: boolean): { getStore: () => T; mutateStore: (cb: (globStore: T) => void) => void; mutators: Record<keyof E, (...args: ExtractTail<Parameters<E[keyof E]>>) => void>, usePubSubStore: { (subscribe?: undefined): [T, (store: T | ((currStore: T) => T)) => void, () => T, Record<keyof E, (...args: ExtractTail<Parameters<E[keyof E]>>) => void>]; <C>(subscribe?: (store: T) => C): [C, (store: C | ((currStore: C) => C)) => void, () => C, Record<keyof E, (...args: ExtractTail<Parameters<E[keyof E]>>) => void>]; <C>(subscribe?: (store: T) => C): [T | C, (store: T | C | ((currStore: T) => T) | ((currStore: C) => C)) => void, () => T, Record<keyof E, (...args: ExtractTail<Parameters<E[keyof E]>>) => void>] }}
+createPubSubStore<T extends object, E extends Record<string, (store: T, ...args: any) => void>>(obj: T, mutatorsFn?: E, persist?: "localStorage" | "sessionStorge"): { getStore: () => T; mutateStore: (cb: (globStore: T) => void) => void; mutators: Record<keyof E, (...args: ExtractTail<Parameters<E[keyof E]>>) => void>, usePubSubStore: { (subscribe?: undefined): [T, (store: T | ((currStore: T) => T)) => void, () => T, Record<keyof E, (...args: ExtractTail<Parameters<E[keyof E]>>) => void>]; <C>(subscribe?: (store: T) => C): [C, (store: C | ((currStore: C) => C)) => void, () => C, Record<keyof E, (...args: ExtractTail<Parameters<E[keyof E]>>) => void>]; <C>(subscribe?: (store: T) => C): [T | C, (store: T | C | ((currStore: T) => T) | ((currStore: C) => C)) => void, () => T, Record<keyof E, (...args: ExtractTail<Parameters<E[keyof E]>>) => void>] }}
 ```
 
 
@@ -91,8 +91,8 @@ createPubSubStore<T extends object, E extends Record<string, (store: T, ...args:
 Object that rapresent the initialState of the store.
 > - __mutatorsFn?__: _E extends Record<string, (store: T, ...args: any) => void>_  
 Object that contains specified void function to mutate the store value, not the store itself, that receives the store as first parameter and other optional parameters.
-> - __persist=false?__: _boolean_  
-boolean that indicates if the store value will be persisted on the local Storage.
+> - __persist=undefined?__: _"localStorage" | "sessionStorge"|undefined_  
+value that indicates where persist the store, on the local or session Storage. If it isn't provided then store will not persist.
 >
 
 
