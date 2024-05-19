@@ -1,0 +1,1 @@
+import{j as r}from"./index-lctRWbll.js";import{u as s}from"./useNetwork-lLk-syGH.js";import"./useSyncExternalStore-NkSKrWhc.js";const c=()=>{const e=s();return r.jsx("div",{style:{textAlign:"center"},children:Object.keys(e).map(t=>r.jsxs("p",{children:[t,": ",JSON.stringify(e[t])]},t))})};export{c as UseNetwork};
