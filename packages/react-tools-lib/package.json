@@ -2,7 +2,7 @@
 	"name": "@ndriadev/react-tools",
 	"description": "A React library of hooks, components, utils and types ready to use",
 	"private": false,
-	"version": "1.8.1",
+	"version": "1.8.2",
 	"type": "module",
 	"files": [
 		"./dist"
