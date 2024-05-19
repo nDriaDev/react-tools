@@ -71,6 +71,8 @@ export const createPubSubStore = <T extends object, E extends Record<string, (st
 			store = { ...obj };
 			storage.setItem(topicName, JSON.stringify(store));
 		}
+	} else {
+		store = { ...obj };
 	}
 
 	if (mutatorsFn) {
