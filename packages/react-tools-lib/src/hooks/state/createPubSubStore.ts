@@ -43,7 +43,7 @@ function updateReference<T extends object, C>(currStore: T, storeSlice: object, 
  * **`createPubSubStore`**: A state management hook implemented on Publish-Subscribe pattern. It allows components to subscribe to state changes and receive updates whenever the state is modified, providing a scalable and decoupled state management solution.__N.B.: to work properly, objects like Set, Map, Date or more generally objects without _Symbol.iterator_ must be treated as immutable__. [See demo](https://react-tools.ndria.dev/#/hooks/state/createPubSubStore)
  * @param {T extends object} obj - Object that rapresent the initialState of the store.
  * @param {E extends Record<string, (store: T, ...args: any) => void>} [mutatorsFn] - Object that contains specified void function to mutate the store value, not the store itself, that receives the store as first parameter and other optional parameters.
- * @param {boolean} [persist=false] - boolean that indicates if the store value will be persisted on the local Storage.
+ * @param {"localStorage" | "sessionStorge"|undefined} [persist=undefined] - value that indicates where persist the store, on the local or session Storage. If it isn't provided then store will not persist.
  * @returns {{getStore:()=>T, mutateStore:(cb:(globStore:T)=>void), usePubSubStore:<C>(subscribe?: (store: T) => C)=>[T|C, (store: T|C|((currStore: T) => T)|((currStore: C) => C)) => void, () => T]}} result
  * An object with:
  * - __getStore__: __IMMUTABLE__ function that returns the store object.
@@ -55,24 +55,22 @@ function updateReference<T extends object, C>(currStore: T, storeSlice: object, 
  *     - _third element_: the __getState__. An _immutable_ function that returns the current subscribed value.
  *     - _fourth element_: the __mutators__. Like above.
  */
-export const createPubSubStore = <T extends object, E extends Record<string, (store: T, ...args: any) => void>>(obj: T, mutatorsFn?: E, persist?: boolean): { getStore: () => T; mutateStore: (cb: (globStore: T) => void) => void; mutators: Record<keyof E, (...args: ExtractTail<Parameters<E[keyof E]>>) => void>, usePubSubStore: { (subscribe?: undefined): [T, (store: T | ((currStore: T) => T)) => void, () => T, Record<keyof E, (...args: ExtractTail<Parameters<E[keyof E]>>) => void>]; <C>(subscribe?: (store: T) => C): [C, (store: C | ((currStore: C) => C)) => void, () => C, Record<keyof E, (...args: ExtractTail<Parameters<E[keyof E]>>) => void>]; <C>(subscribe?: (store: T) => C): [T | C, (store: T | C | ((currStore: T) => T) | ((currStore: C) => C)) => void, () => T, Record<keyof E, (...args: ExtractTail<Parameters<E[keyof E]>>) => void>] }} => {
+export const createPubSubStore = <T extends object, E extends Record<string, (store: T, ...args: any) => void>>(obj: T, mutatorsFn?: E, persist?: "localStorage" | "sessionStorge"): { getStore: () => T; mutateStore: (cb: (globStore: T) => void) => void; mutators: Record<keyof E, (...args: ExtractTail<Parameters<E[keyof E]>>) => void>, usePubSubStore: { (subscribe?: undefined): [T, (store: T | ((currStore: T) => T)) => void, () => T, Record<keyof E, (...args: ExtractTail<Parameters<E[keyof E]>>) => void>]; <C>(subscribe?: (store: T) => C): [C, (store: C | ((currStore: C) => C)) => void, () => C, Record<keyof E, (...args: ExtractTail<Parameters<E[keyof E]>>) => void>]; <C>(subscribe?: (store: T) => C): [T | C, (store: T | C | ((currStore: T) => T) | ((currStore: C) => C)) => void, () => T, Record<keyof E, (...args: ExtractTail<Parameters<E[keyof E]>>) => void>] }} => {
 	const pubSub = new PublishSubscribePattern();
 	const topicName = "pub_Sub_str-" + id;
 	id++;
 	let store:T;
 	const mutators: Record<keyof E, (...args: ExtractTail<Parameters<E[keyof E]>>) => void> = {} as Record<keyof E, (...args: ExtractTail<Parameters<E[keyof E]>>) => void>;
+	const storage = persist === "localStorage" ? localStorage : sessionStorage;
 
 	if (persist) {
-		const serializedStore = localStorage.getItem(topicName);
+		const serializedStore = storage.getItem(topicName);
 		if (serializedStore) {
 			store = JSON.parse(serializedStore);
 		} else {
 			store = { ...obj };
-			localStorage.setItem(topicName, JSON.stringify(store));
+			storage.setItem(topicName, JSON.stringify(store));
 		}
-	} else {
-		store = { ...obj };
-		localStorage.setItem(topicName, JSON.stringify(store));
 	}
 
 	if (mutatorsFn) {
@@ -80,7 +78,7 @@ export const createPubSubStore = <T extends object, E extends Record<string, (st
 			mutators[key] = (...args) => {
 				const str = getStore();
 				mutatorsFn[key](str, ...args);
-				persist && localStorage.setItem(topicName, JSON.stringify(str));
+				persist && storage.setItem(topicName, JSON.stringify(str));
 				pubSub.publish(topicName, str);
 			}
 		}
@@ -96,7 +94,7 @@ export const createPubSubStore = <T extends object, E extends Record<string, (st
 	function mutateStore(cb: (globStore: T) => void) {
 		const globStore = getStore();
 		cb(globStore);
-		persist && localStorage.setItem(topicName, JSON.stringify(globStore));
+		persist && storage.setItem(topicName, JSON.stringify(globStore));
 		pubSub.publish(topicName, globStore);
 	}
 
@@ -138,7 +136,7 @@ export const createPubSubStore = <T extends object, E extends Record<string, (st
 			if (!subscribe) {
 				//INFO if subscribe is undefined, i am updating the whole store.
 				const updatedValue = store instanceof Function ? (store as ((currStore: T) => T))(currentStore.current as T) : store as T;
-				persist && localStorage.setItem(topicName, JSON.stringify(updatedValue));
+				persist && storage.setItem(topicName, JSON.stringify(updatedValue));
 				pubSub.publish(topicName, updatedValue);
 			} else {
 				/**
@@ -155,13 +153,13 @@ export const createPubSubStore = <T extends object, E extends Record<string, (st
 				}
 				if (Array.isArray(updatedValue) || typeof updatedValue === "object") {
 					storeSlice[path.current[path.current.length - 1]] = updatedValue;
-					persist && localStorage.setItem(topicName, JSON.stringify(getStore()));
+					persist && storage.setItem(topicName, JSON.stringify(getStore()));
 					pubSub.publish(topicName, getStore());
 				} else {
 					const currStore = getStore();
 					updateReference(currStore, storeSlice, path.current[path.current.length - 1], updatedValue);
 					storeSlice = currStore as Record<string, unknown>;
-					persist && localStorage.setItem(topicName, JSON.stringify(storeSlice));
+					persist && storage.setItem(topicName, JSON.stringify(storeSlice));
 					pubSub.publish(topicName, storeSlice);
 				}
 			}
