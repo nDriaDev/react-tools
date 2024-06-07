@@ -1,0 +1,1 @@
+import{j as r}from"./index-3tf-qjX8.js";import{E as e}from"./ErrorBoundary-Vv5U8W1M.js";const s=()=>{throw new Error("An error occurred.")};function i(){return r.jsx(e,{fallback:(n,t,o)=>r.jsxs(r.Fragment,{children:[r.jsxs("p",{children:[n.name," - ",n.message," "]}),r.jsx("button",{onClick:o,children:"Retry"})]}),children:r.jsx(s,{})})}export{i as default};
