@@ -44,7 +44,7 @@ export const UsePromiseSuspensible = () => {
 }
 ```
 
-> The _Delayed_ component uses _usePromiseSuspensible_ hook to call a promise that resolves with an array of number or reject: if promise has been resolved, array number is rendered, otherwise an alert is invocked. Delayed component is returned from _UsePromiseSuspensible_ component.
+> The _Delayed_ component uses _usePromiseSuspensible_ hook to call a promise that resolves with an array of number or reject: if promise has been resolved, array number is rendered with a button to invalidate result, otherwise an alert is invocked. Delayed component is returned from _UsePromiseSuspensible_ component.
 
 
 ## API
@@ -67,7 +67,7 @@ value can be "unmount", to clean promise cached at component unmounting, or it c
 > - __options.cleanOnError=undefined?__: _boolean_  
 if true, when there is an error, remove promise from cache with a delay of 20 millisecond (due to multiple renders of react strict mode).
 > - __options.invalidateManually=undefined?__: _boolean_  
-if true, returns data and a function to invalidate data and revaluates promise.
+if true, returns resolved promise value and a function to invalidate and revaluate promise.
 > - __options.identifier=undefined?__: _string_  
 a string to identify _promise_. If it isn't present, a serialization of _promise_ will be used.
 >
