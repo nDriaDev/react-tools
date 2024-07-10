@@ -1,4 +1,4 @@
-import { DependencyList, useReducer } from "react";
+import { DependencyList, useReducer, useRef } from "react";
 import { useEffectOnce } from "../lifecycle";
 import { isDeepEqual } from "../../utils";
 
@@ -21,6 +21,11 @@ function usePromiseSuspensible<T>(promise: () => Promise<T>, deps: DependencyLis
 function usePromiseSuspensible<T>(promise: () => Promise<T>, deps: DependencyList, options: { cache?: "unmount" | number, cleanOnError?: boolean, identifier?: string, invalidateManually?: boolean } = {}): Awaited<ReturnType<typeof promise>> | [Awaited<ReturnType<typeof promise>>, () => void] {
 	let index = -1;
 	const [, reRender] = useReducer(t => t + 0.00000000001, 0);
+	const invalidate = useRef(() => {
+		index !== -1 && promiseCache.splice(index, 1);
+		index = -1;
+		reRender();
+	});
 
 	useEffectOnce(() => () => {
 		if (options.cache === "unmount") {
@@ -48,11 +53,7 @@ function usePromiseSuspensible<T>(promise: () => Promise<T>, deps: DependencyLis
 					if (options.invalidateManually) {
 						return [
 							promiseCache[ind].response,
-							() => {
-								index !== -1 && promiseCache.splice(index, 1);
-								index = -1;
-								reRender();
-							}
+							invalidate.current
 						] as [Awaited<ReturnType<typeof promise>>, () => void]
 					}
 					return promiseCache[ind].response as Awaited<ReturnType<typeof promise>>;
