@@ -5,7 +5,7 @@ Hook to resolve promise with Suspense support. The component that uses it, it ne
 
 ```tsx
 const Delayed = () => {
-	const data = usePromiseSuspensible(
+	const [data, invalidate] = usePromiseSuspensible(
 		async () => {
 			return await new Promise<number[]>((res, rej) => {
 				console.log("called");
@@ -20,11 +20,13 @@ const Delayed = () => {
 		{
 			cache: 25, //25 seconds
 			cleanOnError: true,
-			identifier: "ss"
+			identifier: "ss",
+			invalidateManually: true
 		}
 	);
 
 	return <>
+		<button onClick={invalidate}>Invalidate</button>
 		<pre>{JSON.stringify(data)}</pre>
 	</>;
 }
@@ -48,7 +50,7 @@ export const UsePromiseSuspensible = () => {
 ## API
 
 ```tsx
-usePromiseSuspensible<T>(promise: ()=>Promise<T>, deps: DependencyList, options: { cache?: "unmount" | number, cleanOnError?: boolean, identifier?: string } = {}): Awaited<ReturnType<typeof promise>>
+usePromiseSuspensible<T>(promise: () => Promise<T>, deps: DependencyList, options: { cache?: "unmount" | number, cleanOnError?: boolean, identifier?: string, invalidateManually?: boolean } = {}): Awaited<ReturnType<typeof promise>> | [Awaited<ReturnType<typeof promise>>, () => void]
 ```
 
 
@@ -64,6 +66,8 @@ optional options.
 value can be "unmount", to clean promise cached at component unmounting, or it can be the duration in __seconds__ of cached promise.
 > - __options.cleanOnError=undefined?__: _boolean_  
 if true, when there is an error, remove promise from cache with a delay of 20 millisecond (due to multiple renders of react strict mode).
+> - __options.invalidateManually=undefined?__: _boolean_  
+if true, returns data and a function to invalidate data and revaluates promise.
 > - __options.identifier=undefined?__: _string_  
 a string to identify _promise_. If it isn't present, a serialization of _promise_ will be used.
 >
@@ -73,5 +77,9 @@ a string to identify _promise_. If it isn't present, a serialization of _promise
 > ### Returns
 >
 > __result__: resolve promise value.
-> - _Awaited<ReturnType<T>>_  
+> - __Union of__:  
+>     - _Awaited<ReturnType<T>>_  
+>     - __Array__:  
+>         - _Awaited<ReturnType<T>>_  
+>         - _()=>void_  
 >

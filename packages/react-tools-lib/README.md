@@ -855,7 +855,7 @@ usePopover({ mode, onBeforeToggle, onToggle }: UsePopoverProps): UsePopoverResul
 
 Hook to resolve promise with Suspense support. The component that uses it, it need to be wrapped with Suspense component. This hook can be used in conditional blocks. [See demo](https://react-tools.ndria.dev/#/hooks/api-dom/usePromiseSuspensible)
 ```tsx
-usePromiseSuspensible<T>(promise: ()=>Promise<T>, deps: DependencyList, options: { cache?: "unmount" | number, cleanOnError?: boolean, identifier?: string } = {}): Awaited<ReturnType<typeof promise>>
+usePromiseSuspensible<T>(promise: () => Promise<T>, deps: DependencyList, options: { cache?: "unmount" | number, cleanOnError?: boolean, identifier?: string, invalidateManually?: boolean } = {}): Awaited<ReturnType<typeof promise>> | [Awaited<ReturnType<typeof promise>>, () => void]
 ```
 
 ### usePublishSubscribe

@@ -2,10 +2,10 @@ import { Suspense, useCallback } from "react"
 import { ErrorBoundary, usePromiseSuspensible } from "../../../../../../../packages/react-tools-lib/src";
 
 /**
-The _Delayed_ component uses _usePromiseSuspensible_ hook to call a promise that resolves with an array of number or reject: if promise has been resolved, array number is rendered, otherwise an alert is invocked. Delayed component is returned from _UsePromiseSuspensible_ component.
+The _Delayed_ component uses _usePromiseSuspensible_ hook to call a promise that resolves with an array of number or reject: if promise has been resolved, array number is rendered with a button to invalidate result, otherwise an alert is invocked. Delayed component is returned from _UsePromiseSuspensible_ component.
  */
 const Delayed = () => {
-	const data = usePromiseSuspensible(
+	const [data, invalidate] = usePromiseSuspensible(
 		async () => {
 			return await new Promise<number[]>((res, rej) => {
 				console.log("called");
@@ -20,11 +20,13 @@ const Delayed = () => {
 		{
 			cache: 25, //25 seconds
 			cleanOnError: true,
-			identifier: "ss"
+			identifier: "ss",
+			invalidateManually: true
 		}
 	);
 
 	return <>
+		<button onClick={invalidate}>Invalidate</button>
 		<pre>{JSON.stringify(data)}</pre>
 	</>;
 }
