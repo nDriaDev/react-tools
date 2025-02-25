@@ -218,6 +218,16 @@ code {
 	font-size: 1em;
 }
 
+.nav>.type>.sub-type>.container-details {
+	display: flex;
+	flex-direction: column;
+	height: inherit;
+	overflow-y: auto;
+	margin: 0.5em 0;
+	padding-left: .75em;
+	font-size: 1em;
+}
+
 .nav>.type>.sub-type ~ .sub-type {
 	margin-top: 1em;
 }
@@ -228,6 +238,11 @@ code {
 }
 
 .nav>.type>.sub-type>a {
+	font-size: .875em;
+	padding: 1em 0em 1em 2.75em;
+}
+
+.nav>.type>.sub-type>.container-details>a {
 	font-size: .875em;
 	padding: 1em 1em 1em 1.75em;
 }
