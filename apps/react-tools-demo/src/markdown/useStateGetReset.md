@@ -6,7 +6,7 @@ Custom useState with get and reset state functions. [See demo](https://react-too
 ```tsx
 const UseStateGetReset = () => {
 	const [stateG, setStateG, getState, resetState] = useStateGetReset({ id: "", name: "", eta: "" });
-	const [state, setState] = useState({ id: "", name: "", eta:"" });
+	const [state, setState] = useState({ id: "", name: "", eta: "" });
 
 	const onChangeGetter = useCallback((e: BaseSyntheticEvent) => {
 		const state = getState();
@@ -65,7 +65,7 @@ export { UseStateGetReset };
 ## API
 
 ```tsx
-useStateGetReset<T>(initialState: T | (() => T)): [T, Dispatch<SetStateAction<T>>, () => T, () => void]
+useStateGetReset<T>(initialState?: T | (() => T)): [T, Dispatch<SetStateAction<T>>, () => T, () => void] | [T | undefined, Dispatch<SetStateAction<T | undefined>>, () => T | undefined, () => void]
 ```
 
 
