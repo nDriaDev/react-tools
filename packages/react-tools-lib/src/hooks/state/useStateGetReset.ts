@@ -6,9 +6,11 @@ import { useMemoizedFn } from "../performance";
  * @param {T | () => T} initialState - value or a function.
  * @returns {[T, Dispatch<SetStateAction<T>>, () => T, ()=>void]} array
  */
-export const useStateGetReset = <T>(initialState: T | (() => T)): [T, Dispatch<SetStateAction<T>>, () => T, () => void] => {
-	const [state, setState] = useState<T>(initialState);
-	const getter = useMemoizedFn<()=>T>(() => state);
+function useStateGetReset<T = undefined>(initialState?: undefined): [T | undefined, Dispatch<SetStateAction<T | undefined>>, () => T | undefined, () => void];
+function useStateGetReset<T>(initialState?: T | (() => T)): [T, Dispatch<SetStateAction<T>>, () => T, () => void];
+function useStateGetReset<T>(initialState?: T | (() => T)): [T, Dispatch<SetStateAction<T>>, () => T, () => void] | [T | undefined, Dispatch<SetStateAction<T | undefined>>, () => T | undefined, () => void] {
+	const [state, setState] = useState<T | undefined>(initialState);
+	const getter = useMemoizedFn<()=>T | undefined>(() => state);
 
 	const resetter = useCallback(() => setState(initialState), [initialState]);
 
@@ -19,3 +21,5 @@ export const useStateGetReset = <T>(initialState: T | (() => T)): [T, Dispatch<S
 		resetter
 	];
 }
+
+export { useStateGetReset };

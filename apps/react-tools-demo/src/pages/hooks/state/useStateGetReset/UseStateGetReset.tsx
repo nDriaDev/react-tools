@@ -15,7 +15,7 @@ The two functions onChange and onChange Getter update their respective _state_ e
  */
 const UseStateGetReset = () => {
 	const [stateG, setStateG, getState, resetState] = useStateGetReset({ id: "", name: "", eta: "" });
-	const [state, setState] = useState({ id: "", name: "", eta:"" });
+	const [state, setState] = useState({ id: "", name: "", eta: "" });
 
 	const onChangeGetter = useCallback((e: BaseSyntheticEvent) => {
 		const state = getState();
