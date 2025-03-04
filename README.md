@@ -1158,7 +1158,7 @@ lazy<T extends ComponentType<unknown>>(load: () => Promise<{ [k:string]: T }>, o
 
 ### mergeObjects
 
-Function that, given two objects version, merges them into a single one. Via an optional parameter _forceUndefinedValue_ you can define how undefined values are treated. [See demo](https://react-tools.ndria.dev/#/utils/mergedObject)
+Function that, given two objects version, merges them into a single one. Via an optional parameter _forceUndefinedValue_ you can define how undefined values are treated. [See demo](https://react-tools.ndria.dev/#/utils/mergeObjects)
 ```tsx
 mergeObjects<T extends object>(oldObj: T, newObj: RecursivePartial<T>, forceUndefinedValue?: boolean): T
 ```
@@ -1172,7 +1172,7 @@ removePropertiesFromArrayObjects<T, E extends string | number | symbol = keyof T
 
 ### uniqueElementsArray
 
-Function that given one or more array of object, returns a single array with unique elements by a specified property, an array of properties or _none_. [See demo](https://react-tools.ndria.dev/#/utils/removeDuplicatedFromArray)
+Function that given one or more array of object, returns a single array with unique elements by a specified property, an array of properties or _none_. [See demo](https://react-tools.ndria.dev/#/utils/uniqueElementsArray)
 ```tsx
 uniqueElementsArray<T extends string | number | boolean | ((...args: unknown[]) => unknown) | bigint | object>(property: keyof T | (keyof T)[] | "none", ...args: (T[])[]): T[]
 ```

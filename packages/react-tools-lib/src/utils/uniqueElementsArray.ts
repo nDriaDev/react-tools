@@ -1,5 +1,5 @@
 /**
- * **`uniqueElementsArray`**: Function that given one or more array of object, returns a single array with unique elements by a specified property, an array of properties or _none_. [See demo](https://react-tools.ndria.dev/#/utils/removeDuplicatedFromArray)
+ * **`uniqueElementsArray`**: Function that given one or more array of object, returns a single array with unique elements by a specified property, an array of properties or _none_. [See demo](https://react-tools.ndria.dev/#/utils/uniqueElementsArray)
  * @param {keyof T | (keyof T)[] | "none"} property - propertyo or array of properties of the arrays, or _none_. If elements of the arrays aren't objects, _none_ is required.
  * @param {(T[])[]} args - arrays from which remove duplicated.
  * @returns {T[]} result - array

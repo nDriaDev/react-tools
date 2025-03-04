@@ -1,5 +1,5 @@
 # uniqueElementsArray
-Function that given one or more array of object, returns a single array with unique elements by a specified property, an array of properties or _none_. [See demo](https://react-tools.ndria.dev/#/utils/removeDuplicatedFromArray)
+Function that given one or more array of object, returns a single array with unique elements by a specified property, an array of properties or _none_. [See demo](https://react-tools.ndria.dev/#/utils/uniqueElementsArray)
 
 ## API
 
