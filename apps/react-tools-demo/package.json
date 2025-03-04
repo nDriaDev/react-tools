@@ -1,7 +1,7 @@
 {
     "name": "react-tools-demo",
     "private": true,
-    "version": "1.10.3",
+    "version": "1.10.4",
     "type": "module",
     "scripts": {
         "generator": "node scripts/generateMarkdown.js && node scripts/generateRouter.js && node scripts/generateMainLayout.js",
@@ -32,7 +32,7 @@
         "react-syntax-highlighter": "^15.5.0",
         "remark-gfm": "^4.0.0",
         "typescript": "^5.4.5",
-        "vite": "^5.0.12",
+        "vite": "^5.0.13",
         "vite-plugin-mkcert": "^1.17.3"
     }
 }
