@@ -1,0 +1,1 @@
+import{r as n}from"./index-deJv3IYI.js";const o=(...t)=>{const e=n.useRef(null);return n.useMemo(()=>Object.defineProperty({},"current",{get(){return e.current},set(u){e.current=u,t.forEach(r=>typeof r=="function"?r(e.current):r.current=e.current)},enumerable:!1,configurable:!1}),[t])};export{o as u};
