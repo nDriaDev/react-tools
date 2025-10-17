@@ -55,6 +55,7 @@ import useDisplayMediaMD from "../markdown/useDisplayMedia.md?raw"
 import useDocumentPIPMD from "../markdown/useDocumentPIP.md?raw"
 import useDocumentVisibilityMD from "../markdown/useDocumentVisibility.md?raw"
 import useDoubleClickMD from "../markdown/useDoubleClick.md?raw"
+import useEffectAbortableMD from "../markdown/useEffectAbortable.md?raw"
 import useEffectCompareMD from "../markdown/useEffectCompare.md?raw"
 import useEffectDeepCompareMD from "../markdown/useEffectDeepCompare.md?raw"
 import useEffectOnceMD from "../markdown/useEffectOnce.md?raw"
@@ -76,6 +77,7 @@ import useIntersectionObserverMD from "../markdown/useIntersectionObserver.md?ra
 import useIntervalMD from "../markdown/useInterval.md?raw"
 import useIsMountedMD from "../markdown/useIsMounted.md?raw"
 import useIsOnlineMD from "../markdown/useIsOnline.md?raw"
+import useLayoutEffectAbortableMD from "../markdown/useLayoutEffectAbortable.md?raw"
 import useLayoutEffectCompareMD from "../markdown/useLayoutEffectCompare.md?raw"
 import useLayoutEffectDeepCompareMD from "../markdown/useLayoutEffectDeepCompare.md?raw"
 import useLayoutEffectOnceMD from "../markdown/useLayoutEffectOnce.md?raw"
@@ -218,6 +220,7 @@ const UseScreen = lazy((() => import('../pages/hooks/events/useScreen/UseScreen'
 const UseScrollIntoView = lazy((() => import('../pages/hooks/events/useScrollIntoView/UseScrollIntoView').then(module => ({default: "default" in module ? module["default"] : module["UseScrollIntoView"]}))) as unknown as () => Promise<{ default: ComponentType; }>)
 const UseSwipe = lazy((() => import('../pages/hooks/events/useSwipe/UseSwipe').then(module => ({default: "default" in module ? module["default"] : module["UseSwipe"]}))) as unknown as () => Promise<{ default: ComponentType; }>)
 const UseVisible = lazy((() => import('../pages/hooks/events/useVisible/UseVisible').then(module => ({default: "default" in module ? module["default"] : module["UseVisible"]}))) as unknown as () => Promise<{ default: ComponentType; }>)
+const UseEffectAbortable = lazy((() => import('../pages/hooks/lifecycle/useEffectAbortable/UseEffectAbortable').then(module => ({default: "default" in module ? module["default"] : module["UseEffectAbortable"]}))) as unknown as () => Promise<{ default: ComponentType; }>)
 const UseEffectCompare = lazy((() => import('../pages/hooks/lifecycle/useEffectCompare/UseEffectCompare').then(module => ({default: "default" in module ? module["default"] : module["UseEffectCompare"]}))) as unknown as () => Promise<{ default: ComponentType; }>)
 const UseEffectDeepCompare = lazy((() => import('../pages/hooks/lifecycle/useEffectDeepCompare/UseEffectDeepCompare').then(module => ({default: "default" in module ? module["default"] : module["UseEffectDeepCompare"]}))) as unknown as () => Promise<{ default: ComponentType; }>)
 const UseEffectOnce = lazy((() => import('../pages/hooks/lifecycle/useEffectOnce/UseEffectOnce').then(module => ({default: "default" in module ? module["default"] : module["UseEffectOnce"]}))) as unknown as () => Promise<{ default: ComponentType; }>)
@@ -396,6 +399,12 @@ function Router() {
 									</Suspense>
 								},
 								{
+									path: "useEffectAbortable",
+									element: <Suspense fallback={<Spinner/>}>
+										<ComponentLayout markdown={useEffectAbortableMD} component={<UseEffectAbortable/>}/>
+									</Suspense>
+								},
+								{
 									path: "useEffectCompare",
 									element: <Suspense fallback={<Spinner/>}>
 										<ComponentLayout markdown={useEffectCompareMD} component={<UseEffectCompare/>}/>
@@ -417,6 +426,12 @@ function Router() {
 									path: "useIsMounted",
 									element: <Suspense fallback={<Spinner/>}>
 										<ComponentLayout markdown={useIsMountedMD} component={<UseIsMounted/>}/>
+									</Suspense>
+								},
+								{
+									path: "useLayoutEffectAbortable",
+									element: <Suspense fallback={<Spinner/>}>
+										<ComponentLayout markdown={useLayoutEffectAbortableMD} />
 									</Suspense>
 								},
 								{

@@ -66,10 +66,12 @@ Go to [Demo](https://react-tools.ndria.dev) to see and try all implementations.
 	- [__LIFECYCLE__](#lifecycle)
 
 		- [_useDeferredValue_](#useDeferredValue)
+		- [_useEffectAbortable_](#useEffectAbortable)
 		- [_useEffectCompare_](#useEffectCompare)
 		- [_useEffectDeepCompare_](#useEffectDeepCompare)
 		- [_useEffectOnce_](#useEffectOnce)
 		- [_useIsMounted_](#useIsMounted)
+		- [_useLayoutEffectAbortable_](#useLayoutEffectAbortable)
 		- [_useLayoutEffectCompare_](#useLayoutEffectCompare)
 		- [_useLayoutEffectDeepCompare_](#useLayoutEffectDeepCompare)
 		- [_useLayoutEffectOnce_](#useLayoutEffectOnce)
@@ -296,7 +298,7 @@ useSet<T>(initialState?: Iterable<T> | (() => Iterable<T>))
 
 Custom useState with get and reset state functions. [See demo](https://react-tools.ndria.dev/#/hooks/state/useStateGetReset)
 ```tsx
-useStateGetReset<T>(initialState?: T | (() => T)): [T, Dispatch<SetStateAction<T>>, () => T, () => void] | [T | undefined, Dispatch<SetStateAction<T | undefined>>, () => T | undefined, () => void]
+useStateGetReset<T>(initialState?: T | (() => T) | undefined): [T | undefined, Dispatch<SetStateAction<T | undefined>>, () => T | undefined, () => void] | [T | undefined, Dispatch<SetStateAction<T | undefined>>, () => T | undefined, () => void]
 ```
 
 ### useStateHistory
@@ -336,6 +338,13 @@ _useDeferredValue_ hook polyfilled for React versions below 18. [See demo](https
 useDeferredValue<T>(value: T): T
 ```
 
+### useEffectAbortable
+
+Custom useEffect with a unified cancellation mechanism to ensure complete cleanup and to prevent the warning that appears on old React version _"Can't perform a React state update on an unmounted component"_. [See demo](https://react-tools.ndria.dev/#/hooks/lifecycle/useEffectAbortable)
+```tsx
+useEffectAbortable<T = unknown>(cb: (signal: AbortSignal) => void | Promise<void> | (() => void) | (Promise<() => void>), deps: DependencyListTyped<T>)
+```
+
 ### useEffectCompare
 
 Custom useEffect that reexecutes EffectCallback only when comparator function, received as third parameter, returns true. [See demo](https://react-tools.ndria.dev/#/hooks/lifecycle/useEffectCompare)
@@ -362,6 +371,13 @@ useEffectOnce(effect: EffectCallback)
 Hoos to know when a component is mounted or not. [See demo](https://react-tools.ndria.dev/#/hooks/lifecycle/useIsMounted)
 ```tsx
 useIsMounted(): ()=>boolean
+```
+
+### useLayoutEffectAbortable
+
+Custom useLayoutEffect with a unified cancellation mechanism to ensure complete cleanup and to prevent the warning that appears on old React version _"Can't perform a React state update on an unmounted component"_. [See demo](https://react-tools.ndria.dev/#/hooks/lifecycle/useEffectAbortable)
+```tsx
+useLayoutEffectAbortable<T = unknown>(cb: (signal: AbortSignal) => void | Promise<void> | (() => void) | (Promise<() => void>), deps: DependencyListTyped<T>)
 ```
 
 ### useLayoutEffectCompare

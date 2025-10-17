@@ -1,5 +1,14 @@
-import { useId as legacy } from "react"
 import { useLazyRef } from "./useLazyRef";
+
+let legacy;
+(async () => {
+	try {
+		const react = await import('react');
+		legacy = react?.useId;
+	} catch (error) {
+		legacy = undefined;
+	}
+})()
 
 let count = 0;
 const increment = () => {
@@ -15,4 +24,4 @@ function useIdPolyfilled(): string {
 	return id.current;
 }
 
-export const useId = legacy === undefined ? useIdPolyfilled : legacy;
+export const useId = legacy ?? useIdPolyfilled;

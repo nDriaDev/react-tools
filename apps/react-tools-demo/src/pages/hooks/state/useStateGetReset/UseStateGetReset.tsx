@@ -1,6 +1,14 @@
-import { BaseSyntheticEvent, useCallback, useState } from 'react';
+import { BaseSyntheticEvent, memo, useCallback, useState } from 'react';
 import { useStateGetReset } from "../../../../../../../packages/react-tools-lib/src";
 import { Input } from './InputMemo';
+
+const Demo = memo(({ setS, getS, reset }: { setS: ReturnType<typeof useStateGetReset>[1], getS: ReturnType<typeof useStateGetReset>[2], reset: ReturnType<typeof useStateGetReset>[3] }) => {
+	console.log("rerender");
+	const ss = () => setS || getS() || reset();
+	return <>
+		<p>DEMO</p>
+	</>
+})
 
 /**
 The component has:
@@ -51,6 +59,7 @@ const UseStateGetReset = () => {
 					<Input id="eta" name="eta" value={state.eta} onChange={onChange} />
 				</div>
 			</div>
+			<Demo setS={setState as unknown as ReturnType<typeof useStateGetReset>[1]} getS={getState} reset={resetState} />
 		</div>
 	);
 };

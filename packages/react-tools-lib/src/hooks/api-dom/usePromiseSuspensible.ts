@@ -2,7 +2,7 @@ import { DependencyList, useReducer, useRef } from "react";
 import { useEffectOnce } from "../lifecycle";
 import { isDeepEqual } from "../../utils";
 
-const promiseCache: { deps: DependencyList, promise: Promise<void>, error?: unknown, response?: unknown, cache: "unmount" | number | null, errorTimeout?: number, identifier: string | null }[] = [];
+const promiseCache: Map<string,{ deps: DependencyList, promise: Promise<void>, error?: unknown, response?: unknown, cache: "unmount" | number | null, errorTimeout?: number, identifier: string | null }> = new Map();
 
 /**
  * **`usePromiseSuspensible`**: Hook to resolve promise with Suspense support. The component that uses it, it need to be wrapped with Suspense component. This hook can be used in conditional blocks. [See demo](https://react-tools.ndria.dev/#/hooks/api-dom/usePromiseSuspensible)
@@ -19,50 +19,56 @@ function usePromiseSuspensible<T>(promise: () => Promise<T>, deps: DependencyLis
 function usePromiseSuspensible<T>(promise: () => Promise<T>, deps: DependencyList, options: { cache?: "unmount" | number, cleanOnError?: boolean, identifier?: string, invalidateManually?: false }): Awaited<ReturnType<typeof promise>>;
 function usePromiseSuspensible<T>(promise: () => Promise<T>, deps: DependencyList, options: { cache?: "unmount" | number, cleanOnError?: boolean, identifier?: string, invalidateManually?: true }): [Awaited<ReturnType<typeof promise>>, ()=>void];
 function usePromiseSuspensible<T>(promise: () => Promise<T>, deps: DependencyList, options: { cache?: "unmount" | number, cleanOnError?: boolean, identifier?: string, invalidateManually?: boolean } = {}): Awaited<ReturnType<typeof promise>> | [Awaited<ReturnType<typeof promise>>, () => void] {
-	let index = -1;
+	let identifier = options.identifier ?? String.raw`${promise.toString()}`;
 	const [, reRender] = useReducer(t => t + 0.00000000001, 0);
 	const invalidate = useRef(() => {
-		index !== -1 && promiseCache.splice(index, 1);
-		index = -1;
-		reRender();
+		promiseCache.delete(identifier) && reRender();
 	});
 
 	useEffectOnce(() => () => {
 		if (options.cache === "unmount") {
-			index !== -1 && promiseCache.splice(index, 1);
-			index = -1;
+			promiseCache.delete(identifier);
+		} else {
+			const value = promiseCache.get(identifier);
+			let interval = setInterval(() => {
+				if (!value || value && Date.now() > (value.cache as number)) {
+					promiseCache.delete(identifier);
+					clearInterval(interval);
+				}
+			}, 1000);
 		}
 	})
-	for (const ind in promiseCache) {
-		if (isDeepEqual([...deps, options.identifier ?? String.raw`${promise.toString()}`], [...promiseCache[ind].deps, promiseCache[ind].identifier])) {
-			if (promiseCache[ind].cache && promiseCache[ind].cache !== "unmount" && Date.now() > (promiseCache[ind].cache as number)) {
-				promiseCache.splice(Number(ind), 1);
+
+	for (const [key, value] of promiseCache.entries()) {
+		if (isDeepEqual([...deps, options.identifier ?? String.raw`${promise.toString()}`], [...value.deps, value.identifier])) {
+			if (value.cache && value.cache !== "unmount" && Date.now() > (value.cache as number)) {
+				promiseCache.delete(key);
 				break;
 			} else {
-				index = Number(ind);
-				if ("error" in promiseCache[ind]) {
+				if ("error" in value) {
 					if (options.cleanOnError) {
-						promiseCache[ind].errorTimeout !== -1 && clearTimeout(promiseCache[ind].errorTimeout);
-						promiseCache[ind].errorTimeout = setTimeout(() => {
-							promiseCache.splice(Number(ind), 1);
+						value.errorTimeout !== -1 && clearTimeout(value.errorTimeout);
+						value.errorTimeout = setTimeout(() => {
+							promiseCache.delete(key);
 						}, 20) as unknown as number;
 					}
-					throw promiseCache[ind].error;
+					throw value.error;
 				}
-				if ("response" in promiseCache[ind]) {
+				if ("response" in value) {
 					if (options.invalidateManually) {
 						return [
-							promiseCache[ind].response,
+							value.response,
 							invalidate.current
 						] as [Awaited<ReturnType<typeof promise>>, () => void]
 					}
-					return promiseCache[ind].response as Awaited<ReturnType<typeof promise>>;
+					return value.response as Awaited<ReturnType<typeof promise>>;
 				}
-				throw promiseCache[ind].promise;
+				throw value.promise;
 			}
 		}
 	}
-	const cached: { deps: DependencyList, promise: Promise<void>, error?: unknown, response?: Awaited<ReturnType<typeof promise>>, cache: "unmount" | number | null, identifier: string|null } = {
+
+	const cached: { deps: DependencyList, promise: Promise<void>, error?: unknown, response?: Awaited<ReturnType<typeof promise>>, cache: "unmount" | number | null, identifier: string | null } = {
 		deps: deps,
 		identifier: options.identifier ?? String.raw`${promise.toString()}`,
 		cache: options.cache ? options.cache === "unmount" ? "unmount" : Date.now() + (options.cache*1000) : null,
@@ -75,7 +81,7 @@ function usePromiseSuspensible<T>(promise: () => Promise<T>, deps: DependencyLis
 			})
 	};
 
-	index = promiseCache.push(cached) - 1;
+	promiseCache.set(identifier, cached);
 	throw cached.promise;
 }
 

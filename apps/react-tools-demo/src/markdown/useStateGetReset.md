@@ -42,6 +42,7 @@ const UseStateGetReset = () => {
 					<Input id="eta" name="eta" value={state.eta} onChange={onChange} />
 				</div>
 			</div>
+			<Demo setS={setState as unknown as ReturnType<typeof useStateGetReset>[1]} getS={getState} reset={resetState} />
 		</div>
 	);
 };
@@ -65,7 +66,7 @@ export { UseStateGetReset };
 ## API
 
 ```tsx
-useStateGetReset<T>(initialState?: T | (() => T)): [T, Dispatch<SetStateAction<T>>, () => T, () => void] | [T | undefined, Dispatch<SetStateAction<T | undefined>>, () => T | undefined, () => void]
+useStateGetReset<T>(initialState?: T | (() => T) | undefined): [T | undefined, Dispatch<SetStateAction<T | undefined>>, () => T | undefined, () => void] | [T | undefined, Dispatch<SetStateAction<T | undefined>>, () => T | undefined, () => void]
 ```
 
 

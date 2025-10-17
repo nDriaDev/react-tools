@@ -1,6 +1,7 @@
-import { Dispatch, SetStateAction, useMemo, useRef, useSyncExternalStore } from "react"
+import { Dispatch, SetStateAction, useMemo, useRef } from "react"
 import { useMemoizedFn } from "../performance";
 import { useEvents } from "../events";
+import { useSyncExternalStore } from "./useSyncExternalStore";
 
 
 /**

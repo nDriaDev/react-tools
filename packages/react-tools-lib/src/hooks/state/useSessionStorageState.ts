@@ -1,6 +1,7 @@
-import { Dispatch, SetStateAction, useMemo, useRef, useSyncExternalStore } from "react";
+import { Dispatch, SetStateAction, useMemo, useRef } from "react";
 import { useMemoizedFn } from "../performance";
 import { useEvents } from "../events";
+import { useSyncExternalStore } from "./useSyncExternalStore";
 
 /**
  * ___useSessionStorageState___: Custom _useState_ hook implementation using _sessionStorage_, with immutable _getter state_ function and to _remove_ key from sessionStorage. [See demo](https://react-tools.ndria.dev/#/hooks/state/useSessionStorageState)

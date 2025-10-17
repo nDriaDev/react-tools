@@ -1,5 +1,14 @@
-import { useDeferredValue as legacy, useRef, useState } from "react"
+import { useRef, useState } from "react"
 
+let legacy;
+(async () => {
+	try {
+		const react = await import('react');
+		legacy = react?.useDeferredValue;
+	} catch (error) {
+		legacy = undefined;
+	}
+})()
 /**
  * __`useDeferredValue`__: _useDeferredValue_ hook polyfilled for React versions below 18. [See demo](https://react-tools.ndria.dev/#/hooks/lifecycle/useDeferredValue)
  * @param {T} value
@@ -17,4 +26,4 @@ function useDeferredValuePolyfill<T>(value: T): T {
 	return state;
 }
 
-export const useDeferredValue = legacy !== undefined ? legacy : useDeferredValuePolyfill;
+export const useDeferredValue = legacy ?? useDeferredValuePolyfill;

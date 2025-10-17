@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { Dispatch, Reducer, ReducerAction, ReducerState, useCallback, useReducer, useRef } from "react";
+import { Dispatch, Reducer, ReducerAction, ReducerState, useReducer, useRef } from "react";
 import { useMemoizedFn } from "../performance";
 
 /**
@@ -14,7 +14,7 @@ export const useReducerGetReset = <R extends Reducer<any, any>>(reducer: R, init
 	const getter = useMemoizedFn<() => ReducerState<R>>(() => state);
 	const initialStateRef = useRef<ReducerState<R>|undefined>(undefined);
 
-	const resetter = useCallback(() => setState(initialStateRef.current!), []);
+	const resetter = useMemoizedFn(() => setState(initialStateRef.current!));
 
 	if (initialStateRef.current === undefined) {
 		initialStateRef.current = state;

@@ -80,10 +80,12 @@ export {
 
 export {
 	useDeferredValue,
+	useEffectAbortable,
 	useEffectCompare,
 	useEffectDeepCompare,
 	useEffectOnce,
 	useIsMounted,
+	useLayoutEffectAbortable,
 	useLayoutEffectCompare,
 	useLayoutEffectDeepCompare,
 	useLayoutEffectOnce,

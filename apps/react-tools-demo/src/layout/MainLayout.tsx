@@ -70,10 +70,12 @@ export default function MainLayout() {
 									<option value="useStateValidator"></option>
 									<option value="useSyncExternalStore"></option>
 									<option value="useDeferredValue"></option>
+									<option value="useEffectAbortable"></option>
 									<option value="useEffectCompare"></option>
 									<option value="useEffectDeepCompare"></option>
 									<option value="useEffectOnce"></option>
 									<option value="useIsMounted"></option>
+									<option value="useLayoutEffectAbortable"></option>
 									<option value="useLayoutEffectCompare"></option>
 									<option value="useLayoutEffectDeepCompare"></option>
 									<option value="useLayoutEffectOnce"></option>
@@ -436,6 +438,19 @@ export default function MainLayout() {
 										useDeferredValue
 									</Link>
 									<Link
+										ref={node => linksRef.current["useEffectAbortable"] = node}
+										to="/hooks/lifecycle/useEffectAbortable"
+										onClick={() => {
+											Object.values(linksRef.current).forEach(l => l?.classList.remove("active"));
+											linksRef.current["useEffectAbortable"]?.classList.add("active");
+											containerRef.current?.scrollTo(0, 0);
+											window.innerWidth < 1190 && closeNav();
+										}}
+										translate="no"
+									>
+										useEffectAbortable
+									</Link>
+									<Link
 										ref={node => linksRef.current["useEffectCompare"] = node}
 										to="/hooks/lifecycle/useEffectCompare"
 										onClick={() => {
@@ -486,6 +501,19 @@ export default function MainLayout() {
 										translate="no"
 									>
 										useIsMounted
+									</Link>
+									<Link
+										ref={node => linksRef.current["useLayoutEffectAbortable"] = node}
+										to="/hooks/lifecycle/useLayoutEffectAbortable"
+										onClick={() => {
+											Object.values(linksRef.current).forEach(l => l?.classList.remove("active"));
+											linksRef.current["useLayoutEffectAbortable"]?.classList.add("active");
+											containerRef.current?.scrollTo(0, 0);
+											window.innerWidth < 1190 && closeNav();
+										}}
+										translate="no"
+									>
+										useLayoutEffectAbortable
 									</Link>
 									<Link
 										ref={node => linksRef.current["useLayoutEffectCompare"] = node}

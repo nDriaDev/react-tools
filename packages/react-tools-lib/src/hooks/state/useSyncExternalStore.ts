@@ -1,4 +1,14 @@
-import { useSyncExternalStore as legacy, useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
+
+let legacy;
+(async () => {
+	try {
+		const react = await import('react');
+		legacy = react?.useSyncExternalStore;
+	} catch (error) {
+		legacy = undefined;
+	}
+})()
 
 /**
  * __`useSyncExternalStore`__: _useSyncExternalStore_ hook polyfilled for React versions below 18 ___only client side___. [See demo](https://react-tools.ndria.dev/#/hooks/state/useSyncExternalStore)
@@ -18,4 +28,4 @@ function useSyncExternalStorePolyfill<Snapshot>(subscribe: (onStoreChange: () =>
 	return state;
 }
 
-export const useSyncExternalStore = legacy === undefined ? useSyncExternalStorePolyfill : legacy;
+export const useSyncExternalStore = legacy ?? useSyncExternalStorePolyfill;

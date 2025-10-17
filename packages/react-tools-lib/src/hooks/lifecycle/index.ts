@@ -1,6 +1,8 @@
+export { useEffectAbortable } from './useEffectAbortable';
 export { useEffectCompare } from './useEffectCompare';
 export { useEffectDeepCompare } from './useEffectDeepCompare';
 export { useEffectOnce } from './useEffectOnce';
+export { useLayoutEffectAbortable } from './useLayoutEffectAbortable';
 export { useLayoutEffectCompare } from './useLayoutEffectCompare';
 export { useLayoutEffectDeepCompare } from './useLayoutEffectDeepCompare';
 export { useLayoutEffectOnce } from './useLayoutEffectOnce';
