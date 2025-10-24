@@ -3,15 +3,15 @@ import { useCallback } from "react"
 /**
  * **`useLock`**: Hook to use [Web Locks API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Locks_API). [See demo](https://react-tools.ndria.dev/#/hooks/api-dom/useLock)
  * @param {string} [name] - an identifier for the lock.
- * @param {LockGrantedCallback | LockOptions} [options] - an object describing characteristics of the lock.
- * @param {LockGrantedCallback} [callback] - method called when the lock is granted.
- * @returns {[<T>(currName?: string, currCb?: LockGrantedCallback, currOpts?: LockOptions) => Promise<T>, () => Promise<LockManagerSnapshot>]} result
+ * @param {LockGrantedCallback<T> | LockOptions} [options] - an object describing characteristics of the lock.
+ * @param {LockGrantedCallback<T>} [callback] - method called when the lock is granted.
+ * @returns {[<T>(currName?: string, currCb?: LockGrantedCallback<T>, currOpts?: LockOptions) => Promise<T>, () => Promise<LockManagerSnapshot>]} result
  * Array with two element:
  * - first element: __acquire__ function that requests a Lock object with parameters specified in hook invocation or passed to this function. The requested Lock is passed to the callback specified in hook or passed to this function. It returns a Promise that resolves (or rejects) with the result of the callback after the lock is released, or rejects if the request is aborted.
  * - second element: __query__ function that returns a Promise that resolves with an object containing information about held and pending locks.
  */
-export const useLock = <T>(name?: string, cb?: LockGrantedCallback, opts?: LockOptions): [(currName?: string, currCb?: LockGrantedCallback, currOpts?: LockOptions) => Promise<T>, () => Promise<LockManagerSnapshot>] => {
-	const acquire = useCallback((currName?: string, currCb?: LockGrantedCallback, currOpts?: LockOptions): Promise<T> => {
+export const useLock = <T>(name?: string, cb?: LockGrantedCallback<T>, opts?: LockOptions): [(currName?: string, currCb?: LockGrantedCallback<T>, currOpts?: LockOptions) => Promise<T>, () => Promise<LockManagerSnapshot>] => {
+	const acquire = useCallback((currName?: string, currCb?: LockGrantedCallback<T>, currOpts?: LockOptions): Promise<T> => {
 		const n = currName ?? name;
 		const callback = currCb ?? cb;
 		const options = currOpts ?? opts;

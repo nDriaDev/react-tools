@@ -33,7 +33,7 @@ export default defineConfig({
 				"components": resolve(__dirname, "src", "components", "index.ts"),
 			},
 			formats: ["es", "cjs"],
-			fileName: (format, entryName) => `${entryName}.${format}.js`
+			fileName: (format, entryName) => `${entryName}.${format === "es" ? "js" : format}`
 		},
 		rollupOptions: {
 			treeshake: 'smallest',

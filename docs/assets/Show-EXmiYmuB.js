@@ -1,0 +1,1 @@
+import{r,j as e}from"./index-27nyValZ.js";import{S as t}from"./Show-CoElSnT4.js";function c(){const[o,s]=r.useReducer(n=>!n,!1);return e.jsxs(e.Fragment,{children:[e.jsx("button",{onClick:s,children:o?"hide":"show"}),e.jsx(t,{when:o,fallback:e.jsx("p",{children:"hidden"}),children:e.jsx("p",{children:"Shown"})})]})}export{c as default};

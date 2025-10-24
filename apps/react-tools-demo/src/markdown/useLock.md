@@ -117,7 +117,7 @@ export const UseLock = () => {
 ## API
 
 ```tsx
-useLock<T>(name?: string, cb?: LockGrantedCallback, opts?: LockOptions): [(currName?: string, currCb?: LockGrantedCallback, currOpts?: LockOptions) => Promise<T>, () => Promise<LockManagerSnapshot>]
+useLock<T>(name?: string, cb?: LockGrantedCallback<T>, opts?: LockOptions): [(currName?: string, currCb?: LockGrantedCallback<T>, currOpts?: LockOptions) => Promise<T>, () => Promise<LockManagerSnapshot>]
 ```
 
 
@@ -125,9 +125,9 @@ useLock<T>(name?: string, cb?: LockGrantedCallback, opts?: LockOptions): [(currN
 >
 > - __name?__: _string_  
 an identifier for the lock.
-> - __options?__: _LockGrantedCallback | LockOptions_  
+> - __options?__: _LockGrantedCallback<T> | LockOptions_  
 an object describing characteristics of the lock.
-> - __callback?__: _LockGrantedCallback_  
+> - __callback?__: _LockGrantedCallback<T>_  
 method called when the lock is granted.
 >
 
@@ -136,7 +136,7 @@ method called when the lock is granted.
 > ### Returns
 >
 > __result__:  __Array__:  
-    - _<T>(currName?: string, currCb?: LockGrantedCallback, currOpts?: LockOptions) => Promise<T>_  
+    - _<T>(currName?: string, currCb?: LockGrantedCallback<T>, currOpts?: LockOptions) => Promise<T>_  
     - _() => Promise<LockManagerSnapshot>_  
 > Array with two element:
 > - first element: __acquire__ function that requests a Lock object with parameters specified in hook invocation or passed to this function. The requested Lock is passed to the callback specified in hook or passed to this function. It returns a Promise that resolves (or rejects) with the result of the callback after the lock is released, or rejects if the request is aborted.

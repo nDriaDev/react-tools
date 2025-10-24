@@ -829,7 +829,7 @@ useInterval<TArgs extends unknown[]>(callback: (...args: TArgs) => void, delay: 
 
 Hook to use [Web Locks API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Locks_API). [See demo](https://react-tools.ndria.dev/#/hooks/api-dom/useLock)
 ```tsx
-useLock<T>(name?: string, cb?: LockGrantedCallback, opts?: LockOptions): [(currName?: string, currCb?: LockGrantedCallback, currOpts?: LockOptions) => Promise<T>, () => Promise<LockManagerSnapshot>]
+useLock<T>(name?: string, cb?: LockGrantedCallback<T>, opts?: LockOptions): [(currName?: string, currCb?: LockGrantedCallback<T>, currOpts?: LockOptions) => Promise<T>, () => Promise<LockManagerSnapshot>]
 ```
 
 ### useMediaDevices
