@@ -1,12 +1,13 @@
 import { Suspense, useCallback } from "react"
-import { ErrorBoundary, usePromiseSuspensible } from "../../../../../../../packages/react-tools-lib/src";
+import { ErrorBoundary } from "../../../..";
+import { useParallelPromises } from "../../../../hooks/api-dom/useParallelPromises";
 
 /**
-The _Delayed_ component uses _usePromiseSuspensible_ hook to call a promise that resolves with an array of number or reject: if promise has been resolved, array number is rendered with a button to invalidate result, otherwise an alert is invocked. Delayed component is returned from _UsePromiseSuspensible_ component.
+The _Delayed_ component uses _usePromise_ hook to call a promise that resolves with an array of number or reject: if promise has been resolved, array number is rendered with a button to invalidate result, otherwise an alert is invocked. Delayed component is returned from _UsePromise_ component.
  */
 const Delayed = () => {
-	const [data, invalidate] = usePromiseSuspensible(
-		async () => {
+	const {result, invalidate} = useParallelPromises(
+		[async () => {
 			return await new Promise<number[]>((res, rej) => {
 				console.log("called");
 				setTimeout(() => {
@@ -15,23 +16,20 @@ const Delayed = () => {
 						: rej("Error throwed by promise");
 				}, 4000);
 			});
-		},
+		}],
 		[],
 		{
-			cache: 25, //25 seconds
-			cleanOnError: true,
-			identifier: "ss",
-			invalidateManually: true
+			identifiers: ["ss"],
 		}
 	);
 
 	return <>
 		<button onClick={invalidate}>Invalidate</button>
-		<pre>{JSON.stringify(data)}</pre>
+		<pre>{JSON.stringify(result[0])}</pre>
 	</>;
 }
 
-export const UsePromiseSuspensible = () => {
+export const UseParallelPromise = () => {
 	const fallback = useCallback<(error: Error, info: React.ErrorInfo, retry: () => void) => React.ReactNode>((_, __, retry) => {
 		return <button onClick={retry}>Retry</button>
 	}, []);
