@@ -3,7 +3,7 @@ name: Deploy VitePress Documentation
 on:
   push:
     branches:
-      - main
+      - master
   workflow_dispatch:
 
 permissions:
