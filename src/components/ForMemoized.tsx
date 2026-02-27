@@ -3,8 +3,8 @@ import { For } from "./For";
 //#IGNORE
 /**
  * **`ForMemoized`**: Memoized version of _For_ component.
- * {@link For} is wrapped with `React.memo`, preventing re-renders when his props have
- * not changed. Prefer this over {@link For} in performance-sensitive
+ * [For] is wrapped with `React.memo`, preventing re-renders when his props have not changed.
+ * Prefer this over [For](https://react-tools.ndria.dev/components/For) in performance-sensitive
  * trees where the parent re-renders frequently.
  *
  * @see [📖 Documentation](https://react-tools.ndria.dev/components/ForMemoized)

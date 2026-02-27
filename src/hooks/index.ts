@@ -1,4 +1,5 @@
 export {
+	use,
 	useActiveElement,
 	useAnimation,
 	useAudio,

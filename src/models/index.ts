@@ -121,3 +121,4 @@ export type { RemovePropertiesFromArrayObjectsProps, RemovePropertiesFromArrayOb
 export type { UniqueElementsArrayProps, UniqueElementsArrayResult } from './uniqueElementsArray.model.ts';
 export type { UseEffectEventProps, UseEffectEventResult } from './useEffectEvent.model.ts';
 export type { SuspenseProps, SuspenseState } from './Suspense.model.ts';
+export type { MatchProps, OptionProps } from './MatchOption.model.ts';

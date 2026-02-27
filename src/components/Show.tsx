@@ -106,9 +106,9 @@ function Show<T>({ when, fallback, children, mode = "unmount" }: ShowProps<T>) {
 	}
 
 	if (!when) {
-		return fallback ? <>{fallback}</> : null;
+		return fallback ?? null;
 	}
-	return <>{children}</>;
+	return children;
 }
 
 export { Show };

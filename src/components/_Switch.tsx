@@ -8,10 +8,13 @@ import { SwitchProps } from "../models";
  * @returns {JSX.Element|null} element
  */
 export const Switch = ({ children, fallback }: SwitchProps) => {
-	const child = Children.toArray(children).find(el => isValidElement(el) && el.props && el.props.when)
-	return child
-		? <>{child}</>
-		: fallback !== undefined
-			? <> {fallback}</>
-			: null;
+	const activeChild = Children.toArray(children).find(
+		(el) => isValidElement(el) && el.props.when === true
+	);
+
+	if (!activeChild) {
+		return fallback ?? null;
+	}
+
+	return activeChild;
 }

@@ -46,3 +46,4 @@ export { useParallelPromises } from './useParallelPromises';
 export { useFetch } from './useFetch';
 export { useLock } from './useLock';
 export { useBroadcastChannel } from './useBroadcastChannel';
+export { use } from './use';
