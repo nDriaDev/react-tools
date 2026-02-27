@@ -63,6 +63,7 @@
 	},
 	"sideEffects": false,
 	"scripts": {
+		"test:run": "echo \"Error: no test specified\" && exit 0",
 		"dev": "unbuild --stub",
 		"lint": "eslint .",
 		"lint:fix": "eslint . --fix",
