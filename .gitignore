@@ -26,13 +26,17 @@ dist-ssr
 *.orig
 
 # VitePress
-docs/*
+docs/**/*
 !docs/
-!docs/.vitepress/theme/*
+!docs/.vitepress/
+!docs/.vitepress/theme/
+!docs/public/
+!docs/guide/
 !docs/.vitepress/config.ts
 !docs/.vitepress/tsconfig.json
 !docs/.vitepress/vue-shim.d.ts
-!docs/public/*
+!docs/.vitepress/theme/**
+!docs/public/**
+!docs/guide/**
 !docs/index.md
 !docs/vitepress-env.d.ts
-!docs/guide/*

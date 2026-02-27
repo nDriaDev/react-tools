@@ -1,0 +1,57 @@
+/* ── Brand colours ─────────────────────────────────────── */
+:root {
+  --vp-c-brand-1: #f53340;
+  --vp-c-brand-2: #d62a36;
+  --vp-c-brand-3: #b8222c;
+  --vp-c-brand-soft: rgba(245, 51, 64, 0.12);
+}
+
+/* ── Home hero image ────────────────────────────────────── */
+.VPImage.image-src {
+  border-radius: 12px;
+}
+
+/* ── API page layout helpers ────────────────────────────── */
+.react-demo-wrapper button {
+  cursor: pointer;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 4px;
+  padding: 4px 12px;
+  background: var(--vp-c-bg);
+  color: var(--vp-c-text-1);
+  font-size: 0.875rem;
+  transition: background 0.2s;
+  margin: 2px;
+}
+
+.react-demo-wrapper button:hover:not(:disabled) {
+  background: var(--vp-c-brand-soft);
+  border-color: var(--vp-c-brand-1);
+}
+
+.react-demo-wrapper button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.react-demo-wrapper input[type="text"],
+.react-demo-wrapper input[type="number"],
+.react-demo-wrapper input[type="range"] {
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 4px;
+  padding: 4px 8px;
+  background: var(--vp-c-bg);
+  color: var(--vp-c-text-1);
+  font-size: 0.875rem;
+  outline: none;
+}
+
+.react-demo-wrapper input:focus {
+  border-color: var(--vp-c-brand-1);
+}
+
+.react-demo-wrapper pre {
+  font-size: 0.78rem;
+  max-height: 260px;
+  overflow-y: auto;
+}

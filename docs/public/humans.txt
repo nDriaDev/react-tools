@@ -1,0 +1,13 @@
+/* TEAM */
+Developer: Andrea Cosentino
+Contact: admin@ndria.dev
+Telegram: @ndria_dev
+Location: Italy
+website: www.ndria.dev
+
+
+/* SITE */
+Last update: 27/02/2026
+Standards: HTML5, CSS3
+Components: REACT
+Software: A collection of Hooks, Components, Utilities and Types for React
