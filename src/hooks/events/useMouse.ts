@@ -21,7 +21,7 @@ function useMouse(opts: UseMouseOpts = { type: "client" }): UseMouseResult {
 		useCallback(notif => {
 			const listener = (evt: PointerEvent) => {
 				const { screenX, screenY, clientX, clientY, pageX, pageY } = evt;
-				let x=null, y=null, relativeElementDim;
+				let x, y, relativeElementDim;
 				if (opts.type === "client") {
 					x = clientX;
 					y = clientY;

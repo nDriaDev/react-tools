@@ -2,22 +2,6 @@ import { RefObject, useCallback } from "react"
 import { useEventListener } from "./useEventListener";
 import { UseClickOutsideProps } from "../../models";
 
-const isClickInside = (node: HTMLElement | null, target: Node | null) => {
-	if (!node || !target) {
-		return false;
-	}
-	if (node.contains(target)) {
-		return true;
-	} else if (node.children.length > 0) {
-		for (let i = 0, size = node.children.length; i < size; i++) {
-			const result = isClickInside(node.children[i] as HTMLElement, target);
-			if (result) {
-				return true;
-			}
-		}
-	}
-	return false;
-}
 /**
  * **`useClickOutside`**: Hook to listen and execute an action when there is a click outside an element.
  * @see [📖 Documentation](https://react-tools.ndria.dev/hooks/events/useClickOutside)

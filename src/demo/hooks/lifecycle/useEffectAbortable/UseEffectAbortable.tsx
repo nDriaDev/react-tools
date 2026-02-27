@@ -15,10 +15,10 @@ const Demo = ({ setDate }: {setDate: (cb: (n:number)=> number) => void}) => {
 	const [state, setState] = useState("IDLE");
 
 	useEffectAbortable((signal) => {
-		let id = setTimeout(() => {
+		const id = setTimeout(() => {
 			setState("LOADING");
 		}, 1000);
-		let id1 = setTimeout(() => {
+		const id1 = setTimeout(() => {
 			setState("SUCCESS");
 			setDate(d => d+1);
 		}, 5000)

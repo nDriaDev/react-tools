@@ -4,7 +4,7 @@ import { Input } from './InputMemo';
 
 const Demo = memo(({ setS, getS, reset }: { setS: ReturnType<typeof useStateGetReset>[1], getS: ReturnType<typeof useStateGetReset>[2], reset: ReturnType<typeof useStateGetReset>[3] }) => {
 	console.log("rerender");
-	//@ts-ignore
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	const ss = () => setS || getS() || reset();
 	return <>
 		<p>DEMO</p>

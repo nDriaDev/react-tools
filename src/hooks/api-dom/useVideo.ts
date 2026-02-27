@@ -1,4 +1,3 @@
-import { UseVideoProps, UseVideoResult } from "../../models";
 import { createHTMLMediaHook } from "../../utils";
 
 /**

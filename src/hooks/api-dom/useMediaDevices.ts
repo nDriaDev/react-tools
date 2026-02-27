@@ -37,12 +37,8 @@ function useMediaDevices(action: UseMediaDevicesProps): UseMediaDevicesResult {
 			listener.current = onDevicesChange;
 			mediaDevicesListeners.add(listener.current);
 		}
-		try {
-			const stream = await navigator.mediaDevices.getUserMedia({ audio: true, video: true });
-			stream.getTracks().forEach(t => t.stop());
-		} catch (error) {
-			void 0;
-		}
+		const stream = await navigator.mediaDevices.getUserMedia({ audio: true, video: true });
+		stream.getTracks().forEach(t => t.stop());
 		return navigator.mediaDevices.enumerateDevices();
 	});
 
