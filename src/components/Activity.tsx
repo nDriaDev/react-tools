@@ -1,6 +1,7 @@
 import * as React from "react";
 import { Show } from "./Show";
 
+// eslint-disable-next-line react-refresh/only-export-components
 function ActivityPolyfill({ children, mode }: React.PropsWithChildren<{ mode: "visible" | "hidden" }>) {
 	return <Show when={mode === "visible"} mode="visibility">{children}</Show>
 }

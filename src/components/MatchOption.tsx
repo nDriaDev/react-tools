@@ -1,3 +1,4 @@
+/* eslint-disable react-refresh/only-export-components */
 import { Children, isValidElement } from "react";
 import { MatchProps, OptionProps } from "../models";
 
