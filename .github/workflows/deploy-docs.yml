@@ -43,7 +43,7 @@ jobs:
 
       - name: Build with documentation
         run: pnpm docs:build
-		env:
+        env:
             NODE_ENV: production
 
       - name: Upload artifact
