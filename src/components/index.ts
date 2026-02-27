@@ -8,3 +8,5 @@ export { ForMemoized } from './ForMemoized';
 export { ErrorBoundary } from './ErrorBoundary';
 export { Activity } from './Activity';
 export { Suspense } from './Suspense';
+export { MatchOption } from './MatchOption';
+export { MatchOptionMemoized } from './MatchOptionMemoized';
