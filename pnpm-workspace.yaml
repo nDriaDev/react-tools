@@ -1,5 +1,0 @@
-packages:
-  # executable/launchable apps
-  - 'apps/*'
-  # packages subdir in packages
-  - 'packages/*'

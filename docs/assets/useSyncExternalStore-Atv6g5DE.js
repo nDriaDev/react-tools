@@ -1,2 +1,0 @@
-const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/index-27nyValZ.js","assets/index-BrxZsJl5.css"])))=>i.map(i=>d[i]);
-import{r as a,_ as s}from"./index-27nyValZ.js";let o;(async()=>{try{const t=await s(()=>import("./index-27nyValZ.js").then(e=>e.R),__vite__mapDeps([0,1]));o=t==null?void 0:t.useSyncExternalStore}catch{o=void 0}})();function l(t,e){const[n,c]=a.useState(e()),r=a.useCallback(()=>{c(e())},[e]);return a.useEffect(()=>(r(),t(r)),[r,t]),n}const _=o??l;export{_ as u};
