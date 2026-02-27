@@ -1,6 +1,22 @@
 import { LanguageBCP47Tags } from ".";
 
 /**
+ * Imperative controls for the speech recognition instance, injected as the
+ * second argument of every event callback in {@link UseSpeechRecognitionProps}.
+ * Using these controls inside a callback is always safe — they delegate to the
+ * latest internal implementation via stable refs, so no circular dependency or
+ * stale closure issues arise.
+ */
+export interface SpeechRecognitionControls {
+	/**Starts a new recognition session, optionally overriding the _defaultConfig_ passed to the hook.*/
+	start: (config?: SpeechRecognitionConfig) => void;
+	/**Stops the current recognition session and attempts to return results for audio captured so far.*/
+	stop: () => void;
+	/**Aborts the current recognition session. Pass _true_ to also clear the last result from state.*/
+	reset: (resultAlso?: boolean) => void;
+}
+
+/**
  * Configuration object accepted by [useSpeechRecognition](https://react-tools.ndria.dev/hooks/api-dom/useSpeechRecognition).
  *
  * All callback properties mirror the corresponding event handlers on the native
@@ -19,27 +35,27 @@ export interface UseSpeechRecognitionProps {
 	 */
 	defaultConfig?: SpeechRecognitionConfig;
 	/** Fired when the user agent has started capturing audio. */
-	onAudioStart?: SpeechRecognition["onaudiostart"];
+	onAudioStart?: (this: SpeechRecognition, ev: Event, controls: SpeechRecognitionControls) => void;
 	/** Fired when the user agent has finished capturing audio. */
-	onAudioEnd?: SpeechRecognition["onaudioend"];
+	onAudioEnd?: (this: SpeechRecognition, ev: Event, controls: SpeechRecognitionControls) => void;
 	/** Fired when the speech recognition service disconnects. */
-	onEnd?: SpeechRecognition["onend"];
+	onEnd?: (this: SpeechRecognition, ev: Event, controls: SpeechRecognitionControls) => void;
 	/** Fired when a speech recognition error occurs. */
-	onError?: SpeechRecognition["onerror"];
+	onError?: (this: SpeechRecognition, ev: SpeechRecognitionErrorEvent, controls: SpeechRecognitionControls) => void;
 	/** Fired when no significant recognition was returned. */
-	onNoMatch?: SpeechRecognition["onnomatch"];
+	onNoMatch?: (this: SpeechRecognition, ev: SpeechRecognitionEvent, controls: SpeechRecognitionControls) => void;
 	/** Fired when a word or phrase has been positively recognised. */
-	onResult?: SpeechRecognition["onresult"];
+	onResult?: (this: SpeechRecognition, ev: SpeechRecognitionEvent, controls: SpeechRecognitionControls) => void;
 	/** Fired when any sound (recognisable or not) has been detected. */
-	onSoundStart?: SpeechRecognition["onsoundstart"];
+	onSoundStart?: (this: SpeechRecognition, ev: Event, controls: SpeechRecognitionControls) => void;
 	/** Fired when any sound has stopped being detected. */
-	onSoundEnd?: SpeechRecognition["onsoundend"];
+	onSoundEnd?: (this: SpeechRecognition, ev: Event, controls: SpeechRecognitionControls) => void;
 	/** Fired when speech recognised by the service has been detected. */
-	onSpeechStart?: SpeechRecognition["onspeechstart"];
+	onSpeechStart?: (this: SpeechRecognition, ev: Event, controls: SpeechRecognitionControls) => void;
 	/** Fired when speech recognised by the service has stopped being detected. */
-	onSpeechEnd?: SpeechRecognition["onspeechend"];
+	onSpeechEnd?: (this: SpeechRecognition, ev: Event, controls: SpeechRecognitionControls) => void;
 	/** Fired when the speech recognition service has begun listening. */
-	onStart?: SpeechRecognition["onstart"];
+	onStart?: (this: SpeechRecognition, ev: Event, controls: SpeechRecognitionControls) => void;
 }
 
 /**

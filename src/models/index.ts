@@ -8,7 +8,7 @@ export type { OrientationLockType, ScreenDetails, ScreenDetail, ScreenDetailsEvt
 export type { UseDeviceMotionResult } from './useDeviceMotion.model.ts';
 export type { UseDeviceOrientationResult } from './useDeviceOrientation.model.ts';
 export type { Bluetooth, BluetoothCharacteristicProperties, BluetoothCharacteristicUUID, BluetoothDescriptorUUID, BluetoothDevice, BluetoothDevicesOptions, BluetoothRemoteGATTCharacteristic, BluetoothRemoteGATTDescriptor, BluetoothRemoteGATTServer, BluetoothRemoteGATTService, BluetoothScanFilters, BluetoothServiceUUID, UseBluetoothResult, UseBluetoothState } from './useBluetooth.model.ts';
-export type { UseSpeechRecognitionProps, SpeechRecognition, SpeechRecognitionConfig, SpeechRecognitionState, SpeechGrammar, SpeechGrammarList, SpeechRecognitionErrorCode, SpeechRecognitionErrorEvent, SpeechRecognitionEvent } from './useSpeechRecognition.model.ts';
+export type { UseSpeechRecognitionProps, SpeechRecognition, SpeechRecognitionConfig, SpeechRecognitionState, SpeechGrammar, SpeechGrammarList, SpeechRecognitionErrorCode, SpeechRecognitionErrorEvent, SpeechRecognitionEvent, SpeechRecognitionControls } from './useSpeechRecognition.model.ts';
 export type { SpeechSynthesisSpeakParam, UseSpeechSynthesis, UseSpeechSynthesisProps } from './useSpeechSynthesis.model.ts';
 export type { UseFPSProps, UseFPSResult } from './useFPS.model.ts';
 export type { UsePointerLockProps, UsePointerLockResult } from './usePointerLock.model.ts';

@@ -15,11 +15,11 @@ export const UseSpeechRecognition = () => {
 
 	const [message, setMessage] = useState("Ready");
 
-	const [state, start, stop] = useSpeechRecognition({
+	const [state, start] = useSpeechRecognition({
 		onStart: useCallback(() => {
 			setMessage("Listening...")
 		}, []),
-		onEnd: useCallback(() => {
+		onEnd: useCallback((ev, {stop}) => {
 			stop();
 			setMessage("Finish");
 			perform();

@@ -81,6 +81,7 @@ export type {
 	SpeechGrammarList,
 	SpeechRecognition,
 	SpeechRecognitionConfig,
+	SpeechRecognitionControls,
 	SpeechRecognitionErrorCode,
 	SpeechRecognitionErrorEvent,
 	SpeechRecognitionEvent,
