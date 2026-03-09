@@ -51,6 +51,9 @@ class SuspenseBoundary extends React.Component<SuspenseProps, SuspenseState> {
 	}
 }
 
+const key = "Suspense";
+const _Suspense = (React as any)[key];
+
 /**
  * **`Suspense`**: Polyfill of the React `<Suspense>` component.
  *
@@ -91,5 +94,4 @@ class SuspenseBoundary extends React.Component<SuspenseProps, SuspenseState> {
  * @param {SuspenseProps} props - {@link SuspenseProps}
  * @returns {JSX.Element} element
  */
-export const Suspense: React.ComponentType<SuspenseProps> =
-	(React as any).Suspense ?? SuspenseBoundary;
+export const Suspense: React.ComponentType<SuspenseProps> = _Suspense ?? SuspenseBoundary;

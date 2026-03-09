@@ -71,5 +71,7 @@ function usePolyfill<T>(input: Promise<T> | React.Context<T>): T {
 			throw tracked.promise;
 	}
 }
+const key = "use";
+const _use = (React as any)[key];
 
-export const use = ((React as any).use ?? usePolyfill) as typeof usePolyfill;
+export const use = (_use ?? usePolyfill) as typeof usePolyfill;

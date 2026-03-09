@@ -19,4 +19,7 @@ function useDeferredValuePolyfill<T>(value: T): T {
 	return state;
 }
 
-export const useDeferredValue = ((React as any).useDeferredValue ?? useDeferredValuePolyfill) as typeof useDeferredValuePolyfill;
+const key = "useDeferredValue";
+const _useDeferredValue = (React as any)[key];
+
+export const useDeferredValue = (_useDeferredValue ?? useDeferredValuePolyfill) as typeof useDeferredValuePolyfill;

@@ -17,4 +17,7 @@ function useIdPolyfilled(): string {
 	return id.current;
 }
 
-export const useId = ((React as any).useId ?? useIdPolyfilled) as typeof useIdPolyfilled;
+const key = 'useId';
+const _useId = (React as any)[key];
+
+export const useId = (_useId ?? useIdPolyfilled) as typeof useIdPolyfilled;

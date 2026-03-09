@@ -6,6 +6,10 @@ function ActivityPolyfill({ children, mode }: React.PropsWithChildren<{ mode: "v
 	return <Show when={mode === "visible"} mode="visibility">{children}</Show>
 }
 
+const key = 'Activity';
+const _Activity = (React as any)[key];
+
+
 /**
  * **`Activity`**: Polyfill of the React 19 `<Activity>` component for earlier versions.
  *
@@ -31,4 +35,4 @@ function ActivityPolyfill({ children, mode }: React.PropsWithChildren<{ mode: "v
  * @param {{ mode: "visible" | "hidden", children?: React.ReactNode }} props
  * @returns {JSX.Element} element
  */
-export const Activity: React.ComponentType<{ mode: "visible" | "hidden"; children?: React.ReactNode }> =(React as any).Activity ?? ActivityPolyfill;
+export const Activity: React.ComponentType<{ mode: "visible" | "hidden"; children?: React.ReactNode }> = _Activity ?? ActivityPolyfill;

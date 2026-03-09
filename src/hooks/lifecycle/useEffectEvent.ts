@@ -2,6 +2,9 @@ import * as React from 'react';
 import { useMemoizedFn } from '../performance';
 import { UseEffectEventProps, UseEffectEventResult } from '../../models';
 
+const key = 'useEffectEvent';
+const _useEffectEvent = (React as any)[key];
+
 /**
  * __`useEffectEvent`__: _useEffectEvent_ hook polyfilled for React versions below 19.
  *
@@ -18,4 +21,4 @@ import { UseEffectEventProps, UseEffectEventResult } from '../../models';
  * @param {UseEffectEventProps<T>["fn"]} fn - {@link UseEffectEventProps}
  * @returns {UseEffectEventResult<T>} result - {@link UseEffectEventResult}
  */
-export const useEffectEvent = <T extends (...args: any[]) => any>(fn: UseEffectEventProps<T>["fn"]): UseEffectEventResult<T> => (React as any).useEffectEvent ?? useMemoizedFn(fn);
+export const useEffectEvent = <T extends (...args: any[]) => any>(fn: UseEffectEventProps<T>["fn"]): UseEffectEventResult<T> => _useEffectEvent ?? useMemoizedFn(fn);

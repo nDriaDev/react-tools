@@ -34,4 +34,8 @@ function useSyncExternalStorePolyfill<Snapshot>(subscribe: UseSyncExternalStoreP
 	return snapshotRef.current
 }
 
-export const useSyncExternalStore = ((React as any).useSyncExternalStore ?? useSyncExternalStorePolyfill) as typeof useSyncExternalStorePolyfill;
+const key = 'useSyncExternalStore';
+
+const _useSyncExternalStore = (React as any)[key];
+
+export const useSyncExternalStore = (_useSyncExternalStore ?? useSyncExternalStorePolyfill) as typeof useSyncExternalStorePolyfill;
