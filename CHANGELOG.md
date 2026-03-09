@@ -1,5 +1,11 @@
 # Changelog
 
+## [2.1.0](https://github.com/nDriaDev/react-tools/releases/tag/v2.1.0) - 2026-03-09
+
+### Bug Fixes
+
+- polyfill ([8047004](https://github.com/nDriaDev/react-tools/commit/8047004))
+
 ## [2.0.0](https://github.com/nDriaDev/react-tools/releases/tag/v2.0.0) - 2026-02-27
 
 ### Features
