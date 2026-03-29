@@ -1,5 +1,15 @@
 # Changelog
 
+## [2.1.2](https://github.com/nDriaDev/react-tools/releases/tag/v2.1.2) - 2026-03-29
+
+### Documentation
+
+- add lib version ([f235a84](https://github.com/nDriaDev/react-tools/commit/f235a84))
+
+### Chores
+
+- update dependencies ([fcd601c](https://github.com/nDriaDev/react-tools/commit/fcd601c))
+
 ## [2.1.1](https://github.com/nDriaDev/react-tools/releases/tag/v2.1.1) - 2026-03-12
 
 ### Chores
