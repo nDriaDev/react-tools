@@ -2,7 +2,7 @@
 
 <h1 align="center">
 	<a href="https://react-tools.ndria.dev/">
-  		<img src="https://react-tools.ndria.dev/react-red.png" alt="logo">
+  		<img src="https://react-tools.ndria.dev/react-red.webp" alt="logo">
 	</a>
 </h1>
 
