@@ -40,10 +40,14 @@ fi
 CURRENT_BRANCH=$(git branch --show-current)
 if [ "$CURRENT_BRANCH" != "main" ] && [ "$CURRENT_BRANCH" != "master" ]; then
     echo -e "${YELLOW}⚠️  Warning: Not on main/master branch (current: $CURRENT_BRANCH)${NC}"
-    read -p "Continue anyway? (y/N) " -n 1 -r
-    echo
-    if [[ ! $REPLY =~ ^[Yy]$ ]]; then
-        exit 1
+    if [ "$CI" = "true" ]; then
+        echo -e "${YELLOW}CI mode: continuing without confirmation${NC}"
+    else
+        read -p "Continue anyway? (y/N) " -n 1 -r
+        echo
+        if [[ ! $REPLY =~ ^[Yy]$ ]]; then
+            exit 1
+        fi
     fi
 fi
 
@@ -121,18 +125,13 @@ echo -e "${GREEN}✅ Git tag created and pushed${NC}"
 
 # Publish to npm
 echo -e "\n${BLUE}📦 Publishing to npm...${NC}"
-echo -e "${YELLOW}⚠️  This will publish version $NEW_VERSION to npm${NC}"
-read -p "Continue with npm publish? (y/N) " -n 1 -r
-echo
 
-if [[ $REPLY =~ ^[Yy]$ ]]; then
+if [ "$CI" = "true" ]; then
+    echo -e "${YELLOW}CI mode: publishing v$NEW_VERSION via trusted publishing (no prompt)${NC}"
     pnpm publish --access public --no-git-checks || {
         echo -e "${RED}❌ npm publish failed${NC}"
-        echo -e "${YELLOW}Don't worry, the version bump and git tag are already pushed.${NC}"
-        echo -e "${YELLOW}You can manually publish later with: pnpm publish --access public${NC}"
         exit 1
     }
-
     echo -e "\n${GREEN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
     echo -e "${GREEN}🎉 Release v$NEW_VERSION completed successfully!${NC}"
     echo -e "${GREEN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
@@ -143,9 +142,31 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     echo -e "${BLUE}📦 npm: ${YELLOW}https://www.npmjs.com/package/@ndriadev/react-tools${NC}"
     echo -e "${BLUE}🏷️  Tag: ${YELLOW}https://github.com/nDriaDev/react-tools/releases/tag/v$NEW_VERSION${NC}"
 else
-    echo -e "\n${YELLOW}⚠️  Skipped npm publish${NC}"
-    echo -e "${BLUE}Version bump and git tag have been pushed to remote.${NC}"
-    echo -e "${BLUE}To publish manually later, run: ${YELLOW}pnpm publish --access public${NC}"
+    echo -e "${YELLOW}⚠️  This will publish version $NEW_VERSION to npm${NC}"
+    read -p "Continue with npm publish? (y/N) " -n 1 -r
+    echo
+
+    if [[ $REPLY =~ ^[Yy]$ ]]; then
+        pnpm publish --access public --no-git-checks || {
+            echo -e "${RED}❌ npm publish failed${NC}"
+            echo -e "${YELLOW}Don't worry, the version bump and git tag are already pushed.${NC}"
+            echo -e "${YELLOW}You can manually publish later with: pnpm publish --access public${NC}"
+            exit 1
+        }
+        echo -e "\n${GREEN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+        echo -e "${GREEN}🎉 Release v$NEW_VERSION completed successfully!${NC}"
+        echo -e "${GREEN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+        echo -e "${GREEN}✅ Package published to npm${NC}"
+        echo -e "${GREEN}✅ Git tag pushed to remote${NC}"
+        echo -e "${GREEN}✅ Changelog updated${NC}"
+        echo -e ""
+        echo -e "${BLUE}📦 npm: ${YELLOW}https://www.npmjs.com/package/@ndriadev/react-tools${NC}"
+        echo -e "${BLUE}🏷️  Tag: ${YELLOW}https://github.com/nDriaDev/react-tools/releases/tag/v$NEW_VERSION${NC}"
+    else
+        echo -e "\n${YELLOW}⚠️  Skipped npm publish${NC}"
+        echo -e "${BLUE}Version bump and git tag have been pushed to remote.${NC}"
+        echo -e "${BLUE}To publish manually later, run: ${YELLOW}pnpm publish --access public${NC}"
+    fi
 fi
 
 echo ""
