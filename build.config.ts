@@ -18,6 +18,7 @@ export default defineBuildConfig({
 	rollup: {
 		emitCJS: true,
 		esbuild: {
+			jsx: "automatic",
 			target: 'es2020',
 			minify: true,
 			minifyWhitespace: true,
