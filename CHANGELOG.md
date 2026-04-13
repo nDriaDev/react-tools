@@ -1,5 +1,20 @@
 # Changelog
 
+## [2.2.0](https://github.com/nDriaDev/react-tools/releases/tag/v2.2.0) - 2026-04-13
+
+### Documentation
+
+- Update README.md ([bf396ef](https://github.com/nDriaDev/react-tools/commit/bf396ef))
+
+### Chores
+
+- update build config ([0df4c6e](https://github.com/nDriaDev/react-tools/commit/0df4c6e))
+- add github workflow security audit + fix release script ([8ee14b5](https://github.com/nDriaDev/react-tools/commit/8ee14b5))
+
+### Other Changes
+
+- Merge branch 'master' of https://github.com/nDriaDev/react-tools ([928537b](https://github.com/nDriaDev/react-tools/commit/928537b))
+
 ## [2.1.3](https://github.com/nDriaDev/react-tools/releases/tag/v2.1.3) - 2026-04-08
 
 ### Chores
