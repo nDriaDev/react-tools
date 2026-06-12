@@ -45,7 +45,8 @@ jobs:
       - name: Audit (1st pass)
         id: audit1
         run: |
-          if pnpm audit 2>&1 | tee audit1.log | grep -q "found [^0]"; then
+          pnpm audit 2>&1 | tee audit4.log; EXIT_CODE=${PIPESTATUS[0]}
+          if [ $EXIT_CODE -ne 0 ]; then
             echo "vulnerable=true" >> "$GITHUB_OUTPUT"
           else
             echo "vulnerable=false" >> "$GITHUB_OUTPUT"
@@ -63,7 +64,8 @@ jobs:
         if: steps.audit1.outputs.vulnerable == 'true'
         id: audit2
         run: |
-          if pnpm audit 2>&1 | tee audit2.log | grep -q "found [^0]"; then
+          pnpm audit 2>&1 | tee audit4.log; EXIT_CODE=${PIPESTATUS[0]}
+          if [ $EXIT_CODE -ne 0 ]; then
             echo "vulnerable=true" >> "$GITHUB_OUTPUT"
           else
             echo "vulnerable=false" >> "$GITHUB_OUTPUT"
@@ -95,7 +97,8 @@ jobs:
           steps.audit2.outputs.vulnerable == 'true'
         id: audit3
         run: |
-          if pnpm audit 2>&1 | tee audit3.log | grep -q "found [^0]"; then
+          pnpm audit 2>&1 | tee audit4.log; EXIT_CODE=${PIPESTATUS[0]}
+          if [ $EXIT_CODE -ne 0 ]; then
             echo "vulnerable=true" >> "$GITHUB_OUTPUT"
           else
             echo "vulnerable=false" >> "$GITHUB_OUTPUT"
@@ -132,7 +135,8 @@ jobs:
           steps.audit3.outputs.vulnerable == 'true'
         id: audit4
         run: |
-          if pnpm audit 2>&1 | tee audit4.log | grep -q "found [^0]"; then
+          pnpm audit 2>&1 | tee audit4.log; EXIT_CODE=${PIPESTATUS[0]}
+          if [ $EXIT_CODE -ne 0 ]; then
             echo "vulnerable=true" >> "$GITHUB_OUTPUT"
           else
             echo "vulnerable=false" >> "$GITHUB_OUTPUT"
