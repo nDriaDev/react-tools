@@ -3,7 +3,9 @@ name: Deploy VitePress Documentation
 on:
   push:
     branches:
-      - master
+      - main
+  repository_dispatch:
+    types: [release-published]
   workflow_dispatch:
 
 permissions:
@@ -41,10 +43,8 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Build with documentation
+      - name: Build with VitePress
         run: pnpm docs:build
-        env:
-            NODE_ENV: production
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

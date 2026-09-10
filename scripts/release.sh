@@ -128,7 +128,7 @@ echo -e "\n${BLUE}📦 Publishing to npm...${NC}"
 
 if [ "$CI" = "true" ]; then
     echo -e "${YELLOW}CI mode: publishing v$NEW_VERSION via trusted publishing (no prompt)${NC}"
-    pnpm publish --access public --provenance --no-git-checks --loglevel verbose || {
+    npm publish --access public --provenance || {
         echo -e "${RED}❌ npm publish failed${NC}"
         exit 1
     }
