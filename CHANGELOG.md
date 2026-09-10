@@ -1,5 +1,15 @@
 # Changelog
 
+## [2.2.1](https://github.com/nDriaDev/react-tools/releases/tag/v2.2.1) - 2026-09-10
+
+### Chores
+
+- update dependencies ([946ccc2](https://github.com/nDriaDev/react-tools/commit/946ccc2))
+- fix deploy docs workflow ([ad4898b](https://github.com/nDriaDev/react-tools/commit/ad4898b))
+- fix workflows + release script ([d0dc818](https://github.com/nDriaDev/react-tools/commit/d0dc818))
+- update release script CI mode ([f65d89c](https://github.com/nDriaDev/react-tools/commit/f65d89c))
+- update autofix workflow ([7ad2341](https://github.com/nDriaDev/react-tools/commit/7ad2341))
+
 ## [2.2.0](https://github.com/nDriaDev/react-tools/releases/tag/v2.2.0) - 2026-04-13
 
 ### Documentation
